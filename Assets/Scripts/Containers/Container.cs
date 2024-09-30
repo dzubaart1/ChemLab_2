@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using BioEngineerLab.Substances;
-using LiquidVolumeFX;
 using UnityEngine;
 
 namespace BioEngineerLab.Containers
@@ -15,7 +14,6 @@ namespace BioEngineerLab.Containers
         public ContainerType ContainerType;
         public bool IsDirty;
         public MeshRenderer SubstancePrefabRenderer;
-        public LiquidVolume LiquidVolume;
 
         [Header("Base Container Toggles")]
         public bool IsReagentsContainer;
@@ -126,13 +124,6 @@ namespace BioEngineerLab.Containers
             }
             
             SubstancePrefabRenderer.enabled = true;
-            if (LiquidVolume is null)
-            {
-                SubstancePrefabRenderer.material.color = _substancesList[^1].SubstanceProperty.Color;
-                return;
-            }
-            LiquidVolume.liquidColor1 = _substancesList[^1].SubstanceProperty.Color;
-            LiquidVolume.Redraw();
         }
     }
 }

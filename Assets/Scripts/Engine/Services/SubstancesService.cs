@@ -4,12 +4,10 @@ using BioEngineerLab.Activities;
 using BioEngineerLab.Configurations;
 using BioEngineerLab.Containers;
 using BioEngineerLab.Substances;
-using System.Diagnostics;
 using Debug = UnityEngine.Debug;
 
 namespace BioEngineerLab.Core
 {
-
     /// <summary>
     ///     Класс работает с самой верхней Substance по Stack
     /// </summary>

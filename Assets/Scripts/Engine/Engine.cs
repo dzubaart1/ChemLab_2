@@ -2,10 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using BioEngineerLab.Configurations;
 using UnityEngine;
-
 
 namespace BioEngineerLab.Core
 {
@@ -27,7 +25,6 @@ namespace BioEngineerLab.Core
             AddService(saveService);
             AddService(tasksService);
             AddService(new SubstancesService(GetConfiguration<SubstancesConfiguration>(), tasksService));
-            AddService(new DropAnimationService(GetConfiguration<DropAnimationConfiguration>(), saveService));
             AddService(new InputService(GetConfiguration<InputConfiguration>()));
             AddService(new HandModelsService(GetConfiguration<HandModelConfiguration>()));
 
