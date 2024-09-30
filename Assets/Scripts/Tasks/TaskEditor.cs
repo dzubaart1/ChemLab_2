@@ -18,27 +18,13 @@ namespace BioEngineerLab.Tasks
 
         private TransferActivity _transferActivity;
         private MachineActivity _machineActivity;
-        private ButtonClickedActivity _buttonClickedActivity;
-        private SliderValueChangedActivity _sliderValueChangedActivity;
         private SocketActivity _socketActivity;
-        private InputFieldActivity _inputFieldActivity;
-        private DragLineActivity _dragLineActivity;
-        private DropdownActivity _dropdownActivity;
-        private AnchorActivity _anchorActivity;
-        private WashingActivity _washingActivity;
         
         private void OnEnable()
         {
             _transferActivity = new TransferActivity();
             _machineActivity = new MachineActivity();
-            _buttonClickedActivity = new ButtonClickedActivity();
-            _sliderValueChangedActivity = new SliderValueChangedActivity();
             _socketActivity = new SocketActivity();
-            _inputFieldActivity = new InputFieldActivity();
-            _dragLineActivity = new DragLineActivity();
-            _dropdownActivity = new DropdownActivity();
-            _anchorActivity = new AnchorActivity();
-            _washingActivity = new WashingActivity();
             
             _taskPropertyScriptableObject = (TasksPropertyScriptableObject)target;
             _taskProperty = _taskPropertyScriptableObject.TaskProperty;
@@ -53,7 +39,6 @@ namespace BioEngineerLab.Tasks
             InitSubstanceAddingFields();
             InitTaskChangeSpriteFields();
             InitTaskHintSpriteFields();
-            InitTaskChangeSyringePosFields();
 
             EditorGUILayout.Space();
             EditorGUILayout.LabelField("Activity Fields", EditorStyles.boldLabel);
@@ -67,29 +52,8 @@ namespace BioEngineerLab.Tasks
                 case ActivityType.MachineActivity:
                     InitMachineActivity();
                     break;
-                case ActivityType.ButtonClickedActivity:
-                    InitButtonClickedActivity();
-                    break;
-                case ActivityType.SliderValueChangedActivity:
-                    InitSliderValueChangedActivity();
-                    break;
                 case ActivityType.SocketActivity:
                     InitSocketActivity();
-                    break;
-                case ActivityType.InputFieldActivity:
-                    InitInputFieldActivity();
-                    break;
-                case ActivityType.DragLineActivity:
-                    InitDragLineActivity();
-                    break;
-                case ActivityType.DropdownActivity:
-                    InitDropdownActivity();
-                    break;
-                case ActivityType.AnchorActivity:
-                    InitAnchorActivity();
-                    break;
-                case ActivityType.WashingActivity:
-                    InitWashingActivity();
                     break;
             }
 
@@ -113,18 +77,6 @@ namespace BioEngineerLab.Tasks
             {
                 _taskProperty.IsOpenGate = EditorGUILayout.Toggle("Is Open Gate", _taskProperty.IsOpenGate);
             }
-        }
-
-        private void InitTaskChangeSyringePosFields()
-        {
-            _taskProperty.IsTaskChangeSyringePos = EditorGUILayout.Toggle("Is Task Change Syringe Pos", _taskProperty.IsTaskChangeSyringePos);
-            
-            if (!_taskProperty.IsTaskChangeSyringePos)
-            {
-                return;
-            }
-            
-            _taskProperty.SyringePos = (SyringeCupMove.SyringePos) EditorGUILayout.EnumPopup("Syringe Pos", _taskProperty.SyringePos);
         }
         
         private void InitTaskHintSpriteFields()
@@ -163,44 +115,6 @@ namespace BioEngineerLab.Tasks
             _taskProperty.SubstanceName = (SubstanceName) EditorGUILayout.EnumPopup("Reagents Name", _taskProperty.SubstanceName);
             _taskProperty.SubstanceWeight = EditorGUILayout.FloatField("Reagents Weight", _taskProperty.SubstanceWeight);
         }
-        
-        private void InitDragLineActivity()
-        {
-            if (_taskProperty.TaskActivity is DragLineActivity dragLineActivity)
-            {
-                _dragLineActivity = dragLineActivity;
-            }
-            
-            _dragLineActivity.DragLineType = (DragLineType) EditorGUILayout.EnumPopup("Drag Line Type", _dragLineActivity.DragLineType);
-            _dragLineActivity.YOffset = EditorGUILayout.DoubleField("Y Offset", _dragLineActivity.YOffset);
-            
-            _taskProperty.TaskActivity = _dragLineActivity;
-        }
-
-        private void InitInputFieldActivity()
-        {
-            if (_taskProperty.TaskActivity is InputFieldActivity inputFieldActivity)
-            {
-                _inputFieldActivity = inputFieldActivity;
-            }
-            
-            _inputFieldActivity.InputFieldType = (InputFieldType) EditorGUILayout.EnumPopup("Input Field Type", _inputFieldActivity.InputFieldType);
-            _inputFieldActivity.Value = EditorGUILayout.FloatField("Value", _inputFieldActivity.Value);
-            
-            _taskProperty.TaskActivity = _inputFieldActivity;
-        }
-        
-        private void InitWashingActivity()
-        {
-            if (_taskProperty.TaskActivity is WashingActivity washingActivity)
-            {
-                _washingActivity = washingActivity;
-            }
-            
-            _washingActivity.Container = (ContainerType) EditorGUILayout.EnumPopup("Container", _washingActivity.Container);
-            
-            _taskProperty.TaskActivity = _washingActivity;
-        }
 
         private void InitTransferActivity()
         {
@@ -230,31 +144,6 @@ namespace BioEngineerLab.Tasks
             _taskProperty.TaskActivity = _machineActivity;
         }
         
-        private void InitButtonClickedActivity()
-        {
-            if (_taskProperty.TaskActivity is ButtonClickedActivity buttonClickedActivity)
-            {
-                _buttonClickedActivity = buttonClickedActivity;
-            }
-
-            _buttonClickedActivity.ButtonType = (ButtonType)EditorGUILayout.EnumPopup("Button Type", _buttonClickedActivity.ButtonType);
-            
-            _taskProperty.TaskActivity = _buttonClickedActivity;
-        }
-
-        private void InitSliderValueChangedActivity()
-        {
-            if (_taskProperty.TaskActivity is SliderValueChangedActivity sliderValueChangedActivity)
-            {
-                _sliderValueChangedActivity = sliderValueChangedActivity;
-            }
-
-            _sliderValueChangedActivity.SliderType = (SliderType) EditorGUILayout.EnumPopup("Slider Type", _sliderValueChangedActivity.SliderType);
-            _sliderValueChangedActivity.Value = EditorGUILayout.FloatField("Value", _sliderValueChangedActivity.Value);
-            
-            _taskProperty.TaskActivity = _sliderValueChangedActivity;
-        }
-        
         private void InitSocketActivity()
         {
             if (_taskProperty.TaskActivity is SocketActivity socketActivity)
@@ -267,31 +156,7 @@ namespace BioEngineerLab.Tasks
             
             _taskProperty.TaskActivity = _socketActivity;
         }
-
-        private void InitDropdownActivity()
-        {
-            if (_taskProperty.TaskActivity is DropdownActivity dropdownActivity)
-            {
-                _dropdownActivity = dropdownActivity;
-            }
-
-            _dropdownActivity.DropdownType = (DropdownType) EditorGUILayout.EnumPopup("Dropdown Type", _dropdownActivity.DropdownType);
-            _dropdownActivity.Value = EditorGUILayout.IntField("Value", _dropdownActivity.Value);
-            
-            _taskProperty.TaskActivity = _dropdownActivity;
-        }
         
-        private void InitAnchorActivity()
-        {
-            if (_taskProperty.TaskActivity is AnchorActivity anchorActivity)
-            {
-                _anchorActivity = anchorActivity;
-            }
-
-            _anchorActivity.SubstanceName = (SubstanceName) EditorGUILayout.EnumPopup("Reagents Name", _anchorActivity.SubstanceName);
-            _taskProperty.TaskActivity = _anchorActivity;
-        }
-
         private void InitSerialisedButtons()
         {
             if (GUILayout.Button("Load"))

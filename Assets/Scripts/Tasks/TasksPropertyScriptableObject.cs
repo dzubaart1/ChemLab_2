@@ -46,7 +46,6 @@ namespace BioEngineerLab.Tasks
             TaskProperty.SubstanceWeight = taskProperty.SubstanceWeight;
             TaskProperty.ActivityType = taskProperty.ActivityType;
             TaskProperty.TaskActivity = taskProperty.TaskActivity;
-            TaskProperty.SyringePos = taskProperty.SyringePos;
             TaskProperty.IsTaskChangeSyringePos = taskProperty.IsTaskChangeSyringePos;
         }
 

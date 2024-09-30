@@ -29,10 +29,7 @@ namespace BioEngineerLab.Core
             AddService(new SubstancesService(GetConfiguration<SubstancesConfiguration>(), tasksService));
             AddService(new DropAnimationService(GetConfiguration<DropAnimationConfiguration>(), saveService));
             AddService(new InputService(GetConfiguration<InputConfiguration>()));
-            AddService(new UIService(GetConfiguration<UIConfiguration>()));
             AddService(new HandModelsService(GetConfiguration<HandModelConfiguration>()));
-            AddService(new MachinesService());
-            AddService(new UIComponentsService());
 
             foreach(var pair in _services)
             {

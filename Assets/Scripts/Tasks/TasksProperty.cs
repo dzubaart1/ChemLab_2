@@ -1,6 +1,5 @@
 ﻿using System;
 using BioEngineerLab.Activities;
-using BioEngineerLab.Gameplay;
 using BioEngineerLab.Substances;
 using UnityEngine;
 
@@ -18,7 +17,6 @@ namespace BioEngineerLab.Tasks
         public bool UnlockSyringe;
 
         public bool IsTaskChangeSyringePos;
-        public SyringeCupMove.SyringePos SyringePos;
 
         public bool ShouldChangeGateOpening;
         public bool IsOpenGate;
