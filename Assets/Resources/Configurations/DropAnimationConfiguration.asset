@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ff6f53bb64431f8fba276c9eeb4fdc, type: 3}
+  m_Name: DropAnimationConfiguration
+  m_EditorClassIdentifier: 
+  DropAnimationSubstances:
+  - SubstanceName: 0
+    HeaderSprites:
+    - {fileID: 21300000, guid: da6f260a0990f09498e2eee448e140f4, type: 3}
+    - {fileID: 21300000, guid: e0363bbe78a0e664aae8aa32801fa8eb, type: 3}
+    - {fileID: 21300000, guid: 6f45ed0f29c63eb459bc3df79867b820, type: 3}
+    - {fileID: 21300000, guid: d5f0bda9a6adaf744b3ef31bba05cd71, type: 3}
+    - {fileID: 21300000, guid: f9f11b0e94da4c040847304f2c7bac95, type: 3}
+    - {fileID: 21300000, guid: 3e0ad1ef0a656764b810da71758f7c17, type: 3}
+    - {fileID: 21300000, guid: 26fd23597b32a7f488ba0870a2b18a80, type: 3}
+    - {fileID: 21300000, guid: 63a66678f73b20940a237e9b865d270e, type: 3}
+    - {fileID: 21300000, guid: 0ea500aa9dada1347ac5bd45c4238928, type: 3}
+    SubstanceSprites:
+    - {fileID: 21300000, guid: 0c93d879cb40b0441ba102294794e8d0, type: 3}
+    - {fileID: 21300000, guid: 1aaa1d6cb9bed7e4aa6e12eebba550ab, type: 3}
+    - {fileID: 21300000, guid: 94ddda9ef2119ba4b925bc179763abee, type: 3}
+    - {fileID: 21300000, guid: 6bcfb7e1e835af948afd5b65e3f3ac6d, type: 3}
+    - {fileID: 21300000, guid: bd6418f1e4045de48bb37ad783dd2704, type: 3}
+    - {fileID: 21300000, guid: 78a065425d9dce74b92782eae7a75286, type: 3}
+    - {fileID: 21300000, guid: 38ab1ab97fa8d53419ca7a85f913ee3b, type: 3}
+    - {fileID: 21300000, guid: c144e7e28282c4743be2ef4bfc787688, type: 3}
+    - {fileID: 21300000, guid: cd8b9ee8a616f5345a0f049c8b61b82e, type: 3}
+    AnimationDuration: 0.1
+    AnimationName: Drop_of_water|IcosphereAction
+  - SubstanceName: 5
+    HeaderSprites:
+    - {fileID: 21300000, guid: 8c89014da0bb4874ea1229cb08c6ff35, type: 3}
+    - {fileID: 21300000, guid: 765b2eb4bbd37854ebbcc222d4403d09, type: 3}
+    - {fileID: 21300000, guid: a6103cb7e4a4941418ae9947f5a64566, type: 3}
+    - {fileID: 21300000, guid: c42c89efdf2d1a144b4055ad621c534a, type: 3}
+    - {fileID: 21300000, guid: 2e30f76159c5d4f4388b2fb0a6124c1c, type: 3}
+    - {fileID: 21300000, guid: 01e26acfd2e3d1445986651f8919aeb7, type: 3}
+    - {fileID: 21300000, guid: 0781bb483610d1648969f92395fc6709, type: 3}
+    - {fileID: 21300000, guid: 7b9bf8f1008b4aa4d86351651224610e, type: 3}
+    - {fileID: 21300000, guid: 6a735aca18196a14388033bef130860d, type: 3}
+    - {fileID: 21300000, guid: 0d13c37264ba978498acf1eb74f6dff1, type: 3}
+    - {fileID: 21300000, guid: da1bee2bcf06d6c44b0751a63f28e55d, type: 3}
+    - {fileID: 21300000, guid: e697cf23bcbc934428642fd4bb322722, type: 3}
+    - {fileID: 21300000, guid: bada046a5b4e65642b847f6f5b0592ca, type: 3}
+    - {fileID: 21300000, guid: baf19baf8dc8d474c9261f8758c725db, type: 3}
+    - {fileID: 21300000, guid: a3e172eb5ec8fca488ed1f47aa75b38f, type: 3}
+    - {fileID: 21300000, guid: 089f2f4f36398234aa512b5dc4f8882e, type: 3}
+    - {fileID: 21300000, guid: 081e5398adeaed64685d40cdb15bc4f2, type: 3}
+    - {fileID: 21300000, guid: 2086a30d6c183d540ade883c615c2d2d, type: 3}
+    - {fileID: 21300000, guid: 519f220d4df409b498cd3ec1ea862e7b, type: 3}
+    - {fileID: 21300000, guid: e3202aed1d0b2ac44968a05a27c30b15, type: 3}
+    - {fileID: 21300000, guid: aac916bd24f618849938a00d8981fdd5, type: 3}
+    - {fileID: 21300000, guid: 94b17f1a0c026644c87ebe27a3f66b57, type: 3}
+    - {fileID: 21300000, guid: 055669af9419aeb4c962a90a2cb0a6da, type: 3}
+    - {fileID: 21300000, guid: b65b03db467d2964eb2c43eb47ba2591, type: 3}
+    - {fileID: 21300000, guid: b36d0da7b91d22a4bae63d286b9b02e7, type: 3}
+    - {fileID: 21300000, guid: 14952cb4e0d420f43b54d6e985fd6225, type: 3}
+    - {fileID: 21300000, guid: 0e7c574766ae59f4da9dc8b80c9d5109, type: 3}
+    - {fileID: 21300000, guid: 30e9e269be95dff4580e9f69aa7736aa, type: 3}
+    - {fileID: 21300000, guid: c15c8e235b7013645890ac2c1d48567b, type: 3}
+    - {fileID: 21300000, guid: 1368d68fb48b83b4faff9475a572c859, type: 3}
+    - {fileID: 21300000, guid: d8489ba15d4e5be4a9679b25c9026bec, type: 3}
+    - {fileID: 21300000, guid: cd2cd110be7163945be7db8d20e10e91, type: 3}
+    - {fileID: 21300000, guid: 12e5ebaef0c00b649a770335d5381d78, type: 3}
+    - {fileID: 21300000, guid: 3e95677726c9a5e4c9cfeb59d9eefba3, type: 3}
+    - {fileID: 21300000, guid: 9ddb9ebe5a8969f44b12ab940c04e3b2, type: 3}
+    - {fileID: 21300000, guid: e82f669eb1f779d4bbf38955fc8098b0, type: 3}
+    - {fileID: 21300000, guid: df107bd269758d34bb9eb60bed971171, type: 3}
+    - {fileID: 21300000, guid: aed48463f848ede4d97a1f87649b70bf, type: 3}
+    - {fileID: 21300000, guid: c4b42419255e0e74fa141d1baa097fa9, type: 3}
+    - {fileID: 21300000, guid: e314f3e3cf4778346b0a4a4b2a0dab01, type: 3}
+    - {fileID: 21300000, guid: ff93a50d9166dde45bc31984ce66143d, type: 3}
+    - {fileID: 21300000, guid: a7dfb829e91908549a113b8920104dd4, type: 3}
+    - {fileID: 21300000, guid: d4f16a2d3b135e943925b33eb7e2dcbc, type: 3}
+    - {fileID: 21300000, guid: 41e5f135910124f45aef0fa324363e84, type: 3}
+    SubstanceSprites:
+    - {fileID: 21300000, guid: 0d64c5ffc768ec0489fdd5b161d60b99, type: 3}
+    - {fileID: 21300000, guid: ce3b79da7c96b0a4aa76189215859a8f, type: 3}
+    - {fileID: 21300000, guid: 2d39f9b07adaf05458e71cf9e0b5a7af, type: 3}
+    - {fileID: 21300000, guid: 8ae7505316daf4840a6d16edb3724bf3, type: 3}
+    - {fileID: 21300000, guid: 7bb212b5fada881478d0493ea303f0f6, type: 3}
+    - {fileID: 21300000, guid: 4a4d8b370f1fe8e4c8879c94356368df, type: 3}
+    - {fileID: 21300000, guid: 4811cc651d623224dad3e6e58762038e, type: 3}
+    - {fileID: 21300000, guid: 050b0c87adb41914c9cc1dd9c4fd383c, type: 3}
+    - {fileID: 21300000, guid: c4c4d6c7848b3744e8c3080e7c21a9af, type: 3}
+    - {fileID: 21300000, guid: 75194841e97bb8f4d9660b91dbfa2f43, type: 3}
+    - {fileID: 21300000, guid: 62ae7b490900fda4aab136eeb025b495, type: 3}
+    - {fileID: 21300000, guid: 2c31305c894e7a1499a393d28d8681a3, type: 3}
+    - {fileID: 21300000, guid: efd8f8d6bf865ed49b2ad7a45f31abf6, type: 3}
+    - {fileID: 21300000, guid: bb7b18141091dc74fa8558356ccad26e, type: 3}
+    - {fileID: 21300000, guid: fdc20130d7cc8ad429b523d4c05e8368, type: 3}
+    - {fileID: 21300000, guid: f5c2698fa508e1340932d7dac48340bd, type: 3}
+    - {fileID: 21300000, guid: e886caa9ac0b7ed499a55adae37eb40e, type: 3}
+    - {fileID: 21300000, guid: 0b65f087163a430469c4fd840c6cd39c, type: 3}
+    - {fileID: 21300000, guid: 0e6704069f1ff9649a63e59c556aff00, type: 3}
+    - {fileID: 21300000, guid: cef41d0a5e2166b49971ee50e52e07b7, type: 3}
+    - {fileID: 21300000, guid: 22cf08571f6942e428d053134178954e, type: 3}
+    - {fileID: 21300000, guid: ed44f8362b933144697dbc97fe876c44, type: 3}
+    - {fileID: 21300000, guid: 38e28db69541f47449e2341e316022d3, type: 3}
+    - {fileID: 21300000, guid: 5e7c193c8c90401459d81191981807ab, type: 3}
+    - {fileID: 21300000, guid: 9e538962e6ae4c045a8e6808dacab840, type: 3}
+    - {fileID: 21300000, guid: 5a021dcac4d6d4e4c84c302189a580d0, type: 3}
+    - {fileID: 21300000, guid: cef69e1949581dd41b8a60250c0bdfa8, type: 3}
+    - {fileID: 21300000, guid: 60a391acd1956e64994e25e8a105f530, type: 3}
+    - {fileID: 21300000, guid: d634bd503eb023a40a995dece278dd6d, type: 3}
+    - {fileID: 21300000, guid: 2e50e034b6a47cf4eb0c5900be5e4265, type: 3}
+    - {fileID: 21300000, guid: fda25d15112892446b6cedb427a9f68e, type: 3}
+    - {fileID: 21300000, guid: 0d09e90aeb635c9438c9d55f781719bc, type: 3}
+    - {fileID: 21300000, guid: d0c6f80a85ce2a34c86b18b553a44f94, type: 3}
+    - {fileID: 21300000, guid: b2cb40eed4c36074fa71a9a8429e4d46, type: 3}
+    - {fileID: 21300000, guid: 1b1136b6a3d2f794a843009be82105cb, type: 3}
+    - {fileID: 21300000, guid: 93ce4c461a47c314fb44f6be355fec65, type: 3}
+    - {fileID: 21300000, guid: 45eb31cd5acfa324eb6312834026c40d, type: 3}
+    - {fileID: 21300000, guid: 1e73fa90205db03428dc60f7abc1c5ae, type: 3}
+    - {fileID: 21300000, guid: 541257d1eba1caf4aa57539d879e1035, type: 3}
+    - {fileID: 21300000, guid: eb96a7b97b38d8f4ebc4fe636186b33b, type: 3}
+    - {fileID: 21300000, guid: e1a811c8433e37e43a4e20dcbf6c4da8, type: 3}
+    - {fileID: 21300000, guid: ffe6078282f8c7f44a3c0a40c801b12c, type: 3}
+    AnimationDuration: 0.1
+    AnimationName: Drop_of_water|IcosphereAction

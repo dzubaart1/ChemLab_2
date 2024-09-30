@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93e32581165c4998861bff35dd90a908, type: 3}
+  m_Name: Task_68
+  m_EditorClassIdentifier: 
+  TaskProperty:
+    Number: 68
+    Title: "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 67"
+    Description: "\u041F\u043E\u0434\u043D\u0438\u043C\u0438\u0442\u0435 \u0444\u0438\u043A\u0441\u0430\u0442\u043E\u0440,
+      \u043D\u0430\u0445\u043E\u0434\u044F\u0449\u0438\u0439\u0441\u044F \u043D\u0430
+      \u043F\u043E\u0440\u0448\u043D\u0435 \u0448\u043F\u0440\u0438\u0446\u0430 \u043D\u0430\u0432\u0435\u0440\u0445. "
+    Warning: 
+    SaveableTask: 0
+    UnlockSyringe: 0
+    IsTaskChangeSyringePos: 1
+    SyringePos: 0
+    ShouldChangeGateOpening: 0
+    IsOpenGate: 0
+    IsTaskChangeSprite: 0
+    SpriteName: 
+    HasHintSprite: 1
+    HintSpriteName: 43
+    IsSubstanceAdding: 0
+    SubstanceName: 0
+    SubstanceWeight: 0
+    ActivityType: 1

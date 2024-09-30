@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dd49d952e6c01740b700152531c4132, type: 3}
+  m_Name: SubstancesConfiguration
+  m_EditorClassIdentifier: 
+  BadSubstance: {fileID: 11400000, guid: 714c3acea6af89e458cc6c1754178956, type: 2}
+  SubstanceProperties:
+  - {fileID: 11400000, guid: 1f85e7275e3313f42984717541256555, type: 2}
+  - {fileID: 11400000, guid: c6bef7bff3cb7a44f9a5c34c5bf7f1bb, type: 2}
+  - {fileID: 11400000, guid: dbebb3bbacffc60498032b892cf136bf, type: 2}
+  - {fileID: 11400000, guid: b94e0b313d1756848a8fac4057b188d0, type: 2}
+  - {fileID: 11400000, guid: 0d732f1e25aa8df4aab4aaa3867a0def, type: 2}
