@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using BioEngineerLab.Configurations;
+﻿using BioEngineerLab.Configurations;
 
 namespace BioEngineerLab.Core
 {
@@ -12,9 +11,8 @@ namespace BioEngineerLab.Core
             Configuration = configuration;
         }
 
-        public Task Initialize()
+        public void Initialize()
         {
-            return Task.CompletedTask;
         }
 
         public void Destroy()

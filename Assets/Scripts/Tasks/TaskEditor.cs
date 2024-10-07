@@ -1,8 +1,6 @@
 ﻿using BioEngineerLab.Activities;
-using BioEngineerLab.Containers;
 using BioEngineerLab.Core;
-using BioEngineerLab.Gameplay;
-using BioEngineerLab.Substances;
+using BioEngineerLab.Tasks.SideEffects;
 using UnityEditor;
 using UnityEngine;
 
@@ -15,17 +13,9 @@ namespace BioEngineerLab.Tasks
         private TasksPropertyScriptableObject _taskPropertyScriptableObject;
         private TaskProperty _taskProperty;
         private SerializedObject _serializedObject;
-
-        private TransferActivity _transferActivity;
-        private MachineActivity _machineActivity;
-        private SocketActivity _socketActivity;
         
         private void OnEnable()
         {
-            _transferActivity = new TransferActivity();
-            _machineActivity = new MachineActivity();
-            _socketActivity = new SocketActivity();
-            
             _taskPropertyScriptableObject = (TasksPropertyScriptableObject)target;
             _taskProperty = _taskPropertyScriptableObject.TaskProperty;
             _serializedObject = new SerializedObject(target);
@@ -36,31 +26,71 @@ namespace BioEngineerLab.Tasks
             _serializedObject.Update();
 
             InitTaskInfoFields();
-            InitSubstanceAddingFields();
-            InitTaskChangeSpriteFields();
-            InitTaskHintSpriteFields();
 
             EditorGUILayout.Space();
-            EditorGUILayout.LabelField("Activity Fields", EditorStyles.boldLabel);
-            _taskProperty.ActivityType = (ActivityType)EditorGUILayout.EnumPopup("Activity Type", _taskProperty.ActivityType);
-
-            switch (_taskProperty.ActivityType)
+            EditorGUILayout.LabelField("Activity", EditorStyles.boldLabel);
+            
+            EActivity activityType = (EActivity)EditorGUILayout.EnumPopup("Activity Type", _taskProperty.ActivityConfig.ActivityType);
+            if (activityType != _taskProperty.ActivityConfig.ActivityType)
             {
-                case ActivityType.TransferActivity:
-                    InitTransferActivity();
-                    break;
-                case ActivityType.MachineActivity:
-                    InitMachineActivity();
-                    break;
-                case ActivityType.SocketActivity:
-                    InitSocketActivity();
-                    break;
+                _taskProperty.ActivityConfig.ActivityType = activityType;
+                InitActivityByType(_taskProperty.ActivityConfig.ActivityType);   
             }
+            
+            EditorGUILayout.Space();
+            EditorGUILayout.LabelField("Side Effects", EditorStyles.boldLabel);
 
+            for (int i = 0 ; i < _taskProperty.SideEffectConfigs.Length; i++)
+            {
+                ESideEffect eSideEffect = (ESideEffect)EditorGUILayout.EnumPopup("Side Effect Type", _taskProperty.SideEffectConfigs[i].SideEffectType);
+                if (eSideEffect != _taskProperty.SideEffectConfigs[i].SideEffectType)
+                {
+                    _taskProperty.SideEffectConfigs[i].SideEffectType = eSideEffect;
+                    InitSideEffectByType(_taskProperty.SideEffectConfigs[i].SideEffectType, i);   
+                }
+                
+                _taskProperty.SideEffectConfigs[i].SideEffect.ShowInEditor();
+            }
+            
             InitSerialisedButtons();
 
             _serializedObject.ApplyModifiedProperties();
             EditorUtility.SetDirty(_taskPropertyScriptableObject);
+        }
+
+        private void InitSideEffectByType(ESideEffect eSideEffect, int effectID)
+        {
+            switch (eSideEffect)
+            {
+                case ESideEffect.Effect1:
+                    _taskProperty.SideEffectConfigs[effectID].SideEffect = new Effect1();
+                    break;
+                case ESideEffect.Effect2:
+                    _taskProperty.SideEffectConfigs[effectID].SideEffect = new Effect2();
+                    break;
+                default:
+                    Debug.LogError("Can't find Side effect!");
+                    break;
+            }
+        }
+
+        private void InitActivityByType(EActivity eActivity)
+        {
+            switch (eActivity)
+            {
+                case EActivity.TransferActivity:
+                    _taskProperty.ActivityConfig.Activity = new TransferActivity();
+                    break;
+                case EActivity.MachineActivity:
+                    _taskProperty.ActivityConfig.Activity = new MachineActivity();
+                    break;
+                case EActivity.SocketActivity:
+                    _taskProperty.ActivityConfig.Activity = new SocketActivity();
+                    break;
+                default:
+                    Debug.LogError("Can't find action!");
+                    break;
+            }
         }
 
         private void InitTaskInfoFields()
@@ -70,95 +100,25 @@ namespace BioEngineerLab.Tasks
             _taskProperty.Description = EditorGUILayout.TextField("Description", _taskProperty.Description);
             _taskProperty.Warning = EditorGUILayout.TextField("Warning", _taskProperty.Warning);
             _taskProperty.SaveableTask = EditorGUILayout.Toggle("Saveable Task", _taskProperty.SaveableTask);
-            _taskProperty.UnlockSyringe = EditorGUILayout.Toggle("Unlock Syringe", _taskProperty.UnlockSyringe);
-            _taskProperty.ShouldChangeGateOpening = EditorGUILayout.Toggle("Should Change Gate Opening", _taskProperty.ShouldChangeGateOpening);
-            
-            if (_taskProperty.ShouldChangeGateOpening)
-            {
-                _taskProperty.IsOpenGate = EditorGUILayout.Toggle("Is Open Gate", _taskProperty.IsOpenGate);
-            }
-        }
-        
-        private void InitTaskHintSpriteFields()
-        {
-            _taskProperty.HasHintSprite = EditorGUILayout.Toggle("Has Hint Sprite", _taskProperty.HasHintSprite);
-            
-            if (!_taskProperty.HasHintSprite)
-            {
-                return;
-            }
-            
-            _taskProperty.HintSpriteName = EditorGUILayout.TextField("Hint Sprite Name", _taskProperty.HintSpriteName);
-        }
-
-        private void InitTaskChangeSpriteFields()
-        {
-            _taskProperty.IsTaskChangeSprite = EditorGUILayout.Toggle("Is Task Change Sprite", _taskProperty.IsTaskChangeSprite);
-            
-            if (!_taskProperty.IsTaskChangeSprite)
-            {
-                return;
-            }
-            
-            _taskProperty.SpriteName = EditorGUILayout.TextField("Sprite Name", _taskProperty.SpriteName);
-        }
-
-        private void InitSubstanceAddingFields()
-        {
-            _taskProperty.IsSubstanceAdding = EditorGUILayout.Toggle("Is Substance Adding", _taskProperty.IsSubstanceAdding);
-
-            if (!_taskProperty.IsSubstanceAdding)
-            {
-                return;
-            }
-            
-            _taskProperty.SubstanceName = (SubstanceName) EditorGUILayout.EnumPopup("Reagents Name", _taskProperty.SubstanceName);
-            _taskProperty.SubstanceWeight = EditorGUILayout.FloatField("Reagents Weight", _taskProperty.SubstanceWeight);
-        }
-
-        private void InitTransferActivity()
-        {
-            if (_taskProperty.TaskActivity is TransferActivity transferActivity)
-            {
-                _transferActivity = transferActivity;
-            }
-
-            _transferActivity.FromContainer = (ContainerType)EditorGUILayout.EnumPopup("From Container Type", _transferActivity.FromContainer);
-            _transferActivity.ToContainer = (ContainerType)EditorGUILayout.EnumPopup("To Container Type", _transferActivity.ToContainer);
-            _transferActivity.TransferSubstanceName = (SubstanceName)EditorGUILayout.EnumPopup("Transfer Substance Name", _transferActivity.TransferSubstanceName);
-            _transferActivity.TransferSubstanceMode = (SubstanceMode)EditorGUILayout.EnumPopup("Transfer Substance Mode", _transferActivity.TransferSubstanceMode);
-
-            _taskProperty.TaskActivity = _transferActivity;
-        }
-
-        private void InitMachineActivity()
-        {
-            if (_taskProperty.TaskActivity is MachineActivity machineActivity)
-            {
-                _machineActivity = machineActivity;
-            }
-
-            _machineActivity.MachineActivityType = (MachineActivityType)EditorGUILayout.EnumPopup("Machine Activity Type", _machineActivity.MachineActivityType);
-            _machineActivity.MachineType = (MachineType)EditorGUILayout.EnumPopup("Machine Type", _machineActivity.MachineType);
-                    
-            _taskProperty.TaskActivity = _machineActivity;
-        }
-        
-        private void InitSocketActivity()
-        {
-            if (_taskProperty.TaskActivity is SocketActivity socketActivity)
-            {
-                _socketActivity = socketActivity;
-            }
-
-            _socketActivity.SocketType = (SocketType) EditorGUILayout.EnumPopup("Socket Type", _socketActivity.SocketType);
-            _socketActivity.SocketActivityType = (SocketActivityType) EditorGUILayout.EnumPopup("Socket Activity Type", _socketActivity.SocketActivityType);
-            
-            _taskProperty.TaskActivity = _socketActivity;
         }
         
         private void InitSerialisedButtons()
         {
+            if (GUILayout.Button("Add Side Effect"))
+            {
+                SideEffectConfig[] sideEffectConfigs = new SideEffectConfig[_taskProperty.SideEffectConfigs.Length + 1];
+
+                int i;
+                for(i = 0; i < _taskProperty.SideEffectConfigs.Length; i++)
+                {
+                    sideEffectConfigs[i] = _taskProperty.SideEffectConfigs[i];
+                }
+
+                sideEffectConfigs[i] = new SideEffectConfig();
+
+                _taskProperty.SideEffectConfigs = sideEffectConfigs;
+            }
+            
             if (GUILayout.Button("Load"))
             {
                 _taskPropertyScriptableObject.Load();

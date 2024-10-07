@@ -24,7 +24,7 @@ namespace BioEngineerLab.Core
             
             AddService(saveService);
             AddService(tasksService);
-            AddService(new SubstancesService(GetConfiguration<SubstancesConfiguration>(), tasksService));
+            AddService(new CraftService(GetConfiguration<CraftConfiguration>(), tasksService));
             AddService(new InputService(GetConfiguration<InputConfiguration>()));
             AddService(new HandModelsService(GetConfiguration<HandModelConfiguration>()));
 

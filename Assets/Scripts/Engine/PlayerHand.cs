@@ -1,4 +1,3 @@
-using System;
 using BioEngineerLab.Configurations;
 using BioEngineerLab.Core;
 using BioEngineerLab.Gameplay;
@@ -6,6 +5,9 @@ using UnityEngine;
 
 public class PlayerHand : MonoBehaviour, ISaveable
 {
+    [SerializeField] private PlayerHandType _handType;
+    [SerializeField] private SkinnedMeshRenderer _skinnedMeshRenderer;
+    
     private struct SavedData
     {
         public Material HandMaterial;
@@ -19,13 +21,10 @@ public class PlayerHand : MonoBehaviour, ISaveable
     
     public PlayerHandType HandType { get; private set; }
 
-    [SerializeField] private PlayerHandType _handType;
-    [SerializeField] private SkinnedMeshRenderer _skinnedMeshRenderer;
-
     private HandModelsService _modelsService;
     private SaveService _saveService;
 
-    private SavedData _savedData;
+    private SavedData _savedData = new SavedData();
     
     private void Awake()
     {
@@ -35,8 +34,6 @@ public class PlayerHand : MonoBehaviour, ISaveable
         _saveService.SaveSceneStateEvent += OnSaveScene;
 
         HandType = _handType;
-
-        _savedData = new SavedData();
     }
 
     private void Start()

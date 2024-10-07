@@ -1,21 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using BioEngineerLab.Core;
+﻿using BioEngineerLab.Core;
 using BioEngineerLab.Gameplay;
 using BioEngineerLab.Substances;
 using UnityEngine;
 
 namespace BioEngineerLab.Containers
 {
+    [RequireComponent(typeof(Container))]
     public class ContainerSave : MonoBehaviour, ISaveable
     {
         private struct SavedData
         {
-            public List<Substance> Substances;
+            public Substance[] Substances;
         }
         
         private Container _container;
-        private SavedData _savedData;
+        private SavedData _savedData = new SavedData();
 
         private SaveService _saveService;
         
@@ -26,8 +25,6 @@ namespace BioEngineerLab.Containers
             _saveService = Engine.GetService<SaveService>();
             _saveService.SaveSceneStateEvent += OnSaveScene;
             _saveService.LoadSceneStateEvent += OnLoadScene;
-
-            _savedData = new SavedData();
         }
 
         private void Start()
@@ -43,17 +40,17 @@ namespace BioEngineerLab.Containers
 
         public void OnSaveScene()
         {
-            _savedData.Substances = new List<Substance>(_container.SubstancesList.Count);
+            _savedData.Substances = new Substance[_container.Substances.Count];
             
-            foreach (var substance in _container.SubstancesList)
+            for(int i = 0; i < _container.Substances.Count; i++)
             {
-                _savedData.Substances.Add(new Substance(substance));
+                _savedData.Substances[i] = new Substance(_container.GetSubstanceByLayer((ESubstanceLayer)i));
             }
         }
 
         public void OnLoadScene()
         {
-            _container.UpdateSubstancesList(_savedData.Substances);
+            _container.UpdateSubstances(_savedData.Substances);
         }
     }
 }

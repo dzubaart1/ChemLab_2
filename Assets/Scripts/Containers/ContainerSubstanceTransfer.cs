@@ -6,75 +6,79 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 namespace BioEngineerLab.Containers
 {
-    [RequireComponent(typeof(Collider), typeof(VRGrabInteractable))]
+    [RequireComponent(typeof(Collider), typeof(VRGrabInteractable), typeof(ContainerCupSocket))]
     public class ContainerSubstanceTransfer : MonoBehaviour
     {
-        [SerializeField] private VRSocketInteractor _cupSocket;
-        
-        public Container Container { get; private set; }
-        
         private const float DELAY_TRIGGERED = 0.5f;
         
+        private CraftService _craftService;
+        
         private XRGrabInteractable _xrGrabInteractable;
-
-        private SubstancesService _substancesService;
-
-        private bool _isActivated;
+        private Container _container;
+        private ContainerCupSocket _containerCupSocket;
+        
+        private bool _isAlreadyTriggered;
         
         private void Awake()
         {
             _xrGrabInteractable = GetComponent<XRGrabInteractable>();
-            Container = GetComponent<Container>();
+            _container = GetComponent<Container>();
+            _containerCupSocket = GetComponent<ContainerCupSocket>();
 
-            _substancesService = Engine.GetService<SubstancesService>();
+            _craftService = Engine.GetService<CraftService>();
         }
 
         private void OnTriggerStay(Collider other)
         {
-            var targetContainer = other.GetComponent<ContainerSubstanceTransfer>();
-            if(targetContainer is null || _xrGrabInteractable.interactorsSelecting.Count == 0)
+            if (_xrGrabInteractable.interactorsSelecting.Count == 0)
             {
-                //UnityEngine.Debug.Log("OnTriggerhere2");
                 return;
             }
-
-            if (_cupSocket != null && _cupSocket.firstInteractableSelected != null)
+            if (_containerCupSocket.IsClosed())
             {
                 return;
             }
             
-            if (targetContainer._cupSocket != null && targetContainer._cupSocket.firstInteractableSelected != null)
+            ContainerSubstanceTransfer targetContainer = other.GetComponent<ContainerSubstanceTransfer>();
+            if(targetContainer is null)
             {
                 return;
             }
 
-            var interactor = _xrGrabInteractable.interactorsSelecting[0];
+            ContainerCupSocket targetContainerCup = other.GetComponent<ContainerCupSocket>();
+            if(targetContainerCup is null)
+            {
+                return;
+            }
+
+            if (targetContainerCup.IsClosed())
+            {
+                return;
+            }
+
+            IXRSelectInteractor interactor = _xrGrabInteractable.interactorsSelecting[0];
             if(interactor is null)
             {
-                //UnityEngine.Debug.Log("OnTriggerhere3");
                 return;
             }
 
-            var controller = interactor.transform.GetComponent<ActionBasedController>();
+            ActionBasedController controller = interactor.transform.GetComponent<ActionBasedController>();
             if(controller is null)
             {
-                //UnityEngine.Debug.Log("OnTriggerhere4");
                 return;
             }
 
-            if (!_isActivated & controller.activateAction.action.triggered)
+            if (!_isAlreadyTriggered & controller.activateAction.action.triggered)
             {
-                //UnityEngine.Debug.Log("OnTriggerhere5");
-                _substancesService.Transfer(Container, targetContainer.Container);
                 StartCoroutine(StartDelayBetweenActivated());
             }
         }
 
         private IEnumerator StartDelayBetweenActivated()
         {
-            _isActivated = true;
+            _isAlreadyTriggered = true;
             yield return new WaitForSeconds(DELAY_TRIGGERED);
-            _isActivated = false;
+            _isAlreadyTriggered = false;
         }
     }
 }

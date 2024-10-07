@@ -1,38 +1,35 @@
 ﻿using BioEngineerLab.Activities;
 using BioEngineerLab.Core;
 using BioEngineerLab.Gameplay;
-using BioEngineerLab.Substances;
 using UnityEngine;
 
 namespace BioEngineerLab.Containers
 {
+    [RequireComponent(typeof(Container))]
     public class AnchorContainer : MonoBehaviour, ISaveable
     {
-        [SerializeField] private Container _container;
-        
         private struct SavedData
         {
             public Anchor Anchor;
         }
         
-        public Anchor Anchor { get; private set; }
-
-        private SavedData _savedData;
-        
         private SaveService _saveService;
         private TasksService _tasksService;
 
-        private bool _loadPut;
+        private Anchor _anchor;
+        private SavedData _savedData = new SavedData();
+        private Container _container;
+        private bool _isTaskSendable;
 
         private void Awake()
         {
+            _container = GetComponent<Container>();
+            
             _saveService = Engine.GetService<SaveService>();
             _saveService.LoadSceneStateEvent += OnLoadScene;
             _saveService.SaveSceneStateEvent += OnSaveScene;
 
             _tasksService = Engine.GetService<TasksService>();
-
-            _savedData = new SavedData();
         }
 
         private void Start()
@@ -42,65 +39,59 @@ namespace BioEngineerLab.Containers
 
         public void OnSaveScene()
         {
-            _savedData.Anchor = Anchor;
+            _savedData.Anchor = _anchor;
         }
 
         public void OnLoadScene()
         {
-            _loadPut = true;
+            _isTaskSendable = true;
 
-            if (Anchor != null)
+            if (_anchor != null)
             {
                 ReleaseAnchor();
             }
 
             if (_savedData.Anchor != null)
             {
-                Anchor = _savedData.Anchor;
-                PutAnchor(Anchor);
+                _anchor = _savedData.Anchor;
+                PutAnchor(_anchor);
             }
-            
-            _loadPut = false;
+
+            _isTaskSendable = false;
         }
 
         public void PutAnchor(Anchor anchor)
         {
-            if (Anchor != null)
+            if (_anchor != null)
             {
                 return;
             }
             
-            Anchor = anchor;
-            Anchor.Rigidbody.isKinematic = true;
-            Anchor.Collider.enabled = false;
-            Anchor.transform.parent = transform;
-            Anchor.transform.localPosition = new Vector3(0, 0.01f, 0);
-            Anchor.transform.rotation = Quaternion.identity;
+            _anchor = anchor;
+            _anchor.TogglePhysics(false);
+            _anchor.transform.parent = transform;
+            _anchor.transform.localPosition = new Vector3(0, 0.01f, 0);
+            _anchor.transform.rotation = Quaternion.identity;
 
-            if (_loadPut)
+            if (_isTaskSendable)
             {
                 return;
             }
-
-            SubstanceName substanceName = _container.PeekLastSubstance() == null
-                ? SubstanceName.Empty
-                : _container.PeekLastSubstance().SubstanceProperty.SubstanceName;
             
-            _tasksService.TryCompleteTask(new AnchorActivity(substanceName));
+            _tasksService.TryCompleteTask(new AnchorActivity(_container.ContainerType));
         }
 
         private void ReleaseAnchor()
         {
-            if (Anchor == null)
+            if (_anchor == null)
             {
                 return;
             }
             
-            Anchor.transform.parent = null;
-            Anchor.Rigidbody.isKinematic = false;
-            Anchor.Collider.enabled = true;
+            _anchor.transform.parent = null;
+            _anchor.TogglePhysics(true);
             
-            Anchor = null;
+            _anchor = null;
         }
     }
 }

@@ -4,21 +4,18 @@ using UnityEngine;
 namespace BioEngineerLab.Gameplay
 {
     [RequireComponent(typeof(Animator), typeof(VRGrabInteractable), typeof(Rigidbody))]
+    [RequireComponent(typeof(Collider))]
     public class Anchor : MonoBehaviour
     {
-        [SerializeField] private Collider _collider;
-        
-        public Collider Collider { get; private set; }
-        public Rigidbody Rigidbody { get; private set; }
-
         private Animator _animator;
         private VRGrabInteractable _grabInteractable;
+        private Collider _collider;
+        private Rigidbody _rigidbody;
         
         private void Awake()
         {
-            Collider = _collider;
-                
-            Rigidbody = GetComponent<Rigidbody>();
+            _collider = GetComponent<Collider>();
+            _rigidbody = GetComponent<Rigidbody>();
             _grabInteractable = GetComponent<VRGrabInteractable>();
             _animator = GetComponent<Animator>();
         }
@@ -33,6 +30,12 @@ namespace BioEngineerLab.Gameplay
             }
             
             anchorContainer.PutAnchor(this);
+        }
+
+        public void TogglePhysics(bool isOn)
+        {
+            _rigidbody.isKinematic = !isOn;
+            _collider.enabled = isOn;
         }
 
         public void ToggleAnimate(bool isEnable)

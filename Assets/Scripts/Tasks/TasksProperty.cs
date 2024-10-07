@@ -1,7 +1,6 @@
 ﻿using System;
 using BioEngineerLab.Activities;
-using BioEngineerLab.Substances;
-using UnityEngine;
+using BioEngineerLab.Tasks.SideEffects;
 
 namespace BioEngineerLab.Tasks
 {
@@ -13,29 +12,21 @@ namespace BioEngineerLab.Tasks
         public string Description;
         public string Warning;
         public bool SaveableTask;
-
-        public bool UnlockSyringe;
-
-        public bool IsTaskChangeSyringePos;
-
-        public bool ShouldChangeGateOpening;
-        public bool IsOpenGate;
-
-        public bool IsTaskChangeSprite;
-        public string SpriteName;
-        [NonSerialized]
-        public Sprite Sprite;
         
-        public bool HasHintSprite;
-        public string HintSpriteName;
-        [NonSerialized]
-        public Sprite HintSprite;
+        public ActivityConfig ActivityConfig = new ActivityConfig();
         
-        public bool IsSubstanceAdding;
-        public SubstanceName SubstanceName;
-        public float SubstanceWeight;
-        
-        public ActivityType ActivityType;
-        public Activity TaskActivity;
+        public SideEffectConfig[] SideEffectConfigs = Array.Empty<SideEffectConfig>();
+    }
+
+    public class ActivityConfig
+    {
+        public EActivity ActivityType;
+        public Activity Activity = new AnchorActivity();
+    }
+
+    public class SideEffectConfig
+    {
+        public ESideEffect SideEffectType;
+        public SideEffect SideEffect = new Effect1();
     }
 }

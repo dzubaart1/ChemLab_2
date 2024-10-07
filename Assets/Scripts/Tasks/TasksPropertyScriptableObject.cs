@@ -34,19 +34,8 @@ namespace BioEngineerLab.Tasks
             TaskProperty.Description = taskProperty.Description;
             TaskProperty.Warning = taskProperty.Warning;
             TaskProperty.SaveableTask = taskProperty.SaveableTask;
-            TaskProperty.UnlockSyringe = taskProperty.UnlockSyringe;
-            TaskProperty.ShouldChangeGateOpening = taskProperty.ShouldChangeGateOpening;
-            TaskProperty.IsOpenGate = taskProperty.IsOpenGate;
-            TaskProperty.IsTaskChangeSprite = taskProperty.IsTaskChangeSprite;
-            TaskProperty.SpriteName = taskProperty.SpriteName;
-            TaskProperty.HasHintSprite = taskProperty.HasHintSprite;
-            TaskProperty.HintSpriteName = taskProperty.HintSpriteName;
-            TaskProperty.IsSubstanceAdding = taskProperty.IsSubstanceAdding;
-            TaskProperty.SubstanceName = taskProperty.SubstanceName;
-            TaskProperty.SubstanceWeight = taskProperty.SubstanceWeight;
-            TaskProperty.ActivityType = taskProperty.ActivityType;
-            TaskProperty.TaskActivity = taskProperty.TaskActivity;
-            TaskProperty.IsTaskChangeSyringePos = taskProperty.IsTaskChangeSyringePos;
+            TaskProperty.ActivityConfig = taskProperty.ActivityConfig;
+            TaskProperty.SideEffectConfigs = taskProperty.SideEffectConfigs;
         }
 
         private string FilePath()

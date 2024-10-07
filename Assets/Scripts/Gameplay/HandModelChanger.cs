@@ -23,7 +23,7 @@ namespace BioEngineerLab.Gameplay
         private TasksService _tasksService;
         
         private VRGrabInteractable _vrGrabInteractable;
-        private SavedData _savedData;
+        private SavedData _savedData = new SavedData();
         
         private void Awake()
         {
@@ -35,8 +35,6 @@ namespace BioEngineerLab.Gameplay
 
             _vrGrabInteractable = GetComponent<VRGrabInteractable>();
             _vrGrabInteractable.selectEntered.AddListener(OnSelectEntered);
-
-            _savedData = new SavedData();
         }
 
         private void Start()
