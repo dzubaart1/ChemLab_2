@@ -73,12 +73,7 @@ namespace BioEngineerLab.Core
         
         public void TryCompleteTask(Activity activity)
         {
-            if (_currentTaskId == (_tasksList.Count - 1))
-            {
-                return;
-            }
-            
-            bool isTaskCompleted = activity.CompleteActivity(_tasksList[_currentTaskId].ActivityConfig.Activity);
+            bool isTaskCompleted = _tasksList[_currentTaskId].ActivityConfig.Activity.CompleteActivity(activity);
             if (isTaskCompleted)
             {
                 MoveToNextTask();

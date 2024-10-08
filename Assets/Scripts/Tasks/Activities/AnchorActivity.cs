@@ -5,17 +5,17 @@ namespace BioEngineerLab.Activities
 {
     public class AnchorActivity : Activity
     {
-        private EContainer _eContainer;
+        private EContainer _containerType;
         
-        public AnchorActivity(EContainer eContainer = EContainer.KuvetkaContainer)
+        public AnchorActivity(EContainer containerType = EContainer.KuvetkaContainer)
             : base(EActivity.AnchorActivity)
         {
-            _eContainer = eContainer;
+            _containerType = containerType;
         }
         
         public override void ShowInEditor()
         {
-            _eContainer = (EContainer)EditorGUILayout.EnumPopup("Container Type", _eContainer);
+            _containerType = (EContainer)EditorGUILayout.EnumPopup("Container Type", _containerType);
         }
 
         public override bool CompleteActivity(Activity activity)
@@ -25,7 +25,7 @@ namespace BioEngineerLab.Activities
                 return false;
             }
 
-            return _eContainer == anchorActivity._eContainer;
+            return _containerType == anchorActivity._containerType;
         }
     }
 }

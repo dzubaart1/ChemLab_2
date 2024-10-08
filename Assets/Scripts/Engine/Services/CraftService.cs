@@ -25,7 +25,7 @@ namespace BioEngineerLab.Core
         
         public void Transfer(Container fromContainer, Container toContainer)
         {
-            Debug.Log("FROM");
+            /*Debug.Log("FROM");
             fromContainer.PrintContainerInfo();
             Debug.Log("TO");
             toContainer.PrintContainerInfo();
@@ -63,12 +63,12 @@ namespace BioEngineerLab.Core
             }
 
             Add(fromContainer, toContainer);
-            SendTransferTask(fromContainer, toContainer);
+            SendTransferTask(fromContainer, toContainer);*/
         }
 
         public void HeatStir(Container container)
         {
-            if(container.SubstancesList.Count == 0)
+            /*if(container.SubstancesList.Count == 0)
             {
                 return;
             }
@@ -89,7 +89,7 @@ namespace BioEngineerLab.Core
                 return;
             }
 
-            GenerateSubSubstanceToContainer(heatingSubstance.Weight, resSubstanceProperty, container);
+            GenerateSubSubstanceToContainer(heatingSubstance.Weight, resSubstanceProperty, container);*/
         }
 
         private bool TryFindCraftBySubstances(IReadOnlyCollection<Substance> substances, ECraft eCraft, out CraftConfig craftConfig)
@@ -110,7 +110,7 @@ namespace BioEngineerLab.Core
 
         public void Dry(Container container)
         {
-            if (container.SubstancesList.Count == 0)
+            /*if (container.SubstancesList.Count == 0)
             {
                 return;
             }
@@ -126,12 +126,12 @@ namespace BioEngineerLab.Core
                 return;
             }
 
-            GenerateSubSubstanceToContainer(dryingSubstance.Weight, resSubstanceProperty, container);
+            GenerateSubSubstanceToContainer(dryingSubstance.Weight, resSubstanceProperty, container);*/
         }
 
         public void Split(Container container)
         {
-            if (container.SubstancesList.Count == 0)
+            /*if (container.SubstancesList.Count == 0)
             {
                 return;
             }
@@ -140,12 +140,12 @@ namespace BioEngineerLab.Core
 
             var resSubstanceProperty = FindSubstancePropertyByMode(splitingSubstance.SubstanceProperty.SubstanceName, ESubstanceMode.Split);
 
-            GenerateSubSubstanceToContainer(splitingSubstance.Weight, resSubstanceProperty, container);
+            GenerateSubSubstanceToContainer(splitingSubstance.Weight, resSubstanceProperty, container);*/
         }
         
         private void Add(Container fromContainer, Container toContainer)
         {
-            var transferSubstance = fromContainer.RemoveLastSubstance();
+            /*var transferSubstance = fromContainer.RemoveLastSubstance();
             var transferWeight = Math.Min(toContainer.GetAvailableWeight(), transferSubstance.Weight);
 
             var toContainerSubstance = new Substance(transferSubstance.SubstanceProperty, transferWeight);
@@ -155,12 +155,12 @@ namespace BioEngineerLab.Core
             {
                 var fromContainerSubstance = new Substance(transferSubstance.SubstanceProperty, transferSubstance.Weight - transferWeight);
                 fromContainer.AddSubstance(fromContainerSubstance);
-            }
+            }*/
         }
 
         private void Mix(Container fromContainer, Container toContainer)
         {
-            Debug.Log("MIX ENTER");
+            /*Debug.Log("MIX ENTER");
             Debug.Log("FROM");
             fromContainer.PrintContainerInfo();
             Debug.Log("TO");
@@ -192,7 +192,7 @@ namespace BioEngineerLab.Core
             {
                 fromContainerSubstance.RemoveWeight(transferWeight);
                 fromContainer.AddSubstance(fromContainerSubstance);
-            }
+            }*/
         }
 
         private SubstanceProperty FindSubstancePropertyByMode(ESubstanceName name, ESubstanceMode mode)
@@ -211,7 +211,7 @@ namespace BioEngineerLab.Core
 
         private SubstanceProperty FindMixSubstanceProperty(SubstanceProperty sub1, SubstanceProperty sub2)
         {
-            bool isSub1Find = false;
+            /*bool isSub1Find = false;
             bool IsSub2Find = false;
             foreach (var substanceProperty in Configuration.SubstanceProperties)
             {
@@ -241,12 +241,13 @@ namespace BioEngineerLab.Core
                 }
             }
 
-            return Configuration.BadSubstance;
+            return Configuration.BadSubstance;*/
+            return null;
         }
 
         private void GenerateSubSubstanceToContainer(float substanceWeight, SubstanceProperty substanceProperty, Container container)
         {
-            if(substanceProperty.SubSubstanceProperties.Count == 0)
+            /*if(substanceProperty.SubSubstanceProperties.Count == 0)
             {
                 return;
             }
@@ -255,21 +256,20 @@ namespace BioEngineerLab.Core
             {
                 var newSubstance = new Substance(substanceProperty, substanceWeight * (subSubstanceProperty.SubstanceWeight / substanceProperty.SumSubSubstancePropertiesWeights));
                 container.AddSubstance(newSubstance);
-            }
+            }*/
         }
 
         private void SendTransferTask(Container fromContainer, Container toContainer)
         {
-            _tasksService.TryCompleteTask(new TransferActivity(
+            /*_tasksService.TryCompleteTask(new TransferActivity(
                 fromContainer.ContainerType,
                 toContainer.ContainerType,
                 toContainer.PeekLastSubstance().SubstanceProperty.SubstanceName,
-                toContainer.PeekLastSubstance().SubstanceProperty.SubstanceMode));
+                toContainer.PeekLastSubstance().SubstanceProperty.SubstanceMode));*/
         }
         
-        public Task Initialize()
+        public void Initialize()
         {
-            return Task.CompletedTask;
         }
 
         public void Destroy()

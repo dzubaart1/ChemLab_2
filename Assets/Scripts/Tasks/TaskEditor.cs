@@ -36,6 +36,7 @@ namespace BioEngineerLab.Tasks
                 _taskProperty.ActivityConfig.ActivityType = activityType;
                 InitActivityByType(_taskProperty.ActivityConfig.ActivityType);   
             }
+            _taskProperty.ActivityConfig.Activity.ShowInEditor();
             
             EditorGUILayout.Space();
             EditorGUILayout.LabelField("Side Effects", EditorStyles.boldLabel);
@@ -67,6 +68,9 @@ namespace BioEngineerLab.Tasks
                     break;
                 case ESideEffect.Effect2:
                     _taskProperty.SideEffectConfigs[effectID].SideEffect = new Effect2();
+                    break;
+                case ESideEffect.AddReagentsSideEffect:
+                    _taskProperty.SideEffectConfigs[effectID].SideEffect = new AddReagentsSideEffect();
                     break;
                 default:
                     Debug.LogError("Can't find Side effect!");
