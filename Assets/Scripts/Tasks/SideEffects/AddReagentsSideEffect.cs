@@ -8,21 +8,21 @@ namespace BioEngineerLab.Tasks.SideEffects
 {
     public class AddReagentsSideEffect : SideEffect
     {
-        private SubstanceProperty _reagentsSubstance;
-        private float _weight;
+        public SubstanceProperty ReagentsSubstance { get; private set; }
+        public float Weight { get; private set; }
 
         public AddReagentsSideEffect(float weight = 0f, SubstanceProperty reagentsSubstance = null)
             : base(ESideEffect.AddReagentsSideEffect, ESideEffectTime.StartTask)
         {
-            _reagentsSubstance = reagentsSubstance;
-            _weight = weight;
+            ReagentsSubstance = reagentsSubstance;
+            Weight = weight;
         }
         
         public override void ShowInEditor()
         {
             SideEffectTimeType = (ESideEffectTime)EditorGUILayout.EnumPopup("Side Effect Time", SideEffectTimeType);
-            _reagentsSubstance = EditorGUILayout.ObjectField("Reagents Substance", _reagentsSubstance, typeof(SubstanceProperty), true) as SubstanceProperty;
-            _weight = EditorGUILayout.FloatField("Weight Substance", _weight);
+            ReagentsSubstance = EditorGUILayout.ObjectField("Reagents Substance", ReagentsSubstance, typeof(SubstanceProperty), true) as SubstanceProperty;
+            Weight = EditorGUILayout.FloatField("Weight Substance", Weight);
         }
 
         public override void OnActivated()
@@ -32,7 +32,7 @@ namespace BioEngineerLab.Tasks.SideEffects
             
             foreach (var container in reagentsContainer)
             {
-                container.PutSubstance(new Substance(_reagentsSubstance, _weight));
+                container.PutSubstance(new Substance(ReagentsSubstance, Weight));
             }
         }
     }

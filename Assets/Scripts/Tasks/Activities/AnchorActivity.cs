@@ -1,21 +1,20 @@
-﻿using BioEngineerLab.Containers;
-using UnityEditor;
+﻿using UnityEditor;
 
 namespace BioEngineerLab.Activities
 {
     public class AnchorActivity : Activity
     {
-        private EContainer _containerType;
+        public EContainer ContainerType { get; private set; }
         
         public AnchorActivity(EContainer containerType = EContainer.KuvetkaContainer)
             : base(EActivity.AnchorActivity)
         {
-            _containerType = containerType;
+            ContainerType = containerType;
         }
         
         public override void ShowInEditor()
         {
-            _containerType = (EContainer)EditorGUILayout.EnumPopup("Container Type", _containerType);
+            ContainerType = (EContainer)EditorGUILayout.EnumPopup("Container Type", ContainerType);
         }
 
         public override bool CompleteActivity(Activity activity)
@@ -25,7 +24,7 @@ namespace BioEngineerLab.Activities
                 return false;
             }
 
-            return _containerType == anchorActivity._containerType;
+            return ContainerType == anchorActivity.ContainerType;
         }
     }
 }

@@ -4,20 +4,20 @@ namespace BioEngineerLab.Activities
 {
     public class SocketActivity : Activity
     {
-        private SocketType _socketType;
-        private SocketActivityType _socketActivityType;
+        public SocketType SocketType { get; private set; }
+        public SocketActivityType SocketActivityType { get; private set; }
 
         public SocketActivity(SocketType socketType = SocketType.NeedleSocket, SocketActivityType socketActivityType = SocketActivityType.Enter)
             : base (EActivity.SocketActivity)
         {
-            _socketType = socketType;
-            _socketActivityType = socketActivityType;
+            SocketType = socketType;
+            SocketActivityType = socketActivityType;
         }
 
         public override void ShowInEditor()
         {
-            _socketType = (SocketType) EditorGUILayout.EnumPopup("Socket Type", _socketType);
-            _socketActivityType = (SocketActivityType) EditorGUILayout.EnumPopup("Socket Activity Type", _socketActivityType);
+            SocketType = (SocketType) EditorGUILayout.EnumPopup("Socket Type", SocketType);
+            SocketActivityType = (SocketActivityType) EditorGUILayout.EnumPopup("Socket Activity Type", SocketActivityType);
         }
 
         public override bool CompleteActivity(Activity activity)
@@ -27,8 +27,8 @@ namespace BioEngineerLab.Activities
                 return false;
             }
             
-            return _socketType == socketActivity._socketType &
-                   _socketActivityType == socketActivity._socketActivityType;
+            return SocketType == socketActivity.SocketType &
+                   SocketActivityType == socketActivity.SocketActivityType;
         }
     }
     

@@ -18,12 +18,14 @@ namespace BioEngineerLab.Tasks
         public SideEffectConfig[] SideEffectConfigs = Array.Empty<SideEffectConfig>();
     }
 
+    [Serializable]
     public class ActivityConfig
     {
         public EActivity ActivityType;
         public Activity Activity = new AnchorActivity();
     }
 
+    [Serializable]
     public class SideEffectConfig
     {
         public ESideEffect SideEffectType;

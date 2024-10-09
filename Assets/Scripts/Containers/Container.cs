@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using BioEngineerLab.Configurations;
 using BioEngineerLab.Core;
 using BioEngineerLab.Substances;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace BioEngineerLab.Containers
@@ -23,7 +26,6 @@ namespace BioEngineerLab.Containers
         [SerializeField] private EContainer _containerType;
         [SerializeField] private bool _isReagentsContainer;
         [SerializeField] private bool _isWeightableContainer;
-        [SerializeField] private bool _isMixableContainer;
         [SerializeField] private bool _isSpoonContainer;
 
         [Header("Meshes")]
@@ -63,14 +65,6 @@ namespace BioEngineerLab.Containers
             }
         }
 
-        public bool IsMixableContainer
-        {
-            get
-            {
-                return _isMixableContainer;
-            }
-        }
-
         public bool IsSpoonContainer
         {
             get
@@ -80,6 +74,7 @@ namespace BioEngineerLab.Containers
         }
 
         private ContainerService _containerService;
+        private SubstanceColorsService _substanceColorsService;
         
         private Substance[] _substances = new Substance[MAX_SUBSTANCE_COUNT];
         
@@ -107,6 +102,29 @@ namespace BioEngineerLab.Containers
             return _maxVolume - GetSubstancesWeight();
         }
 
+        public int GetSubstancesCount()
+        {
+            int res = _substances[0] != null ? 1 : 0;
+            res += _substances[1] != null ? 1 : 0;
+            res += _substances[2] != null ? 1 : 0;
+
+            return res;
+        }
+
+        [CanBeNull]
+        public Substance GetTopSubstance()
+        {
+            for (int i = 0; i < MAX_SUBSTANCE_COUNT; i++)
+            {
+                if (_substances[i] != null)
+                {
+                    return _substances[i];
+                }
+            }
+
+            return null;
+        }
+
         public void PutSubstance(Substance substance)
         {
             switch (substance.SubstanceProperty.SubstanceLayer)
@@ -123,6 +141,33 @@ namespace BioEngineerLab.Containers
             }
 
             IsDirty = true;
+            UpdateView();
+        }
+
+        public void DeleteSubstanceByLayer(ESubstanceLayer layer)
+        {
+            switch (layer)
+            {
+                case ESubstanceLayer.Top:
+                    _substances[0] = null;
+                    break;
+                case ESubstanceLayer.Middle:
+                    _substances[1] = null;
+                    break;
+                case ESubstanceLayer.Bottom:
+                    _substances[2] = null;
+                    break;
+            }
+            
+            UpdateView();
+        }
+
+        public void ClearContainer()
+        {
+            _substances[0] = null;
+            _substances[1] = null;
+            _substances[2] = null;
+            
             UpdateView();
         }
 
@@ -177,10 +222,15 @@ namespace BioEngineerLab.Containers
                     else
                     {
                         meshRenderer.enabled = true;
-                        meshRenderer.material.color = _substances[i].SubstanceProperty.Color;
+                        meshRenderer.material.color = _substances[i].GetColor();
                     }
                 }
             }
+        }
+
+        public IReadOnlyCollection<SubstanceProperty> GetSubstanceProperties()
+        {
+            return _substances.Select(substance => substance.SubstanceProperty).ToList();
         }
 
         private bool TryGetMeshRendererByLayer(ESubstanceLayer layer, out MeshRenderer meshRenderer)

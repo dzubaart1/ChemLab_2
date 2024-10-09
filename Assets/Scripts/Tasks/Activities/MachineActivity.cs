@@ -4,20 +4,20 @@ namespace BioEngineerLab.Activities
 {
     public class MachineActivity : Activity
     {
-        private MachineActivityType _machineActivityType;
-        private MachineType _machineType;
+        public MachineActivityType MachineActivityType { get; private set; }
+        public MachineType MachineType { get; private set; }
 
         public MachineActivity(MachineActivityType machineActivityType = MachineActivityType.OnEnter, MachineType machineType = MachineType.CoatMachine)
             : base(EActivity.MachineActivity)
         {
-            _machineActivityType = machineActivityType;
-            _machineType = machineType;
+            MachineActivityType = machineActivityType;
+            MachineType = machineType;
         }
         
         public override void ShowInEditor()
         {
-            _machineActivityType = (MachineActivityType)EditorGUILayout.EnumPopup("Machine Activity Type", _machineActivityType);
-            _machineType = (MachineType)EditorGUILayout.EnumPopup("Machine Type", _machineType);
+            MachineActivityType = (MachineActivityType)EditorGUILayout.EnumPopup("Machine Activity Type", MachineActivityType);
+            MachineType = (MachineType)EditorGUILayout.EnumPopup("Machine Type", MachineType);
         }
 
         public override bool CompleteActivity(Activity activity)
@@ -27,8 +27,8 @@ namespace BioEngineerLab.Activities
                 return false;
             }
             
-            return _machineActivityType == machineActivity._machineActivityType & 
-                   _machineType == machineActivity._machineType;
+            return MachineActivityType == machineActivity.MachineActivityType & 
+                   MachineType == machineActivity.MachineType;
         }
     }
     

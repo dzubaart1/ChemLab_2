@@ -82,14 +82,20 @@ namespace BioEngineerLab.Tasks
         {
             switch (eActivity)
             {
-                case EActivity.TransferActivity:
-                    _taskProperty.ActivityConfig.Activity = new TransferActivity();
+                case EActivity.CraftSubstanceActivity:
+                    _taskProperty.ActivityConfig.Activity = new CraftSubstanceActivity();
+                    break;
+                case EActivity.AddSubstanceActivity:
+                    _taskProperty.ActivityConfig.Activity = new AddSubstanceActivity();
                     break;
                 case EActivity.MachineActivity:
                     _taskProperty.ActivityConfig.Activity = new MachineActivity();
                     break;
                 case EActivity.SocketActivity:
                     _taskProperty.ActivityConfig.Activity = new SocketActivity();
+                    break;
+                case EActivity.AnchorActivity:
+                    _taskProperty.ActivityConfig.Activity = new AnchorActivity();
                     break;
                 default:
                     Debug.LogError("Can't find action!");

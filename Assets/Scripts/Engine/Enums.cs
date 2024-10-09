@@ -42,10 +42,11 @@ namespace BioEngineerLab
     
     public enum EActivity : byte
     {
-        TransferActivity,
+        AddSubstanceActivity,
         MachineActivity,
         SocketActivity,
-        AnchorActivity
+        AnchorActivity,
+        CraftSubstanceActivity
     }
     
     public enum EContainer
@@ -69,5 +70,11 @@ namespace BioEngineerLab
     {
         StartTask,
         EndTask
+    }
+
+    public enum ESubstanceColor
+    {
+        Color1,
+        Color2
     }
 }

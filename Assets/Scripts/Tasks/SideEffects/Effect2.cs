@@ -4,7 +4,7 @@ namespace BioEngineerLab.Tasks.SideEffects
 {
     public class Effect2 : SideEffect
     {
-        public int SomeConfig2;
+        public int SomeConfig2 { get; private set; }
 
         public Effect2()
             : base(ESideEffect.Effect2, ESideEffectTime.StartTask)
