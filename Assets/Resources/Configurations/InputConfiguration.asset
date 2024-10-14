@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7962ca5b0a7aaa3428bf015b89e499db, type: 3}
   m_Name: InputConfiguration
   m_EditorClassIdentifier: 
-  Platform: 1
   LocalRigTemplate: {fileID: 3908392009510649965, guid: 981f913afd42c694bacfb73482d73ce7, type: 3}
   PlayerSpawnPoint: {x: -6, y: 0, z: 0}
   BallPrefab: {fileID: 1465972865363690410, guid: 3193962752a5dbd46b3a328e4bf047fa, type: 3}
