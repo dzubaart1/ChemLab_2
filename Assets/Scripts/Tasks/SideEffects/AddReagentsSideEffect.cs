@@ -32,7 +32,10 @@ namespace BioEngineerLab.Tasks.SideEffects
             
             foreach (var container in reagentsContainer)
             {
-                container.PutSubstance(new Substance(ReagentsSubstance, Weight));
+                if (container.ReagentsProperty == ReagentsSubstance)
+                {
+                    container.PutSubstance(new Substance(ReagentsSubstance, Weight));   
+                }
             }
         }
     }

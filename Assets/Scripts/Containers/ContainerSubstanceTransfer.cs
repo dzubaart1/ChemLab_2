@@ -70,6 +70,7 @@ namespace BioEngineerLab.Containers
 
             if (!_isAlreadyTriggered & controller.activateAction.action.triggered)
             {
+                _craftService.Transfer(_container, targetContainer._container);
                 StartCoroutine(StartDelayBetweenActivated());
             }
         }

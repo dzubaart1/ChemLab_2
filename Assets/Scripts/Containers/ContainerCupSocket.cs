@@ -9,7 +9,17 @@ namespace BioEngineerLab.Containers
 
         public bool IsClosed()
         {
-            return _cupSocket == null || _cupSocket.firstInteractableSelected != null;
+            if (_cupSocket == null)
+            {
+                return false;
+            }
+
+            if (_cupSocket.firstInteractableSelected == null)
+            {
+                return false;
+            }
+            
+            return true;
         }
     }
 }

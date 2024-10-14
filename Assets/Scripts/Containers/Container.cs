@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using BioEngineerLab.Configurations;
 using BioEngineerLab.Core;
 using BioEngineerLab.Substances;
 using JetBrains.Annotations;
@@ -25,6 +23,7 @@ namespace BioEngineerLab.Containers
         [SerializeField] private float _containerWeight;
         [SerializeField] private EContainer _containerType;
         [SerializeField] private bool _isReagentsContainer;
+        [SerializeField] private SubstanceProperty _reagentsProperty;
         [SerializeField] private bool _isWeightableContainer;
         [SerializeField] private bool _isSpoonContainer;
 
@@ -38,6 +37,14 @@ namespace BioEngineerLab.Containers
             get
             {
                 return _substances;
+            }
+        }
+
+        public SubstanceProperty ReagentsProperty
+        {
+            get
+            {
+                return _reagentsProperty;
             }
         }
 
@@ -91,6 +98,11 @@ namespace BioEngineerLab.Containers
             float sumWeight = 0;
             foreach (var substance in _substances)
             {
+                if (substance == null)
+                {
+                    continue;
+                }
+                
                 sumWeight += substance.Weight;
             }
 
@@ -194,7 +206,14 @@ namespace BioEngineerLab.Containers
             
             for(int i = 0; i < _substances.Length; i++)
             {
-                printString += $"{i}. {_substances[i].SubstanceProperty.GetSubstanceName()}\n";
+                if (_substances[i] != null)
+                {
+                    printString += $"{i}. {_substances[i].SubstanceProperty.GetSubstanceName()}\n";
+                }
+                else
+                {
+                    printString += $"{i}. NULL";
+                }
             }
 
             printString += "Weights:\n";
@@ -215,22 +234,36 @@ namespace BioEngineerLab.Containers
             {
                 if (!TryGetMeshRendererByLayer((ESubstanceLayer)i, out MeshRenderer meshRenderer))
                 {
-                    if (_substances[i] == null)
-                    {
-                        meshRenderer.enabled = false;
-                    }
-                    else
-                    {
-                        meshRenderer.enabled = true;
-                        meshRenderer.material.color = _substances[i].GetColor();
-                    }
+                    continue;
+                }
+
+                if (_substances[i] == null)
+                {
+                    meshRenderer.enabled = false;
+                }
+                else
+                {
+                    meshRenderer.enabled = true;
+                    meshRenderer.material.color = _substances[i].GetColor();
                 }
             }
         }
 
         public IReadOnlyCollection<SubstanceProperty> GetSubstanceProperties()
         {
-            return _substances.Select(substance => substance.SubstanceProperty).ToList();
+            List<SubstanceProperty> res = new List<SubstanceProperty>();
+
+            foreach (var substance in _substances)
+            {
+                if (substance == null)
+                {
+                    continue;
+                }
+                
+                res.Add(substance.SubstanceProperty);
+            }
+            
+            return res;
         }
 
         private bool TryGetMeshRendererByLayer(ESubstanceLayer layer, out MeshRenderer meshRenderer)

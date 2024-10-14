@@ -27,6 +27,8 @@ namespace BioEngineerLab.Core
             AddService(new CraftService(GetConfiguration<CraftConfiguration>(), tasksService));
             AddService(new InputService(GetConfiguration<InputConfiguration>()));
             AddService(new HandModelsService(GetConfiguration<HandModelConfiguration>()));
+            AddService(new SubstanceColorsService(GetConfiguration<SubstanceColorsConfiguration>()));
+            AddService(new ContainerService());
 
             foreach(var pair in _services)
             {
