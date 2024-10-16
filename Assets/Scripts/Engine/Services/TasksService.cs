@@ -116,6 +116,8 @@ namespace BioEngineerLab.Core
                 return;
             }
 
+            Debug.Log("hi from move");
+
             ActivateSideEffects(ESideEffectTime.EndTask);
             
             _currentTaskId++;
@@ -215,21 +217,26 @@ namespace BioEngineerLab.Core
 
         public void OnSaveScene()
         {
+            Debug.Log("hi from on save scene");
             _savedData.CurrentTaskID = _currentTaskId;
         }
 
         public void OnLoadScene()
         {
+            Debug.Log("hi from on load scene");
             _currentTaskId = _savedData.CurrentTaskID;
             TaskUpdatedEvent?.Invoke(_tasksList[_currentTaskId]);
         }
 
         private void ActivateSideEffects(ESideEffectTime sideEffectTime)
         {
+            Debug.Log("activate side effect");
             foreach (var config in _tasksList[_currentTaskId].SideEffectConfigs)
             {
+                Debug.Log("activate side effect#");
                 if (config.SideEffect.SideEffectTimeType == sideEffectTime)
                 {
+                    Debug.Log("activate side effect!!!!");
                     config.SideEffect.OnActivated();
                 }
             }

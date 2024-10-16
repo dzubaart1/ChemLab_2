@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ColorConfigs:
   - SubstanceColorType: 0
-    Color: {r: 0.7924528, g: 0.49535796, b: 0.16820934, a: 0}
+    Color: {r: 0.18431373, g: 0.5647059, b: 0.1137255, a: 0}
   - SubstanceColorType: 1
-    Color: {r: 0.18530224, g: 0.5660378, b: 0.11480955, a: 0}
+    Color: {r: 0.6531684, g: 0.7735849, b: 0.7701534, a: 0}
+  - SubstanceColorType: 2
+    Color: {r: 0.6226415, g: 0.38284987, b: 0.16153437, a: 0}

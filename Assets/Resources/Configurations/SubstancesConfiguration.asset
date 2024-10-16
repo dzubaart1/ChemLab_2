@@ -19,3 +19,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dbebb3bbacffc60498032b892cf136bf, type: 2}
   - {fileID: 11400000, guid: b94e0b313d1756848a8fac4057b188d0, type: 2}
   - {fileID: 11400000, guid: 0d732f1e25aa8df4aab4aaa3867a0def, type: 2}
+  Crafts:
+  - {fileID: 11400000, guid: 09272859ad372ab4488f5c03c580652c, type: 2}
+  - {fileID: 11400000, guid: 9ecd084b62cf9ae44aa9eaa0a2ab76bf, type: 2}

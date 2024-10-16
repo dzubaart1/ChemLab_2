@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SubstanceName: 0
   SubstanceMode: 0
+  SubstanceLayer: 0
+  SubstanceColor: 1
   HintName: "\u0412\u043E\u0434\u0430"
-  Color: {r: 0.58805025, g: 0.86268353, b: 1, a: 0.47058824}
-  SubSubstanceProperties: []
-  SumSubSubstancePropertiesWeights: 0

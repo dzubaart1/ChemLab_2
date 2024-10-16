@@ -75,6 +75,7 @@ namespace BioEngineerLab
     public enum ESubstanceColor
     {
         Color1,
-        Color2
+        Color2,
+        Color3
     }
 }

@@ -89,6 +89,9 @@ namespace BioEngineerLab.Containers
         {
             _containerService = Engine.GetService<ContainerService>();
             _containerService.RegisterContainer(this);
+
+            //if (_isReagentsContainer)
+            //    _substances[0] = new Substance(_reagentsProperty, 1000);
             
             UpdateView();
         }

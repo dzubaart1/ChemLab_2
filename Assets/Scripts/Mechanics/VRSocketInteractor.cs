@@ -42,7 +42,7 @@ namespace BioEngineerLab.Gameplay
         protected override void Start()
         {
             base.Start();
-            
+
             OnSaveScene();
         }
 
@@ -55,7 +55,7 @@ namespace BioEngineerLab.Gameplay
                 _isStartEnter = !_isStartEnter;
                 return;
             }
-            
+
             if (_isLoadSceneEnter)
             {
                 _isLoadSceneEnter = false;
@@ -67,7 +67,7 @@ namespace BioEngineerLab.Gameplay
                 _tasksService.TryCompleteTask(new SocketActivity(_socketType, SocketActivityType.Enter));
             }
         }
-        
+
         protected override void OnSelectExited(SelectExitEventArgs args)
         {
             base.OnSelectExited(args);
@@ -77,7 +77,7 @@ namespace BioEngineerLab.Gameplay
                 _isLoadSceneExit = false;
                 return;
             }
-            
+
             if (_isTaskSendable)
             {
                 _tasksService.TryCompleteTask(new SocketActivity(_socketType, SocketActivityType.Exit));
@@ -106,7 +106,7 @@ namespace BioEngineerLab.Gameplay
             if (_savedData.GrabbedObject == null && localGrabInteractable != null)
             {
                 _isLoadSceneExit = true;
-                
+
                 StartCoroutine(ForceDeselect(localGrabInteractable, this));
                 return;
             }
@@ -124,7 +124,7 @@ namespace BioEngineerLab.Gameplay
                 interactionManager.SelectEnter((IXRSelectInteractor)this, _savedData.GrabbedObject);
                 return;
             }
-            
+
             if (_savedData.GrabbedObject != null && localGrabInteractable != null &&
                 !_savedData.GrabbedObject.isSelected)
             {
@@ -135,16 +135,16 @@ namespace BioEngineerLab.Gameplay
                 interactionManager.SelectEnter((IXRSelectInteractor)this, _savedData.GrabbedObject);
                 return;
             }
-            
+
             if (_savedData.GrabbedObject != null && localGrabInteractable == null &&
                 !_savedData.GrabbedObject.isSelected)
             {
                 _isLoadSceneEnter = true;
-                
+
                 interactionManager.SelectEnter((IXRSelectInteractor)this, _savedData.GrabbedObject);
                 return;
             }
-            
+
             if (_savedData.GrabbedObject != null && firstInteractableSelected == null &&
                 _savedData.GrabbedObject.isSelected)
             {
@@ -171,7 +171,7 @@ namespace BioEngineerLab.Gameplay
             interactable.transform.GetComponent<XRBaseInteractable>().enabled = false;
             yield return null;
             interactable.transform.GetComponent<XRBaseInteractable>().enabled = true;
-            
+
             interactable.LoadPosition();
         }
     }

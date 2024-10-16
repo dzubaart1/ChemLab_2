@@ -140,7 +140,7 @@ namespace BioEngineerLab.Core
             {
                 return;
             }
-            
+
             float transferWeight = Math.Min(toContainer.GetAvailableWeight(), transferSubstance.Weight);
 
             Substance toContainerSubstance = new Substance(transferSubstance.SubstanceProperty, transferWeight);
@@ -154,7 +154,7 @@ namespace BioEngineerLab.Core
             {
                 fromContainer.DeleteSubstanceByLayer(transferSubstance.SubstanceProperty.SubstanceLayer);
             }
-            
+
             _tasksService.TryCompleteTask(new AddSubstanceActivity(fromContainer.ContainerType, toContainer.ContainerType, transferSubstance.SubstanceProperty));
         }
 

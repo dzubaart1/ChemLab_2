@@ -44,7 +44,8 @@ namespace BioEngineerLab.Containers
             
             for(int i = 0; i < _container.Substances.Count; i++)
             {
-                _savedData.Substances[i] = new Substance(_container.GetSubstanceByLayer((ESubstanceLayer)i));
+                if(_container.GetSubstanceByLayer((ESubstanceLayer)i) is not null)
+                    _savedData.Substances[i] = new Substance(_container.GetSubstanceByLayer((ESubstanceLayer)i));
             }
         }
 

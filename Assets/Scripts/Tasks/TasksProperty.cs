@@ -29,6 +29,6 @@ namespace BioEngineerLab.Tasks
     public class SideEffectConfig
     {
         public ESideEffect SideEffectType;
-        public SideEffect SideEffect = new Effect1();
+        public SideEffect SideEffect = new AddReagentsSideEffect();
     }
 }

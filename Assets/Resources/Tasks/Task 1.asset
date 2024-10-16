@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TaskProperty:
     Number: 1
-    Title: 
+    Title: task 1
     Description: 
     Warning: 
     SaveableTask: 0
     ActivityConfig:
-      ActivityType: 4
+      ActivityType: 2
     SideEffectConfigs: []
