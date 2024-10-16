@@ -1,4 +1,5 @@
 ﻿using BioEngineerLab.JSON;
+using BioEngineerLab.Tasks.SideEffects;
 using UnityEngine;
 
 namespace BioEngineerLab.Tasks
@@ -36,6 +37,16 @@ namespace BioEngineerLab.Tasks
             TaskProperty.SaveableTask = taskProperty.SaveableTask;
             TaskProperty.ActivityConfig = taskProperty.ActivityConfig;
             TaskProperty.SideEffectConfigs = taskProperty.SideEffectConfigs;
+
+            TaskProperty.SideEffectConfigs = new SideEffectConfig[taskProperty.SideEffectConfigs.Length];
+            for (int i = 0; i < taskProperty.SideEffectConfigs.Length; i++)
+            {
+                if (TaskProperty.SideEffectConfigs[i] != null)
+                {
+                    TaskProperty.SideEffectConfigs[i].SideEffectType = taskProperty.SideEffectConfigs[i].SideEffectType;
+                    TaskProperty.SideEffectConfigs[i].SideEffect = taskProperty.SideEffectConfigs[i].SideEffect;
+                }
+            }
         }
 
         private string FilePath()
