@@ -1,5 +1,4 @@
 ﻿using BioEngineerLab.JSON;
-using BioEngineerLab.Tasks.SideEffects;
 using UnityEngine;
 
 namespace BioEngineerLab.Tasks
@@ -7,16 +6,8 @@ namespace BioEngineerLab.Tasks
     [CreateAssetMenu(fileName = "Task", menuName = "Tasks/Task", order = 1)]
     public class TasksPropertyScriptableObject : ScriptableObject
     {
-        public TaskProperty TaskProperty;
-
-        private void Awake()
-        {
-            if (TaskProperty is null)
-            {
-                TaskProperty = new TaskProperty();
-            }
-        }
-
+        public TaskProperty TaskProperty = new TaskProperty();
+        
         public void Save()
         {
             JSONSaver.Save(TaskProperty, FilePath());
@@ -28,6 +19,23 @@ namespace BioEngineerLab.Tasks
             FillFields(obj);
         }
 
+        public void DeleteEffect(SideEffectConfig target)
+        {
+            foreach (var effect in TaskProperty.SideEffectConfigs)
+            {
+                if (effect == target)
+                {
+                    TaskProperty.SideEffectConfigs.Remove(effect);
+                    break;
+                }
+            }
+        }
+
+        public void AddEffect()
+        {
+            TaskProperty.SideEffectConfigs.Add(new SideEffectConfig()); ;
+        }
+
         public void FillFields(TaskProperty taskProperty)
         {
             TaskProperty.Number = taskProperty.Number;
@@ -35,18 +43,8 @@ namespace BioEngineerLab.Tasks
             TaskProperty.Description = taskProperty.Description;
             TaskProperty.Warning = taskProperty.Warning;
             TaskProperty.SaveableTask = taskProperty.SaveableTask;
-            TaskProperty.ActivityConfig = taskProperty.ActivityConfig;
             TaskProperty.SideEffectConfigs = taskProperty.SideEffectConfigs;
-
-            TaskProperty.SideEffectConfigs = new SideEffectConfig[taskProperty.SideEffectConfigs.Length];
-            for (int i = 0; i < taskProperty.SideEffectConfigs.Length; i++)
-            {
-                if (TaskProperty.SideEffectConfigs[i] != null)
-                {
-                    TaskProperty.SideEffectConfigs[i].SideEffectType = taskProperty.SideEffectConfigs[i].SideEffectType;
-                    TaskProperty.SideEffectConfigs[i].SideEffect = taskProperty.SideEffectConfigs[i].SideEffect;
-                }
-            }
+            TaskProperty.ActivityConfig = taskProperty.ActivityConfig;
         }
 
         private string FilePath()

@@ -1,5 +1,3 @@
-using System;
-using BioEngineerLab.Activities;
 using BioEngineerLab.Core;
 using BioEngineerLab.Tasks;
 using BioEngineerLab.UI;
@@ -42,15 +40,9 @@ public class InfoTabletPanel : BasePanel<TabletPanelsType>
         TaskProperty currentTask = _tasksService.GetCurrentTask();
         switch (currentTask.ActivityConfig.ActivityType)
         {
-            //case ActivityType.SliderValueChangedActivity:
-            //    SwitchPanel(TabletPanelsType.SliderTaskPanel);
-            //    break;
-            //case ActivityType.DragLineActivity:
-            //    SwitchPanel(TabletPanelsType.DragLinePanel);
-            //    break;
-            //default:
-            //    SwitchPanel(TabletPanelsType.MainPanel);
-            //    break;
+            default:
+                SwitchPanel(TabletPanelsType.MainPanel);
+                break;
         }
     }
 }

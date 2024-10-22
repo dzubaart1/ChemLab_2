@@ -7,6 +7,5 @@ namespace BioEngineerLab.Configurations
     {
         public LocalRig LocalRigTemplate;
         public Vector3 PlayerSpawnPoint;
-        public Transform BallPrefab;
     }
 }

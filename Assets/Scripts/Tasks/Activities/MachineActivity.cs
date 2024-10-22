@@ -1,11 +1,12 @@
-﻿using UnityEditor;
+﻿using BioEngineerLab.Tasks.Activities;
+using UnityEditor;
 
 namespace BioEngineerLab.Activities
 {
     public class MachineActivity : Activity
     {
-        public MachineActivityType MachineActivityType { get; private set; }
-        public MachineType MachineType { get; private set; }
+        public MachineActivityType MachineActivityType;
+        public MachineType MachineType;
 
         public MachineActivity(MachineActivityType machineActivityType = MachineActivityType.OnEnter, MachineType machineType = MachineType.CoatMachine)
             : base(EActivity.MachineActivity)

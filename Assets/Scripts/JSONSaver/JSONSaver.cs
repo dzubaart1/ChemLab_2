@@ -19,7 +19,9 @@ namespace BioEngineerLab.JSON
             {
                 JsonSerializerSettings settings = new JsonSerializerSettings()
                 {
-                    TypeNameHandling = TypeNameHandling.All
+                    TypeNameHandling = TypeNameHandling.All,
+                    Formatting = Formatting.Indented,
+                    ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor
                 };
 
                 string json = JsonConvert.SerializeObject(data, settings);
@@ -44,7 +46,9 @@ namespace BioEngineerLab.JSON
                 var json = outStream.ReadToEnd();
                 JsonSerializerSettings settings = new JsonSerializerSettings()
                 {
-                    TypeNameHandling = TypeNameHandling.All
+                    TypeNameHandling = TypeNameHandling.All,
+                    Formatting = Formatting.Indented,
+                    ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor
                 };
 
                 outStream.Close();

@@ -22,6 +22,20 @@ namespace BioEngineerLab.Core
 
             _tasksService = tasksService;
         }
+
+        [CanBeNull]
+        public SubstanceProperty GetSubstanceProperty(ESubstanceName substanceName, ESubstanceMode substanceMode)
+        {
+            foreach (var substanceProperty in Configuration.SubstanceProperties)
+            {
+                if (substanceProperty.SubstanceName == substanceName & substanceProperty.SubstanceMode == substanceMode)
+                {
+                    return substanceProperty;
+                }
+            }
+
+            return null;
+        }
         
         public void Transfer(Container fromContainer, Container toContainer)
         {
@@ -70,7 +84,7 @@ namespace BioEngineerLab.Core
 
         public void HeatStir(Container container)
         {
-            CraftConfig heatStirCraft = FindCraft(container.GetSubstanceProperties(), ECraft.HeatStir);
+            Craft heatStirCraft = FindCraft(container.GetSubstanceProperties(), ECraft.HeatStir);
 
             if (heatStirCraft == null)
             {
@@ -86,50 +100,50 @@ namespace BioEngineerLab.Core
                 container.PutSubstance(new Substance(substanceProperty, weightForEachSubstances));
             }
             
-            _tasksService.TryCompleteTask(new CraftSubstanceActivity(container.ContainerType, heatStirCraft));
+            _tasksService.TryCompleteTask(new CraftSubstanceActivity(container.ContainerType, ECraft.HeatStir));
         }
 
 
         public void Dry(Container container)
         {
-            CraftConfig dryConfig = FindCraft(container.GetSubstanceProperties(), ECraft.Dry);
+            Craft dry = FindCraft(container.GetSubstanceProperties(), ECraft.Dry);
 
-            if (dryConfig == null)
+            if (dry == null)
             {
                 return;
             }
 
             float dryWeight = container.GetSubstancesWeight();
-            float weightForEachSubstances = dryWeight / dryConfig.SubstancesRes.Length;
+            float weightForEachSubstances = dryWeight / dry.SubstancesRes.Length;
 
             container.ClearContainer();
-            foreach (var substanceProperty in dryConfig.SubstancesRes)
+            foreach (var substanceProperty in dry.SubstancesRes)
             {
                 container.PutSubstance(new Substance(substanceProperty, weightForEachSubstances));
             }
             
-            _tasksService.TryCompleteTask(new CraftSubstanceActivity(container.ContainerType, dryConfig));
+            _tasksService.TryCompleteTask(new CraftSubstanceActivity(container.ContainerType, ECraft.Dry));
         }
 
         public void Split(Container container)
         {
-            CraftConfig splitConfig = FindCraft(container.GetSubstanceProperties(), ECraft.Split);
+            Craft split = FindCraft(container.GetSubstanceProperties(), ECraft.Split);
 
-            if (splitConfig == null)
+            if (split == null)
             {
                 return;
             }
 
             float splitWeight = container.GetSubstancesWeight();
-            float weightForEachSubstances = splitWeight / splitConfig.SubstancesRes.Length;
+            float weightForEachSubstances = splitWeight / split.SubstancesRes.Length;
 
             container.ClearContainer();
-            foreach (var substanceProperty in splitConfig.SubstancesRes)
+            foreach (var substanceProperty in split.SubstancesRes)
             {
                 container.PutSubstance(new Substance(substanceProperty, weightForEachSubstances));
             }
             
-            _tasksService.TryCompleteTask(new CraftSubstanceActivity( container.ContainerType, splitConfig));
+            _tasksService.TryCompleteTask(new CraftSubstanceActivity( container.ContainerType, ECraft.Split));
         }
         
         private void Add(Container fromContainer, Container toContainer)
@@ -155,23 +169,23 @@ namespace BioEngineerLab.Core
                 fromContainer.DeleteSubstanceByLayer(transferSubstance.SubstanceProperty.SubstanceLayer);
             }
 
-            _tasksService.TryCompleteTask(new AddSubstanceActivity(fromContainer.ContainerType, toContainer.ContainerType, transferSubstance.SubstanceProperty));
+            _tasksService.TryCompleteTask(new AddSubstanceActivity(fromContainer.ContainerType, toContainer.ContainerType, transferSubstance.SubstanceProperty.SubstanceName, transferSubstance.SubstanceProperty.SubstanceMode));
         }
 
         private void Mix(Container fromContainer, Container toContainer)
         {
-            CraftConfig mixConfig = FindCraft(fromContainer.GetSubstanceProperties(), ECraft.Mix);
+            Craft mix = FindCraft(fromContainer.GetSubstanceProperties(), ECraft.Mix);
 
-            if (mixConfig == null)
+            if (mix == null)
             {
                 return;
             }
             
             float transferWeight = Math.Min(toContainer.GetAvailableWeight(), fromContainer.GetSubstancesWeight());
-            float weightForEachSubstance = transferWeight / mixConfig.SubstancesRes.Length;
+            float weightForEachSubstance = transferWeight / mix.SubstancesRes.Length;
             
             toContainer.ClearContainer();
-            foreach (SubstanceProperty substancePropertyRes in mixConfig.SubstancesRes)
+            foreach (SubstanceProperty substancePropertyRes in mix.SubstancesRes)
             {
                 toContainer.PutSubstance(new Substance(substancePropertyRes, weightForEachSubstance));
             }
@@ -188,11 +202,11 @@ namespace BioEngineerLab.Core
                 }
             }
             
-            _tasksService.TryCompleteTask(new CraftSubstanceActivity(toContainer.ContainerType, mixConfig));
+            _tasksService.TryCompleteTask(new CraftSubstanceActivity(toContainer.ContainerType, ECraft.Mix));
         }
         
         [CanBeNull]
-        private CraftConfig FindCraft(IReadOnlyCollection<SubstanceProperty> from, ECraft craftType)
+        private Craft FindCraft(IReadOnlyCollection<SubstanceProperty> from, ECraft craftType)
         {
             return Configuration.Crafts.FirstOrDefault(config => 
                 config.CraftType == craftType &

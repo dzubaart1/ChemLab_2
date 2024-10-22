@@ -1,10 +1,11 @@
-﻿using UnityEditor;
+﻿using BioEngineerLab.Tasks.Activities;
+using UnityEditor;
 
 namespace BioEngineerLab.Activities
 {
     public class AnchorActivity : Activity
     {
-        public EContainer ContainerType { get; private set; }
+        public EContainer ContainerType;
         
         public AnchorActivity(EContainer containerType = EContainer.KuvetkaContainer)
             : base(EActivity.AnchorActivity)

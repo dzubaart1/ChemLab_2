@@ -1,9 +1,9 @@
 ﻿using System;
 
-namespace BioEngineerLab.Activities
+namespace BioEngineerLab.Tasks.Activities
 {
     [Serializable]
-    public abstract class Activity
+    public class Activity
     {
         public EActivity ActivityType { get; private set; }
 
@@ -12,7 +12,11 @@ namespace BioEngineerLab.Activities
             ActivityType = activityType;
         }
 
-        public abstract void ShowInEditor();
-        public abstract bool CompleteActivity(Activity activity);
+        public virtual void ShowInEditor(){}
+
+        public virtual bool CompleteActivity(Activity activity)
+        {
+            return true;
+        }
     }
 }
