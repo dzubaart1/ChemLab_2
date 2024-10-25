@@ -16,14 +16,14 @@ namespace BioEngineerLab.UI
             
             _tasksService = Engine.GetService<TasksService>();
             _tasksService.TaskFailedEvent += OnTaskFailed;
-            //_tasksService.TaskUpdatedEvent += OnTaskUpdated;
+            _tasksService.TaskUpdatedEvent += OnTaskUpdated;
             _tasksService.EndTasksListEvent += OnEndTasksList;
         }
 
         private void OnDestroy()
         {
             _tasksService.TaskFailedEvent -= OnTaskFailed;
-            //_tasksService.TaskUpdatedEvent -= OnTaskUpdated;
+            _tasksService.TaskUpdatedEvent -= OnTaskUpdated;
             _tasksService.EndTasksListEvent -= OnEndTasksList;
         }
 
@@ -37,9 +37,9 @@ namespace BioEngineerLab.UI
             _panelSwitcher.SwitchPanel(TabletPanelsType.EndGamePanel);
         }
 
-        /*private void OnTaskUpdated(TaskProperty taskProperty)
+        private void OnTaskUpdated(LabTask task)
         {
 
-        }*/
+        }
     }
 }

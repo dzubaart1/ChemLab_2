@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Linq;
-using BioEngineerLab.Tasks;
 using BioEngineerLab.Tasks.Activities;
 using Crafting;
 
@@ -30,15 +28,20 @@ namespace BioEngineerLab.Activities
             LabCraft = new LabCraft(labCraft);
         }
 
-        public override bool Equals(LabActivity labActivity)
+        public override bool Equals(Object obj)
         {
-            if (labActivity is not CraftSubstanceLabActivity craftSubstanceActivity)
+            if (obj is not CraftSubstanceLabActivity craftSubstanceActivity)
             {
                 return false;
             }
 
             return Container == craftSubstanceActivity.Container &&
                    LabCraft.Equals(craftSubstanceActivity.LabCraft);
+        }
+
+        public override int GetHashCode()
+        {
+            return (int)Container + LabCraft.GetHashCode();
         }
     }
 }

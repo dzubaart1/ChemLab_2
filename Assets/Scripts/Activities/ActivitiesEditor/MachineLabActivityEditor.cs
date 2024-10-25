@@ -30,7 +30,7 @@ namespace BioEngineerLab.Activities
 
         public override EActivity GetActivityType()
         {
-            return EActivity.AddSubstanceActivity;
+            return EActivity.MachineActivity;
         }
     }
 }

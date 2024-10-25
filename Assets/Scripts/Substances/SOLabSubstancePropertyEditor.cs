@@ -27,7 +27,7 @@ namespace Substances
                 _soSubstanceProperty.LabSubstanceProperty.SubstanceColorB,
                 _soSubstanceProperty.LabSubstanceProperty.SubstanceColorA);
             
-            _soSubstanceProperty.LabSubstanceProperty.SubstanceName = (ESubstanceName)EditorGUILayout.EnumPopup("Substance Name", _soSubstanceProperty.LabSubstanceProperty.SubstanceName);
+            _soSubstanceProperty.LabSubstanceProperty.SubstanceName = EditorGUILayout.TextField("Substance Name", _soSubstanceProperty.LabSubstanceProperty.SubstanceName);
             _soSubstanceProperty.LabSubstanceProperty.SubstanceLayer = (ESubstanceLayer)EditorGUILayout.EnumPopup("Substance Layer", _soSubstanceProperty.LabSubstanceProperty.SubstanceLayer);
             _soSubstanceProperty.LabSubstanceProperty.SubstanceMode = (ESubstanceMode)EditorGUILayout.EnumPopup("Substance Mode", _soSubstanceProperty.LabSubstanceProperty.SubstanceMode);
             

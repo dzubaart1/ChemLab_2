@@ -1,19 +1,19 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
   "Number": 1,
-  "Title": "Task 1",
-  "Description": "",
+  "Title": "Задание 1",
+  "Description": "Перелейте воду в другой контейнер",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
-    "FromContainer": 2,
-    "ToContainer": 5,
+    "FromContainer": 0,
+    "ToContainer": 0,
     "LabSubstanceProperty": {
       "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-      "SubstanceName": 0,
+      "SubstanceName": "H2O",
       "SubstanceMode": 0,
-      "SubstanceLayer": 0,
+      "SubstanceLayer": 1,
       "SubstanceColorR": 0.176240653,
       "SubstanceColorG": 0.48270762,
       "SubstanceColorB": 0.8415094,
@@ -29,16 +29,16 @@
         "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
         "LabSubstanceProperty": {
           "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": 0,
+          "SubstanceName": "H2O",
           "SubstanceMode": 0,
-          "SubstanceLayer": 0,
+          "SubstanceLayer": 1,
           "SubstanceColorR": 0.176240653,
           "SubstanceColorG": 0.48270762,
           "SubstanceColorB": 0.8415094,
           "SubstanceColorA": 0.8117647,
           "HintName": ""
         },
-        "Weight": 0.0,
+        "Weight": 100.0,
         "SideEffectTimeType": 0,
         "SideEffectType": 2
       }

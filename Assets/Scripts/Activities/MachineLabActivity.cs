@@ -1,4 +1,5 @@
-﻿using BioEngineerLab.Tasks.Activities;
+﻿using System;
+using BioEngineerLab.Tasks.Activities;
 
 namespace BioEngineerLab.Activities
 {
@@ -26,15 +27,20 @@ namespace BioEngineerLab.Activities
             MachineType = machineType;
         }
 
-        public override bool Equals(LabActivity labActivity)
+        public override bool Equals(Object obj)
         {
-            if (labActivity is not MachineLabActivity handlerMachineActivity)
+            if (obj is not MachineLabActivity handlerMachineActivity)
             {
                 return false;
             }
 
             return MachineActivityType == handlerMachineActivity.MachineActivityType &
                    MachineType == handlerMachineActivity.MachineType;
+        }
+
+        public override int GetHashCode()
+        {
+            return (int)MachineActivityType + (int)MachineType;
         }
     }
 }

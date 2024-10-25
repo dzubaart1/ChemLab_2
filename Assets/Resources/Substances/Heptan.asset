@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e6d0857d78da89408e391181281f1ac, type: 3}
-  m_Name: BadSubstance
+  m_Name: Heptan
   m_EditorClassIdentifier: 
   LabSubstanceProperty:
-    SubstanceName: Bad
+    SubstanceName: Heptan
     SubstanceMode: 0
     SubstanceLayer: 1
-    SubstanceColorR: 0
-    SubstanceColorG: 0.2981131
-    SubstanceColorB: 0.028053224
-    SubstanceColorA: 0.59607846
+    SubstanceColorR: 0.81886786
+    SubstanceColorG: 0.30128145
+    SubstanceColorB: 0.8180221
+    SubstanceColorA: 0.72156864
     HintName: 

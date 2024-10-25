@@ -4,6 +4,7 @@ using BioEngineerLab.Gameplay;
 using BioEngineerLab.Tasks;
 using BioEngineerLab.Tasks.Activities;
 using BioEngineerLab.Tasks.SideEffects;
+using Database;
 
 namespace BioEngineerLab.Core
 {
@@ -59,6 +60,8 @@ namespace BioEngineerLab.Core
         
         public void Initialize()
         {
+            _tasksList = LabTasksDatabase.GetInstance().ReadAll();
+            
             Engine.Behaviour.BehaviourStartEvent += ActivateCurrentTask;
         }
 
@@ -104,7 +107,7 @@ namespace BioEngineerLab.Core
             return (_endTime - _gameStart);
         }
 
-        private void MoveToNextTask()
+        public void MoveToNextTask()
         {
             if (_currentTaskId + 1 == _tasksList.Count)
             {
@@ -131,7 +134,7 @@ namespace BioEngineerLab.Core
             TaskUpdatedEvent?.Invoke(_tasksList[_currentTaskId]);
         }
         
-        private void MoveToPrevTask()
+        public void MoveToPrevTask()
         {
             if (_currentTaskId == 0)
             {

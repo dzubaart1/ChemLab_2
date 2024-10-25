@@ -7,6 +7,7 @@ using BioEngineerLab.Containers;
 using BioEngineerLab.Substances;
 using BioEngineerLab.Tasks;
 using Crafting;
+using Database;
 using JetBrains.Annotations;
 using Debug = UnityEngine.Debug;
 
@@ -17,15 +18,16 @@ namespace BioEngineerLab.Core
         public CraftConfiguration Configuration { get; private set; }
 
         private TasksService _tasksService;
-
-        private List<SOLabSubstanceProperty> _soLabSubstanceProperties;
-        private List<SOLabCraft> _soLabCrafts;
+        
+        private List<SOLabCraft> _soLabCrafts = new List<SOLabCraft>();
         
         public CraftService(CraftConfiguration configuration, TasksService tasksService)
         {
             Configuration = configuration;
 
             _tasksService = tasksService;
+
+            _soLabCrafts = ResourcesDatabase.ReadAllCraft();
         }
 
         public void Transfer(LabContainer fromLabContainer, LabContainer toLabContainer)
@@ -165,7 +167,11 @@ namespace BioEngineerLab.Core
 
         private void Mix(LabContainer fromLabContainer, LabContainer toLabContainer)
         {
-            LabCraft mixCraft = FindCraft(fromLabContainer.GetSubstanceProperties(), ECraft.Mix);
+            List<LabSubstanceProperty> mixSubstances = new List<LabSubstanceProperty>();
+            mixSubstances.AddRange(fromLabContainer.GetSubstanceProperties());
+            mixSubstances.AddRange(toLabContainer.GetSubstanceProperties());
+            
+            LabCraft mixCraft = FindCraft(mixSubstances, ECraft.Mix);
 
             if (mixCraft == null)
             {

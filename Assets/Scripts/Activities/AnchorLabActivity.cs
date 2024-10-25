@@ -1,4 +1,4 @@
-﻿using BioEngineerLab.Tasks;
+﻿using System;
 using BioEngineerLab.Tasks.Activities;
 
 namespace BioEngineerLab.Activities
@@ -24,14 +24,19 @@ namespace BioEngineerLab.Activities
             ContainerType = containerType;
         }
 
-        public override bool Equals(LabActivity labActivity)
+        public override bool Equals(Object obj)
         {
-            if (labActivity is not AnchorLabActivity handlerAnchorActivity)
+            if (obj is not AnchorLabActivity handlerAnchorActivity)
             {
                 return false;
             }
 
             return ContainerType == handlerAnchorActivity.ContainerType;
+        }
+
+        public override int GetHashCode()
+        {
+            return (int)ContainerType;
         }
     }
 }

@@ -32,7 +32,7 @@ namespace Activities.ActivitiesEditor
 
         public override EActivity GetActivityType()
         {
-            return EActivity.AddSubstanceActivity;
+            return EActivity.SocketActivity;
         }
     }
 }

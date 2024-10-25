@@ -26,12 +26,12 @@ namespace BioEngineerLab.UI
         
         private void OnClickPrevBtn()
         {
-            //_tasksService.MoveToPrevTask();
+            _tasksService.MoveToPrevTask();
         }
 
         private void OnClickNextBtn()
         {
-            //_tasksService.MoveToNextTask();
+            _tasksService.MoveToNextTask();
         }
     }
 }

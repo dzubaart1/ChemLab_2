@@ -13,6 +13,7 @@ namespace BioEngineerLab.Tasks.Activities
             ActivityType = activityType;
         }
 
-        public abstract bool Equals(LabActivity labActivity);
+        public abstract override bool Equals(Object obj);
+        public abstract override int GetHashCode();
     }
 }

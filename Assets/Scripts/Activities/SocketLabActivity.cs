@@ -30,15 +30,20 @@ namespace BioEngineerLab.Activities
             Container = container;
         }
 
-        public override bool Equals(LabActivity labActivity)
+        public override bool Equals(object obj)
         {
-            if (labActivity is not SocketLabActivity handlerSocketActivity)
+            if (obj is not SocketLabActivity handlerSocketActivity)
             {
                 return false;
             }
 
             return SocketType == handlerSocketActivity.SocketType &
                    SocketActivityType == handlerSocketActivity.SocketActivityType;
+        }
+
+        public override int GetHashCode()
+        {
+            return (int)SocketType + (int)SocketActivityType + (int)Container;
         }
     }
 }

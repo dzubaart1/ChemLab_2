@@ -19,6 +19,11 @@ namespace Database
             return Resources.LoadAll<SOLabSubstanceProperty>("Substances")
                 .Where(filter.Invoke).ToList();
         }
+        
+        public static List<SOLabCraft> ReadAllCraft()
+        {
+            return Resources.LoadAll<SOLabCraft>("Crafts").ToList();
+        }
 
         public static List<SOLabCraft> ReadWhereCraft(Func<SOLabCraft, bool> filter)
         {

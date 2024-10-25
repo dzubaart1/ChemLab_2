@@ -22,10 +22,17 @@ namespace Crafting
             CraftType = labCraft.CraftType;
             SubstancesRes = labCraft.SubstancesRes;
         }
-        
-        public bool Equals(LabCraft labCraft)
+
+        public LabCraft(LabSubstanceProperty[] from, LabSubstanceProperty[] res, ECraft craftType)
         {
-            if (labCraft == null)
+            SubstancesFrom = from;
+            SubstancesRes = res;
+            CraftType = craftType;
+        }
+        
+        public override bool Equals(Object obj)
+        {
+            if (obj is not LabCraft labCraft)
             {
                 return false;
             }
@@ -35,6 +42,25 @@ namespace Crafting
                    SubstancesRes.All(labCraft.SubstancesRes.Contains) &&
                    labCraft.SubstancesRes.All(SubstancesRes.Contains) &&
                    CraftType == labCraft.CraftType;
+        }
+        
+        public override int GetHashCode()
+        {
+            int sum = 0;
+
+            foreach (var substance in SubstancesFrom)
+            {
+                sum += substance.GetHashCode();
+            }
+
+            foreach (var substance in SubstancesRes)
+            {
+                sum += substance.GetHashCode();
+            }
+
+            sum += (int)CraftType;
+
+            return sum;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using BioEngineerLab.Tasks;
+﻿using System;
+using BioEngineerLab.Tasks;
 using BioEngineerLab.Tasks.Activities;
 
 namespace BioEngineerLab.Activities
@@ -30,9 +31,9 @@ namespace BioEngineerLab.Activities
             LabSubstanceProperty = new LabSubstanceProperty(labSubstanceProperty);
         }
 
-        public override bool Equals(LabActivity labActivity)
+        public override bool Equals(Object obj)
         {
-            if (labActivity is not AddSubstanceLabActivity handlerAddSubstanceActivity)
+            if (obj is not AddSubstanceLabActivity handlerAddSubstanceActivity)
             {
                 return false;
             }
@@ -40,6 +41,16 @@ namespace BioEngineerLab.Activities
             return FromContainer == handlerAddSubstanceActivity.FromContainer &&
                    ToContainer == handlerAddSubstanceActivity.ToContainer &&
                    LabSubstanceProperty.Equals(handlerAddSubstanceActivity.LabSubstanceProperty);
+        }
+
+        public override int GetHashCode()
+        {
+            int sum = (int)FromContainer;
+
+            sum += (int)ToContainer;
+            sum += LabSubstanceProperty.GetHashCode();
+
+            return sum;
         }
     }
 }

@@ -21,17 +21,6 @@ namespace BioEngineerLab
         HeatStir,
         Mix
     }
-
-    public enum ESubstanceName : byte
-    {
-        H20,
-        CACL2,
-        H2PO4,
-        Heptan,
-        PAF,
-        H2OPAF,
-        Bad,
-    }
     
     public enum ESubstanceLayer : byte
     {

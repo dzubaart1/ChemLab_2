@@ -5,7 +5,7 @@ namespace BioEngineerLab.Tasks
     [Serializable]
     public class LabSubstanceProperty
     {
-        public ESubstanceName SubstanceName;
+        public string SubstanceName;
         public ESubstanceMode SubstanceMode;
         public ESubstanceLayer SubstanceLayer;
         public float SubstanceColorR;
@@ -30,13 +30,13 @@ namespace BioEngineerLab.Tasks
             HintName = labSubstanceProperty.HintName;
         }
 
-        public bool Equals(LabSubstanceProperty labSubstanceProperty)
+        public override bool Equals(Object obj)
         {
-            if (labSubstanceProperty == null)
+            if (obj is not LabSubstanceProperty labSubstanceProperty)
             {
                 return false;
             }
-            
+
             const double ACCURACY = 0.1f;
             return SubstanceName == labSubstanceProperty.SubstanceName &
                    SubstanceMode == labSubstanceProperty.SubstanceMode &
@@ -46,6 +46,16 @@ namespace BioEngineerLab.Tasks
                    Math.Abs(SubstanceColorB - labSubstanceProperty.SubstanceColorB) < ACCURACY &
                    Math.Abs(SubstanceColorA - labSubstanceProperty.SubstanceColorA) < ACCURACY &
                    HintName == labSubstanceProperty.HintName;
+        }
+        
+        public override int GetHashCode()
+        {
+            int sum = SubstanceName.Length;
+            
+            sum += (int)SubstanceMode;
+            sum += (int)SubstanceLayer;
+
+            return sum;
         }
     }
 }

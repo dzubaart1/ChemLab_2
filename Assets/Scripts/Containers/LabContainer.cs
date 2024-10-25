@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using BioEngineerLab.Core;
 using BioEngineerLab.Substances;
 using BioEngineerLab.Tasks;
@@ -229,19 +230,7 @@ namespace BioEngineerLab.Containers
 
         public IReadOnlyCollection<LabSubstanceProperty> GetSubstanceProperties()
         {
-            List<LabSubstanceProperty> res = new List<LabSubstanceProperty>();
-
-            foreach (var substance in _substances)
-            {
-                if (substance == null)
-                {
-                    continue;
-                }
-                
-                res.Add(substance.SubstanceProperty);
-            }
-            
-            return res;
+            return _substances.Where(temp => temp != null).Select(temp => temp.SubstanceProperty).ToList();
         }
 
         private bool TryGetMeshRendererByLayer(ESubstanceLayer layer, out MeshRenderer meshRenderer)
