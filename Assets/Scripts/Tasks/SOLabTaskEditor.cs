@@ -135,11 +135,20 @@ namespace BioEngineerLab.Tasks
                 _soLabTask.AddSideEffect();
             }
             
+            GUILayout.BeginHorizontal();
             if (GUILayout.Button("Load"))
             {
                 _soLabTask.LoadHandlerByTaskNumber();
             }
             
+            if (GUILayout.Button("Load All Task"))
+            {
+                ResourcesDatabase.LoadAllTaskFromDataBase();
+            }
+            
+            GUILayout.EndHorizontal();
+            
+            GUILayout.BeginHorizontal();
             if (GUILayout.Button("Save"))
             {
                 _soLabTask.SaveHandlerByTaskNumber();
@@ -149,11 +158,7 @@ namespace BioEngineerLab.Tasks
             {
                 ResourcesDatabase.SaveAllTaskToDataBase();
             }
-
-            if (GUILayout.Button("Load All Task"))
-            {
-                ResourcesDatabase.LoadAllTaskFromDataBase();
-            }
+            GUILayout.EndHorizontal();
         }
     }
 #endif

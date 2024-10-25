@@ -12,12 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41e3d66c1f6971946a8a136284fabef7, type: 3}
   m_Name: Craft 1
   m_EditorClassIdentifier: 
-  SubstancesFrom:
-  - {fileID: 11400000, guid: 1f85e7275e3313f42984717541256555, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  CraftType: 3
-  SubstancesRes:
-  - {fileID: 11400000, guid: b94e0b313d1756848a8fac4057b188d0, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
+  LabCraft:
+    SubstancesFrom: []
+    CraftType: 0
+    SubstancesRes: []

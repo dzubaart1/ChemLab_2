@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using BioEngineerLab;
-using BioEngineerLab.Containers;
 using BioEngineerLab.Tasks;
 
 namespace Crafting
@@ -9,9 +8,9 @@ namespace Crafting
     [Serializable]
     public class LabCraft
     {
-        public LabSubstanceProperty[] SubstancesFrom = new LabSubstanceProperty[LabContainer.MAX_SUBSTANCE_COUNT];
+        public LabSubstanceProperty[] SubstancesFrom = Array.Empty<LabSubstanceProperty>();
         public ECraft CraftType = ECraft.Dry;
-        public LabSubstanceProperty[] SubstancesRes = new LabSubstanceProperty[LabContainer.MAX_SUBSTANCE_COUNT];
+        public LabSubstanceProperty[] SubstancesRes = Array.Empty<LabSubstanceProperty>();
 
         public LabCraft()
         {

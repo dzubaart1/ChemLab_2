@@ -8,16 +8,16 @@
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
     "FromContainer": 2,
-    "ToContainer": 4,
+    "ToContainer": 5,
     "LabSubstanceProperty": {
       "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-      "SubstanceName": 3,
-      "SubstanceMode": 2,
-      "SubstanceLayer": 2,
-      "SubstanceColorR": 0.0,
-      "SubstanceColorG": 0.0,
-      "SubstanceColorB": 0.0,
-      "SubstanceColorA": 0.0,
+      "SubstanceName": 0,
+      "SubstanceMode": 0,
+      "SubstanceLayer": 0,
+      "SubstanceColorR": 0.176240653,
+      "SubstanceColorG": 0.48270762,
+      "SubstanceColorB": 0.8415094,
+      "SubstanceColorA": 0.8117647,
       "HintName": ""
     },
     "ActivityType": 0
@@ -26,10 +26,21 @@
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
     "$values": [
       {
-        "$type": "BioEngineerLab.Tasks.SideEffects.Effect1LabSideEffect, Assembly-CSharp",
-        "SomeConfig": 89,
+        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
+        "LabSubstanceProperty": {
+          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+          "SubstanceName": 0,
+          "SubstanceMode": 0,
+          "SubstanceLayer": 0,
+          "SubstanceColorR": 0.176240653,
+          "SubstanceColorG": 0.48270762,
+          "SubstanceColorB": 0.8415094,
+          "SubstanceColorA": 0.8117647,
+          "HintName": ""
+        },
+        "Weight": 0.0,
         "SideEffectTimeType": 0,
-        "SideEffectType": 0
+        "SideEffectType": 2
       }
     ]
   }
