@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dd49d952e6c01740b700152531c4132, type: 3}
   m_Name: CraftConfiguration
   m_EditorClassIdentifier: 
-  BadSubstance: {fileID: 0}
+  BadSubstance: {fileID: 11400000, guid: 714c3acea6af89e458cc6c1754178956, type: 2}
   SubstanceProperties:
-  - {fileID: 11400000, guid: 714c3acea6af89e458cc6c1754178956, type: 2}
   - {fileID: 11400000, guid: 1f85e7275e3313f42984717541256555, type: 2}
   - {fileID: 11400000, guid: c6bef7bff3cb7a44f9a5c34c5bf7f1bb, type: 2}
   - {fileID: 11400000, guid: dbebb3bbacffc60498032b892cf136bf, type: 2}

@@ -5,7 +5,7 @@ namespace BioEngineerLab.JSON
 {
     public class JSONSaver
     {
-        public static string Save<T>(T data, string filePath)
+        public static string SaveToFile<T>(T data, string filePath)
         {
             FileInfo fileInfo = new FileInfo(filePath);
             if (!fileInfo.Exists)
@@ -33,7 +33,7 @@ namespace BioEngineerLab.JSON
             }
         }
 
-        public static T Load<T>(string filePath)
+        public static T LoadFromFile<T>(string filePath)
         {
             FileInfo fileInfo = new FileInfo(filePath);
             if (!fileInfo.Exists)

@@ -22,14 +22,14 @@ namespace BioEngineerLab.Gameplay
 
         private void OnTriggerStay(Collider other)
         {
-            AnchorContainer anchorContainer = other.GetComponent<AnchorContainer>();
+            AnchorLabContainer anchorLabContainer = other.GetComponent<AnchorLabContainer>();
             
-            if (anchorContainer is null || _grabInteractable.isSelected)
+            if (anchorLabContainer is null || _grabInteractable.isSelected)
             {
                 return;
             }
             
-            anchorContainer.PutAnchor(this);
+            anchorLabContainer.PutAnchor(this);
         }
 
         public void TogglePhysics(bool isOn)

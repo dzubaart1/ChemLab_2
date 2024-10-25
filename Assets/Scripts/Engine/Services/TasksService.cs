@@ -1,15 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using BioEngineerLab.Activities;
 using BioEngineerLab.Gameplay;
-using BioEngineerLab.JSON;
 using BioEngineerLab.Tasks;
 using BioEngineerLab.Tasks.Activities;
-using Newtonsoft.Json;
-using UnityEngine;
+using BioEngineerLab.Tasks.SideEffects;
 
 namespace BioEngineerLab.Core
 {
@@ -31,13 +25,14 @@ namespace BioEngineerLab.Core
                 TaskNumber = taskNumber;
             }
         }
-        
-        public event Action<TaskProperty> TaskUpdatedEvent;
+
+        public event Action<LabSideEffect> SideEffectActivatedEvent;
+        public event Action<LabTask> TaskUpdatedEvent;
         public event Action EndTasksListEvent;
         public event Action TaskFailedEvent;
 
-        public IReadOnlyCollection<TaskProperty> TasksList => _tasksList;
-        private List<TaskProperty> _tasksList = new List<TaskProperty>();
+        public IReadOnlyCollection<LabTask> TasksList => _tasksList;
+        private List<LabTask> _tasksList = new List<LabTask>();
         
         private int _currentTaskId = 0;
         private SavedData _savedData;
@@ -65,8 +60,6 @@ namespace BioEngineerLab.Core
         public void Initialize()
         {
             Engine.Behaviour.BehaviourStartEvent += ActivateCurrentTask;
-            
-            LoadJSONTasks();
         }
 
         public void Destroy()
@@ -74,9 +67,9 @@ namespace BioEngineerLab.Core
             Engine.Behaviour.BehaviourStartEvent -= ActivateCurrentTask;
         }
         
-        public void TryCompleteTask(Activity activity)
+        public void TryCompleteTask(LabActivity labActivity)
         {
-            bool isTaskCompleted = _tasksList[_currentTaskId].ActivityConfig.Activity.CompleteActivity(activity);
+            bool isTaskCompleted = _tasksList[_currentTaskId].LabActivity.Equals(labActivity);
             if (isTaskCompleted)
             {
                 MoveToNextTask();
@@ -88,7 +81,7 @@ namespace BioEngineerLab.Core
             }
         }
 
-        public TaskProperty GetCurrentTask()
+        public LabTask GetCurrentTask()
         {
             return _tasksList[_currentTaskId];
         }
@@ -149,73 +142,7 @@ namespace BioEngineerLab.Core
             _currentTaskId--;
             TaskUpdatedEvent?.Invoke(_tasksList[_currentTaskId]);
         }
-
-        private void LoadJSONTasks()
-        {
-            BetterStreamingAssets.Initialize();
-            string[] allFiles = BetterStreamingAssets.GetFiles($"tasks/");
-
-            foreach (var file in allFiles)
-            {
-                if (file.Contains("meta"))
-                {
-                    continue;
-                }
-                
-                var settings = new JsonSerializerSettings()
-                {
-                    TypeNameHandling = TypeNameHandling.All
-                };
-
-                var task = (TaskProperty)JsonConvert.DeserializeObject(BetterStreamingAssets.ReadAllText(file), settings);
-                
-                _tasksList.Add(task);
-            }
-            
-            _tasksList = _tasksList.OrderBy(task => task.Number).ToList();
-        }
-
-        public static void LoadAllTasksToScriptableObjects()
-        {
-            List<TasksPropertyScriptableObject> scriptableObjects =
-                Resources.LoadAll<TasksPropertyScriptableObject>("Tasks").ToList();
-            
-            string[] allFiles = Directory.GetFiles($"{Application.streamingAssetsPath}/tasks");
-
-            foreach (var tasksPropertyScriptable in scriptableObjects)
-            {
-                string fileName = allFiles.First(fileName => !fileName.Contains("meta") && GetTaskNumberFromFileName(fileName) == tasksPropertyScriptable.TaskProperty.Number);
-
-                if (string.IsNullOrWhiteSpace(fileName))
-                {
-                    continue;
-                }
-
-                TaskProperty taskProperty = JSONSaver.Load<TaskProperty>(fileName);
-                tasksPropertyScriptable.FillFields(taskProperty);
-            }
-        }
         
-        public static void SaveAllTasksFromScriptableObjects()
-        {
-            List<TasksPropertyScriptableObject> scriptableObjects =
-                Resources.LoadAll<TasksPropertyScriptableObject>("Tasks").ToList();
-            
-            BetterStreamingAssets.Initialize();
-            
-            string[] allFiles = Directory.GetFiles($"{Application.streamingAssetsPath}/tasks");
-            
-            foreach (var file in allFiles)
-            {
-                File.Delete(file);
-            }
-
-            foreach (var tasksPropertyScriptable in scriptableObjects)
-            {
-                tasksPropertyScriptable.Save();
-            }
-        }
-
         private static int GetTaskNumberFromFileName(string name)
         {
             return int.Parse(name.Split("_")[1].Split(".")[0]);
@@ -223,24 +150,22 @@ namespace BioEngineerLab.Core
 
         public void OnSaveScene()
         {
-            Debug.Log("hi from on save scene");
             _savedData.CurrentTaskID = _currentTaskId;
         }
 
         public void OnLoadScene()
         {
-            Debug.Log("hi from on load scene");
             _currentTaskId = _savedData.CurrentTaskID;
             TaskUpdatedEvent?.Invoke(_tasksList[_currentTaskId]);
         }
 
         private void ActivateSideEffects(ESideEffectTime sideEffectTime)
         {
-            foreach (var config in _tasksList[_currentTaskId].SideEffectConfigs)
+            foreach (var sideEffect in _tasksList[_currentTaskId].LabSideEffects)
             {
-                if (config.SideEffect.SideEffectTimeType == sideEffectTime)
+                if (sideEffect.SideEffectTimeType == sideEffectTime)
                 {
-                    config.SideEffect.OnActivated();
+                    SideEffectActivatedEvent?.Invoke(sideEffect);
                 }
             }
         }

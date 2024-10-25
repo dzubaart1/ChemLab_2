@@ -37,12 +37,12 @@ public class InfoTabletPanel : BasePanel<TabletPanelsType>
 
     private void OnClickMainPanelBtn()
     {
-        TaskProperty currentTask = _tasksService.GetCurrentTask();
-        switch (currentTask.ActivityConfig.ActivityType)
+        //TaskProperty currentTask = _tasksService.GetCurrentTask();
+        /*switch (currentTask.ActivityConfig.labActivityType)
         {
             default:
                 SwitchPanel(TabletPanelsType.MainPanel);
                 break;
-        }
+        }*/
     }
 }

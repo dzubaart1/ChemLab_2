@@ -58,7 +58,7 @@ namespace BioEngineerLab.Gameplay
                 playerHand.ToggleHandModel(_handModelType);
                 _meshRenderer.enabled = false;
                 _vrGrabInteractable.interactionManager.SelectExit(args.interactorObject, _vrGrabInteractable);
-                _tasksService.TryCompleteTask(new MachineActivity(MachineActivityType.OnStart, MachineType.HandModelChangerMachine));
+                _tasksService.TryCompleteTask(new MachineLabActivity(EMachineActivity.OnStart, EMachine.HandModelChangerMachine));
             }
         }
 

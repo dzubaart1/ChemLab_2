@@ -78,4 +78,38 @@ namespace BioEngineerLab
         Color2,
         Color3
     }
+    public enum EMachineActivity : byte
+    {
+        OnEnter,
+        OnStart,
+        OnFinish,
+        OnExit,
+    }
+
+    public enum EMachine : byte
+    {
+        StirringMachine,
+        HandModelChangerMachine,
+        CoatMachine,
+        SyringeCupMoveMachine
+    }
+    
+    public enum ESocketActivity : byte
+    {
+        Enter,
+        Exit
+    }
+    
+    public enum ESocket : byte
+    {
+        PistonSocket,
+        NeedleSocket,
+        KRUSSSyringeSocket,
+        KRUSSKuvetkaSocket,
+        PAFBodySocket,
+        HeptanBodySocket,
+        KRUSSInteractablePanelSocket,
+        StirringMachineSocket,
+        LabCoatSocket,
+    }
 }

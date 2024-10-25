@@ -36,7 +36,7 @@ public class HintTabletPanel : BasePanel<TabletPanelsType>
 
     private void OnClickMainPanelBtn()
     {
-        TaskProperty currentTask = _tasksService.GetCurrentTask();
+        //TaskProperty currentTask = _tasksService.GetCurrentTask();
         //switch (currentTask.ActivityConfig.ActivityType)
         //{
         //    case ActivityType.SliderValueChangedActivity:

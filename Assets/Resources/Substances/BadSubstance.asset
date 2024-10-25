@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e6d0857d78da89408e391181281f1ac, type: 3}
   m_Name: BadSubstance
   m_EditorClassIdentifier: 
-  SubstanceName: 6
-  SubstanceMode: 0
-  HintName: BadSubtance
-  Color: {r: 0.2833201, g: 0.7584905, b: 0.1703025, a: 1}
-  SubSubstanceProperties: []
-  SumSubSubstancePropertiesWeights: 0
+  LabSubstanceProperty:
+    SubstanceName: 3
+    SubstanceMode: 2
+    SubstanceLayer: 2
+    SubstanceColorR: 0
+    SubstanceColorG: 0
+    SubstanceColorB: 0
+    SubstanceColorA: 0
+    HintName: 

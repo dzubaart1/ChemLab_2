@@ -11,12 +11,12 @@ namespace BioEngineerLab.UI
         
         private TasksService _tasksService;
         
-        private void Awake()
+        /*private void Awake()
         {
             _tasksService = Engine.GetService<TasksService>();
-            _tasksService.TaskUpdatedEvent += OnTaskUpdate;
+            //_tasksService.TaskUpdatedEvent += OnTaskUpdate;
 
-            OnTaskUpdate(_tasksService.GetCurrentTask());
+            //OnTaskUpdate(_tasksService.GetCurrentTask());
         }
 
         private void OnDestroy()
@@ -24,10 +24,10 @@ namespace BioEngineerLab.UI
             _tasksService.TaskUpdatedEvent -= OnTaskUpdate;
         }
         
-        private void OnTaskUpdate(TaskProperty task)
+        private void OnTaskUpdate(Tas task)
         {
             _taskTitleText.text = task.Title;
             _taskDescriptionText.text = task.Description;
-        }
+        }*/
     }
 }

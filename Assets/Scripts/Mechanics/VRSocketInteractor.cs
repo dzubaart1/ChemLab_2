@@ -14,7 +14,7 @@ namespace BioEngineerLab.Gameplay
             public VRGrabInteractable GrabbedObject;
         }
 
-        [SerializeField] private SocketType _socketType;
+        [FormerlySerializedAs("_socketType")] [SerializeField] private ESocket eSocket;
         [SerializeField] private bool _isTaskSendable;
 
         private TasksService _tasksService;
@@ -64,7 +64,7 @@ namespace BioEngineerLab.Gameplay
 
             if (_isTaskSendable)
             {
-                _tasksService.TryCompleteTask(new SocketActivity(_socketType, SocketActivityType.Enter));
+                //_tasksService.TryCompleteTask(new SocketLabActivity(eSocket, ESocketActivity.Enter));
             }
         }
 
@@ -80,7 +80,7 @@ namespace BioEngineerLab.Gameplay
 
             if (_isTaskSendable)
             {
-                _tasksService.TryCompleteTask(new SocketActivity(_socketType, SocketActivityType.Exit));
+                //_tasksService.TryCompleteTask(new SocketLabTaskActivity(eSocket, ESocketActivity.Exit));
             }
         }
 

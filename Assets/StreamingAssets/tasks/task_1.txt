@@ -1,1 +1,36 @@
-{"$type":"BioEngineerLab.Tasks.TaskProperty, Assembly-CSharp","Number":1,"Title":"task 1","Description":"","Warning":"","SaveableTask":false,"ActivityConfig":{"$type":"BioEngineerLab.Tasks.ActivityConfig, Assembly-CSharp","ActivityType":0,"Activity":{"$type":"BioEngineerLab.Activities.AnchorActivity, Assembly-CSharp","ContainerType":1,"ActivityType":3}},"SideEffectConfigs":{"$type":"BioEngineerLab.Tasks.SideEffectConfig[], Assembly-CSharp","$values":[{"$type":"BioEngineerLab.Tasks.SideEffectConfig, Assembly-CSharp","SideEffectType":2,"SideEffect":{"$type":"BioEngineerLab.Tasks.SideEffects.AddReagentsSideEffect, Assembly-CSharp","ReagentsSubstance":{"$type":"BioEngineerLab.Substances.SubstanceProperty, Assembly-CSharp","SubstanceName":4,"SubstanceMode":0,"SubstanceLayer":0,"SubstanceColor":0,"HintName":"ПАФ","name":"PAF","hideFlags":0},"Weight":89.0,"SideEffectType":2,"SideEffectTimeType":1}}]}}
+{
+  "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Number": 1,
+  "Title": "Task 1",
+  "Description": "",
+  "Warning": "",
+  "SaveableTask": false,
+  "LabActivity": {
+    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
+    "FromContainer": 2,
+    "ToContainer": 4,
+    "LabSubstanceProperty": {
+      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+      "SubstanceName": 3,
+      "SubstanceMode": 2,
+      "SubstanceLayer": 2,
+      "SubstanceColorR": 0.0,
+      "SubstanceColorG": 0.0,
+      "SubstanceColorB": 0.0,
+      "SubstanceColorA": 0.0,
+      "HintName": ""
+    },
+    "ActivityType": 0
+  },
+  "LabSideEffects": {
+    "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
+    "$values": [
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.Effect1LabSideEffect, Assembly-CSharp",
+        "SomeConfig": 89,
+        "SideEffectTimeType": 0,
+        "SideEffectType": 0
+      }
+    ]
+  }
+}

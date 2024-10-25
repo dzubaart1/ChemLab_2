@@ -5,6 +5,8 @@ using BioEngineerLab.Activities;
 using BioEngineerLab.Configurations;
 using BioEngineerLab.Containers;
 using BioEngineerLab.Substances;
+using BioEngineerLab.Tasks;
+using Crafting;
 using JetBrains.Annotations;
 using Debug = UnityEngine.Debug;
 
@@ -15,6 +17,9 @@ namespace BioEngineerLab.Core
         public CraftConfiguration Configuration { get; private set; }
 
         private TasksService _tasksService;
+
+        private List<SOLabSubstanceProperty> _soLabSubstanceProperties;
+        private List<SOLabCraft> _soLabCrafts;
         
         public CraftService(CraftConfiguration configuration, TasksService tasksService)
         {
@@ -23,174 +28,160 @@ namespace BioEngineerLab.Core
             _tasksService = tasksService;
         }
 
-        [CanBeNull]
-        public SubstanceProperty GetSubstanceProperty(ESubstanceName substanceName, ESubstanceMode substanceMode)
-        {
-            foreach (var substanceProperty in Configuration.SubstanceProperties)
-            {
-                if (substanceProperty.SubstanceName == substanceName & substanceProperty.SubstanceMode == substanceMode)
-                {
-                    return substanceProperty;
-                }
-            }
-
-            return null;
-        }
-        
-        public void Transfer(Container fromContainer, Container toContainer)
+        public void Transfer(LabContainer fromLabContainer, LabContainer toLabContainer)
         {
             Debug.Log("FROM");
-            fromContainer.PrintContainerInfo();
+            fromLabContainer.PrintContainerInfo();
             Debug.Log("TO");
-            toContainer.PrintContainerInfo();
+            toLabContainer.PrintContainerInfo();
             
-            if (fromContainer.IsSpoonContainer & fromContainer.GetSubstancesCount() == 0 &
-                toContainer.GetSubstancesCount() != 0)
+            if (fromLabContainer.IsSpoonContainer & fromLabContainer.GetSubstancesCount() == 0 &
+                toLabContainer.GetSubstancesCount() != 0)
             {
-                Add(toContainer, fromContainer);
+                Add(toLabContainer, fromLabContainer);
                 return;
             }
 
-            if (fromContainer.IsSpoonContainer & fromContainer.GetSubstancesCount() != 0 &
-                toContainer.GetSubstancesCount() != 0)
+            if (fromLabContainer.IsSpoonContainer & fromLabContainer.GetSubstancesCount() != 0 &
+                toLabContainer.GetSubstancesCount() != 0)
             {
-                Mix(fromContainer, toContainer);
+                Mix(fromLabContainer, toLabContainer);
                 return;
             }
 
-            if (fromContainer.IsSpoonContainer & fromContainer.GetSubstancesCount() != 0 &
-                toContainer.GetSubstancesCount() == 0)
+            if (fromLabContainer.IsSpoonContainer & fromLabContainer.GetSubstancesCount() != 0 &
+                toLabContainer.GetSubstancesCount() == 0)
             {
-                Add(fromContainer, toContainer);
+                Add(fromLabContainer, toLabContainer);
                 return;
             }
             
-            if (fromContainer.GetSubstancesCount() == 0)
+            if (fromLabContainer.GetSubstancesCount() == 0)
             {
                 return;
             }
 
-            if (toContainer.GetSubstancesCount() != 0)
+            if (toLabContainer.GetSubstancesCount() != 0)
             {
-                Mix(fromContainer, toContainer);
+                Mix(fromLabContainer, toLabContainer);
                 return;
             }
 
-            if (toContainer.GetSubstancesCount() == 0)
+            if (toLabContainer.GetSubstancesCount() == 0)
             {
-                Add(fromContainer, toContainer);
+                Add(fromLabContainer, toLabContainer);
             }
         }
 
-        public void HeatStir(Container container)
+        public void HeatStir(LabContainer labContainer)
         {
-            Craft heatStirCraft = FindCraft(container.GetSubstanceProperties(), ECraft.HeatStir);
+            LabCraft heatStirCraft = FindCraft(labContainer.GetSubstanceProperties(), ECraft.HeatStir);
 
             if (heatStirCraft == null)
             {
                 return;
             }
 
-            float heatStirWeight = container.GetSubstancesWeight();
+            float heatStirWeight = labContainer.GetSubstancesWeight();
             float weightForEachSubstances = heatStirWeight / heatStirCraft.SubstancesRes.Length;
 
-            container.ClearContainer();
+            labContainer.ClearContainer();
             foreach (var substanceProperty in heatStirCraft.SubstancesRes)
             {
-                container.PutSubstance(new Substance(substanceProperty, weightForEachSubstances));
+                labContainer.PutSubstance(new LabSubstance(substanceProperty, weightForEachSubstances));
             }
             
-            _tasksService.TryCompleteTask(new CraftSubstanceActivity(container.ContainerType, ECraft.HeatStir));
+            _tasksService.TryCompleteTask(new CraftSubstanceLabActivity(labContainer.ContainerType, heatStirCraft));
         }
 
 
-        public void Dry(Container container)
+        public void Dry(LabContainer labContainer)
         {
-            Craft dry = FindCraft(container.GetSubstanceProperties(), ECraft.Dry);
+            LabCraft dryCraft = FindCraft(labContainer.GetSubstanceProperties(), ECraft.Dry);
 
-            if (dry == null)
+            if (dryCraft == null)
             {
                 return;
             }
 
-            float dryWeight = container.GetSubstancesWeight();
-            float weightForEachSubstances = dryWeight / dry.SubstancesRes.Length;
+            float dryWeight = labContainer.GetSubstancesWeight();
+            float weightForEachSubstances = dryWeight / dryCraft.SubstancesRes.Length;
 
-            container.ClearContainer();
-            foreach (var substanceProperty in dry.SubstancesRes)
+            labContainer.ClearContainer();
+            foreach (var substanceProperty in dryCraft.SubstancesRes)
             {
-                container.PutSubstance(new Substance(substanceProperty, weightForEachSubstances));
+                labContainer.PutSubstance(new LabSubstance(substanceProperty, weightForEachSubstances));
             }
             
-            _tasksService.TryCompleteTask(new CraftSubstanceActivity(container.ContainerType, ECraft.Dry));
+            _tasksService.TryCompleteTask(new CraftSubstanceLabActivity(labContainer.ContainerType, dryCraft));
         }
 
-        public void Split(Container container)
+        public void Split(LabContainer labContainer)
         {
-            Craft split = FindCraft(container.GetSubstanceProperties(), ECraft.Split);
+            LabCraft splitCraft = FindCraft(labContainer.GetSubstanceProperties(), ECraft.Split);
 
-            if (split == null)
+            if (splitCraft == null)
             {
                 return;
             }
 
-            float splitWeight = container.GetSubstancesWeight();
-            float weightForEachSubstances = splitWeight / split.SubstancesRes.Length;
+            float splitWeight = labContainer.GetSubstancesWeight();
+            float weightForEachSubstances = splitWeight / splitCraft.SubstancesRes.Length;
 
-            container.ClearContainer();
-            foreach (var substanceProperty in split.SubstancesRes)
+            labContainer.ClearContainer();
+            foreach (var substanceProperty in splitCraft.SubstancesRes)
             {
-                container.PutSubstance(new Substance(substanceProperty, weightForEachSubstances));
+                labContainer.PutSubstance(new LabSubstance(substanceProperty, weightForEachSubstances));
             }
             
-            _tasksService.TryCompleteTask(new CraftSubstanceActivity( container.ContainerType, ECraft.Split));
+            _tasksService.TryCompleteTask(new CraftSubstanceLabActivity( labContainer.ContainerType, splitCraft));
         }
         
-        private void Add(Container fromContainer, Container toContainer)
+        private void Add(LabContainer fromLabContainer, LabContainer toLabContainer)
         {
-            Substance transferSubstance = fromContainer.GetTopSubstance();
+            LabSubstance transferLabSubstance = fromLabContainer.GetTopSubstance();
 
-            if (transferSubstance == null)
+            if (transferLabSubstance == null)
             {
                 return;
             }
 
-            float transferWeight = Math.Min(toContainer.GetAvailableWeight(), transferSubstance.Weight);
+            float transferWeight = Math.Min(toLabContainer.GetAvailableWeight(), transferLabSubstance.Weight);
 
-            Substance toContainerSubstance = new Substance(transferSubstance.SubstanceProperty, transferWeight);
-            toContainer.PutSubstance(toContainerSubstance);
+            LabSubstance toContainerLabSubstance = new LabSubstance(transferLabSubstance.SubstanceProperty, transferWeight);
+            toLabContainer.PutSubstance(toContainerLabSubstance);
 
-            if (transferSubstance.Weight > transferWeight)
+            if (transferLabSubstance.Weight > transferWeight)
             {
-                transferSubstance.RemoveWeight(transferWeight);
+                transferLabSubstance.RemoveWeight(transferWeight);
             }
             else
             {
-                fromContainer.DeleteSubstanceByLayer(transferSubstance.SubstanceProperty.SubstanceLayer);
+                fromLabContainer.DeleteSubstanceByLayer(transferLabSubstance.SubstanceProperty.SubstanceLayer);
             }
 
-            _tasksService.TryCompleteTask(new AddSubstanceActivity(fromContainer.ContainerType, toContainer.ContainerType, transferSubstance.SubstanceProperty.SubstanceName, transferSubstance.SubstanceProperty.SubstanceMode));
+            _tasksService.TryCompleteTask(new AddSubstanceLabActivity(fromLabContainer.ContainerType, toLabContainer.ContainerType, transferLabSubstance.SubstanceProperty));
         }
 
-        private void Mix(Container fromContainer, Container toContainer)
+        private void Mix(LabContainer fromLabContainer, LabContainer toLabContainer)
         {
-            Craft mix = FindCraft(fromContainer.GetSubstanceProperties(), ECraft.Mix);
+            LabCraft mixCraft = FindCraft(fromLabContainer.GetSubstanceProperties(), ECraft.Mix);
 
-            if (mix == null)
+            if (mixCraft == null)
             {
                 return;
             }
             
-            float transferWeight = Math.Min(toContainer.GetAvailableWeight(), fromContainer.GetSubstancesWeight());
-            float weightForEachSubstance = transferWeight / mix.SubstancesRes.Length;
+            float transferWeight = Math.Min(toLabContainer.GetAvailableWeight(), fromLabContainer.GetSubstancesWeight());
+            float weightForEachSubstance = transferWeight / mixCraft.SubstancesRes.Length;
             
-            toContainer.ClearContainer();
-            foreach (SubstanceProperty substancePropertyRes in mix.SubstancesRes)
+            toLabContainer.ClearContainer();
+            foreach (LabSubstanceProperty substanceProperty in mixCraft.SubstancesRes)
             {
-                toContainer.PutSubstance(new Substance(substancePropertyRes, weightForEachSubstance));
+                toLabContainer.PutSubstance(new LabSubstance(substanceProperty, weightForEachSubstance));
             }
             
-            foreach (Substance substance in fromContainer.Substances)
+            foreach (LabSubstance substance in fromLabContainer.Substances)
             {
                 if (substance.Weight > weightForEachSubstance)
                 {
@@ -198,21 +189,26 @@ namespace BioEngineerLab.Core
                 }
                 else
                 {
-                    fromContainer.DeleteSubstanceByLayer(substance.SubstanceProperty.SubstanceLayer);
+                    fromLabContainer.DeleteSubstanceByLayer(substance.SubstanceProperty.SubstanceLayer);
                 }
             }
             
-            _tasksService.TryCompleteTask(new CraftSubstanceActivity(toContainer.ContainerType, ECraft.Mix));
+            _tasksService.TryCompleteTask(new CraftSubstanceLabActivity(toLabContainer.ContainerType, mixCraft));
         }
         
         [CanBeNull]
-        private Craft FindCraft(IReadOnlyCollection<SubstanceProperty> from, ECraft craftType)
+        private LabCraft FindCraft(IReadOnlyCollection<LabSubstanceProperty> from, ECraft craftType)
         {
-            return Configuration.Crafts.FirstOrDefault(config => 
-                config.CraftType == craftType &
-                config.SubstancesFrom.Length == from.Count &&
-                config.SubstancesFrom.All(from.Contains)
-                );
+            SOLabCraft soLabCraft = _soLabCrafts.FirstOrDefault(craft => craft.LabCraft.SubstancesFrom.All(from.Contains) &
+                                                        from.All(craft.LabCraft.SubstancesFrom.Contains) &
+                                                        craftType == craft.LabCraft.CraftType);
+
+            if (soLabCraft == null)
+            {
+                return null;
+            }
+
+            return soLabCraft.LabCraft;
         }
         
         public void Initialize()
