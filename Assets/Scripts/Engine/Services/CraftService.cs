@@ -189,6 +189,11 @@ namespace BioEngineerLab.Core
             
             foreach (LabSubstance substance in fromLabContainer.Substances)
             {
+                if (substance == null)
+                {
+                    continue;
+                }
+                
                 if (substance.Weight > weightForEachSubstance)
                 {
                     substance.RemoveWeight(weightForEachSubstance);
