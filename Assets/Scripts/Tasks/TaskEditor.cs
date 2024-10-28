@@ -1,4 +1,5 @@
-﻿using BioEngineerLab.Activities;
+﻿using System.Collections.Generic;
+using BioEngineerLab.Activities;
 using BioEngineerLab.Core;
 using BioEngineerLab.Tasks.SideEffects;
 using UnityEditor;
@@ -31,7 +32,7 @@ namespace BioEngineerLab.Tasks
             EditorGUILayout.LabelField("Activity", EditorStyles.boldLabel);
             
             EActivity activityType = (EActivity)EditorGUILayout.EnumPopup("Activity Type", _taskProperty.ActivityConfig.ActivityType);
-            if (activityType != _taskProperty.ActivityConfig.ActivityType)
+            if (activityType != _taskProperty.ActivityConfig.Activity.ActivityType)
             {
                 _taskProperty.ActivityConfig.ActivityType = activityType;
                 InitActivityByType(_taskProperty.ActivityConfig.ActivityType);   
@@ -41,16 +42,22 @@ namespace BioEngineerLab.Tasks
             EditorGUILayout.Space();
             EditorGUILayout.LabelField("Side Effects", EditorStyles.boldLabel);
 
-            for (int i = 0 ; i < _taskProperty.SideEffectConfigs.Length; i++)
+            for (int i = 0 ; i < _taskProperty.SideEffectConfigs.Count; i++)
             {
-                ESideEffect eSideEffect = (ESideEffect)EditorGUILayout.EnumPopup("Side Effect Type", _taskProperty.SideEffectConfigs[i].SideEffectType);
-                if (eSideEffect != _taskProperty.SideEffectConfigs[i].SideEffectType)
+                EditorGUILayout.LabelField($"{i} effect", EditorStyles.boldLabel);
+                
+                ESideEffect sideEffectType = (ESideEffect)EditorGUILayout.EnumPopup("Side Effect Type", _taskProperty.SideEffectConfigs[i].SideEffectType);
+                if (sideEffectType != _taskProperty.SideEffectConfigs[i].SideEffect.SideEffectType)
                 {
-                    _taskProperty.SideEffectConfigs[i].SideEffectType = eSideEffect;
+                    _taskProperty.SideEffectConfigs[i].SideEffectType = sideEffectType;
                     InitSideEffectByType(_taskProperty.SideEffectConfigs[i].SideEffectType, i);   
                 }
                 
                 _taskProperty.SideEffectConfigs[i].SideEffect.ShowInEditor();
+                if (GUILayout.Button("Delete Effect"))
+                {
+                    _taskPropertyScriptableObject.DeleteEffect(_taskProperty.SideEffectConfigs[i]);
+                }
             }
             
             InitSerialisedButtons();
@@ -77,25 +84,25 @@ namespace BioEngineerLab.Tasks
                     break;
             }
         }
-
-        private void InitActivityByType(EActivity eActivity)
+        
+        private void InitActivityByType(EActivity activityType)
         {
-            switch (eActivity)
+            switch (activityType)
             {
-                case EActivity.CraftSubstanceActivity:
-                    _taskProperty.ActivityConfig.Activity = new CraftSubstanceActivity();
+                case EActivity.AnchorActivity:
+                    _taskProperty.ActivityConfig.Activity = new AnchorActivity();
                     break;
                 case EActivity.AddSubstanceActivity:
                     _taskProperty.ActivityConfig.Activity = new AddSubstanceActivity();
+                    break;
+                case EActivity.CraftSubstanceActivity:
+                    _taskProperty.ActivityConfig.Activity = new CraftSubstanceActivity();
                     break;
                 case EActivity.MachineActivity:
                     _taskProperty.ActivityConfig.Activity = new MachineActivity();
                     break;
                 case EActivity.SocketActivity:
                     _taskProperty.ActivityConfig.Activity = new SocketActivity();
-                    break;
-                case EActivity.AnchorActivity:
-                    _taskProperty.ActivityConfig.Activity = new AnchorActivity();
                     break;
                 default:
                     Debug.LogError("Can't find action!");
@@ -116,17 +123,7 @@ namespace BioEngineerLab.Tasks
         {
             if (GUILayout.Button("Add Side Effect"))
             {
-                SideEffectConfig[] sideEffectConfigs = new SideEffectConfig[_taskProperty.SideEffectConfigs.Length + 1];
-
-                int i;
-                for(i = 0; i < _taskProperty.SideEffectConfigs.Length; i++)
-                {
-                    sideEffectConfigs[i] = _taskProperty.SideEffectConfigs[i];
-                }
-
-                sideEffectConfigs[i] = new SideEffectConfig();
-
-                _taskProperty.SideEffectConfigs = sideEffectConfigs;
+                _taskPropertyScriptableObject.AddEffect();
             }
             
             if (GUILayout.Button("Load"))

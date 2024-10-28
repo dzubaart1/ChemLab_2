@@ -1,23 +1,24 @@
-﻿using UnityEditor;
+﻿using BioEngineerLab.Tasks.Activities;
+using UnityEditor;
 
 namespace BioEngineerLab.Activities
 {
     public class CraftSubstanceActivity : Activity
     {
-        public EContainer Container { get; private set; }
-        public CraftConfig CraftConfig { get; private set; }
+        public EContainer Container;
+        public ECraft CraftType;
 
-        public CraftSubstanceActivity(EContainer container = EContainer.KuvetkaContainer, CraftConfig craftConfig = null) 
+        public CraftSubstanceActivity(EContainer container = EContainer.KuvetkaContainer, ECraft craftType = ECraft.Dry) 
             : base(EActivity.CraftSubstanceActivity)
         {
             Container = container;
-            CraftConfig = craftConfig;
+            CraftType = craftType;
         }
         
         public override void ShowInEditor()
         {
             Container = (EContainer)EditorGUILayout.EnumPopup("Container Using To Craft", Container);
-            CraftConfig = EditorGUILayout.ObjectField("Craft Config", CraftConfig, typeof(CraftConfig), true) as CraftConfig;
+            CraftType = (ECraft)EditorGUILayout.EnumPopup("Craft Type", CraftType);
         }
 
         public override bool CompleteActivity(Activity activity)
@@ -28,7 +29,7 @@ namespace BioEngineerLab.Activities
             }
 
             return Container == craftSubstanceActivity.Container &
-                   CraftConfig == craftSubstanceActivity.CraftConfig;
+                   CraftType == craftSubstanceActivity.CraftType;
         }
     }
 }

@@ -1,11 +1,12 @@
-﻿using UnityEditor;
+﻿using BioEngineerLab.Tasks.Activities;
+using UnityEditor;
 
 namespace BioEngineerLab.Activities
 {
     public class SocketActivity : Activity
     {
-        public SocketType SocketType { get; private set; }
-        public SocketActivityType SocketActivityType { get; private set; }
+        public SocketType SocketType;
+        public SocketActivityType SocketActivityType;
 
         public SocketActivity(SocketType socketType = SocketType.NeedleSocket, SocketActivityType socketActivityType = SocketActivityType.Enter)
             : base (EActivity.SocketActivity)

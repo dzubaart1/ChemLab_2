@@ -1,4 +1,3 @@
-using BioEngineerLab.Activities;
 using BioEngineerLab.Core;
 using BioEngineerLab.Tasks;
 using UnityEngine;
@@ -40,18 +39,7 @@ namespace BioEngineerLab.UI
 
         private void OnTaskUpdated(TaskProperty taskProperty)
         {
-            //switch (taskProperty.ActivityConfig.ActivityType)
-            //{
-            //    case ActivityType.SliderValueChangedActivity:
-            //        _panelSwitcher.SwitchPanel(TabletPanelsType.SliderTaskPanel);
-            //        break;
-            //    case ActivityType.DragLineActivity:
-            //        _panelSwitcher.SwitchPanel(TabletPanelsType.DragLinePanel);
-            //        break;
-            //    default:
-            //        _panelSwitcher.SwitchPanel(TabletPanelsType.MainPanel);
-            //        break;
-            //}
+
         }
     }
 }

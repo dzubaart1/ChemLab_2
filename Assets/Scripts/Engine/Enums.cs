@@ -49,7 +49,7 @@ namespace BioEngineerLab
         CraftSubstanceActivity
     }
     
-    public enum EContainer
+    public enum EContainer : byte
     {
         ChemicGlassContainer,
         KuvetkaContainer,
@@ -59,20 +59,20 @@ namespace BioEngineerLab
         PistonContainer
     }
     
-    public enum ESideEffect
+    public enum ESideEffect : byte
     {
         Effect1,
         Effect2,
         AddReagentsSideEffect
     }
 
-    public enum ESideEffectTime
+    public enum ESideEffectTime : byte
     {
         StartTask,
         EndTask
     }
 
-    public enum ESubstanceColor
+    public enum ESubstanceColor : byte
     {
         Color1,
         Color2,

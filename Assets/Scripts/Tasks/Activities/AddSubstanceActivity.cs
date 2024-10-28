@@ -1,27 +1,30 @@
-﻿using BioEngineerLab.Substances;
+﻿using BioEngineerLab.Tasks.Activities;
 using UnityEditor;
 
 namespace BioEngineerLab.Activities
 {
     public class AddSubstanceActivity : Activity
     {
-        public EContainer FromContainer { get; private set; }
-        public EContainer ToContainer { get; private set; }
-        public SubstanceProperty SubstanceProperty { get; private set; }
+        public EContainer FromContainer;
+        public EContainer ToContainer;
+        public ESubstanceName SubstanceName;
+        public ESubstanceMode SubstanceMode;
 
-        public AddSubstanceActivity(EContainer fromContainer = EContainer.KuvetkaContainer, EContainer toContainer = EContainer.KuvetkaContainer, SubstanceProperty substanceProperty = null) 
+        public AddSubstanceActivity(EContainer fromContainer = EContainer.KuvetkaContainer, EContainer toContainer = EContainer.KuvetkaContainer, ESubstanceName substanceName = ESubstanceName.Bad, ESubstanceMode substanceMode = ESubstanceMode.Dry) 
             : base(EActivity.AddSubstanceActivity)
         {
             FromContainer = fromContainer;
             ToContainer = toContainer;
-            SubstanceProperty = substanceProperty;
+            SubstanceName = substanceName;
+            SubstanceMode = substanceMode;
         }
         
         public override void ShowInEditor()
         {
             FromContainer = (EContainer)EditorGUILayout.EnumPopup("From Container Type", FromContainer);
             ToContainer = (EContainer)EditorGUILayout.EnumPopup("To Container Type", ToContainer);
-            SubstanceProperty = EditorGUILayout.ObjectField("Adding Substance", SubstanceProperty, typeof(SubstanceProperty), true) as SubstanceProperty;
+            SubstanceName = (ESubstanceName)EditorGUILayout.EnumPopup("Adding Substance Name", SubstanceName);
+            SubstanceMode = (ESubstanceMode)EditorGUILayout.EnumPopup("Adding Substance Mode", SubstanceMode);
         }
 
         public override bool CompleteActivity(Activity activity)
@@ -33,7 +36,8 @@ namespace BioEngineerLab.Activities
 
             return FromContainer == addSubstanceActivity.FromContainer &
                    ToContainer == addSubstanceActivity.ToContainer &
-                   SubstanceProperty == addSubstanceActivity.SubstanceProperty;
+                   SubstanceName == addSubstanceActivity.SubstanceName &
+                   SubstanceMode == addSubstanceActivity.SubstanceMode;
         }
     }
 }

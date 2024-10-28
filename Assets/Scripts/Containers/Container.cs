@@ -81,18 +81,17 @@ namespace BioEngineerLab.Containers
         }
 
         private ContainerService _containerService;
-        private SubstanceColorsService _substanceColorsService;
         
         private Substance[] _substances = new Substance[MAX_SUBSTANCE_COUNT];
-        
-        private void Start()
+
+        private void Awake()
         {
             _containerService = Engine.GetService<ContainerService>();
             _containerService.RegisterContainer(this);
+        }
 
-            //if (_isReagentsContainer)
-            //    _substances[0] = new Substance(_reagentsProperty, 1000);
-            
+        private void Start()
+        {
             UpdateView();
         }
         
@@ -247,7 +246,7 @@ namespace BioEngineerLab.Containers
                 else
                 {
                     meshRenderer.enabled = true;
-                    meshRenderer.material.color = _substances[i].GetColor();
+                    meshRenderer.material.color = _substances[i].SubstanceProperty.SubstanceColor;
                 }
             }
         }

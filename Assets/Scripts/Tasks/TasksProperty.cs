@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using BioEngineerLab.Activities;
+using BioEngineerLab.Tasks.Activities;
 using BioEngineerLab.Tasks.SideEffects;
 
 namespace BioEngineerLab.Tasks
@@ -12,23 +14,23 @@ namespace BioEngineerLab.Tasks
         public string Description;
         public string Warning;
         public bool SaveableTask;
+
+        public ActivityConfig ActivityConfig;
         
-        public ActivityConfig ActivityConfig = new ActivityConfig();
-        
-        public SideEffectConfig[] SideEffectConfigs = Array.Empty<SideEffectConfig>();
+        public List<SideEffectConfig> SideEffectConfigs = new List<SideEffectConfig>();
     }
 
     [Serializable]
     public class ActivityConfig
     {
-        public EActivity ActivityType;
+        public EActivity ActivityType = EActivity.AnchorActivity;
         public Activity Activity = new AnchorActivity();
     }
 
     [Serializable]
     public class SideEffectConfig
     {
-        public ESideEffect SideEffectType;
+        public ESideEffect SideEffectType = ESideEffect.AddReagentsSideEffect;
         public SideEffect SideEffect = new AddReagentsSideEffect();
     }
 }

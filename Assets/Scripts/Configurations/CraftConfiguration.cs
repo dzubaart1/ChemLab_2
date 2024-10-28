@@ -7,6 +7,6 @@ namespace BioEngineerLab.Configurations
     {
         public SubstanceProperty BadSubstance;
         public List<SubstanceProperty> SubstanceProperties;
-        public List<CraftConfig> Crafts;
+        public List<Craft> Crafts;
     }
 }

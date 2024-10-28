@@ -7,6 +7,7 @@ using BioEngineerLab.Activities;
 using BioEngineerLab.Gameplay;
 using BioEngineerLab.JSON;
 using BioEngineerLab.Tasks;
+using BioEngineerLab.Tasks.Activities;
 using Newtonsoft.Json;
 using UnityEngine;
 
@@ -36,7 +37,7 @@ namespace BioEngineerLab.Core
         public event Action TaskFailedEvent;
 
         public IReadOnlyCollection<TaskProperty> TasksList => _tasksList;
-        private List<TaskProperty> _tasksList;
+        private List<TaskProperty> _tasksList = new List<TaskProperty>();
         
         private int _currentTaskId = 0;
         private SavedData _savedData;
@@ -63,12 +64,14 @@ namespace BioEngineerLab.Core
         
         public void Initialize()
         {
-            _tasksList = new List<TaskProperty>();
+            Engine.Behaviour.BehaviourStartEvent += ActivateCurrentTask;
+            
             LoadJSONTasks();
         }
 
         public void Destroy()
         {
+            Engine.Behaviour.BehaviourStartEvent -= ActivateCurrentTask;
         }
         
         public void TryCompleteTask(Activity activity)
@@ -110,18 +113,21 @@ namespace BioEngineerLab.Core
 
         private void MoveToNextTask()
         {
-            if (_currentTaskId + 1 == _tasksList.Count-1)
+            if (_currentTaskId + 1 == _tasksList.Count)
             {
                 EndTasksListEvent?.Invoke();
                 return;
             }
 
-            Debug.Log("hi from move");
-
             ActivateSideEffects(ESideEffectTime.EndTask);
             
             _currentTaskId++;
             
+            ActivateCurrentTask();
+        }
+
+        private void ActivateCurrentTask()
+        {
             ActivateSideEffects(ESideEffectTime.StartTask);
             
             if (_tasksList[_currentTaskId].SaveableTask)
@@ -134,7 +140,7 @@ namespace BioEngineerLab.Core
         
         private void MoveToPrevTask()
         {
-            if (_currentTaskId - 1 == -1)
+            if (_currentTaskId == 0)
             {
                 EndTasksListEvent?.Invoke();
                 return;
@@ -166,7 +172,7 @@ namespace BioEngineerLab.Core
                 _tasksList.Add(task);
             }
             
-            _tasksList.Sort(new TaskComparer());
+            _tasksList = _tasksList.OrderBy(task => task.Number).ToList();
         }
 
         public static void LoadAllTasksToScriptableObjects()
@@ -230,34 +236,13 @@ namespace BioEngineerLab.Core
 
         private void ActivateSideEffects(ESideEffectTime sideEffectTime)
         {
-            Debug.Log("activate side effect");
             foreach (var config in _tasksList[_currentTaskId].SideEffectConfigs)
             {
-                Debug.Log("activate side effect#");
                 if (config.SideEffect.SideEffectTimeType == sideEffectTime)
                 {
-                    Debug.Log("activate side effect!!!!");
                     config.SideEffect.OnActivated();
                 }
             }
-        }
-    }
-
-    public class TaskComparer : IComparer<TaskProperty>
-    {
-        public int Compare(TaskProperty x, TaskProperty y)
-        {
-            if (x == null | y == null)
-            {
-                return 0;
-            }
-            
-            if (x.Number == y.Number)
-            {
-                return 0;
-            }
-
-            return x.Number > y.Number ? 1 : -1;
         }
     }
 }
