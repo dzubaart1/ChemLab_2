@@ -2668,10 +2668,46 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4997758349498308481}
     m_Modifications:
+    - target: {fileID: 1265276983029057757, guid: 694c6bf6b4f1b634fae760b6de4a44d5, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 1265276983029057757, guid: 694c6bf6b4f1b634fae760b6de4a44d5, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 2422696822549187770, guid: 694c6bf6b4f1b634fae760b6de4a44d5, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 2422696822549187770, guid: 694c6bf6b4f1b634fae760b6de4a44d5, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 7021292775547796743, guid: 694c6bf6b4f1b634fae760b6de4a44d5, type: 3}
       propertyPath: SwitchPanelOnLoad
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7021292775547796743, guid: 694c6bf6b4f1b634fae760b6de4a44d5, type: 3}
+      propertyPath: _panelsList.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7021292775547796743, guid: 694c6bf6b4f1b634fae760b6de4a44d5, type: 3}
+      propertyPath: _panelsList.Array.data[3]
+      value: 
+      objectReference: {fileID: 1872230841429650343}
+    - target: {fileID: 7021292775547796743, guid: 694c6bf6b4f1b634fae760b6de4a44d5, type: 3}
+      propertyPath: _panelsList.Array.data[4]
+      value: 
+      objectReference: {fileID: 2900893607326429205}
+    - target: {fileID: 7021292775547796743, guid: 694c6bf6b4f1b634fae760b6de4a44d5, type: 3}
+      propertyPath: _panelsList.Array.data[5]
+      value: 
+      objectReference: {fileID: 2122369994072895573}
+    - target: {fileID: 7021292775547796743, guid: 694c6bf6b4f1b634fae760b6de4a44d5, type: 3}
+      propertyPath: _panelsList.Array.data[6]
+      value: 
+      objectReference: {fileID: 2122369994072895573}
     - target: {fileID: 7234503950124934658, guid: 694c6bf6b4f1b634fae760b6de4a44d5, type: 3}
       propertyPath: m_Name
       value: TabletUI
@@ -2773,10 +2809,45 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7264841742207354678, guid: 694c6bf6b4f1b634fae760b6de4a44d5, type: 3}
+    - {fileID: 8852621381944507612, guid: 694c6bf6b4f1b634fae760b6de4a44d5, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 694c6bf6b4f1b634fae760b6de4a44d5, type: 3}
+--- !u!114 &1872230841429650343 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5334884972585439963, guid: 694c6bf6b4f1b634fae760b6de4a44d5, type: 3}
+  m_PrefabInstance: {fileID: 6049127709344774524}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e002a2dc9f6c6144894d7119904f260d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2122369994072895573 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5658489093892213033, guid: 694c6bf6b4f1b634fae760b6de4a44d5, type: 3}
+  m_PrefabInstance: {fileID: 6049127709344774524}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6072898693011a4fb2bb97cca12fea2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2900893607326429205 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8912864214550514025, guid: 694c6bf6b4f1b634fae760b6de4a44d5, type: 3}
+  m_PrefabInstance: {fileID: 6049127709344774524}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 573d776f4592318409bcd6ab4ba7dfea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &4421032921544474004 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7973759061487289576, guid: 694c6bf6b4f1b634fae760b6de4a44d5, type: 3}
