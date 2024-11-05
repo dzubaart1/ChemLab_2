@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using BioEngineerLab.Activities;
 using BioEngineerLab.Core;
+using BioEngineerLab.Tasks.Activities;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -15,7 +16,10 @@ namespace BioEngineerLab.Gameplay
         }
 
         [FormerlySerializedAs("_socketType")] [SerializeField] private ESocket eSocket;
-        [SerializeField] private bool _isTaskSendable;
+        //[SerializeField] private bool _isTaskSendable;
+
+        [SerializeField] private bool _isEnterTaskSendable;
+        [SerializeField] private bool _isExitTaskSendable;
 
         private TasksService _tasksService;
         private SaveService _saveService;
@@ -62,9 +66,9 @@ namespace BioEngineerLab.Gameplay
                 return;
             }
 
-            if (_isTaskSendable)
+            if (_isEnterTaskSendable)
             {
-                //_tasksService.TryCompleteTask(new SocketLabActivity(eSocket, ESocketActivity.Enter));
+                _tasksService.TryCompleteTask(new SocketLabActivity(eSocket, ESocketActivity.Enter, EContainer.ChemicGlassContainer));//???
             }
         }
 
@@ -78,9 +82,9 @@ namespace BioEngineerLab.Gameplay
                 return;
             }
 
-            if (_isTaskSendable)
+            if (_isExitTaskSendable)
             {
-                //_tasksService.TryCompleteTask(new SocketLabTaskActivity(eSocket, ESocketActivity.Exit));
+                _tasksService.TryCompleteTask(new SocketLabActivity(eSocket, ESocketActivity.Exit, EContainer.ChemicGlassContainer));//???
             }
         }
 

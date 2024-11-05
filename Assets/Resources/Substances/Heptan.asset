@@ -15,7 +15,7 @@ MonoBehaviour:
   LabSubstanceProperty:
     SubstanceName: Heptan
     SubstanceMode: 0
-    SubstanceLayer: 1
+    SubstanceLayer: 0
     SubstanceColorR: 0.81886786
     SubstanceColorG: 0.30128145
     SubstanceColorB: 0.8180221

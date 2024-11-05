@@ -1,0 +1,47 @@
+{
+  "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Number": 24,
+  "Title": "Задание 24",
+  "Description": "Возьмите мерную ложечку и наберите необходимое количество реагента",
+  "Warning": "",
+  "SaveableTask": false,
+  "LabActivity": {
+    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
+    "FromContainer": 1,
+    "ToContainer": 2,
+    "LabSubstanceProperty": {
+      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+      "SubstanceName": "Agar",
+      "SubstanceMode": 0,
+      "SubstanceLayer": 0,
+      "SubstanceColorR": 0.217604533,
+      "SubstanceColorG": 0.843137264,
+      "SubstanceColorB": 0.176470578,
+      "SubstanceColorA": 0.8117647,
+      "HintName": ""
+    },
+    "ActivityType": 0
+  },
+  "LabSideEffects": {
+    "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
+    "$values": [
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
+        "LabSubstanceProperty": {
+          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+          "SubstanceName": "Agar",
+          "SubstanceMode": 0,
+          "SubstanceLayer": 0,
+          "SubstanceColorR": 0.217604533,
+          "SubstanceColorG": 0.843137264,
+          "SubstanceColorB": 0.176470578,
+          "SubstanceColorA": 0.8117647,
+          "HintName": ""
+        },
+        "Weight": 0.3,
+        "SideEffectTimeType": 0,
+        "SideEffectType": 2
+      }
+    ]
+  }
+}

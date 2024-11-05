@@ -39,7 +39,7 @@ namespace BioEngineerLab.UI
 
         private void OnTaskUpdated(LabTask task)
         {
-
+            _panelSwitcher.SwitchPanel(TabletPanelsType.MainPanel);
         }
     }
 }

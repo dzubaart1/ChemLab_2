@@ -15,6 +15,8 @@ namespace BioEngineerLab.UI
         {
             _tasksService = Engine.GetService<TasksService>();
             _tasksService.TaskUpdatedEvent += OnTaskUpdate;
+
+            OnTaskUpdate(_tasksService.GetCurrentTask());
         }
 
         private void OnDestroy()

@@ -77,6 +77,8 @@ namespace Database
 
         public string GetFileName(LabTask labTask)
         {
+            if (labTask.Number < 10)
+                return $"task_0{labTask.Number}.txt";
             return $"task_{labTask.Number}.txt";
         }
     }

@@ -41,11 +41,16 @@ namespace BioEngineerLab
     public enum EContainer : byte
     {
         ChemicGlassContainer,
-        KuvetkaContainer,
-        SyringeContainer,
-        ReagentsContainer,
-        NeedleContainer,
-        PistonContainer
+        BankContainer,
+        SpoonContainer,
+        LodochkaContainer,
+        WaterDeContainer,
+        MeasureContainer
+        //KuvetkaContainer,
+        //SyringeContainer,
+        //ReagentsContainer,
+        //NeedleContainer,
+        //PistonContainer
     }
     
     public enum ESideEffect : byte
@@ -80,7 +85,8 @@ namespace BioEngineerLab
         StirringMachine,
         HandModelChangerMachine,
         CoatMachine,
-        SyringeCupMoveMachine
+        SyringeCupMoveMachine,
+        WashingMachine
     }
     
     public enum ESocketActivity : byte
@@ -91,14 +97,21 @@ namespace BioEngineerLab
     
     public enum ESocket : byte
     {
-        PistonSocket,
-        NeedleSocket,
-        KRUSSSyringeSocket,
-        KRUSSKuvetkaSocket,
-        PAFBodySocket,
-        HeptanBodySocket,
-        KRUSSInteractablePanelSocket,
-        StirringMachineSocket,
-        LabCoatSocket,
+        //PistonSocket,
+        //NeedleSocket,
+        //KRUSSSyringeSocket,
+        //KRUSSKuvetkaSocket,
+        //PAFBodySocket,
+        //HeptanBodySocket,
+        //KRUSSInteractablePanelSocket,
+        //StirringMachineSocket,
+        //LabCoatSocket,
+        WeighingMachineSocket,
+        BankCaCL2Socket,
+        BankAgarSocket,
+        BankNa2HPO4Socket,
+        PlitkaSocket,
+        ChemicGlassContainerSocket,
+        PipetDozatorSocket
     }
 }

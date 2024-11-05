@@ -37,6 +37,16 @@ namespace BioEngineerLab.Containers
             OnSaveScene();
         }
 
+        public Anchor GetAnchor()
+        {
+            return _anchor;
+        }
+
+        public void SetAnchor(Anchor anchor)
+        {
+            _anchor = anchor;
+        }
+
         public void OnSaveScene()
         {
             _savedData.Anchor = _anchor;

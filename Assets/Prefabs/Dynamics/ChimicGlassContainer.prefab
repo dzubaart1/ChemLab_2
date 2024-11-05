@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8150490929758143906}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 363585809087722434}
   - component: {fileID: 430686839917501712}
   - component: {fileID: 9105776815122697774}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CylinderTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6215587824278618493}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SubstancePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1142801878287989528}
   - component: {fileID: 6933615192328008890}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 4984447860195535156}
   - component: {fileID: 8251592318950712977}
   - component: {fileID: 6154023992034775643}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ChemicBeaker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,6 +283,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &7190728064668804079
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6157498471853115904}
+  m_Layer: 11
+  m_Name: SocketPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6157498471853115904
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7190728064668804079}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.0175, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4439357001458672255}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8752989905597421585
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,7 +331,7 @@ GameObject:
   - component: {fileID: 777966865360511347}
   - component: {fileID: 8611235375072104142}
   - component: {fileID: 1774886901494779421}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ChimicGlassContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -323,6 +354,7 @@ Transform:
   - {fileID: 8150490929758143906}
   - {fileID: 1142801878287989528}
   - {fileID: 6215587824278618493}
+  - {fileID: 6157498471853115904}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &7979985536761436989
@@ -392,7 +424,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 2052
+    m_Bits: 18
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -541,8 +573,6 @@ MonoBehaviour:
   _maxVolume: 9000
   _containerWeight: 0
   _containerType: 0
-  _isReagentsContainer: 0
-  _reagentsProperty: {fileID: 11400000, guid: 714c3acea6af89e458cc6c1754178956, type: 2}
   _isWeightableContainer: 0
   _isSpoonContainer: 0
   _meshRendererConfigs:

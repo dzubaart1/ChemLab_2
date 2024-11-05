@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LayerNames:
   - Default
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Interactable
+  - WeighingMachineSocket
+  - BankSocket
+  - StirringMachineSocket
+  - GlassContainerSocket
+  - PipetDozatorSocket
   - 
   - 
   - 

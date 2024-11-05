@@ -14,29 +14,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LabCraft:
     SubstancesFrom:
-    - SubstanceName: H2O
-      SubstanceMode: 0
-      SubstanceLayer: 1
-      SubstanceColorR: 0.17624065
-      SubstanceColorG: 0.48270762
-      SubstanceColorB: 0.8415094
-      SubstanceColorA: 0.8117647
-      HintName: 
     - SubstanceName: CaCl2
       SubstanceMode: 0
-      SubstanceLayer: 1
+      SubstanceLayer: 0
       SubstanceColorR: 0.84313726
       SubstanceColorG: 0.7562043
       SubstanceColorB: 0.17647058
       SubstanceColorA: 0.8117647
       HintName: 
+    - SubstanceName: H2O
+      SubstanceMode: 0
+      SubstanceLayer: 0
+      SubstanceColorR: 0.17624065
+      SubstanceColorG: 0.48270762
+      SubstanceColorB: 0.8415094
+      SubstanceColorA: 0.8117647
+      HintName: 
     CraftType: 3
     SubstancesRes:
-    - SubstanceName: Heptan
+    - SubstanceName: Agar+Na2HPO4
       SubstanceMode: 0
-      SubstanceLayer: 1
-      SubstanceColorR: 0.81886786
-      SubstanceColorG: 0.30128145
-      SubstanceColorB: 0.8180221
-      SubstanceColorA: 0.72156864
+      SubstanceLayer: 0
+      SubstanceColorR: 0.49056602
+      SubstanceColorG: 0.35315463
+      SubstanceColorB: 0.1689213
+      SubstanceColorA: 0
       HintName: 
