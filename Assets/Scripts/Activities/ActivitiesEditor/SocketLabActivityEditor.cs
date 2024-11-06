@@ -1,10 +1,9 @@
-﻿using BioEngineerLab;
-using BioEngineerLab.Activities;
+﻿using Activities;
 using BioEngineerLab.Tasks.Activities;
 using JetBrains.Annotations;
 using UnityEditor;
 
-namespace Activities.ActivitiesEditor
+namespace BioEngineerLab.Activities
 {
     public class SocketLabActivityEditor : EditorActivity
     {
@@ -26,8 +25,8 @@ namespace Activities.ActivitiesEditor
                 return;
             }
             
+            _socketLabActivity.SocketType = (ESocket)EditorGUILayout.EnumPopup("Socket Type", _socketLabActivity.SocketType);
             _socketLabActivity.SocketActivityType = (ESocketActivity)EditorGUILayout.EnumPopup("Socket Activity Type", _socketLabActivity.SocketActivityType);
-            _socketLabActivity.SocketType = (ESocket)EditorGUILayout.EnumPopup("Scoket Type", _socketLabActivity.SocketType);
         }
 
         public override EActivity GetActivityType()

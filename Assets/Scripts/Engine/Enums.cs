@@ -1,17 +1,16 @@
 namespace BioEngineerLab
 {
-    public enum ETargetPlatform : byte
-    {
-        Auto,
-        VR,
-        PC
-    }
-    
     public enum ESubstanceMode : byte
     {
         Normal,
         Dry,
         HeatStir,
+    }
+
+    public enum EButton : byte
+    {
+        StirringMachineHeatBtn,
+        StirringMachineStirBtn
     }
 
     public enum ECraft : byte
@@ -33,9 +32,11 @@ namespace BioEngineerLab
     {
         AddSubstanceActivity,
         MachineActivity,
+        SocketSubstancesActivity,
         SocketActivity,
         AnchorActivity,
-        CraftSubstanceActivity
+        CraftSubstanceActivity,
+        ButtonClickedActivity
     }
     
     public enum EContainer : byte
@@ -65,13 +66,7 @@ namespace BioEngineerLab
         StartTask,
         EndTask
     }
-
-    public enum ESubstanceColor : byte
-    {
-        Color1,
-        Color2,
-        Color3
-    }
+    
     public enum EMachineActivity : byte
     {
         OnEnter,
@@ -110,7 +105,7 @@ namespace BioEngineerLab
         BankCaCL2Socket,
         BankAgarSocket,
         BankNa2HPO4Socket,
-        PlitkaSocket,
+        StirringMachineSocket,
         ChemicGlassContainerSocket,
         PipetDozatorSocket
     }

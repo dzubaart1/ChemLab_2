@@ -1,4 +1,5 @@
-﻿using BioEngineerLab.Tasks;
+﻿using System;
+using BioEngineerLab;
 using BioEngineerLab.Tasks.Activities;
 
 namespace BioEngineerLab.Activities
@@ -7,7 +8,6 @@ namespace BioEngineerLab.Activities
     {
         public ESocket SocketType;
         public ESocketActivity SocketActivityType;
-        public EContainer Container;
 
         public SocketLabActivity()
             : base(EActivity.SocketActivity)
@@ -19,31 +19,29 @@ namespace BioEngineerLab.Activities
         {
             SocketType = socketLabActivity.SocketType;
             SocketActivityType = socketLabActivity.SocketActivityType;
-            Container = socketLabActivity.Container;
         }
-
-        public SocketLabActivity(ESocket socketType, ESocketActivity socketActivityType, EContainer container)
-            : base (EActivity.SocketActivity)
+        
+        public SocketLabActivity(ESocket socketType, ESocketActivity socketActivityType)
+            : base(EActivity.SocketActivity)
         {
             SocketType = socketType;
             SocketActivityType = socketActivityType;
-            Container = container;
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(Object obj)
         {
-            if (obj is not SocketLabActivity handlerSocketActivity)
+            if (obj is not SocketLabActivity socketLabActivity)
             {
                 return false;
             }
 
-            return SocketType == handlerSocketActivity.SocketType &
-                   SocketActivityType == handlerSocketActivity.SocketActivityType;
+            return SocketType == socketLabActivity.SocketType &
+                   SocketActivityType == socketLabActivity.SocketActivityType;
         }
 
         public override int GetHashCode()
         {
-            return (int)SocketType + (int)SocketActivityType + (int)Container;
+            return (int)SocketType + (int)SocketActivityType;
         }
     }
 }

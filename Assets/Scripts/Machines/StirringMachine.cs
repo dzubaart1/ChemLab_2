@@ -1,10 +1,9 @@
-using System;
 using BioEngineerLab.Activities;
 using BioEngineerLab.Containers;
 using BioEngineerLab.Core;
 using BioEngineerLab.Gameplay;
+using BioEngineerLab.UI.Components;
 using UnityEngine;
-using UI.Components;
 using UnityEngine.XR.Interaction.Toolkit;
 
 namespace BioEngineerLab.Machines
@@ -13,18 +12,24 @@ namespace BioEngineerLab.Machines
     {
         private struct SavedData
         {
-            public bool IsStart, IsFinish;
-            public bool StirringBtnState, HeatingBtnState;
+            public bool IsStart;
+            public bool IsFinish;
+            public bool IsOnStirringBtn;
+            public bool IsOnHeatingBtnState;
             public VRGrabInteractable Interactable;
         }
         
         [SerializeField] private VRSocketInteractor _socketInteractor;
-        [SerializeField] private StirringMachineButtonComponent _stirringBtn;
-        [SerializeField] private StirringMachineButtonComponent _heatingBtn;
+        [SerializeField] private ButtonComponent _stirringBtn;
+        [SerializeField] private ButtonComponent _heatingBtn;
 
-        private bool _isStart = false, _isFinish = true;
-        private bool _isLoadEnter = false, _isLoadFinish = false, _isLoadStart = false;
-        private SavedData _savedData;
+        private bool _isStart = false;
+        private bool _isFinish = true;
+        private bool _isLoadEnter = false;
+        private bool _isLoadFinish = false;
+        private bool _isLoadStart = false;
+        
+        private SavedData _savedData = new SavedData();
 
         private TasksService _tasksService;
         private SaveService _saveService;
@@ -34,8 +39,16 @@ namespace BioEngineerLab.Machines
         {
             _craftService = Engine.GetService<CraftService>();
             _tasksService = Engine.GetService<TasksService>();
-            
             _saveService = Engine.GetService<SaveService>();
+        }
+
+        private void Start()
+        {
+            OnSaveScene();
+        }
+
+        private void OnEnable()
+        {
             _saveService.SaveSceneStateEvent += OnSaveScene;
             _saveService.LoadSceneStateEvent += OnLoadScene;
 
@@ -44,19 +57,18 @@ namespace BioEngineerLab.Machines
 
             _stirringBtn.OnClickButton += CheckMachineStates;
             _heatingBtn.OnClickButton += CheckMachineStates;
-
-            _savedData = new SavedData();
         }
 
-        private void Start()
+        private void OnDisable()
         {
-            OnSaveScene();
-        }
+            _saveService.SaveSceneStateEvent -= OnSaveScene;
+            _saveService.LoadSceneStateEvent -= OnLoadScene;
 
-        private void OnDestroy()
-        {
             _socketInteractor.selectEntered.RemoveListener(OnEnter);
             _socketInteractor.selectExited.RemoveListener(OnExit);
+
+            _stirringBtn.OnClickButton -= CheckMachineStates;
+            _heatingBtn.OnClickButton -= CheckMachineStates;
         }
 
         private void OnEnter(SelectEnterEventArgs args)
@@ -66,19 +78,20 @@ namespace BioEngineerLab.Machines
                 _isLoadEnter = false;
                 return;
             }
-
-            _tasksService.TryCompleteTask(new SocketLabActivity(ESocket.PlitkaSocket, ESocketActivity.Enter, EContainer.ChemicGlassContainer));
+            
             CheckMachineStates();
         }
 
         private void OnExit(SelectExitEventArgs args)
         {
-            _tasksService.TryCompleteTask(new SocketLabActivity(ESocket.PlitkaSocket, ESocketActivity.Exit, EContainer.ChemicGlassContainer));
+            //TODO: Is Load Exit
+            
+            CheckMachineStates();
         }
 
         private void CheckMachineStates()
         {
-            if (_socketInteractor.firstInteractableSelected == null)
+            if (_socketInteractor.SelectedObject == null)
             {
                 return;
             }
@@ -89,7 +102,7 @@ namespace BioEngineerLab.Machines
                 return;
             }
             
-            if(_isFinish & !_isStart & _heatingBtn.IsOn & _stirringBtn.IsOn)
+            if(_isFinish & !_isStart & (_heatingBtn.IsOn & _stirringBtn.IsOn))
             {
                 StartMachineWork();
             }
@@ -126,16 +139,26 @@ namespace BioEngineerLab.Machines
 
         private void ToggleStirringAnimation(bool isEnable)
         {
-            AnchorLabContainer anchorContainer = _socketInteractor.firstInteractableSelected.transform.GetComponent<AnchorLabContainer>();
-            anchorContainer.GetAnchor().ToggleAnimate(isEnable);
+            if (_socketInteractor.SelectedObject == null)
+            {
+                return;
+            }
+            
+            AnchorLabContainer anchorContainer = _socketInteractor.SelectedObject.GetComponent<AnchorLabContainer>();
+            if (anchorContainer == null)
+            {
+                return;
+            }
+            
+            anchorContainer.AnimateAnchor(isEnable);
         }
 
         public void OnSaveScene()
         {
             _savedData.IsFinish = _isFinish;
             _savedData.IsStart = _isStart;
-            _savedData.HeatingBtnState = _heatingBtn.IsOn;
-            _savedData.StirringBtnState = _stirringBtn.IsOn;
+            _savedData.IsOnHeatingBtnState = _heatingBtn.IsOn;
+            _savedData.IsOnStirringBtn = _stirringBtn.IsOn;
             _savedData.Interactable = _socketInteractor.firstInteractableSelected as VRGrabInteractable;
         }
 
@@ -143,8 +166,8 @@ namespace BioEngineerLab.Machines
         {
             _isFinish = _savedData.IsFinish;
             _isStart = _savedData.IsStart;
-            _heatingBtn.OnLoadScene(_savedData.HeatingBtnState);
-            _stirringBtn.OnLoadScene(_savedData.StirringBtnState);
+            _heatingBtn.SetIsOn(_savedData.IsOnHeatingBtnState);
+            _stirringBtn.SetIsOn(_savedData.IsOnStirringBtn);
 
             if (_savedData.Interactable != null)
             {

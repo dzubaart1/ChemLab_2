@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using BioEngineerLab.Activities;
+using BioEngineerLab.Containers;
 using BioEngineerLab.Core;
-using BioEngineerLab.Tasks.Activities;
+using JetBrains.Annotations;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.XR.Interaction.Toolkit;
 
 namespace BioEngineerLab.Gameplay
@@ -15,17 +15,31 @@ namespace BioEngineerLab.Gameplay
             public VRGrabInteractable GrabbedObject;
         }
 
-        [FormerlySerializedAs("_socketType")] [SerializeField] private ESocket eSocket;
-        //[SerializeField] private bool _isTaskSendable;
-
+        [Header("Configs")]
+        [SerializeField] private ESocket _socketType;
         [SerializeField] private bool _isEnterTaskSendable;
         [SerializeField] private bool _isExitTaskSendable;
+        
+        [CanBeNull]
+        public Transform SelectedObject
+        {
+            get
+            {
+                if (firstInteractableSelected == null)
+                {
+                    return null;
+                }
 
+                return firstInteractableSelected.transform;
+            }
+        }
+        
         private TasksService _tasksService;
         private SaveService _saveService;
 
-        private SavedData _savedData;
-        private bool _isLoadSceneEnter, _isLoadSceneExit;
+        private SavedData _savedData = new SavedData();
+        private bool _isLoadSceneEnter;
+        private bool _isLoadSceneExit;
 
         private bool _isStartEnter;
 
@@ -35,12 +49,24 @@ namespace BioEngineerLab.Gameplay
 
             _tasksService = Engine.GetService<TasksService>();
             _saveService = Engine.GetService<SaveService>();
-            _saveService.SaveSceneStateEvent += OnSaveScene;
-            _saveService.LoadSceneStateEvent += OnLoadScene;
 
             _isStartEnter = startingSelectedInteractable != null;
+        }
 
-            _savedData = new SavedData();
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+            
+            _saveService.SaveSceneStateEvent += OnSaveScene;
+            _saveService.LoadSceneStateEvent += OnLoadScene;
+        }
+
+        protected override void OnDisable()
+        {
+            base.OnDisable();
+            
+            _saveService.SaveSceneStateEvent -= OnSaveScene;
+            _saveService.LoadSceneStateEvent -= OnLoadScene;
         }
 
         protected override void Start()
@@ -54,6 +80,18 @@ namespace BioEngineerLab.Gameplay
         {
             base.OnSelectEntered(args);
 
+            if (args.interactableObject == null)
+            {
+                return;
+            }
+
+            LabContainer container = args.interactableObject.transform.GetComponent<LabContainer>();
+
+            if (container == null)
+            {
+                return;
+            }
+            
             if (_isStartEnter)
             {
                 _isStartEnter = !_isStartEnter;
@@ -68,7 +106,7 @@ namespace BioEngineerLab.Gameplay
 
             if (_isEnterTaskSendable)
             {
-                _tasksService.TryCompleteTask(new SocketLabActivity(eSocket, ESocketActivity.Enter, EContainer.ChemicGlassContainer));//???
+                _tasksService.TryCompleteTask(new SocketSubstancesLabActivity(_socketType, ESocketActivity.Enter, container.GetSubstanceProperties()));
             }
         }
 
@@ -76,6 +114,18 @@ namespace BioEngineerLab.Gameplay
         {
             base.OnSelectExited(args);
 
+            if (args.interactableObject == null)
+            {
+                return;
+            }
+
+            LabContainer container = args.interactableObject.transform.GetComponent<LabContainer>();
+
+            if (container == null)
+            {
+                return;
+            }
+            
             if (_isLoadSceneExit)
             {
                 _isLoadSceneExit = false;
@@ -84,7 +134,7 @@ namespace BioEngineerLab.Gameplay
 
             if (_isExitTaskSendable)
             {
-                _tasksService.TryCompleteTask(new SocketLabActivity(eSocket, ESocketActivity.Exit, EContainer.ChemicGlassContainer));//???
+                _tasksService.TryCompleteTask(new SocketSubstancesLabActivity(_socketType, ESocketActivity.Exit, container.GetSubstanceProperties()));
             }
         }
 

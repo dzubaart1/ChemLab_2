@@ -11,39 +11,38 @@ namespace BioEngineerLab.Machines
     [RequireComponent(typeof(Collider))]
     public class WashingMachine : MonoBehaviour, ISaveable
     {
-        private struct SavedData
+        private class SavedData
         {
-            public List<VRGrabInteractable> HiddenGameObjects;
+            public List<VRGrabInteractable> HiddenGameObjects = new List<VRGrabInteractable>();
         }
 
         private SaveService _saveService;
         private TasksService _tasksService;
         
-        private List<VRGrabInteractable> _hiddenGameObjects;
-        private SavedData _savedData;
+        private List<VRGrabInteractable> _hiddenGameObjects = new List<VRGrabInteractable>();
+        private SavedData _savedData = new SavedData();
 
         private void Awake()
         {
             _tasksService = Engine.GetService<TasksService>();
-            
             _saveService = Engine.GetService<SaveService>();
+        }
+
+        private void OnEnable()
+        {
             _saveService.LoadSceneStateEvent += OnLoadScene;
             _saveService.SaveSceneStateEvent += OnSaveScene;
-            
-            _savedData = new SavedData();
-            _savedData.HiddenGameObjects = new List<VRGrabInteractable>();
-            _hiddenGameObjects = new List<VRGrabInteractable>();
+        }
+
+        private void OnDisable()
+        {
+            _saveService.LoadSceneStateEvent -= OnLoadScene;
+            _saveService.SaveSceneStateEvent -= OnSaveScene;
         }
 
         private void Start()
         {
             OnSaveScene();
-        }
-
-        private void OnDestroy()
-        {
-            _saveService.LoadSceneStateEvent -= OnLoadScene;
-            _saveService.SaveSceneStateEvent -= OnSaveScene;
         }
 
         private void OnTriggerEnter(Collider other)
@@ -76,14 +75,12 @@ namespace BioEngineerLab.Machines
         {
             foreach (var interactable in _hiddenGameObjects)
             {
-                Debug.Log($"LOAD; WASHING; 1 {interactable.gameObject.name}");
                 interactable.gameObject.SetActive(true);
                 interactable.LoadPosition();
             }
 
             foreach (var interactable in _savedData.HiddenGameObjects)
             {
-                Debug.Log($"LOAD; WASHING; 2 {interactable.gameObject.name}");
                 interactable.gameObject.SetActive(false);
             }
             
@@ -91,7 +88,6 @@ namespace BioEngineerLab.Machines
 
             foreach (var interactable in _savedData.HiddenGameObjects)
             {
-                Debug.Log($"LOAD; WASHING; 3 {interactable.gameObject.name}");
                 _hiddenGameObjects.Add(interactable);
             }
         }

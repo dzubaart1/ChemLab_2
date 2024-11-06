@@ -11,12 +11,14 @@ namespace BioEngineerLab.Containers
         private struct SavedData
         {
             public Anchor Anchor;
+            public bool IsAnimating;
         }
+        
+        private Anchor Anchor { get; set; }
         
         private SaveService _saveService;
         private TasksService _tasksService;
-
-        private Anchor _anchor;
+        
         private SavedData _savedData = new SavedData();
         private LabContainer _labContainer;
         private bool _isTaskSendable;
@@ -37,51 +39,51 @@ namespace BioEngineerLab.Containers
             OnSaveScene();
         }
 
-        public Anchor GetAnchor()
-        {
-            return _anchor;
-        }
-
-        public void SetAnchor(Anchor anchor)
-        {
-            _anchor = anchor;
-        }
-
         public void OnSaveScene()
         {
-            _savedData.Anchor = _anchor;
+            _savedData.Anchor = Anchor;
         }
 
         public void OnLoadScene()
         {
             _isTaskSendable = true;
 
-            if (_anchor != null)
+            if (_savedData.Anchor == null & Anchor == null)
+            {
+                AnimateAnchor(_savedData.IsAnimating);
+            }
+
+            if (_savedData.Anchor == null & Anchor != null)
             {
                 ReleaseAnchor();
             }
 
-            if (_savedData.Anchor != null)
+            if (_savedData.Anchor != null & Anchor == null)
             {
-                _anchor = _savedData.Anchor;
-                PutAnchor(_anchor);
+                PutAnchor(_savedData.Anchor);
+                AnimateAnchor(_savedData.IsAnimating);
             }
 
+            if (_savedData.Anchor != null & Anchor != null)
+            {
+                AnimateAnchor(_savedData.IsAnimating);
+            }
+            
             _isTaskSendable = false;
         }
 
         public void PutAnchor(Anchor anchor)
         {
-            if (_anchor != null)
+            if (Anchor != null)
             {
                 return;
             }
             
-            _anchor = anchor;
-            _anchor.TogglePhysics(false);
-            _anchor.transform.parent = transform;
-            _anchor.transform.localPosition = new Vector3(0, 0.01f, 0);
-            _anchor.transform.rotation = Quaternion.identity;
+            Anchor = anchor;
+            Anchor.TogglePhysics(false);
+            Anchor.transform.parent = transform;
+            Anchor.transform.localPosition = new Vector3(0, 0.01f, 0);
+            Anchor.transform.rotation = Quaternion.identity;
 
             if (_isTaskSendable)
             {
@@ -91,17 +93,28 @@ namespace BioEngineerLab.Containers
             _tasksService.TryCompleteTask(new AnchorLabActivity(_labContainer.ContainerType));
         }
 
-        private void ReleaseAnchor()
+        public void AnimateAnchor(bool value)
         {
-            if (_anchor == null)
+            if (Anchor == null)
             {
                 return;
             }
             
-            _anchor.transform.parent = null;
-            _anchor.TogglePhysics(true);
+            Anchor.ToggleAnimate(value);
+            _savedData.IsAnimating = value;
+        }
+
+        private void ReleaseAnchor()
+        {
+            if (Anchor == null)
+            {
+                return;
+            }
             
-            _anchor = null;
+            Anchor.transform.parent = null;
+            Anchor.TogglePhysics(true);
+            
+            Anchor = null;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Activities;
 using BioEngineerLab.Activities;
 using BioEngineerLab.Tasks.SideEffects;
 using Database;
@@ -107,11 +108,17 @@ namespace BioEngineerLab.Tasks
                 case EActivity.MachineActivity:
                     _soLabTask.SetActivity(new MachineLabActivity());
                     break;
-                case EActivity.SocketActivity:
-                    _soLabTask.SetActivity(new SocketLabActivity());
+                case EActivity.SocketSubstancesActivity:
+                    _soLabTask.SetActivity(new SocketSubstancesLabActivity());
                     break;
                 case EActivity.CraftSubstanceActivity:
                     _soLabTask.SetActivity(new CraftSubstanceLabActivity());
+                    break;
+                case EActivity.ButtonClickedActivity:
+                    _soLabTask.SetActivity(new ButtonClickedActivity());
+                    break;
+                case EActivity.SocketActivity:
+                    _soLabTask.SetActivity(new SocketLabActivity());
                     break;
                 default:
                     Debug.LogError("Can't find action!");

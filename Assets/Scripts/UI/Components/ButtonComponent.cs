@@ -11,37 +11,58 @@ namespace BioEngineerLab.UI.Components
     {
         public event Action OnClickButton;
 
-        //public ButtonType ButtonType;
-        public bool IsTaskSendable = true;
-        public Button Button { get; private set; }
+        [Header("Configs")]
+        [SerializeField] private EButton _buttonType;
+        [SerializeField] private bool _isTaskSendable;
+        
+        [Header("UIs")]
+        [SerializeField] private Image _btnImage;
+        [SerializeField] private Sprite _onSprite;
+        [SerializeField] private Sprite _offSprite;
 
-        private TasksService _tasksService;
+        public bool IsOn { get; private set; }
 
         private Button _button;
 
-        [SerializeField] private Sprite _pressedSprite;
-        [SerializeField] private Image _imageButton;
-
+        private TasksService _tasksService;
+        
         private void Start()
         {
             _tasksService = Engine.GetService<TasksService>();
-
             _button = GetComponent<Button>();
-            Button = _button;
+        }
 
+        public void SetIsOn(bool value)
+        {
+            IsOn = value;
+            ChangeStatus();
+        }
+
+        private void OnEnable()
+        {
             _button.onClick.AddListener(OnClickBtn);
+        }
+
+        private void OnDisable()
+        {
+            _button.onClick.RemoveListener(OnClickBtn);
         }
 
         protected virtual void OnClickBtn()
         {
-            if (_pressedSprite != null && _imageButton!= null)
-            {
-                _imageButton.sprite = _pressedSprite;
-            }
+            IsOn = !IsOn;
+            ChangeStatus();
+        }
+
+        private void ChangeStatus()
+        {
+            _btnImage.sprite = IsOn ? _onSprite : _offSprite;
+            
             OnClickButton?.Invoke();
-            if (IsTaskSendable)
+            
+            if (_isTaskSendable)
             {
-                //_tasksService.TryCompleteTask(new ButtonClickedActivity(ButtonType));
+                _tasksService.TryCompleteTask(new ButtonClickedActivity(_buttonType));
             }
         }
     }

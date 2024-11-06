@@ -80,6 +80,10 @@ namespace BioEngineerLab.Tasks
                     return new CraftSubstanceActivityEditor(labActivity);
                 case EActivity.MachineActivity:
                     return new MachineLabActivityEditor(labActivity);
+                case EActivity.SocketSubstancesActivity:
+                    return new SocketSubstancesLabActivityEditor(labActivity);
+                case EActivity.ButtonClickedActivity:
+                    return new ButtonClickedActivityEditor(labActivity);
                 case EActivity.SocketActivity:
                     return new SocketLabActivityEditor(labActivity);
             }

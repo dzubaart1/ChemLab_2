@@ -1,11 +1,7 @@
 using BioEngineerLab.Containers;
 using BioEngineerLab.Gameplay;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.XR.Interaction.Toolkit;
 
 
 namespace BioEngineerLab.Machines
@@ -19,7 +15,7 @@ namespace BioEngineerLab.Machines
         {
             LabContainer labContainer = other.GetComponent<LabContainer>();
 
-            if (labContainer is null || _socketInteractor.firstInteractableSelected == null)
+            if (labContainer == null | _socketInteractor.SelectedObject == null)
             {
                 return;
             }
