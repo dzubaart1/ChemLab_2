@@ -4,7 +4,7 @@
   "Title": "Задание 8",
   "Description": "Наберите 30 мл дистиллированной воды в мерный цилиндр",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
     "FromContainer": 4,
@@ -14,9 +14,9 @@
       "SubstanceName": "H2O",
       "SubstanceMode": 0,
       "SubstanceLayer": 0,
-      "SubstanceColorR": 0.176240653,
-      "SubstanceColorG": 0.48270762,
-      "SubstanceColorB": 0.8415094,
+      "SubstanceColorR": 0.407262385,
+      "SubstanceColorG": 0.4974264,
+      "SubstanceColorB": 0.6037736,
       "SubstanceColorA": 0.8117647,
       "HintName": ""
     },
@@ -32,30 +32,13 @@
           "SubstanceName": "H2O",
           "SubstanceMode": 0,
           "SubstanceLayer": 0,
-          "SubstanceColorR": 0.176240653,
-          "SubstanceColorG": 0.48270762,
-          "SubstanceColorB": 0.8415094,
+          "SubstanceColorR": 0.407262385,
+          "SubstanceColorG": 0.4974264,
+          "SubstanceColorB": 0.6037736,
           "SubstanceColorA": 0.8117647,
           "HintName": ""
         },
         "Weight": 30.0,
-        "SideEffectTimeType": 0,
-        "SideEffectType": 2
-      },
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
-        "LabSubstanceProperty": {
-          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "CaCl2",
-          "SubstanceMode": 0,
-          "SubstanceLayer": 0,
-          "SubstanceColorR": 0.843137264,
-          "SubstanceColorG": 0.7562043,
-          "SubstanceColorB": 0.176470578,
-          "SubstanceColorA": 0.8117647,
-          "HintName": ""
-        },
-        "Weight": 3.33,
         "SideEffectTimeType": 0,
         "SideEffectType": 2
       }

@@ -35,7 +35,7 @@ namespace BioEngineerLab.Core
         public IReadOnlyCollection<LabTask> TasksList => _tasksList;
         private List<LabTask> _tasksList = new List<LabTask>();
         
-        private int _currentTaskId = 0;
+        private int _currentTaskId = 35;
         private SavedData _savedData;
 
         private HashSet<int> _errorsSet;

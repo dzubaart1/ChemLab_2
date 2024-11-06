@@ -17,21 +17,21 @@
             "SubstanceName": "H2O",
             "SubstanceMode": 0,
             "SubstanceLayer": 0,
-            "SubstanceColorR": 0.176240653,
-            "SubstanceColorG": 0.48270762,
-            "SubstanceColorB": 0.8415094,
+            "SubstanceColorR": 0.407262385,
+            "SubstanceColorG": 0.4974264,
+            "SubstanceColorB": 0.6037736,
             "SubstanceColorA": 0.8117647,
             "HintName": ""
           },
           {
             "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-            "SubstanceName": "Agar+Na2HPO4",
+            "SubstanceName": "Na2HPO4Agar",
             "SubstanceMode": 0,
             "SubstanceLayer": 0,
-            "SubstanceColorR": 0.490566015,
-            "SubstanceColorG": 0.353154629,
-            "SubstanceColorB": 0.1689213,
-            "SubstanceColorA": 0.0,
+            "SubstanceColorR": 0.8396226,
+            "SubstanceColorG": 0.7783719,
+            "SubstanceColorB": 0.5584282,
+            "SubstanceColorA": 0.709803939,
             "HintName": ""
           }
         ]
@@ -42,20 +42,20 @@
         "$values": [
           {
             "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-            "SubstanceName": "Heptan",
+            "SubstanceName": "Na2HPO4AgarH20",
             "SubstanceMode": 0,
             "SubstanceLayer": 0,
-            "SubstanceColorR": 0.818867862,
-            "SubstanceColorG": 0.301281452,
-            "SubstanceColorB": 0.8180221,
-            "SubstanceColorA": 0.721568644,
+            "SubstanceColorR": 0.7509978,
+            "SubstanceColorG": 0.5568628,
+            "SubstanceColorB": 0.8392157,
+            "SubstanceColorA": 0.709803939,
             "HintName": ""
           }
         ]
       }
     },
     "Container": 0,
-    "ActivityType": 4
+    "ActivityType": 5
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

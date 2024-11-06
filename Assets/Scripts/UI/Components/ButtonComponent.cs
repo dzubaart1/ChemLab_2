@@ -19,17 +19,15 @@ namespace BioEngineerLab.UI.Components
         [SerializeField] private Image _btnImage;
         [SerializeField] private Sprite _onSprite;
         [SerializeField] private Sprite _offSprite;
-
+        [SerializeField] private Button _button;
+        
         public bool IsOn { get; private set; }
-
-        private Button _button;
 
         private TasksService _tasksService;
         
         private void Start()
         {
             _tasksService = Engine.GetService<TasksService>();
-            _button = GetComponent<Button>();
         }
 
         public void SetIsOn(bool value)
@@ -48,7 +46,7 @@ namespace BioEngineerLab.UI.Components
             _button.onClick.RemoveListener(OnClickBtn);
         }
 
-        protected virtual void OnClickBtn()
+        private void OnClickBtn()
         {
             IsOn = !IsOn;
             ChangeStatus();

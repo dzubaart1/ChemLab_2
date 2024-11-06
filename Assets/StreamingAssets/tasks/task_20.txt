@@ -14,9 +14,9 @@
       "SubstanceName": "Na2HPO4",
       "SubstanceMode": 0,
       "SubstanceLayer": 0,
-      "SubstanceColorR": 0.843137264,
-      "SubstanceColorG": 0.176470578,
-      "SubstanceColorB": 0.190695584,
+      "SubstanceColorR": 0.66522783,
+      "SubstanceColorG": 0.8082283,
+      "SubstanceColorB": 0.9339623,
       "SubstanceColorA": 0.8117647,
       "HintName": ""
     },

@@ -6,10 +6,25 @@
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
+    "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",
     "SocketType": 4,
     "SocketActivityType": 0,
-    "Container": 0,
+    "LabSubstanceProperties": {
+      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
+      "$values": [
+        {
+          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+          "SubstanceName": "CaCl2H2O",
+          "SubstanceMode": 0,
+          "SubstanceLayer": 0,
+          "SubstanceColorR": 0.4719206,
+          "SubstanceColorG": 0.822406769,
+          "SubstanceColorB": 0.9528302,
+          "SubstanceColorA": 0.694117665,
+          "HintName": ""
+        }
+      ]
+    },
     "ActivityType": 2
   },
   "LabSideEffects": {

@@ -46,7 +46,8 @@ namespace BioEngineerLab
         SpoonContainer,
         LodochkaContainer,
         WaterDeContainer,
-        MeasureContainer
+        MeasureContainer,
+        DozatorContainer
         //KuvetkaContainer,
         //SyringeContainer,
         //ReagentsContainer,

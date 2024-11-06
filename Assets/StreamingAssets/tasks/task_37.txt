@@ -1,23 +1,23 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
-  "Number": 1,
-  "Title": "Задание 1",
-  "Description": "Перелейте воду в другой контейнер",
+  "Number": 37,
+  "Title": "Задание 37",
+  "Description": "С помощью пипет-дозатора отберите раствор из термостойкого стакана «2»",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
     "FromContainer": 0,
-    "ToContainer": 0,
+    "ToContainer": 6,
     "LabSubstanceProperty": {
       "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-      "SubstanceName": "H2O",
+      "SubstanceName": "Na2HPO4AgarH20",
       "SubstanceMode": 0,
-      "SubstanceLayer": 1,
-      "SubstanceColorR": 0.176240653,
-      "SubstanceColorG": 0.48270762,
-      "SubstanceColorB": 0.8415094,
-      "SubstanceColorA": 0.8117647,
+      "SubstanceLayer": 0,
+      "SubstanceColorR": 0.7509978,
+      "SubstanceColorG": 0.5568628,
+      "SubstanceColorB": 0.8392157,
+      "SubstanceColorA": 0.709803939,
       "HintName": ""
     },
     "ActivityType": 0
@@ -29,16 +29,16 @@
         "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
         "LabSubstanceProperty": {
           "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "H2O",
+          "SubstanceName": "Na2HPO4AgarH20",
           "SubstanceMode": 0,
-          "SubstanceLayer": 1,
-          "SubstanceColorR": 0.176240653,
-          "SubstanceColorG": 0.48270762,
-          "SubstanceColorB": 0.8415094,
-          "SubstanceColorA": 0.8117647,
+          "SubstanceLayer": 0,
+          "SubstanceColorR": 0.7509978,
+          "SubstanceColorG": 0.5568628,
+          "SubstanceColorB": 0.8392157,
+          "SubstanceColorA": 0.709803939,
           "HintName": ""
         },
-        "Weight": 100.0,
+        "Weight": 30.0,
         "SideEffectTimeType": 0,
         "SideEffectType": 2
       }

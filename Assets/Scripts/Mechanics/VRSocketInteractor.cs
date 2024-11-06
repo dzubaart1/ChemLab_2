@@ -19,7 +19,9 @@ namespace BioEngineerLab.Gameplay
         [SerializeField] private ESocket _socketType;
         [SerializeField] private bool _isEnterTaskSendable;
         [SerializeField] private bool _isExitTaskSendable;
-        
+
+        [SerializeField] private bool _isSubsctanceSocket;
+
         [CanBeNull]
         public Transform SelectedObject
         {
@@ -83,14 +85,7 @@ namespace BioEngineerLab.Gameplay
             if (args.interactableObject == null)
             {
                 return;
-            }
-
-            LabContainer container = args.interactableObject.transform.GetComponent<LabContainer>();
-
-            if (container == null)
-            {
-                return;
-            }
+            }            
             
             if (_isStartEnter)
             {
@@ -104,9 +99,21 @@ namespace BioEngineerLab.Gameplay
                 return;
             }
 
-            if (_isEnterTaskSendable)
+          if (_isEnterTaskSendable)
             {
-                _tasksService.TryCompleteTask(new SocketSubstancesLabActivity(_socketType, ESocketActivity.Enter, container.GetSubstanceProperties()));
+                if(_isSubsctanceSocket)
+                {
+                    LabContainer container = args.interactableObject.transform.GetComponent<LabContainer>();
+
+                    if (container == null)
+                    {
+                        return;
+                    }
+
+                    _tasksService.TryCompleteTask(new SocketSubstancesLabActivity(_socketType, ESocketActivity.Enter, container.GetSubstanceProperties()));
+                }                    
+                else
+                    _tasksService.TryCompleteTask(new SocketLabActivity(_socketType, ESocketActivity.Enter));
             }
         }
 
@@ -115,13 +122,6 @@ namespace BioEngineerLab.Gameplay
             base.OnSelectExited(args);
 
             if (args.interactableObject == null)
-            {
-                return;
-            }
-
-            LabContainer container = args.interactableObject.transform.GetComponent<LabContainer>();
-
-            if (container == null)
             {
                 return;
             }
@@ -134,7 +134,7 @@ namespace BioEngineerLab.Gameplay
 
             if (_isExitTaskSendable)
             {
-                _tasksService.TryCompleteTask(new SocketSubstancesLabActivity(_socketType, ESocketActivity.Exit, container.GetSubstanceProperties()));
+                _tasksService.TryCompleteTask(new SocketLabActivity(_socketType, ESocketActivity.Exit));
             }
         }
 

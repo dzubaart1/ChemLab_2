@@ -17,26 +17,26 @@ MonoBehaviour:
     - SubstanceName: Agar
       SubstanceMode: 0
       SubstanceLayer: 0
-      SubstanceColorR: 0.21760453
-      SubstanceColorG: 0.84313726
-      SubstanceColorB: 0.17647058
+      SubstanceColorR: 0.8773585
+      SubstanceColorG: 0.8595068
+      SubstanceColorB: 0.3600481
       SubstanceColorA: 0.8117647
       HintName: 
     - SubstanceName: Na2HPO4
       SubstanceMode: 0
       SubstanceLayer: 0
-      SubstanceColorR: 0.84313726
-      SubstanceColorG: 0.17647058
-      SubstanceColorB: 0.19069558
+      SubstanceColorR: 0.66522783
+      SubstanceColorG: 0.8082283
+      SubstanceColorB: 0.9339623
       SubstanceColorA: 0.8117647
       HintName: 
     CraftType: 3
     SubstancesRes:
-    - SubstanceName: Agar+Na2HPO4
+    - SubstanceName: Na2HPO4Agar
       SubstanceMode: 0
       SubstanceLayer: 0
-      SubstanceColorR: 0.49056602
-      SubstanceColorG: 0.35315463
-      SubstanceColorB: 0.1689213
-      SubstanceColorA: 0
+      SubstanceColorR: 0.8396226
+      SubstanceColorG: 0.7783719
+      SubstanceColorB: 0.5584282
+      SubstanceColorA: 0.70980394
       HintName: 

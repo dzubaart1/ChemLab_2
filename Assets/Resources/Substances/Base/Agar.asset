@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e6d0857d78da89408e391181281f1ac, type: 3}
-  m_Name: H20Normal
+  m_Name: Agar
   m_EditorClassIdentifier: 
   LabSubstanceProperty:
-    SubstanceName: H2O
+    SubstanceName: Agar
     SubstanceMode: 0
     SubstanceLayer: 0
-    SubstanceColorR: 0.17624065
-    SubstanceColorG: 0.48270762
-    SubstanceColorB: 0.8415094
+    SubstanceColorR: 0.8773585
+    SubstanceColorG: 0.8595068
+    SubstanceColorB: 0.3600481
     SubstanceColorA: 0.8117647
     HintName: 

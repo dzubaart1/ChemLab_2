@@ -2,7 +2,7 @@
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
   "Number": 12,
   "Title": "Задание 12",
-  "Description": "На плитке нажмите кнопку «Тепло», затем нажмите кнопку «Мешать», через секунду выключите кнопки «Тепло» и «Мешать».",
+  "Description": "На плитке нажмите кнопку «Тепло», затем нажмите кнопку «Мешать».",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {

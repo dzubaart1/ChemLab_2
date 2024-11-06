@@ -16,8 +16,8 @@ MonoBehaviour:
     SubstanceName: Na2HPO4
     SubstanceMode: 0
     SubstanceLayer: 0
-    SubstanceColorR: 0.84313726
-    SubstanceColorG: 0.17647058
-    SubstanceColorB: 0.19069558
+    SubstanceColorR: 0.66522783
+    SubstanceColorG: 0.8082283
+    SubstanceColorB: 0.9339623
     SubstanceColorA: 0.8117647
     HintName: 

@@ -78,6 +78,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 173499268342114646}
+  - component: {fileID: 5757818532012498345}
   m_Layer: 0
   m_Name: WeighingMachine
   m_TagString: Untagged
@@ -105,6 +106,20 @@ Transform:
   - {fileID: 1277220319807999857}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5757818532012498345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173499268342114645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43efdc5692ac77643947c0a1a1201462, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _socketInteractor: {fileID: 5950817273275774720}
+  _textMesh: {fileID: 1277220321025182047}
 --- !u!1 &173499268440391081
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,7 +662,7 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
-  eSocket: 0
+  _socketType: 0
   _isEnterTaskSendable: 1
   _isExitTaskSendable: 0
 --- !u!1 &1277220320236358190

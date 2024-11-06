@@ -17,9 +17,9 @@
             "SubstanceName": "CaCl2",
             "SubstanceMode": 0,
             "SubstanceLayer": 0,
-            "SubstanceColorR": 0.843137264,
-            "SubstanceColorG": 0.7562043,
-            "SubstanceColorB": 0.176470578,
+            "SubstanceColorR": 0.5030705,
+            "SubstanceColorG": 0.8962264,
+            "SubstanceColorB": 0.820959449,
             "SubstanceColorA": 0.8117647,
             "HintName": ""
           },
@@ -28,9 +28,9 @@
             "SubstanceName": "H2O",
             "SubstanceMode": 0,
             "SubstanceLayer": 0,
-            "SubstanceColorR": 0.176240653,
-            "SubstanceColorG": 0.48270762,
-            "SubstanceColorB": 0.8415094,
+            "SubstanceColorR": 0.407262385,
+            "SubstanceColorG": 0.4974264,
+            "SubstanceColorB": 0.6037736,
             "SubstanceColorA": 0.8117647,
             "HintName": ""
           }
@@ -42,41 +42,23 @@
         "$values": [
           {
             "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-            "SubstanceName": "Agar+Na2HPO4",
+            "SubstanceName": "CaCl2H2O",
             "SubstanceMode": 0,
             "SubstanceLayer": 0,
-            "SubstanceColorR": 0.490566015,
-            "SubstanceColorG": 0.353154629,
-            "SubstanceColorB": 0.1689213,
-            "SubstanceColorA": 0.0,
+            "SubstanceColorR": 0.4719206,
+            "SubstanceColorG": 0.822406769,
+            "SubstanceColorB": 0.9528302,
+            "SubstanceColorA": 0.694117665,
             "HintName": ""
           }
         ]
       }
     },
     "Container": 0,
-    "ActivityType": 4
+    "ActivityType": 5
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
-        "LabSubstanceProperty": {
-          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "CaCl2",
-          "SubstanceMode": 0,
-          "SubstanceLayer": 0,
-          "SubstanceColorR": 0.843137264,
-          "SubstanceColorG": 0.7562043,
-          "SubstanceColorB": 0.176470578,
-          "SubstanceColorA": 0.8117647,
-          "HintName": ""
-        },
-        "Weight": 30.0,
-        "SideEffectTimeType": 0,
-        "SideEffectType": 2
-      }
-    ]
+    "$values": []
   }
 }
