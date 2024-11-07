@@ -47,7 +47,8 @@ namespace BioEngineerLab
         LodochkaContainer,
         WaterDeContainer,
         MeasureContainer,
-        DozatorContainer
+        DozatorContainer,
+        PetriDishContainer
         //KuvetkaContainer,
         //SyringeContainer,
         //ReagentsContainer,
@@ -108,6 +109,7 @@ namespace BioEngineerLab
         BankNa2HPO4Socket,
         StirringMachineSocket,
         ChemicGlassContainerSocket,
-        PipetDozatorSocket
+        PipetDozatorSocket,
+        PetriDishCupSocket
     }
 }
