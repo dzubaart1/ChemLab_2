@@ -2,16 +2,46 @@
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
   "Number": 38,
   "Title": "Задание 38",
-  "Description": "Перелейте раствор в пробирку. Необходимый объем раствора: 6 мл",
+  "Description": "С помощью пипет-дозатора отберите раствор Na2HPO4 и Agar из термостойкого стакана.",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.AnchorLabActivity, Assembly-CSharp",
-    "ContainerType": 0,
-    "ActivityType": 4
+    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
+    "FromContainer": 0,
+    "ToContainer": 6,
+    "LabSubstanceProperty": {
+      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+      "SubstanceName": "Na2HPO4AgarH20",
+      "SubstanceMode": 0,
+      "SubstanceLayer": 0,
+      "SubstanceColorR": 0.7509978,
+      "SubstanceColorG": 0.5568628,
+      "SubstanceColorB": 0.8392157,
+      "SubstanceColorA": 0.709803939,
+      "HintName": ""
+    },
+    "ActivityType": 0
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": []
+    "$values": [
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
+        "LabSubstanceProperty": {
+          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+          "SubstanceName": "Na2HPO4AgarH20",
+          "SubstanceMode": 0,
+          "SubstanceLayer": 0,
+          "SubstanceColorR": 0.7509978,
+          "SubstanceColorG": 0.5568628,
+          "SubstanceColorB": 0.8392157,
+          "SubstanceColorA": 0.709803939,
+          "HintName": ""
+        },
+        "Weight": 9000.0,
+        "SideEffectTimeType": 0,
+        "SideEffectType": 2
+      }
+    ]
   }
 }

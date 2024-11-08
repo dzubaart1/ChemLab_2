@@ -10299,7 +10299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxVolume: 9000
-  _containerWeight: 0
+  _containerWeight: 20
   _containerType: 3
   _isWeightableContainer: 1
   _isSpoonContainer: 0

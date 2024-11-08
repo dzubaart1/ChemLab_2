@@ -10,7 +10,8 @@ namespace BioEngineerLab
     public enum EButton : byte
     {
         StirringMachineHeatBtn,
-        StirringMachineStirBtn
+        StirringMachineStirBtn,
+        DozatorButton
     }
 
     public enum ECraft : byte
@@ -48,7 +49,9 @@ namespace BioEngineerLab
         WaterDeContainer,
         MeasureContainer,
         DozatorContainer,
-        PetriDishContainer
+        PetriDishContainer,
+        TestTubeContainer,
+        LunkaContainer
         //KuvetkaContainer,
         //SyringeContainer,
         //ReagentsContainer,
@@ -83,7 +86,9 @@ namespace BioEngineerLab
         HandModelChangerMachine,
         CoatMachine,
         SyringeCupMoveMachine,
-        WashingMachine
+        WashingMachine,
+        ExpTabletMachine,
+        TrashMachine
     }
     
     public enum ESocketActivity : byte
@@ -110,6 +115,8 @@ namespace BioEngineerLab
         StirringMachineSocket,
         ChemicGlassContainerSocket,
         PipetDozatorSocket,
-        PetriDishCupSocket
+        PetriDishCupSocket,
+        TestTubeSocket,
+        TestTubeCupSocket
     }
 }

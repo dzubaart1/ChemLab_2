@@ -2,13 +2,25 @@
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
   "Number": 42,
   "Title": "Задание 42",
-  "Description": "Добавьте раствор в каждую из шести лунок культурального планшета. Необходимый объем материала в каждой лунке: 2 мл",
+  "Description": "Разместите раствор Na2HPO4 и Agar из пипет-дозатора в чашке Петри. Необходимая объем материала: 8 мл ",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.AnchorLabActivity, Assembly-CSharp",
-    "ContainerType": 0,
-    "ActivityType": 4
+    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
+    "FromContainer": 6,
+    "ToContainer": 7,
+    "LabSubstanceProperty": {
+      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+      "SubstanceName": "Na2HPO4AgarH20",
+      "SubstanceMode": 0,
+      "SubstanceLayer": 0,
+      "SubstanceColorR": 0.7509978,
+      "SubstanceColorG": 0.5568628,
+      "SubstanceColorB": 0.8392157,
+      "SubstanceColorA": 0.709803939,
+      "HintName": ""
+    },
+    "ActivityType": 0
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
