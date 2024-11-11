@@ -102,6 +102,8 @@ namespace BioEngineerLab.Tasks
                     return new Effect2Editor(labSideEffect);
                 case ESideEffect.AddReagentsSideEffect:
                     return new AddReagentsSideEffectEditor(labSideEffect);
+                case ESideEffect.SetDozatorVolumeSideEffect:
+                    return new SetDozatorVolumeLabSideEffectEditor(labSideEffect);
             }
 
             return null;

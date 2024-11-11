@@ -30,6 +30,13 @@ namespace BioEngineerLab.Containers
         [Header("Meshes")]
         [SerializeField] private MeshRendererConfig[] _meshRendererConfigs;
 
+        public float MaxVolume
+        {
+            get
+            {
+                return _maxVolume;
+            }
+        }
         public bool IsDirty { get; private set; }
 
         public IReadOnlyCollection<LabSubstance> Substances
@@ -70,6 +77,16 @@ namespace BioEngineerLab.Containers
         private void Start()
         {
             UpdateView();
+        }
+
+        public void ChangeMaxVolume(float value)
+        {
+            if (GetSubstancesWeight() > value)
+            {
+                return;
+            }
+
+            _maxVolume = value;
         }
         
         public float GetSubstancesWeight()

@@ -2,6 +2,7 @@
 using BioEngineerLab.Activities;
 using BioEngineerLab.Containers;
 using BioEngineerLab.Core;
+using BioEngineerLab.Tasks;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -40,9 +41,9 @@ namespace BioEngineerLab.Gameplay
         private SaveService _saveService;
 
         private SavedData _savedData = new SavedData();
+        
         private bool _isLoadSceneEnter;
         private bool _isLoadSceneExit;
-
         private bool _isStartEnter;
 
         protected override void Awake()
@@ -81,8 +82,12 @@ namespace BioEngineerLab.Gameplay
         protected override void OnSelectEntered(SelectEnterEventArgs args)
         {
             base.OnSelectEntered(args);
+            if (!_isEnterTaskSendable)
+            {
+                return;
+            }
 
-            if (args.interactableObject == null)
+            if (SelectedObject == null)
             {
                 return;
             }            
@@ -98,30 +103,20 @@ namespace BioEngineerLab.Gameplay
                 _isLoadSceneEnter = false;
                 return;
             }
-
-          if (_isEnterTaskSendable)
-            {
-                if(_isSubsctanceSocket)
-                {
-                    LabContainer container = args.interactableObject.transform.GetComponent<LabContainer>();
-
-                    if (container == null)
-                    {
-                        return;
-                    }
-
-                    _tasksService.TryCompleteTask(new SocketSubstancesLabActivity(_socketType, ESocketActivity.Enter, container.GetSubstanceProperties()));
-                }                    
-                else
-                    _tasksService.TryCompleteTask(new SocketLabActivity(_socketType, ESocketActivity.Enter));
-            }
+            
+            SendTryTaskComplete(SelectedObject, ESocketActivity.Enter);
         }
-
+        
         protected override void OnSelectExited(SelectExitEventArgs args)
         {
             base.OnSelectExited(args);
 
-            if (args.interactableObject == null)
+            if (!_isExitTaskSendable)
+            {
+                return;
+            }
+
+            if (SelectedObject == null)
             {
                 return;
             }
@@ -131,10 +126,25 @@ namespace BioEngineerLab.Gameplay
                 _isLoadSceneExit = false;
                 return;
             }
-
-            if (_isExitTaskSendable)
+            
+            SendTryTaskComplete(SelectedObject, ESocketActivity.Exit);
+        }
+        
+        private void SendTryTaskComplete(Transform objectTransform, ESocketActivity socketActivity)
+        {
+            if (_isSubsctanceSocket)
             {
-                _tasksService.TryCompleteTask(new SocketLabActivity(_socketType, ESocketActivity.Exit));
+                LabContainer labContainer = objectTransform.GetComponent<LabContainer>();
+                if (labContainer == null)
+                {
+                    return;
+                }
+                
+                _tasksService.TryCompleteTask(new SocketSubstancesLabActivity(_socketType, socketActivity, labContainer.GetSubstanceProperties()));
+            }
+            else
+            {
+                _tasksService.TryCompleteTask(new SocketLabActivity(_socketType, socketActivity));
             }
         }
 

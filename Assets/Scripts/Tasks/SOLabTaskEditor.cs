@@ -89,6 +89,9 @@ namespace BioEngineerLab.Tasks
                 case ESideEffect.AddReagentsSideEffect:
                     _soLabTask.SetSideEffect(new AddReagentsLabSideEffect(), effectID);
                     break;
+                case ESideEffect.SetDozatorVolumeSideEffect:
+                    _soLabTask.SetSideEffect(new SetDozatorVolumeLabSideEffect(), effectID);
+                    break;
                 default:
                     Debug.LogError("Can't find Side effect!");
                     break;

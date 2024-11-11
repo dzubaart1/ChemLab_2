@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 namespace BioEngineerLab.UI.Components
 {
-    [RequireComponent(typeof(Button))]
     public class ButtonComponent : MonoBehaviour
     {
         public event Action OnClickButton;
@@ -29,13 +28,7 @@ namespace BioEngineerLab.UI.Components
         {
             _tasksService = Engine.GetService<TasksService>();
         }
-
-        public void SetIsOn(bool value)
-        {
-            IsOn = value;
-            ChangeStatus();
-        }
-
+        
         private void OnEnable()
         {
             _button.onClick.AddListener(OnClickBtn);
@@ -44,6 +37,12 @@ namespace BioEngineerLab.UI.Components
         private void OnDisable()
         {
             _button.onClick.RemoveListener(OnClickBtn);
+        }
+
+        public void SetIsOn(bool value)
+        {
+            IsOn = value;
+            ChangeStatus();
         }
 
         private void OnClickBtn()
