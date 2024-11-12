@@ -26,14 +26,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3230590818201616869}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.6123724, y: 0.35355338, z: 0.61237246, w: -0.35355344}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3230590819400659980}
   m_Father: {fileID: 4227023143973652006}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &3230590818201616875
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -73,7 +73,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_InteractionLayers:
     m_Bits: 128
-  m_AttachTransform: {fileID: 3230590819400659980}
+  m_AttachTransform: {fileID: 3230590818201616870}
   m_KeepSelectedTargetValid: 1
   m_DisableVisualsWhenBlockedInGroup: 1
   m_StartingSelectedInteractable: {fileID: 0}
@@ -138,7 +138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3230590819400659980
 RectTransform:
   m_ObjectHideFlags: 0
@@ -522,6 +522,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6292747545233388885}
   - component: {fileID: 4628615291977513954}
+  - component: {fileID: 7478432049847581566}
+  - component: {fileID: 4908857039745177892}
+  - component: {fileID: 5179527552943953124}
   m_Layer: 11
   m_Name: Colliders
   m_TagString: Untagged
@@ -538,8 +541,8 @@ Transform:
   m_GameObject: {fileID: 4306010668973970202}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.0061999997, y: 0.0061999997, z: 0.0061999997}
+  m_LocalPosition: {x: 0, y: -0, z: 0.000218}
+  m_LocalScale: {x: 0.007, y: 0.007, z: 0.007}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7895795842867834299}
@@ -563,8 +566,71 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.1, y: 0.1, z: 0.02}
-  m_Center: {x: 0, y: 1.05463735e-16, z: 0.010764598}
+  m_Size: {x: 0.0030894435, y: 0.11220667, z: 0.06}
+  m_Center: {x: -0.052952386, y: 0, z: 0}
+--- !u!65 &7478432049847581566
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4306010668973970202}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0030894435, y: 0.11220667, z: 0.06}
+  m_Center: {x: 0.05295239, y: 0, z: 0}
+--- !u!65 &4908857039745177892
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4306010668973970202}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0996782, y: 0.0030894426, z: 0.06}
+  m_Center: {x: 0.00016112483, y: -0.052952386, z: 0}
+--- !u!65 &5179527552943953124
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4306010668973970202}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0996782, y: 0.0030894426, z: 0.06}
+  m_Center: {x: 0, y: 0.05295239, z: 0}
 --- !u!1 &5159757095705977241
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,6 +992,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cupSocket: {fileID: 4903417721036576240}
+  _isNozzleNeed: 0
 --- !u!114 &5191312772487442592
 MonoBehaviour:
   m_ObjectHideFlags: 0

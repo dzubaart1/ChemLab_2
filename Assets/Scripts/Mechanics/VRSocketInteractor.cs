@@ -115,11 +115,6 @@ namespace BioEngineerLab.Gameplay
             {
                 return;
             }
-
-            if (SelectedObject == null)
-            {
-                return;
-            }
             
             if (_isLoadSceneExit)
             {
@@ -127,7 +122,7 @@ namespace BioEngineerLab.Gameplay
                 return;
             }
             
-            SendTryTaskComplete(SelectedObject, ESocketActivity.Exit);
+            _tasksService.TryCompleteTask(new SocketLabActivity(_socketType, ESocketActivity.Exit));
         }
         
         private void SendTryTaskComplete(Transform objectTransform, ESocketActivity socketActivity)

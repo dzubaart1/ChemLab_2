@@ -6,20 +6,21 @@ namespace BioEngineerLab.Containers
     public class CupSocketLabContainer : MonoBehaviour
     {
         [SerializeField] private VRSocketInteractor _cupSocket;
+        [SerializeField] private bool _isNozzleNeed;
 
         public bool IsClosed()
         {
             if (_cupSocket == null)
             {
-                return false;
+                return _isNozzleNeed;
             }
 
             if (_cupSocket.firstInteractableSelected == null)
             {
-                return false;
+                return _isNozzleNeed;
             }
             
-            return true;
+            return !_isNozzleNeed;
         }
     }
 }
