@@ -1,14 +1,14 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
-  "Number": 35,
-  "Title": "Задание 35",
-  "Description": "Возьмите термостойкий стакан «2» и поставьте на стол",
+  "Number": 58,
+  "Title": "Задание 58",
+  "Description": "Наденьте на пипет-дозатор наконечник.",
   "Warning": "",
-  "SaveableTask": true,
+  "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
-    "SocketType": 4,
-    "SocketActivityType": 1,
+    "SocketType": 6,
+    "SocketActivityType": 0,
     "ActivityType": 3
   },
   "LabSideEffects": {

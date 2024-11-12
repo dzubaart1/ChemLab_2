@@ -1,0 +1,64 @@
+{
+  "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Number": 66,
+  "Title": "Задание 66",
+  "Description": "Добавьте раствор хлорида кальция в каждую лунку культурального планшета с раствором Na2HPO4 и Agar. Необходимый объем материала в каждой лунке: 0,01 мл. ",
+  "Warning": "",
+  "SaveableTask": false,
+  "LabActivity": {
+    "$type": "BioEngineerLab.Activities.CraftSubstanceLabActivity, Assembly-CSharp",
+    "LabCraft": {
+      "$type": "Crafting.LabCraft, Assembly-CSharp",
+      "SubstancesFrom": {
+        "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
+        "$values": [
+          {
+            "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+            "SubstanceName": "Na2HPO4AgarH20",
+            "SubstanceMode": 0,
+            "SubstanceLayer": 0,
+            "SubstanceColorR": 0.7509978,
+            "SubstanceColorG": 0.5568628,
+            "SubstanceColorB": 0.8392157,
+            "SubstanceColorA": 0.709803939,
+            "HintName": ""
+          },
+          {
+            "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+            "SubstanceName": "CaCl2H2O",
+            "SubstanceMode": 0,
+            "SubstanceLayer": 0,
+            "SubstanceColorR": 0.4719206,
+            "SubstanceColorG": 0.822406769,
+            "SubstanceColorB": 0.9528302,
+            "SubstanceColorA": 0.694117665,
+            "HintName": ""
+          }
+        ]
+      },
+      "CraftType": 3,
+      "SubstancesRes": {
+        "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
+        "$values": [
+          {
+            "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+            "SubstanceName": "AllMixed",
+            "SubstanceMode": 0,
+            "SubstanceLayer": 0,
+            "SubstanceColorR": 0.6550019,
+            "SubstanceColorG": 0.4464667,
+            "SubstanceColorB": 0.745283,
+            "SubstanceColorA": 0.745098054,
+            "HintName": ""
+          }
+        ]
+      }
+    },
+    "Container": 9,
+    "ActivityType": 5
+  },
+  "LabSideEffects": {
+    "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
+    "$values": []
+  }
+}

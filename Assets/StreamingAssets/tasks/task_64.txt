@@ -1,8 +1,8 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
-  "Number": 43,
-  "Title": "Задание 43",
-  "Description": "Установите правой рукой значение на пипетдозаторе 2.00 мл.",
+  "Number": 64,
+  "Title": "Задание 64",
+  "Description": "Установите правой рукой значение на пипетдозаторе 0,01 мл.",
   "Warning": "",
   "SaveableTask": true,
   "LabActivity": {
@@ -15,7 +15,7 @@
     "$values": [
       {
         "$type": "BioEngineerLab.Tasks.SideEffects.SetDozatorVolumeLabSideEffect, Assembly-CSharp",
-        "DozatorVolume": 2.0,
+        "DozatorVolume": 0.01,
         "SideEffectTimeType": 1,
         "SideEffectType": 3
       }

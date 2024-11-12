@@ -36,7 +36,7 @@ namespace BioEngineerLab.Machines
                 return;
             }
 
-            if (setDozatorVolumeLabSideEffect.DozatorVolume < 1)
+            if (setDozatorVolumeLabSideEffect.DozatorVolume >= 1)
             {
                 _text.text = setDozatorVolumeLabSideEffect.DozatorVolume + ".00";
             }

@@ -1,14 +1,14 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
-  "Number": 38,
-  "Title": "Задание 38",
-  "Description": "С помощью пипет-дозатора отберите раствор Na2HPO4 и Agar из термостойкого стакана.",
+  "Number": 51,
+  "Title": "Задание 51",
+  "Description": "Добавьте пипет-дозатором раствор Na2HPO4 и Agar в каждую из шести лунок культурального планшета. Необходимый объем материала в каждой лунке: 2 мл",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
-    "FromContainer": 0,
-    "ToContainer": 6,
+    "FromContainer": 6,
+    "ToContainer": 9,
     "LabSubstanceProperty": {
       "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
       "SubstanceName": "Na2HPO4AgarH20",
