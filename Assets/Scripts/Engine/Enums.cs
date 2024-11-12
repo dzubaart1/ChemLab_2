@@ -11,7 +11,8 @@ namespace BioEngineerLab
     {
         StirringMachineHeatBtn,
         StirringMachineStirBtn,
-        DozatorButton
+        DozatorButton,
+        ScannerButton
     }
 
     public enum ECraft : byte
@@ -118,6 +119,7 @@ namespace BioEngineerLab
         PipetDozatorSocket,
         PetriDishCupSocket,
         TestTubeSocket,
-        TestTubeCupSocket
+        TestTubeCupSocket,
+        ScannerSocket
     }
 }
