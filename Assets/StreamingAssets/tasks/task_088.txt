@@ -1,0 +1,47 @@
+{
+  "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Number": 88,
+  "Title": "Задание 88",
+  "Description": "Наберите 100 мл дистиллированной воды в мерный цилиндр.",
+  "Warning": "",
+  "SaveableTask": true,
+  "LabActivity": {
+    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
+    "FromContainer": 4,
+    "ToContainer": 5,
+    "LabSubstanceProperty": {
+      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+      "SubstanceName": "H2O",
+      "SubstanceMode": 0,
+      "SubstanceLayer": 0,
+      "SubstanceColorR": 0.407262385,
+      "SubstanceColorG": 0.4974264,
+      "SubstanceColorB": 0.6037736,
+      "SubstanceColorA": 0.8117647,
+      "HintName": ""
+    },
+    "ActivityType": 0
+  },
+  "LabSideEffects": {
+    "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
+    "$values": [
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
+        "LabSubstanceProperty": {
+          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+          "SubstanceName": "H2O",
+          "SubstanceMode": 0,
+          "SubstanceLayer": 0,
+          "SubstanceColorR": 0.407262385,
+          "SubstanceColorG": 0.4974264,
+          "SubstanceColorB": 0.6037736,
+          "SubstanceColorA": 0.8117647,
+          "HintName": ""
+        },
+        "Weight": 100.0,
+        "SideEffectTimeType": 0,
+        "SideEffectType": 2
+      }
+    ]
+  }
+}

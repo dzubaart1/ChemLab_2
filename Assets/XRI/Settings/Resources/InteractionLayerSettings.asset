@@ -24,9 +24,9 @@ MonoBehaviour:
   - TestTubeSocket
   - TestTubeCupSocket
   - ScannerSocket
-  - 
-  - 
-  - 
+  - DryBoxMachineSocket
+  - PipetkaRackSocket
+  - CentrifugaSocket
   - 
   - 
   - 

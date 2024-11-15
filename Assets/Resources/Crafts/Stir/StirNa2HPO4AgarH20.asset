@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41e3d66c1f6971946a8a136284fabef7, type: 3}
+  m_Name: StirNa2HPO4AgarH20
+  m_EditorClassIdentifier: 
+  LabCraft:
+    SubstancesFrom:
+    - SubstanceName: Na2HPO4AgarH20
+      SubstanceMode: 0
+      SubstanceLayer: 0
+      SubstanceColorR: 0.7509978
+      SubstanceColorG: 0.5568628
+      SubstanceColorB: 0.8392157
+      SubstanceColorA: 0.70980394
+      HintName: 
+    CraftType: 2
+    SubstancesRes:
+    - SubstanceName: StirNa2HPO4AgarH20
+      SubstanceMode: 0
+      SubstanceLayer: 0
+      SubstanceColorR: 0.96082616
+      SubstanceColorG: 0.7882353
+      SubstanceColorB: 1
+      SubstanceColorA: 0.7294118
+      HintName: 

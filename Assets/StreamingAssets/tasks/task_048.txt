@@ -1,0 +1,29 @@
+{
+  "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Number": 48,
+  "Title": "Задание 48",
+  "Description": "Добавьте пипет-дозатором раствор Na2HPO4 и Agar в каждую из шести лунок культурального планшета. Необходимый объем материала в каждой лунке: 2 мл",
+  "Warning": "",
+  "SaveableTask": false,
+  "LabActivity": {
+    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
+    "FromContainer": 0,
+    "ToContainer": 6,
+    "LabSubstanceProperty": {
+      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+      "SubstanceName": "StirNa2HPO4AgarH20",
+      "SubstanceMode": 0,
+      "SubstanceLayer": 0,
+      "SubstanceColorR": 0.960826159,
+      "SubstanceColorG": 0.7882353,
+      "SubstanceColorB": 1.0,
+      "SubstanceColorA": 0.7294118,
+      "HintName": ""
+    },
+    "ActivityType": 0
+  },
+  "LabSideEffects": {
+    "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
+    "$values": []
+  }
+}

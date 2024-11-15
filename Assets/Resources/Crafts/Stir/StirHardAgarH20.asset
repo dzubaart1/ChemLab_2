@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41e3d66c1f6971946a8a136284fabef7, type: 3}
+  m_Name: StirHardAgarH20
+  m_EditorClassIdentifier: 
+  LabCraft:
+    SubstancesFrom:
+    - SubstanceName: HardAgarrH20
+      SubstanceMode: 0
+      SubstanceLayer: 0
+      SubstanceColorR: 0.7924528
+      SubstanceColorG: 0.7289252
+      SubstanceColorB: 0.5420078
+      SubstanceColorA: 0.79607844
+      HintName: 
+    CraftType: 2
+    SubstancesRes:
+    - SubstanceName: StirHardAgarH2O
+      SubstanceMode: 0
+      SubstanceLayer: 0
+      SubstanceColorR: 1
+      SubstanceColorG: 0.93553257
+      SubstanceColorB: 0.7971698
+      SubstanceColorA: 0.84313726
+      HintName: 
