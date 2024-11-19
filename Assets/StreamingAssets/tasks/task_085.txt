@@ -2,13 +2,13 @@
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
   "Number": 85,
   "Title": "Задание 85",
-  "Description": "Возьмите металический шпатель, извлеките из пробирки твердый Agar с веществом.",
+  "Description": "Твердый Agar с веществом пересыпьте в термостойкий стакан.",
   "Warning": "",
-  "SaveableTask": true,
+  "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
-    "FromContainer": 8,
-    "ToContainer": 10,
+    "FromContainer": 10,
+    "ToContainer": 0,
     "LabSubstanceProperty": {
       "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
       "SubstanceName": "HardAgar",

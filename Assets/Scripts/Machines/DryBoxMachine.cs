@@ -68,13 +68,16 @@ namespace BioEngineerLab.Machines
             else if (_door.transform.rotation.z > 0.45f && _isOpen)
             {
                 _isOpen = false;
-                
-                Debug.Log("Closed");
             }
         }
 
         private void Dry()
         {
+            if (_isOpen)
+            {
+                return;
+            }
+            
             if (_isOn)
             {
                 LabContainer labContainer = _socketInteractor.SelectedObject.GetComponent<LabContainer>();
@@ -87,10 +90,14 @@ namespace BioEngineerLab.Machines
                 _craftService.Dry(labContainer);
                 
                 _isOn = false;
+                
+                _tasksService.TryCompleteTask(new ButtonClickedActivity(EButton.DryBoxMachineButton));
             }
             else
             {
                 _isOn = true;
+                
+                _tasksService.TryCompleteTask(new ButtonClickedActivity(EButton.DryBoxMachineButton));
             }
         }
         public void OnSaveScene()

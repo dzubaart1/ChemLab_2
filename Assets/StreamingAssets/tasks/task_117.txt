@@ -2,14 +2,13 @@
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
   "Number": 117,
   "Title": "Задание 117",
-  "Description": "Сбросьте грязный металический шпатель в емкость для мытья лабораторной посуды",
+  "Description": "Выключите сушильный шкаф правой рукой.",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 0,
-    "MachineType": 6,
-    "ActivityType": 1
+    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
+    "ButtonType": 4,
+    "ActivityType": 6
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

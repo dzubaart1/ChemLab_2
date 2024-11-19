@@ -17,6 +17,7 @@ namespace BioEngineerLab
         CentrifugaContainerButton,
         CentrifugaPowerButton,
         CentrifugaStartButton,
+        KspectrometerButton,
     }
 
     public enum ECraft : byte
@@ -58,7 +59,11 @@ namespace BioEngineerLab
         TestTubeContainer,
         LunkaContainer,
         PuttyKnifeContainer,
+        DarkPuttyKnifeContainer,
         CentrifugaContainer,
+        TweezersContainer,
+        AtomicMicContainer,
+        KspectrometerContainer,
         //KuvetkaContainer,
         //SyringeContainer,
         //ReagentsContainer,

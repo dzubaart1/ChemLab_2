@@ -2,12 +2,12 @@
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
   "Number": 92,
   "Title": "Задание 92",
-  "Description": "Нажмите правой рукой на плитке кнопки \"Stirring\" и \"Heating\" ( “Мешать” и “Тепло”). Плитка начнёт перемешивание раствора. ",
+  "Description": "Выключите плитку, нажав правой рукой кнопки \"Stirring\" и \"Heating\" ( “Мешать” и “Тепло”). ",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 1,
+    "MachineActivityType": 2,
     "MachineType": 0,
     "ActivityType": 1
   },

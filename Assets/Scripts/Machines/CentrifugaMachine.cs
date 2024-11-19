@@ -80,8 +80,16 @@ namespace BioEngineerLab.Machines
                 _isStarted = false;
                 _animator.enabled = false;
                 
-                _craftService.Split(_socketInteractor1.SelectedObject.GetComponent<LabContainer>());
-                _craftService.Split(_socketInteractor2.SelectedObject.GetComponent<LabContainer>());
+                LabContainer labContainer1 = _socketInteractor1.SelectedObject.GetComponent<LabContainer>();
+                LabContainer labContainer2 = _socketInteractor2.SelectedObject.GetComponent<LabContainer>();
+
+                if (labContainer1 is null || labContainer2 is null)
+                {
+                    return;
+                }
+                
+                _craftService.Split(labContainer1);
+                _craftService.Split(labContainer2);
                 
                 _tasksService.TryCompleteTask(new MachineLabActivity(EMachineActivity.OnFinish, EMachine.CentrifugaMachine));
             }

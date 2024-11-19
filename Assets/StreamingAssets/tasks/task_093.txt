@@ -2,14 +2,14 @@
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
   "Number": 93,
   "Title": "Задание 93",
-  "Description": "Выключите плитку, нажав правой рукой кнопки \"Stirring\" и \"Heating\" ( “Мешать” и “Тепло”). ",
+  "Description": "Возьмите термостойкий стакан \"3\" с плитки.",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 2,
-    "MachineType": 0,
-    "ActivityType": 1
+    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
+    "SocketType": 4,
+    "SocketActivityType": 1,
+    "ActivityType": 3
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

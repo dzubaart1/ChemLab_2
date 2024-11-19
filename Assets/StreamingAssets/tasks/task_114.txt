@@ -2,13 +2,13 @@
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
   "Number": 114,
   "Title": "Задание 114",
-  "Description": "Переместите констистенцию (пастообразный осадок) в чистую чашку Петри.",
+  "Description": "Возьмите металическим шпателем консистенцию (пасторбразный осадок) из второй пробирки для центрифуги.",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
-    "FromContainer": 10,
-    "ToContainer": 7,
+    "FromContainer": 11,
+    "ToContainer": 10,
     "LabSubstanceProperty": {
       "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
       "SubstanceName": "SplitHardAgarSed",

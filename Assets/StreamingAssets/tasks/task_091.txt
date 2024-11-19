@@ -2,13 +2,14 @@
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
   "Number": 91,
   "Title": "Задание 91",
-  "Description": "Поместите якорь для магнитной мешалки в термостойкий стакан с твёрдым Agar и веществом. ",
+  "Description": "Нажмите правой рукой на плитке кнопки \"Stirring\" и \"Heating\" ( “Мешать” и “Тепло”). Плитка начнёт перемешивание раствора. ",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.AnchorLabActivity, Assembly-CSharp",
-    "ContainerType": 0,
-    "ActivityType": 4
+    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
+    "MachineActivityType": 1,
+    "MachineType": 0,
+    "ActivityType": 1
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

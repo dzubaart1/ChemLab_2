@@ -2,21 +2,46 @@
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
   "Number": 119,
   "Title": "Задание 119",
-  "Description": "Заберите из сушильного шкафа чашку Петри с растворами хлорида кальция и Na2HPO4 и Agar. Разместите ее на столе рядом со сканирующим атомно-силовым микроскопом.",
+  "Description": "С помощью пинцета возьмите полученную агаровую пленку с кристаллами гидроксиапатита из чашки Петри.",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",
-    "SocketType": 0,
-    "SocketActivityType": 1,
-    "LabSubstanceProperties": {
-      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
-      "$values": []
+    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
+    "FromContainer": 7,
+    "ToContainer": 12,
+    "LabSubstanceProperty": {
+      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+      "SubstanceName": "DryHardAgar",
+      "SubstanceMode": 0,
+      "SubstanceLayer": 0,
+      "SubstanceColorR": 0.9528302,
+      "SubstanceColorG": 0.680635035,
+      "SubstanceColorB": 0.4539427,
+      "SubstanceColorA": 1.0,
+      "HintName": ""
     },
-    "ActivityType": 2
+    "ActivityType": 0
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": []
+    "$values": [
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
+        "LabSubstanceProperty": {
+          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+          "SubstanceName": "DryHardAgar",
+          "SubstanceMode": 0,
+          "SubstanceLayer": 0,
+          "SubstanceColorR": 0.9528302,
+          "SubstanceColorG": 0.680635035,
+          "SubstanceColorB": 0.4539427,
+          "SubstanceColorA": 1.0,
+          "HintName": ""
+        },
+        "Weight": 30.0,
+        "SideEffectTimeType": 0,
+        "SideEffectType": 2
+      }
+    ]
   }
 }

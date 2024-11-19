@@ -2,13 +2,13 @@
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
   "Number": 103,
   "Title": "Задание 103",
-  "Description": "Остановите центрифугу.",
+  "Description": "Откройте одну из пробирок.",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 2,
-    "MachineType": 8,
+    "MachineActivityType": 1,
+    "MachineType": 7,
     "ActivityType": 1
   },
   "LabSideEffects": {

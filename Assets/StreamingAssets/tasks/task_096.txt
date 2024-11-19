@@ -1,26 +1,15 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
   "Number": 96,
-  "Title": "Задание 95",
-  "Description": "Разлейте раствор твёрдого Agar с веществом из термостойкого стакана в две пробирки для центрифуги.",
+  "Title": "Задание 96",
+  "Description": "Закройте пробирки.",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
-    "FromContainer": 0,
-    "ToContainer": 11,
-    "LabSubstanceProperty": {
-      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-      "SubstanceName": "StirHardAgarH2O",
-      "SubstanceMode": 0,
-      "SubstanceLayer": 0,
-      "SubstanceColorR": 1.0,
-      "SubstanceColorG": 0.93553257,
-      "SubstanceColorB": 0.7971698,
-      "SubstanceColorA": 0.843137264,
-      "HintName": ""
-    },
-    "ActivityType": 0
+    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
+    "MachineActivityType": 2,
+    "MachineType": 7,
+    "ActivityType": 1
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

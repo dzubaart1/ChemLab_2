@@ -2,25 +2,49 @@
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
   "Number": 115,
   "Title": "Задание 115",
-  "Description": "Возьмите металическим шпателем консистенцию (пасторбразный осадок) из второй пробирки для центрифуги.",
+  "Description": "Переместите констистенцию (пастообразный осадок) в чашку Петри с пастообразным осадком шпателем",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
-    "FromContainer": 11,
-    "ToContainer": 10,
-    "LabSubstanceProperty": {
-      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-      "SubstanceName": "SplitHardAgarSed",
-      "SubstanceMode": 0,
-      "SubstanceLayer": 1,
-      "SubstanceColorR": 1.0,
-      "SubstanceColorG": 0.7995272,
-      "SubstanceColorB": 0.495283,
-      "SubstanceColorA": 1.0,
-      "HintName": ""
+    "$type": "BioEngineerLab.Activities.CraftSubstanceLabActivity, Assembly-CSharp",
+    "LabCraft": {
+      "$type": "Crafting.LabCraft, Assembly-CSharp",
+      "SubstancesFrom": {
+        "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
+        "$values": [
+          {
+            "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+            "SubstanceName": "SplitHardAgarSed",
+            "SubstanceMode": 0,
+            "SubstanceLayer": 1,
+            "SubstanceColorR": 1.0,
+            "SubstanceColorG": 0.7995272,
+            "SubstanceColorB": 0.495283,
+            "SubstanceColorA": 1.0,
+            "HintName": ""
+          }
+        ]
+      },
+      "CraftType": 3,
+      "SubstancesRes": {
+        "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
+        "$values": [
+          {
+            "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+            "SubstanceName": "SplitHardAgarSed",
+            "SubstanceMode": 0,
+            "SubstanceLayer": 1,
+            "SubstanceColorR": 1.0,
+            "SubstanceColorG": 0.7995272,
+            "SubstanceColorB": 0.495283,
+            "SubstanceColorA": 1.0,
+            "HintName": ""
+          }
+        ]
+      }
     },
-    "ActivityType": 0
+    "Container": 7,
+    "ActivityType": 5
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

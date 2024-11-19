@@ -2,12 +2,12 @@
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
   "Number": 102,
   "Title": "Задание 102",
-  "Description": "Запустите центрифугу, нажав правой рукой кнопкy \"Start\".",
+  "Description": "Остановите центрифугу",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 1,
+    "MachineActivityType": 2,
     "MachineType": 8,
     "ActivityType": 1
   },
