@@ -189,12 +189,13 @@ GameObject:
   - component: {fileID: 4084616397894794176}
   - component: {fileID: 4084616397894794177}
   - component: {fileID: 4084616397894794178}
+  - component: {fileID: 3236507362503836731}
   m_Layer: 5
   m_Name: KspectrometrMachineCanvas\
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &4084616397894794180
 RectTransform:
@@ -291,6 +292,25 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 1
+--- !u!114 &3236507362503836731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4084616397894794181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7951c64acb0fa62458bf30a60089fe2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 0
+  m_CheckFor2DOcclusion: 0
+  m_CheckFor3DOcclusion: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RaycastTriggerInteraction: 1
 --- !u!1 &4084616398216383279
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,7 +329,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &4084616398216383278
 RectTransform:
@@ -439,10 +459,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buttonType: 8
   _isTaskSendable: 0
-  _btnImage: {fileID: 0}
-  _onSprite: {fileID: 0}
-  _offSprite: {fileID: 0}
-  _button: {fileID: 0}
+  _btnImage: {fileID: 4084616398216383276}
+  _onSprite: {fileID: 21300000, guid: c257edbf2a53c7c479f5ef16edd32543, type: 3}
+  _offSprite: {fileID: 21300000, guid: 3d09c26e92cc73e4492e8f9af47b11ca, type: 3}
+  _button: {fileID: 4084616398216383277}
 --- !u!1 &4084616398240571677
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,7 +562,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &4084616399368587594
 RectTransform:
@@ -1004,7 +1024,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4084616399810273415
 Transform:
@@ -1037,7 +1057,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &4084616400008520856
 RectTransform:

@@ -104,6 +104,7 @@ namespace BioEngineerLab
         TrashMachine,
         CentrifugaContainerMachine,
         CentrifugaMachine,
+        PaperTrayMachine,
     }
     
     public enum ESocketActivity : byte
