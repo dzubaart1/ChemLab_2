@@ -6,9 +6,10 @@
   "Warning": "",
   "SaveableTask": true,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.AnchorLabActivity, Assembly-CSharp",
-    "ContainerType": 0,
-    "ActivityType": 4
+    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
+    "SocketType": 0,
+    "SocketActivityType": 0,
+    "ActivityType": 3
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

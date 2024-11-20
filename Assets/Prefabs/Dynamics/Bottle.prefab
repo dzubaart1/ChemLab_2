@@ -314,7 +314,7 @@ Transform:
   m_GameObject: {fileID: 4287550321723102319}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.1524, z: 0}
+  m_LocalPosition: {x: 0, y: 0.171, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -382,7 +382,7 @@ MonoBehaviour:
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   _socketType: 17
   _isEnterTaskSendable: 0
-  _isExitTaskSendable: 0
+  _isExitTaskSendable: 1
   _isSubsctanceSocket: 0
 --- !u!135 &2562155564905575613
 SphereCollider:

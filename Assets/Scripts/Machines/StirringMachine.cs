@@ -114,8 +114,10 @@ namespace BioEngineerLab.Machines
         
         private void StartMachineWork()
         {
+            ToggleStirringAnimation(true);
             _tasksService.TryCompleteTask(new MachineLabActivity(EMachineActivity.OnStart,
                 EMachine.StirringMachine));
+            
         }
 
         private void FinishMachineWork()

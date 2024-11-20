@@ -35,7 +35,7 @@ namespace BioEngineerLab.Machines
             _saveService.LoadSceneStateEvent += OnLoadScene;
             _saveService.SaveSceneStateEvent += OnSaveScene;
 
-            _button.ClickBtnEvent += PlayAnimation;
+            _button.ClickBtnEvent += OnClickButton;
         }
 
         private void OnDisable()
@@ -43,7 +43,7 @@ namespace BioEngineerLab.Machines
             _saveService.LoadSceneStateEvent -= OnLoadScene;
             _saveService.SaveSceneStateEvent -= OnSaveScene;
             
-            _button.ClickBtnEvent -= PlayAnimation;
+            _button.ClickBtnEvent -= OnClickButton;
         }
 
         private void Start()
@@ -51,19 +51,15 @@ namespace BioEngineerLab.Machines
             OnSaveScene();
         }
 
-        private void PlayAnimation()
+        private void OnClickButton()
         {
             if (!_button.IsOn)
             {
                 _animator.Play("Open");
-                
-                _tasksService.TryCompleteTask(new MachineLabActivity(EMachineActivity.OnStart, EMachine.CentrifugaContainerMachine));
             }
             else
             {
                 _animator.Play("Close");
-
-                _tasksService.TryCompleteTask(new MachineLabActivity(EMachineActivity.OnFinish, EMachine.CentrifugaContainerMachine));
             }
         }
         public void OnSaveScene()

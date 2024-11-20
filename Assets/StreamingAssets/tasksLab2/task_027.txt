@@ -4,7 +4,7 @@
   "Title": "Задание 27",
   "Description": "Возьмите емкость и поставьте на стол.",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
     "SocketType": 7,

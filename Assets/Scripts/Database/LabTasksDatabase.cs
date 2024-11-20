@@ -72,7 +72,7 @@ namespace Database
         
         public string GetFilePath()
         {
-            return $"{Application.streamingAssetsPath}/tasksLab2/";
+            return $"{Application.streamingAssetsPath}/tasksLab1/";
         }
 
         public string GetFileName(LabTask labTask)
