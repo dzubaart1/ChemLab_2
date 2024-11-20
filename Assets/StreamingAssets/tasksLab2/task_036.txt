@@ -1,0 +1,64 @@
+{
+  "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Number": 36,
+  "Title": "Задание 36",
+  "Description": "Пересыпьте сахарозу из лодочки для взвешивания в ёмкость с надписью «Сахароза»",
+  "Warning": "",
+  "SaveableTask": false,
+  "LabActivity": {
+    "$type": "BioEngineerLab.Activities.CraftSubstanceLabActivity, Assembly-CSharp",
+    "LabCraft": {
+      "$type": "Crafting.LabCraft, Assembly-CSharp",
+      "SubstancesFrom": {
+        "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
+        "$values": [
+          {
+            "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+            "SubstanceName": "Saharoza",
+            "SubstanceMode": 0,
+            "SubstanceLayer": 0,
+            "SubstanceColorR": 0.9300523,
+            "SubstanceColorG": 0.8726415,
+            "SubstanceColorB": 1.0,
+            "SubstanceColorA": 0.843137264,
+            "HintName": ""
+          },
+          {
+            "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+            "SubstanceName": "StirPurbleSol",
+            "SubstanceMode": 0,
+            "SubstanceLayer": 0,
+            "SubstanceColorR": 0.320631772,
+            "SubstanceColorG": 0.240299046,
+            "SubstanceColorB": 0.3773585,
+            "SubstanceColorA": 0.807843149,
+            "HintName": ""
+          }
+        ]
+      },
+      "CraftType": 3,
+      "SubstancesRes": {
+        "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
+        "$values": [
+          {
+            "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+            "SubstanceName": "Sakaroza and Purple Sol",
+            "SubstanceMode": 0,
+            "SubstanceLayer": 0,
+            "SubstanceColorR": 0.61556536,
+            "SubstanceColorG": 0.46364364,
+            "SubstanceColorB": 0.6509434,
+            "SubstanceColorA": 0.0,
+            "HintName": ""
+          }
+        ]
+      }
+    },
+    "Container": 0,
+    "ActivityType": 5
+  },
+  "LabSideEffects": {
+    "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
+    "$values": []
+  }
+}

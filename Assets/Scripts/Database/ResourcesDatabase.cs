@@ -34,7 +34,7 @@ namespace Database
         public static void LoadAllTaskFromDataBase()
         {
             List<SOLabTask> scriptableObjects =
-                Resources.LoadAll<SOLabTask>("Tasks").ToList();
+                Resources.LoadAll<SOLabTask>("TasksLab2").ToList();
 
             foreach (var so in scriptableObjects)
             {
@@ -47,7 +47,7 @@ namespace Database
             LabTasksDatabase.GetInstance().RemoveAll();
             
             List<SOLabTask> scriptableObjects =
-                Resources.LoadAll<SOLabTask>("Tasks").ToList();
+                Resources.LoadAll<SOLabTask>("TasksLab2").ToList();
 
             foreach (var so in scriptableObjects)
             {

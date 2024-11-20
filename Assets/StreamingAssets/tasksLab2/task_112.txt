@@ -1,0 +1,29 @@
+{
+  "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Number": 112,
+  "Title": "Задание 112",
+  "Description": "Возьмите металическим шпателем консистенцию (пасторбразный осадок) из одной пробирки для центрифуги.",
+  "Warning": "",
+  "SaveableTask": true,
+  "LabActivity": {
+    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
+    "FromContainer": 11,
+    "ToContainer": 10,
+    "LabSubstanceProperty": {
+      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+      "SubstanceName": "SplitHardAgarSed",
+      "SubstanceMode": 0,
+      "SubstanceLayer": 1,
+      "SubstanceColorR": 1.0,
+      "SubstanceColorG": 0.7995272,
+      "SubstanceColorB": 0.495283,
+      "SubstanceColorA": 1.0,
+      "HintName": ""
+    },
+    "ActivityType": 0
+  },
+  "LabSideEffects": {
+    "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
+    "$values": []
+  }
+}

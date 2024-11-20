@@ -1,0 +1,34 @@
+{
+  "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Number": 23,
+  "Title": "Задание 23",
+  "Description": "Поставьте емкость с пептоном, хлоридом натрия и бромкрезоловым пурпурным на плитку",
+  "Warning": "",
+  "SaveableTask": true,
+  "LabActivity": {
+    "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",
+    "SocketType": 7,
+    "SocketActivityType": 0,
+    "LabSubstanceProperties": {
+      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
+      "$values": [
+        {
+          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+          "SubstanceName": "PeptonNaClBCPH20",
+          "SubstanceMode": 0,
+          "SubstanceLayer": 0,
+          "SubstanceColorR": 0.6509434,
+          "SubstanceColorG": 0.260991454,
+          "SubstanceColorB": 0.6329314,
+          "SubstanceColorA": 0.796078444,
+          "HintName": ""
+        }
+      ]
+    },
+    "ActivityType": 2
+  },
+  "LabSideEffects": {
+    "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
+    "$values": []
+  }
+}
