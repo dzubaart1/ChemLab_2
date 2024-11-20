@@ -64,6 +64,7 @@ namespace BioEngineerLab
         TweezersContainer,
         AtomicMicContainer,
         KspectrometerContainer,
+        BottleContainer,
         //KuvetkaContainer,
         //SyringeContainer,
         //ReagentsContainer,
@@ -127,6 +128,9 @@ namespace BioEngineerLab
         BankCaCL2Socket,
         BankAgarSocket,
         BankNa2HPO4Socket,
+        BankPetronSocket,
+        BankNaClSocket,
+        BankBCPSocket,
         StirringMachineSocket,
         ChemicGlassContainerSocket,
         PipetDozatorSocket,
@@ -137,5 +141,8 @@ namespace BioEngineerLab
         DryBoxMachineSocket,
         PipetkaRackSocket,
         CentrifugaSocket,
+        BottleGlukozaSocket,
+        BottleSaharozaSocket,
+        BottleLaktozaSocket,
     }
 }

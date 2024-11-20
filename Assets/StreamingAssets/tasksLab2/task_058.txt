@@ -1,0 +1,18 @@
+{
+  "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Number": 58,
+  "Title": "Задание 58",
+  "Description": "Наденьте на пипет-дозатор наконечник.",
+  "Warning": "",
+  "SaveableTask": false,
+  "LabActivity": {
+    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
+    "SocketType": 6,
+    "SocketActivityType": 0,
+    "ActivityType": 3
+  },
+  "LabSideEffects": {
+    "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
+    "$values": []
+  }
+}

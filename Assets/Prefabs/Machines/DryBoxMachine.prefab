@@ -193,7 +193,7 @@ Transform:
   m_GameObject: {fileID: 1118027788698867286}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.824, z: -0.236}
+  m_LocalPosition: {x: 0.554, y: 2.907, z: -0.236}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -211,7 +211,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.1
+  m_Intensity: 3.69
   m_Range: 0.27
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -221,7 +221,7 @@ Light:
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 0.443
-    m_Bias: 0.05
+    m_Bias: 0.129
     m_NormalBias: 0.4
     m_NearPlane: 0.2
     m_CullingMatrixOverride:
@@ -370,14 +370,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6991985487749562475}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: 0, y: 2.088, z: -0.318}
   m_LocalScale: {x: 6.6666656, y: 6.666666, z: 6.666665}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6991985488679913534}
   m_Father: {fileID: 719680586751750121}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
 --- !u!135 &6991985487749562480
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -460,9 +460,9 @@ MonoBehaviour:
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   _socketType: 11
-  _isEnterTaskSendable: 0
-  _isExitTaskSendable: 0
-  _isSubsctanceSocket: 0
+  _isEnterTaskSendable: 1
+  _isExitTaskSendable: 1
+  _isSubsctanceSocket: 1
 --- !u!1 &6991985488364224233
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,6 +476,7 @@ GameObject:
   - component: {fileID: 6991985488364224236}
   - component: {fileID: 6991985488364224237}
   - component: {fileID: 6991985488364224234}
+  - component: {fileID: 2921892596532507921}
   m_Layer: 5
   m_Name: DryBoxCanvas
   m_TagString: Untagged
@@ -578,6 +579,25 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 1
+--- !u!114 &2921892596532507921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6991985488364224233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7951c64acb0fa62458bf30a60089fe2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 0
+  m_CheckFor2DOcclusion: 0
+  m_CheckFor3DOcclusion: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RaycastTriggerInteraction: 1
 --- !u!1 &6991985488540316627
 GameObject:
   m_ObjectHideFlags: 0
@@ -949,7 +969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _buttonType: 4
-  _isTaskSendable: 1
+  _isTaskSendable: 0
   _btnImage: {fileID: 6991985488850963506}
   _onSprite: {fileID: 21300000, guid: 5e50711882004914f9a57566ce715b39, type: 3}
   _offSprite: {fileID: 21300000, guid: f88297c69db64ef49807e133e80b29da, type: 3}
@@ -1250,7 +1270,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6991985489194717528}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 1000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}

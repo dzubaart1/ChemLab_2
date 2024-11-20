@@ -1,0 +1,29 @@
+{
+  "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Number": 34,
+  "Title": "Задание 34",
+  "Description": "Насыпьте из мерной ложечки сахарозу в лодочку для взвешивания. Необходимая масса реагента: 0.75 г",
+  "Warning": "",
+  "SaveableTask": false,
+  "LabActivity": {
+    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
+    "FromContainer": 2,
+    "ToContainer": 3,
+    "LabSubstanceProperty": {
+      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+      "SubstanceName": "Saharoza",
+      "SubstanceMode": 0,
+      "SubstanceLayer": 0,
+      "SubstanceColorR": 0.9300523,
+      "SubstanceColorG": 0.8726415,
+      "SubstanceColorB": 1.0,
+      "SubstanceColorA": 0.843137264,
+      "HintName": ""
+    },
+    "ActivityType": 0
+  },
+  "LabSideEffects": {
+    "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
+    "$values": []
+  }
+}

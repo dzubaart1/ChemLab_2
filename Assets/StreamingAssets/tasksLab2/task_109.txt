@@ -1,0 +1,29 @@
+{
+  "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Number": 109,
+  "Title": "Задание 109",
+  "Description": "Уберите пипет-дозатором воду над осадком из второй пробирки.",
+  "Warning": "",
+  "SaveableTask": false,
+  "LabActivity": {
+    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
+    "FromContainer": 11,
+    "ToContainer": 6,
+    "LabSubstanceProperty": {
+      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+      "SubstanceName": "H2O",
+      "SubstanceMode": 0,
+      "SubstanceLayer": 0,
+      "SubstanceColorR": 0.407262385,
+      "SubstanceColorG": 0.4974264,
+      "SubstanceColorB": 0.6037736,
+      "SubstanceColorA": 0.8117647,
+      "HintName": ""
+    },
+    "ActivityType": 0
+  },
+  "LabSideEffects": {
+    "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
+    "$values": []
+  }
+}

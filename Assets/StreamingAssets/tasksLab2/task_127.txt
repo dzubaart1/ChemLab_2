@@ -1,0 +1,18 @@
+{
+  "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Number": 127,
+  "Title": "Задание 127",
+  "Description": "Заберите из сушильного шкафа чашку Петри с высушенным пастообразным осадком",
+  "Warning": "",
+  "SaveableTask": false,
+  "LabActivity": {
+    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
+    "SocketType": 11,
+    "SocketActivityType": 1,
+    "ActivityType": 3
+  },
+  "LabSideEffects": {
+    "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
+    "$values": []
+  }
+}

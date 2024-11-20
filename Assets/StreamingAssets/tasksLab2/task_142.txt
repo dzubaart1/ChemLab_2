@@ -1,0 +1,17 @@
+{
+  "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Number": 142,
+  "Title": "Задание 142",
+  "Description": "Подойдите к инфракрасному спектрофотометру и заберите результаты исследований",
+  "Warning": "",
+  "SaveableTask": false,
+  "LabActivity": {
+    "$type": "BioEngineerLab.Activities.AnchorLabActivity, Assembly-CSharp",
+    "ContainerType": 0,
+    "ActivityType": 4
+  },
+  "LabSideEffects": {
+    "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
+    "$values": []
+  }
+}
