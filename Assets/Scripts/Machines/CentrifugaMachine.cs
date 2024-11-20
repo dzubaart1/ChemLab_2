@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using BioEngineerLab.Activities;
+﻿using BioEngineerLab.Activities;
 using BioEngineerLab.Containers;
 using BioEngineerLab.Core;
 using BioEngineerLab.Gameplay;
 using UnityEngine;
-using UnityEngine.UIElements;
 using BioEngineerLab.UI.Components;
 
 namespace BioEngineerLab.Machines
@@ -28,9 +25,7 @@ namespace BioEngineerLab.Machines
         private SaveService _saveService;
         private TasksService _tasksService;
         private CraftService _craftService;
-
-        private bool _isPowered = false;
-        private bool _isStarted = false;
+        
         private SavedData _savedData = new SavedData();
 
         private void Awake()
@@ -44,9 +39,8 @@ namespace BioEngineerLab.Machines
         {
             _saveService.LoadSceneStateEvent += OnLoadScene;
             _saveService.SaveSceneStateEvent += OnSaveScene;
-
-            _powerButton.OnClickButton += PowerCentrifuga;
-            _startButton.OnClickButton += StartCentrifuga;
+            
+            _startButton.ClickBtnEvent += OnStartBtnClicked;
         }
 
         private void OnDisable()
@@ -54,70 +48,85 @@ namespace BioEngineerLab.Machines
             _saveService.LoadSceneStateEvent -= OnLoadScene;
             _saveService.SaveSceneStateEvent -= OnSaveScene;
             
-            _powerButton.OnClickButton -= PowerCentrifuga;
-            _startButton.OnClickButton -= StartCentrifuga;
+            _startButton.ClickBtnEvent -= OnStartBtnClicked;
         }
 
         private void Start()
         {
             OnSaveScene();
         }
-
-        private void PowerCentrifuga()
+        
+        private void OnStartBtnClicked()
         {
-            _isPowered = !_isPowered;
-        }
-
-        private void StartCentrifuga()
-        {
-            if (!_isPowered)
+            if (_socketInteractor1.SelectedObject == null | _socketInteractor2.SelectedObject == null)
             {
                 return;
             }
+            
+            LabContainer labContainer1 = _socketInteractor1.SelectedObject.GetComponent<LabContainer>();
+            LabContainer labContainer2 = _socketInteractor2.SelectedObject.GetComponent<LabContainer>();
 
-            if (_isStarted)
+            if (labContainer1 is null || labContainer2 is null)
             {
-                _isStarted = false;
-                _animator.enabled = false;
-                
-                LabContainer labContainer1 = _socketInteractor1.SelectedObject.GetComponent<LabContainer>();
-                LabContainer labContainer2 = _socketInteractor2.SelectedObject.GetComponent<LabContainer>();
-
-                if (labContainer1 is null || labContainer2 is null)
-                {
-                    return;
-                }
-                
+                return;
+            }
+            
+            if(_startButton.IsOn & _powerButton.IsOn)
+            {
+                _tasksService.TryCompleteTask(new MachineLabActivity(EMachineActivity.OnStart, EMachine.CentrifugaMachine));
+            }
+            else
+            {
                 _craftService.Split(labContainer1);
                 _craftService.Split(labContainer2);
                 
                 _tasksService.TryCompleteTask(new MachineLabActivity(EMachineActivity.OnFinish, EMachine.CentrifugaMachine));
             }
+            
+            CheckAnimatorStatus();
+        }
+
+        private void CheckAnimatorStatus()
+        {
+            if (_startButton.IsOn & _powerButton.IsOn)
+            {
+                _animator.enabled = true;
+            }
             else
             {
-                _isStarted = true;
-                _animator.enabled = true;
-                
-                _tasksService.TryCompleteTask(new MachineLabActivity(EMachineActivity.OnStart, EMachine.CentrifugaMachine));
+                _animator.enabled = false;
             }
         }
+        
         public void OnSaveScene()
         {
-            _savedData.IsPowered = _isPowered;
-            _savedData.IsStarted = _isStarted;
+            _savedData.IsPowered = _powerButton.IsOn;
+            _savedData.IsStarted = _startButton.IsOn;
         }
 
         public void OnLoadScene()
         {
-            if (!_savedData.IsPowered)
+            if (_savedData.IsPowered & !_powerButton.IsOn)
             {
-                return;
+                _powerButton.SetIsOn(_savedData.IsPowered);
+            }
+            
+            if (!_savedData.IsPowered & _powerButton.IsOn)
+            {
+                _powerButton.SetIsOn(_savedData.IsPowered);
             }
 
-            if (_savedData.IsStarted)
+            if (_savedData.IsStarted & !_startButton.IsOn)
             {
-                _animator.enabled = true;
+                _startButton.SetIsOn(_savedData.IsStarted);
             }
+            
+            if (!_savedData.IsStarted & _startButton.IsOn)
+            {
+                _startButton.SetIsOn(_savedData.IsStarted);
+            }
+            
+            CheckAnimatorStatus();
         }
     }
 }

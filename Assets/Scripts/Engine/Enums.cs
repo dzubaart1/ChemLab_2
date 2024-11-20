@@ -73,10 +73,9 @@ namespace BioEngineerLab
     
     public enum ESideEffect : byte
     {
-        Effect1,
-        Effect2,
         AddReagentsSideEffect,
-        SetDozatorVolumeSideEffect
+        SetDozatorVolumeSideEffect,
+        SpawnDocSideEffect
     }
 
     public enum ESideEffectTime : byte

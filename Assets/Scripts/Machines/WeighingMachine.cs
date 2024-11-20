@@ -1,6 +1,8 @@
+using System;
 using BioEngineerLab.Containers;
 using BioEngineerLab.Gameplay;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 
@@ -9,18 +11,25 @@ namespace BioEngineerLab.Machines
     public class WeighingMachine : MonoBehaviour
     {
         [SerializeField] private VRSocketInteractor _socketInteractor;
-        [SerializeField] private Text _textMesh;
+        [FormerlySerializedAs("_textMesh")] [SerializeField] private Text _weightText;
 
-        private void OnTriggerStay(Collider other)
+        private void Update()
         {
-            LabContainer labContainer = other.GetComponent<LabContainer>();
-
-            if (labContainer == null | _socketInteractor.SelectedObject == null)
+            if (_socketInteractor.SelectedObject == null)
             {
+                _weightText.text = "0g";
                 return;
             }
 
-            _textMesh.text = labContainer.GetSubstancesWeight() + "g";
+            LabContainer container = _socketInteractor.SelectedObject.GetComponent<LabContainer>();
+
+            if (container == null)
+            {
+                _weightText.text = "0g";
+                return;
+            }
+
+            _weightText.text = container.GetSubstancesWeight() + "g";
         }
     }
 }

@@ -80,17 +80,14 @@ namespace BioEngineerLab.Tasks
         {
             switch (eSideEffect)
             {
-                case ESideEffect.Effect1:
-                    _soLabTask.SetSideEffect(new Effect1LabSideEffect(), effectID);
-                    break;
-                case ESideEffect.Effect2:
-                    _soLabTask.SetSideEffect(new Effect2LabSideEffect(), effectID);
-                    break;
                 case ESideEffect.AddReagentsSideEffect:
                     _soLabTask.SetSideEffect(new AddReagentsLabSideEffect(), effectID);
                     break;
                 case ESideEffect.SetDozatorVolumeSideEffect:
                     _soLabTask.SetSideEffect(new SetDozatorVolumeLabSideEffect(), effectID);
+                    break;
+                case ESideEffect.SpawnDocSideEffect:
+                    _soLabTask.SetSideEffect(new SpawnDocLabSideEffect(), effectID);
                     break;
                 default:
                     Debug.LogError("Can't find Side effect!");

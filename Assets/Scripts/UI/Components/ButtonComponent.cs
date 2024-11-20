@@ -8,7 +8,7 @@ namespace BioEngineerLab.UI.Components
 {
     public class ButtonComponent : MonoBehaviour
     {
-        public event Action OnClickButton;
+        public event Action ClickBtnEvent;
 
         [Header("Configs")]
         [SerializeField] private EButton _buttonType;
@@ -39,10 +39,14 @@ namespace BioEngineerLab.UI.Components
             _button.onClick.RemoveListener(OnClickBtn);
         }
 
-        public void SetIsOn(bool value)
+        public void SetIsOn(bool value, bool isLoad = true)
         {
             IsOn = value;
-            ChangeStatus();
+
+            if (!isLoad)
+            {
+                ChangeStatus();   
+            }
         }
 
         private void OnClickBtn()
@@ -55,7 +59,7 @@ namespace BioEngineerLab.UI.Components
         {
             _btnImage.sprite = IsOn ? _onSprite : _offSprite;
             
-            OnClickButton?.Invoke();
+            ClickBtnEvent?.Invoke();
             
             if (_isTaskSendable)
             {

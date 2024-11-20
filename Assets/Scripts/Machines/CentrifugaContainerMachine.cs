@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using BioEngineerLab.Activities;
-using BioEngineerLab.Containers;
+﻿using BioEngineerLab.Activities;
 using BioEngineerLab.Core;
 using BioEngineerLab.Gameplay;
 using UnityEngine;
-using UnityEngine.UIElements;
 using BioEngineerLab.UI.Components;
 
 namespace BioEngineerLab.Machines
@@ -39,7 +35,7 @@ namespace BioEngineerLab.Machines
             _saveService.LoadSceneStateEvent += OnLoadScene;
             _saveService.SaveSceneStateEvent += OnSaveScene;
 
-            _button.OnClickButton += PlayAnimation;
+            _button.ClickBtnEvent += PlayAnimation;
         }
 
         private void OnDisable()
@@ -47,7 +43,7 @@ namespace BioEngineerLab.Machines
             _saveService.LoadSceneStateEvent -= OnLoadScene;
             _saveService.SaveSceneStateEvent -= OnSaveScene;
             
-            _button.OnClickButton -= PlayAnimation;
+            _button.ClickBtnEvent -= PlayAnimation;
         }
 
         private void Start()
@@ -57,34 +53,34 @@ namespace BioEngineerLab.Machines
 
         private void PlayAnimation()
         {
-            if (!_isOpen)
+            if (!_button.IsOn)
             {
                 _animator.Play("Open");
-                _isOpen = true;
                 
                 _tasksService.TryCompleteTask(new MachineLabActivity(EMachineActivity.OnStart, EMachine.CentrifugaContainerMachine));
             }
             else
             {
                 _animator.Play("Close");
-                _isOpen = false;
-                
+
                 _tasksService.TryCompleteTask(new MachineLabActivity(EMachineActivity.OnFinish, EMachine.CentrifugaContainerMachine));
             }
         }
         public void OnSaveScene()
         {
-            _savedData.IsOpen = _isOpen;
+            _savedData.IsOpen = !_button.IsOn;
         }
 
         public void OnLoadScene()
         {
-            if (_savedData.IsOpen)
+            if (_savedData.IsOpen & !_button.IsOn)
             {
+                _button.SetIsOn(_savedData.IsOpen);
                 _animator.Play("Open");
             }
-            else
+            if(!_savedData.IsOpen & _button.IsOn)
             {
+                _button.SetIsOn(_savedData.IsOpen);
                 _animator.Play("Close");
             }
         }

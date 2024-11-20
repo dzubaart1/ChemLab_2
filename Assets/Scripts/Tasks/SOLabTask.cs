@@ -44,7 +44,7 @@ namespace BioEngineerLab.Tasks
 
         public void AddSideEffect()
         {
-            LabTask.LabSideEffects.Add(new Effect1LabSideEffect());
+            LabTask.LabSideEffects.Add(new AddReagentsLabSideEffect());
         }
 
         public void RemoveSideEffect(int id)
@@ -96,14 +96,12 @@ namespace BioEngineerLab.Tasks
         {
             switch (labSideEffect.SideEffectType)
             {
-                case ESideEffect.Effect1:
-                    return new Effect1Editor(labSideEffect);
-                case ESideEffect.Effect2:
-                    return new Effect2Editor(labSideEffect);
                 case ESideEffect.AddReagentsSideEffect:
                     return new AddReagentsSideEffectEditor(labSideEffect);
                 case ESideEffect.SetDozatorVolumeSideEffect:
                     return new SetDozatorVolumeLabSideEffectEditor(labSideEffect);
+                case ESideEffect.SpawnDocSideEffect:
+                    return new SpawnDocSideEffectEditor(labSideEffect);
             }
 
             return null;

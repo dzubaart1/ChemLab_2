@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using BioEngineerLab.Activities;
-using BioEngineerLab.Containers;
-using BioEngineerLab.Core;
+﻿using BioEngineerLab.Core;
 using BioEngineerLab.Gameplay;
 using UnityEngine;
-using UnityEngine.UIElements;
 using BioEngineerLab.UI.Components;
 
 namespace BioEngineerLab.Machines
@@ -15,7 +10,6 @@ namespace BioEngineerLab.Machines
     {
         private class SavedData
         {
-            public bool IsOn;
             public bool IsStarted;
         }
 
@@ -25,17 +19,12 @@ namespace BioEngineerLab.Machines
         [SerializeField] private VRSocketInteractor _socketInteractor;
 
         private SaveService _saveService;
-        private TasksService _tasksService;
-        private CraftService _craftService;
-
-        private bool _isOn = false;
+        
         private SavedData _savedData = new SavedData();
 
         private void Awake()
         {
-            _tasksService = Engine.GetService<TasksService>();
             _saveService = Engine.GetService<SaveService>();
-            _craftService = Engine.GetService<CraftService>();
         }
 
         private void OnEnable()
@@ -43,7 +32,7 @@ namespace BioEngineerLab.Machines
             _saveService.LoadSceneStateEvent += OnLoadScene;
             _saveService.SaveSceneStateEvent += OnSaveScene;
 
-            _button.OnClickButton += ScannerOn;
+            _button.ClickBtnEvent += OnScannerBtnClicked;
         }
 
         private void OnDisable()
@@ -51,7 +40,7 @@ namespace BioEngineerLab.Machines
             _saveService.LoadSceneStateEvent -= OnLoadScene;
             _saveService.SaveSceneStateEvent -= OnSaveScene;
             
-            _button.OnClickButton -= ScannerOn;
+            _button.ClickBtnEvent -= OnScannerBtnClicked;
         }
 
         private void Start()
@@ -59,40 +48,33 @@ namespace BioEngineerLab.Machines
             OnSaveScene();
         }
 
-        private void ScannerOn()
+        private void OnScannerBtnClicked()
         {
             if (_socketInteractor.SelectedObject is null)
             {
                 return;
             }
             
-            _isOn = !_isOn;
-
-            if (_isOn)
-            {
-                _animator.Play("ButtonOn");
-                _canvas.SetActive(true);
-            }
-            else
-            {
-                _animator.Play("ButtonOff");
-                _canvas.SetActive(false);
-            }
+            _animator.Play(_button.IsOn ? "ButtonOn" : "ButtonOff");
+            _canvas.SetActive(_button.IsOn);
         }
         public void OnSaveScene()
         {
-            _savedData.IsOn = _isOn;
+            _savedData.IsStarted = _button.IsOn;
         }
 
         public void OnLoadScene()
         {
-            if (_savedData.IsOn)
+            if (!_savedData.IsStarted & _button.IsOn)
             {
-                _animator.Play("ButtonOn");
+                _button.SetIsOn(_savedData.IsStarted);
+                _animator.Play(_button.IsOn ? "ButtonOn" : "ButtonOff");
             }
-            else
+            
+            if (_savedData.IsStarted & !_button.IsOn)
             {
-                _animator.Play("ButtonOff");
+                _button.SetIsOn(_savedData.IsStarted);
+                _animator.Play(_button.IsOn ? "ButtonOn" : "ButtonOff");
             }
         }
     }

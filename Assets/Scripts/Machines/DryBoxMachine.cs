@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using BioEngineerLab.Activities;
+﻿using BioEngineerLab.Activities;
 using BioEngineerLab.Containers;
 using BioEngineerLab.Core;
 using BioEngineerLab.Gameplay;
 using UnityEngine;
-using UnityEngine.UIElements;
 using BioEngineerLab.UI.Components;
+using UnityEngine.Serialization;
 
 namespace BioEngineerLab.Machines
 {
@@ -19,15 +17,14 @@ namespace BioEngineerLab.Machines
             public bool IsOpen;
         }
 
-        [SerializeField] private ButtonComponent _button;
+        [FormerlySerializedAs("_button")] [SerializeField] private ButtonComponent _dryButton;
         [SerializeField] private VRSocketInteractor _socketInteractor;
         [SerializeField] private Transform _door;
 
         private SaveService _saveService;
         private TasksService _tasksService;
         private CraftService _craftService;
-
-        private bool _isOn = false;
+        
         private bool _isOpen = false;
         private SavedData _savedData = new SavedData();
 
@@ -43,7 +40,7 @@ namespace BioEngineerLab.Machines
             _saveService.LoadSceneStateEvent += OnLoadScene;
             _saveService.SaveSceneStateEvent += OnSaveScene;
 
-            _button.OnClickButton += Dry;
+            _dryButton.ClickBtnEvent += OnClickDryBtn;
         }
 
         private void OnDisable()
@@ -51,7 +48,7 @@ namespace BioEngineerLab.Machines
             _saveService.LoadSceneStateEvent -= OnLoadScene;
             _saveService.SaveSceneStateEvent -= OnSaveScene;
             
-            _button.OnClickButton -= Dry;
+            _dryButton.ClickBtnEvent -= OnClickDryBtn;
         }
 
         private void Start()
@@ -71,39 +68,38 @@ namespace BioEngineerLab.Machines
             }
         }
 
-        private void Dry()
+        private void OnClickDryBtn()
         {
+            if (_socketInteractor.SelectedObject == null)
+            {
+                return;
+            }
+            
+            LabContainer container = _socketInteractor.SelectedObject.GetComponent<LabContainer>();
+
+            if (container is null)
+            {
+                return;
+            }
+            
             if (_isOpen)
             {
                 return;
             }
             
-            if (_isOn)
+            if (_dryButton.IsOn)
             {
-                LabContainer labContainer = _socketInteractor.SelectedObject.GetComponent<LabContainer>();
-
-                if (labContainer is null)
-                {
-                    return;
-                }
-
-                _craftService.Dry(labContainer);
-                
-                _isOn = false;
-                
+                _craftService.Dry(container);
                 _tasksService.TryCompleteTask(new ButtonClickedActivity(EButton.DryBoxMachineButton));
             }
             else
             {
-                _isOn = true;
-                
                 _tasksService.TryCompleteTask(new ButtonClickedActivity(EButton.DryBoxMachineButton));
             }
         }
         public void OnSaveScene()
         {
-            _savedData.IsOn = _isOn;
-            
+            _savedData.IsOn = _dryButton;
         }
 
         public void OnLoadScene()
