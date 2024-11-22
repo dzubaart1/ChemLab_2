@@ -53,7 +53,7 @@ namespace BioEngineerLab.Machines
 
         private void OnClickButton()
         {
-            if (!_button.IsOn)
+            if (_button.IsOn)
             {
                 _animator.Play("Open");
             }
@@ -64,12 +64,12 @@ namespace BioEngineerLab.Machines
         }
         public void OnSaveScene()
         {
-            _savedData.IsOpen = !_button.IsOn;
+            _savedData.IsOpen = _button.IsOn;
         }
 
         public void OnLoadScene()
         {
-            if (_savedData.IsOpen & !_button.IsOn)
+            if (_savedData.IsOpen & _button.IsOn)
             {
                 _button.SetIsOn(_savedData.IsOpen);
                 _animator.Play("Open");

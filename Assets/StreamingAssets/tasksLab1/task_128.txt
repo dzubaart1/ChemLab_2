@@ -24,24 +24,6 @@
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
-        "LabSubstanceProperty": {
-          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "DryAgarSed",
-          "SubstanceMode": 0,
-          "SubstanceLayer": 0,
-          "SubstanceColorR": 0.6415094,
-          "SubstanceColorG": 0.495189816,
-          "SubstanceColorB": 0.3721965,
-          "SubstanceColorA": 1.0,
-          "HintName": ""
-        },
-        "Weight": 30.0,
-        "SideEffectTimeType": 0,
-        "SideEffectType": 2
-      }
-    ]
+    "$values": []
   }
 }

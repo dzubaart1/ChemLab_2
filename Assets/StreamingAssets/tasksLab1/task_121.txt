@@ -13,13 +13,6 @@
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.SpawnDocLabSideEffect, Assembly-CSharp",
-        "MachineType": 0,
-        "SideEffectTimeType": 1,
-        "SideEffectType": 1
-      }
-    ]
+    "$values": []
   }
 }

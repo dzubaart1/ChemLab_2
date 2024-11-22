@@ -47,9 +47,8 @@ namespace BioEngineerLab.Machines
         private void OnTriggerEnter(Collider other)
         {
             VRGrabInteractable interactable = other.GetComponentInParent<VRGrabInteractable>();
-            LabContainer container = other.GetComponentInParent<LabContainer>();
 
-            if (interactable == null | container == null)
+            if (interactable == null)
             {
                 return;
             }

@@ -8,7 +8,7 @@
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
     "FromContainer": 7,
-    "ToContainer": 12,
+    "ToContainer": 13,
     "LabSubstanceProperty": {
       "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
       "SubstanceName": "DryHardAgar",
@@ -40,7 +40,7 @@
         },
         "Weight": 30.0,
         "SideEffectTimeType": 0,
-        "SideEffectType": 2
+        "SideEffectType": 0
       }
     ]
   }

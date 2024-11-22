@@ -18,6 +18,9 @@ namespace BioEngineerLab
         CentrifugaPowerButton,
         CentrifugaStartButton,
         KspectrometerButton,
+        TeleportCellResButton,
+        TeleportScanElecButton,
+        TeleportRFAButton,
     }
 
     public enum ECraft : byte

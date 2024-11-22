@@ -43,7 +43,7 @@
           "SubstanceColorA": 0.745098054,
           "HintName": ""
         },
-        "Weight": 20.0,
+        "Weight": 30.0,
         "SideEffectTimeType": 0,
         "SideEffectType": 0
       }

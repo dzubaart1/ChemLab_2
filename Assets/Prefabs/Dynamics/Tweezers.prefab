@@ -444,7 +444,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxVolume: 30
   _containerWeight: 0
-  _containerType: 12
+  _containerType: 13
   _isWeightableContainer: 0
   _isSpoonContainer: 1
   _meshRendererConfigs:

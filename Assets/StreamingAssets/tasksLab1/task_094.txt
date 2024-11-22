@@ -8,7 +8,7 @@
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
     "FromContainer": 0,
-    "ToContainer": 11,
+    "ToContainer": 12,
     "LabSubstanceProperty": {
       "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
       "SubstanceName": "StirHardAgarH2O",

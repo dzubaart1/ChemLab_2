@@ -65,12 +65,27 @@ namespace BioEngineerLab.Machines
                 return;
             }
             
-            LabContainer [] labContainers = interactable.GetComponentsInChildren<LabContainer>();
-            
-            interactable.gameObject.SetActive(false);
-            _hiddenGameObjects.Add(interactable);
-            
-            _tasksService.TryCompleteTask(new SocketSubstancesLabActivity(_socketType, ESocketActivity.Enter, labContainers[0].GetSubstanceProperties()));
+            if (_socketType == ESocket.TeleportCellResSocket)
+            {
+
+                LabContainer[] labContainers = interactable.GetComponentsInChildren<LabContainer>();
+
+                interactable.gameObject.SetActive(false);
+                _hiddenGameObjects.Add(interactable);
+
+                _tasksService.TryCompleteTask(new SocketSubstancesLabActivity(_socketType, ESocketActivity.Enter,
+                    labContainers[0].GetSubstanceProperties()));
+            }
+            else
+            {
+                LabContainer labContainer = interactable.GetComponent<LabContainer>();
+                
+                interactable.gameObject.SetActive(false);
+                _hiddenGameObjects.Add(interactable);
+
+                _tasksService.TryCompleteTask(new SocketSubstancesLabActivity(_socketType, ESocketActivity.Enter,
+                    labContainer.GetSubstanceProperties()));
+            }
         }
 
         private void OnTriggerEnter(Collider other)

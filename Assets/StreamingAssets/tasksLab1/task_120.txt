@@ -7,8 +7,8 @@
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
-    "FromContainer": 12,
-    "ToContainer": 13,
+    "FromContainer": 13,
+    "ToContainer": 14,
     "LabSubstanceProperty": {
       "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
       "SubstanceName": "DryHardAgar",

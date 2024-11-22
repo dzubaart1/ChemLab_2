@@ -921,6 +921,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 724844796}
     m_Modifications:
+    - target: {fileID: 835339327508709209, guid: da7b05d96a8069345ab6f65f04d51a8e, type: 3}
+      propertyPath: _containerType
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 3395634631479066468, guid: da7b05d96a8069345ab6f65f04d51a8e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.767344
@@ -1439,6 +1443,10 @@ PrefabInstance:
     - target: {fileID: 719680586751750121, guid: 3605a51f742ec5f40905cd3e3189532c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420267398217166499, guid: 3605a51f742ec5f40905cd3e3189532c, type: 3}
+      propertyPath: _isTaskSendable
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4747,6 +4755,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 7632630633645122730, guid: efc6bbba9d20a9f489e007b2fffc40cb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fb4b58023dd63ad48ad29579c4d6ea67, type: 3}
     - target: {fileID: 8913779578107588935, guid: efc6bbba9d20a9f489e007b2fffc40cb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -6377,6 +6389,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 724844796}
     m_Modifications:
+    - target: {fileID: 1447395915089501785, guid: c26d8e0d77602eb41a35952be1b68c99, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4084616399572737393, guid: c26d8e0d77602eb41a35952be1b68c99, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.4964437
@@ -6545,6 +6561,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 7632630633645122730, guid: efc6bbba9d20a9f489e007b2fffc40cb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 28c7b21c9c3b20b44925261599397562, type: 3}
     - target: {fileID: 8913779578107588935, guid: efc6bbba9d20a9f489e007b2fffc40cb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
