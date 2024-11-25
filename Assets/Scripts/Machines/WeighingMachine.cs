@@ -1,12 +1,10 @@
-using System;
-using BioEngineerLab.Containers;
-using BioEngineerLab.Gameplay;
+using Containers;
+using Mechanics;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-
-namespace BioEngineerLab.Machines
+namespace Machines
 {
     public class WeighingMachine : MonoBehaviour
     {

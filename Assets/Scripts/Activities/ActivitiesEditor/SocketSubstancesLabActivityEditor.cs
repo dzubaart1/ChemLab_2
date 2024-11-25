@@ -1,11 +1,8 @@
 ﻿using System.Linq;
-using BioEngineerLab;
-using BioEngineerLab.Activities;
-using BioEngineerLab.Substances;
-using BioEngineerLab.Tasks;
-using BioEngineerLab.Tasks.Activities;
+using Core;
 using Database;
 using JetBrains.Annotations;
+using Substances;
 using UnityEditor;
 using UnityEngine;
 

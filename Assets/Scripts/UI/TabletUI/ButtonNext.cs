@@ -1,9 +1,9 @@
-using BioEngineerLab.Activities;
-using BioEngineerLab.Core;
+using Core;
+using Core.Services;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace BioEngineerLab.UI
+namespace UI.TabletUI
 {
     public class ButtonNext : MonoBehaviour
     {

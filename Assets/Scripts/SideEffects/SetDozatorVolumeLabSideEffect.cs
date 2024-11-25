@@ -1,4 +1,6 @@
-﻿namespace BioEngineerLab.Tasks.SideEffects
+﻿using Core;
+
+namespace SideEffects
 {
     public class SetDozatorVolumeLabSideEffect : LabSideEffect
     {

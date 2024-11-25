@@ -1,4 +1,7 @@
-﻿namespace BioEngineerLab.Tasks.SideEffects
+﻿using Core;
+using Substances;
+
+namespace SideEffects
 {
     public class AddReagentsLabSideEffect : LabSideEffect
     {

@@ -1,7 +1,9 @@
-﻿using BioEngineerLab.Core;
+﻿using Core;
+using Core.Services;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
-namespace BioEngineerLab.Gameplay
+
+namespace Mechanics
 {
     public class VRGrabInteractable : XRGrabInteractable, ISaveable
     {

@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using BioEngineerLab.Activities;
-using BioEngineerLab.Configurations;
-using BioEngineerLab.Containers;
-using BioEngineerLab.Substances;
-using BioEngineerLab.Tasks;
+using Activities;
+using Configurations;
+using Containers;
 using Crafting;
 using Database;
 using JetBrains.Annotations;
+using Substances;
 using Debug = UnityEngine.Debug;
 
-namespace BioEngineerLab.Core
+namespace Core.Services
 {
     public class CraftService : IService
     {

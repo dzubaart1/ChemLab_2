@@ -1,48 +1,54 @@
-using BioEngineerLab.Core;
-using BioEngineerLab.Tasks;
-using BioEngineerLab.UI;
+using Core;
+using Core.Services;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InfoTabletPanel : BasePanel<TabletPanelsType>
+namespace UI.TabletUI.Panels
 {
-    [SerializeField] private TextMeshProUGUI _infoText;
-
-    [SerializeField] private Button _mainPanelBtn;
-
-    private TasksService _tasksService;
-
-    private void OnEnable()
+    public class InfoTabletPanel : BasePanel<TabletPanelsType>
     {
-        if (string.IsNullOrWhiteSpace(_tasksService.GetCurrentTask().Warning))
+        [SerializeField] private TextMeshProUGUI _infoText;
+
+        [SerializeField] private Button _mainPanelBtn;
+
+        private TasksService _tasksService;
+
+        private void OnEnable()
         {
-            _infoText.text = "";
-            return;
+            if (_tasksService.CurrentTask == null)
+            {
+                return;
+            }
+        
+            _infoText.text = string.IsNullOrWhiteSpace(_tasksService.CurrentTask.Warning) ? " " :_tasksService.CurrentTask.Warning;
         }
-        _infoText.text = _tasksService.GetCurrentTask().Warning;
-    }
 
-    private void Awake()
-    {
-        _tasksService = Engine.GetService<TasksService>();
-
-        _mainPanelBtn.onClick.AddListener(OnClickMainPanelBtn);
-    }
-
-    private void OnDestroy()
-    {
-        _mainPanelBtn.onClick.RemoveListener(OnClickMainPanelBtn);
-    }
-
-    private void OnClickMainPanelBtn()
-    {
-        LabTask currentTask = _tasksService.GetCurrentTask();
-        switch (currentTask.LabActivity.ActivityType)
+        private void Awake()
         {
-            default:
-                SwitchPanel(TabletPanelsType.MainPanel);
-                break;
+            _tasksService = Engine.GetService<TasksService>();
+
+            _mainPanelBtn.onClick.AddListener(OnClickMainPanelBtn);
+        }
+
+        private void OnDestroy()
+        {
+            _mainPanelBtn.onClick.RemoveListener(OnClickMainPanelBtn);
+        }
+
+        private void OnClickMainPanelBtn()
+        {
+            if (_tasksService.CurrentTask == null)
+            {
+                return;
+            }
+        
+            switch (_tasksService.CurrentTask.LabActivity.ActivityType)
+            {
+                default:
+                    SwitchPanel(TabletPanelsType.MainPanel);
+                    break;
+            }
         }
     }
 }

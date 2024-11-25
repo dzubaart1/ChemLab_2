@@ -1,11 +1,11 @@
 ﻿using System.Linq;
-using BioEngineerLab.Substances;
+using Core;
 using Database;
 using JetBrains.Annotations;
-using Unity.VisualScripting;
+using Substances;
 using UnityEditor;
 
-namespace BioEngineerLab.Tasks.SideEffects
+namespace SideEffects.SideEffectsEditor
 {
     public class AddReagentsSideEffectEditor : EditorSideEffect
     {

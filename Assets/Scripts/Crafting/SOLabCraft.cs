@@ -1,67 +1,69 @@
-using BioEngineerLab.Tasks;
-using Crafting;
+using Substances;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Craft", menuName = "Crafts/Craft", order = 1)]
-public class SOLabCraft : ScriptableObject
+namespace Crafting
 {
-    public LabCraft LabCraft = new LabCraft();
-
-    public void AddFromSubstanceProperty()
+    [CreateAssetMenu(fileName = "Craft", menuName = "Crafts/Craft", order = 1)]
+    public class SOLabCraft : ScriptableObject
     {
-        LabSubstanceProperty[] newArray = new LabSubstanceProperty[LabCraft.SubstancesFrom.Length + 1];
-        
-        for (int i = 0; i < LabCraft.SubstancesFrom.Length; i++)
+        public LabCraft LabCraft = new LabCraft();
+
+        public void AddFromSubstanceProperty()
         {
-            newArray[i] = LabCraft.SubstancesFrom[i];
-        }
-
-        newArray[^1] = new LabSubstanceProperty();
-
-        LabCraft.SubstancesFrom = newArray;
-    }
-
-    public void DeleteFromSubstanceProperty(int id)
-    {
-        LabSubstanceProperty[] newArray = new LabSubstanceProperty[LabCraft.SubstancesFrom.Length - 1];
+            LabSubstanceProperty[] newArray = new LabSubstanceProperty[LabCraft.SubstancesFrom.Length + 1];
         
-        for (int i = 0, j = 0; j < LabCraft.SubstancesFrom.Length & i < newArray.Length; j++)
-        {
-            if (j == id)
+            for (int i = 0; i < LabCraft.SubstancesFrom.Length; i++)
             {
-                newArray[i++] = LabCraft.SubstancesFrom[j];   
+                newArray[i] = LabCraft.SubstancesFrom[i];
             }
+
+            newArray[^1] = new LabSubstanceProperty();
+
+            LabCraft.SubstancesFrom = newArray;
         }
 
-        LabCraft.SubstancesFrom = newArray;
-    }
-    
-    public void DeleteResSubstanceProperty(int id)
-    {
-        LabSubstanceProperty[] newArray = new LabSubstanceProperty[LabCraft.SubstancesRes.Length - 1];
-        
-        for (int i = 0, j = 0; j < LabCraft.SubstancesRes.Length & i < newArray.Length; j++)
+        public void DeleteFromSubstanceProperty(int id)
         {
-            if (j == id)
+            LabSubstanceProperty[] newArray = new LabSubstanceProperty[LabCraft.SubstancesFrom.Length - 1];
+        
+            for (int i = 0, j = 0; j < LabCraft.SubstancesFrom.Length & i < newArray.Length; j++)
             {
-                newArray[i++] = LabCraft.SubstancesRes[j];   
+                if (j == id)
+                {
+                    newArray[i++] = LabCraft.SubstancesFrom[j];   
+                }
             }
-        }
 
-        LabCraft.SubstancesRes = newArray;
-    }
+            LabCraft.SubstancesFrom = newArray;
+        }
     
-    public void AddResSubstanceProperty()
-    {
-        LabSubstanceProperty[] newArray = new LabSubstanceProperty[LabCraft.SubstancesRes.Length + 1];
-        
-        for (int i = 0; i < LabCraft.SubstancesRes.Length; i++)
+        public void DeleteResSubstanceProperty(int id)
         {
-            newArray[i] = LabCraft.SubstancesRes[i];
+            LabSubstanceProperty[] newArray = new LabSubstanceProperty[LabCraft.SubstancesRes.Length - 1];
+        
+            for (int i = 0, j = 0; j < LabCraft.SubstancesRes.Length & i < newArray.Length; j++)
+            {
+                if (j == id)
+                {
+                    newArray[i++] = LabCraft.SubstancesRes[j];   
+                }
+            }
+
+            LabCraft.SubstancesRes = newArray;
         }
+    
+        public void AddResSubstanceProperty()
+        {
+            LabSubstanceProperty[] newArray = new LabSubstanceProperty[LabCraft.SubstancesRes.Length + 1];
+        
+            for (int i = 0; i < LabCraft.SubstancesRes.Length; i++)
+            {
+                newArray[i] = LabCraft.SubstancesRes[i];
+            }
 
-        newArray[^1] = new LabSubstanceProperty();
+            newArray[^1] = new LabSubstanceProperty();
 
-        LabCraft.SubstancesRes = newArray;
+            LabCraft.SubstancesRes = newArray;
+        }
     }
 }

@@ -1,10 +1,11 @@
 ﻿using System;
-using BioEngineerLab.Activities;
-using BioEngineerLab.Core;
+using Activities;
+using Core;
+using Core.Services;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace BioEngineerLab.UI.Components
+namespace UI.Components
 {
     public class ButtonComponent : MonoBehaviour
     {

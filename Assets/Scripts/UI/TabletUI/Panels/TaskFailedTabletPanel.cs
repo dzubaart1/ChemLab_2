@@ -1,8 +1,9 @@
-﻿using BioEngineerLab.Core;
+﻿using Core;
+using Core.Services;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace BioEngineerLab.UI
+namespace UI.TabletUI.Panels
 {
     public class TaskFailedTabletPanel : BasePanel<TabletPanelsType>
     {

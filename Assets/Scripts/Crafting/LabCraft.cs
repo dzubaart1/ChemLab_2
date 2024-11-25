@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
-using BioEngineerLab;
-using BioEngineerLab.Tasks;
+using Core;
+using Substances;
 
 namespace Crafting
 {

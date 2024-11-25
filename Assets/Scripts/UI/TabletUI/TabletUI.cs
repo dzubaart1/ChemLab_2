@@ -1,8 +1,9 @@
-using BioEngineerLab.Core;
-using BioEngineerLab.Tasks;
+using Core;
+using Core.Services;
+using Tasks;
 using UnityEngine;
 
-namespace BioEngineerLab.UI
+namespace UI.TabletUI
 {
     [RequireComponent(typeof(TabletPanelSwitcher))]
     public class TabletUI : MonoBehaviour

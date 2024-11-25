@@ -1,13 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using BioEngineerLab.Core;
-using BioEngineerLab.Substances;
-using BioEngineerLab.Tasks;
+using Core;
 using JetBrains.Annotations;
+using Substances;
 using UnityEngine;
 
-namespace BioEngineerLab.Containers
+namespace Containers
 {
     public class LabContainer : MonoBehaviour
     {

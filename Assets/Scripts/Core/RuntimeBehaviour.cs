@@ -1,8 +1,7 @@
 using System;
-using BioEngineerLab.Configurations;
 using UnityEngine;
 
-namespace BioEngineerLab.Core
+namespace Core
 {
     public class RuntimeBehaviour : MonoBehaviour
     {

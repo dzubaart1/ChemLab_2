@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using Activities;
-using BioEngineerLab.Activities;
-using BioEngineerLab.Tasks.SideEffects;
+using Core;
 using Database;
+using SideEffects;
+using SideEffects.SideEffectsEditor;
 using UnityEditor;
 using UnityEngine;
 
-namespace BioEngineerLab.Tasks
+namespace Tasks
 {
 #if UNITY_EDITOR
     [CustomEditor(typeof(SOLabTask))]
@@ -120,6 +121,9 @@ namespace BioEngineerLab.Tasks
                 case EActivity.SocketActivity:
                     _soLabTask.SetActivity(new SocketLabActivity());
                     break;
+                case EActivity.DoorActivity:
+                    _soLabTask.SetActivity(new DoorLabActivity());
+                    break;
                 default:
                     Debug.LogError("Can't find action!");
                     break;
@@ -128,6 +132,7 @@ namespace BioEngineerLab.Tasks
 
         private void ShowTaskInfo()
         {
+            _soLabTask.LabTask.Lab = (ELab)EditorGUILayout.EnumPopup("Lab", _soLabTask.LabTask.Lab);
             _soLabTask.LabTask.Number = EditorGUILayout.IntField("Number", _soLabTask.LabTask.Number);
             _soLabTask.LabTask.Title = EditorGUILayout.TextField("Title", _soLabTask.LabTask.Title);
             _soLabTask.LabTask.Description = EditorGUILayout.TextField("Description", _soLabTask.LabTask.Description);
@@ -150,7 +155,7 @@ namespace BioEngineerLab.Tasks
             
             if (GUILayout.Button("Load All Task"))
             {
-                ResourcesDatabase.LoadAllTaskFromDataBase();
+                ResourcesDatabase.LoadAllTaskFromDataBase(_soLabTask.LabTask.Lab);
             }
             
             GUILayout.EndHorizontal();
@@ -163,7 +168,7 @@ namespace BioEngineerLab.Tasks
 
             if (GUILayout.Button("Save All Task"))
             {
-                ResourcesDatabase.SaveAllTaskToDataBase();
+                ResourcesDatabase.SaveAllTaskToDataBase(_soLabTask.LabTask.Lab);
             }
             GUILayout.EndHorizontal();
         }

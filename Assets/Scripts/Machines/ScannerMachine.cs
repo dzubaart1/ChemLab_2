@@ -1,9 +1,10 @@
-﻿using BioEngineerLab.Core;
-using BioEngineerLab.Gameplay;
+﻿using Core;
+using Core.Services;
+using Mechanics;
+using UI.Components;
 using UnityEngine;
-using BioEngineerLab.UI.Components;
 
-namespace BioEngineerLab.Machines
+namespace Machines
 {
     [RequireComponent(typeof(Collider))]
     public class ScannerMachine : MonoBehaviour, ISaveable

@@ -1,6 +1,6 @@
-﻿using BioEngineerLab.Substances;
+﻿using Substances;
 
-namespace BioEngineerLab.Configurations
+namespace Configurations
 {
     public class CraftConfiguration : Configuration
     {

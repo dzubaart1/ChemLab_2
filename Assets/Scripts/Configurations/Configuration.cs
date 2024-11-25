@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace BioEngineerLab.Configurations
+namespace Configurations
 {
     public abstract class Configuration : ScriptableObject
     {

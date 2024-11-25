@@ -1,8 +1,7 @@
 ﻿using System;
-using BioEngineerLab;
-using BioEngineerLab.Tasks.Activities;
+using Core;
 
-namespace BioEngineerLab.Activities
+namespace Activities
 {
     public class ButtonClickedActivity : LabActivity
     {

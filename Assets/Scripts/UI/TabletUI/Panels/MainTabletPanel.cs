@@ -1,9 +1,10 @@
-﻿using BioEngineerLab.Core;
-using BioEngineerLab.Tasks;
+﻿using Core;
+using Core.Services;
+using Tasks;
 using TMPro;
 using UnityEngine;
 
-namespace BioEngineerLab.UI
+namespace UI.TabletUI.Panels
 {
     public class MainTabletPanel : BasePanel<TabletPanelsType>
     {
@@ -15,8 +16,14 @@ namespace BioEngineerLab.UI
         {
             _tasksService = Engine.GetService<TasksService>();
             _tasksService.TaskUpdatedEvent += OnTaskUpdate;
+        }
 
-            OnTaskUpdate(_tasksService.GetCurrentTask());
+        private void Start()
+        {
+            if (_tasksService.CurrentTask != null)
+            {
+                OnTaskUpdate(_tasksService.CurrentTask);
+            }
         }
 
         private void OnDestroy()

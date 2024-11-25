@@ -1,6 +1,7 @@
 ﻿using System;
+using Core;
 
-namespace BioEngineerLab.Tasks.SideEffects
+namespace SideEffects
 {
     [Serializable]
     public abstract class LabSideEffect

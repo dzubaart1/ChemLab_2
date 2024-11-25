@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace BioEngineerLab.Configurations
+namespace Configurations
 {
     public class HandModelConfiguration : Configuration
     {

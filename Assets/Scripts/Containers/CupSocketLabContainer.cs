@@ -1,7 +1,7 @@
-﻿using BioEngineerLab.Gameplay;
+﻿using Mechanics;
 using UnityEngine;
 
-namespace BioEngineerLab.Containers
+namespace Containers
 {
     public class CupSocketLabContainer : MonoBehaviour
     {

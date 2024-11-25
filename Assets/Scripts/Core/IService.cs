@@ -1,6 +1,4 @@
-using System.Threading.Tasks;
-
-namespace BioEngineerLab.Core
+namespace Core
 {
     public interface IService
     {

@@ -1,6 +1,4 @@
-﻿using BioEngineerLab.UI;
-
-namespace BioEngineerLab.Configurations
+﻿namespace Configurations
 {
     public class UIConfiguration : Configuration
     {

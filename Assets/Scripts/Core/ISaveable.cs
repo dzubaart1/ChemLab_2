@@ -1,4 +1,4 @@
-﻿namespace BioEngineerLab.Gameplay
+﻿namespace Core
 {
     public interface ISaveable
     {

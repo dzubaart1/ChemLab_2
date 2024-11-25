@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace BioEngineerLab.Gameplay
+namespace Gameplay
 {
     public class HandAnimatorController : MonoBehaviour
     {

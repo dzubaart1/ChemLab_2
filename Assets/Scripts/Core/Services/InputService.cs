@@ -1,9 +1,9 @@
-using BioEngineerLab.Configurations;
+using Configurations;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.XR.Interaction.Toolkit.UI;
 
-namespace BioEngineerLab.Core
+namespace Core.Services
 {
     public class InputService : IService
     {

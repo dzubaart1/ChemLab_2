@@ -2,10 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using BioEngineerLab.Configurations;
+using Configurations;
+using Core.Services;
 using UnityEngine;
 
-namespace BioEngineerLab.Core
+namespace Core
 {
     public class Engine
     {

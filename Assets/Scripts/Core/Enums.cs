@@ -1,4 +1,4 @@
-namespace BioEngineerLab
+namespace Core
 {
     public enum ESubstanceMode : byte
     {
@@ -43,7 +43,8 @@ namespace BioEngineerLab
         SocketActivity,
         AnchorActivity,
         CraftSubstanceActivity,
-        ButtonClickedActivity
+        ButtonClickedActivity,
+        DoorActivity
     }
     
     public enum EContainer : byte
@@ -91,6 +92,23 @@ namespace BioEngineerLab
         OnStart,
         OnFinish,
         OnExit,
+    }
+
+    public enum ELab : byte
+    {
+        Lab1,
+        Lab2
+    }
+
+    public enum EDoor : byte
+    {
+        DryMachineDoor
+    }
+
+    public enum EDoorActivity : byte
+    {
+        Open,
+        Closed
     }
 
     public enum EMachine : byte

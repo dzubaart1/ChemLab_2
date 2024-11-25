@@ -1,10 +1,10 @@
 ﻿using System;
-using Database;
+using Core;
 
-namespace BioEngineerLab.Tasks.Activities
+namespace Activities
 {
     [Serializable]
-    public abstract class LabActivity : ILabSerializable
+    public abstract class LabActivity
     {
         public EActivity ActivityType { get; private set; }
         

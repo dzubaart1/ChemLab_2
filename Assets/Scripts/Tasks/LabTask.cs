@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using BioEngineerLab.Activities;
-using BioEngineerLab.Tasks.Activities;
-using BioEngineerLab.Tasks.SideEffects;
-using Database;
+using Activities;
+using Core;
+using SideEffects;
 
-namespace BioEngineerLab.Tasks
+namespace Tasks
 {
     [Serializable]
-    public class LabTask : ILabSerializable
+    public class LabTask
     {
+        public ELab Lab;
         public int Number;
         public string Title;
         public string Description;

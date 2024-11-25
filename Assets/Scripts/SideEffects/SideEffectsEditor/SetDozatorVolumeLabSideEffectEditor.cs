@@ -1,11 +1,9 @@
-﻿using System.Linq;
-using BioEngineerLab.Substances;
-using Database;
+﻿using Core;
 using JetBrains.Annotations;
-using Unity.VisualScripting;
+using Substances;
 using UnityEditor;
 
-namespace BioEngineerLab.Tasks.SideEffects
+namespace SideEffects.SideEffectsEditor
 {
     public class SetDozatorVolumeLabSideEffectEditor : EditorSideEffect
     {

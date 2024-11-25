@@ -1,8 +1,8 @@
 ﻿using System;
-using BioEngineerLab.Tasks;
-using BioEngineerLab.Tasks.Activities;
+using Core;
+using Substances;
 
-namespace BioEngineerLab.Activities
+namespace Activities
 {
     public class AddSubstanceLabActivity : LabActivity
     {

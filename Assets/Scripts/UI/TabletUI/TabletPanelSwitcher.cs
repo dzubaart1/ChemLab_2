@@ -1,4 +1,4 @@
-﻿namespace BioEngineerLab.UI
+﻿namespace UI.TabletUI
 {
     public class TabletPanelSwitcher : PanelSwitcher<TabletPanelsType>
     {

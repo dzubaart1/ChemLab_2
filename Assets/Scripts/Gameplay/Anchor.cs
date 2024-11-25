@@ -1,7 +1,8 @@
-﻿using BioEngineerLab.Containers;
+﻿using Containers;
+using Mechanics;
 using UnityEngine;
 
-namespace BioEngineerLab.Gameplay
+namespace Gameplay
 {
     [RequireComponent(typeof(Animator), typeof(VRGrabInteractable), typeof(Rigidbody))]
     [RequireComponent(typeof(Collider))]

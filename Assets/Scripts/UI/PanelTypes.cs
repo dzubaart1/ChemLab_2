@@ -1,4 +1,4 @@
-﻿namespace BioEngineerLab.UI
+﻿namespace UI
 {
     public enum TabletPanelsType : byte
     {

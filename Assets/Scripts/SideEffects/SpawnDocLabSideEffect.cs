@@ -1,22 +1,24 @@
-﻿namespace BioEngineerLab.Tasks.SideEffects
+﻿using Core;
+
+namespace SideEffects
 {
     public class SpawnDocLabSideEffect : LabSideEffect
     {
         public EMachine MachineType;
 
         public SpawnDocLabSideEffect()
-            : base(ESideEffect.SetDozatorVolumeSideEffect, ESideEffectTime.EndTask)
+            : base(ESideEffect.SpawnDocSideEffect, ESideEffectTime.EndTask)
         {
         }
 
         public SpawnDocLabSideEffect(SpawnDocLabSideEffect sideEffect)
-            : base(ESideEffect.SetDozatorVolumeSideEffect, sideEffect.SideEffectTimeType)
+            : base(ESideEffect.SpawnDocSideEffect, sideEffect.SideEffectTimeType)
         {
             MachineType = sideEffect.MachineType;
         }
 
         public SpawnDocLabSideEffect(EMachine machine)
-            : base(ESideEffect.SetDozatorVolumeSideEffect, ESideEffectTime.EndTask)
+            : base(ESideEffect.SpawnDocSideEffect, ESideEffectTime.EndTask)
         {
             MachineType = machine;
         }

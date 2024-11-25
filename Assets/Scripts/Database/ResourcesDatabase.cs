@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using BioEngineerLab.Substances;
-using BioEngineerLab.Tasks;
+using Core;
+using Crafting;
+using Substances;
+using Tasks;
 using UnityEngine;
 
 namespace Database
@@ -31,10 +33,10 @@ namespace Database
                 .Where(filter.Invoke).ToList();
         }
 
-        public static void LoadAllTaskFromDataBase()
+        public static void LoadAllTaskFromDataBase(ELab lab)
         {
             List<SOLabTask> scriptableObjects =
-                Resources.LoadAll<SOLabTask>("TasksLab2").ToList();
+                Resources.LoadAll<SOLabTask>(GetResourcesNameByLabNumber(lab)).ToList();
 
             foreach (var so in scriptableObjects)
             {
@@ -42,16 +44,30 @@ namespace Database
             }
         }
         
-        public static void SaveAllTaskToDataBase()
+        public static void SaveAllTaskToDataBase(ELab lab)
         {
-            LabTasksDatabase.GetInstance().RemoveAll();
+            LabTasksDatabase.GetInstance().RemoveAll(lab);
             
             List<SOLabTask> scriptableObjects =
-                Resources.LoadAll<SOLabTask>("TasksLab2").ToList();
+                Resources.LoadAll<SOLabTask>(GetResourcesNameByLabNumber(lab)).ToList();
 
             foreach (var so in scriptableObjects)
             {
                 so.SaveHandlerByTaskNumber();
+            }
+        }
+
+        private static string GetResourcesNameByLabNumber(ELab lab)
+        {
+            switch (lab)
+            {
+                case ELab.Lab1:
+                    return "TasksLab1";
+                case ELab.Lab2:
+                    return "TasksLab2";
+                default:
+                    Debug.LogError("Can't find labnumber!");
+                    return "TasksLab1";
             }
         }
     }

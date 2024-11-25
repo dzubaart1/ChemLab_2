@@ -1,9 +1,5 @@
 ﻿using System.Linq;
-using BioEngineerLab;
-using BioEngineerLab.Activities;
-using BioEngineerLab.Substances;
-using BioEngineerLab.Tasks;
-using BioEngineerLab.Tasks.Activities;
+using Core;
 using Crafting;
 using Database;
 using JetBrains.Annotations;

@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
 
-namespace BioEngineerLab.Core
+namespace Core.Utils
 {
     public static class ExtensionMethods
     {

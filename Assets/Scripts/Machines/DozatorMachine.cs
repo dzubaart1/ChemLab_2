@@ -1,10 +1,11 @@
-using BioEngineerLab.Containers;
-using BioEngineerLab.Core;
+using Containers;
+using Core;
+using Core.Services;
+using SideEffects;
 using UnityEngine;
 using UnityEngine.UI;
-using BioEngineerLab.Tasks.SideEffects;
 
-namespace BioEngineerLab.Machines
+namespace Machines
 {
     public class DozatorMachine : MonoBehaviour
     {

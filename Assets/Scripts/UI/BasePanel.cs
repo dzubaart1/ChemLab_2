@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace BioEngineerLab.UI
+namespace UI
 {
     public abstract class BasePanel<T> : MonoBehaviour where T : Enum
     {

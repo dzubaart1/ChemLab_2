@@ -1,13 +1,13 @@
 ﻿using System.Collections;
-using BioEngineerLab.Activities;
-using BioEngineerLab.Containers;
-using BioEngineerLab.Core;
-using BioEngineerLab.Tasks;
+using Activities;
+using Containers;
+using Core;
+using Core.Services;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-namespace BioEngineerLab.Gameplay
+namespace Mechanics
 {
     public class VRSocketInteractor : XRSocketInteractor, ISaveable
     {

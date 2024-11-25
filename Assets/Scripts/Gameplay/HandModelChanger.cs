@@ -1,11 +1,12 @@
-﻿using System;
-using BioEngineerLab.Activities;
-using BioEngineerLab.Configurations;
-using BioEngineerLab.Core;
+﻿using Activities;
+using Configurations;
+using Core;
+using Core.Services;
+using Mechanics;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-namespace BioEngineerLab.Gameplay
+namespace Gameplay
 {
     [RequireComponent(typeof(VRGrabInteractable))]
     public class HandModelChanger : MonoBehaviour, ISaveable

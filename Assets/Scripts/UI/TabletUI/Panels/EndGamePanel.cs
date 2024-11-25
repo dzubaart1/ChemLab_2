@@ -1,6 +1,7 @@
-using BioEngineerLab.UI;
-
-public class EndGamePanel : BasePanel<TabletPanelsType>
+namespace UI.TabletUI.Panels
 {
+    public class EndGamePanel : BasePanel<TabletPanelsType>
+    {
     
+    }
 }

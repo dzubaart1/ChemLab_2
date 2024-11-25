@@ -1,7 +1,7 @@
 ﻿using System;
-using BioEngineerLab.Tasks.Activities;
+using Core;
 
-namespace BioEngineerLab.Activities
+namespace Activities
 {
     public class MachineLabActivity : LabActivity
     {

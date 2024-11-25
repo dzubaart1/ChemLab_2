@@ -1,6 +1,6 @@
 using System;
 
-namespace BioEngineerLab.Core
+namespace Core.Utils
 {
     public static class StringUtils
     {

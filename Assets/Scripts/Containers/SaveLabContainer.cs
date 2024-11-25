@@ -1,9 +1,9 @@
-﻿using BioEngineerLab.Core;
-using BioEngineerLab.Gameplay;
-using BioEngineerLab.Substances;
+﻿using Core;
+using Core.Services;
+using Substances;
 using UnityEngine;
 
-namespace BioEngineerLab.Containers
+namespace Containers
 {
     [RequireComponent(typeof(LabContainer))]
     public class SaveLabContainer : MonoBehaviour, ISaveable

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using BioEngineerLab.Core;
-using BioEngineerLab.Gameplay;
+using Core;
+using Core.Services;
 using UnityEngine;
 
-namespace BioEngineerLab.UI
+namespace UI
 {
     public class PanelSwitcher<T> : MonoBehaviour, ISaveable where T : Enum
     {

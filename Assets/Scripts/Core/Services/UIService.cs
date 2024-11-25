@@ -1,10 +1,8 @@
-﻿using System;
-using System.Threading.Tasks;
-using BioEngineerLab.Configurations;
-using BioEngineerLab.UI;
+﻿using Configurations;
+
 //using Microsoft.MixedReality.Toolkit.Experimental.UI;
 
-namespace BioEngineerLab.Core
+namespace Core.Services
 {
     public class UIService : IService
     {

@@ -1,7 +1,8 @@
-﻿using JetBrains.Annotations;
+﻿using Core;
+using JetBrains.Annotations;
 using UnityEditor;
 
-namespace BioEngineerLab.Tasks.SideEffects
+namespace SideEffects.SideEffectsEditor
 {
     public class SpawnDocSideEffectEditor : EditorSideEffect
     {

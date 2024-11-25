@@ -1,10 +1,11 @@
 ﻿using System.Collections;
-using BioEngineerLab.Core;
-using BioEngineerLab.Gameplay;
+using Core;
+using Core.Services;
+using Mechanics;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-namespace BioEngineerLab.Containers
+namespace Containers
 {
     [RequireComponent(typeof(Collider), typeof(VRGrabInteractable), typeof(CupSocketLabContainer))]
     public class SubstanceTransferLabContainer : MonoBehaviour
@@ -24,7 +25,6 @@ namespace BioEngineerLab.Containers
             _xrGrabInteractable = GetComponent<XRGrabInteractable>();
             _labContainer = GetComponent<LabContainer>();
             _cupSocketLabContainer = GetComponent<CupSocketLabContainer>();
-
             _craftService = Engine.GetService<CraftService>();
         }
 

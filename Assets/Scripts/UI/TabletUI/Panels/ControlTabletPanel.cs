@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace BioEngineerLab.UI
+namespace UI.TabletUI.Panels
 {
     public class ControlTabletPanel : MonoBehaviour
     {

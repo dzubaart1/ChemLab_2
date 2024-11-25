@@ -1,6 +1,7 @@
 ﻿using System;
+using Core;
 
-namespace BioEngineerLab.Tasks.Activities
+namespace Activities.ActivitiesEditor
 {
     [Serializable]
     public abstract class EditorActivity

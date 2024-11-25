@@ -1,10 +1,10 @@
-﻿using BioEngineerLab.Activities;
-using BioEngineerLab.Core;
-using BioEngineerLab.Gameplay;
+﻿using Activities;
+using Core;
+using Core.Services;
+using UI.Components;
 using UnityEngine;
-using BioEngineerLab.UI.Components;
 
-namespace BioEngineerLab.Machines
+namespace Machines
 {
     [RequireComponent(typeof(Collider))]
     public class CentrifugaContainerMachine : MonoBehaviour, ISaveable
@@ -19,8 +19,7 @@ namespace BioEngineerLab.Machines
         private SaveService _saveService;
         private TasksService _tasksService;
         private Animator _animator;
-
-        private bool _isOpen = true;
+        
         private SavedData _savedData = new SavedData();
 
         private void Awake()

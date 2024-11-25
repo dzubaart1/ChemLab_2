@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace BioEngineerLab.Core
+namespace Core
 {
     public class LocalRig : MonoBehaviour
     {

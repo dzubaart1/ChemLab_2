@@ -1,12 +1,13 @@
-using BioEngineerLab.Activities;
-using BioEngineerLab.Containers;
-using BioEngineerLab.Core;
-using BioEngineerLab.Gameplay;
-using BioEngineerLab.UI.Components;
+using Activities;
+using Containers;
+using Core;
+using Core.Services;
+using Mechanics;
+using UI.Components;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-namespace BioEngineerLab.Machines
+namespace Machines
 {
     public class StirringMachine : MonoBehaviour, ISaveable
     {

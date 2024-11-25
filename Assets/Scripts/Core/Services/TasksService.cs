@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using BioEngineerLab.Gameplay;
-using BioEngineerLab.Tasks;
-using BioEngineerLab.Tasks.Activities;
-using BioEngineerLab.Tasks.SideEffects;
+using Activities;
 using Database;
+using JetBrains.Annotations;
+using SideEffects;
+using Tasks;
 
-namespace BioEngineerLab.Core
+namespace Core.Services
 {
     public class TasksService : IService, ISaveable
     {
@@ -32,9 +32,28 @@ namespace BioEngineerLab.Core
         public event Action EndTasksListEvent;
         public event Action TaskFailedEvent;
 
+        public int LabNumber => _labNumber;
+        
+        [CanBeNull]
+        public LabTask CurrentTask
+        {
+            get
+            {
+                if (_currentTaskId < 0 | _currentTaskId >= _tasksList.Count)
+                {
+                    return null;
+                }
+                
+                return _tasksList[_currentTaskId];
+            }
+        }
+
+        public TimeSpan CurrentGameTime => (DateTime.Now - _gameStart);
+
         public IReadOnlyCollection<LabTask> TasksList => _tasksList;
         private List<LabTask> _tasksList = new List<LabTask>();
-        
+
+        private int _labNumber = 0;
         private int _currentTaskId = 0;
         private SavedData _savedData;
 
@@ -60,14 +79,18 @@ namespace BioEngineerLab.Core
         
         public void Initialize()
         {
-            _tasksList = LabTasksDatabase.GetInstance().ReadAll();
-            
+            LoadTasks(ELab.Lab2);
             Engine.Behaviour.BehaviourStartEvent += ActivateCurrentTask;
         }
 
         public void Destroy()
         {
             Engine.Behaviour.BehaviourStartEvent -= ActivateCurrentTask;
+        }
+
+        public void LoadTasks(ELab lab)
+        {
+            _tasksList = LabTasksDatabase.GetInstance().ReadAll(lab);
         }
         
         public void TryCompleteTask(LabActivity labActivity)
@@ -83,11 +106,6 @@ namespace BioEngineerLab.Core
                 TaskFailedEvent?.Invoke();
             }
         }
-
-        public LabTask GetCurrentTask()
-        {
-            return _tasksList[_currentTaskId];
-        }
         
         public List<Error> GetErrorsList()
         {
@@ -99,12 +117,6 @@ namespace BioEngineerLab.Core
             }
             
             return errorsList;
-        }
-
-        public TimeSpan GetCurrentGameTime()
-        {
-            _endTime = DateTime.Now;
-            return (_endTime - _gameStart);
         }
 
         public void MoveToNextTask()
@@ -144,11 +156,6 @@ namespace BioEngineerLab.Core
             
             _currentTaskId--;
             TaskUpdatedEvent?.Invoke(_tasksList[_currentTaskId]);
-        }
-        
-        private static int GetTaskNumberFromFileName(string name)
-        {
-            return int.Parse(name.Split("_")[1].Split(".")[0]);
         }
 
         public void OnSaveScene()

@@ -1,6 +1,6 @@
-using BioEngineerLab.Configurations;
+using Configurations;
 
-namespace BioEngineerLab.Core
+namespace Core
 {
     public class EngineConfiguration : Configuration
     {

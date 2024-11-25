@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
-using BioEngineerLab.Activities;
-using BioEngineerLab.Containers;
-using BioEngineerLab.Core;
-using BioEngineerLab.Gameplay;
+using Activities;
+using Containers;
+using Core;
+using Core.Services;
+using Mechanics;
 using UnityEngine;
 
-namespace BioEngineerLab.Machines
+namespace Machines
 {
     [RequireComponent(typeof(Collider))]
     public class PaperTrayMachine : MonoBehaviour, ISaveable

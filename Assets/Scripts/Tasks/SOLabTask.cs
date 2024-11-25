@@ -1,14 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Activities;
 using Activities.ActivitiesEditor;
-using BioEngineerLab.Activities;
-using BioEngineerLab.Tasks.Activities;
-using BioEngineerLab.Tasks.SideEffects;
+using Core;
 using Database;
 using JetBrains.Annotations;
+using SideEffects;
+using SideEffects.SideEffectsEditor;
 using UnityEngine;
 
-namespace BioEngineerLab.Tasks
+namespace Tasks
 {
     [CreateAssetMenu(fileName = "LabTask", menuName = "LabTasks/LabTask", order = 1)]
     public class SOLabTask : ScriptableObject
@@ -17,7 +18,7 @@ namespace BioEngineerLab.Tasks
 
         public void LoadHandlerByTaskNumber()
         {
-            LabTask res = LabTasksDatabase.GetInstance().ReadWhere(task => task.Number == LabTask.Number).FirstOrDefault();
+            LabTask res = LabTasksDatabase.GetInstance().ReadWhere(task => task.Number == LabTask.Number, LabTask.Lab).FirstOrDefault();
 
             if (res != null)
             {
@@ -86,6 +87,8 @@ namespace BioEngineerLab.Tasks
                     return new ButtonClickedActivityEditor(labActivity);
                 case EActivity.SocketActivity:
                     return new SocketLabActivityEditor(labActivity);
+                case EActivity.DoorActivity:
+                    return new DoorLabActivityEditor(labActivity);
             }
 
             return null;

@@ -1,8 +1,8 @@
-﻿using BioEngineerLab.Configurations;
+﻿using Configurations;
 using UnityEditor;
 using UnityEngine;
 
-namespace BioEngineerLab.Core
+namespace Core
 {
     public class ResourcesLoader
     {

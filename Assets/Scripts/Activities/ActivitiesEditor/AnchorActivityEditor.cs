@@ -1,8 +1,8 @@
-﻿using BioEngineerLab.Tasks.Activities;
+﻿using Core;
 using JetBrains.Annotations;
 using UnityEditor;
 
-namespace BioEngineerLab.Activities
+namespace Activities.ActivitiesEditor
 {
     public class AnchorActivityEditor : EditorActivity
     {

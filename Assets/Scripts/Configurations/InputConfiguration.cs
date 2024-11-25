@@ -1,7 +1,7 @@
-using BioEngineerLab.Core;
+using Core;
 using UnityEngine;
 
-namespace BioEngineerLab.Configurations
+namespace Configurations
 {
     public class InputConfiguration : Configuration
     {

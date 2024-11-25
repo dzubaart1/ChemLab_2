@@ -1,9 +1,10 @@
-﻿using BioEngineerLab.Activities;
-using BioEngineerLab.Core;
-using BioEngineerLab.Gameplay;
+﻿using Activities;
+using Core;
+using Core.Services;
+using Gameplay;
 using UnityEngine;
 
-namespace BioEngineerLab.Containers
+namespace Containers
 {
     [RequireComponent(typeof(LabContainer))]
     public class AnchorLabContainer : MonoBehaviour, ISaveable

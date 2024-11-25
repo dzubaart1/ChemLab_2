@@ -1,11 +1,11 @@
-﻿using System;
-using BioEngineerLab.Core;
-using BioEngineerLab.Substances;
-using BioEngineerLab.Tasks.SideEffects;
+﻿using Core;
+using Core.Services;
+using SideEffects;
+using Substances;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace BioEngineerLab.Containers
+namespace Containers
 {
     [RequireComponent(typeof(LabContainer))]
     public class ReagentsLabContainer : MonoBehaviour

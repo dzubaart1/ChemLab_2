@@ -1,7 +1,7 @@
-﻿using Newtonsoft.Json;
-using System.IO;
+﻿using System.IO;
+using Newtonsoft.Json;
 
-namespace BioEngineerLab.JSON
+namespace JSONSaver
 {
     public class JSONSaver
     {
