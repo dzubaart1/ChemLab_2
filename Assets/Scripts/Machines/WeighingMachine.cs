@@ -1,21 +1,24 @@
-using Containers;
-using Mechanics;
+using System;
+using BioEngineerLab.Containers;
+using BioEngineerLab.Gameplay;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-namespace Machines
+
+namespace BioEngineerLab.Machines
 {
     public class WeighingMachine : MonoBehaviour
     {
         [SerializeField] private VRSocketInteractor _socketInteractor;
-        [FormerlySerializedAs("_textMesh")] [SerializeField] private Text _weightText;
+        [SerializeField] private TextMeshProUGUI _textMesh;
 
         private void Update()
         {
             if (_socketInteractor.SelectedObject == null)
             {
-                _weightText.text = "0g";
+                _textMesh.text = "0g";
                 return;
             }
 
@@ -23,11 +26,11 @@ namespace Machines
 
             if (container == null)
             {
-                _weightText.text = "0g";
+                _textMesh.text = "0g";
                 return;
             }
 
-            _weightText.text = container.GetSubstancesWeight() + "g";
+            _textMesh.text = container.GetSubstancesWeight() + "g";
         }
     }
 }

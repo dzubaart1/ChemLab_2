@@ -4,7 +4,7 @@
   "Title": "Задание 15",
   "Description": "Возьмите лодочку для взвешивания и поставьте ее на весы",
   "Warning": "",
-  "SaveableTask": true,
+  "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
     "SocketType": 0,

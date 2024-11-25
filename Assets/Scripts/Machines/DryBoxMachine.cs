@@ -88,15 +88,7 @@ namespace Machines
                 return;
             }
             
-            if (_dryButton.IsOn)
-            {
-                _craftService.Dry(container);
-                _tasksService.TryCompleteTask(new ButtonClickedActivity(EButton.DryBoxMachineButton));
-            }
-            else
-            {
-                _tasksService.TryCompleteTask(new ButtonClickedActivity(EButton.DryBoxMachineButton));
-            }
+            _craftService.Dry(container);
         }
         public void OnSaveScene()
         {

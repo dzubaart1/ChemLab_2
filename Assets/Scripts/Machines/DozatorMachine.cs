@@ -1,15 +1,15 @@
-using Containers;
-using Core;
-using Core.Services;
-using SideEffects;
+using BioEngineerLab.Containers;
+using BioEngineerLab.Core;
 using UnityEngine;
 using UnityEngine.UI;
+using BioEngineerLab.Tasks.SideEffects;
+using TMPro;
 
-namespace Machines
+namespace BioEngineerLab.Machines
 {
     public class DozatorMachine : MonoBehaviour
     {
-        [SerializeField] private Text _text;
+        [SerializeField] private TextMeshProUGUI _text;
         
         private TasksService _tasksService;
         private LabContainer _labContainer;

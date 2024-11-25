@@ -7,7 +7,7 @@
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
-    "FromContainer": 11,
+    "FromContainer": 12,
     "ToContainer": 10,
     "LabSubstanceProperty": {
       "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",

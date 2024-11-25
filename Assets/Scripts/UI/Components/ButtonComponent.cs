@@ -14,6 +14,7 @@ namespace UI.Components
         [Header("Configs")]
         [SerializeField] private EButton _buttonType;
         [SerializeField] private bool _isTaskSendable;
+        [SerializeField] private bool _isStartOn;
         
         [Header("UIs")]
         [SerializeField] private Image _btnImage;
@@ -28,6 +29,7 @@ namespace UI.Components
         private void Start()
         {
             _tasksService = Engine.GetService<TasksService>();
+            IsOn = _isStartOn;
         }
         
         private void OnEnable()

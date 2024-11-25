@@ -18,6 +18,9 @@ namespace Core
         CentrifugaPowerButton,
         CentrifugaStartButton,
         KspectrometerButton,
+        TeleportCellResButton,
+        TeleportScanElecButton,
+        TeleportRFAButton,
     }
 
     public enum ECraft : byte
@@ -146,9 +149,6 @@ namespace Core
         BankCaCL2Socket,
         BankAgarSocket,
         BankNa2HPO4Socket,
-        BankPetronSocket,
-        BankNaClSocket,
-        BankBCPSocket,
         StirringMachineSocket,
         ChemicGlassContainerSocket,
         PipetDozatorSocket,
@@ -159,8 +159,14 @@ namespace Core
         DryBoxMachineSocket,
         PipetkaRackSocket,
         CentrifugaSocket,
+        TeleportCellResSocket,
+        TeleportScanElecSocket,
+        TeleportRFASocket,
         BottleGlukozaSocket,
         BottleSaharozaSocket,
         BottleLaktozaSocket,
+        BankPetronSocket,
+        BankNaClSocket,
+        BankBCPSocket,
     }
 }
