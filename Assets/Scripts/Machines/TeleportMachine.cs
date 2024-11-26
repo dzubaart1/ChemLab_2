@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using BioEngineerLab.Activities;
-using BioEngineerLab.Containers;
-using BioEngineerLab.Core;
-using BioEngineerLab.Gameplay;
-using BioEngineerLab.Tasks;
+using Activities;
+using Containers;
+using Core;
+using Gameplay;
+using Core.Services;
 using UnityEngine;
+using Mechanics;
 using UnityEngine.PlayerLoop;
 using UnityEngine.XR.Interaction.Toolkit;
 

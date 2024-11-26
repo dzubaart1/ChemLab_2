@@ -79,7 +79,7 @@ namespace Core.Services
         
         public void Initialize()
         {
-            LoadTasks(ELab.Lab2);
+            LoadTasks(ELab.Lab1);
             Engine.Behaviour.BehaviourStartEvent += ActivateCurrentTask;
         }
 

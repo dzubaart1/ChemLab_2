@@ -1,8 +1,9 @@
 using System;
-using BioEngineerLab.Containers;
-using BioEngineerLab.Gameplay;
+using Containers;
+using Gameplay;
 using TMPro;
 using UnityEngine;
+using Mechanics;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
