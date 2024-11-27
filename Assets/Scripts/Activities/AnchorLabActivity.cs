@@ -1,7 +1,7 @@
 ﻿using System;
 using Core;
 
-namespace Activities
+namespace BioEngineerLab.Activities
 {
     public class AnchorLabActivity : LabActivity
     {

@@ -1,7 +1,6 @@
 ﻿using Core;
-using Substances;
 
-namespace SideEffects
+namespace BioEngineerLab.Tasks.SideEffects
 {
     public class AddReagentsLabSideEffect : LabSideEffect
     {

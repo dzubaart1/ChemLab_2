@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using Activities;
+using BioEngineerLab.Activities;
+using BioEngineerLab.Tasks;
+using BioEngineerLab.Tasks.SideEffects;
 using Database;
 using JetBrains.Annotations;
-using SideEffects;
-using Tasks;
 
 namespace Core.Services
 {

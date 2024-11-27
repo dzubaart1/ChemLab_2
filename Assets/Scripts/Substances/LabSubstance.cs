@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Substances
+namespace BioEngineerLab.Tasks
 {
     public class LabSubstance
     {

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using Activities;
+using BioEngineerLab.Activities;
+using BioEngineerLab.Tasks.SideEffects;
 using Core;
-using SideEffects;
 
-namespace Tasks
+namespace BioEngineerLab.Tasks
 {
     [Serializable]
     public class LabTask

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Substances
+namespace BioEngineerLab.Tasks
 {
     [Serializable]
     [CreateAssetMenu(fileName = "SubstanceProperty", menuName = "SubstanceProperties/SubstanceProperty", order = 1)]

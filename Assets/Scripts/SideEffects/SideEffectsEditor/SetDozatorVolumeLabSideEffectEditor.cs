@@ -1,9 +1,10 @@
-﻿using Core;
+﻿using BioEngineerLab.Tasks;
+using BioEngineerLab.Tasks.SideEffects;
+using Core;
 using JetBrains.Annotations;
-using Substances;
 using UnityEditor;
 
-namespace SideEffects.SideEffectsEditor
+namespace BioEngineerLab.Tasks.SideEffects
 {
     public class SetDozatorVolumeLabSideEffectEditor : EditorSideEffect
     {

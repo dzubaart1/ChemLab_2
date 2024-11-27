@@ -2,10 +2,9 @@
 using Core;
 using Database;
 using JetBrains.Annotations;
-using Substances;
 using UnityEditor;
 
-namespace SideEffects.SideEffectsEditor
+namespace BioEngineerLab.Tasks.SideEffects
 {
     public class AddReagentsSideEffectEditor : EditorSideEffect
     {

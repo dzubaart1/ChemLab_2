@@ -1,15 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Activities;
 using Activities.ActivitiesEditor;
+using BioEngineerLab.Activities;
+using BioEngineerLab.Tasks.SideEffects;
 using Core;
 using Database;
 using JetBrains.Annotations;
-using SideEffects;
-using SideEffects.SideEffectsEditor;
 using UnityEngine;
 
-namespace Tasks
+namespace BioEngineerLab.Tasks
 {
     [CreateAssetMenu(fileName = "LabTask", menuName = "LabTasks/LabTask", order = 1)]
     public class SOLabTask : ScriptableObject

@@ -1,7 +1,7 @@
 ﻿using System;
 using Core;
 
-namespace Substances
+namespace BioEngineerLab.Tasks
 {
     [Serializable]
     public class LabSubstanceProperty

@@ -1,7 +1,8 @@
 ﻿using System;
+using BioEngineerLab.Tasks.SideEffects;
 using Core;
 
-namespace SideEffects.SideEffectsEditor
+namespace BioEngineerLab.Tasks.SideEffects
 {
     [Serializable]
     public abstract class EditorSideEffect

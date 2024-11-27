@@ -1,6 +1,7 @@
-﻿using Core;
+﻿using BioEngineerLab.Tasks.SideEffects;
+using Core;
 
-namespace SideEffects
+namespace BioEngineerLab.Tasks.SideEffects
 {
     public class SpawnDocLabSideEffect : LabSideEffect
     {

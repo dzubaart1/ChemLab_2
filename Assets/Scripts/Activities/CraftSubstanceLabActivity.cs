@@ -2,7 +2,7 @@
 using Core;
 using Crafting;
 
-namespace Activities
+namespace BioEngineerLab.Activities
 {
     public class CraftSubstanceLabActivity : LabActivity
     {

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using BioEngineerLab.Tasks;
 using Core;
-using Substances;
 
-namespace Activities
+namespace BioEngineerLab.Activities
 {
     public class SocketSubstancesLabActivity : LabActivity
     {

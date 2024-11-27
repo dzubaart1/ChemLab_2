@@ -1,13 +1,12 @@
 ﻿using System.Collections.Generic;
-using Activities;
+using BioEngineerLab.Activities;
+using BioEngineerLab.Tasks.SideEffects;
 using Core;
 using Database;
-using SideEffects;
-using SideEffects.SideEffectsEditor;
 using UnityEditor;
 using UnityEngine;
 
-namespace Tasks
+namespace BioEngineerLab.Tasks
 {
 #if UNITY_EDITOR
     [CustomEditor(typeof(SOLabTask))]

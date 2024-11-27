@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Activities;
+using BioEngineerLab.Activities;
 using Containers;
 using Core;
 using Gameplay;
@@ -88,12 +89,7 @@ namespace BioEngineerLab.Machines
                     labContainer.GetSubstanceProperties()));
             }
         }
-
-        private void OnTriggerEnter(Collider other)
-        {
-            
-        }
-
+        
         public void OnSaveScene()
         {
             _savedData.HiddenGameObjects.Clear();

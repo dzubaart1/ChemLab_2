@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Substances
+namespace BioEngineerLab.Tasks
 {
 #if UNITY_EDITOR
     [CustomEditor(typeof(SOLabSubstanceProperty))]
