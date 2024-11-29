@@ -1,5 +1,6 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
   "Number": 12,
   "Title": "Задание 12",
   "Description": "Сбросьте мерную ложечку в емкость для мытья лабораторной посуды",

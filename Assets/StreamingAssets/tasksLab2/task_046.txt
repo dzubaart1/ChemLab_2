@@ -1,5 +1,6 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
   "Number": 46,
   "Title": "Задание 46",
   "Description": "Возьмите реактив с надписью «Лактоза», откройте крышку",
@@ -7,7 +8,7 @@
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
-    "SocketType": 19,
+    "SocketType": 25,
     "SocketActivityType": 1,
     "ActivityType": 3
   },

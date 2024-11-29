@@ -1,5 +1,6 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
   "Number": 18,
   "Title": "Задание 18",
   "Description": "Насыпьте бромкрезоловый пурпурный из мерной ложечки в лодочку для взвешивания. Необходимая масса реагента: 0.009 г",

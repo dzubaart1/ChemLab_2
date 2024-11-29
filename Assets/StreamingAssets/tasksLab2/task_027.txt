@@ -1,5 +1,6 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
   "Number": 27,
   "Title": "Задание 27",
   "Description": "Возьмите емкость и поставьте на стол.",
@@ -7,7 +8,7 @@
   "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
-    "SocketType": 7,
+    "SocketType": 4,
     "SocketActivityType": 1,
     "ActivityType": 3
   },

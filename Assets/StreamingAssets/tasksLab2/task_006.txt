@@ -1,5 +1,6 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
   "Number": 6,
   "Title": "Задание 6",
   "Description": "Возьмите пустую емкость объемом 500 мл и пересыпьте пептон в пустую емкость",

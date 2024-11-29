@@ -1,5 +1,6 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
   "Number": 43,
   "Title": "Задание 43",
   "Description": "Пересыпьте глюкозу из лодочки для взвешивания в ёмкость с надписью «Глюкоза»",
@@ -48,13 +49,13 @@
             "SubstanceColorR": 0.527487159,
             "SubstanceColorG": 0.4627451,
             "SubstanceColorB": 0.6509804,
-            "SubstanceColorA": 0.0,
+            "SubstanceColorA": 0.8509804,
             "HintName": ""
           }
         ]
       }
     },
-    "Container": 0,
+    "Container": 16,
     "ActivityType": 5
   },
   "LabSideEffects": {

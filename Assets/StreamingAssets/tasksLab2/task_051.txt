@@ -1,26 +1,16 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
   "Number": 51,
   "Title": "Задание 51",
-  "Description": "Добавьте пипет-дозатором раствор Na2HPO4 и Agar в каждую из шести лунок культурального планшета. Необходимый объем материала в каждой лунке: 2 мл",
+  "Description": "Сбросьте лодочку для взвешивания в емкость для мытья лабораторной посуды",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
-    "FromContainer": 6,
-    "ToContainer": 9,
-    "LabSubstanceProperty": {
-      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-      "SubstanceName": "StirNa2HPO4AgarH20",
-      "SubstanceMode": 0,
-      "SubstanceLayer": 0,
-      "SubstanceColorR": 0.960826159,
-      "SubstanceColorG": 0.7882353,
-      "SubstanceColorB": 1.0,
-      "SubstanceColorA": 0.7294118,
-      "HintName": ""
-    },
-    "ActivityType": 0
+    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
+    "MachineActivityType": 0,
+    "MachineType": 4,
+    "ActivityType": 1
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

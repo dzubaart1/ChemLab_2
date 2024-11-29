@@ -1,5 +1,6 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
   "Number": 28,
   "Title": "Задание 28",
   "Description": "Возьмите большую банку с получившимся растворов и последовательно разлейте по 150 мл в чистые пустые емкости с надписями «Сахароза», «Глюкоза», «Лактоза»",
@@ -8,7 +9,7 @@
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
     "FromContainer": 0,
-    "ToContainer": 0,
+    "ToContainer": 16,
     "LabSubstanceProperty": {
       "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
       "SubstanceName": "StirPurbleSol",

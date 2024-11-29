@@ -1,5 +1,6 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
   "Number": 36,
   "Title": "Задание 36",
   "Description": "Пересыпьте сахарозу из лодочки для взвешивания в ёмкость с надписью «Сахароза»",
@@ -48,13 +49,13 @@
             "SubstanceColorR": 0.61556536,
             "SubstanceColorG": 0.46364364,
             "SubstanceColorB": 0.6509434,
-            "SubstanceColorA": 0.0,
+            "SubstanceColorA": 0.8666667,
             "HintName": ""
           }
         ]
       }
     },
-    "Container": 0,
+    "Container": 16,
     "ActivityType": 5
   },
   "LabSideEffects": {

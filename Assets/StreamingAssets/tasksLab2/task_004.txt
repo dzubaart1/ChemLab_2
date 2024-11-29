@@ -1,5 +1,6 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
   "Number": 4,
   "Title": "Задание 4",
   "Description": "Насыпьте пептон из мерной ложечки в лодочку для взвешивания. Необходимая масса реагента: 1.8 г",

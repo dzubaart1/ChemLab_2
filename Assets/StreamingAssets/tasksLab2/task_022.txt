@@ -1,5 +1,6 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
   "Number": 22,
   "Title": "Задание 22",
   "Description": "Возьмите емкость с дистиллированной водой и перелейте 450 мл дистиллированной воды в ёмкость с пептоном, хлоридом натрия и бромкрезоловым пурпурным.",
@@ -75,7 +76,7 @@
         },
         "Weight": 450.0,
         "SideEffectTimeType": 0,
-        "SideEffectType": 2
+        "SideEffectType": 0
       }
     ]
   }

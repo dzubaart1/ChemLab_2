@@ -1,5 +1,6 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
   "Number": 48,
   "Title": "Задание 48",
   "Description": "Насыпьте из мерной ложечки лактозу в лодочку для взвешивания. Необходимая масса реагента: 0.75 г",

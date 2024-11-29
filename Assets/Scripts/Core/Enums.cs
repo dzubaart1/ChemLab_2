@@ -173,5 +173,9 @@ namespace Core
         BankPetronSocket,
         BankNaClSocket,
         BankBCPSocket,
+        BankGlukozaSocket,
+        BankSaharozaSocket,
+        BankLaktozaSocket,
+        AutoclaveSocket
     }
 }

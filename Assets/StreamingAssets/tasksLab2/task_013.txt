@@ -1,5 +1,6 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
   "Number": 13,
   "Title": "Задание 13",
   "Description": "Возьмите емкость с пептоном и пересыпьте хлорид натрия (NaCl) в эту емкость",

@@ -1,5 +1,6 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
   "Number": 16,
   "Title": "Задание 16",
   "Description": "Возьмите реактив с надписью «Бромкрезоловый пурпурный» и откройте крышку",
@@ -7,7 +8,7 @@
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
-    "SocketType": 6,
+    "SocketType": 22,
     "SocketActivityType": 1,
     "ActivityType": 3
   },
