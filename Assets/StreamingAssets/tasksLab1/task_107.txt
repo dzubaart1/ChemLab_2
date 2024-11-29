@@ -1,14 +1,15 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 0,
   "Number": 107,
   "Title": "Задание 107",
-  "Description": "Перелейте воду из пипет-дозатора в чистый термостойкий стакан.",
+  "Description": "Уберите пипет-дозатором воду над осадком из одной пробирки.",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
-    "FromContainer": 6,
-    "ToContainer": 0,
+    "FromContainer": 12,
+    "ToContainer": 6,
     "LabSubstanceProperty": {
       "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
       "SubstanceName": "H2O",

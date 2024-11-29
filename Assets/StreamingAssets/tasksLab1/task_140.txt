@@ -1,17 +1,25 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 0,
   "Number": 140,
   "Title": "Задание 140",
-  "Description": "Подойдите к телепорту и заберите результаты исследований в рентгенофазовом дифрактометре",
+  "Description": "Подойдите к телепорту и заберите результаты из лаборатории сканирующей электронной микроскопии",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 11,
+    "ButtonType": 10,
     "ActivityType": 6
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": []
+    "$values": [
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.SpawnDocLabSideEffect, Assembly-CSharp",
+        "MachineType": 11,
+        "SideEffectTimeType": 1,
+        "SideEffectType": 2
+      }
+    ]
   }
 }

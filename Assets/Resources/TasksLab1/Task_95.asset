@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Task_95
   m_EditorClassIdentifier: 
   LabTask:
+    Lab: 0
     Number: 95
     Title: "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 95"
     Description: "\u0420\u0430\u0437\u043B\u0435\u0439\u0442\u0435 \u0440\u0430\u0441\u0442\u0432\u043E\u0440

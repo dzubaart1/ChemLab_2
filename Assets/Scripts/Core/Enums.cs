@@ -126,6 +126,11 @@ namespace Core
         CentrifugaContainerMachine,
         CentrifugaMachine,
         PaperTrayMachine,
+        TeleportCellResMachine,
+        TeleportScanElecMachine,
+        TeleportRFAMachine,
+        KSpectrometerMachine,
+        AtomicMicMachine
     }
     
     public enum ESocketActivity : byte

@@ -10,6 +10,7 @@ using UnityEngine;
 using Mechanics;
 using UnityEngine.PlayerLoop;
 using UnityEngine.XR.Interaction.Toolkit;
+using BioEngineerLab.Tasks.SideEffects;
 
 namespace BioEngineerLab.Machines
 {
@@ -29,7 +30,8 @@ namespace BioEngineerLab.Machines
 
         [SerializeField] private VRSocketInteractor _socketInteractor;
         [SerializeField] private ESocket _socketType;
-        
+        [SerializeField] private EMachine _machineType;
+        [SerializeField] private GameObject _docObject;
 
         private void Awake()
         {
@@ -41,6 +43,7 @@ namespace BioEngineerLab.Machines
         {
             _saveService.LoadSceneStateEvent += OnLoadScene;
             _saveService.SaveSceneStateEvent += OnSaveScene;
+            _tasksService.SideEffectActivatedEvent += OnActivatedSideEffect;
             
             _socketInteractor.selectEntered.AddListener(OnEnter);
         }
@@ -49,6 +52,7 @@ namespace BioEngineerLab.Machines
         {
             _saveService.LoadSceneStateEvent -= OnLoadScene;
             _saveService.SaveSceneStateEvent -= OnSaveScene;
+            _tasksService.SideEffectActivatedEvent -= OnActivatedSideEffect;
             
             _socketInteractor.selectEntered.RemoveListener(OnEnter);
         }
@@ -87,6 +91,21 @@ namespace BioEngineerLab.Machines
 
                 _tasksService.TryCompleteTask(new SocketSubstancesLabActivity(_socketType, ESocketActivity.Enter,
                     labContainer.GetSubstanceProperties()));
+            }
+        }
+        
+        private void OnActivatedSideEffect(LabSideEffect sideEffect)
+        {
+            if (sideEffect is not SpawnDocLabSideEffect spawnDocLabSideEffect)
+            {
+                return;
+            }
+            
+            spawnDocLabSideEffect = sideEffect as SpawnDocLabSideEffect;
+
+            if (spawnDocLabSideEffect.MachineType == _machineType)
+            {
+                _docObject.SetActive(true);
             }
         }
         

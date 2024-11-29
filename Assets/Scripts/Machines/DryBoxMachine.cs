@@ -1,4 +1,5 @@
 ﻿using Activities;
+using BioEngineerLab.Activities;
 using Containers;
 using Core;
 using Core.Services;
@@ -59,13 +60,14 @@ namespace Machines
 
         private void Update()
         {
-            if (_door.transform.rotation.z < 0.45f && !_isOpen)
+            if (_door.transform.rotation.z < 0.49f && !_isOpen)
             {
                 _isOpen = true;
             }
-            else if (_door.transform.rotation.z > 0.45f && _isOpen)
+            else if (_door.transform.rotation.z > 0.49f && _isOpen)
             {
                 _isOpen = false;
+                _tasksService.TryCompleteTask(new DoorLabActivity(EDoor.DryMachineDoor, EDoorActivity.Closed));
             }
         }
 

@@ -1,14 +1,15 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 0,
   "Number": 139,
   "Title": "Задание 139",
-  "Description": "Ознакомьтесь с полученными результатами и положите их в лоток для бумаг",
+  "Description": "Сбросьте грязный металический шпатель в емкость для мытья лабораторной посуды",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
     "MachineActivityType": 0,
-    "MachineType": 9,
+    "MachineType": 4,
     "ActivityType": 1
   },
   "LabSideEffects": {

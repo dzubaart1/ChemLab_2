@@ -1,15 +1,51 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 0,
   "Number": 116,
   "Title": "Задание 116",
-  "Description": "Сбросьте грязный металический шпатель в емкость для мытья лабораторной посуды",
+  "Description": "Переместите констистенцию (пастообразный осадок) в чашку Петри с пастообразным осадком шпателем",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 0,
-    "MachineType": 4,
-    "ActivityType": 1
+    "$type": "BioEngineerLab.Activities.CraftSubstanceLabActivity, Assembly-CSharp",
+    "LabCraft": {
+      "$type": "Crafting.LabCraft, Assembly-CSharp",
+      "SubstancesFrom": {
+        "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
+        "$values": [
+          {
+            "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+            "SubstanceName": "SplitHardAgarSed",
+            "SubstanceMode": 0,
+            "SubstanceLayer": 1,
+            "SubstanceColorR": 1.0,
+            "SubstanceColorG": 0.7995272,
+            "SubstanceColorB": 0.495283,
+            "SubstanceColorA": 1.0,
+            "HintName": ""
+          }
+        ]
+      },
+      "CraftType": 3,
+      "SubstancesRes": {
+        "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
+        "$values": [
+          {
+            "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+            "SubstanceName": "SplitHardAgarSed",
+            "SubstanceMode": 0,
+            "SubstanceLayer": 1,
+            "SubstanceColorR": 1.0,
+            "SubstanceColorG": 0.7995272,
+            "SubstanceColorB": 0.495283,
+            "SubstanceColorA": 1.0,
+            "HintName": ""
+          }
+        ]
+      }
+    },
+    "Container": 7,
+    "ActivityType": 5
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

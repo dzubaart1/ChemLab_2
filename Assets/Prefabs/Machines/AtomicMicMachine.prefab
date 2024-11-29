@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 5097837243190017565}
   - component: {fileID: 7338301209631931564}
   - component: {fileID: 5319090978230747681}
+  - component: {fileID: 8190239070781664021}
   m_Layer: 0
   m_Name: AtomicMicMachine
   m_TagString: SerializeSubstance
@@ -248,7 +249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxVolume: 30
   _containerWeight: 0
-  _containerType: 13
+  _containerType: 14
   _isWeightableContainer: 0
   _isSpoonContainer: 0
   _meshRendererConfigs:
@@ -471,6 +472,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614f3bff350847cba1fa99ddaa2cce0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8190239070781664021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3395634631479066471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65cc0272fb657ba4998c4b83dc7e05bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _docObject: {fileID: 5142101703833594055}
 --- !u!1 &3395634631867167511
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,7 +531,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9135590643364636082
 Transform:
   m_ObjectHideFlags: 0

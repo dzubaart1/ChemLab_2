@@ -54,7 +54,7 @@ namespace Core.Services
         private List<LabTask> _tasksList = new List<LabTask>();
 
         private int _labNumber = 0;
-        private int _currentTaskId = 0;
+        private int _currentTaskId = 122;
         private SavedData _savedData;
 
         private HashSet<int> _errorsSet;

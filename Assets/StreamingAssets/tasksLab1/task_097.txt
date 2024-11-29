@@ -1,5 +1,6 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 0,
   "Number": 97,
   "Title": "Задание 97",
   "Description": "Закройте пробирки.",

@@ -1,47 +1,19 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 0,
   "Number": 119,
   "Title": "Задание 119",
-  "Description": "С помощью пинцета возьмите полученную агаровую пленку с кристаллами гидроксиапатита из чашки Петри.",
+  "Description": "Заберите из сушильного шкафа чашку Петри с растворами хлорида кальция и Na2HPO4 и Agar. ",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
-    "FromContainer": 7,
-    "ToContainer": 13,
-    "LabSubstanceProperty": {
-      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-      "SubstanceName": "DryHardAgar",
-      "SubstanceMode": 0,
-      "SubstanceLayer": 0,
-      "SubstanceColorR": 0.9528302,
-      "SubstanceColorG": 0.680635035,
-      "SubstanceColorB": 0.4539427,
-      "SubstanceColorA": 1.0,
-      "HintName": ""
-    },
-    "ActivityType": 0
+    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
+    "SocketType": 11,
+    "SocketActivityType": 1,
+    "ActivityType": 3
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
-        "LabSubstanceProperty": {
-          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "DryHardAgar",
-          "SubstanceMode": 0,
-          "SubstanceLayer": 0,
-          "SubstanceColorR": 0.9528302,
-          "SubstanceColorG": 0.680635035,
-          "SubstanceColorB": 0.4539427,
-          "SubstanceColorA": 1.0,
-          "HintName": ""
-        },
-        "Weight": 30.0,
-        "SideEffectTimeType": 0,
-        "SideEffectType": 0
-      }
-    ]
+    "$values": []
   }
 }

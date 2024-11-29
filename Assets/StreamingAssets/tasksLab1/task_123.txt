@@ -1,17 +1,53 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 0,
   "Number": 123,
   "Title": "Задание 123",
-  "Description": "Закройте сушильный шкаф и включите его правой рукой.",
+  "Description": "Поставьте чашку Петри с пастообразным осадком в сушильный шкаф.",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 4,
-    "ActivityType": 6
+    "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",
+    "SocketType": 11,
+    "SocketActivityType": 0,
+    "LabSubstanceProperties": {
+      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
+      "$values": [
+        {
+          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+          "SubstanceName": "SplitHardAgarSed",
+          "SubstanceMode": 0,
+          "SubstanceLayer": 1,
+          "SubstanceColorR": 1.0,
+          "SubstanceColorG": 0.7995272,
+          "SubstanceColorB": 0.495283,
+          "SubstanceColorA": 1.0,
+          "HintName": ""
+        }
+      ]
+    },
+    "ActivityType": 2
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": []
+    "$values": [
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
+        "LabSubstanceProperty": {
+          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+          "SubstanceName": "SplitHardAgarSed",
+          "SubstanceMode": 0,
+          "SubstanceLayer": 1,
+          "SubstanceColorR": 1.0,
+          "SubstanceColorG": 0.7995272,
+          "SubstanceColorB": 0.495283,
+          "SubstanceColorA": 1.0,
+          "HintName": ""
+        },
+        "Weight": 30.0,
+        "SideEffectTimeType": 0,
+        "SideEffectType": 0
+      }
+    ]
   }
 }

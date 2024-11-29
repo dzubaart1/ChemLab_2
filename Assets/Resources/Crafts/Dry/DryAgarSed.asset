@@ -24,11 +24,11 @@ MonoBehaviour:
       HintName: 
     CraftType: 0
     SubstancesRes:
-    - SubstanceName: DryHardAgar
+    - SubstanceName: DryAgarSed
       SubstanceMode: 0
       SubstanceLayer: 0
-      SubstanceColorR: 0.9528302
-      SubstanceColorG: 0.68063504
-      SubstanceColorB: 0.4539427
+      SubstanceColorR: 0.6415094
+      SubstanceColorG: 0.49518982
+      SubstanceColorB: 0.3721965
       SubstanceColorA: 1
       HintName: 

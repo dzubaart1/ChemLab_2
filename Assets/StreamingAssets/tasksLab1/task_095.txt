@@ -1,5 +1,6 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 0,
   "Number": 95,
   "Title": "Задание 95",
   "Description": "Разлейте раствор твёрдого Agar с веществом из термостойкого стакана в две пробирки для центрифуги.",
