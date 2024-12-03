@@ -353,7 +353,7 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
@@ -947,7 +947,7 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
@@ -1040,6 +1040,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cupSocket: {fileID: 6644713009601138111}
+  _isNozzleNeed: 0
 --- !u!114 &9079948206777681126
 MonoBehaviour:
   m_ObjectHideFlags: 0

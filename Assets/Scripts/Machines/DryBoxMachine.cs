@@ -95,11 +95,19 @@ namespace Machines
         public void OnSaveScene()
         {
             _savedData.IsOn = _dryButton;
+            _savedData.IsOpen = _isOpen;
         }
 
         public void OnLoadScene()
         {
-            
+            if (_savedData.IsOpen)
+            {
+                _door.transform.rotation = new Quaternion(0.5f, 0.5f, 0, 0.5f);
+            }
+            else
+            {
+                _door.transform.rotation = new Quaternion(0.5f, 0.5f, 0.5f, 0.5f);
+            }
         }
     }
 }

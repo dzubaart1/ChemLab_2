@@ -21,6 +21,8 @@ namespace Core
         TeleportCellResButton,
         TeleportScanElecButton,
         TeleportRFAButton,
+        AutoClavePowerButton,
+        AutoClaveOnButton,
     }
 
     public enum ECraft : byte
@@ -105,7 +107,8 @@ namespace Core
 
     public enum EDoor : byte
     {
-        DryMachineDoor
+        DryMachineDoor,
+        AutoClaveDoor
     }
 
     public enum EDoorActivity : byte

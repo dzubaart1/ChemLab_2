@@ -1,24 +1,18 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
   "Number": 57,
   "Title": "Задание 57",
-  "Description": "Установите правой рукой значение на пипетдозаторе 1.00 мл.",
+  "Description": "Нажмите на правую кнопку на приборной панели автоклава",
   "Warning": "",
-  "SaveableTask": true,
+  "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 2,
+    "ButtonType": 13,
     "ActivityType": 6
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.SetDozatorVolumeLabSideEffect, Assembly-CSharp",
-        "DozatorVolume": 1.0,
-        "SideEffectTimeType": 1,
-        "SideEffectType": 3
-      }
-    ]
+    "$values": []
   }
 }

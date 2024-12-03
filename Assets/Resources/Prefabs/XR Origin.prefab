@@ -2676,6 +2676,14 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 1584864855058842763, guid: 694c6bf6b4f1b634fae760b6de4a44d5, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 1584864855058842763, guid: 694c6bf6b4f1b634fae760b6de4a44d5, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 2422696822549187770, guid: 694c6bf6b4f1b634fae760b6de4a44d5, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -2684,10 +2692,22 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 4169477156522084496, guid: 694c6bf6b4f1b634fae760b6de4a44d5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.0007013416
+      objectReference: {fileID: 0}
     - target: {fileID: 4258988853699380099, guid: 694c6bf6b4f1b634fae760b6de4a44d5, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5082386109635765237, guid: 694c6bf6b4f1b634fae760b6de4a44d5, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 5082386109635765237, guid: 694c6bf6b4f1b634fae760b6de4a44d5, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 5366369539089349618, guid: 694c6bf6b4f1b634fae760b6de4a44d5, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2823,6 +2843,10 @@ PrefabInstance:
     - target: {fileID: 7973759061487289576, guid: 694c6bf6b4f1b634fae760b6de4a44d5, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925994787710126357, guid: 694c6bf6b4f1b634fae760b6de4a44d5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

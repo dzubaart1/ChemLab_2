@@ -53,8 +53,8 @@ namespace Core.Services
         public IReadOnlyCollection<LabTask> TasksList => _tasksList;
         private List<LabTask> _tasksList = new List<LabTask>();
 
-        private int _labNumber = 1;
-        private int _currentTaskId = 30;
+        private int _labNumber = 0;
+        private int _currentTaskId = 0;
         private SavedData _savedData;
 
         private HashSet<int> _errorsSet;

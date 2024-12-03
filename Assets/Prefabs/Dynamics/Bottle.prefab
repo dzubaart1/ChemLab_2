@@ -239,7 +239,7 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
@@ -446,6 +446,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4396599366770081107}
+  - {fileID: 6194664196160758847}
   m_Father: {fileID: 3927687518678438592}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6018311691730592812
@@ -652,7 +653,7 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
@@ -823,7 +824,6 @@ Transform:
   m_Children:
   - {fileID: 1532478101405847582}
   - {fileID: 3822808846580389384}
-  - {fileID: 6194664196160758847}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8940516597102218534
@@ -852,12 +852,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8940516597102218534}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.0352, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.0508461, z: 0}
   m_LocalScale: {x: -0.055, y: 0.04, z: -0.055}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3927687518678438592}
+  m_Father: {fileID: 1532478101405847582}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7370744188404416283
 MeshFilter:
