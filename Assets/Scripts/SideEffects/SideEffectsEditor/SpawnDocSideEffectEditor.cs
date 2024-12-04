@@ -5,6 +5,7 @@ using UnityEditor;
 
 namespace BioEngineerLab.Tasks.SideEffects
 {
+#if UNITY_EDITOR
     public class SpawnDocSideEffectEditor : EditorSideEffect
     {
         [CanBeNull] private SpawnDocLabSideEffect _sideEffect;
@@ -33,4 +34,5 @@ namespace BioEngineerLab.Tasks.SideEffects
             return ESideEffect.SpawnDocSideEffect;
         }
     }
+    #endif
 }

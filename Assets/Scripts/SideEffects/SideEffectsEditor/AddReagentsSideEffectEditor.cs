@@ -6,6 +6,7 @@ using UnityEditor;
 
 namespace BioEngineerLab.Tasks.SideEffects
 {
+#if UNITY_EDITOR
     public class AddReagentsSideEffectEditor : EditorSideEffect
     {
         [CanBeNull] private AddReagentsLabSideEffect _addReagentsLab;
@@ -47,4 +48,5 @@ namespace BioEngineerLab.Tasks.SideEffects
             return ESideEffect.AddReagentsSideEffect;
         }
     }
+    #endif
 }

@@ -5,6 +5,7 @@ using UnityEditor;
 
 namespace Activities.ActivitiesEditor
 {
+    #if UNITY_EDITOR
     public class ButtonClickedActivityEditor : EditorActivity
     {
         [CanBeNull] private ButtonClickedActivity _buttonClickedActivity;
@@ -33,4 +34,5 @@ namespace Activities.ActivitiesEditor
             return EActivity.ButtonClickedActivity;
         }
     }
+    #endif
 }

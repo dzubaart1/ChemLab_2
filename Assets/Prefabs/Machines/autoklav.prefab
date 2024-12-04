@@ -370,9 +370,9 @@ MonoBehaviour:
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   _socketType: 26
-  _isEnterTaskSendable: 0
+  _isEnterTaskSendable: 1
   _isExitTaskSendable: 0
-  _isSubsctanceSocket: 0
+  _isSubsctanceSocket: 1
 --- !u!135 &808051564525400671
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -978,9 +978,9 @@ MonoBehaviour:
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   _socketType: 26
-  _isEnterTaskSendable: 0
+  _isEnterTaskSendable: 1
   _isExitTaskSendable: 0
-  _isSubsctanceSocket: 0
+  _isSubsctanceSocket: 1
 --- !u!135 &142534162703223231
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1421,9 +1421,9 @@ MonoBehaviour:
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   _socketType: 26
-  _isEnterTaskSendable: 0
+  _isEnterTaskSendable: 1
   _isExitTaskSendable: 0
-  _isSubsctanceSocket: 0
+  _isSubsctanceSocket: 1
 --- !u!135 &1877301406925646227
 SphereCollider:
   m_ObjectHideFlags: 0

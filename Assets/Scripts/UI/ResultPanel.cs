@@ -16,6 +16,8 @@ public class ResultPanel : MonoBehaviour
     {
         _tasksService = Engine.GetService<TasksService>();
 
-        _timeText.text = "Время прохождения: ";
+        _timeText.text = "Время прохождения: " + TasksService.GetTotalTime();
+        _errorsText.text = "Количество ошибок: " + _tasksService.GetErrorsList().Count;
+            
     }
 }

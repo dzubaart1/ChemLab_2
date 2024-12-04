@@ -126,11 +126,17 @@ namespace Core.Services
             return errorsList;
         }
 
+        public static TimeSpan GetTotalTime()
+        {
+            return _endTime.Subtract(_gameStart);
+        }
+
         public void MoveToNextTask()
         {
             if (_currentTaskId + 1 == _tasksList.Count)
             {
                 EndTasksListEvent?.Invoke();
+                _endTime = DateTime.Now;
                 return;
             }
 

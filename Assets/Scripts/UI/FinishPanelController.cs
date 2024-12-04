@@ -16,4 +16,20 @@ public class FinishPanelController : MonoBehaviour
         _mainPanel.SetActive(false);
         _resultsPanel.SetActive(true);
     }
+
+    public void LoadLab1()
+    {
+        SceneManager.LoadScene("Lab1");
+    }
+    
+    public void LoadLab2()
+    {
+        SceneManager.LoadScene("Lab2");
+    }
+
+    public void Return()
+    {
+        _mainPanel.SetActive(true);
+        _resultsPanel.SetActive(false);
+    }
 }

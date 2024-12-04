@@ -8,6 +8,7 @@ using UnityEditor;
 
 namespace Activities.ActivitiesEditor
 {
+    #if UNITY_EDITOR
     public class AddSubstanceActivityEditor : EditorActivity
     {
         [CanBeNull] private AddSubstanceLabActivity _addSubstanceActivity;
@@ -51,4 +52,5 @@ namespace Activities.ActivitiesEditor
             return EActivity.AddSubstanceActivity;
         }
     }
+    #endif
 }

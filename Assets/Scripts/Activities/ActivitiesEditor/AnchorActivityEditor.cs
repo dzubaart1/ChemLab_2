@@ -5,6 +5,7 @@ using UnityEditor;
 
 namespace Activities.ActivitiesEditor
 {
+    #if UNITY_EDITOR
     public class AnchorActivityEditor : EditorActivity
     {
         [CanBeNull] private AnchorLabActivity _anchorActivity;
@@ -33,4 +34,5 @@ namespace Activities.ActivitiesEditor
             return EActivity.AnchorActivity;
         }
     }
+    #endif
 }

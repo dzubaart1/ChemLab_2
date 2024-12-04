@@ -6,6 +6,7 @@ using UnityEditor;
 
 namespace BioEngineerLab.Tasks.SideEffects
 {
+#if UNITY_EDITOR
     public class SetDozatorVolumeLabSideEffectEditor : EditorSideEffect
     {
         [CanBeNull] private SetDozatorVolumeLabSideEffect _sideEffect;
@@ -35,4 +36,5 @@ namespace BioEngineerLab.Tasks.SideEffects
             return ESideEffect.SetDozatorVolumeSideEffect;
         }
     }
+    #endif
 }

@@ -9,6 +9,9 @@ using UnityEngine;
 
 namespace Activities.ActivitiesEditor
 {
+   
+    #if UNITY_EDITOR
+
     public class SocketSubstancesLabActivityEditor : EditorActivity
     {
         [CanBeNull] private SocketSubstancesLabActivity _socketSubstancesLabActivity;
@@ -116,4 +119,5 @@ namespace Activities.ActivitiesEditor
             return new LabSubstanceProperty(labSubstanceProperty.LabSubstanceProperty);
         }
     }
+    #endif
 }

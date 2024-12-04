@@ -51,15 +51,16 @@ namespace Machines
         private void Start()
         {
             OnSaveScene();
+            Debug.Log(_door.transform.rotation);
         }
 
         private void Update()
         {
-            if (_door.transform.rotation.z < 0.49f && !_isOpen)
+            if (_door.transform.rotation.z > 0.01f && !_isOpen)
             {
                 _isOpen = true;
             }
-            else if (_door.transform.rotation.z > 0.49f && _isOpen)
+            else if (_door.transform.rotation.z < 0.01f && _isOpen)
             {
                 _isOpen = false;
                 _tasksService.TryCompleteTask(new DoorLabActivity(EDoor.AutoClaveDoor, EDoorActivity.Closed));
@@ -74,11 +75,11 @@ namespace Machines
         {
             if (_savedData.IsOpen)
             {
-                _door.transform.rotation = new Quaternion(0.5f, 0.5f, 0, 0.5f);
+                _door.transform.rotation = new Quaternion(-0.7f, 0f, 0.5f, 0.7f);
             }
             else
             {
-                _door.transform.rotation = new Quaternion(0.5f, 0.5f, 0.5f, 0.5f);
+                _door.transform.rotation = new Quaternion(-0.7f, 0f, 0f, 0.7f);
             }
         }
     }
