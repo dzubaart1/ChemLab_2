@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: bfe8138ca91e9e14dbe58f2ebc3ff7ca, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 2d9f74c5b59df2e4eb40716488cbe07a, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -388,7 +388,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 0.6901961, g: 0.32885894, b: 0.2509804, a: 1}
-  m_Intensity: 0.01
+  m_Intensity: 0.001
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -2107,10 +2107,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lights
       objectReference: {fileID: 0}
-    - target: {fileID: 5754876776795179500, guid: 980f6097fb9635a4aab55225348485c0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2172,6 +2168,10 @@ PrefabInstance:
     - target: {fileID: 5501985844871279550, guid: 7002e59345093174da33322206d90164, type: 3}
       propertyPath: m_Name
       value: ExpTabletCup
+      objectReference: {fileID: 0}
+    - target: {fileID: 5501985844871279550, guid: 7002e59345093174da33322206d90164, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5501985844871279550, guid: 7002e59345093174da33322206d90164, type: 3}
       propertyPath: m_StaticEditorFlags

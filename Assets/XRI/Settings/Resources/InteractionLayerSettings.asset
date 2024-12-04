@@ -31,6 +31,7 @@ MonoBehaviour:
   - TeleportSocket
   - AutoclaveSocket
   - DozatorTableSocket
+  - PipetBoxSocket
   - 
   - 
   - 
@@ -44,4 +45,3 @@ MonoBehaviour:
   - 
   - 
   - 
-  - Teleport
