@@ -23,6 +23,7 @@ namespace Core
         TeleportRFAButton,
         AutoClavePowerButton,
         AutoClaveOnButton,
+        LaminBoxLButton
     }
 
     public enum ECraft : byte
@@ -133,7 +134,9 @@ namespace Core
         TeleportScanElecMachine,
         TeleportRFAMachine,
         KSpectrometerMachine,
-        AtomicMicMachine
+        AtomicMicMachine,
+        AutoClaveMachine,
+        LaminBoxMachine,
     }
     
     public enum ESocketActivity : byte
@@ -179,6 +182,7 @@ namespace Core
         BankGlukozaSocket,
         BankSaharozaSocket,
         BankLaktozaSocket,
-        AutoclaveSocket
+        AutoclaveSocket,
+        KeySocket
     }
 }

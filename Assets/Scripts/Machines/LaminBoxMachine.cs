@@ -1,34 +1,33 @@
-﻿using Activities;
+﻿using System;
+using Activities;
 using BioEngineerLab.Activities;
 using Containers;
 using Core;
 using Core.Services;
 using Mechanics;
 using UI.Components;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 namespace Machines
 {
-    public class AutoClaveMachine : MonoBehaviour, ISaveable
+    public class LaminBoxMachine : MonoBehaviour, ISaveable
     {
         private class SavedData
         {
             public bool IsOn;
-            public bool IsOpen;
         }
-
-        [FormerlySerializedAs("_button")] [SerializeField] private ButtonComponent _powerButton;
-        [SerializeField] private VRSocketInteractor[] _socketInteractors;
-        [SerializeField] private Transform _door;
 
         private SaveService _saveService;
         private TasksService _tasksService;
         private CraftService _craftService;
-        
-        private bool _isOpen = false;
-        private SavedData _savedData = new SavedData();
 
+        [SerializeField] private GameObject _lights;
+        [SerializeField] private ButtonComponent _lightButton;
+
+        private bool _isOn = false;
+        private SavedData _savedData = new SavedData();
         private void Awake()
         {
             _tasksService = Engine.GetService<TasksService>();
@@ -40,47 +39,53 @@ namespace Machines
         {
             _saveService.LoadSceneStateEvent += OnLoadScene;
             _saveService.SaveSceneStateEvent += OnSaveScene;
+            
+            _lightButton.ClickBtnEvent += OnLButtonClick;
         }
 
         private void OnDisable()
         {
             _saveService.LoadSceneStateEvent -= OnLoadScene;
             _saveService.SaveSceneStateEvent -= OnSaveScene;
+            
+            _lightButton.ClickBtnEvent -= OnLButtonClick;
         }
 
         private void Start()
         {
             OnSaveScene();
-            //Debug.Log(_door.transform.rotation);
         }
 
         private void Update()
         {
-            if (_door.transform.rotation.z > 0.01f && !_isOpen)
+            
+        }
+
+        private void OnLButtonClick()
+        {
+            _lights.SetActive(_lightButton.IsOn);
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Key"))
             {
-                _isOpen = true;
-            }
-            else if (_door.transform.rotation.z < 0.01f && _isOpen)
-            {
-                _isOpen = false;
-                _tasksService.TryCompleteTask(new DoorLabActivity(EDoor.AutoClaveDoor, EDoorActivity.Closed));
+                _isOn = !_isOn;
+                if (_isOn)
+                {
+                    _tasksService.TryCompleteTask(new MachineLabActivity(EMachineActivity.OnStart, EMachine.LaminBoxMachine));
+                }
             }
         }
+
         public void OnSaveScene()
         {
-            _savedData.IsOpen = _isOpen;
+            _savedData.IsOn = _isOn;
         }
 
         public void OnLoadScene()
         {
-            if (_savedData.IsOpen)
-            {
-                _door.transform.rotation = new Quaternion(-0.7f, 0f, 0.5f, 0.7f);
-            }
-            else
-            {
-                _door.transform.rotation = new Quaternion(-0.7f, 0f, 0f, 0.7f);
-            }
+            
         }
     }
 }

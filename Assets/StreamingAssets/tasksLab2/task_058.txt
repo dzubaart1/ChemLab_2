@@ -1,15 +1,16 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
   "Number": 58,
   "Title": "Задание 58",
-  "Description": "Наденьте на пипет-дозатор наконечник.",
+  "Description": "Возьмите специальный ключ, включите ламинарный бокс",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
-    "SocketType": 6,
-    "SocketActivityType": 0,
-    "ActivityType": 3
+    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
+    "MachineActivityType": 1,
+    "MachineType": 16,
+    "ActivityType": 1
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

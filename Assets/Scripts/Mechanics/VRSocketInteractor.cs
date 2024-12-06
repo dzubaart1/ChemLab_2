@@ -15,6 +15,7 @@ namespace Mechanics
         private struct SavedData
         {
             public VRGrabInteractable GrabbedObject;
+            public bool IsStartEnter;
         }
 
         [Header("Configs")]
@@ -23,6 +24,7 @@ namespace Mechanics
         [SerializeField] private bool _isExitTaskSendable;
 
         [SerializeField] private bool _isSubsctanceSocket;
+        [SerializeField] private bool _isStartEnter;
 
         [CanBeNull]
         public Transform SelectedObject
@@ -45,7 +47,7 @@ namespace Mechanics
         
         private bool _isLoadSceneEnter;
         private bool _isLoadSceneExit;
-        private bool _isStartEnter;
+        
 
         protected override void Awake()
         {
@@ -54,7 +56,7 @@ namespace Mechanics
             _tasksService = Engine.GetService<TasksService>();
             _saveService = Engine.GetService<SaveService>();
 
-            _isStartEnter = startingSelectedInteractable != null;
+            _savedData.IsStartEnter = _isStartEnter;
         }
 
         protected override void OnEnable()
@@ -151,6 +153,7 @@ namespace Mechanics
 
         public void OnLoadScene()
         {
+            _isStartEnter = _savedData.IsStartEnter;
             VRGrabInteractable localGrabInteractable = firstInteractableSelected as VRGrabInteractable;
 
             if (_savedData.GrabbedObject == null && localGrabInteractable == null)
