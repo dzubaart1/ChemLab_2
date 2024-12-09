@@ -2,6 +2,8 @@
 using Containers;
 using Core;
 using Core.Services;
+using Crafting;
+using JetBrains.Annotations;
 using Mechanics;
 using UI.Components;
 using UnityEngine;
@@ -22,32 +24,38 @@ namespace Machines
         [SerializeField] private Animator _animator;
         [SerializeField] private VRSocketInteractor _socketInteractor1;
         [SerializeField] private VRSocketInteractor _socketInteractor2;
-
-        private SaveService _saveService;
-        private TasksService _tasksService;
-        private CraftService _craftService;
+        
+        [CanBeNull] private GameManager _gameManager;
         
         private SavedData _savedData = new SavedData();
 
         private void Awake()
         {
-            _tasksService = Engine.GetService<TasksService>();
-            _saveService = Engine.GetService<SaveService>();
-            _craftService = Engine.GetService<CraftService>();
+            _gameManager = GameManager.Instance;
         }
 
         private void OnEnable()
         {
-            _saveService.LoadSceneStateEvent += OnLoadScene;
-            _saveService.SaveSceneStateEvent += OnSaveScene;
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.Game.LoadGameEvent += OnLoadScene;
+            _gameManager.Game.SaveGameEvent += OnSaveScene;
             
             _startButton.ClickBtnEvent += OnStartBtnClicked;
         }
 
         private void OnDisable()
         {
-            _saveService.LoadSceneStateEvent -= OnLoadScene;
-            _saveService.SaveSceneStateEvent -= OnSaveScene;
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.Game.LoadGameEvent += OnLoadScene;
+            _gameManager.Game.SaveGameEvent += OnSaveScene;
             
             _startButton.ClickBtnEvent -= OnStartBtnClicked;
         }
@@ -59,6 +67,11 @@ namespace Machines
         
         private void OnStartBtnClicked()
         {
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
             if (_socketInteractor1.SelectedObject == null | _socketInteractor2.SelectedObject == null)
             {
                 return;
@@ -74,16 +87,28 @@ namespace Machines
             
             if(_startButton.IsOn & _powerButton.IsOn)
             {
-                _tasksService.TryCompleteTask(new MachineLabActivity(EMachineActivity.OnStart, EMachine.CentrifugaMachine));
+                _gameManager.Game.CompleteTask(new MachineLabActivity(EMachineActivity.OnStart, EMachine.CentrifugaMachine));
+                CheckAnimatorStatus();
+                return;
             }
-            else
+
+            if (!CraftTools.TryFindCraft(_gameManager.Game.SOCrafts, labContainer1.GetSubstanceProperties(), ECraft.Split, out SOLabCraft craftContainer1))
             {
-                _craftService.Split(labContainer1);
-                _craftService.Split(labContainer2);
-                
-                _tasksService.TryCompleteTask(new MachineLabActivity(EMachineActivity.OnFinish, EMachine.CentrifugaMachine));
+                _gameManager.Game.CompleteTask(new BadLabActivity());
+                return;
             }
             
+            if (!CraftTools.TryFindCraft(_gameManager.Game.SOCrafts, labContainer2.GetSubstanceProperties(), ECraft.Split, out SOLabCraft craftContainer2))
+            {
+                _gameManager.Game.CompleteTask(new BadLabActivity());
+                return;
+            }
+            
+            CraftTools.ApplyCraft(craftContainer1.LabCraft, labContainer1);
+            CraftTools.ApplyCraft(craftContainer2.LabCraft, labContainer2);
+
+            _gameManager.Game.CompleteTask(new MachineLabActivity(EMachineActivity.OnFinish, EMachine.CentrifugaMachine));
+        
             CheckAnimatorStatus();
         }
 

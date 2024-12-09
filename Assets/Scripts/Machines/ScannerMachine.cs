@@ -1,5 +1,6 @@
 ﻿using Core;
 using Core.Services;
+using JetBrains.Annotations;
 using Mechanics;
 using UI.Components;
 using UnityEngine;
@@ -19,29 +20,43 @@ namespace Machines
         [SerializeField] private GameObject _canvas;
         [SerializeField] private VRSocketInteractor _socketInteractor;
 
-        private SaveService _saveService;
+        [CanBeNull] private GameManager _gameManager;
         
         private SavedData _savedData = new SavedData();
 
         private void Awake()
         {
-            _saveService = Engine.GetService<SaveService>();
+            _gameManager = GameManager.Instance;
         }
 
         private void OnEnable()
         {
-            _saveService.LoadSceneStateEvent += OnLoadScene;
-            _saveService.SaveSceneStateEvent += OnSaveScene;
-
             _button.ClickBtnEvent += OnScannerBtnClicked;
+            
+            _gameManager = GameManager.Instance;
+
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.Game.LoadGameEvent += OnLoadScene;
+            _gameManager.Game.SaveGameEvent += OnSaveScene;
         }
 
         private void OnDisable()
         {
-            _saveService.LoadSceneStateEvent -= OnLoadScene;
-            _saveService.SaveSceneStateEvent -= OnSaveScene;
-            
             _button.ClickBtnEvent -= OnScannerBtnClicked;
+            
+            _gameManager = GameManager.Instance;
+
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.Game.LoadGameEvent -= OnLoadScene;
+            _gameManager.Game.SaveGameEvent -= OnSaveScene;
         }
 
         private void Start()

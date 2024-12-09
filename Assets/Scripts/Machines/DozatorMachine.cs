@@ -2,6 +2,7 @@ using BioEngineerLab.Tasks.SideEffects;
 using Containers;
 using Core;
 using Core.Services;
+using JetBrains.Annotations;
 using UnityEngine;
 using TMPro;
 
@@ -10,24 +11,33 @@ namespace BioEngineerLab.Machines
     public class DozatorMachine : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI _text;
-        
-        private TasksService _tasksService;
-        private LabContainer _labContainer;
+        [SerializeField] private LabContainer _labContainer;
 
+        [CanBeNull] private GameManager _gameManager;
+        
         private void Awake()
         {
-            _tasksService = Engine.GetService<TasksService>();
-            _labContainer = GetComponent<LabContainer>();
+            _gameManager = GameManager.Instance;
         }
 
         private void OnEnable()
         {
-            _tasksService.SideEffectActivatedEvent += OnActivatedSideEffect;
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.Game.SideEffectActivatedEvent += OnActivatedSideEffect;
         }
 
         private void OnDisable()
         {
-            _tasksService.SideEffectActivatedEvent -= OnActivatedSideEffect;
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.Game.SideEffectActivatedEvent -= OnActivatedSideEffect;
         }
         
         private void OnActivatedSideEffect(LabSideEffect sideEffect)

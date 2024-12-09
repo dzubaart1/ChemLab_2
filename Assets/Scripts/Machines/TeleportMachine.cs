@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using Activities;
+﻿using System.Collections.Generic;
 using BioEngineerLab.Activities;
 using Containers;
 using Core;
-using Gameplay;
-using Core.Services;
 using UnityEngine;
 using Mechanics;
-using UnityEngine.PlayerLoop;
 using UnityEngine.XR.Interaction.Toolkit;
 using BioEngineerLab.Tasks.SideEffects;
+using JetBrains.Annotations;
 
 namespace BioEngineerLab.Machines
 {
@@ -21,40 +17,50 @@ namespace BioEngineerLab.Machines
         {
             public List<VRGrabInteractable> HiddenGameObjects = new List<VRGrabInteractable>();
         }
-
-        private SaveService _saveService;
-        private TasksService _tasksService;
         
-        private List<VRGrabInteractable> _hiddenGameObjects = new List<VRGrabInteractable>();
-        private SavedData _savedData = new SavedData();
-
         [SerializeField] private VRSocketInteractor _socketInteractor;
         [SerializeField] private ESocket _socketType;
         [SerializeField] private EMachine _machineType;
         [SerializeField] private GameObject _docObject;
 
+        [CanBeNull] private GameManager _gameManager;
+        
+        private List<VRGrabInteractable> _hiddenGameObjects = new List<VRGrabInteractable>();
+        private SavedData _savedData = new SavedData();
+
         private void Awake()
         {
-            _tasksService = Engine.GetService<TasksService>();
-            _saveService = Engine.GetService<SaveService>();
+            _gameManager = GameManager.Instance;
         }
 
         private void OnEnable()
         {
-            _saveService.LoadSceneStateEvent += OnLoadScene;
-            _saveService.SaveSceneStateEvent += OnSaveScene;
-            _tasksService.SideEffectActivatedEvent += OnActivatedSideEffect;
-            
             _socketInteractor.selectEntered.AddListener(OnEnter);
+            
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.Game.LoadGameEvent += OnLoadScene;
+            _gameManager.Game.SaveGameEvent += OnSaveScene;
+            
+            _gameManager.Game.SideEffectActivatedEvent += OnActivatedSideEffect;
         }
 
         private void OnDisable()
         {
-            _saveService.LoadSceneStateEvent -= OnLoadScene;
-            _saveService.SaveSceneStateEvent -= OnSaveScene;
-            _tasksService.SideEffectActivatedEvent -= OnActivatedSideEffect;
-            
             _socketInteractor.selectEntered.RemoveListener(OnEnter);
+            
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.Game.LoadGameEvent -= OnLoadScene;
+            _gameManager.Game.SaveGameEvent -= OnSaveScene;
+            
+            _gameManager.Game.SideEffectActivatedEvent -= OnActivatedSideEffect;
         }
 
         private void Start()
@@ -64,6 +70,16 @@ namespace BioEngineerLab.Machines
 
         private void OnEnter(SelectEnterEventArgs args)
         {
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            if (_socketInteractor.SelectedObject == null)
+            {
+                return;
+            }
+            
             VRGrabInteractable interactable = _socketInteractor.SelectedObject.GetComponent<VRGrabInteractable>();
 
             if (interactable == null)
@@ -79,7 +95,7 @@ namespace BioEngineerLab.Machines
                 interactable.gameObject.SetActive(false);
                 _hiddenGameObjects.Add(interactable);
 
-                _tasksService.TryCompleteTask(new SocketSubstancesLabActivity(_socketType, ESocketActivity.Enter,
+                _gameManager.Game.CompleteTask(new SocketSubstancesLabActivity(_socketType, ESocketActivity.Enter,
                     labContainers[0].GetSubstanceProperties()));
             }
             else
@@ -89,7 +105,7 @@ namespace BioEngineerLab.Machines
                 interactable.gameObject.SetActive(false);
                 _hiddenGameObjects.Add(interactable);
 
-                _tasksService.TryCompleteTask(new SocketSubstancesLabActivity(_socketType, ESocketActivity.Enter,
+                _gameManager.Game.CompleteTask(new SocketSubstancesLabActivity(_socketType, ESocketActivity.Enter,
                     labContainer.GetSubstanceProperties()));
             }
         }

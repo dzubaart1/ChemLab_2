@@ -50,7 +50,8 @@ namespace Core
         AnchorActivity,
         CraftSubstanceActivity,
         ButtonClickedActivity,
-        DoorActivity
+        DoorActivity,
+        BadActivity
     }
     
     public enum EContainer : byte

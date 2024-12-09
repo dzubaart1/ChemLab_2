@@ -1,36 +1,41 @@
 ﻿using BioEngineerLab.Tasks;
 using BioEngineerLab.Tasks.SideEffects;
 using Core;
-using Core.Services;
+using JetBrains.Annotations;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Containers
 {
-    [RequireComponent(typeof(LabContainer))]
     public class ReagentsLabContainer : MonoBehaviour
     {
-        [FormerlySerializedAs("_reagentsSubstanceProperty")] [SerializeField] private SOLabSubstanceProperty reagentsLabSubstanceProperty;
+        [SerializeField] private SOLabSubstanceProperty reagentsLabSubstanceProperty;
+        [SerializeField] private LabContainer _labContainer;
         
-        private TasksService _tasksService;
-
-        private LabContainer _labContainer;
+        [CanBeNull] private GameManager _gameManager;
 
         private void Awake()
         {
-            _tasksService = Engine.GetService<TasksService>();
-
-            _labContainer = GetComponent<LabContainer>();
+            _gameManager = GameManager.Instance;
         }
 
         private void OnEnable()
         {
-            _tasksService.SideEffectActivatedEvent += OnActivatedSideEffect;
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.Game.SideEffectActivatedEvent += OnActivatedSideEffect;
         }
 
         private void OnDisable()
         {
-            _tasksService.SideEffectActivatedEvent -= OnActivatedSideEffect;
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.Game.SideEffectActivatedEvent -= OnActivatedSideEffect;
         }
 
         private void OnActivatedSideEffect(LabSideEffect sideEffect)

@@ -1,5 +1,5 @@
 ﻿using Core;
-using Core.Services;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,23 +9,31 @@ namespace UI.TabletUI.Panels
     {
         [SerializeField] private Button _loadPrevSceneStateBtn;
 
-        private SaveService _saveService;
+        [CanBeNull] private GameManager _gameManager;
         
         private void Awake()
         {
-            _saveService = Engine.GetService<SaveService>();
-            
+            _gameManager = GameManager.Instance;
+        }
+
+        private void OnEnable()
+        {
             _loadPrevSceneStateBtn.onClick.AddListener(OnLoadPrevStateBtn);
         }
 
-        private void OnDestroy()
+        private void OnDisable()
         {
             _loadPrevSceneStateBtn.onClick.RemoveListener(OnLoadPrevStateBtn);
         }
 
         private void OnLoadPrevStateBtn()
         {
-            _saveService.LoadSceneState();
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.LoadGame();
         }
     }
 }

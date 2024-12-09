@@ -1,6 +1,7 @@
 using BioEngineerLab.Tasks.SideEffects;
 using Core;
 using Core.Services;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Gameplay
@@ -15,21 +16,31 @@ namespace Gameplay
         [SerializeField] private EMachine _machine;
         [SerializeField] private GameObject _docPrefab;
 
-        private TasksService _tasksService;
+        [CanBeNull] private GameManager _gameManager;
 
         private void Awake()
         {
-            _tasksService = Engine.GetService<TasksService>();
+            _gameManager = GameManager.Instance;
         }
 
         private void OnEnable()
         {
-            _tasksService.SideEffectActivatedEvent += OnSideEffectActivated;
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.Game.SideEffectActivatedEvent += OnSideEffectActivated;
         }
 
         private void OnDisable()
         {
-            _tasksService.SideEffectActivatedEvent -= OnSideEffectActivated;
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.Game.SideEffectActivatedEvent -= OnSideEffectActivated;
         }
 
         private void OnSideEffectActivated(LabSideEffect labSideEffect)

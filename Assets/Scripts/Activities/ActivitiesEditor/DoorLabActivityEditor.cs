@@ -5,9 +5,9 @@ using UnityEditor;
 
 namespace Activities.ActivitiesEditor
 {
-    #if UNITY_EDITOR
     public class DoorLabActivityEditor : EditorActivity
     {
+#if UNITY_EDITOR
         [CanBeNull] private DoorLabActivity _doorLabActivity;
         
         public DoorLabActivityEditor(LabActivity labActivity)
@@ -34,6 +34,6 @@ namespace Activities.ActivitiesEditor
         {
             return EActivity.DoorActivity;
         }
+#endif
     }
-    #endif
 }

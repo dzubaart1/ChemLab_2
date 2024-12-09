@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Core;
 using Core.Services;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace UI
@@ -20,23 +21,41 @@ namespace UI
         [SerializeField] private BasePanel<T> _firstShowPanel;
         [SerializeField] private List<BasePanel<T>> _panelsList;
 
-        private SaveService _saveService;
+        [CanBeNull] private GameManager _gameManager;
 
-        private SavedData _savedData;
+        private SavedData _savedData = new SavedData();
 
         private void Awake()
         {
-            _saveService = Engine.GetService<SaveService>();
-            _saveService.SaveSceneStateEvent += OnSaveScene;
-            _saveService.LoadSceneStateEvent += OnLoadScene;
+            _gameManager = GameManager.Instance;
+        }
 
-            _savedData = new SavedData();
+        private void OnEnable()
+        {
+            if (_gameManager == null)
+            {
+                return;
+            }
             
-            CurrentPanel = _firstShowPanel;
+            _gameManager.Game.SaveGameEvent += OnSaveScene;
+            _gameManager.Game.LoadGameEvent += OnLoadScene;
+        }
+
+        private void OnDisable()
+        {
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.Game.SaveGameEvent -= OnSaveScene;
+            _gameManager.Game.LoadGameEvent -= OnLoadScene;
         }
 
         private void Start()
         {
+            CurrentPanel = _firstShowPanel;
+            
             foreach (var panel in _panelsList)
             {
                 panel.HidePanel();

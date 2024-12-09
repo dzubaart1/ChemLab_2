@@ -1,5 +1,5 @@
 ﻿using Core;
-using Core.Services;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -13,32 +13,48 @@ namespace Mechanics
             public Quaternion Rotation;
         }
 
-        private SaveService _saveService;
+        [CanBeNull] private GameManager _gameManager;
 
-        private SavedData _savedData;
+        private SavedData _savedData = new SavedData();
 
         protected override void Awake()
         {
             base.Awake();
 
-            _saveService = Engine.GetService<SaveService>();
-            _saveService.SaveSceneStateEvent += OnSaveScene;
-            _saveService.LoadSceneStateEvent += OnLoadScene;
+            _gameManager = GameManager.Instance;
+        }
 
-            _savedData = new SavedData();
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.Game.SaveGameEvent += OnSaveScene;
+            _gameManager.Game.LoadGameEvent += OnLoadScene;
+        }
+
+        protected override void OnDisable()
+        {
+            base.OnDisable();
+            
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.Game.SaveGameEvent -= OnSaveScene;
+            _gameManager.Game.LoadGameEvent -= OnLoadScene;
         }
 
         private void Start()
         {
             OnSaveScene();
         }
-
-        protected override void OnDestroy()
-        {
-            _saveService.SaveSceneStateEvent -= OnSaveScene;
-            _saveService.LoadSceneStateEvent -= OnLoadScene;
-        }
-
+        
         public void OnSaveScene()
         {
             _savedData.Position = transform.position;

@@ -5,9 +5,9 @@ using UnityEditor;
 
 namespace Activities.ActivitiesEditor
 {
-    #if UNITY_EDITOR
     public class MachineLabActivityEditor : EditorActivity
     {
+#if UNITY_EDITOR
         [CanBeNull] private MachineLabActivity _machineLabActivity;
         
         public MachineLabActivityEditor(LabActivity labActivity)
@@ -34,6 +34,6 @@ namespace Activities.ActivitiesEditor
         {
             return EActivity.MachineActivity;
         }
+#endif
     }
-    #endif
 }

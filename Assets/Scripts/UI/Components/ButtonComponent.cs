@@ -1,7 +1,7 @@
 ﻿using System;
 using BioEngineerLab.Activities;
 using Core;
-using Core.Services;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,14 +21,18 @@ namespace UI.Components
         [SerializeField] private Sprite _onSprite;
         [SerializeField] private Sprite _offSprite;
         [SerializeField] private Button _button;
-        
+
         public bool IsOn { get; private set; }
 
-        private TasksService _tasksService;
-        
+        [CanBeNull] private GameManager _gameManager;
+
+        private void Awake()
+        {
+            _gameManager = GameManager.Instance;
+        }
+
         private void Start()
         {
-            _tasksService = Engine.GetService<TasksService>();
             IsOn = _isStartOn;
         }
         
@@ -60,13 +64,18 @@ namespace UI.Components
 
         private void ChangeStatus()
         {
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
             _btnImage.sprite = IsOn ? _onSprite : _offSprite;
             
             ClickBtnEvent?.Invoke();
             
             if (_isTaskSendable)
             {
-                _tasksService.TryCompleteTask(new ButtonClickedActivity(_buttonType));
+                _gameManager.CompleteTask(new ButtonClickedActivity(_buttonType));
             }
         }
     }

@@ -1,6 +1,6 @@
 using BioEngineerLab.Tasks;
 using Core;
-using Core.Services;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace UI.TabletUI
@@ -8,24 +8,37 @@ namespace UI.TabletUI
     [RequireComponent(typeof(TabletPanelSwitcher))]
     public class TabletUI : MonoBehaviour
     {
-        private TabletPanelSwitcher _panelSwitcher;
-        private TasksService _tasksService;
+        [SerializeField] private TabletPanelSwitcher _panelSwitcher;
+        
+        [CanBeNull] private GameManager _gameManager;
 
         private void Awake()
         {
-            _panelSwitcher = GetComponent<TabletPanelSwitcher>();
-            
-            _tasksService = Engine.GetService<TasksService>();
-            _tasksService.TaskFailedEvent += OnTaskFailed;
-            _tasksService.TaskUpdatedEvent += OnTaskUpdated;
-            _tasksService.EndTasksListEvent += OnEndTasksList;
+            _gameManager = GameManager.Instance;
         }
 
-        private void OnDestroy()
+        private void OnEnable()
         {
-            _tasksService.TaskFailedEvent -= OnTaskFailed;
-            _tasksService.TaskUpdatedEvent -= OnTaskUpdated;
-            _tasksService.EndTasksListEvent -= OnEndTasksList;
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.Game.TaskFailedEvent += OnTaskFailed;
+            _gameManager.Game.TaskUpdatedEvent += OnTaskUpdated;
+            _gameManager.Game.FinishGameEvent += OnFinishGame;
+        }
+
+        private void OnDisable()
+        {
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.Game.TaskFailedEvent -= OnTaskFailed;
+            _gameManager.Game.TaskUpdatedEvent -= OnTaskUpdated;
+            _gameManager.Game.FinishGameEvent -= OnFinishGame;
         }
 
         private void OnTaskFailed()
@@ -33,7 +46,7 @@ namespace UI.TabletUI
             _panelSwitcher.SwitchPanel(TabletPanelsType.TaskFailedPanel);
         }
 
-        private void OnEndTasksList()
+        private void OnFinishGame()
         {
             _panelSwitcher.SwitchPanel(TabletPanelsType.EndGamePanel);
         }

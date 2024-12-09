@@ -1,5 +1,6 @@
 using Core;
 using Core.Services;
+using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,41 +10,48 @@ namespace UI.TabletUI.Panels
     public class InfoTabletPanel : BasePanel<TabletPanelsType>
     {
         [SerializeField] private TextMeshProUGUI _infoText;
-
         [SerializeField] private Button _mainPanelBtn;
 
-        private TasksService _tasksService;
-
+        [CanBeNull] private GameManager _gameManager;
+        
+        private void Awake()
+        {
+            _gameManager = GameManager.Instance;
+        }
+        
         private void OnEnable()
         {
-            if (_tasksService.CurrentTask == null)
+            if (_gameManager == null)
             {
                 return;
             }
-        
-            _infoText.text = string.IsNullOrWhiteSpace(_tasksService.CurrentTask.Warning) ? " " :_tasksService.CurrentTask.Warning;
-        }
-
-        private void Awake()
-        {
-            _tasksService = Engine.GetService<TasksService>();
-
+            
+            if (_gameManager.Game.CurrentTask != null)
+            {
+                _infoText.text = string.IsNullOrWhiteSpace(_gameManager.Game.CurrentTask.Warning) ? " " :_gameManager.Game.CurrentTask.Warning;
+            }
+            
             _mainPanelBtn.onClick.AddListener(OnClickMainPanelBtn);
         }
 
-        private void OnDestroy()
+        private void OnDisable()
         {
             _mainPanelBtn.onClick.RemoveListener(OnClickMainPanelBtn);
         }
 
         private void OnClickMainPanelBtn()
         {
-            if (_tasksService.CurrentTask == null)
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            if (_gameManager.Game.CurrentTask == null)
             {
                 return;
             }
         
-            switch (_tasksService.CurrentTask.LabActivity.ActivityType)
+            switch (_gameManager.Game.CurrentTask.LabActivity.ActivityType)
             {
                 default:
                     SwitchPanel(TabletPanelsType.MainPanel);

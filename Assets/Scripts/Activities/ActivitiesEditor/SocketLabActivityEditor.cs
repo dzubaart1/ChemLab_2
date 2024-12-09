@@ -5,9 +5,9 @@ using UnityEditor;
 
 namespace Activities.ActivitiesEditor
 {
-    #if UNITY_EDITOR
     public class SocketLabActivityEditor : EditorActivity
     {
+#if UNITY_EDITOR
         [CanBeNull] private SocketLabActivity _socketLabActivity;
         
         public SocketLabActivityEditor(LabActivity labActivity)
@@ -34,6 +34,6 @@ namespace Activities.ActivitiesEditor
         {
             return EActivity.SocketActivity;
         }
+#endif
     }
-    #endif
 }

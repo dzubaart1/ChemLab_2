@@ -1,12 +1,12 @@
-﻿using Activities;
-using BioEngineerLab.Activities;
+﻿using BioEngineerLab.Activities;
 using Containers;
 using Core;
 using Core.Services;
+using Crafting;
+using JetBrains.Annotations;
 using Mechanics;
 using UI.Components;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Machines
 {
@@ -19,36 +19,42 @@ namespace Machines
             public bool IsOpen;
         }
 
-        [FormerlySerializedAs("_button")] [SerializeField] private ButtonComponent _dryButton;
+        [SerializeField] private ButtonComponent _dryButton;
         [SerializeField] private VRSocketInteractor _socketInteractor;
         [SerializeField] private Transform _door;
 
-        private SaveService _saveService;
-        private TasksService _tasksService;
-        private CraftService _craftService;
+        [CanBeNull] private GameManager _gameManager;
         
         private bool _isOpen = false;
         private SavedData _savedData = new SavedData();
 
         private void Awake()
         {
-            _tasksService = Engine.GetService<TasksService>();
-            _saveService = Engine.GetService<SaveService>();
-            _craftService = Engine.GetService<CraftService>();
+            _gameManager = GameManager.Instance;
         }
 
         private void OnEnable()
         {
-            _saveService.LoadSceneStateEvent += OnLoadScene;
-            _saveService.SaveSceneStateEvent += OnSaveScene;
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.Game.LoadGameEvent += OnLoadScene;
+            _gameManager.Game.SaveGameEvent += OnSaveScene;
 
             _dryButton.ClickBtnEvent += OnClickDryBtn;
         }
 
         private void OnDisable()
         {
-            _saveService.LoadSceneStateEvent -= OnLoadScene;
-            _saveService.SaveSceneStateEvent -= OnSaveScene;
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.Game.LoadGameEvent += OnLoadScene;
+            _gameManager.Game.SaveGameEvent += OnSaveScene;
             
             _dryButton.ClickBtnEvent -= OnClickDryBtn;
         }
@@ -60,6 +66,11 @@ namespace Machines
 
         private void Update()
         {
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
             if (_door.transform.rotation.z < 0.49f && !_isOpen)
             {
                 _isOpen = true;
@@ -67,12 +78,17 @@ namespace Machines
             else if (_door.transform.rotation.z > 0.49f && _isOpen)
             {
                 _isOpen = false;
-                _tasksService.TryCompleteTask(new DoorLabActivity(EDoor.DryMachineDoor, EDoorActivity.Closed));
+                _gameManager.Game.CompleteTask(new DoorLabActivity(EDoor.DryMachineDoor, EDoorActivity.Closed));
             }
         }
 
         private void OnClickDryBtn()
         {
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
             if (_socketInteractor.SelectedObject == null)
             {
                 return;
@@ -90,8 +106,15 @@ namespace Machines
                 return;
             }
             
-            _craftService.Dry(container);
+            if (!CraftTools.TryFindCraft(_gameManager.Game.SOCrafts, container.GetSubstanceProperties(), ECraft.Dry, out SOLabCraft craftContainer))
+            {
+                _gameManager.Game.CompleteTask(new BadLabActivity());
+                return;
+            }
+            
+            CraftTools.ApplyCraft(craftContainer.LabCraft, container);
         }
+        
         public void OnSaveScene()
         {
             _savedData.IsOn = _dryButton;

@@ -1,5 +1,5 @@
 using Core;
-using Core.Services;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,27 +8,31 @@ namespace UI.TabletUI.Panels
     public class HintTabletPanel : BasePanel<TabletPanelsType>
     {
         [SerializeField] private Image _hintImage;
-
         [SerializeField] private Button _mainPanelBtn;
 
-        private TasksService _tasksService;
-
-        private void OnEnable()
-        {
-            //if (_tasksService.GetCurrentTask().HasHintSprite)
-            //{
-            //    _hintImage.sprite = _tasksService.GetCurrentTask().HintSprite;
-            //}
-        }
-    
+        [CanBeNull] private GameManager _gameManager;
+        
         private void Awake()
         {
-            _tasksService = Engine.GetService<TasksService>();
+            _gameManager = GameManager.Instance;
+        }
         
+        private void OnEnable()
+        {
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            /*if (_tasksService.CurrentTask.HasHintSprite)
+            {
+                _hintImage.sprite = _tasksService.GetCurrentTask().HintSprite;
+            }*/
+            
             _mainPanelBtn.onClick.AddListener(OnClickMainPanelBtn);
         }
 
-        private void OnDestroy()
+        private void OnDisable()
         {
             _mainPanelBtn.onClick.RemoveListener(OnClickMainPanelBtn);
         }

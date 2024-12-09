@@ -1120,7 +1120,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0412\u0435\u0440\u043D\u0443\u0442\u044C\u0441\u044F"
+  m_Text: "\u041D\u0430\u0447\u0430\u0442\u044C"
 --- !u!1 &2191280748460392646
 GameObject:
   m_ObjectHideFlags: 0
@@ -3455,7 +3455,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &2191280749655601265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3497,16 +3497,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd1713221cd2f10428e6fc242e1c2c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startPanel: {fileID: 2191280749029624484}
-  _lab1Panel: {fileID: 168678354841014413}
-  _lab2Panel: {fileID: 1496219143219719708}
+  _startPanel: {fileID: 2191280749029624480}
+  _lab1Panel: {fileID: 874188978595030734}
+  _lab2Panel: {fileID: 5005311103994567366}
   _rulesPanels:
-  - {fileID: 2191280750217553377}
-  - {fileID: 2191280750113802795}
-  - {fileID: 2191280750148061907}
-  - {fileID: 2191280749937763675}
-  - {fileID: 2191280748460392646}
-  - {fileID: 2191280749914931454}
+  - {fileID: 2191280750217553372}
+  - {fileID: 2191280750113802790}
+  - {fileID: 2191280750148061902}
+  - {fileID: 2191280749937763670}
+  - {fileID: 2191280748460392641}
+  - {fileID: 2191280749914931449}
+  _defaultPanel: {fileID: 0}
 --- !u!114 &5002437020179214404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3857,8 +3858,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2191280750132043543}
-  - {fileID: 2191280749150992639}
   - {fileID: 2191280750215919764}
+  - {fileID: 2191280749150992639}
   m_Father: {fileID: 2191280749655601260}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4590,7 +4591,7 @@ GameObject:
   - component: {fileID: 2191280750215919766}
   - component: {fileID: 2191280750215919765}
   m_Layer: 5
-  m_Name: ReturnBtn
+  m_Name: StartBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

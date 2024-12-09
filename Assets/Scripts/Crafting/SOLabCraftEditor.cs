@@ -10,8 +10,13 @@ namespace Crafting
 {
 #if UNITY_EDITOR
     [CustomEditor(typeof(SOLabCraft))]
-    public class SOLabCraftEditor : Editor
+#endif
+    public class SOLabCraftEditor
+#if UNITY_EDITOR
+        : Editor
+#endif
     {
+#if UNITY_EDITOR
         private SOLabCraft _soLabCraft;
         private SerializedObject _serializedObject;
 
@@ -20,7 +25,7 @@ namespace Crafting
             _soLabCraft = (SOLabCraft)target;
             _serializedObject = new SerializedObject(target);
         }
-
+        
         public override void OnInspectorGUI()
         {
             _serializedObject.Update();
@@ -92,6 +97,6 @@ namespace Crafting
 
             return new LabSubstanceProperty(labSubstanceProperty.LabSubstanceProperty);
         }
-    }
 #endif
+    }
 }

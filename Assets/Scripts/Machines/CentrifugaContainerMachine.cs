@@ -1,6 +1,5 @@
-﻿using Activities;
-using Core;
-using Core.Services;
+﻿using Core;
+using JetBrains.Annotations;
 using UI.Components;
 using UnityEngine;
 
@@ -13,34 +12,49 @@ namespace Machines
         {
             public bool IsOpen;
         }
-
+        
         [SerializeField] private ButtonComponent _button;
+        
+        [CanBeNull] private Animator _animator;
+        public Animator Animator
+        {
+            get
+            {
+                return _animator ??= GetComponent<Animator>();
+            }
+        }
 
-        private SaveService _saveService;
-        private TasksService _tasksService;
-        private Animator _animator;
+        [CanBeNull] private GameManager _gameManager;
         
         private SavedData _savedData = new SavedData();
 
         private void Awake()
         {
-            _tasksService = Engine.GetService<TasksService>();
-            _saveService = Engine.GetService<SaveService>();
-            _animator = GetComponent<Animator>();
+            _gameManager = GameManager.Instance;
         }
 
         private void OnEnable()
         {
-            _saveService.LoadSceneStateEvent += OnLoadScene;
-            _saveService.SaveSceneStateEvent += OnSaveScene;
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.Game.LoadGameEvent += OnLoadScene;
+            _gameManager.Game.SaveGameEvent += OnSaveScene;
 
             _button.ClickBtnEvent += OnClickButton;
         }
 
         private void OnDisable()
         {
-            _saveService.LoadSceneStateEvent -= OnLoadScene;
-            _saveService.SaveSceneStateEvent -= OnSaveScene;
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.Game.LoadGameEvent -= OnLoadScene;
+            _gameManager.Game.SaveGameEvent -= OnSaveScene;
             
             _button.ClickBtnEvent -= OnClickButton;
         }
@@ -54,11 +68,11 @@ namespace Machines
         {
             if (_button.IsOn)
             {
-                _animator.Play("Open");
+                Animator.Play("Open");
             }
             else
             {
-                _animator.Play("Close");
+                Animator.Play("Close");
             }
         }
         public void OnSaveScene()
@@ -71,12 +85,12 @@ namespace Machines
             if (_savedData.IsOpen & _button.IsOn)
             {
                 _button.SetIsOn(_savedData.IsOpen);
-                _animator.Play("Open");
+                Animator.Play("Open");
             }
             if(!_savedData.IsOpen & _button.IsOn)
             {
                 _button.SetIsOn(_savedData.IsOpen);
-                _animator.Play("Close");
+                Animator.Play("Close");
             }
         }
     }

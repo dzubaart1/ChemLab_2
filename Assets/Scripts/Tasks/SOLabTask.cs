@@ -17,7 +17,7 @@ namespace BioEngineerLab.Tasks
 
         public void LoadHandlerByTaskNumber()
         {
-            LabTask res = LabTasksDatabase.GetInstance().ReadWhere(task => task.Number == LabTask.Number, LabTask.Lab).FirstOrDefault();
+            LabTask res = LabTasksDatabase.ReadWhere(task => task.Number == LabTask.Number, LabTask.Lab).FirstOrDefault();
 
             if (res != null)
             {
@@ -27,7 +27,7 @@ namespace BioEngineerLab.Tasks
         
         public void SaveHandlerByTaskNumber()
         {
-            LabTasksDatabase.GetInstance().Save(LabTask);
+            LabTasksDatabase.Save(LabTask);
         }
 
         public List<EditorSideEffect> GetSideEffects()
@@ -70,6 +70,7 @@ namespace BioEngineerLab.Tasks
         [CanBeNull]
         private EditorActivity GetEditorActivity(LabActivity labActivity)
         {
+#if UNITY_EDITOR
             switch (labActivity.ActivityType)
             {
                 case EActivity.AnchorActivity:
@@ -89,6 +90,7 @@ namespace BioEngineerLab.Tasks
                 case EActivity.DoorActivity:
                     return new DoorLabActivityEditor(labActivity);
             }
+#endif
 
             return null;
         }
@@ -96,6 +98,7 @@ namespace BioEngineerLab.Tasks
         [CanBeNull]
         private EditorSideEffect GetEditorSideEffect(LabSideEffect labSideEffect)
         {
+#if UNITY_EDITOR
             switch (labSideEffect.SideEffectType)
             {
                 case ESideEffect.AddReagentsSideEffect:
@@ -105,7 +108,7 @@ namespace BioEngineerLab.Tasks
                 case ESideEffect.SpawnDocSideEffect:
                     return new SpawnDocSideEffectEditor(labSideEffect);
             }
-
+#endif
             return null;
         }
     }

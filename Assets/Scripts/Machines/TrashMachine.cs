@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using Activities;
 using BioEngineerLab.Activities;
 using Core;
-using Core.Services;
+using JetBrains.Annotations;
 using Mechanics;
 using UnityEngine;
 
@@ -16,28 +15,36 @@ namespace Machines
             public List<VRGrabInteractable> HiddenGameObjects = new List<VRGrabInteractable>();
         }
 
-        private SaveService _saveService;
-        private TasksService _tasksService;
+        [CanBeNull] private GameManager _gameManager;
         
         private List<VRGrabInteractable> _hiddenGameObjects = new List<VRGrabInteractable>();
         private SavedData _savedData = new SavedData();
 
         private void Awake()
         {
-            _tasksService = Engine.GetService<TasksService>();
-            _saveService = Engine.GetService<SaveService>();
+            _gameManager = GameManager.Instance;
         }
 
         private void OnEnable()
         {
-            _saveService.LoadSceneStateEvent += OnLoadScene;
-            _saveService.SaveSceneStateEvent += OnSaveScene;
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.Game.LoadGameEvent += OnLoadScene;
+            _gameManager.Game.SaveGameEvent += OnSaveScene;
         }
 
         private void OnDisable()
         {
-            _saveService.LoadSceneStateEvent -= OnLoadScene;
-            _saveService.SaveSceneStateEvent -= OnSaveScene;
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.Game.LoadGameEvent -= OnLoadScene;
+            _gameManager.Game.SaveGameEvent -= OnSaveScene;
         }
 
         private void Start()
@@ -47,6 +54,11 @@ namespace Machines
 
         private void OnTriggerEnter(Collider other)
         {
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
             VRGrabInteractable interactable = other.GetComponentInParent<VRGrabInteractable>();
 
             if (interactable == null)
@@ -57,7 +69,7 @@ namespace Machines
             interactable.gameObject.SetActive(false);
             _hiddenGameObjects.Add(interactable);
             
-            _tasksService.TryCompleteTask(new MachineLabActivity(EMachineActivity.OnEnter, EMachine.TrashMachine));
+            _gameManager.CompleteTask(new MachineLabActivity(EMachineActivity.OnEnter, EMachine.TrashMachine));
         }
 
         public void OnSaveScene()

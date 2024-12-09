@@ -6,8 +6,13 @@ namespace BioEngineerLab.Tasks
 {
 #if UNITY_EDITOR
     [CustomEditor(typeof(SOLabSubstanceProperty))]
-    public class SOLabSubstancePropertyEditor : Editor
+#endif
+    public class SOLabSubstancePropertyEditor
+#if UNITY_EDITOR
+        : Editor
+#endif
     {
+#if UNITY_EDITOR
         private SOLabSubstanceProperty _soSubstanceProperty;
         private SerializedObject _serializedObject;
         
@@ -40,6 +45,6 @@ namespace BioEngineerLab.Tasks
             _serializedObject.ApplyModifiedProperties();
             EditorUtility.SetDirty(_soSubstanceProperty);
         }
-    }
 #endif
+    }
 }

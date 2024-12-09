@@ -1,12 +1,11 @@
 ﻿using BioEngineerLab.Activities;
 using Core;
-using Core.Services;
 using Gameplay;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Containers
 {
-    [RequireComponent(typeof(LabContainer))]
     public class AnchorLabContainer : MonoBehaviour, ISaveable
     {
         private struct SavedData
@@ -15,24 +14,40 @@ namespace Containers
             public bool IsAnimating;
         }
         
+        [SerializeField] private LabContainer _labContainer;
+        
         private Anchor Anchor { get; set; }
         
-        private SaveService _saveService;
-        private TasksService _tasksService;
+        [CanBeNull] private GameManager _gameManager;
         
         private SavedData _savedData = new SavedData();
-        private LabContainer _labContainer;
         private bool _isTaskSendable;
 
         private void Awake()
         {
-            _labContainer = GetComponent<LabContainer>();
-            
-            _saveService = Engine.GetService<SaveService>();
-            _saveService.LoadSceneStateEvent += OnLoadScene;
-            _saveService.SaveSceneStateEvent += OnSaveScene;
+            _gameManager = GameManager.Instance;
+        }
 
-            _tasksService = Engine.GetService<TasksService>();
+        private void OnEnable()
+        {
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.Game.LoadGameEvent += OnLoadScene;
+            _gameManager.Game.SaveGameEvent += OnSaveScene;
+        }
+
+        private void OnDisable()
+        {
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.Game.LoadGameEvent -= OnLoadScene;
+            _gameManager.Game.SaveGameEvent -= OnSaveScene;
         }
 
         private void Start()
@@ -79,6 +94,11 @@ namespace Containers
             {
                 return;
             }
+
+            if (_gameManager == null)
+            {
+                return;
+            }
             
             Anchor = anchor;
             Anchor.TogglePhysics(false);
@@ -91,7 +111,7 @@ namespace Containers
                 return;
             }
             
-            _tasksService.TryCompleteTask(new AnchorLabActivity(_labContainer.ContainerType));
+            _gameManager.Game.CompleteTask(new AnchorLabActivity(_labContainer.ContainerType));
         }
 
         public void AnimateAnchor(bool value)

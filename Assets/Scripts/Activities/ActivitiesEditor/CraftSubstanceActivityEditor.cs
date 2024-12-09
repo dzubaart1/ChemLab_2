@@ -8,9 +8,9 @@ using UnityEditor;
 
 namespace Activities.ActivitiesEditor
 {
-    #if UNITY_EDITOR
     public class CraftSubstanceActivityEditor : EditorActivity
     {
+#if UNITY_EDITOR
         [CanBeNull] private CraftSubstanceLabActivity _craftSubstanceActivity;
         private SOLabCraft _soLabCraft;
         
@@ -47,6 +47,6 @@ namespace Activities.ActivitiesEditor
         {
             return EActivity.CraftSubstanceActivity;
         }
+#endif
     }
-    #endif
 }

@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using Activities;
 using BioEngineerLab.Activities;
 using Containers;
 using Core;
@@ -39,40 +38,48 @@ namespace Mechanics
                 return firstInteractableSelected.transform;
             }
         }
-        
-        private TasksService _tasksService;
-        private SaveService _saveService;
+
+        [CanBeNull] private GameManager _gameManager;
 
         private SavedData _savedData = new SavedData();
         
         private bool _isLoadSceneEnter;
         private bool _isLoadSceneExit;
-        
+
 
         protected override void Awake()
         {
             base.Awake();
 
-            _tasksService = Engine.GetService<TasksService>();
-            _saveService = Engine.GetService<SaveService>();
-
             _savedData.IsStartEnter = _isStartEnter;
+
+            _gameManager = GameManager.Instance;
         }
 
         protected override void OnEnable()
         {
             base.OnEnable();
+
+            if (_gameManager == null)
+            {
+                return;
+            }
             
-            _saveService.SaveSceneStateEvent += OnSaveScene;
-            _saveService.LoadSceneStateEvent += OnLoadScene;
+            _gameManager.Game.SaveGameEvent += OnSaveScene;
+            _gameManager.Game.LoadGameEvent += OnLoadScene;
         }
 
         protected override void OnDisable()
         {
             base.OnDisable();
+
+            if (_gameManager == null)
+            {
+                return;
+            }
             
-            _saveService.SaveSceneStateEvent -= OnSaveScene;
-            _saveService.LoadSceneStateEvent -= OnLoadScene;
+            _gameManager.Game.SaveGameEvent -= OnSaveScene;
+            _gameManager.Game.LoadGameEvent -= OnLoadScene;
         }
 
         protected override void Start()
@@ -114,6 +121,11 @@ namespace Mechanics
         {
             base.OnSelectExited(args);
 
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
             if (!_isExitTaskSendable)
             {
                 return;
@@ -125,11 +137,16 @@ namespace Mechanics
                 return;
             }
             
-            _tasksService.TryCompleteTask(new SocketLabActivity(_socketType, ESocketActivity.Exit));
+            _gameManager.CompleteTask(new SocketLabActivity(_socketType, ESocketActivity.Exit));
         }
         
         private void SendTryTaskComplete(Transform objectTransform, ESocketActivity socketActivity)
         {
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
             if (_isSubsctanceSocket)
             {
                 LabContainer labContainer = objectTransform.GetComponent<LabContainer>();
@@ -138,12 +155,11 @@ namespace Mechanics
                     return;
                 }
                 
-                _tasksService.TryCompleteTask(new SocketSubstancesLabActivity(_socketType, socketActivity, labContainer.GetSubstanceProperties()));
+                _gameManager.CompleteTask(new SocketSubstancesLabActivity(_socketType, socketActivity, labContainer.GetSubstanceProperties()));
+                return;
             }
-            else
-            {
-                _tasksService.TryCompleteTask(new SocketLabActivity(_socketType, socketActivity));
-            }
+            
+            _gameManager.CompleteTask(new SocketLabActivity(_socketType, socketActivity));
         }
 
         public void OnSaveScene()

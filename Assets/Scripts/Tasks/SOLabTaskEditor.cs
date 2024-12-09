@@ -10,8 +10,14 @@ namespace BioEngineerLab.Tasks
 {
 #if UNITY_EDITOR
     [CustomEditor(typeof(SOLabTask))]
-    public class SOLabTaskEditor : Editor
+#endif
+    public class SOLabTaskEditor
+#if UNITY_EDITOR
+        : Editor
+#endif
     {
+        
+#if UNITY_EDITOR
         private SOLabTask _soLabTask;
         private SerializedObject _serializedObject;
         
@@ -171,6 +177,6 @@ namespace BioEngineerLab.Tasks
             }
             GUILayout.EndHorizontal();
         }
-    }
 #endif
+    }
 }

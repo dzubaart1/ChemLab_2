@@ -1,14 +1,9 @@
-﻿using System;
-using Activities;
-using BioEngineerLab.Activities;
-using Containers;
+﻿using BioEngineerLab.Activities;
 using Core;
 using Core.Services;
-using Mechanics;
+using JetBrains.Annotations;
 using UI.Components;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Machines
 {
@@ -18,35 +13,42 @@ namespace Machines
         {
             public bool IsOn;
         }
-
-        private SaveService _saveService;
-        private TasksService _tasksService;
-        private CraftService _craftService;
-
+        
         [SerializeField] private GameObject _lights;
         [SerializeField] private ButtonComponent _lightButton;
 
+        [CanBeNull] private GameManager _gameManager;
+
         private bool _isOn = false;
         private SavedData _savedData = new SavedData();
+        
         private void Awake()
         {
-            _tasksService = Engine.GetService<TasksService>();
-            _saveService = Engine.GetService<SaveService>();
-            _craftService = Engine.GetService<CraftService>();
+            _gameManager = GameManager.Instance;
         }
 
         private void OnEnable()
         {
-            _saveService.LoadSceneStateEvent += OnLoadScene;
-            _saveService.SaveSceneStateEvent += OnSaveScene;
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.Game.LoadGameEvent += OnLoadScene;
+            _gameManager.Game.SaveGameEvent += OnSaveScene;
             
             _lightButton.ClickBtnEvent += OnLButtonClick;
         }
 
         private void OnDisable()
         {
-            _saveService.LoadSceneStateEvent -= OnLoadScene;
-            _saveService.SaveSceneStateEvent -= OnSaveScene;
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.Game.LoadGameEvent += OnLoadScene;
+            _gameManager.Game.SaveGameEvent += OnSaveScene;
             
             _lightButton.ClickBtnEvent -= OnLButtonClick;
         }
@@ -55,11 +57,7 @@ namespace Machines
         {
             OnSaveScene();
         }
-
-        private void Update()
-        {
-            
-        }
+        
 
         private void OnLButtonClick()
         {
@@ -68,13 +66,20 @@ namespace Machines
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Key"))
+            if (_gameManager == null)
             {
-                _isOn = !_isOn;
-                if (_isOn)
-                {
-                    _tasksService.TryCompleteTask(new MachineLabActivity(EMachineActivity.OnStart, EMachine.LaminBoxMachine));
-                }
+                return;
+            }
+
+            if (!other.CompareTag("Key"))
+            {
+                return;
+            }
+            
+            _isOn = !_isOn;
+            if (_isOn)
+            {
+                _gameManager.Game.CompleteTask(new MachineLabActivity(EMachineActivity.OnStart, EMachine.LaminBoxMachine));
             }
         }
 
@@ -85,7 +90,7 @@ namespace Machines
 
         public void OnLoadScene()
         {
-            
+            _lightButton.SetIsOn(_savedData.IsOn);
         }
     }
 }

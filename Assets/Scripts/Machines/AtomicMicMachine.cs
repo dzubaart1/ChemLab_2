@@ -1,43 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using Activities;
-using BioEngineerLab.Activities;
-using Containers;
-using Core;
-using Gameplay;
-using Core.Services;
+﻿using Core;
 using UnityEngine;
-using Mechanics;
-using UnityEngine.PlayerLoop;
-using UnityEngine.XR.Interaction.Toolkit;
 using BioEngineerLab.Tasks.SideEffects;
+using JetBrains.Annotations;
 
 namespace BioEngineerLab.Machines
 {
     [RequireComponent(typeof(Collider))]
     public class AtomicMicMachine : MonoBehaviour
     {
-        private TasksService _tasksService;
-        
         [SerializeField] private GameObject _docObject;
 
+        [CanBeNull] private GameManager _gameManager;
+        
         private void Awake()
         {
-            _tasksService = Engine.GetService<TasksService>();
+            _gameManager = GameManager.Instance;
         }
 
         private void OnEnable()
         {
-            _tasksService.SideEffectActivatedEvent += OnActivatedSideEffect;
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.Game.SideEffectActivatedEvent += OnActivatedSideEffect;
         }
 
         private void OnDisable()
         {
-            _tasksService.SideEffectActivatedEvent -= OnActivatedSideEffect;
-        }
-
-        private void Start()
-        {
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.Game.SideEffectActivatedEvent -= OnActivatedSideEffect;
         }
         
         private void OnActivatedSideEffect(LabSideEffect sideEffect)

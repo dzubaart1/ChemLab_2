@@ -1,69 +1,113 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEngine;
-using UnityEngine.SceneManagement;
 using Core;
+using Core.Services;
+using JetBrains.Annotations;
+using UnityEngine;
 
 public class StartPanelController : MonoBehaviour
 {
-    [SerializeField] private GameObject _startPanel;
-    [SerializeField] private GameObject _lab1Panel;
-    [SerializeField] private GameObject _lab2Panel;
-    [SerializeField] private GameObject [] _rulesPanels;
+    [Header("Panels")]
+    [SerializeField] private RectTransform _startPanel;
+    [SerializeField] private RectTransform _lab1Panel;
+    [SerializeField] private RectTransform _lab2Panel;
+    [SerializeField] private List<RectTransform> _rulesPanels;
 
-    private int _ruleNumber = 0;
+    [Space]
+    [Header("Configs")]
+    [SerializeField] private RectTransform _defaultPanel;
+
+    [CanBeNull] private GameManager _gameManager;
+    
+    private RectTransform _currentRectTransform;
+    private int _currentRuleNumber = 0;
+
+    private void Awake()
+    {
+        _gameManager = GameManager.Instance;
+    }
+
+    private void Start()
+    {
+        _startPanel.gameObject.SetActive(false);
+        _lab1Panel.gameObject.SetActive(false);
+        _lab2Panel.gameObject.SetActive(false);
+
+        foreach (var rulePanel in _rulesPanels)
+        {
+            rulePanel.gameObject.SetActive(false);
+        }
+        
+        _defaultPanel.gameObject.SetActive(true);
+        
+        _currentRectTransform = _defaultPanel;
+    }
 
     public void OpenLab1Panel()
     {
-        _startPanel.SetActive(false);
-        _lab1Panel.SetActive(true);
+        SwitchPanel(_lab1Panel);
     }
     
     public void OpenLab2Panel()
     {
-        _startPanel.SetActive(false);
-        _lab2Panel.SetActive(true);
+        SwitchPanel(_lab2Panel);
     }
 
     public void OpenRulesPanel()
     {
-        _startPanel.SetActive(false);
-        _rulesPanels[_ruleNumber].SetActive(true);
+        SwitchPanel(_rulesPanels[_currentRuleNumber]);
     }
 
     public void BeginLab1()
     {
-        SceneManager.LoadScene("Lab1");
+        if (_gameManager == null)
+        {
+            return;
+        }
+        
+        _gameManager.StartGame(ELab.Lab1);
+        _gameManager.LoadScene(Game.LAB_1_SCENE_NAME);
     }
     
     public void BeginLab2()
     {
-        SceneManager.LoadScene("Lab2");
+        if (_gameManager == null)
+        {
+            return;
+        }
+        
+        _gameManager.StartGame(ELab.Lab2);
+        _gameManager.LoadScene(Game.LAB_2_SCENE_NAME);
     }
 
     public void Return()
     {
-        _startPanel.SetActive(true);
-        _lab1Panel.SetActive(false);
-        _lab2Panel.SetActive(false);
-        _rulesPanels[_ruleNumber].SetActive(false);
+        SwitchPanel(_startPanel);
     }
 
     public void NextRule()
     {
-        if (_ruleNumber == _rulesPanels.Length - 1)
+        if (_currentRuleNumber + 1 < _rulesPanels.Count)
+        {
             return;
-        _rulesPanels[_ruleNumber++].SetActive(false);
-        _rulesPanels[_ruleNumber].SetActive(true);
+        }
+        
+        SwitchPanel(_rulesPanels[_currentRuleNumber++]);
     }
     
     public void PrevRule()
     {
-        if (_ruleNumber == 0)
+        if (_currentRuleNumber - 1 < 0)
+        {
             return;
-        _rulesPanels[_ruleNumber--].SetActive(false);
-        _rulesPanels[_ruleNumber].SetActive(true);
+        }
+        
+        SwitchPanel(_rulesPanels[_currentRuleNumber--]);
+    }
+
+    private void SwitchPanel(RectTransform panel)
+    {
+        _currentRectTransform.gameObject.SetActive(false);
+        _currentRectTransform = panel;
+        _currentRectTransform.gameObject.SetActive(true);
     }
 }

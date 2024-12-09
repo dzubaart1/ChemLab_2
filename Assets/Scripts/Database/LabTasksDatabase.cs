@@ -9,16 +9,9 @@ using UnityEngine;
 
 namespace Database
 {
-    public class LabTasksDatabase
+    public static class LabTasksDatabase
     {
-        [CanBeNull] private static LabTasksDatabase _singleton;
-
-        public static LabTasksDatabase GetInstance()
-        {
-            return _singleton ??= new LabTasksDatabase();
-        }
-        
-        public void RemoveAll(ELab lab)
+        public static void RemoveAll(ELab lab)
         {
             string[] allFiles = Directory.GetFiles(GetFilePath(lab));
             
@@ -28,7 +21,7 @@ namespace Database
             }
         }
 
-        public List<LabTask> ReadAll(ELab lab)
+        public static List<LabTask> ReadAll(ELab lab)
         {
             List<LabTask> res = new List<LabTask>();
             List<string> allTasksFiles = Directory.GetFiles(GetFilePath(lab)).Where(fileName => !fileName.Contains("meta")).ToList();
@@ -42,7 +35,7 @@ namespace Database
             return res;
         }
 
-        public List<LabTask> ReadWhere(Func<LabTask, bool> filter, ELab lab)
+        public static List<LabTask> ReadWhere(Func<LabTask, bool> filter, ELab lab)
         {
             List<LabTask> res = new List<LabTask>();
             List<string> allTasksFiles = Directory.GetFiles(GetFilePath(lab)).Where(fileName => !fileName.Contains("meta")).ToList();
@@ -59,12 +52,12 @@ namespace Database
             return res;
         }
 
-        public void Save(LabTask labTask)
+        public static void Save(LabTask labTask)
         {
             JSONSaver.JSONSaver.SaveToFile(labTask, GetFilePath(labTask.Lab) + GetFileName(labTask.Number));
         }
         
-        public string GetFilePath(ELab lab)
+        public static string GetFilePath(ELab lab)
         {
             switch (lab)
             {
@@ -78,7 +71,7 @@ namespace Database
             }
         }
 
-        public string GetFileName(int labTaskNumber)
+        public static string GetFileName(int labTaskNumber)
         {
             if (labTaskNumber < 10)
                 return $"task_00{labTaskNumber}.txt";

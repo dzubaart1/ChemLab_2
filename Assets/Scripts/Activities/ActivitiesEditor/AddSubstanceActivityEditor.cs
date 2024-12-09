@@ -8,9 +8,9 @@ using UnityEditor;
 
 namespace Activities.ActivitiesEditor
 {
-    #if UNITY_EDITOR
     public class AddSubstanceActivityEditor : EditorActivity
     {
+#if UNITY_EDITOR
         [CanBeNull] private AddSubstanceLabActivity _addSubstanceActivity;
         [CanBeNull] private SOLabSubstanceProperty _soLabTransferSubstanceProperty;
         
@@ -51,6 +51,6 @@ namespace Activities.ActivitiesEditor
         {
             return EActivity.AddSubstanceActivity;
         }
+#endif
     }
-    #endif
 }

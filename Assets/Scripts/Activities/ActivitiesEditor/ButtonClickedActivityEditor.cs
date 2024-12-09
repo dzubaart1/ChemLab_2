@@ -5,9 +5,9 @@ using UnityEditor;
 
 namespace Activities.ActivitiesEditor
 {
-    #if UNITY_EDITOR
     public class ButtonClickedActivityEditor : EditorActivity
     {
+#if UNITY_EDITOR
         [CanBeNull] private ButtonClickedActivity _buttonClickedActivity;
         
         public ButtonClickedActivityEditor(LabActivity labActivity)
@@ -33,6 +33,6 @@ namespace Activities.ActivitiesEditor
         {
             return EActivity.ButtonClickedActivity;
         }
+#endif
     }
-    #endif
 }

@@ -45,7 +45,7 @@ namespace Database
         
         public static void SaveAllTaskToDataBase(ELab lab)
         {
-            LabTasksDatabase.GetInstance().RemoveAll(lab);
+            LabTasksDatabase.RemoveAll(lab);
             
             List<SOLabTask> scriptableObjects =
                 Resources.LoadAll<SOLabTask>(GetResourcesNameByLabNumber(lab)).ToList();

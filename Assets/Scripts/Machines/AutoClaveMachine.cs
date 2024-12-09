@@ -1,12 +1,9 @@
-﻿using Activities;
-using BioEngineerLab.Activities;
-using Containers;
+﻿using BioEngineerLab.Activities;
 using Core;
-using Core.Services;
+using JetBrains.Annotations;
 using Mechanics;
 using UI.Components;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Machines
 {
@@ -18,52 +15,63 @@ namespace Machines
             public bool IsOpen;
         }
 
-        [FormerlySerializedAs("_button")] [SerializeField] private ButtonComponent _powerButton;
+        [SerializeField] private ButtonComponent _powerButton;
         [SerializeField] private VRSocketInteractor[] _socketInteractors;
         [SerializeField] private Transform _door;
-
-        private SaveService _saveService;
-        private TasksService _tasksService;
-        private CraftService _craftService;
+        
+        [CanBeNull] private GameManager _gameManager;
         
         private bool _isOpen = false;
         private SavedData _savedData = new SavedData();
 
         private void Awake()
         {
-            _tasksService = Engine.GetService<TasksService>();
-            _saveService = Engine.GetService<SaveService>();
-            _craftService = Engine.GetService<CraftService>();
+            _gameManager = GameManager.Instance;
         }
 
         private void OnEnable()
         {
-            _saveService.LoadSceneStateEvent += OnLoadScene;
-            _saveService.SaveSceneStateEvent += OnSaveScene;
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.Game.LoadGameEvent += OnLoadScene;
+            _gameManager.Game.SaveGameEvent += OnSaveScene;
         }
 
         private void OnDisable()
         {
-            _saveService.LoadSceneStateEvent -= OnLoadScene;
-            _saveService.SaveSceneStateEvent -= OnSaveScene;
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.Game.LoadGameEvent -= OnLoadScene;
+            _gameManager.Game.SaveGameEvent -= OnSaveScene;
         }
 
         private void Start()
         {
             OnSaveScene();
-            //Debug.Log(_door.transform.rotation);
         }
 
         private void Update()
         {
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
             if (_door.transform.rotation.z > 0.01f && !_isOpen)
             {
                 _isOpen = true;
             }
+            
             else if (_door.transform.rotation.z < 0.01f && _isOpen)
             {
                 _isOpen = false;
-                _tasksService.TryCompleteTask(new DoorLabActivity(EDoor.AutoClaveDoor, EDoorActivity.Closed));
+                _gameManager.Game.CompleteTask(new DoorLabActivity(EDoor.AutoClaveDoor, EDoorActivity.Closed));
             }
         }
         public void OnSaveScene()

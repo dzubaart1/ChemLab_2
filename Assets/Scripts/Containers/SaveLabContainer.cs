@@ -1,11 +1,11 @@
-﻿using BioEngineerLab.Tasks;
+﻿using System;
+using BioEngineerLab.Tasks;
 using Core;
-using Core.Services;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Containers
 {
-    [RequireComponent(typeof(LabContainer))]
     public class SaveLabContainer : MonoBehaviour, ISaveable
     {
         private struct SavedData
@@ -13,31 +13,44 @@ namespace Containers
             public LabSubstance[] Substances;
         }
         
-        private LabContainer _labContainer;
-        private SavedData _savedData = new SavedData();
+        [SerializeField] private LabContainer _labContainer;
 
-        private SaveService _saveService;
+        [CanBeNull] private GameManager _gameManager;
+        
+        private SavedData _savedData = new SavedData();
         
         private void Awake()
         {
-            _labContainer = GetComponent<LabContainer>();
+            _gameManager = GameManager.Instance;
+        }
 
-            _saveService = Engine.GetService<SaveService>();
-            _saveService.SaveSceneStateEvent += OnSaveScene;
-            _saveService.LoadSceneStateEvent += OnLoadScene;
+        private void OnEnable()
+        {
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.Game.SaveGameEvent += OnSaveScene;
+            _gameManager.Game.LoadGameEvent += OnLoadScene;
+        }
+
+        private void OnDisable()
+        {
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.Game.SaveGameEvent -= OnSaveScene;
+            _gameManager.Game.LoadGameEvent -= OnLoadScene;
         }
 
         private void Start()
         {
             OnSaveScene();
         }
-
-        private void OnDestroy()
-        {
-            _saveService.SaveSceneStateEvent -= OnSaveScene;
-            _saveService.LoadSceneStateEvent -= OnLoadScene;
-        }
-
+        
         public void OnSaveScene()
         {
             _savedData.Substances = new LabSubstance[_labContainer.Substances.Count];
