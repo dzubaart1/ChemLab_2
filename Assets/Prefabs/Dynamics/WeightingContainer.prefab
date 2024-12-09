@@ -10035,7 +10035,6 @@ GameObject:
   - component: {fileID: 7243402011909128814}
   - component: {fileID: 7138819018714276454}
   - component: {fileID: 5140440977258142627}
-  - component: {fileID: 1496747366483465312}
   m_Layer: 11
   m_Name: WeightingContainer
   m_TagString: SerializeTransferAndSubstance
@@ -10088,7 +10087,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 2
 --- !u!65 &8740721374802212252
@@ -10319,6 +10318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cupSocket: {fileID: 0}
+  _isNozzleNeed: 0
 --- !u!114 &7138819018714276454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10343,18 +10343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c3ccaeda41040798ddada03e99f1f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1496747366483465312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8740721374802212262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad8e5fec15f040a2abb9ad1ad209ba25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  _labContainer: {fileID: 4262532184810490834}
 --- !u!1001 &6999761490939561992
 PrefabInstance:
   m_ObjectHideFlags: 0

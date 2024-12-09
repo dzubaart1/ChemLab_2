@@ -151,6 +151,7 @@ MonoBehaviour:
   _isEnterTaskSendable: 0
   _isExitTaskSendable: 0
   _isSubsctanceSocket: 0
+  _isStartEnter: 0
 --- !u!1 &3230590819400659979
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,7 +389,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 2
 --- !u!114 &2383104442359871331
@@ -832,7 +833,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!135 &7848620083188821259
@@ -1069,6 +1070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c3ccaeda41040798ddada03e99f1f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _labContainer: {fileID: 4897719036803240956}
 --- !u!1 &6050864399650820055
 GameObject:
   m_ObjectHideFlags: 0

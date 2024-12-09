@@ -77,6 +77,8 @@ namespace Core
             _tasksList = LabTasksDatabase.ReadAll(lab);
 
             _isGameStarted = true;
+
+            TaskUpdatedEvent?.Invoke(_tasksList[_currentTaskID]);
         }
         
         public void FinishGame()
