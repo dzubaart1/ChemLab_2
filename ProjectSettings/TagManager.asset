@@ -11,6 +11,9 @@ TagManager:
   - SnapZone
   - SerializeTransfer
   - Key
+  - SerializeSubstance
+  - Towel
+  - Pulverizator
   layers:
   - Default
   - TransparentFX

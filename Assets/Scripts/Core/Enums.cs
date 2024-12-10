@@ -23,7 +23,14 @@ namespace Core
         TeleportRFAButton,
         AutoClavePowerButton,
         AutoClaveOnButton,
-        LaminBoxLButton
+        LaminBoxLButton,
+        LaminBoxFButton,
+        LaminBoxUVButton,
+        LaminBoxSoundButton,
+        LaminBoxIButton,
+        LaminBoxUpButton,
+        LaminBoxDownButton,
+        LaminBoxOpenButton,
     }
 
     public enum ECraft : byte
@@ -138,6 +145,7 @@ namespace Core
         AtomicMicMachine,
         AutoClaveMachine,
         LaminBoxMachine,
+        WaterDropsMachine
     }
     
     public enum ESocketActivity : byte

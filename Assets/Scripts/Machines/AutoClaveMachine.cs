@@ -83,10 +83,12 @@ namespace Machines
         {
             if (_savedData.IsOpen)
             {
+                _isOpen = true;
                 _door.transform.rotation = new Quaternion(-0.7f, 0f, 0.5f, 0.7f);
             }
             else
             {
+                _isOpen = false;
                 _door.transform.rotation = new Quaternion(-0.7f, 0f, 0f, 0.7f);
             }
         }

@@ -12,19 +12,25 @@ namespace Machines
         private class SavedData
         {
             public bool IsOn;
+            public bool IsOpen;
         }
         
         [SerializeField] private GameObject _lights;
         [SerializeField] private ButtonComponent _lightButton;
+        
+        [SerializeField] private ButtonComponent _openButton;
 
         [CanBeNull] private GameManager _gameManager;
 
         private bool _isOn = false;
+        private bool _isOpen = false;
         private SavedData _savedData = new SavedData();
+        private Animator _animator;
         
         private void Awake()
         {
             _gameManager = GameManager.Instance;
+            _animator = GetComponent<Animator>();
         }
 
         private void OnEnable()
@@ -38,6 +44,7 @@ namespace Machines
             _gameManager.Game.SaveGameEvent += OnSaveScene;
             
             _lightButton.ClickBtnEvent += OnLButtonClick;
+            _openButton.ClickBtnEvent += OnOpenButtonClick;
         }
 
         private void OnDisable()
@@ -51,6 +58,7 @@ namespace Machines
             _gameManager.Game.SaveGameEvent += OnSaveScene;
             
             _lightButton.ClickBtnEvent -= OnLButtonClick;
+            _openButton.ClickBtnEvent -= OnOpenButtonClick;
         }
 
         private void Start()
@@ -62,6 +70,20 @@ namespace Machines
         private void OnLButtonClick()
         {
             _lights.SetActive(_lightButton.IsOn);
+        }
+
+        private void OnOpenButtonClick()
+        {
+            if (_isOpen)
+            {
+                _animator.Play("Close");
+                _isOpen = false;
+            }
+            else
+            {
+                _animator.Play("Open");
+                _isOpen = true;
+            }
         }
 
         private void OnTriggerEnter(Collider other)

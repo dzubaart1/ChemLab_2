@@ -144,7 +144,7 @@ namespace Core
         {
             _isGameStarted = false;
             
-            _currentTaskID = 0;
+            _currentTaskID = 57;
             
             _gameStartTime = DateTime.Now;
             _gameFinishTime = DateTime.Now;
