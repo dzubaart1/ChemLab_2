@@ -16,7 +16,7 @@ namespace Machines
         private class SavedData
         {
             public bool IsOn;
-            public bool IsOpen;
+            public bool IsOpen = false;
         }
 
         [SerializeField] private ButtonComponent _dryButton;
@@ -73,11 +73,11 @@ namespace Machines
             
             if (_door.transform.rotation.z < 0.49f && !_isOpen)
             {
-                _isOpen = true;
+                _isOpen = false;
             }
             else if (_door.transform.rotation.z > 0.49f && _isOpen)
             {
-                _isOpen = false;
+                _isOpen = true;
                 _gameManager.Game.CompleteTask(new DoorLabActivity(EDoor.DryMachineDoor, EDoorActivity.Closed));
             }
         }
@@ -125,10 +125,12 @@ namespace Machines
         {
             if (_savedData.IsOpen)
             {
+                _isOpen = true;
                 _door.transform.rotation = new Quaternion(0.5f, 0.5f, 0, 0.5f);
             }
             else
             {
+                _isOpen = false;
                 _door.transform.rotation = new Quaternion(0.5f, 0.5f, 0.5f, 0.5f);
             }
         }

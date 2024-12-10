@@ -33,7 +33,7 @@ namespace Core
 
             if (playerSpawnPoint == null)
             {
-                player.transform.position = Vector3.zero;
+                player.transform.position = new Vector3(-6, -0.67f, 0);
                 player.transform.rotation = Quaternion.identity;
             }
             else

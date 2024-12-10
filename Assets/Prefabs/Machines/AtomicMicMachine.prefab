@@ -267,6 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c3ccaeda41040798ddada03e99f1f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _labContainer: {fileID: 835339327508709209}
 --- !u!54 &2435038209300793726
 Rigidbody:
   m_ObjectHideFlags: 0

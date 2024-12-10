@@ -12,7 +12,7 @@ using UnityEngine.Serialization;
 
 namespace Core
 {
-    public class Game : MonoBehaviour
+    public class Game : MonoBehaviour, ISaveable
     {
         private struct SavedData
         {
@@ -56,6 +56,7 @@ namespace Core
         private DateTime _gameStartTime = DateTime.Now;
         private DateTime _gameFinishTime = DateTime.Now;
         private ELab _currentLab = ELab.Lab1;
+        private SavedData _savedData;
         
         private HashSet<ErrorTask> _errors = new HashSet<ErrorTask>();
         private List<LabTask> _tasksList = new List<LabTask>();
@@ -67,6 +68,28 @@ namespace Core
             {
                 FinishGame();
             }
+        }
+
+        private void OnEnable()
+        {
+            SaveGameEvent += OnSaveScene;
+            LoadGameEvent += OnLoadScene;
+        }
+
+        private void OnDisable()
+        {
+            SaveGameEvent -= OnSaveScene;
+            LoadGameEvent -= OnLoadScene;
+        }
+
+        public void OnSaveScene()
+        {
+            _savedData.CurrentID = _currentTaskID;
+        }
+        public void OnLoadScene()
+        {
+            _currentTaskID = _savedData.CurrentID;
+            TaskUpdatedEvent?.Invoke(_tasksList[_currentTaskID]);
         }
 
         public void StartGame(ELab lab)
@@ -126,6 +149,11 @@ namespace Core
             {
                 ActivateSideEffects(_tasksList[_currentTaskID], ESideEffectTime.StartTask);
                 TaskUpdatedEvent?.Invoke(_tasksList[_currentTaskID]);
+            }
+
+            if (_tasksList[_currentTaskID].SaveableTask)
+            {
+                SaveGame();
             }
         }
 
