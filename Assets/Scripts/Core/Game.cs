@@ -8,11 +8,10 @@ using Crafting;
 using Database;
 using JetBrains.Annotations;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Core
 {
-    public class Game : MonoBehaviour, ISaveable
+    public class Game : MonoBehaviour
     {
         private struct SavedData
         {
@@ -56,7 +55,7 @@ namespace Core
         private DateTime _gameStartTime = DateTime.Now;
         private DateTime _gameFinishTime = DateTime.Now;
         private ELab _currentLab = ELab.Lab1;
-        private SavedData _savedData;
+        private SavedData _savedData = new SavedData();
         
         private HashSet<ErrorTask> _errors = new HashSet<ErrorTask>();
         private List<LabTask> _tasksList = new List<LabTask>();
@@ -69,32 +68,11 @@ namespace Core
                 FinishGame();
             }
         }
-
-        private void OnEnable()
-        {
-            SaveGameEvent += OnSaveScene;
-            LoadGameEvent += OnLoadScene;
-        }
-
-        private void OnDisable()
-        {
-            SaveGameEvent -= OnSaveScene;
-            LoadGameEvent -= OnLoadScene;
-        }
-
-        public void OnSaveScene()
-        {
-            _savedData.CurrentID = _currentTaskID;
-        }
-        public void OnLoadScene()
-        {
-            _currentTaskID = _savedData.CurrentID;
-            TaskUpdatedEvent?.Invoke(_tasksList[_currentTaskID]);
-        }
-
+        
         public void StartGame(ELab lab)
         {
             ResetGame(lab);
+            SaveGame();
 
             _soCrafts = ResourcesDatabase.ReadAllCraft();
             _tasksList = LabTasksDatabase.ReadAll(lab);
@@ -115,11 +93,16 @@ namespace Core
 
         public void SaveGame()
         {
+            _savedData.CurrentID = _currentTaskID;
+            
             SaveGameEvent?.Invoke();
         }
 
         public void LoadGame()
         {
+            _currentTaskID = _savedData.CurrentID;
+            
+            TaskUpdatedEvent?.Invoke(_tasksList[_currentTaskID]);
             LoadGameEvent?.Invoke();
         }
 
@@ -147,13 +130,13 @@ namespace Core
 
             if (_currentTaskID >= 0 && _currentTaskID < _tasksList.Count)
             {
+                if (_tasksList[_currentTaskID].SaveableTask)
+                {
+                    SaveGame();
+                }
+                
                 ActivateSideEffects(_tasksList[_currentTaskID], ESideEffectTime.StartTask);
                 TaskUpdatedEvent?.Invoke(_tasksList[_currentTaskID]);
-            }
-
-            if (_tasksList[_currentTaskID].SaveableTask)
-            {
-                SaveGame();
             }
         }
 
