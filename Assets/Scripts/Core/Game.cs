@@ -71,15 +71,13 @@ namespace Core
         
         public void StartGame(ELab lab)
         {
-            ResetGame(lab);
-            SaveGame();
-
             _soCrafts = ResourcesDatabase.ReadAllCraft();
             _tasksList = LabTasksDatabase.ReadAll(lab);
 
             _isGameStarted = true;
-
-            TaskUpdatedEvent?.Invoke(_tasksList[_currentTaskID]);
+         
+            ResetGame(lab);
+            MoveToNextTask();
         }
         
         public void FinishGame()
@@ -100,15 +98,16 @@ namespace Core
 
         public void LoadGame()
         {
+            LoadGameEvent?.Invoke();
+            
             _currentTaskID = _savedData.CurrentID;
             
             TaskUpdatedEvent?.Invoke(_tasksList[_currentTaskID]);
-            LoadGameEvent?.Invoke();
         }
 
         public void CompleteTask(LabActivity activity)
         {
-            if (_currentTaskID < 0 || _currentTaskID >= _tasksList.Count)
+            if (!IsCorrectTaskID(_currentTaskID))
             {
                 return;
             }
@@ -125,16 +124,20 @@ namespace Core
 
         private void MoveToNextTask()
         {
-            ActivateSideEffects(_tasksList[_currentTaskID], ESideEffectTime.EndTask);
+            if (IsCorrectTaskID(_currentTaskID))
+            {
+                ActivateSideEffects(_tasksList[_currentTaskID], ESideEffectTime.EndTask);   
+            }
+            
             _currentTaskID++;
 
-            if (_currentTaskID >= 0 && _currentTaskID < _tasksList.Count)
+            if (IsCorrectTaskID(_currentTaskID))
             {
                 if (_tasksList[_currentTaskID].SaveableTask)
                 {
                     SaveGame();
                 }
-                
+
                 ActivateSideEffects(_tasksList[_currentTaskID], ESideEffectTime.StartTask);
                 TaskUpdatedEvent?.Invoke(_tasksList[_currentTaskID]);
             }
@@ -144,7 +147,7 @@ namespace Core
         {
             _isGameStarted = false;
             
-            _currentTaskID = 57;
+            _currentTaskID = -1;
             
             _gameStartTime = DateTime.Now;
             _gameFinishTime = DateTime.Now;
@@ -163,6 +166,11 @@ namespace Core
                     SideEffectActivatedEvent?.Invoke(sideEffect);
                 }
             }
+        }
+
+        private bool IsCorrectTaskID(int id)
+        {
+            return id >= 0 && id < _tasksList.Count;
         }
     }
 }
