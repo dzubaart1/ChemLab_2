@@ -154,10 +154,10 @@ namespace Machines
             }
             
             CraftTools.ApplyCraft(labCraft.LabCraft, container);
-
-            _gameManager.Game.CompleteTask(new CraftSubstanceLabActivity(container.ContainerType, labCraft.LabCraft));
             
             ToggleStirringAnimation(false);
+            _gameManager.Game.CompleteTask(new MachineLabActivity(EMachineActivity.OnFinish,
+                EMachine.StirringMachine));
         }
 
         private void ToggleStirringAnimation(bool isEnable)
