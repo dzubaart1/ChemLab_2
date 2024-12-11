@@ -73,11 +73,11 @@ namespace Machines
             
             if (_door.transform.rotation.z < 0.49f && !_isOpen)
             {
-                _isOpen = false;
+                _isOpen = true;
             }
             else if (_door.transform.rotation.z > 0.49f && _isOpen)
             {
-                _isOpen = true;
+                _isOpen = false;
                 _gameManager.Game.CompleteTask(new DoorLabActivity(EDoor.DryMachineDoor, EDoorActivity.Closed));
             }
         }
@@ -126,12 +126,12 @@ namespace Machines
             if (_savedData.IsOpen)
             {
                 _isOpen = true;
-                _door.transform.rotation = new Quaternion(0.5f, 0.5f, 0, 0.5f);
+                _door.transform.rotation = new Quaternion(-0.5f, 0.5f, 0, 0.5f);
             }
             else
             {
                 _isOpen = false;
-                _door.transform.rotation = new Quaternion(0.5f, 0.5f, 0.5f, 0.5f);
+                _door.transform.rotation = new Quaternion(-0.5f, 0.5f, 0.5f, 0.5f);
             }
         }
     }

@@ -19,7 +19,7 @@ namespace BioEngineerLab.Machines
         {
             if (_socketInteractor.SelectedObject == null)
             {
-                _textMesh.text = "0g";
+                _textMesh.text = "0.0000g";
                 return;
             }
 
@@ -27,7 +27,7 @@ namespace BioEngineerLab.Machines
 
             if (container == null)
             {
-                _textMesh.text = "0g";
+                _textMesh.text = "0.0000g";
                 return;
             }
 
