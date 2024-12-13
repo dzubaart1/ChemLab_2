@@ -10,6 +10,8 @@ public class WaterDropsMachine : MonoBehaviour
 {
     [SerializeField] private int _waterDropsCount;
     [SerializeField] private GameObject _waterDropsPrefab;
+    
+    private bool _waterDropsActive = false;
 
     [CanBeNull] private GameManager _gameManager;
     private void Awake()
@@ -24,15 +26,22 @@ public class WaterDropsMachine : MonoBehaviour
         {
             _gameManager.Game.CompleteTask(new MachineLabActivity(EMachineActivity.OnFinish, EMachine.WaterDropsMachine));
             _waterDropsCount--;
+            _waterDropsActive = false;
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Pulverizator"))
+        if (_waterDropsActive)
         {
-            _gameManager.Game.CompleteTask(new MachineLabActivity(EMachineActivity.OnStart, EMachine.WaterDropsMachine));
+            return;
+        }
+        if (other.CompareTag("Pulverizator") )
+        {
             _waterDropsPrefab.SetActive(true);
+            _gameManager.Game.CompleteTask(new MachineLabActivity(EMachineActivity.OnStart,
+                EMachine.WaterDropsMachine));
+            _waterDropsActive = true;
         }
     }
 }

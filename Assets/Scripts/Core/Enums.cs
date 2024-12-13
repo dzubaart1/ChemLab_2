@@ -31,6 +31,7 @@ namespace Core
         LaminBoxUpButton,
         LaminBoxDownButton,
         LaminBoxOpenButton,
+        NumberButton
     }
 
     public enum ECraft : byte
@@ -80,11 +81,7 @@ namespace Core
         AtomicMicContainer,
         KspectrometerContainer,
         BottleContainer,
-        //KuvetkaContainer,
-        //SyringeContainer,
-        //ReagentsContainer,
-        //NeedleContainer,
-        //PistonContainer
+        WeighingContainer,
     }
     
     public enum ESideEffect : byte

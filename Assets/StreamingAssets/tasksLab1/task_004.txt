@@ -1,5 +1,6 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 0,
   "Number": 4,
   "Title": "Задание 4",
   "Description": "Насыпьте хлорид кальция из мерной ложечки в лодочку для взвешивания. Необходимая масса реагента: 3.33 г",
@@ -8,7 +9,7 @@
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
     "FromContainer": 2,
-    "ToContainer": 3,
+    "ToContainer": 17,
     "LabSubstanceProperty": {
       "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
       "SubstanceName": "CaCl2",

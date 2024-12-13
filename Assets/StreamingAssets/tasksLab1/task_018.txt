@@ -1,5 +1,6 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 0,
   "Number": 18,
   "Title": "Задание 18",
   "Description": "Насыпьте гидрофосфат натрия из мерной ложечки в лодочку для взвешивания. Необходимая масса материала: 0,0852 г",
@@ -8,7 +9,7 @@
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
     "FromContainer": 2,
-    "ToContainer": 3,
+    "ToContainer": 17,
     "LabSubstanceProperty": {
       "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
       "SubstanceName": "Na2HPO4",

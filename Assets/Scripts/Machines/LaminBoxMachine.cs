@@ -11,7 +11,7 @@ namespace Machines
     {
         private class SavedData
         {
-            public bool IsOn;
+            public bool IsLightsOn;
             public bool IsOpen;
         }
         
@@ -21,8 +21,7 @@ namespace Machines
         [SerializeField] private ButtonComponent _openButton;
 
         [CanBeNull] private GameManager _gameManager;
-
-        private bool _isOn = false;
+        
         private bool _isOpen = false;
         private SavedData _savedData = new SavedData();
         private Animator _animator;
@@ -98,21 +97,29 @@ namespace Machines
                 return;
             }
             
-            _isOn = !_isOn;
-            if (_isOn)
-            {
-                _gameManager.Game.CompleteTask(new MachineLabActivity(EMachineActivity.OnStart, EMachine.LaminBoxMachine));
-            }
+            _gameManager.Game.CompleteTask(new MachineLabActivity(EMachineActivity.OnStart, EMachine.LaminBoxMachine));
         }
 
         public void OnSaveScene()
         {
-            _savedData.IsOn = _isOn;
+            _savedData.IsLightsOn = _lightButton.IsOn;
+            _savedData.IsOpen = _isOpen;
         }
 
         public void OnLoadScene()
         {
-            _lightButton.SetIsOn(_savedData.IsOn);
+            _lightButton.SetIsOn(_savedData.IsLightsOn);
+            
+            if (_savedData.IsOpen)
+            {
+                _animator.Play("Open");
+                _isOpen = true;
+            }
+            else
+            {
+                _animator.Play("Close");
+                _isOpen = false;
+            }
         }
     }
 }

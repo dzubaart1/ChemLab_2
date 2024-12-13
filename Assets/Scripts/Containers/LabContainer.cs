@@ -52,6 +52,11 @@ namespace Containers
             {
                 return _containerType;
             }
+
+            set
+            {
+                _containerType = value;
+            }
         }
 
         public bool IsWeightableContainer

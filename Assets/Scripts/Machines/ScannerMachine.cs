@@ -1,4 +1,5 @@
-﻿using Core;
+﻿using Containers;
+using Core;
 using Core.Services;
 using JetBrains.Annotations;
 using Mechanics;
@@ -19,14 +20,33 @@ namespace Machines
         [SerializeField] private Animator _animator;
         [SerializeField] private GameObject _canvas;
         [SerializeField] private VRSocketInteractor _socketInteractor;
+        [SerializeField] private Transform _cup;
 
         [CanBeNull] private GameManager _gameManager;
         
         private SavedData _savedData = new SavedData();
+        private bool _isOpen;
 
         private void Awake()
         {
             _gameManager = GameManager.Instance;
+        }
+
+        private void Update()
+        {
+            if (_cup.transform.rotation.x < -0.1)
+            {
+                _isOpen = true;
+            }
+            else
+            {
+                _isOpen = false;
+            }
+
+            if (!_isOpen)
+            {
+                _canvas.SetActive(_button.IsOn);
+            }
         }
 
         private void OnEnable()
@@ -72,7 +92,6 @@ namespace Machines
             }
             
             _animator.Play(_button.IsOn ? "ButtonOn" : "ButtonOff");
-            _canvas.SetActive(_button.IsOn);
         }
         public void OnSaveScene()
         {
