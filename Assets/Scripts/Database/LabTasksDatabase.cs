@@ -5,6 +5,7 @@ using System.Linq;
 using BioEngineerLab.Tasks;
 using Core;
 using JetBrains.Annotations;
+using Newtonsoft.Json;
 using UnityEngine;
 
 namespace Database
@@ -23,13 +24,35 @@ namespace Database
 
         public static List<LabTask> ReadAll(ELab lab)
         {
+            BetterStreamingAssets.Initialize();
+
             List<LabTask> res = new List<LabTask>();
-            List<string> allTasksFiles = Directory.GetFiles(GetFilePath(lab)).Where(fileName => !fileName.Contains("meta")).ToList();
-            
-            foreach (var file in allTasksFiles)
+
+            try
             {
-                LabTask labTask = JSONSaver.JSONSaver.LoadFromFile<LabTask>(file);
-                res.Add(labTask);
+                string folderName = GetFolderName(lab);
+                
+                string[] allFiles = BetterStreamingAssets.GetFiles(folderName, "*.txt", SearchOption.AllDirectories);
+
+                JsonSerializerSettings settings = new JsonSerializerSettings()
+                {
+                    TypeNameHandling = TypeNameHandling.All,
+                    Formatting = Formatting.Indented,
+                    ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor
+                };
+                
+                foreach (var file in allFiles)
+                {
+                    string fileContent = BetterStreamingAssets.ReadAllText(file);
+                    
+                    LabTask labTask = JsonConvert.DeserializeObject<LabTask>(fileContent, settings);
+
+                    res.Add(labTask);
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Error reading files from {lab}: {e.Message}");
             }
 
             return res;
@@ -42,7 +65,7 @@ namespace Database
             
             foreach (var file in allTasksFiles)
             {
-                LabTask labTask = JSONSaver.JSONSaver.LoadFromFile<LabTask>(file);
+                LabTask labTask = JSONSavers.JSONSaver.LoadFromFile<LabTask>(file);
                 if (filter.Invoke(labTask))
                 {
                     res.Add(labTask);
@@ -54,7 +77,21 @@ namespace Database
 
         public static void Save(LabTask labTask)
         {
-            JSONSaver.JSONSaver.SaveToFile(labTask, GetFilePath(labTask.Lab) + GetFileName(labTask.Number));
+            JSONSavers.JSONSaver.SaveToFile(labTask, GetFilePath(labTask.Lab) + GetFileName(labTask.Number));
+        }
+
+        public static string GetFolderName(ELab lab)
+        {
+            switch (lab)
+            {
+                case ELab.Lab1:
+                    return "tasksforlab1";
+                case ELab.Lab2:
+                    return "tasksforlab2";
+                default:
+                    Debug.LogError("Can't find lab!");
+                    return "tasksforlab1";
+            }
         }
         
         public static string GetFilePath(ELab lab)
@@ -62,9 +99,9 @@ namespace Database
             switch (lab)
             {
                 case ELab.Lab1:
-                    return $"{Application.streamingAssetsPath}/tasksLab1/";
+                    return $"{Application.streamingAssetsPath}/{GetFolderName(lab)}/";
                 case ELab.Lab2:
-                    return $"{Application.streamingAssetsPath}/tasksLab2/";
+                    return $"{Application.streamingAssetsPath}/{GetFolderName(lab)}/";
                 default:
                     Debug.LogError("Can't find labNumber!");
                     return $"{Application.streamingAssetsPath}/tasksLab1/";

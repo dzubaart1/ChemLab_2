@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using Newtonsoft.Json;
 
-namespace JSONSaver
+namespace JSONSavers
 {
     public class JSONSaver
     {
