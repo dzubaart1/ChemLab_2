@@ -3,14 +3,25 @@
   "Lab": 1,
   "Number": 31,
   "Title": "Задание 31",
-  "Description": "Возьмите лодочку для взвешивания и поставьте ее на весы",
+  "Description": "Возьмите мерную ложечку и наберите необходимое количество реагента",
   "Warning": "",
-  "SaveableTask": true,
+  "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
-    "SocketType": 0,
-    "SocketActivityType": 0,
-    "ActivityType": 3
+    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
+    "FromContainer": 1,
+    "ToContainer": 2,
+    "LabSubstanceProperty": {
+      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+      "SubstanceName": "Bromocresol purple",
+      "SubstanceMode": 0,
+      "SubstanceLayer": 0,
+      "SubstanceColorR": 0.1877714,
+      "SubstanceColorG": 0.1254902,
+      "SubstanceColorB": 0.1882353,
+      "SubstanceColorA": 0.8666667,
+      "HintName": ""
+    },
+    "ActivityType": 0
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
@@ -19,16 +30,16 @@
         "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
         "LabSubstanceProperty": {
           "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "StirPurbleSol",
+          "SubstanceName": "Bromocresol purple",
           "SubstanceMode": 0,
           "SubstanceLayer": 0,
-          "SubstanceColorR": 0.320631772,
-          "SubstanceColorG": 0.240299046,
-          "SubstanceColorB": 0.3773585,
-          "SubstanceColorA": 0.807843149,
+          "SubstanceColorR": 0.1877714,
+          "SubstanceColorG": 0.1254902,
+          "SubstanceColorB": 0.1882353,
+          "SubstanceColorA": 0.8666667,
           "HintName": ""
         },
-        "Weight": 120.0,
+        "Weight": 0.009,
         "SideEffectTimeType": 0,
         "SideEffectType": 0
       }

@@ -1,31 +1,15 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
   "Number": 82,
   "Title": "Задание 82",
-  "Description": "Из сканера возьмите чашку Петри с растворами хлорида кальция и Na2HPO4 и Agar и поставьте ее в сушильный шкаф (t=60градусов).",
+  "Description": "На приборной панели нажмите кнопку «UV» (включение ультрафиолетовой лампы)",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",
-    "SocketType": 11,
-    "SocketActivityType": 0,
-    "LabSubstanceProperties": {
-      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
-      "$values": [
-        {
-          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "HardAgar",
-          "SubstanceMode": 0,
-          "SubstanceLayer": 0,
-          "SubstanceColorR": 0.5007565,
-          "SubstanceColorG": 0.8773585,
-          "SubstanceColorB": 0.8356848,
-          "SubstanceColorA": 0.745098054,
-          "HintName": ""
-        }
-      ]
-    },
-    "ActivityType": 2
+    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
+    "ButtonType": 15,
+    "ActivityType": 6
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

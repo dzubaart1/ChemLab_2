@@ -3,13 +3,13 @@
   "Lab": 1,
   "Number": 63,
   "Title": "Задание 63",
-  "Description": "Возьмите салфетку, протрите рабочую поверхность ламинарного бокса",
+  "Description": "Сбросьте мерную ложечку в емкость для мытья лабораторной посуды",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 2,
-    "MachineType": 17,
+    "MachineActivityType": 0,
+    "MachineType": 4,
     "ActivityType": 1
   },
   "LabSideEffects": {

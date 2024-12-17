@@ -441,6 +441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buttonType: 0
   _isTaskSendable: 0
+  _isStartOn: 0
   _btnImage: {fileID: 8591927298385850373}
   _onSprite: {fileID: 21300000, guid: d66b180b2d8dadb4981b3f8bfcece870, type: 3}
   _offSprite: {fileID: 21300000, guid: ca2abbf0c3a722740b053b8deba8955f, type: 3}
@@ -580,6 +581,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buttonType: 0
   _isTaskSendable: 0
+  _isStartOn: 0
   _btnImage: {fileID: 8591927298526100171}
   _onSprite: {fileID: 21300000, guid: d66b180b2d8dadb4981b3f8bfcece870, type: 3}
   _offSprite: {fileID: 21300000, guid: ca2abbf0c3a722740b053b8deba8955f, type: 3}
@@ -1370,6 +1372,7 @@ GameObject:
   - component: {fileID: 8591927299114905605}
   - component: {fileID: 8591927299114905607}
   - component: {fileID: 6453379500856110761}
+  - component: {fileID: 4533376002340048689}
   m_Layer: 0
   m_Name: StirringMachine
   m_TagString: Animator
@@ -1433,6 +1436,27 @@ MonoBehaviour:
   _socketInteractor: {fileID: 7263640709728593048}
   _stirringBtn: {fileID: 2408893441762500333}
   _heatingBtn: {fileID: 8538057502334100231}
+--- !u!65 &4533376002340048689
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8591927299114905604}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.18, y: 0.11291635, z: 0.15204853}
+  m_Center: {x: 2.263955e-17, y: 0.12298688, z: 0.03284311}
 --- !u!1 &8591927299824722291
 GameObject:
   m_ObjectHideFlags: 0

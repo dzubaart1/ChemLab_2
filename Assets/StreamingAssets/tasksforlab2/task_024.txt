@@ -3,16 +3,46 @@
   "Lab": 1,
   "Number": 24,
   "Title": "Задание 24",
-  "Description": "Поместите якорь для магнитной мешалки в емкость с пептоном, хлоридом натрия и бромкрезоловым пурпурным",
+  "Description": "Возьмите мерную ложечку и наберите необходимое количество реагента",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.AnchorLabActivity, Assembly-CSharp",
-    "ContainerType": 0,
-    "ActivityType": 4
+    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
+    "FromContainer": 1,
+    "ToContainer": 2,
+    "LabSubstanceProperty": {
+      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+      "SubstanceName": "NaCl",
+      "SubstanceMode": 0,
+      "SubstanceLayer": 0,
+      "SubstanceColorR": 0.8018868,
+      "SubstanceColorG": 0.8018868,
+      "SubstanceColorB": 0.8018868,
+      "SubstanceColorA": 0.745098054,
+      "HintName": ""
+    },
+    "ActivityType": 0
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": []
+    "$values": [
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
+        "LabSubstanceProperty": {
+          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+          "SubstanceName": "NaCl",
+          "SubstanceMode": 0,
+          "SubstanceLayer": 0,
+          "SubstanceColorR": 0.8018868,
+          "SubstanceColorG": 0.8018868,
+          "SubstanceColorB": 0.8018868,
+          "SubstanceColorA": 0.745098054,
+          "HintName": ""
+        },
+        "Weight": 1.35,
+        "SideEffectTimeType": 0,
+        "SideEffectType": 0
+      }
+    ]
   }
 }

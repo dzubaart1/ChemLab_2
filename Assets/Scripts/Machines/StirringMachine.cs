@@ -1,3 +1,4 @@
+using System;
 using BioEngineerLab.Activities;
 using Containers;
 using Core;
@@ -84,6 +85,15 @@ namespace Machines
             }
             
             CheckAnimatorStatus();
+            
+            LabContainer container = _socketInteractor.SelectedObject.GetComponent<LabContainer>();
+            
+            if (container == null)
+            {
+                return;
+            }
+
+            container.ChangeContainerType(EContainer.StirringContainer);
         }
 
         private void OnExit(SelectExitEventArgs args)
@@ -95,6 +105,21 @@ namespace Machines
             }
             
             CheckAnimatorStatus();
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            LabContainer container = other.GetComponent<LabContainer>();
+            
+            if (container == null)
+            {
+                return;
+            }
+
+            if (container.ContainerType == EContainer.StirringContainer)
+            {
+                container.ChangeContainerType(EContainer.ChemicGlassContainer);
+            }
         }
 
         private void CheckMachineStates()

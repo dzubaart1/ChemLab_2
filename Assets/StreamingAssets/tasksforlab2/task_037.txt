@@ -3,17 +3,51 @@
   "Lab": 1,
   "Number": 37,
   "Title": "Задание 37",
-  "Description": "Сбросьте лодочку для взвешивания в емкость для мытья посуды.",
+  "Description": "Поставьте емкость с пептоном, хлоридом натрия и бромкрезоловым пурпурным на плитку",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 0,
-    "MachineType": 4,
-    "ActivityType": 1
+    "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",
+    "SocketType": 4,
+    "SocketActivityType": 0,
+    "LabSubstanceProperties": {
+      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
+      "$values": [
+        {
+          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+          "SubstanceName": "PeptonNaClBCPH20",
+          "SubstanceMode": 0,
+          "SubstanceLayer": 0,
+          "SubstanceColorR": 0.6509434,
+          "SubstanceColorG": 0.260991454,
+          "SubstanceColorB": 0.6329314,
+          "SubstanceColorA": 0.796078444,
+          "HintName": ""
+        }
+      ]
+    },
+    "ActivityType": 2
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": []
+    "$values": [
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
+        "LabSubstanceProperty": {
+          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+          "SubstanceName": "PeptonNaClBCP",
+          "SubstanceMode": 0,
+          "SubstanceLayer": 0,
+          "SubstanceColorR": 0.2735849,
+          "SubstanceColorG": 0.160663158,
+          "SubstanceColorB": 0.101949088,
+          "SubstanceColorA": 0.796078444,
+          "HintName": ""
+        },
+        "Weight": 300.0,
+        "SideEffectTimeType": 0,
+        "SideEffectType": 0
+      }
+    ]
   }
 }

@@ -3,13 +3,13 @@
   "Lab": 1,
   "Number": 26,
   "Title": "Задание 26",
-  "Description": "Выключите кнопки «Тепло» и «Мешать».",
+  "Description": "Сбросьте мерную ложечку в емкость для мытья лабораторной посуды",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 2,
-    "MachineType": 0,
+    "MachineActivityType": 0,
+    "MachineType": 4,
     "ActivityType": 1
   },
   "LabSideEffects": {

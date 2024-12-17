@@ -3,14 +3,25 @@
   "Lab": 1,
   "Number": 42,
   "Title": "Задание 42",
-  "Description": "Сбросьте мерную ложечку в емкость для мытья лабораторной посуды\t\t",
+  "Description": "Возьмите большую банку с получившимся растворов и последовательно разлейте по 150 мл в чистые пустые емкости с надписями «Сахароза», «Глюкоза», «Лактоза»",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 0,
-    "MachineType": 4,
-    "ActivityType": 1
+    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
+    "FromContainer": 0,
+    "ToContainer": 16,
+    "LabSubstanceProperty": {
+      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+      "SubstanceName": "StirPurbleSol",
+      "SubstanceMode": 0,
+      "SubstanceLayer": 0,
+      "SubstanceColorR": 0.320631772,
+      "SubstanceColorG": 0.240299046,
+      "SubstanceColorB": 0.3773585,
+      "SubstanceColorA": 0.807843149,
+      "HintName": ""
+    },
+    "ActivityType": 0
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

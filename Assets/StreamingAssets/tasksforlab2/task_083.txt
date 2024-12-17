@@ -1,13 +1,14 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
   "Number": 83,
   "Title": "Задание 83",
-  "Description": "Закройте сушильный шкаф и включите его правой рукой с помощью кнопки \"Старт\"",
+  "Description": "Установите временной интервал двадцать минут, нажмите кнопку «стрелка вверх» ",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 4,
+    "ButtonType": 19,
     "ActivityType": 6
   },
   "LabSideEffects": {

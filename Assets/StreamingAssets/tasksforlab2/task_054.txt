@@ -3,30 +3,25 @@
   "Lab": 1,
   "Number": 54,
   "Title": "Задание 54",
-  "Description": "Поставьте ёмкость с надписью «Глюкоза» в автоклав",
+  "Description": "Возьмите мерную ложечку и наберите необходимое количество реагента",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",
-    "SocketType": 26,
-    "SocketActivityType": 0,
-    "LabSubstanceProperties": {
-      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
-      "$values": [
-        {
-          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "Glukoza and Purple Sol",
-          "SubstanceMode": 0,
-          "SubstanceLayer": 0,
-          "SubstanceColorR": 0.527487159,
-          "SubstanceColorG": 0.4627451,
-          "SubstanceColorB": 0.6509804,
-          "SubstanceColorA": 0.8509804,
-          "HintName": ""
-        }
-      ]
+    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
+    "FromContainer": 1,
+    "ToContainer": 2,
+    "LabSubstanceProperty": {
+      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+      "SubstanceName": "Glukoza",
+      "SubstanceMode": 0,
+      "SubstanceLayer": 0,
+      "SubstanceColorR": 0.8490566,
+      "SubstanceColorG": 0.8490566,
+      "SubstanceColorB": 0.8490566,
+      "SubstanceColorA": 0.843137264,
+      "HintName": ""
     },
-    "ActivityType": 2
+    "ActivityType": 0
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

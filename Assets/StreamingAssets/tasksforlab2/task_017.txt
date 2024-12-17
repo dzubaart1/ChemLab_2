@@ -12,13 +12,13 @@
     "ToContainer": 2,
     "LabSubstanceProperty": {
       "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-      "SubstanceName": "Bromocresol purple",
+      "SubstanceName": "Pepton",
       "SubstanceMode": 0,
       "SubstanceLayer": 0,
-      "SubstanceColorR": 0.1877714,
-      "SubstanceColorG": 0.1254902,
-      "SubstanceColorB": 0.1882353,
-      "SubstanceColorA": 0.8666667,
+      "SubstanceColorR": 0.735849,
+      "SubstanceColorG": 0.500766039,
+      "SubstanceColorB": 0.2256141,
+      "SubstanceColorA": 0.7647059,
       "HintName": ""
     },
     "ActivityType": 0
@@ -30,16 +30,16 @@
         "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
         "LabSubstanceProperty": {
           "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "Bromocresol purple",
+          "SubstanceName": "Pepton",
           "SubstanceMode": 0,
           "SubstanceLayer": 0,
-          "SubstanceColorR": 0.1877714,
-          "SubstanceColorG": 0.1254902,
-          "SubstanceColorB": 0.1882353,
-          "SubstanceColorA": 0.8666667,
+          "SubstanceColorR": 0.735849,
+          "SubstanceColorG": 0.500766039,
+          "SubstanceColorB": 0.2256141,
+          "SubstanceColorA": 0.7647059,
           "HintName": ""
         },
-        "Weight": 0.009,
+        "Weight": 1.8,
         "SideEffectTimeType": 0,
         "SideEffectType": 0
       }

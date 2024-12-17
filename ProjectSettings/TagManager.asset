@@ -14,6 +14,8 @@ TagManager:
   - SerializeSubstance
   - Towel
   - Pulverizator
+  - LHand
+  - RHand
   layers:
   - Default
   - TransparentFX

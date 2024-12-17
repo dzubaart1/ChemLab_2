@@ -3,7 +3,7 @@
   "Lab": 1,
   "Number": 35,
   "Title": "Задание 35",
-  "Description": "Сбросьте мерную ложечку в емкость для мытья лабораторной посуды",
+  "Description": "Сбросьте лодочку для взвешивания в емкость для мытья лабораторной посуды",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
@@ -14,6 +14,24 @@
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": []
+    "$values": [
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
+        "LabSubstanceProperty": {
+          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+          "SubstanceName": "PeptonNaClBCP",
+          "SubstanceMode": 0,
+          "SubstanceLayer": 0,
+          "SubstanceColorR": 0.2735849,
+          "SubstanceColorG": 0.160663158,
+          "SubstanceColorB": 0.101949088,
+          "SubstanceColorA": 0.796078444,
+          "HintName": ""
+        },
+        "Weight": 120.0,
+        "SideEffectTimeType": 1,
+        "SideEffectType": 0
+      }
+    ]
   }
 }

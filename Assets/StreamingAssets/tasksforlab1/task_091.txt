@@ -8,7 +8,7 @@
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.AnchorLabActivity, Assembly-CSharp",
-    "ContainerType": 0,
+    "ContainerType": 18,
     "ActivityType": 4
   },
   "LabSideEffects": {

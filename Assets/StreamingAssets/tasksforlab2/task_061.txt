@@ -3,13 +3,25 @@
   "Lab": 1,
   "Number": 61,
   "Title": "Задание 61",
-  "Description": "Откройте ламинарный бокс (опустите и задвиньте нижнюю панель)",
+  "Description": "Возьмите мерную ложечку и наберите необходимое количество реагента",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 21,
-    "ActivityType": 6
+    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
+    "FromContainer": 1,
+    "ToContainer": 2,
+    "LabSubstanceProperty": {
+      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+      "SubstanceName": "Laktoza",
+      "SubstanceMode": 0,
+      "SubstanceLayer": 0,
+      "SubstanceColorR": 0.9433962,
+      "SubstanceColorG": 0.924271166,
+      "SubstanceColorB": 0.814346731,
+      "SubstanceColorA": 0.843137264,
+      "HintName": ""
+    },
+    "ActivityType": 0
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

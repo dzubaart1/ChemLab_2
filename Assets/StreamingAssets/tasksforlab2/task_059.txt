@@ -3,12 +3,12 @@
   "Lab": 1,
   "Number": 59,
   "Title": "Задание 59",
-  "Description": "Повесьте специальный ключ на то же место",
+  "Description": "Возьмите лодочку для взвешивания и поставьте ее на весы",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
-    "SocketType": 27,
+    "SocketType": 0,
     "SocketActivityType": 0,
     "ActivityType": 3
   },

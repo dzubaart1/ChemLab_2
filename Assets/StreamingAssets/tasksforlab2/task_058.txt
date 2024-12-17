@@ -3,13 +3,13 @@
   "Lab": 1,
   "Number": 58,
   "Title": "Задание 58",
-  "Description": "Возьмите специальный ключ, включите ламинарный бокс",
+  "Description": "Сбросьте лодочку для взвешивания в емкость для мытья лабораторной посуды",
   "Warning": "",
-  "SaveableTask": true,
+  "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 1,
-    "MachineType": 16,
+    "MachineActivityType": 0,
+    "MachineType": 4,
     "ActivityType": 1
   },
   "LabSideEffects": {

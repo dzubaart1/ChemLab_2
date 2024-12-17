@@ -3,14 +3,13 @@
   "Lab": 1,
   "Number": 38,
   "Title": "Задание 38",
-  "Description": "Возьмите лодочку для взвешивания и поставьте ее на весы",
+  "Description": "Поместите якорь для магнитной мешалки в емкость с пептоном, хлоридом натрия и бромкрезоловым пурпурным",
   "Warning": "",
-  "SaveableTask": true,
+  "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
-    "SocketType": 0,
-    "SocketActivityType": 0,
-    "ActivityType": 3
+    "$type": "BioEngineerLab.Activities.AnchorLabActivity, Assembly-CSharp",
+    "ContainerType": 18,
+    "ActivityType": 4
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

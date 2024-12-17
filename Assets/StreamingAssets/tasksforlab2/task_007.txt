@@ -3,13 +3,13 @@
   "Lab": 1,
   "Number": 7,
   "Title": "Задание 7",
-  "Description": "Сбросьте лодочку для взвешивания в емкость для мытья посуды.",
+  "Description": "Возьмите и наденьте халат",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
     "MachineActivityType": 0,
-    "MachineType": 4,
+    "MachineType": 19,
     "ActivityType": 1
   },
   "LabSideEffects": {

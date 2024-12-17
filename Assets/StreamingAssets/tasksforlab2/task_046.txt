@@ -3,17 +3,35 @@
   "Lab": 1,
   "Number": 46,
   "Title": "Задание 46",
-  "Description": "Возьмите реактив с надписью «Лактоза», откройте крышку",
+  "Description": "Возьмите реактив с надписью «Сахароза», откройте крышку",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
-    "SocketType": 25,
+    "SocketType": 24,
     "SocketActivityType": 1,
     "ActivityType": 3
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": []
+    "$values": [
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
+        "LabSubstanceProperty": {
+          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+          "SubstanceName": "Saharoza",
+          "SubstanceMode": 0,
+          "SubstanceLayer": 0,
+          "SubstanceColorR": 0.9300523,
+          "SubstanceColorG": 0.8726415,
+          "SubstanceColorB": 1.0,
+          "SubstanceColorA": 0.843137264,
+          "HintName": ""
+        },
+        "Weight": 0.75,
+        "SideEffectTimeType": 0,
+        "SideEffectType": 0
+      }
+    ]
   }
 }

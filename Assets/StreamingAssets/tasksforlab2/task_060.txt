@@ -3,16 +3,35 @@
   "Lab": 1,
   "Number": 60,
   "Title": "Задание 60",
-  "Description": "На приборной панели нажмите кнопку «L»",
+  "Description": "Возьмите реактив с надписью «Лактоза», откройте крышку",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 14,
-    "ActivityType": 6
+    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
+    "SocketType": 25,
+    "SocketActivityType": 1,
+    "ActivityType": 3
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": []
+    "$values": [
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
+        "LabSubstanceProperty": {
+          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+          "SubstanceName": "Laktoza",
+          "SubstanceMode": 0,
+          "SubstanceLayer": 0,
+          "SubstanceColorR": 0.9433962,
+          "SubstanceColorG": 0.924271166,
+          "SubstanceColorB": 0.814346731,
+          "SubstanceColorA": 0.843137264,
+          "HintName": ""
+        },
+        "Weight": 0.75,
+        "SideEffectTimeType": 0,
+        "SideEffectType": 0
+      }
+    ]
   }
 }

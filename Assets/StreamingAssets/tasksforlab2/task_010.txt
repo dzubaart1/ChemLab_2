@@ -3,46 +3,17 @@
   "Lab": 1,
   "Number": 10,
   "Title": "Задание 10",
-  "Description": "Возьмите мерную ложечку и наберите необходимое количество реагента",
+  "Description": "Возьмите пульверизатор в правую руку и обработайте левую руку спиртом ",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
-    "FromContainer": 1,
-    "ToContainer": 2,
-    "LabSubstanceProperty": {
-      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-      "SubstanceName": "NaCl",
-      "SubstanceMode": 0,
-      "SubstanceLayer": 0,
-      "SubstanceColorR": 0.8018868,
-      "SubstanceColorG": 0.8018868,
-      "SubstanceColorB": 0.8018868,
-      "SubstanceColorA": 0.745098054,
-      "HintName": ""
-    },
-    "ActivityType": 0
+    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
+    "MachineActivityType": 0,
+    "MachineType": 22,
+    "ActivityType": 1
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
-        "LabSubstanceProperty": {
-          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "NaCl",
-          "SubstanceMode": 0,
-          "SubstanceLayer": 0,
-          "SubstanceColorR": 0.8018868,
-          "SubstanceColorG": 0.8018868,
-          "SubstanceColorB": 0.8018868,
-          "SubstanceColorA": 0.745098054,
-          "HintName": ""
-        },
-        "Weight": 1.35,
-        "SideEffectTimeType": 0,
-        "SideEffectType": 0
-      }
-    ]
+    "$values": []
   }
 }

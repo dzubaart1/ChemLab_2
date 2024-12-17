@@ -3,14 +3,14 @@
   "Lab": 1,
   "Number": 9,
   "Title": "Задание 9",
-  "Description": "Возьмите реактив с надписью «Хлорид натрия (NaCl)», откройте крышку",
+  "Description": "Зайдите в лабораторию, закройте за собой дверь.",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
-    "SocketType": 21,
-    "SocketActivityType": 1,
-    "ActivityType": 3
+    "$type": "BioEngineerLab.Activities.DoorLabActivity, Assembly-CSharp",
+    "Door": 3,
+    "DoorActivity": 1,
+    "ActivityType": 7
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

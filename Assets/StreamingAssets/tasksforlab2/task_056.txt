@@ -3,14 +3,14 @@
   "Lab": 1,
   "Number": 56,
   "Title": "Задание 56",
-  "Description": "Закройте дверь автоклава",
+  "Description": "Сбросьте мерную ложечку в емкость для мытья лабораторной посуды\t\t",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.DoorLabActivity, Assembly-CSharp",
-    "Door": 1,
-    "DoorActivity": 1,
-    "ActivityType": 7
+    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
+    "MachineActivityType": 0,
+    "MachineType": 4,
+    "ActivityType": 1
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

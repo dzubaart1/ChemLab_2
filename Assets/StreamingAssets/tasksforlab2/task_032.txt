@@ -3,14 +3,25 @@
   "Lab": 1,
   "Number": 32,
   "Title": "Задание 32",
-  "Description": "Возьмите реактив с надписью «Сахароза», откройте крышку",
+  "Description": "Насыпьте бромкрезоловый пурпурный из мерной ложечки в лодочку для взвешивания. Необходимая масса реагента: 0.009 г",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
-    "SocketType": 24,
-    "SocketActivityType": 1,
-    "ActivityType": 3
+    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
+    "FromContainer": 2,
+    "ToContainer": 17,
+    "LabSubstanceProperty": {
+      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+      "SubstanceName": "Bromocresol purple",
+      "SubstanceMode": 0,
+      "SubstanceLayer": 0,
+      "SubstanceColorR": 0.1877714,
+      "SubstanceColorG": 0.1254902,
+      "SubstanceColorB": 0.1882353,
+      "SubstanceColorA": 0.8666667,
+      "HintName": ""
+    },
+    "ActivityType": 0
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

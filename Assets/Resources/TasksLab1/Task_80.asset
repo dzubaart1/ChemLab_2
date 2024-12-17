@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Task_80
   m_EditorClassIdentifier: 
   LabTask:
+    Lab: 0
     Number: 80
     Title: "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 80"
     Description: "\u0412\u043A\u043B\u044E\u0447\u0438\u0442\u0435 \u0441\u043A\u0430\u043D\u0435\u0440
@@ -22,3 +23,4 @@ MonoBehaviour:
       \u043A\u043E\u043B\u0435\u0446 \u041B\u0438\u0437\u0435\u0433\u0430\u043D\u0433\u0430."
     Warning: 
     SaveableTask: 0
+    LabSideEffects: []

@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 4446694431840880478}
   - component: {fileID: 7210589287507015626}
   - component: {fileID: 4910311451263813900}
+  - component: {fileID: 8182533715627760241}
   - component: {fileID: 5568608301153159146}
-  - component: {fileID: 8931695372299428764}
+  - component: {fileID: 2996332932898579924}
   m_Layer: 0
   m_Name: puleverizator
   m_TagString: Untagged
@@ -137,6 +138,29 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!136 &8182533715627760241
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2789181133227222667}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.00027390866
+  m_Height: 0.0017465177
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.0056267534, z: 0.004692085}
 --- !u!114 &5568608301153159146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,27 +314,18 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!135 &8931695372299428764
-SphereCollider:
+--- !u!114 &2996332932898579924
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2789181133227222667}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.0011299882
-  m_Center: {x: 0, y: 0.0020021922, z: 0.0047036265}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64e94e0d54251ba4997a94ed5460a211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5473259308576062867
 GameObject:
   m_ObjectHideFlags: 0

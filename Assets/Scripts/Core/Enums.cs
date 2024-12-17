@@ -31,7 +31,9 @@ namespace Core
         LaminBoxUpButton,
         LaminBoxDownButton,
         LaminBoxOpenButton,
-        NumberButton
+        NumberButton,
+        BacteriumButton,
+        LightButton,
     }
 
     public enum ECraft : byte
@@ -82,6 +84,7 @@ namespace Core
         KspectrometerContainer,
         BottleContainer,
         WeighingContainer,
+        StirringContainer,
     }
     
     public enum ESideEffect : byte
@@ -114,7 +117,9 @@ namespace Core
     public enum EDoor : byte
     {
         DryMachineDoor,
-        AutoClaveDoor
+        AutoClaveDoor,
+        EnterDoor1,
+        EnterDoor2
     }
 
     public enum EDoorActivity : byte
@@ -142,7 +147,13 @@ namespace Core
         AtomicMicMachine,
         AutoClaveMachine,
         LaminBoxMachine,
-        WaterDropsMachine
+        WaterDropsMachine,
+        KeyboardMachine,
+        LabCoatMachine,
+        ShoeCoversMachine,
+        LabGlovesMachine,
+        PulLHandMachine,
+        PulRHandMachine,
     }
     
     public enum ESocketActivity : byte

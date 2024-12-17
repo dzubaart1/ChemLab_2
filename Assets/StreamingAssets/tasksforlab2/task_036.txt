@@ -3,7 +3,7 @@
   "Lab": 1,
   "Number": 36,
   "Title": "Задание 36",
-  "Description": "Пересыпьте сахарозу из лодочки для взвешивания в ёмкость с надписью «Сахароза»",
+  "Description": "Возьмите емкость с дистиллированной водой и перелейте 450 мл дистиллированной воды в ёмкость с пептоном, хлоридом натрия и бромкрезоловым пурпурным.",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
@@ -15,24 +15,24 @@
         "$values": [
           {
             "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-            "SubstanceName": "Saharoza",
+            "SubstanceName": "PeptonNaClBCP",
             "SubstanceMode": 0,
             "SubstanceLayer": 0,
-            "SubstanceColorR": 0.9300523,
-            "SubstanceColorG": 0.8726415,
-            "SubstanceColorB": 1.0,
-            "SubstanceColorA": 0.843137264,
+            "SubstanceColorR": 0.2735849,
+            "SubstanceColorG": 0.160663158,
+            "SubstanceColorB": 0.101949088,
+            "SubstanceColorA": 0.796078444,
             "HintName": ""
           },
           {
             "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-            "SubstanceName": "StirPurbleSol",
+            "SubstanceName": "H2O",
             "SubstanceMode": 0,
             "SubstanceLayer": 0,
-            "SubstanceColorR": 0.320631772,
-            "SubstanceColorG": 0.240299046,
-            "SubstanceColorB": 0.3773585,
-            "SubstanceColorA": 0.807843149,
+            "SubstanceColorR": 0.407262385,
+            "SubstanceColorG": 0.4974264,
+            "SubstanceColorB": 0.6037736,
+            "SubstanceColorA": 0.8117647,
             "HintName": ""
           }
         ]
@@ -43,23 +43,41 @@
         "$values": [
           {
             "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-            "SubstanceName": "Sakaroza and Purple Sol",
+            "SubstanceName": "PeptonNaClBCPH20",
             "SubstanceMode": 0,
             "SubstanceLayer": 0,
-            "SubstanceColorR": 0.61556536,
-            "SubstanceColorG": 0.46364364,
-            "SubstanceColorB": 0.6509434,
-            "SubstanceColorA": 0.8666667,
+            "SubstanceColorR": 0.6509434,
+            "SubstanceColorG": 0.260991454,
+            "SubstanceColorB": 0.6329314,
+            "SubstanceColorA": 0.796078444,
             "HintName": ""
           }
         ]
       }
     },
-    "Container": 16,
+    "Container": 0,
     "ActivityType": 5
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": []
+    "$values": [
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
+        "LabSubstanceProperty": {
+          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+          "SubstanceName": "H2O",
+          "SubstanceMode": 0,
+          "SubstanceLayer": 0,
+          "SubstanceColorR": 0.407262385,
+          "SubstanceColorG": 0.4974264,
+          "SubstanceColorB": 0.6037736,
+          "SubstanceColorA": 0.8117647,
+          "HintName": ""
+        },
+        "Weight": 120.0,
+        "SideEffectTimeType": 0,
+        "SideEffectType": 0
+      }
+    ]
   }
 }

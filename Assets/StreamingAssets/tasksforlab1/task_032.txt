@@ -1,5 +1,6 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 0,
   "Number": 32,
   "Title": "Задание 32",
   "Description": "Поместите якорь для магнитной мешалки в термостойкий стакан с раствором «2»",
@@ -7,7 +8,7 @@
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.AnchorLabActivity, Assembly-CSharp",
-    "ContainerType": 0,
+    "ContainerType": 18,
     "ActivityType": 4
   },
   "LabSideEffects": {

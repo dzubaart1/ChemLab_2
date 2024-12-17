@@ -3,14 +3,60 @@
   "Lab": 1,
   "Number": 64,
   "Title": "Задание 64",
-  "Description": "Выбросьте салфетку в ёмкость для внешних отходов",
+  "Description": "Пересыпьте лактозу из лодочки для взвешивания в ёмкость с надписью «Лактоза»",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 0,
-    "MachineType": 6,
-    "ActivityType": 1
+    "$type": "BioEngineerLab.Activities.CraftSubstanceLabActivity, Assembly-CSharp",
+    "LabCraft": {
+      "$type": "Crafting.LabCraft, Assembly-CSharp",
+      "SubstancesFrom": {
+        "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
+        "$values": [
+          {
+            "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+            "SubstanceName": "Laktoza",
+            "SubstanceMode": 0,
+            "SubstanceLayer": 0,
+            "SubstanceColorR": 0.9433962,
+            "SubstanceColorG": 0.924271166,
+            "SubstanceColorB": 0.814346731,
+            "SubstanceColorA": 0.843137264,
+            "HintName": ""
+          },
+          {
+            "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+            "SubstanceName": "StirPurbleSol",
+            "SubstanceMode": 0,
+            "SubstanceLayer": 0,
+            "SubstanceColorR": 0.320631772,
+            "SubstanceColorG": 0.240299046,
+            "SubstanceColorB": 0.3773585,
+            "SubstanceColorA": 0.807843149,
+            "HintName": ""
+          }
+        ]
+      },
+      "CraftType": 3,
+      "SubstancesRes": {
+        "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
+        "$values": [
+          {
+            "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+            "SubstanceName": "Laktoza and Purple Sol",
+            "SubstanceMode": 0,
+            "SubstanceLayer": 0,
+            "SubstanceColorR": 0.6509804,
+            "SubstanceColorG": 0.4627451,
+            "SubstanceColorB": 0.6353192,
+            "SubstanceColorA": 0.8862745,
+            "HintName": ""
+          }
+        ]
+      }
+    },
+    "Container": 16,
+    "ActivityType": 5
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

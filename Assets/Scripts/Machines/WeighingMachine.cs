@@ -32,14 +32,23 @@ namespace BioEngineerLab.Machines
                 return;
             }
 
-            container.ContainerType = EContainer.WeighingContainer;
+            container.ChangeContainerType(EContainer.WeighingContainer);
             _textMesh.text = container.GetSubstancesWeight() == 0 ? "0.0000g" : container.GetSubstancesWeight() + "g";
         }
 
         private void OnTriggerExit(Collider other)
         {
             LabContainer container = other.GetComponent<LabContainer>();
-            container.ContainerType = EContainer.LodochkaContainer;
+            
+            if (container == null)
+            {
+                return;
+            }
+            
+            if (container.ContainerType == EContainer.WeighingContainer)
+            {
+                container.ChangeContainerType(EContainer.LodochkaContainer);
+            }
         }
     }
 }

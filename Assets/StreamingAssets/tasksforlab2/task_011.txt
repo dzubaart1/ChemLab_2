@@ -3,25 +3,14 @@
   "Lab": 1,
   "Number": 11,
   "Title": "Задание 11",
-  "Description": "Насыпьте хлорид натрия (NaCl) из мерной ложечки в лодочку для взвешивания. Необходимая масса реагента: 1.35 г",
+  "Description": "Возьмите пульверизатор в левую руку и обработайте правую руку спиртом",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
-    "FromContainer": 2,
-    "ToContainer": 3,
-    "LabSubstanceProperty": {
-      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-      "SubstanceName": "NaCl",
-      "SubstanceMode": 0,
-      "SubstanceLayer": 0,
-      "SubstanceColorR": 0.8018868,
-      "SubstanceColorG": 0.8018868,
-      "SubstanceColorB": 0.8018868,
-      "SubstanceColorA": 0.745098054,
-      "HintName": ""
-    },
-    "ActivityType": 0
+    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
+    "MachineActivityType": 0,
+    "MachineType": 23,
+    "ActivityType": 1
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

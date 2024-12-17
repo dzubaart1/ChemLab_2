@@ -3,25 +3,14 @@
   "Lab": 1,
   "Number": 41,
   "Title": "Задание 41",
-  "Description": "Насыпьте из мерной ложечки глюкозу в лодочку для взвешивания. Необходимая масса реагента: 0.75 г",
+  "Description": "Возьмите емкость и поставьте на стол.",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
-    "FromContainer": 2,
-    "ToContainer": 3,
-    "LabSubstanceProperty": {
-      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-      "SubstanceName": "Glukoza",
-      "SubstanceMode": 0,
-      "SubstanceLayer": 0,
-      "SubstanceColorR": 0.8490566,
-      "SubstanceColorG": 0.8490566,
-      "SubstanceColorB": 0.8490566,
-      "SubstanceColorA": 0.843137264,
-      "HintName": ""
-    },
-    "ActivityType": 0
+    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
+    "SocketType": 4,
+    "SocketActivityType": 1,
+    "ActivityType": 3
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

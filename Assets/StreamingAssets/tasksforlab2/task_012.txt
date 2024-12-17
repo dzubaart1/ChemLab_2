@@ -3,13 +3,13 @@
   "Lab": 1,
   "Number": 12,
   "Title": "Задание 12",
-  "Description": "Сбросьте мерную ложечку в емкость для мытья лабораторной посуды",
+  "Description": "Наденьте перчатки",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
     "MachineActivityType": 0,
-    "MachineType": 4,
+    "MachineType": 21,
     "ActivityType": 1
   },
   "LabSideEffects": {

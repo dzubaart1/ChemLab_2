@@ -3,46 +3,17 @@
   "Lab": 1,
   "Number": 33,
   "Title": "Задание 33",
-  "Description": "Возьмите мерную ложечку и наберите необходимое количество реагента",
+  "Description": "Сбросьте мерную ложечку в емкость для мытья лабораторной посуды",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
-    "FromContainer": 1,
-    "ToContainer": 2,
-    "LabSubstanceProperty": {
-      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-      "SubstanceName": "Saharoza",
-      "SubstanceMode": 0,
-      "SubstanceLayer": 0,
-      "SubstanceColorR": 0.9300523,
-      "SubstanceColorG": 0.8726415,
-      "SubstanceColorB": 1.0,
-      "SubstanceColorA": 0.843137264,
-      "HintName": ""
-    },
-    "ActivityType": 0
+    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
+    "MachineActivityType": 0,
+    "MachineType": 4,
+    "ActivityType": 1
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
-        "LabSubstanceProperty": {
-          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "Saharoza",
-          "SubstanceMode": 0,
-          "SubstanceLayer": 0,
-          "SubstanceColorR": 0.9300523,
-          "SubstanceColorG": 0.8726415,
-          "SubstanceColorB": 1.0,
-          "SubstanceColorA": 0.843137264,
-          "HintName": ""
-        },
-        "Weight": 0.75,
-        "SideEffectTimeType": 0,
-        "SideEffectType": 0
-      }
-    ]
+    "$values": []
   }
 }

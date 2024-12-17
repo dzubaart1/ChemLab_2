@@ -1,14 +1,15 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
   "Number": 77,
   "Title": "Задание 77",
-  "Description": "Снимите наконечник с пипет-дозатора, выбросьте в емкость для отходов.",
+  "Description": "Возьмите салфетку, протрите рабочую поверхность ламинарного бокса",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 0,
-    "MachineType": 6,
+    "MachineActivityType": 2,
+    "MachineType": 17,
     "ActivityType": 1
   },
   "LabSideEffects": {

@@ -3,46 +3,17 @@
   "Lab": 1,
   "Number": 3,
   "Title": "Задание 3",
-  "Description": "Возьмите мерную ложечку и наберите необходимое количество реагента",
+  "Description": "Войдите и закройте дверь.",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
-    "FromContainer": 1,
-    "ToContainer": 2,
-    "LabSubstanceProperty": {
-      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-      "SubstanceName": "Pepton",
-      "SubstanceMode": 0,
-      "SubstanceLayer": 0,
-      "SubstanceColorR": 0.735849,
-      "SubstanceColorG": 0.500766039,
-      "SubstanceColorB": 0.2256141,
-      "SubstanceColorA": 0.7647059,
-      "HintName": ""
-    },
-    "ActivityType": 0
+    "$type": "BioEngineerLab.Activities.DoorLabActivity, Assembly-CSharp",
+    "Door": 2,
+    "DoorActivity": 1,
+    "ActivityType": 7
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
-        "LabSubstanceProperty": {
-          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "Pepton",
-          "SubstanceMode": 0,
-          "SubstanceLayer": 0,
-          "SubstanceColorR": 0.735849,
-          "SubstanceColorG": 0.500766039,
-          "SubstanceColorB": 0.2256141,
-          "SubstanceColorA": 0.7647059,
-          "HintName": ""
-        },
-        "Weight": 1.8,
-        "SideEffectTimeType": 0,
-        "SideEffectType": 0
-      }
-    ]
+    "$values": []
   }
 }

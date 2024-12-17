@@ -3,14 +3,14 @@
   "Lab": 1,
   "Number": 8,
   "Title": "Задание 8",
-  "Description": "Возьмите лодочку для взвешивания и поставьте ее на весы",
+  "Description": "Откройте дверь в лабораторию",
   "Warning": "",
-  "SaveableTask": true,
+  "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
-    "SocketType": 0,
-    "SocketActivityType": 0,
-    "ActivityType": 3
+    "$type": "BioEngineerLab.Activities.DoorLabActivity, Assembly-CSharp",
+    "Door": 3,
+    "DoorActivity": 0,
+    "ActivityType": 7
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

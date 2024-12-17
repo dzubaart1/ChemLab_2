@@ -3,14 +3,60 @@
   "Lab": 1,
   "Number": 27,
   "Title": "Задание 27",
-  "Description": "Возьмите емкость и поставьте на стол.",
+  "Description": "Возьмите емкость с пептоном и пересыпьте хлорид натрия (NaCl) в эту емкость",
   "Warning": "",
-  "SaveableTask": true,
+  "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
-    "SocketType": 4,
-    "SocketActivityType": 1,
-    "ActivityType": 3
+    "$type": "BioEngineerLab.Activities.CraftSubstanceLabActivity, Assembly-CSharp",
+    "LabCraft": {
+      "$type": "Crafting.LabCraft, Assembly-CSharp",
+      "SubstancesFrom": {
+        "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
+        "$values": [
+          {
+            "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+            "SubstanceName": "Pepton",
+            "SubstanceMode": 0,
+            "SubstanceLayer": 0,
+            "SubstanceColorR": 0.735849,
+            "SubstanceColorG": 0.500766039,
+            "SubstanceColorB": 0.2256141,
+            "SubstanceColorA": 0.7647059,
+            "HintName": ""
+          },
+          {
+            "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+            "SubstanceName": "NaCl",
+            "SubstanceMode": 0,
+            "SubstanceLayer": 0,
+            "SubstanceColorR": 0.8018868,
+            "SubstanceColorG": 0.8018868,
+            "SubstanceColorB": 0.8018868,
+            "SubstanceColorA": 0.745098054,
+            "HintName": ""
+          }
+        ]
+      },
+      "CraftType": 3,
+      "SubstancesRes": {
+        "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
+        "$values": [
+          {
+            "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+            "SubstanceName": "PeptonNaCl",
+            "SubstanceMode": 0,
+            "SubstanceLayer": 0,
+            "SubstanceColorR": 0.8207547,
+            "SubstanceColorG": 0.710314453,
+            "SubstanceColorB": 0.615566,
+            "SubstanceColorA": 0.870588243,
+            "HintName": ""
+          }
+        ]
+      }
+    },
+    "Container": 0,
+    "ActivityType": 5
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

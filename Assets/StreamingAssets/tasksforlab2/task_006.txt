@@ -3,25 +3,14 @@
   "Lab": 1,
   "Number": 6,
   "Title": "Задание 6",
-  "Description": "Возьмите пустую емкость объемом 500 мл и пересыпьте пептон в пустую емкость",
+  "Description": "Возьмите и наденьте бахилы ",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
-    "FromContainer": 3,
-    "ToContainer": 0,
-    "LabSubstanceProperty": {
-      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-      "SubstanceName": "Pepton",
-      "SubstanceMode": 0,
-      "SubstanceLayer": 0,
-      "SubstanceColorR": 0.735849,
-      "SubstanceColorG": 0.500766039,
-      "SubstanceColorB": 0.2256141,
-      "SubstanceColorA": 0.7647059,
-      "HintName": ""
-    },
-    "ActivityType": 0
+    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
+    "MachineActivityType": 0,
+    "MachineType": 20,
+    "ActivityType": 1
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

@@ -52,11 +52,6 @@ namespace Containers
             {
                 return _containerType;
             }
-
-            set
-            {
-                _containerType = value;
-            }
         }
 
         public bool IsWeightableContainer
@@ -91,6 +86,11 @@ namespace Containers
             }
 
             _maxVolume = value;
+        }
+
+        public void ChangeContainerType(EContainer value)
+        {
+            _containerType = value;
         }
         
         public float GetSubstancesWeight()

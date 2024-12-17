@@ -98,11 +98,10 @@ namespace Core
 
         public void LoadGame()
         {
-            LoadGameEvent?.Invoke();
-            
             _currentTaskID = _savedData.CurrentID;
             
             TaskUpdatedEvent?.Invoke(_tasksList[_currentTaskID]);
+            LoadGameEvent?.Invoke();
         }
 
         public void CompleteTask(LabActivity activity)
@@ -124,6 +123,10 @@ namespace Core
 
         private void MoveToNextTask()
         {
+            if (_currentLab == ELab.Lab2 && _currentTaskID == 8)
+            {
+                _currentTaskID = 13;
+            }
             if (IsCorrectTaskID(_currentTaskID))
             {
                 ActivateSideEffects(_tasksList[_currentTaskID], ESideEffectTime.EndTask);   

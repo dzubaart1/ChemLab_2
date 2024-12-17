@@ -3,46 +3,17 @@
   "Lab": 1,
   "Number": 30,
   "Title": "Задание 30",
-  "Description": "Возьмите большую банку с получившимся растворов и последовательно разлейте по 150 мл в чистые пустые емкости с надписями «Сахароза», «Глюкоза», «Лактоза»",
+  "Description": "Возьмите реактив с надписью «Бромкрезоловый пурпурный» и откройте крышку",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
-    "FromContainer": 0,
-    "ToContainer": 16,
-    "LabSubstanceProperty": {
-      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-      "SubstanceName": "StirPurbleSol",
-      "SubstanceMode": 0,
-      "SubstanceLayer": 0,
-      "SubstanceColorR": 0.320631772,
-      "SubstanceColorG": 0.240299046,
-      "SubstanceColorB": 0.3773585,
-      "SubstanceColorA": 0.807843149,
-      "HintName": ""
-    },
-    "ActivityType": 0
+    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
+    "SocketType": 22,
+    "SocketActivityType": 1,
+    "ActivityType": 3
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
-        "LabSubstanceProperty": {
-          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "StirPurbleSol",
-          "SubstanceMode": 0,
-          "SubstanceLayer": 0,
-          "SubstanceColorR": 0.320631772,
-          "SubstanceColorG": 0.240299046,
-          "SubstanceColorB": 0.3773585,
-          "SubstanceColorA": 0.807843149,
-          "HintName": ""
-        },
-        "Weight": 120.0,
-        "SideEffectTimeType": 0,
-        "SideEffectType": 0
-      }
-    ]
+    "$values": []
   }
 }

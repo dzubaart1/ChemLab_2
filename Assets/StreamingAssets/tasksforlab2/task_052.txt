@@ -3,13 +3,14 @@
   "Lab": 1,
   "Number": 52,
   "Title": "Задание 52",
-  "Description": "Включите автоклав",
+  "Description": "Возьмите лодочку для взвешивания и поставьте ее на весы",
   "Warning": "",
   "SaveableTask": true,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 12,
-    "ActivityType": 6
+    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
+    "SocketType": 0,
+    "SocketActivityType": 0,
+    "ActivityType": 3
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
