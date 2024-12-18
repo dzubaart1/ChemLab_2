@@ -5,6 +5,7 @@ using Gameplay;
 using TMPro;
 using UnityEngine;
 using Mechanics;
+using UI.Components;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
@@ -15,12 +16,26 @@ namespace BioEngineerLab.Machines
     {
         [SerializeField] private VRSocketInteractor _socketInteractor;
         [SerializeField] private TextMeshProUGUI _textMesh;
+        [SerializeField] private ButtonComponent _taraButton;
+
+        private float _taraWeight = 0;
+        private void OnEnable()
+        {
+            _taraButton.ClickBtnEvent += OnBtnClick;
+        }
+        
+        private void OnDisable()
+        {
+            _taraButton.ClickBtnEvent -= OnBtnClick;
+        }
 
         private void Update()
         {
+            float weight;
             if (_socketInteractor.SelectedObject == null)
             {
-                _textMesh.text = "0.0000g";
+                weight = 0 - _taraWeight;
+                _textMesh.text = weight.ToString("F4") + "g";
                 return;
             }
 
@@ -28,12 +43,15 @@ namespace BioEngineerLab.Machines
 
             if (container == null)
             {
-                _textMesh.text = "0.0000g";
+                weight = 0 - _taraWeight;
+                _textMesh.text = weight.ToString("F4") + "g";
                 return;
             }
 
             container.ChangeContainerType(EContainer.WeighingContainer);
-            _textMesh.text = container.GetSubstancesWeight() == 0 ? "0.0000g" : container.GetSubstancesWeight() + "g";
+
+            weight = container.GetSubstancesWeight() + container.GetContainerWeight() - _taraWeight;
+            _textMesh.text = weight.ToString("F4") + "g";
         }
 
         private void OnTriggerExit(Collider other)
@@ -49,6 +67,25 @@ namespace BioEngineerLab.Machines
             {
                 container.ChangeContainerType(EContainer.LodochkaContainer);
             }
+        }
+
+        private void OnBtnClick()
+        {
+            if (_socketInteractor.SelectedObject == null)
+            {
+                _taraWeight = 0;
+                return;
+            }
+
+            LabContainer container = _socketInteractor.SelectedObject.GetComponent<LabContainer>();
+
+            if (container == null)
+            {
+                _taraWeight = 0;
+                return;
+            }
+
+            _taraWeight = container.GetContainerWeight();
         }
     }
 }

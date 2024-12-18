@@ -99,9 +99,13 @@ namespace Core
         public void LoadGame()
         {
             _currentTaskID = _savedData.CurrentID;
-            
-            TaskUpdatedEvent?.Invoke(_tasksList[_currentTaskID]);
             LoadGameEvent?.Invoke();
+            
+            if (IsCorrectTaskID(_currentTaskID))
+            {
+                ActivateSideEffects(_tasksList[_currentTaskID], ESideEffectTime.StartTask);
+                TaskUpdatedEvent?.Invoke(_tasksList[_currentTaskID]);
+            }
         }
 
         public void CompleteTask(LabActivity activity)

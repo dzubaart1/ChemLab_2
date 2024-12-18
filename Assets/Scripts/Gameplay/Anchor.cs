@@ -35,6 +35,7 @@ namespace Gameplay
 
         public void TogglePhysics(bool isOn)
         {
+            _rigidbody.useGravity = isOn;
             _rigidbody.isKinematic = !isOn;
             _collider.enabled = isOn;
         }

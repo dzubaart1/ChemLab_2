@@ -11,6 +11,7 @@ namespace Containers
         private struct SavedData
         {
             public LabSubstance[] Substances;
+            public EContainer ContainerType;
         }
         
         [SerializeField] private LabContainer _labContainer;
@@ -60,11 +61,14 @@ namespace Containers
                 if(_labContainer.GetSubstanceByLayer((ESubstanceLayer)i) is not null)
                     _savedData.Substances[i] = new LabSubstance(_labContainer.GetSubstanceByLayer((ESubstanceLayer)i));
             }
+            
+            _savedData.ContainerType = _labContainer.ContainerType;
         }
 
         public void OnLoadScene()
         {
             _labContainer.UpdateSubstances(_savedData.Substances);
+            _labContainer.ChangeContainerType(_savedData.ContainerType);
         }
     }
 }

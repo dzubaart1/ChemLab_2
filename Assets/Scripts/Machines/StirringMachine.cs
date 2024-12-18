@@ -85,15 +85,6 @@ namespace Machines
             }
             
             CheckAnimatorStatus();
-            
-            LabContainer container = _socketInteractor.SelectedObject.GetComponent<LabContainer>();
-            
-            if (container == null)
-            {
-                return;
-            }
-
-            container.ChangeContainerType(EContainer.StirringContainer);
         }
 
         private void OnExit(SelectExitEventArgs args)
@@ -105,6 +96,28 @@ namespace Machines
             }
             
             CheckAnimatorStatus();
+        }
+
+        private void Update()
+        {
+            if (_socketInteractor is null)
+            {
+                return;
+            }
+            
+            if (_socketInteractor.SelectedObject is null)
+            {
+                return;
+            }
+            
+            LabContainer container = _socketInteractor.SelectedObject.GetComponent<LabContainer>();
+            
+            if (container == null)
+            {
+                return;
+            }
+
+            container.ChangeContainerType(EContainer.StirringContainer);
         }
 
         private void OnTriggerExit(Collider other)

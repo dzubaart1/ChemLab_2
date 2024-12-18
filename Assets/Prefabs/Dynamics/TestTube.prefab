@@ -226,7 +226,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &5099991352750339168
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -603,7 +603,6 @@ MonoBehaviour:
   _isEnterTaskSendable: 0
   _isExitTaskSendable: 0
   _isSubsctanceSocket: 0
-  _isStartEnter: 0
 --- !u!1 &8513571751982461715
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,7 +820,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 0
 --- !u!135 &8513571751578003403
 SphereCollider:
   m_ObjectHideFlags: 0

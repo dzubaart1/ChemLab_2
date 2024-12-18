@@ -110,6 +110,7 @@ namespace Containers
             {
                 if (CraftTools.TryFindCraft(_gameManager.Game.SOCrafts, fromLabContainer.GetSubstanceProperties().Concat(toLabContainer.GetSubstanceProperties()).ToList(),ECraft.Mix ,out SOLabCraft targetCraft))
                 {
+                    CraftTools.Mix(targetCraft.LabCraft, fromLabContainer, toLabContainer);
                     _gameManager.Game.CompleteTask(new CraftSubstanceLabActivity(toLabContainer.ContainerType, targetCraft.LabCraft));
                 }
                 return;

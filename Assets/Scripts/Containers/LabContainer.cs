@@ -109,6 +109,11 @@ namespace Containers
             return sumWeight;
         }
 
+        public float GetContainerWeight()
+        {
+            return _containerWeight;
+        }
+
         public float GetAvailableWeight()
         {
             return _maxVolume - GetSubstancesWeight();

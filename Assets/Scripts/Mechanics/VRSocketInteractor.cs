@@ -89,6 +89,16 @@ namespace Mechanics
         protected override void OnSelectEntered(SelectEnterEventArgs args)
         {
             base.OnSelectEntered(args);
+            
+            var other = args.interactableObject.transform.gameObject;
+
+            if (args.interactableObject is null)
+            {
+                return;
+            }
+            
+            SocketCollisionsIgnored(other, true);
+            
             if (!_isEnterTaskSendable)
             {
                 return;
@@ -117,6 +127,15 @@ namespace Mechanics
         protected override void OnSelectExited(SelectExitEventArgs args)
         {
             base.OnSelectExited(args);
+            
+            var other = args.interactableObject.transform.gameObject;
+
+            if (args.interactableObject is null)
+            {
+                return;
+            }
+            
+            SocketCollisionsIgnored(other, false);
 
             if (_gameManager == null)
             {
@@ -135,6 +154,17 @@ namespace Mechanics
             }
             
             _gameManager.CompleteTask(new SocketLabActivity(_socketType, ESocketActivity.Exit));
+        }
+        
+        private void SocketCollisionsIgnored(GameObject other, bool flag)
+        {        
+            GameObject parent = transform.parent.gameObject;
+            var myColliders = parent.GetComponentsInChildren<Collider>(true);
+            var theirColliders = other.GetComponentsInChildren<Collider>(true);
+    
+            foreach (var cA in myColliders)
+            foreach (var cB in theirColliders)
+                Physics.IgnoreCollision(cA, cB, flag);
         }
         
         private void SendTryTaskComplete(Transform objectTransform, ESocketActivity socketActivity)

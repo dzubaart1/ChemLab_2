@@ -82,6 +82,7 @@ namespace Containers
 
             if (_savedData.Anchor != null & Anchor != null)
             {
+                PutAnchor(_savedData.Anchor);
                 AnimateAnchor(_savedData.IsAnimating);
             }
             

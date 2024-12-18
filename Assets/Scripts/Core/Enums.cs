@@ -34,6 +34,7 @@ namespace Core
         NumberButton,
         BacteriumButton,
         LightButton,
+        TaraButton
     }
 
     public enum ECraft : byte
