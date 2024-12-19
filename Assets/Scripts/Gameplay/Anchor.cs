@@ -1,4 +1,5 @@
-﻿using Containers;
+﻿using System;
+using Containers;
 using Mechanics;
 using UnityEngine;
 
@@ -12,7 +13,7 @@ namespace Gameplay
         private VRGrabInteractable _grabInteractable;
         private Collider _collider;
         private Rigidbody _rigidbody;
-        
+        private bool _isGrabbed = false;
         private void Awake()
         {
             _collider = GetComponent<Collider>();
@@ -20,6 +21,14 @@ namespace Gameplay
             _grabInteractable = GetComponent<VRGrabInteractable>();
             _animator = GetComponent<Animator>();
         }
+
+        private void Update()
+        {
+            if (_isGrabbed)
+            {
+                transform.position = transform.parent.position + Vector3.up;
+            }
+        } 
 
         private void OnTriggerStay(Collider other)
         {
@@ -37,7 +46,10 @@ namespace Gameplay
         {
             _rigidbody.useGravity = isOn;
             _rigidbody.isKinematic = !isOn;
+            
             _collider.enabled = isOn;
+            
+            _isGrabbed = isOn;
         }
 
         public void ToggleAnimate(bool isEnable)
