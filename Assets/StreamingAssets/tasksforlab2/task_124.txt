@@ -1,14 +1,32 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
   "Number": 124,
   "Title": "Задание 124",
-  "Description": "Подойдите к телепорту и получите результаты из лаборатории клеточных исследований",
+  "Description": "Возьмите ёмкость с надписью «Сахароза»",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.AnchorLabActivity, Assembly-CSharp",
-    "ContainerType": 0,
-    "ActivityType": 4
+    "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",
+    "SocketType": 29,
+    "SocketActivityType": 1,
+    "LabSubstanceProperties": {
+      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
+      "$values": [
+        {
+          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+          "SubstanceName": "Sakaroza and Purple Sol",
+          "SubstanceMode": 0,
+          "SubstanceLayer": 0,
+          "SubstanceColorR": 0.61556536,
+          "SubstanceColorG": 0.46364364,
+          "SubstanceColorB": 0.6509434,
+          "SubstanceColorA": 0.8666667,
+          "HintName": ""
+        }
+      ]
+    },
+    "ActivityType": 2
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

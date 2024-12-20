@@ -1,26 +1,32 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
   "Number": 131,
   "Title": "Задание 131",
-  "Description": "C помощью темного шпателя, пересыпьте по трети состава в две чистые чашки Петри. ",
+  "Description": "Возьмите ёмкость с надписью «Глюкоза»",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
-    "FromContainer": 11,
-    "ToContainer": 7,
-    "LabSubstanceProperty": {
-      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-      "SubstanceName": "DryAgarSed",
-      "SubstanceMode": 0,
-      "SubstanceLayer": 0,
-      "SubstanceColorR": 0.6415094,
-      "SubstanceColorG": 0.495189816,
-      "SubstanceColorB": 0.3721965,
-      "SubstanceColorA": 1.0,
-      "HintName": ""
+    "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",
+    "SocketType": 29,
+    "SocketActivityType": 1,
+    "LabSubstanceProperties": {
+      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
+      "$values": [
+        {
+          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+          "SubstanceName": "PenicilliumGlukoza",
+          "SubstanceMode": 0,
+          "SubstanceLayer": 0,
+          "SubstanceColorR": 0.6644016,
+          "SubstanceColorG": 0.537335336,
+          "SubstanceColorB": 0.7075472,
+          "SubstanceColorA": 0.8352941,
+          "HintName": ""
+        }
+      ]
     },
-    "ActivityType": 0
+    "ActivityType": 2
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

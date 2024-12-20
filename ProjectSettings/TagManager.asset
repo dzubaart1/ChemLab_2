@@ -16,6 +16,7 @@ TagManager:
   - Pulverizator
   - LHand
   - RHand
+  - PenicilliumSocket
   layers:
   - Default
   - TransparentFX

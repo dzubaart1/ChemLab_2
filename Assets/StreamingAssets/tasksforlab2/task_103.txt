@@ -1,15 +1,15 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
   "Number": 103,
   "Title": "Задание 103",
-  "Description": "Откройте одну из пробирок.",
+  "Description": "Возьмите пульверизатор в правую руку и обработайте левую руку спиртом",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 1,
-    "MachineType": 7,
-    "ActivityType": 1
+    "$type": "BioEngineerLab.Activities.AnchorLabActivity, Assembly-CSharp",
+    "ContainerType": 0,
+    "ActivityType": 4
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

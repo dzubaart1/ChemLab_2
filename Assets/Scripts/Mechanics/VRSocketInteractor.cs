@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using BioEngineerLab.Activities;
 using Containers;
 using Core;
@@ -21,7 +22,8 @@ namespace Mechanics
         [SerializeField] private bool _isEnterTaskSendable;
         [SerializeField] private bool _isExitTaskSendable;
 
-        [SerializeField] private bool _isSubsctanceSocket;
+        [SerializeField] private bool _isSubsctanceEnterSocket;
+        [SerializeField] private bool _isSubsctanceExitSocket;
 
         [CanBeNull]
         public Transform SelectedObject
@@ -43,14 +45,14 @@ namespace Mechanics
         
         private bool _isLoadSceneEnter;
         private bool _isLoadSceneExit;
-        private bool _isStartEnter;
+        [SerializeField] private bool _isStartEnter;
 
         protected override void Awake()
         {
             base.Awake();
 
+            ESocket socket = _socketType;
             _gameManager = GameManager.Instance;
-            _isStartEnter = startingSelectedInteractable != null;
         }
 
         protected override void OnEnable()
@@ -111,7 +113,7 @@ namespace Mechanics
             
             if (_isStartEnter)
             {
-                _isStartEnter = !_isStartEnter;
+                _isStartEnter = false;
                 return;
             }
 
@@ -153,7 +155,8 @@ namespace Mechanics
                 return;
             }
             
-            _gameManager.CompleteTask(new SocketLabActivity(_socketType, ESocketActivity.Exit));
+            /*_gameManager.CompleteTask(new SocketLabActivity(_socketType, ESocketActivity.Exit));*/
+            SendTryTaskComplete(args.interactableObject.transform, ESocketActivity.Exit);
         }
         
         private void SocketCollisionsIgnored(GameObject other, bool flag)
@@ -174,7 +177,8 @@ namespace Mechanics
                 return;
             }
             
-            if (_isSubsctanceSocket)
+            if (_isSubsctanceEnterSocket && socketActivity == ESocketActivity.Enter ||
+                _isSubsctanceExitSocket && socketActivity == ESocketActivity.Exit)
             {
                 LabContainer labContainer = objectTransform.GetComponent<LabContainer>();
                 if (labContainer == null)

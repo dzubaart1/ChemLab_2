@@ -1,15 +1,32 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
   "Number": 97,
   "Title": "Задание 97",
-  "Description": "Закройте пробирки.",
+  "Description": "Подойдите к автоклаву, извлеките ёмкость с надписью «Сахароза» ",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 2,
-    "MachineType": 7,
-    "ActivityType": 1
+    "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",
+    "SocketType": 26,
+    "SocketActivityType": 1,
+    "LabSubstanceProperties": {
+      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
+      "$values": [
+        {
+          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+          "SubstanceName": "Sakaroza and Purple Sol",
+          "SubstanceMode": 0,
+          "SubstanceLayer": 0,
+          "SubstanceColorR": 0.61556536,
+          "SubstanceColorG": 0.46364364,
+          "SubstanceColorB": 0.6509434,
+          "SubstanceColorA": 0.8666667,
+          "HintName": ""
+        }
+      ]
+    },
+    "ActivityType": 2
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

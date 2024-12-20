@@ -33,11 +33,11 @@ MonoBehaviour:
   - DozatorTableSocket
   - PipetBoxSocket
   - KeySocket
-  - 
-  - 
-  - 
-  - 
-  - 
+  - PeniciliumSocket
+  - LaminBoxBottleSocket
+  - PenicilliumCapSocket
+  - PenicilliumPlenkaSocket
+  - ShakerSocket
   - 
   - 
   - 

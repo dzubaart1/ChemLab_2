@@ -1,15 +1,32 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
   "Number": 102,
   "Title": "Задание 102",
-  "Description": "Остановите центрифугу",
+  "Description": "Поставьте ёмкостью с надписью «Глюкоза» в ламинарный бокс",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 2,
-    "MachineType": 8,
-    "ActivityType": 1
+    "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",
+    "SocketType": 29,
+    "SocketActivityType": 0,
+    "LabSubstanceProperties": {
+      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
+      "$values": [
+        {
+          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+          "SubstanceName": "Glukoza and Purple Sol",
+          "SubstanceMode": 0,
+          "SubstanceLayer": 0,
+          "SubstanceColorR": 0.527487159,
+          "SubstanceColorG": 0.4627451,
+          "SubstanceColorB": 0.6509804,
+          "SubstanceColorA": 0.8509804,
+          "HintName": ""
+        }
+      ]
+    },
+    "ActivityType": 2
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

@@ -8,7 +8,7 @@
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 15,
+    "ButtonType": 16,
     "ActivityType": 6
   },
   "LabSideEffects": {

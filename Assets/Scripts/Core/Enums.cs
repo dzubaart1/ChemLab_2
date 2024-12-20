@@ -86,6 +86,7 @@ namespace Core
         BottleContainer,
         WeighingContainer,
         StirringContainer,
+        PenicilliumContainer,
     }
     
     public enum ESideEffect : byte
@@ -120,7 +121,8 @@ namespace Core
         DryMachineDoor,
         AutoClaveDoor,
         EnterDoor1,
-        EnterDoor2
+        EnterDoor2,
+        ShakerDoor
     }
 
     public enum EDoorActivity : byte
@@ -153,8 +155,7 @@ namespace Core
         LabCoatMachine,
         ShoeCoversMachine,
         LabGlovesMachine,
-        PulLHandMachine,
-        PulRHandMachine,
+        ShakerMachine
     }
     
     public enum ESocketActivity : byte
@@ -201,6 +202,11 @@ namespace Core
         BankSaharozaSocket,
         BankLaktozaSocket,
         AutoclaveSocket,
-        KeySocket
+        KeySocket,
+        PeniciliumSocket,
+        LaminBoxBottleSocket,
+        PenicilliumCapSocket,
+        PenicilliumPlenkaSocket,
+        ShakerSocket
     }
 }

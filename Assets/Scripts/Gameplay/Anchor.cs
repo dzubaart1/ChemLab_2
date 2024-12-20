@@ -26,7 +26,7 @@ namespace Gameplay
         {
             if (_isGrabbed)
             {
-                transform.position = transform.parent.position + Vector3.up;
+                transform.position = transform.parent.position + Vector3.up * 0.1f;
             }
         } 
 

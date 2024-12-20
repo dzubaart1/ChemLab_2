@@ -383,8 +383,8 @@ MonoBehaviour:
   _socketType: 17
   _isEnterTaskSendable: 0
   _isExitTaskSendable: 0
-  _isSubsctanceSocket: 0
-  _isStartEnter: 0
+  _isSubsctanceEnterSocket: 0
+  _isSubsctanceExitSocket: 0
 --- !u!135 &2562155564905575613
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -567,7 +567,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 65538
+    m_Bits: 18939906
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1

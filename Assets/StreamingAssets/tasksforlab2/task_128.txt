@@ -1,47 +1,19 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
   "Number": 128,
   "Title": "Задание 128",
-  "Description": "C помощью темного шпателя, пересыпьте по трети состава в две чистые чашки Петри. ",
+  "Description": "Откройте дверь шейкер-инкубатора",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
-    "FromContainer": 7,
-    "ToContainer": 11,
-    "LabSubstanceProperty": {
-      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-      "SubstanceName": "DryAgarSed",
-      "SubstanceMode": 0,
-      "SubstanceLayer": 0,
-      "SubstanceColorR": 0.6415094,
-      "SubstanceColorG": 0.495189816,
-      "SubstanceColorB": 0.3721965,
-      "SubstanceColorA": 1.0,
-      "HintName": ""
-    },
-    "ActivityType": 0
+    "$type": "BioEngineerLab.Activities.DoorLabActivity, Assembly-CSharp",
+    "Door": 4,
+    "DoorActivity": 0,
+    "ActivityType": 7
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
-        "LabSubstanceProperty": {
-          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "DryAgarSed",
-          "SubstanceMode": 0,
-          "SubstanceLayer": 0,
-          "SubstanceColorR": 0.6415094,
-          "SubstanceColorG": 0.495189816,
-          "SubstanceColorB": 0.3721965,
-          "SubstanceColorA": 1.0,
-          "HintName": ""
-        },
-        "Weight": 30.0,
-        "SideEffectTimeType": 0,
-        "SideEffectType": 2
-      }
-    ]
+    "$values": []
   }
 }

@@ -1,26 +1,32 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
   "Number": 94,
   "Title": "Задание 94",
-  "Description": "Разлейте раствор твёрдого Agar с веществом из термостойкого стакана в две пробирки для центрифуги.",
+  "Description": "Подойдите к автоклаву и откройте дверцу. Возьмите прихватку и извлеките ёмкость с надписью «Лактоза». \tВозьмите прихватку и извлеките ёмкость с надписью «Лактоза». ",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
-    "FromContainer": 0,
-    "ToContainer": 11,
-    "LabSubstanceProperty": {
-      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-      "SubstanceName": "StirHardAgarH2O",
-      "SubstanceMode": 0,
-      "SubstanceLayer": 0,
-      "SubstanceColorR": 1.0,
-      "SubstanceColorG": 0.93553257,
-      "SubstanceColorB": 0.7971698,
-      "SubstanceColorA": 0.843137264,
-      "HintName": ""
+    "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",
+    "SocketType": 26,
+    "SocketActivityType": 1,
+    "LabSubstanceProperties": {
+      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
+      "$values": [
+        {
+          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+          "SubstanceName": "Laktoza and Purple Sol",
+          "SubstanceMode": 0,
+          "SubstanceLayer": 0,
+          "SubstanceColorR": 0.6509804,
+          "SubstanceColorG": 0.4627451,
+          "SubstanceColorB": 0.6353192,
+          "SubstanceColorA": 0.8862745,
+          "HintName": ""
+        }
+      ]
     },
-    "ActivityType": 0
+    "ActivityType": 2
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

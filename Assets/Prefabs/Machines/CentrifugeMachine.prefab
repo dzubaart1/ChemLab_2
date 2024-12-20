@@ -552,7 +552,9 @@ MonoBehaviour:
   _socketType: 13
   _isEnterTaskSendable: 1
   _isExitTaskSendable: 0
-  _isSubsctanceSocket: 1
+  _isSubsctanceEnterSocket: 1
+  _isSubsctanceExitSocket: 0
+  _isStartEnter: 0
 --- !u!1 &5048447335646882374
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,7 +800,9 @@ MonoBehaviour:
   _socketType: 13
   _isEnterTaskSendable: 1
   _isExitTaskSendable: 0
-  _isSubsctanceSocket: 1
+  _isSubsctanceEnterSocket: 1
+  _isSubsctanceExitSocket: 0
+  _isStartEnter: 0
 --- !u!1 &5048447336343672714
 GameObject:
   m_ObjectHideFlags: 0

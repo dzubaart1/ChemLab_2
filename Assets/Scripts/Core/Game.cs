@@ -131,6 +131,26 @@ namespace Core
             {
                 _currentTaskID = 13;
             }
+            if (_currentLab == ELab.Lab2 && _currentTaskID == 90)
+            {
+                _currentTaskID = 91;
+            }
+            if (_currentLab == ELab.Lab2 && _currentTaskID == 93)
+            {
+                _currentTaskID = 94;
+            }
+            if (_currentLab == ELab.Lab2 && _currentTaskID == 96)
+            {
+                _currentTaskID = 97;
+            }
+            if (_currentLab == ELab.Lab2 && _currentTaskID == 99)
+            {
+                _currentTaskID = 100;
+            }
+            if (_currentLab == ELab.Lab2 && _currentTaskID == 101)
+            {
+                _currentTaskID = 103;
+            }
             if (IsCorrectTaskID(_currentTaskID))
             {
                 ActivateSideEffects(_tasksList[_currentTaskID], ESideEffectTime.EndTask);   

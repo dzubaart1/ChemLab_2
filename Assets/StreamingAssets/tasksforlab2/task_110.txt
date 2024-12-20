@@ -1,53 +1,25 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
   "Number": 110,
   "Title": "Задание 110",
-  "Description": "Перелейте воду из пипет-дозатора в термостойкий стакан с водой.",
+  "Description": "Установите на пипет-дозаторе значение 100мкл",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.CraftSubstanceLabActivity, Assembly-CSharp",
-    "LabCraft": {
-      "$type": "Crafting.LabCraft, Assembly-CSharp",
-      "SubstancesFrom": {
-        "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
-        "$values": [
-          {
-            "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-            "SubstanceName": "H2O",
-            "SubstanceMode": 0,
-            "SubstanceLayer": 0,
-            "SubstanceColorR": 0.407262385,
-            "SubstanceColorG": 0.4974264,
-            "SubstanceColorB": 0.6037736,
-            "SubstanceColorA": 0.8117647,
-            "HintName": ""
-          }
-        ]
-      },
-      "CraftType": 3,
-      "SubstancesRes": {
-        "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
-        "$values": [
-          {
-            "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-            "SubstanceName": "H2O",
-            "SubstanceMode": 0,
-            "SubstanceLayer": 0,
-            "SubstanceColorR": 0.407262385,
-            "SubstanceColorG": 0.4974264,
-            "SubstanceColorB": 0.6037736,
-            "SubstanceColorA": 0.8117647,
-            "HintName": ""
-          }
-        ]
-      }
-    },
-    "Container": 0,
-    "ActivityType": 5
+    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
+    "ButtonType": 2,
+    "ActivityType": 6
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": []
+    "$values": [
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.SetDozatorVolumeLabSideEffect, Assembly-CSharp",
+        "DozatorVolume": 0.0001,
+        "SideEffectTimeType": 1,
+        "SideEffectType": 1
+      }
+    ]
   }
 }

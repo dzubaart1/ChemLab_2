@@ -1,14 +1,15 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
   "Number": 93,
   "Title": "Задание 93",
-  "Description": "Возьмите термостойкий стакан \"3\" с плитки.",
+  "Description": "Внесите пенициллиновый флакон в ламинарный бокс для размораживания",
   "Warning": "",
-  "SaveableTask": true,
+  "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
-    "SocketType": 4,
-    "SocketActivityType": 1,
+    "SocketType": 28,
+    "SocketActivityType": 0,
     "ActivityType": 3
   },
   "LabSideEffects": {

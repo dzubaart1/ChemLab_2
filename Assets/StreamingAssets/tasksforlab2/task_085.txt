@@ -1,26 +1,16 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
   "Number": 85,
   "Title": "Задание 85",
-  "Description": "Твердый Agar с веществом пересыпьте в термостойкий стакан.",
+  "Description": "Возьмите специальный ключ, включите ламинарный бокс",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
-    "FromContainer": 10,
-    "ToContainer": 0,
-    "LabSubstanceProperty": {
-      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-      "SubstanceName": "HardAgar",
-      "SubstanceMode": 0,
-      "SubstanceLayer": 0,
-      "SubstanceColorR": 0.5007565,
-      "SubstanceColorG": 0.8773585,
-      "SubstanceColorB": 0.8356848,
-      "SubstanceColorA": 0.745098054,
-      "HintName": ""
-    },
-    "ActivityType": 0
+    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
+    "MachineActivityType": 1,
+    "MachineType": 16,
+    "ActivityType": 1
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

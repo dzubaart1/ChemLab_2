@@ -1,14 +1,15 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
   "Number": 105,
   "Title": "Задание 105",
-  "Description": "Наденьте на пипет-дозатор чистый наконечник. ",
+  "Description": "Снимите плёнку с пенициллинового флакона",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
-    "SocketType": 6,
-    "SocketActivityType": 0,
+    "SocketType": 31,
+    "SocketActivityType": 1,
     "ActivityType": 3
   },
   "LabSideEffects": {

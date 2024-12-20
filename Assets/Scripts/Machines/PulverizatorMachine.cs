@@ -72,11 +72,11 @@ namespace Machines
             {
                 if (other.CompareTag("LHand"))
                 {
-                    _gameManager.CompleteTask(new MachineLabActivity(EMachineActivity.OnEnter, EMachine.PulLHandMachine));
+                    /*_gameManager.CompleteTask(new MachineLabActivity(EMachineActivity.OnEnter, EMachine.PulLHandMachine));*/
                 }
                 else if (other.CompareTag("RHand"))
                 {
-                    _gameManager.CompleteTask(new MachineLabActivity(EMachineActivity.OnEnter, EMachine.PulRHandMachine));
+                    /*_gameManager.CompleteTask(new MachineLabActivity(EMachineActivity.OnEnter, EMachine.PulRHandMachine));*/
                 }
                 StartCoroutine(StartDelayBetweenActivated());
             }

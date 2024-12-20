@@ -1,24 +1,18 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
   "Number": 104,
   "Title": "Задание 104",
-  "Description": "Установите правой рукой на пипет-дозаторе значение 5.0 ml",
+  "Description": "Возьмите пульверизатор в левую руку и обработайте правую руку спиртом",
   "Warning": "",
-  "SaveableTask": true,
+  "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 2,
-    "ActivityType": 6
+    "$type": "BioEngineerLab.Activities.AnchorLabActivity, Assembly-CSharp",
+    "ContainerType": 0,
+    "ActivityType": 4
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.SetDozatorVolumeLabSideEffect, Assembly-CSharp",
-        "DozatorVolume": 5.0,
-        "SideEffectTimeType": 1,
-        "SideEffectType": 3
-      }
-    ]
+    "$values": []
   }
 }

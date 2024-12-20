@@ -1,17 +1,30 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
   "Number": 118,
   "Title": "Задание 118",
-  "Description": "Заберите из сушильного шкафа чашку Петри с растворами хлорида кальция и Na2HPO4 и Agar. ",
+  "Description": "Возьмите ёмкость с надписью «Лактоза»",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",
-    "SocketType": 11,
+    "SocketType": 29,
     "SocketActivityType": 1,
     "LabSubstanceProperties": {
       "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
-      "$values": []
+      "$values": [
+        {
+          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+          "SubstanceName": "Laktoza and Purple Sol",
+          "SubstanceMode": 0,
+          "SubstanceLayer": 0,
+          "SubstanceColorR": 0.6509804,
+          "SubstanceColorG": 0.4627451,
+          "SubstanceColorB": 0.6353192,
+          "SubstanceColorA": 0.8862745,
+          "HintName": ""
+        }
+      ]
     },
     "ActivityType": 2
   },

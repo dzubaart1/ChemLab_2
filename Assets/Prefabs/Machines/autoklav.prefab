@@ -371,8 +371,9 @@ MonoBehaviour:
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   _socketType: 26
   _isEnterTaskSendable: 1
-  _isExitTaskSendable: 0
-  _isSubsctanceSocket: 1
+  _isExitTaskSendable: 1
+  _isSubsctanceEnterSocket: 1
+  _isSubsctanceExitSocket: 1
 --- !u!135 &808051564525400671
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1120,8 +1121,9 @@ MonoBehaviour:
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   _socketType: 26
   _isEnterTaskSendable: 1
-  _isExitTaskSendable: 0
-  _isSubsctanceSocket: 1
+  _isExitTaskSendable: 1
+  _isSubsctanceEnterSocket: 1
+  _isSubsctanceExitSocket: 1
 --- !u!135 &142534162703223231
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1658,8 +1660,9 @@ MonoBehaviour:
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   _socketType: 26
   _isEnterTaskSendable: 1
-  _isExitTaskSendable: 0
-  _isSubsctanceSocket: 1
+  _isExitTaskSendable: 1
+  _isSubsctanceEnterSocket: 1
+  _isSubsctanceExitSocket: 1
 --- !u!135 &1877301406925646227
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2072,7 +2075,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -6.4431, y: 0.5697242, z: -4.2097197}
+  m_ConnectedAnchor: {x: -26.928722, y: 0.845, z: 11.019062}
   serializedVersion: 2
   m_UseSpring: 0
   m_Spring:
