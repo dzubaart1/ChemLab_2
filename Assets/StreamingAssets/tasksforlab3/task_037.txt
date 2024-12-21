@@ -1,0 +1,19 @@
+{
+  "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 2,
+  "Number": 37,
+  "Title": "Задание 37",
+  "Description": "Достаньте из морозильной камеры пенициллиновый флакон с бактериями «S.t. 56-45»",
+  "Warning": "",
+  "SaveableTask": true,
+  "LabActivity": {
+    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
+    "SocketType": 28,
+    "SocketActivityType": 1,
+    "ActivityType": 3
+  },
+  "LabSideEffects": {
+    "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
+    "$values": []
+  }
+}

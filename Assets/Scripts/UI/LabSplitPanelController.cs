@@ -46,6 +46,17 @@ public class LabSplitPanelController : MonoBehaviour
         _gameManager.StartGame(ELab.Lab2);
         _gameManager.LoadScene(Game.LAB_2_SCENE_NAME);
     }
+    
+    public void BeginLab3()
+    {
+        if (_gameManager == null)
+        {
+            return;
+        }
+        
+        _gameManager.StartGame(ELab.Lab3);
+        _gameManager.LoadScene(Game.LAB_3_SCENE_NAME);
+    }
 
     public void Lab1Open()
     {

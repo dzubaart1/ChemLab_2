@@ -1,0 +1,19 @@
+{
+  "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 2,
+  "Number": 1,
+  "Title": "Задание 1",
+  "Description": "Подойдите к двери и наберите шифр «123»",
+  "Warning": "",
+  "SaveableTask": true,
+  "LabActivity": {
+    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
+    "MachineActivityType": 0,
+    "MachineType": 18,
+    "ActivityType": 1
+  },
+  "LabSideEffects": {
+    "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
+    "$values": []
+  }
+}

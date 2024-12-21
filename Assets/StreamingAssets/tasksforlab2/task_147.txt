@@ -1,0 +1,18 @@
+{
+  "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
+  "Number": 147,
+  "Title": "Задание 147",
+  "Description": "Закройте ламинарный бокс (поднимите и задвиньте нижнюю панель)",
+  "Warning": "",
+  "SaveableTask": false,
+  "LabActivity": {
+    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
+    "ButtonType": 21,
+    "ActivityType": 6
+  },
+  "LabSideEffects": {
+    "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
+    "$values": []
+  }
+}

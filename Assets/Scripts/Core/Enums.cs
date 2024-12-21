@@ -34,7 +34,9 @@ namespace Core
         NumberButton,
         BacteriumButton,
         LightButton,
-        TaraButton
+        TaraButton,
+        ShakerPowerButton,
+        ShakerRPMButton,
     }
 
     public enum ECraft : byte
@@ -113,7 +115,8 @@ namespace Core
     public enum ELab : byte
     {
         Lab1,
-        Lab2
+        Lab2,
+        Lab3
     }
 
     public enum EDoor : byte
@@ -155,7 +158,8 @@ namespace Core
         LabCoatMachine,
         ShoeCoversMachine,
         LabGlovesMachine,
-        ShakerMachine
+        ShakerMachine,
+        MiniTrashMachine
     }
     
     public enum ESocketActivity : byte

@@ -1,0 +1,18 @@
+{
+  "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
+  "Number": 145,
+  "Title": "Задание 145",
+  "Description": "На приборной панели нажмите кнопку «F»",
+  "Warning": "",
+  "SaveableTask": false,
+  "LabActivity": {
+    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
+    "ButtonType": 15,
+    "ActivityType": 6
+  },
+  "LabSideEffects": {
+    "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
+    "$values": []
+  }
+}

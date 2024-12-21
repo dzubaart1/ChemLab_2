@@ -1,0 +1,19 @@
+{
+  "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 2,
+  "Number": 26,
+  "Title": "Задание 26",
+  "Description": "Возьмите специальный ключ, включите ламинарный бокс",
+  "Warning": "",
+  "SaveableTask": false,
+  "LabActivity": {
+    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
+    "MachineActivityType": 1,
+    "MachineType": 16,
+    "ActivityType": 1
+  },
+  "LabSideEffects": {
+    "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
+    "$values": []
+  }
+}

@@ -9,7 +9,7 @@
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
     "MachineActivityType": 0,
-    "MachineType": 6,
+    "MachineType": 23,
     "ActivityType": 1
   },
   "LabSideEffects": {

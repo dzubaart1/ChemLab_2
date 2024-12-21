@@ -1,0 +1,19 @@
+{
+  "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 2,
+  "Number": 13,
+  "Title": "Задание 13",
+  "Description": "Возьмите пульверизатор в правую руку и обработайте левую руку спиртом ",
+  "Warning": "",
+  "SaveableTask": false,
+  "LabActivity": {
+    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
+    "MachineActivityType": 0,
+    "MachineType": 22,
+    "ActivityType": 1
+  },
+  "LabSideEffects": {
+    "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
+    "$values": []
+  }
+}

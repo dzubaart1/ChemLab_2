@@ -1,0 +1,30 @@
+{
+  "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 2,
+  "Number": 54,
+  "Title": "Задание 54",
+  "Description": "Откройте чашку Петри с номером II, с помощью пипет-дозатора поместите бактерии внутрь чашки Петри",
+  "Warning": "",
+  "SaveableTask": false,
+  "LabActivity": {
+    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
+    "FromContainer": 6,
+    "ToContainer": 7,
+    "LabSubstanceProperty": {
+      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+      "SubstanceName": "Penicillium",
+      "SubstanceMode": 0,
+      "SubstanceLayer": 0,
+      "SubstanceColorR": 0.9528302,
+      "SubstanceColorG": 0.927144468,
+      "SubstanceColorB": 0.7775454,
+      "SubstanceColorA": 0.807843149,
+      "HintName": ""
+    },
+    "ActivityType": 0
+  },
+  "LabSideEffects": {
+    "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
+    "$values": []
+  }
+}

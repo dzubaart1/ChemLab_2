@@ -1,14 +1,15 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 1,
   "Number": 137,
   "Title": "Задание 137",
-  "Description": "Сбросьте грязный металический шпатель в емкость для мытья лабораторной посуды",
+  "Description": "Возьмите ёмкость для отходов из ламинарного бокса, выбросите мусор в корзину для мусора",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
     "MachineActivityType": 0,
-    "MachineType": 4,
+    "MachineType": 6,
     "ActivityType": 1
   },
   "LabSideEffects": {

@@ -1,0 +1,19 @@
+{
+  "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 2,
+  "Number": 15,
+  "Title": "Задание 15",
+  "Description": "Подойдите к термостату, включите кнопку «Сеть»",
+  "Warning": "",
+  "SaveableTask": true,
+  "LabActivity": {
+    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
+    "SocketType": 0,
+    "SocketActivityType": 0,
+    "ActivityType": 3
+  },
+  "LabSideEffects": {
+    "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
+    "$values": []
+  }
+}

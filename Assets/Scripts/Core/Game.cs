@@ -22,6 +22,7 @@ namespace Core
         public const string START_SCENE_NAME = "StartScene";
         public const string LAB_1_SCENE_NAME = "Lab1";
         public const string LAB_2_SCENE_NAME = "Lab2";
+        public const string LAB_3_SCENE_NAME = "Lab2";
         
         public event Action<LabSideEffect> SideEffectActivatedEvent;
         public event Action<LabTask> TaskUpdatedEvent;
@@ -127,7 +128,7 @@ namespace Core
 
         private void MoveToNextTask()
         {
-            if (_currentLab == ELab.Lab2 && _currentTaskID == 8)
+            if ((_currentLab == ELab.Lab2 || _currentLab == ELab.Lab3) && _currentTaskID == 8)
             {
                 _currentTaskID = 13;
             }
@@ -151,6 +152,24 @@ namespace Core
             {
                 _currentTaskID = 103;
             }
+            if (_currentLab == ELab.Lab2 && _currentTaskID == 136)
+            {
+                _currentTaskID = 137;
+            }
+            if (_currentLab == ELab.Lab2 && _currentTaskID == 150)
+            {
+                _currentTaskID = 151;
+            }
+            
+            if (_currentLab == ELab.Lab3 && _currentTaskID == 36)
+            {
+                _currentTaskID = 37;
+            }
+            if (_currentLab == ELab.Lab3 && _currentTaskID == 38)
+            {
+                _currentTaskID = 40;
+            }
+            
             if (IsCorrectTaskID(_currentTaskID))
             {
                 ActivateSideEffects(_tasksList[_currentTaskID], ESideEffectTime.EndTask);   

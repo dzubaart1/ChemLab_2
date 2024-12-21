@@ -88,6 +88,8 @@ namespace Database
                     return "tasksforlab1";
                 case ELab.Lab2:
                     return "tasksforlab2";
+                case ELab.Lab3:
+                    return "tasksforlab3";
                 default:
                     Debug.LogError("Can't find lab!");
                     return "tasksforlab1";
@@ -101,6 +103,8 @@ namespace Database
                 case ELab.Lab1:
                     return $"{Application.streamingAssetsPath}/{GetFolderName(lab)}/";
                 case ELab.Lab2:
+                    return $"{Application.streamingAssetsPath}/{GetFolderName(lab)}/";
+                case ELab.Lab3:
                     return $"{Application.streamingAssetsPath}/{GetFolderName(lab)}/";
                 default:
                     Debug.LogError("Can't find labNumber!");

@@ -1,0 +1,19 @@
+{
+  "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 2,
+  "Number": 22,
+  "Title": "Задание 22",
+  "Description": "Возьмите пульверизатор, обработайте рабочую поверхность ламинарного бокса",
+  "Warning": "",
+  "SaveableTask": false,
+  "LabActivity": {
+    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
+    "MachineActivityType": 1,
+    "MachineType": 17,
+    "ActivityType": 1
+  },
+  "LabSideEffects": {
+    "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
+    "$values": []
+  }
+}
