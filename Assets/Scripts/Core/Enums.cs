@@ -72,6 +72,7 @@ namespace Core
         CraftSubstanceActivity,
         ButtonClickedActivity,
         DoorActivity,
+        PulveriazatorActivity,
         BadActivity
     }
     
@@ -230,5 +231,13 @@ namespace Core
     {
         Penicilliuminteractable,
         PetriDishInteractable,
+    }
+
+    public enum EPulverizatorHits : byte
+    {
+        LeftHandHit,
+        RightHandHit,
+        PenicilliumHit,
+        
     }
 }

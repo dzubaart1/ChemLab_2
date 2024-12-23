@@ -7,12 +7,11 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 namespace Machines
 {
-    public class PenicilliumMachine : MonoBehaviour
+    public class SetInteractableListener : MonoBehaviour
     {
 
         [SerializeField] private VRGrabInteractable _grabInteractable;
-        [SerializeField] private VRGrabInteractable _cap;
-        [SerializeField] private VRGrabInteractable _plenka;
+        [SerializeField] private EInteractable _interactableType;
 
         
         [CanBeNull] private GameManager _gameManager;
@@ -23,9 +22,6 @@ namespace Machines
 
         private void OnEnable()
         {
-            /*_grabInteractable.selectEntered.AddListener(OnSelectEntered);
-            _grabInteractable.selectExited.AddListener(OnSelectExited);*/
-            
             if (_gameManager == null)
             {
                 return;
@@ -36,9 +32,6 @@ namespace Machines
         
         private void OnDisable()
         {
-            /*_grabInteractable.selectEntered.RemoveListener(OnSelectEntered);
-            _grabInteractable.selectExited.RemoveListener(OnSelectExited);*/
-            
             if (_gameManager == null)
             {
                 return;
@@ -54,30 +47,22 @@ namespace Machines
                 return;
             }
 
-            if (setInteractableSideEffect.InteractableObject != EInteractable.Penicilliuminteractable)
+            if (setInteractableSideEffect.InteractableObject != _interactableType)
             {
                 return;
             }
 
             if (setInteractableSideEffect.IsInteractable)
             {
-                InteractionLayerMask Caplayers = _cap.interactionLayers;
-                Caplayers.value |= 2;
-                _cap.interactionLayers = Caplayers;
-            
-                InteractionLayerMask plenkaLayers = _plenka.interactionLayers;
-                plenkaLayers.value |= 2;
-                _plenka.interactionLayers = plenkaLayers;
+                InteractionLayerMask layers = _grabInteractable.interactionLayers;
+                layers.value |= 2;
+                _grabInteractable.interactionLayers = layers;
             }
             else
             {
-                InteractionLayerMask Caplayers = _cap.interactionLayers;
-                Caplayers.value &= ~2;
-                _cap.interactionLayers = Caplayers;
-            
-                InteractionLayerMask plenkaLayers = _plenka.interactionLayers;
-                plenkaLayers.value &= ~2;
-                _plenka.interactionLayers = plenkaLayers;
+                InteractionLayerMask layers = _grabInteractable.interactionLayers;
+                layers.value &= ~2;
+                _grabInteractable.interactionLayers = layers;
             }
         }
     }

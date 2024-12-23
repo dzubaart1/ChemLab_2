@@ -131,7 +131,7 @@ namespace Core
             if (IsCorrectTaskID(_currentTaskID))
             {
                 ActivateSideEffects(_tasksList[_currentTaskID], ESideEffectTime.EndTask);   
-            }
+            }/*
             
             if ((_currentLab == ELab.Lab2 || _currentLab == ELab.Lab3) && _currentTaskID == 8)
             {
@@ -173,7 +173,7 @@ namespace Core
             if (_currentLab == ELab.Lab3 && _currentTaskID == 38)
             {
                 _currentTaskID = 40;
-            }
+            }*/
             
             _currentTaskID++;
 

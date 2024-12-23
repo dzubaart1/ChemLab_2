@@ -22,15 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5981172752940841876, guid: 9ce25a21670f04f46ab41a8efa4864c8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -30.562
+      value: -4.052
       objectReference: {fileID: 0}
     - target: {fileID: 5981172752940841876, guid: 9ce25a21670f04f46ab41a8efa4864c8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.805
+      value: 1.2950001
       objectReference: {fileID: 0}
     - target: {fileID: 5981172752940841876, guid: 9ce25a21670f04f46ab41a8efa4864c8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.42
+      value: -1.0479994
       objectReference: {fileID: 0}
     - target: {fileID: 5981172752940841876, guid: 9ce25a21670f04f46ab41a8efa4864c8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -38,7 +38,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5981172752940841876, guid: 9ce25a21670f04f46ab41a8efa4864c8, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5981172752940841876, guid: 9ce25a21670f04f46ab41a8efa4864c8, type: 3}
       propertyPath: m_LocalRotation.y
@@ -46,7 +46,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5981172752940841876, guid: 9ce25a21670f04f46ab41a8efa4864c8, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5981172752940841876, guid: 9ce25a21670f04f46ab41a8efa4864c8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -93,6 +93,7 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 5981172753235587202, guid: 9ce25a21670f04f46ab41a8efa4864c8, type: 3}
     - {fileID: 6899529181428870355, guid: 9ce25a21670f04f46ab41a8efa4864c8, type: 3}
+    - {fileID: 4484716640193149989, guid: 9ce25a21670f04f46ab41a8efa4864c8, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5981172752940841879, guid: 9ce25a21670f04f46ab41a8efa4864c8, type: 3}

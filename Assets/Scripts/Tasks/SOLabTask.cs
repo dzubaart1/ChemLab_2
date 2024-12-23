@@ -89,6 +89,8 @@ namespace BioEngineerLab.Tasks
                     return new SocketLabActivityEditor(labActivity);
                 case EActivity.DoorActivity:
                     return new DoorLabActivityEditor(labActivity);
+                case EActivity.PulveriazatorActivity:
+                    return new PulverizatorLabActivityEditor(labActivity);
             }
 #endif
 

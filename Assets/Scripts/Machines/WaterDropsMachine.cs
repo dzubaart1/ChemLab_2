@@ -2,6 +2,7 @@ using System;
 using BioEngineerLab.Activities;
 using Core;
 using JetBrains.Annotations;
+using Machines;
 using Mechanics;
 using UI.Components;
 using UnityEngine;
@@ -10,6 +11,7 @@ public class WaterDropsMachine : MonoBehaviour
 {
     [SerializeField] private int _waterDropsCount;
     [SerializeField] private GameObject _waterDropsPrefab;
+    [SerializeField] private PulverizatorMachine _pulverizator;
     
     private bool _waterDropsActive = false;
 
@@ -17,6 +19,16 @@ public class WaterDropsMachine : MonoBehaviour
     private void Awake()
     {
         _gameManager = GameManager.Instance;
+    }
+
+    private void OnEnable()
+    {
+        _pulverizator.WaterDropsEvent += OnWaterDrop;
+    }
+
+    private void OnDisable()
+    {
+        _pulverizator.WaterDropsEvent -= OnWaterDrop;
     }
 
     public void MinusCount()
@@ -30,18 +42,15 @@ public class WaterDropsMachine : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnWaterDrop()
     {
         if (_waterDropsActive)
         {
             return;
         }
-        if (other.CompareTag("Pulverizator") )
-        {
-            _waterDropsPrefab.SetActive(true);
-            _gameManager.Game.CompleteTask(new MachineLabActivity(EMachineActivity.OnStart,
-                EMachine.WaterDropsMachine));
-            _waterDropsActive = true;
-        }
+        _waterDropsPrefab.SetActive(true);
+        _gameManager.Game.CompleteTask(new MachineLabActivity(EMachineActivity.OnStart,
+            EMachine.WaterDropsMachine));
+        _waterDropsActive = true;
     }
 }

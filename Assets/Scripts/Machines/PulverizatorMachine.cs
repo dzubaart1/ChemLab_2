@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections;
 using BioEngineerLab.Activities;
 using Containers;
@@ -13,12 +14,14 @@ namespace Machines
     [RequireComponent(typeof(Collider))]
     public class PulverizatorMachine : MonoBehaviour
     {
-        
-        private const float DELAY_TRIGGERED = 0.5f;
+        public event Action WaterDropsEvent;
        
         [CanBeNull] private GameManager _gameManager;
         private XRGrabInteractable _xrGrabInteractable;
         private bool _isAlreadyTriggered = false;
+        
+        private Ray _ray;
+        [SerializeField] private GameObject _rayOrigin;
 
         private void Awake()
         {
@@ -26,36 +29,12 @@ namespace Machines
             _xrGrabInteractable = GetComponent<XRGrabInteractable>();
         }
 
-        private void OnEnable()
-        {
-            if (_gameManager == null)
-            {
-                return;
-            }
-            _xrGrabInteractable.selectEntered.AddListener(OnSelectEntered);
-        }
-
-        private void OnDisable()
-        {
-            if (_gameManager == null)
-            {
-                return;
-            }
-            _xrGrabInteractable.selectEntered.RemoveListener(OnSelectEntered);
-        }
-        
-        private void OnSelectEntered(SelectEnterEventArgs args)
-        {
-            
-        }
-
-        private void OnTriggerStay(Collider other)
+        private void Update()
         {
             if (_xrGrabInteractable.interactorsSelecting.Count == 0)
             {
                 return;
             }
-            
             IXRSelectInteractor interactor = _xrGrabInteractable.interactorsSelecting[0];
             if(interactor is null)
             {
@@ -68,24 +47,41 @@ namespace Machines
                 return;
             }
 
-            if (!_isAlreadyTriggered & controller.activateAction.action.triggered)
+            if (controller.activateAction.action.triggered)
             {
-                if (other.CompareTag("LHand"))
-                {
-                    /*_gameManager.CompleteTask(new MachineLabActivity(EMachineActivity.OnEnter, EMachine.PulLHandMachine));*/
-                }
-                else if (other.CompareTag("RHand"))
-                {
-                    /*_gameManager.CompleteTask(new MachineLabActivity(EMachineActivity.OnEnter, EMachine.PulRHandMachine));*/
-                }
-                StartCoroutine(StartDelayBetweenActivated());
+                _ray = new Ray(_rayOrigin.transform.position, _rayOrigin.transform.up);
+                CheckForColliders();
             }
         }
-        private IEnumerator StartDelayBetweenActivated()
+
+        private void CheckForColliders()
         {
-            _isAlreadyTriggered = true;
-            yield return new WaitForSeconds(DELAY_TRIGGERED);
-            _isAlreadyTriggered = false;
+            if (Physics.Raycast(_ray, out RaycastHit hit))
+            {
+                switch (hit.collider.gameObject.name)
+                {
+                    case ("Left Controller"):
+                    {
+                        _gameManager.Game.CompleteTask(new PulverizatorLabActivity(EPulverizatorHits.LeftHandHit));
+                        return;
+                    }
+                    case ("Right Controller"):
+                    {
+                        _gameManager.Game.CompleteTask(new PulverizatorLabActivity(EPulverizatorHits.RightHandHit));
+                        return;
+                    }
+                    case ("Penicillium"):
+                    {
+                        _gameManager.Game.CompleteTask(new PulverizatorLabActivity(EPulverizatorHits.PenicilliumHit));
+                        return;
+                    }
+                    case ("WaterDrops"):
+                    {
+                        WaterDropsEvent?.Invoke();
+                        return;
+                    }
+                }
+            }
         }
     }
 }
