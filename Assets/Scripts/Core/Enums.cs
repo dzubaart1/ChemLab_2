@@ -37,6 +37,14 @@ namespace Core
         TaraButton,
         ShakerPowerButton,
         ShakerRPMButton,
+        TermostatPowerButton,
+        TermostatUpButton,
+        TermostatPButton,
+        TrashGloversButton,
+        TrashShoeCoversButton,
+        LabCoatButton,
+        Light2Button,
+        KeyButton
     }
 
     public enum ECraft : byte
@@ -95,7 +103,8 @@ namespace Core
     {
         AddReagentsSideEffect,
         SetDozatorVolumeSideEffect,
-        SpawnDocSideEffect
+        SpawnDocSideEffect,
+        SetInteractableSideEffect,
     }
 
     public enum ESideEffectTime : byte
@@ -125,7 +134,9 @@ namespace Core
         AutoClaveDoor,
         EnterDoor1,
         EnterDoor2,
-        ShakerDoor
+        ShakerDoor,
+        TermostatDoor,
+        
     }
 
     public enum EDoorActivity : byte
@@ -211,6 +222,13 @@ namespace Core
         LaminBoxBottleSocket,
         PenicilliumCapSocket,
         PenicilliumPlenkaSocket,
-        ShakerSocket
+        ShakerSocket,
+        TermostatSocket
+    }
+
+    public enum EInteractable : byte
+    {
+        Penicilliuminteractable,
+        PetriDishInteractable,
     }
 }

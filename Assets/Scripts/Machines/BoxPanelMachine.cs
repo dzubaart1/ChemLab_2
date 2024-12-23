@@ -13,17 +13,25 @@ namespace BioEngineerLab.Machines
         {
             public bool IsBactLightOn;
             public bool IsCommonLightOn;
+            public bool IsDLightOn;
+            public bool IsDoorOpened;
         }
         
         [SerializeField] private ButtonComponent _bacteriumButton;
         [SerializeField] private ButtonComponent _lightButton;
+        [SerializeField] private ButtonComponent _dlightButton;
+        [SerializeField] private ButtonComponent _keyButton;
         [SerializeField] private GameObject _bacteriumLight;
         [SerializeField] private GameObject _commonLight;
+        [SerializeField] private GameObject _dLight;
+        [SerializeField] private GameObject _doorHandle;
         
         private GameManager _gameManager;
         private SavedData _savedData = new SavedData();
         private bool _isBactLightOn = true;
         private bool _isCommonLightOn = false;
+        private bool _isDLightOn = true;
+        private bool _isDoorOpened = false;
         private void Awake()
         {
             _gameManager = GameManager.Instance;
@@ -40,6 +48,8 @@ namespace BioEngineerLab.Machines
             
             _bacteriumButton.ClickBtnEvent += OnBacteriumButtonClicked;
             _lightButton.ClickBtnEvent += OnLightButtonClicked;
+            _dlightButton.ClickBtnEvent += OnDLightButtonClicked;
+            _keyButton.ClickBtnEvent += OnKeyButtonClicked;
         }
 
         private void OnDisable()
@@ -54,6 +64,8 @@ namespace BioEngineerLab.Machines
             
             _bacteriumButton.ClickBtnEvent -= OnBacteriumButtonClicked;
             _lightButton.ClickBtnEvent -= OnLightButtonClicked;
+            _dlightButton.ClickBtnEvent -= OnDLightButtonClicked;
+            _keyButton.ClickBtnEvent -= OnKeyButtonClicked;
         }
 
         private void OnBacteriumButtonClicked()
@@ -64,8 +76,26 @@ namespace BioEngineerLab.Machines
 
         private void OnLightButtonClicked()
         {
-            _isCommonLightOn = !_isCommonLightOn;
+            _isCommonLightOn = true;
+            _isDLightOn = false;
+            
             _commonLight.SetActive(_isCommonLightOn);
+            _dLight.SetActive(_isDLightOn);
+        }
+        
+        private void OnDLightButtonClicked()
+        {
+            _isCommonLightOn = false;
+            _isDLightOn = true;
+            
+            _commonLight.SetActive(_isCommonLightOn);
+            _dLight.SetActive(_isDLightOn);
+        }
+
+        private void OnKeyButtonClicked()
+        {
+            _isDoorOpened = !_isDoorOpened;
+            _doorHandle.SetActive(_isDoorOpened);
         }
 
         public void OnSaveScene()

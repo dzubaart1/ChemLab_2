@@ -3,13 +3,13 @@
   "Lab": 1,
   "Number": 153,
   "Title": "Задание 153",
-  "Description": "Подойдите к шейкеру, выключите процесс нажав кнопку выключения «0»",
+  "Description": "Снимите перчатки, выбросите их в мусорную корзину",
   "Warning": "",
-  "SaveableTask": true,
+  "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 27,
-    "ActivityType": 6
+    "$type": "BioEngineerLab.Activities.AnchorLabActivity, Assembly-CSharp",
+    "ContainerType": 0,
+    "ActivityType": 4
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

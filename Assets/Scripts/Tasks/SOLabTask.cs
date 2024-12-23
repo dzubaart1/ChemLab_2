@@ -107,6 +107,8 @@ namespace BioEngineerLab.Tasks
                     return new SetDozatorVolumeLabSideEffectEditor(labSideEffect);
                 case ESideEffect.SpawnDocSideEffect:
                     return new SpawnDocSideEffectEditor(labSideEffect);
+                case ESideEffect.SetInteractableSideEffect:
+                    return new SetInteractableLabSideEffectEditor(labSideEffect);
             }
 #endif
             return null;

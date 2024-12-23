@@ -4,6 +4,7 @@ using Containers;
 using Core;
 using JetBrains.Annotations;
 using Mechanics;
+using UI.Components;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -19,6 +20,7 @@ namespace Machines
         [SerializeField] private EMachine _machineType;
         [SerializeField] private GameObject _vanishPrefab;
         [SerializeField] private VRGrabInteractable _grabInteractable;
+        [SerializeField] [CanBeNull] private ButtonComponent _returnButton;
 
         [CanBeNull] private GameManager _gameManager;
         private SavedData _savedData = new SavedData();
@@ -40,6 +42,11 @@ namespace Machines
             _gameManager.Game.SaveGameEvent += OnSaveScene;
 
             _grabInteractable.selectEntered.AddListener(OnSelectEntered);
+
+            if (_returnButton is not null)
+            {
+                _returnButton.ClickBtnEvent += OnButtonClick;
+            }
         }
 
         private void OnDisable()
@@ -53,6 +60,11 @@ namespace Machines
             _gameManager.Game.SaveGameEvent -= OnSaveScene;
             
             _grabInteractable.selectEntered.RemoveListener(OnSelectEntered);
+            
+            if (_returnButton is not null)
+            {
+                _returnButton.ClickBtnEvent -= OnButtonClick;
+            }
         }
 
         private void OnSelectEntered(SelectEnterEventArgs args)
@@ -61,6 +73,12 @@ namespace Machines
             _vanishPrefab.SetActive(_isActive);
             
             _gameManager.Game.CompleteTask(new MachineLabActivity(EMachineActivity.OnEnter, _machineType));
+        }
+
+        private void OnButtonClick()
+        {
+            _isActive = true;
+            _vanishPrefab.SetActive(_isActive);
         }
         
 

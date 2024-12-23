@@ -64,6 +64,8 @@ namespace Database
                     return "TasksLab1";
                 case ELab.Lab2:
                     return "TasksLab2";
+                case ELab.Lab3:
+                    return "TasksLab3";
                 default:
                     Debug.LogError("Can't find labnumber!");
                     return "TasksLab1";

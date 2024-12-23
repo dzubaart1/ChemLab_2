@@ -3,14 +3,13 @@
   "Lab": 1,
   "Number": 139,
   "Title": "Задание 139",
-  "Description": "Возьмите из ламинарного бокса пенициллиновый флакон «S.t. 56-45» и поместите в ёмкость для мытья на которой написано «Для бактериальных ёмкостей»",
+  "Description": "Возьмите пульверизатор, обработайте ёмкость для отходов из ламинарного бокса, поставьте обработанного ёмкость на место",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 0,
-    "MachineType": 4,
-    "ActivityType": 1
+    "$type": "BioEngineerLab.Activities.AnchorLabActivity, Assembly-CSharp",
+    "ContainerType": 0,
+    "ActivityType": 4
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

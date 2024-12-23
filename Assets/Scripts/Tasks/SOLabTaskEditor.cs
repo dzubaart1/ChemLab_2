@@ -95,6 +95,9 @@ namespace BioEngineerLab.Tasks
                 case ESideEffect.SpawnDocSideEffect:
                     _soLabTask.SetSideEffect(new SpawnDocLabSideEffect(), effectID);
                     break;
+                case ESideEffect.SetInteractableSideEffect:
+                    _soLabTask.SetSideEffect(new SetInteractableSideEffect(), effectID);
+                    break;
                 default:
                     Debug.LogError("Can't find Side effect!");
                     break;

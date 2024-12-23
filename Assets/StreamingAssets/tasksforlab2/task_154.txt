@@ -3,13 +3,13 @@
   "Lab": 1,
   "Number": 154,
   "Title": "Задание 154",
-  "Description": "Откройте дверцу шейкера, поставьте ёмкости «Глюкоза», «Лактоза», «Сахароза» на стол.",
+  "Description": "Подойдите к шейкеру, выключите процесс нажав кнопку выключения «0»",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.AnchorLabActivity, Assembly-CSharp",
-    "ContainerType": 0,
-    "ActivityType": 4
+    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
+    "ButtonType": 27,
+    "ActivityType": 6
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

@@ -16,6 +16,7 @@ namespace Machines
         }
         
         [SerializeField] private Transform _door;
+        [SerializeField] private GameObject _handle;
         
         [CanBeNull] private GameManager _gameManager;
         
@@ -70,6 +71,7 @@ namespace Machines
             else if (_door.transform.rotation.y < 0.01f && _isOpen)
             {
                 _isOpen = false;
+                _handle.SetActive(false);
                 _gameManager.Game.CompleteTask(new DoorLabActivity(EDoor.EnterDoor1, EDoorActivity.Closed));
             }
         }

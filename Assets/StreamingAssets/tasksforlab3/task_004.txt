@@ -5,7 +5,7 @@
   "Title": "Задание 4",
   "Description": "Подойдите к панели управления и нажмите «БАКТЕРИЦИДНАЯ ОЧИСТКА». ",
   "Warning": "",
-  "SaveableTask": true,
+  "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
     "ButtonType": 23,

@@ -3,7 +3,7 @@
   "Lab": 2,
   "Number": 56,
   "Title": "Задание 56",
-  "Description": "Переместите наконечник с пипет-дозатора в ёмкость для отходов",
+  "Description": "Возьмите упаковку со шпателем, вытащите шпатель",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {

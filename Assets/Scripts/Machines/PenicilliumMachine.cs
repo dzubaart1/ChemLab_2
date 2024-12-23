@@ -1,12 +1,7 @@
-using System;
-using BioEngineerLab.Activities;
-using Containers;
 using Core;
-using Core.Services;
-using Crafting;
+using BioEngineerLab.Tasks.SideEffects;
 using JetBrains.Annotations;
 using Mechanics;
-using UI.Components;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -19,46 +14,71 @@ namespace Machines
         [SerializeField] private VRGrabInteractable _cap;
         [SerializeField] private VRGrabInteractable _plenka;
 
+        
+        [CanBeNull] private GameManager _gameManager;
+        private void Awake()
+        {
+            _gameManager = GameManager.Instance;
+        }
+
         private void OnEnable()
         {
-            _grabInteractable.selectEntered.AddListener(OnSelectEntered);
-            _grabInteractable.selectExited.AddListener(OnSelectExited);
+            /*_grabInteractable.selectEntered.AddListener(OnSelectEntered);
+            _grabInteractable.selectExited.AddListener(OnSelectExited);*/
+            
+            if (_gameManager == null)
+            {
+                return;
+            }
+            
+            _gameManager.Game.SideEffectActivatedEvent += OnActivatedSideEffect;
         }
         
         private void OnDisable()
         {
-            _grabInteractable.selectEntered.RemoveListener(OnSelectEntered);
-            _grabInteractable.selectExited.RemoveListener(OnSelectExited);
-        }
-
-        private void OnSelectEntered(SelectEnterEventArgs obj)
-        {
-            if (!obj.interactorObject.transform.CompareTag("PenicilliumSocket"))
+            /*_grabInteractable.selectEntered.RemoveListener(OnSelectEntered);
+            _grabInteractable.selectExited.RemoveListener(OnSelectExited);*/
+            
+            if (_gameManager == null)
             {
                 return;
             }
-            InteractionLayerMask capLayers = _cap.interactionLayers;
-            capLayers.value = 4194304;
-            _cap.interactionLayers = capLayers;
             
-            InteractionLayerMask plenkaLayers = _plenka.interactionLayers;
-            plenkaLayers.value = 8388608;
-            _plenka.interactionLayers = plenkaLayers;
+            _gameManager.Game.SideEffectActivatedEvent -= OnActivatedSideEffect;
         }
-
-        private void OnSelectExited(SelectExitEventArgs obj)
+        
+        private void OnActivatedSideEffect(LabSideEffect sideEffect)
         {
-            if (!obj.interactorObject.transform.CompareTag("PenicilliumSocket"))
+            if (sideEffect is not SetInteractableSideEffect setInteractableSideEffect)
             {
                 return;
             }
-            InteractionLayerMask layers = _cap.interactionLayers;
-            layers.value = 4194306;
-            _cap.interactionLayers = layers;
+
+            if (setInteractableSideEffect.InteractableObject != EInteractable.Penicilliuminteractable)
+            {
+                return;
+            }
+
+            if (setInteractableSideEffect.IsInteractable)
+            {
+                InteractionLayerMask Caplayers = _cap.interactionLayers;
+                Caplayers.value |= 2;
+                _cap.interactionLayers = Caplayers;
             
-            InteractionLayerMask plenkaLayers = _plenka.interactionLayers;
-            plenkaLayers.value = 8388610;
-            _plenka.interactionLayers = plenkaLayers;
+                InteractionLayerMask plenkaLayers = _plenka.interactionLayers;
+                plenkaLayers.value |= 2;
+                _plenka.interactionLayers = plenkaLayers;
+            }
+            else
+            {
+                InteractionLayerMask Caplayers = _cap.interactionLayers;
+                Caplayers.value &= ~2;
+                _cap.interactionLayers = Caplayers;
+            
+                InteractionLayerMask plenkaLayers = _plenka.interactionLayers;
+                plenkaLayers.value &= ~2;
+                _plenka.interactionLayers = plenkaLayers;
+            }
         }
     }
 }
