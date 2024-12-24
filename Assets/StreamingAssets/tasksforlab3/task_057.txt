@@ -3,16 +3,51 @@
   "Lab": 2,
   "Number": 57,
   "Title": "Задание 57",
-  "Description": "С помощью шпателя равномерно распределите бактерии в чашке Петри с номером II",
+  "Description": "Возьмите упаковку со шпателем, вытащите шпатель",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.AnchorLabActivity, Assembly-CSharp",
-    "ContainerType": 0,
-    "ActivityType": 4
+    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
+    "ButtonType": 36,
+    "ActivityType": 6
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": []
+    "$values": [
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
+        "LabSubstanceProperty": {
+          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+          "SubstanceName": "Penicillium",
+          "SubstanceMode": 0,
+          "SubstanceLayer": 1,
+          "SubstanceColorR": 0.9528302,
+          "SubstanceColorG": 0.927144468,
+          "SubstanceColorB": 0.7775454,
+          "SubstanceColorA": 0.807843149,
+          "HintName": ""
+        },
+        "Weight": 0.01,
+        "SideEffectTimeType": 0,
+        "SideEffectType": 0
+      },
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
+        "LabSubstanceProperty": {
+          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+          "SubstanceName": "LizerganRings",
+          "SubstanceMode": 0,
+          "SubstanceLayer": 0,
+          "SubstanceColorR": 0.4943396,
+          "SubstanceColorG": 0.397799224,
+          "SubstanceColorB": 0.349768579,
+          "SubstanceColorA": 0.0,
+          "HintName": ""
+        },
+        "Weight": 0.01,
+        "SideEffectTimeType": 0,
+        "SideEffectType": 0
+      }
+    ]
   }
 }

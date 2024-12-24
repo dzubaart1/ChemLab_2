@@ -3,13 +3,13 @@
   "Lab": 2,
   "Number": 83,
   "Title": "Задание 83",
-  "Description": "Закройте дверь",
+  "Description": "Откройте дверь в предбоксник, зайдите туда",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.DoorLabActivity, Assembly-CSharp",
     "Door": 3,
-    "DoorActivity": 1,
+    "DoorActivity": 0,
     "ActivityType": 7
   },
   "LabSideEffects": {

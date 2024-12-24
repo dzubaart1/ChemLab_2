@@ -3,12 +3,12 @@
   "Lab": 2,
   "Number": 45,
   "Title": "Задание 45",
-  "Description": "Откройте ёмкость с наконечниками для пипет-дозатора. Наденьте наконечник на пипет-дозатор поднеся пипет-дозатор к наконечнику.",
+  "Description": "Поставьте флакон на то же место",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
-    "SocketType": 6,
+    "SocketType": 28,
     "SocketActivityType": 0,
     "ActivityType": 3
   },

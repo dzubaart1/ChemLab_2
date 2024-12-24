@@ -5,7 +5,7 @@
   "Title": "Задание 35",
   "Description": "На приборной панели нажмите кнопку «F»",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
     "ButtonType": 15,

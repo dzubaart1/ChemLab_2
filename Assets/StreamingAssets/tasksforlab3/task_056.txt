@@ -3,13 +3,14 @@
   "Lab": 2,
   "Number": 56,
   "Title": "Задание 56",
-  "Description": "Возьмите упаковку со шпателем, вытащите шпатель",
+  "Description": "Переместите наконечник с пипет-дозатора в ёмкость для отходов",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.AnchorLabActivity, Assembly-CSharp",
-    "ContainerType": 0,
-    "ActivityType": 4
+    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
+    "MachineActivityType": 0,
+    "MachineType": 23,
+    "ActivityType": 1
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

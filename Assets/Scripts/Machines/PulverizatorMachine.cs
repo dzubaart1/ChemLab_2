@@ -58,6 +58,7 @@ namespace Machines
         {
             if (Physics.Raycast(_ray, out RaycastHit hit))
             {
+                Debug.Log(hit.collider.gameObject.name);
                 switch (hit.collider.gameObject.name)
                 {
                     case ("Left Controller"):
@@ -70,7 +71,7 @@ namespace Machines
                         _gameManager.Game.CompleteTask(new PulverizatorLabActivity(EPulverizatorHits.RightHandHit));
                         return;
                     }
-                    case ("Penicillium"):
+                    case ("jal"):
                     {
                         _gameManager.Game.CompleteTask(new PulverizatorLabActivity(EPulverizatorHits.PenicilliumHit));
                         return;

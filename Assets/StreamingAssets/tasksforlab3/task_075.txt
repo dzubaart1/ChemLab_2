@@ -3,12 +3,12 @@
   "Lab": 2,
   "Number": 75,
   "Title": "Задание 75",
-  "Description": "На приборной панели нажмите кнопку «L»/«Esc»",
+  "Description": "На приборной панели нажмите кнопку «F»",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 14,
+    "ButtonType": 15,
     "ActivityType": 6
   },
   "LabSideEffects": {

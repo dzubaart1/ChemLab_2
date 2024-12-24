@@ -3,12 +3,12 @@
   "Lab": 2,
   "Number": 88,
   "Title": "Задание 88",
-  "Description": "Для открытия двери нажмите кнопку «ключ»",
+  "Description": "Нажмите  «БАКТЕРИЦИДНАЯ ОЧИСТКА» ",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 35,
+    "ButtonType": 23,
     "ActivityType": 6
   },
   "LabSideEffects": {

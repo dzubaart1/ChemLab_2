@@ -184,8 +184,8 @@ namespace Core
                     SaveGame();
                 }
 
-                ActivateSideEffects(_tasksList[_currentTaskID], ESideEffectTime.StartTask);
                 TaskUpdatedEvent?.Invoke(_tasksList[_currentTaskID]);
+                ActivateSideEffects(_tasksList[_currentTaskID], ESideEffectTime.StartTask);
             }
         }
 
@@ -193,7 +193,7 @@ namespace Core
         {
             _isGameStarted = false;
             
-            _currentTaskID = -1;
+            _currentTaskID = 54;
             
             _gameStartTime = DateTime.Now;
             _gameFinishTime = DateTime.Now;

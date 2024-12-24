@@ -3,13 +3,13 @@
   "Lab": 2,
   "Number": 68,
   "Title": "Задание 68",
-  "Description": "Возьмите из ламинарного бокса пенициллиновый флакон «S.t. 56-45» и поместите в ёмкость для мытья на которой написано «Для ёмкости с бактериями»",
+  "Description": "Возьмите ёмкость для отходов из ламинарного бокса, выбросите мусор в корзину для мусора",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 1,
-    "MachineType": 4,
+    "MachineActivityType": 0,
+    "MachineType": 6,
     "ActivityType": 1
   },
   "LabSideEffects": {

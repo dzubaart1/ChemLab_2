@@ -44,7 +44,8 @@ namespace Core
         TrashShoeCoversButton,
         LabCoatButton,
         Light2Button,
-        KeyButton
+        KeyButton,
+        ShpatelButton,
     }
 
     public enum ECraft : byte
@@ -229,8 +230,9 @@ namespace Core
 
     public enum EInteractable : byte
     {
-        Penicilliuminteractable,
-        PetriDishInteractable,
+        PenicilliumCapInteractable,
+        PenicilliumPlenkaInteractable,
+        PetriDishCapInteractable,
     }
 
     public enum EPulverizatorHits : byte

@@ -53,7 +53,7 @@ namespace Core.Services
             mixSubstances.AddRange(fromLabContainer.GetSubstanceProperties());
             mixSubstances.AddRange(toLabContainer.GetSubstanceProperties());
             
-            float transferWeight = Math.Min(toLabContainer.GetAvailableWeight(), fromLabContainer.GetSubstancesWeight());
+            float transferWeight = Math.Min(toLabContainer.GetAvailableWeight(), fromLabContainer.GetSubstancesWeight() + toLabContainer.GetSubstancesWeight());
             float weightForEachSubstance = transferWeight / mixCraft.SubstancesRes.Length;
             
             toLabContainer.ClearContainer();

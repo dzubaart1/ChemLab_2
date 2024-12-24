@@ -17,7 +17,7 @@
     "$values": [
       {
         "$type": "BioEngineerLab.Tasks.SideEffects.SetInteractableSideEffect, Assembly-CSharp",
-        "InteractableObject": 0,
+        "InteractableObject": 1,
         "IsInteractable": true,
         "SideEffectTimeType": 0,
         "SideEffectType": 3

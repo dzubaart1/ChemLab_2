@@ -3,14 +3,13 @@
   "Lab": 2,
   "Number": 77,
   "Title": "Задание 77",
-  "Description": "Возьмите специальный ключ, заблокируйте ламинарный бокс",
+  "Description": "Закройте ламинарный бокс (поднимите и задвиньте нижнюю панель)",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 1,
-    "MachineType": 16,
-    "ActivityType": 1
+    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
+    "ButtonType": 21,
+    "ActivityType": 6
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

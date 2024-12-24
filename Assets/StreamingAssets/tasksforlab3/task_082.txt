@@ -3,14 +3,14 @@
   "Lab": 2,
   "Number": 82,
   "Title": "Задание 82",
-  "Description": "Откройте дверь в предбоксник, зайдите туда",
+  "Description": "Вытащите обе чашки Петри из термостата, поставьте их на стол посмотрите на окончательный результат",
   "Warning": "",
-  "SaveableTask": true,
+  "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.DoorLabActivity, Assembly-CSharp",
-    "Door": 3,
-    "DoorActivity": 0,
-    "ActivityType": 7
+    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
+    "SocketType": 33,
+    "SocketActivityType": 1,
+    "ActivityType": 3
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

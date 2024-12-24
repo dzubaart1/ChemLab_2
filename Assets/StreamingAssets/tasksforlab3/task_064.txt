@@ -3,12 +3,12 @@
   "Lab": 2,
   "Number": 64,
   "Title": "Задание 64",
-  "Description": "Переместите обе чашки Петри вверх дном внутрь термостата",
+  "Description": "Закройте чашку Петри с номером I",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
-    "SocketType": 33,
+    "SocketType": 7,
     "SocketActivityType": 0,
     "ActivityType": 3
   },

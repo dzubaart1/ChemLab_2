@@ -3,13 +3,13 @@
   "Lab": 2,
   "Number": 72,
   "Title": "Задание 72",
-  "Description": "Возьмите специальный ключ, разблокируйте ламинарный бокс",
+  "Description": "Выбросьте салфетку в ёмкость для внешних отходов",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 1,
-    "MachineType": 16,
+    "MachineActivityType": 0,
+    "MachineType": 6,
     "ActivityType": 1
   },
   "LabSideEffects": {
