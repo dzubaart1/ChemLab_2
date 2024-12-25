@@ -971,7 +971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _buttonType: 4
-  _isTaskSendable: 0
+  _isTaskSendable: 1
   _isStartOn: 0
   _btnImage: {fileID: 6991985488850963506}
   _onSprite: {fileID: 21300000, guid: 5e50711882004914f9a57566ce715b39, type: 3}

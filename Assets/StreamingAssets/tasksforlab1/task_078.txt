@@ -1,5 +1,6 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 0,
   "Number": 78,
   "Title": "Задание 78",
   "Description": "Возьмите культуральный планшет и с помощью телепорта отправьте его в лабораторию клеточных исследований",
@@ -29,24 +30,6 @@
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
-        "LabSubstanceProperty": {
-          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "HardAgar",
-          "SubstanceMode": 0,
-          "SubstanceLayer": 0,
-          "SubstanceColorR": 0.5007565,
-          "SubstanceColorG": 0.8773585,
-          "SubstanceColorB": 0.8356848,
-          "SubstanceColorA": 0.745098054,
-          "HintName": ""
-        },
-        "Weight": 30.0,
-        "SideEffectTimeType": 0,
-        "SideEffectType": 0
-      }
-    ]
+    "$values": []
   }
 }

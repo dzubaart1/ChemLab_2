@@ -150,7 +150,7 @@ namespace Core
                 TaskUpdatedEvent?.Invoke(_tasksList[_currentTaskID]);
                 ActivateSideEffects(_tasksList[_currentTaskID], ESideEffectTime.StartTask);
             }
-            else if (_currentTaskID > _tasksList.Count)
+            else if (_currentTaskID == _tasksList.Count)
             {
                 FinishGame();
             }
@@ -160,7 +160,7 @@ namespace Core
         {
             _isGameStarted = false;
             
-            _currentTaskID = 157;
+            _currentTaskID = -1;
             
             _gameStartTime = DateTime.Now;
             _gameFinishTime = DateTime.Now;

@@ -47,6 +47,10 @@ namespace Machines
             {
                 _canvas.SetActive(_button.IsOn);
             }
+            else
+            {
+                _canvas.SetActive(false);
+            }
         }
 
         private void OnEnable()
