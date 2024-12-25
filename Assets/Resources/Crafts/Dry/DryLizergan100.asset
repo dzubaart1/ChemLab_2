@@ -10,28 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41e3d66c1f6971946a8a136284fabef7, type: 3}
-  m_Name: PenLizergan
+  m_Name: DryLizergan100
   m_EditorClassIdentifier: 
   LabCraft:
     SubstancesFrom:
-    - SubstanceName: LizerganRings
-      SubstanceMode: 0
-      SubstanceLayer: 0
-      SubstanceColorR: 0.4943396
-      SubstanceColorG: 0.39779922
-      SubstanceColorB: 0.34976858
-      SubstanceColorA: 0
-      HintName: 
-    - SubstanceName: Penicillium
-      SubstanceMode: 0
-      SubstanceLayer: 1
-      SubstanceColorR: 0.9528302
-      SubstanceColorG: 0.92714447
-      SubstanceColorB: 0.7775454
-      SubstanceColorA: 0.80784315
-      HintName: 
-    CraftType: 2
-    SubstancesRes:
     - SubstanceName: PenLizergan
       SubstanceMode: 0
       SubstanceLayer: 0
@@ -39,4 +21,14 @@ MonoBehaviour:
       SubstanceColorG: 0.55008656
       SubstanceColorB: 0.281844
       SubstanceColorA: 0.85882354
+      HintName: 
+    CraftType: 0
+    SubstancesRes:
+    - SubstanceName: DryLizergan100
+      SubstanceMode: 0
+      SubstanceLayer: 0
+      SubstanceColorR: 0.7924528
+      SubstanceColorG: 0.567497
+      SubstanceColorB: 0.3252047
+      SubstanceColorA: 0.92941177
       HintName: 

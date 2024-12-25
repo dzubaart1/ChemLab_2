@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e6d0857d78da89408e391181281f1ac, type: 3}
-  m_Name: LizerganRings
+  m_Name: LizerganRings100
   m_EditorClassIdentifier: 
   LabSubstanceProperty:
     SubstanceName: LizerganRings
@@ -19,5 +19,5 @@ MonoBehaviour:
     SubstanceColorR: 0.4943396
     SubstanceColorG: 0.39779922
     SubstanceColorB: 0.34976858
-    SubstanceColorA: 0
+    SubstanceColorA: 0.85882354
     HintName: 

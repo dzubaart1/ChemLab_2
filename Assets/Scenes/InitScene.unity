@@ -468,7 +468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dc70ac1e874421a909a8f12982ce1fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneName: StartScene
+  _sceneName: LobbyScene
   _gameManager: {fileID: 1189609173}
 --- !u!4 &2082648444
 Transform:

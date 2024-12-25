@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e6d0857d78da89408e391181281f1ac, type: 3}
-  m_Name: PenSimple
+  m_Name: DryLizergan200
   m_EditorClassIdentifier: 
   LabSubstanceProperty:
-    SubstanceName: PenLizergan
+    SubstanceName: DryLizergan100
     SubstanceMode: 0
     SubstanceLayer: 0
-    SubstanceColorR: 0.9433962
-    SubstanceColorG: 0.88263094
-    SubstanceColorB: 0.7965468
-    SubstanceColorA: 0.85882354
+    SubstanceColorR: 0.8396226
+    SubstanceColorG: 0.7201092
+    SubstanceColorB: 0.59011215
+    SubstanceColorA: 0.6156863
     HintName: 

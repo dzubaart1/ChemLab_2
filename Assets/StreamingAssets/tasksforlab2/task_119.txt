@@ -28,7 +28,7 @@
             "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
             "SubstanceName": "Penicillium",
             "SubstanceMode": 0,
-            "SubstanceLayer": 0,
+            "SubstanceLayer": 1,
             "SubstanceColorR": 0.9528302,
             "SubstanceColorG": 0.927144468,
             "SubstanceColorB": 0.7775454,

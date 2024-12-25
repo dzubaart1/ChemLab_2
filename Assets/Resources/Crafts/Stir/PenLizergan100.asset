@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41e3d66c1f6971946a8a136284fabef7, type: 3}
-  m_Name: PenGlukoza
+  m_Name: PenLizergan100
   m_EditorClassIdentifier: 
   LabCraft:
     SubstancesFrom:
-    - SubstanceName: Glukoza and Purple Sol
+    - SubstanceName: LizerganRings
       SubstanceMode: 0
       SubstanceLayer: 0
-      SubstanceColorR: 0.52748716
-      SubstanceColorG: 0.4627451
-      SubstanceColorB: 0.6509804
-      SubstanceColorA: 0.8509804
+      SubstanceColorR: 0.4943396
+      SubstanceColorG: 0.39779922
+      SubstanceColorB: 0.34976858
+      SubstanceColorA: 0.85882354
       HintName: 
     - SubstanceName: Penicillium
       SubstanceMode: 0
@@ -30,13 +30,13 @@ MonoBehaviour:
       SubstanceColorB: 0.7775454
       SubstanceColorA: 0.80784315
       HintName: 
-    CraftType: 3
+    CraftType: 2
     SubstancesRes:
-    - SubstanceName: PenicilliumGlukoza
+    - SubstanceName: PenLizergan
       SubstanceMode: 0
       SubstanceLayer: 0
-      SubstanceColorR: 0.6644016
-      SubstanceColorG: 0.53733534
-      SubstanceColorB: 0.7075472
-      SubstanceColorA: 0.8352941
+      SubstanceColorR: 0.735849
+      SubstanceColorG: 0.55008656
+      SubstanceColorB: 0.281844
+      SubstanceColorA: 0.85882354
       HintName: 

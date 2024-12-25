@@ -15,6 +15,17 @@
         "$values": [
           {
             "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+            "SubstanceName": "LizerganRings2",
+            "SubstanceMode": 0,
+            "SubstanceLayer": 0,
+            "SubstanceColorR": 0.4943396,
+            "SubstanceColorG": 0.397799224,
+            "SubstanceColorB": 0.349768579,
+            "SubstanceColorA": 0.8235294,
+            "HintName": ""
+          },
+          {
+            "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
             "SubstanceName": "Penicillium",
             "SubstanceMode": 0,
             "SubstanceLayer": 1,

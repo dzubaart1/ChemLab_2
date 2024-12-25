@@ -3,13 +3,13 @@
   "Lab": 1,
   "Number": 101,
   "Title": "Задание 101",
-  "Description": "Возьмите пульверизатор, обработайте руку с прихваткой и ёмкостью с надписью «Глюкоза»",
+  "Description": "Возьмите пульверизатор, обработайте руку с прихваткой и ёмкостью с надписью «Сахароза»",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.AnchorLabActivity, Assembly-CSharp",
-    "ContainerType": 0,
-    "ActivityType": 4
+    "$type": "BioEngineerLab.Activities.PulverizatorLabActivity, Assembly-CSharp",
+    "Hits": 5,
+    "ActivityType": 8
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

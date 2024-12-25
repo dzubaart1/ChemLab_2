@@ -2092,7 +2092,8 @@ PrefabInstance:
       value: 1.002
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4484716640193149989, guid: 9ce25a21670f04f46ab41a8efa4864c8, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ce25a21670f04f46ab41a8efa4864c8, type: 3}
@@ -3458,7 +3459,9 @@ MonoBehaviour:
   _socketType: 0
   _isEnterTaskSendable: 0
   _isExitTaskSendable: 0
-  _isSubsctanceSocket: 0
+  _isSubsctanceEnterSocket: 0
+  _isSubsctanceExitSocket: 0
+  _isStartEnter: 0
 --- !u!1001 &1405189395
 PrefabInstance:
   m_ObjectHideFlags: 0

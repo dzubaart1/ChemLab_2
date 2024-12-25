@@ -21,7 +21,7 @@
             "SubstanceColorR": 0.4943396,
             "SubstanceColorG": 0.397799224,
             "SubstanceColorB": 0.349768579,
-            "SubstanceColorA": 0.0,
+            "SubstanceColorA": 0.858823538,
             "HintName": ""
           },
           {

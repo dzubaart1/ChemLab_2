@@ -240,6 +240,9 @@ namespace Core
         LeftHandHit,
         RightHandHit,
         PenicilliumHit,
+        GlukozaHit,
+        LaktozaHit,
+        SaharozaHit,
         
     }
 }

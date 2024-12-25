@@ -61,12 +61,12 @@ namespace Machines
                 Debug.Log(hit.collider.gameObject.name);
                 switch (hit.collider.gameObject.name)
                 {
-                    case ("Left Controller"):
+                    case ("Left Hand Model"):
                     {
                         _gameManager.Game.CompleteTask(new PulverizatorLabActivity(EPulverizatorHits.LeftHandHit));
                         return;
                     }
-                    case ("Right Controller"):
+                    case ("Right Hand Model"):
                     {
                         _gameManager.Game.CompleteTask(new PulverizatorLabActivity(EPulverizatorHits.RightHandHit));
                         return;
@@ -74,6 +74,21 @@ namespace Machines
                     case ("jal"):
                     {
                         _gameManager.Game.CompleteTask(new PulverizatorLabActivity(EPulverizatorHits.PenicilliumHit));
+                        return;
+                    }
+                    case ("Glukoza"):
+                    {
+                        _gameManager.Game.CompleteTask(new PulverizatorLabActivity(EPulverizatorHits.GlukozaHit));
+                        return;
+                    }
+                    case ("Saharoza"):
+                    {
+                        _gameManager.Game.CompleteTask(new PulverizatorLabActivity(EPulverizatorHits.SaharozaHit));
+                        return;
+                    }
+                    case ("Laktoza"):
+                    {
+                        _gameManager.Game.CompleteTask(new PulverizatorLabActivity(EPulverizatorHits.LaktozaHit));
                         return;
                     }
                     case ("WaterDrops"):

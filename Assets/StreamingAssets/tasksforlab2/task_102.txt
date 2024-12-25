@@ -3,7 +3,7 @@
   "Lab": 1,
   "Number": 102,
   "Title": "Задание 102",
-  "Description": "Поставьте ёмкостью с надписью «Глюкоза» в ламинарный бокс",
+  "Description": "Поставьте ёмкостью с надписью «Сахароза» в ламинарный бокс",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
@@ -15,13 +15,13 @@
       "$values": [
         {
           "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "Glukoza and Purple Sol",
+          "SubstanceName": "Sakaroza and Purple Sol",
           "SubstanceMode": 0,
           "SubstanceLayer": 0,
-          "SubstanceColorR": 0.527487159,
-          "SubstanceColorG": 0.4627451,
-          "SubstanceColorB": 0.6509804,
-          "SubstanceColorA": 0.8509804,
+          "SubstanceColorR": 0.61556536,
+          "SubstanceColorG": 0.46364364,
+          "SubstanceColorB": 0.6509434,
+          "SubstanceColorA": 0.8666667,
           "HintName": ""
         }
       ]

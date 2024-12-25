@@ -131,49 +131,12 @@ namespace Core
             if (IsCorrectTaskID(_currentTaskID))
             {
                 ActivateSideEffects(_tasksList[_currentTaskID], ESideEffectTime.EndTask);   
-            }/*
+            }
             
-            if ((_currentLab == ELab.Lab2 || _currentLab == ELab.Lab3) && _currentTaskID == 8)
-            {
-                _currentTaskID = 13;
-            }
-            if (_currentLab == ELab.Lab2 && _currentTaskID == 90)
-            {
-                _currentTaskID = 91;
-            }
-            if (_currentLab == ELab.Lab2 && _currentTaskID == 93)
-            {
-                _currentTaskID = 94;
-            }
-            if (_currentLab == ELab.Lab2 && _currentTaskID == 96)
-            {
-                _currentTaskID = 97;
-            }
-            if (_currentLab == ELab.Lab2 && _currentTaskID == 99)
-            {
-                _currentTaskID = 100;
-            }
-            if (_currentLab == ELab.Lab2 && _currentTaskID == 101)
-            {
-                _currentTaskID = 103;
-            }
             if (_currentLab == ELab.Lab2 && _currentTaskID == 137)
             {
                 _currentTaskID = 138;
             }
-            if (_currentLab == ELab.Lab2 && _currentTaskID == 150)
-            {
-                _currentTaskID = 151;
-            }
-            
-            if (_currentLab == ELab.Lab3 && _currentTaskID == 36)
-            {
-                _currentTaskID = 37;
-            }
-            if (_currentLab == ELab.Lab3 && _currentTaskID == 38)
-            {
-                _currentTaskID = 40;
-            }*/
             
             _currentTaskID++;
 
@@ -187,13 +150,17 @@ namespace Core
                 TaskUpdatedEvent?.Invoke(_tasksList[_currentTaskID]);
                 ActivateSideEffects(_tasksList[_currentTaskID], ESideEffectTime.StartTask);
             }
+            else if (_currentTaskID > _tasksList.Count)
+            {
+                FinishGame();
+            }
         }
 
         private void ResetGame(ELab lab)
         {
             _isGameStarted = false;
             
-            _currentTaskID = 54;
+            _currentTaskID = 157;
             
             _gameStartTime = DateTime.Now;
             _gameFinishTime = DateTime.Now;

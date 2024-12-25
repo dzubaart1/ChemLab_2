@@ -3,7 +3,7 @@
   "Lab": 1,
   "Number": 136,
   "Title": "Задание 136",
-  "Description": "Закройте дверцу термостата",
+  "Description": "Закройте дверцу шейкер-инкубатора",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {

@@ -44,7 +44,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 337074593456097543, guid: bb54045afd1f1fa46a276eca56d039a1, type: 3}
       propertyPath: _containerType
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 3927687518678438592, guid: bb54045afd1f1fa46a276eca56d039a1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -85,6 +85,10 @@ PrefabInstance:
     - target: {fileID: 3927687518678438592, guid: bb54045afd1f1fa46a276eca56d039a1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5301012547981187017, guid: bb54045afd1f1fa46a276eca56d039a1, type: 3}
+      propertyPath: m_Name
+      value: Saharoza
       objectReference: {fileID: 0}
     - target: {fileID: 5359928095746997749, guid: bb54045afd1f1fa46a276eca56d039a1, type: 3}
       propertyPath: m_Name
@@ -156,6 +160,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5301012547981187017, guid: bb54045afd1f1fa46a276eca56d039a1, type: 3}
+      propertyPath: m_Name
+      value: Glukoza
+      objectReference: {fileID: 0}
     - target: {fileID: 5359928095746997749, guid: bb54045afd1f1fa46a276eca56d039a1, type: 3}
       propertyPath: m_Name
       value: Glukoza
@@ -184,7 +192,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 337074593456097543, guid: bb54045afd1f1fa46a276eca56d039a1, type: 3}
       propertyPath: _containerType
-      value: 18
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 3927687518678438592, guid: bb54045afd1f1fa46a276eca56d039a1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -225,6 +233,10 @@ PrefabInstance:
     - target: {fileID: 3927687518678438592, guid: bb54045afd1f1fa46a276eca56d039a1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5301012547981187017, guid: bb54045afd1f1fa46a276eca56d039a1, type: 3}
+      propertyPath: m_Name
+      value: Laktoza
       objectReference: {fileID: 0}
     - target: {fileID: 5359928095746997749, guid: bb54045afd1f1fa46a276eca56d039a1, type: 3}
       propertyPath: m_Name

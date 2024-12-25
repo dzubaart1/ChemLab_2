@@ -13,41 +13,6 @@
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
-        "LabSubstanceProperty": {
-          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "Penicillium",
-          "SubstanceMode": 0,
-          "SubstanceLayer": 1,
-          "SubstanceColorR": 0.9528302,
-          "SubstanceColorG": 0.927144468,
-          "SubstanceColorB": 0.7775454,
-          "SubstanceColorA": 0.807843149,
-          "HintName": ""
-        },
-        "Weight": 0.01,
-        "SideEffectTimeType": 0,
-        "SideEffectType": 0
-      },
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
-        "LabSubstanceProperty": {
-          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "LizerganRings",
-          "SubstanceMode": 0,
-          "SubstanceLayer": 0,
-          "SubstanceColorR": 0.4943396,
-          "SubstanceColorG": 0.397799224,
-          "SubstanceColorB": 0.349768579,
-          "SubstanceColorA": 0.0,
-          "HintName": ""
-        },
-        "Weight": 0.01,
-        "SideEffectTimeType": 0,
-        "SideEffectType": 0
-      }
-    ]
+    "$values": []
   }
 }

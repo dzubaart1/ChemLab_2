@@ -8,7 +8,7 @@
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.DoorLabActivity, Assembly-CSharp",
-    "Door": 3,
+    "Door": 2,
     "DoorActivity": 1,
     "ActivityType": 7
   },

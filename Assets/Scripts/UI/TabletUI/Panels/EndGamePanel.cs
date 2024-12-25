@@ -2,6 +2,8 @@ using System;
 using UI.Components;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using JetBrains.Annotations;
+using Core;
 
 namespace UI.TabletUI.Panels
 {
@@ -9,6 +11,12 @@ namespace UI.TabletUI.Panels
     {
         [SerializeField] private ButtonComponent _resultButton;
         
+        [CanBeNull] private GameManager _gameManager;
+
+        private void Awake()
+        {
+            _gameManager = GameManager.Instance;
+        }
         private void OnEnable()
         {
             _resultButton.ClickBtnEvent += OnClickButton;
@@ -21,7 +29,7 @@ namespace UI.TabletUI.Panels
 
         private void OnClickButton()
         {
-            SceneManager.LoadScene("FinishScene");
+            _gameManager.LoadScene("FinishScene");
         }
     }
 }
