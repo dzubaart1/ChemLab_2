@@ -1541,7 +1541,7 @@ Transform:
   m_GameObject: {fileID: 618707221}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -27.693, y: -0.527, z: 10.057}
+  m_LocalPosition: {x: -23.72, y: -0.527, z: 7.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2806,7 +2806,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1027810039
 Transform:
   m_ObjectHideFlags: 0
@@ -4732,7 +4732,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1701708292
 Transform:
   m_ObjectHideFlags: 0
@@ -6108,14 +6108,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3612611337761474815}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.70710677, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -17.679346, y: 0.9929727, z: 6.073304}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2502393677125928802}
   m_Father: {fileID: 4295902472849154980}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!33 &571649959364213789
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6602,7 +6602,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8740037202776190534}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -17.529558, y: 0.9929727, z: 4.794059}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8180,10 +8180,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3612611337761474815}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9c0bcc9a3d97714c87318846819495d, type: 3}
+  m_Script: {fileID: 11500000, guid: b7545c68c4b1ce34ca4131dc4e84e4e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _door: {fileID: 475871025466245275}
+  _closed: {x: 0, y: -0.70710677, z: 0, w: 0.7071068}
+  _opened: {x: 0, y: 0, z: 0, w: 1}
+  _doorType: 3
 --- !u!1001 &8041514431471633826
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8347,7 +8350,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0.5563319, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -22.788425, y: 2.0140958, z: 4.794059}
+  m_ConnectedAnchor: {x: -26.294338, y: 2.0140958, z: 7.191088}
   serializedVersion: 2
   m_UseSpring: 0
   m_Spring:
@@ -8431,11 +8434,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8740037202776190534}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75c8416bdfd5a8842a789e5a9862bfa0, type: 3}
+  m_Script: {fileID: 11500000, guid: b7545c68c4b1ce34ca4131dc4e84e4e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _door: {fileID: 1124214004301904308}
-  _handle: {fileID: 1027810038}
+  _closed: {x: 0, y: 0, z: 0, w: 1}
+  _opened: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  _doorType: 2
 --- !u!1 &9096585831787943932
 GameObject:
   m_ObjectHideFlags: 0
