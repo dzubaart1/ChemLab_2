@@ -20,7 +20,6 @@ namespace Machines
         [SerializeField] private ButtonComponent _powerButton;
         [SerializeField] private VRSocketInteractor _socketInteractor1;
         [SerializeField] private VRSocketInteractor _socketInteractor2;
-        [SerializeField] private Transform _door;
 
         [CanBeNull] private GameManager _gameManager;
         
@@ -57,26 +56,6 @@ namespace Machines
         private void Start()
         {
             OnSaveScene();
-        }
-
-        private void Update()
-        {
-            Debug.Log(_door.transform.rotation);
-            if (_gameManager == null)
-            {
-                return;
-            }
-            
-            if (_door.transform.rotation.y < 0.99f && !_isOpen)
-            {
-                _isOpen = true;
-            }
-            else if (_door.transform.rotation.y > 0.99f && _isOpen)
-            {
-                _isOpen = false;
-                _gameManager.Game.CompleteTask(new DoorLabActivity(EDoor.TermostatDoor, EDoorActivity.Closed));
-                Dry();
-            }
         }
 
         private void Dry()
@@ -144,16 +123,7 @@ namespace Machines
 
         public void OnLoadScene()
         {
-            if (_savedData.IsOpen)
-            {
-                _isOpen = true;
-                _door.transform.rotation = new Quaternion(0, 0.7f, 0, 0.6f);
-            }
-            else
-            {
-                _isOpen = false;
-                _door.transform.rotation = new Quaternion(0, 1, 0, 0);
-            }
+            
         }
     }
 }

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2452316919384649385}
   - component: {fileID: 514419489937565424}
   - component: {fileID: 3927856576759818411}
+  - component: {fileID: 4416449059167260604}
   m_Layer: 0
   m_Name: door
   m_TagString: Untagged
@@ -31,13 +32,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 259504252200137191}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.16499999, y: 0.10760424, z: -0.14150302}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4139538467133458031}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &8403438620340562615
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -150,7 +151,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0.000011618948, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -30.510458, y: 0.73156285, z: 10.014627}
+  m_ConnectedAnchor: {x: -30.510458, y: 0.7315831, z: 10.014627}
   serializedVersion: 2
   m_UseSpring: 0
   m_Spring:
@@ -351,6 +352,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4416449059167260604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259504252200137191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7545c68c4b1ce34ca4131dc4e84e4e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _door: {fileID: 1893509273073454216}
+  _closed: {x: 0, y: 0.7071068, z: 0.7071068, w: 0}
+  _opened: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
+  _doorType: 4
+  _isOpenTaskSendable: 1
+  _isCloseTaskSendable: 1
 --- !u!1 &1285005723404918157
 GameObject:
   m_ObjectHideFlags: 0
@@ -894,7 +913,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d053b447faa898f43996b02e6014f5ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _door: {fileID: 1893509273073454216}
   _powerButton: {fileID: 6146918582528154136}
   _rpmButton: {fileID: 3346251462692734528}
   _socket1: {fileID: 3269213811409186265}

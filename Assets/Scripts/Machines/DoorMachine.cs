@@ -25,6 +25,11 @@ namespace Machines
         [Header("Door Type")]
         [SerializeField] EDoor _doorType;
         
+        [Space]
+        [Header ("Sendable parameters")]
+        [SerializeField] private bool _isOpenTaskSendable  = true;
+        [SerializeField] private bool _isCloseTaskSendable  = true;
+        
         [CanBeNull] private GameManager _gameManager;
         
         private bool _isOpen = false;
@@ -72,13 +77,19 @@ namespace Machines
             if (!IsRotationEqual(_closed, 0.01f) && !_isOpen)
             {
                 _isOpen = true;
-                _gameManager.Game.CompleteTask(new DoorLabActivity(_doorType, EDoorActivity.Open));
+                if (_isOpenTaskSendable)
+                {
+                    _gameManager.Game.CompleteTask(new DoorLabActivity(_doorType, EDoorActivity.Open));
+                }
             }
             
             else if (IsRotationEqual(_closed, 0.01f) && _isOpen)
             {
                 _isOpen = false;
-                _gameManager.Game.CompleteTask(new DoorLabActivity(_doorType, EDoorActivity.Closed));
+                if (_isCloseTaskSendable)
+                {
+                    _gameManager.Game.CompleteTask(new DoorLabActivity(_doorType, EDoorActivity.Closed));
+                }
             }
         }
 

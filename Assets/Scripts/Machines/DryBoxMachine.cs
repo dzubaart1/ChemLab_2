@@ -21,7 +21,6 @@ namespace Machines
 
         [SerializeField] private ButtonComponent _dryButton;
         [SerializeField] private VRSocketInteractor _socketInteractor;
-        [SerializeField] private Transform _door;
 
         [CanBeNull] private GameManager _gameManager;
         
@@ -64,24 +63,6 @@ namespace Machines
             OnSaveScene();
         }
 
-        private void Update()
-        {
-            if (_gameManager == null)
-            {
-                return;
-            }
-            
-            if (_door.transform.rotation.z < 0.49f && !_isOpen)
-            {
-                _isOpen = true;
-            }
-            else if (_door.transform.rotation.z > 0.49f && _isOpen)
-            {
-                _isOpen = false;
-                _gameManager.Game.CompleteTask(new DoorLabActivity(EDoor.DryMachineDoor, EDoorActivity.Closed));
-            }
-        }
-
         private void OnClickDryBtn()
         {
             if (_gameManager == null)
@@ -117,22 +98,12 @@ namespace Machines
         
         public void OnSaveScene()
         {
-            _savedData.IsOn = _dryButton;
-            _savedData.IsOpen = _isOpen;
+            
         }
 
         public void OnLoadScene()
         {
-            if (_savedData.IsOpen)
-            {
-                _isOpen = true;
-                _door.transform.rotation = new Quaternion(-0.5f, 0.5f, 0, 0.5f);
-            }
-            else
-            {
-                _isOpen = false;
-                _door.transform.rotation = new Quaternion(-0.5f, 0.5f, 0.5f, 0.5f);
-            }
+            
         }
     }
 }

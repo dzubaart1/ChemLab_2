@@ -18,8 +18,6 @@ namespace Machines
             public bool IsOpen;
             public bool IsShaking;
         }
-        
-        [SerializeField] private Transform _door;
         [SerializeField] private ButtonComponent _powerButton;
         [SerializeField] private ButtonComponent _rpmButton;
 
@@ -71,26 +69,6 @@ namespace Machines
             OnSaveScene();
         }
 
-        private void Update()
-        {
-            if (_gameManager == null)
-            {
-                return;
-            }
-            
-            if (_door.transform.rotation.x < -0.01f && !_isOpen)
-            {
-                _isOpen = true;
-                _gameManager.Game.CompleteTask(new DoorLabActivity(EDoor.ShakerDoor, EDoorActivity.Open));
-            }
-            
-            else if (_door.transform.rotation.x > -0.01f && _isOpen)
-            {
-                _isOpen = false;
-                _gameManager.Game.CompleteTask(new DoorLabActivity(EDoor.ShakerDoor, EDoorActivity.Closed));
-            }
-        }
-
         private void OnRpmButtonClick()
         {
             if (_powerButton.IsOn)
@@ -132,25 +110,11 @@ namespace Machines
         
         public void OnSaveScene()
         {
-            _savedData.IsOpen = _isOpen;
             _savedData.IsShaking = _isShaking;
         }
 
         public void OnLoadScene()
         {
-            if (_savedData.IsOpen)
-            {
-                _isOpen = true;
-                _door.transform.rotation = new Quaternion(-0.5f, 0.5f, 0.5f, 0.5f);
-            }
-            else
-            {
-                _isOpen = false;
-                _door.transform.rotation = new Quaternion(0, 0.7f, 0.7f, 0);
-                Rigidbody rb = _door.GetComponent<Rigidbody>();
-                rb.velocity = Vector3.zero;
-            }
-
             _animator.enabled = _savedData.IsShaking;
             _isShaking = _savedData.IsShaking;
         }

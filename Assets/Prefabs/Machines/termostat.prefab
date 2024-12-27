@@ -349,6 +349,7 @@ GameObject:
   - component: {fileID: 4173047610558761684}
   - component: {fileID: 22161287544941399}
   - component: {fileID: 8469360754638961980}
+  - component: {fileID: 5908220720785335502}
   m_Layer: 0
   m_Name: DoorOutside
   m_TagString: Untagged
@@ -592,6 +593,24 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &5908220720785335502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575841181977342543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7545c68c4b1ce34ca4131dc4e84e4e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _door: {fileID: 5668188151524241754}
+  _closed: {x: 0, y: 1, z: 0, w: 0}
+  _opened: {x: 0.000000021262332, y: -0.7660445, z: -0.0000000056636864, w: 0.64278764}
+  _doorType: 5
+  _isOpenTaskSendable: 1
+  _isCloseTaskSendable: 1
 --- !u!1 &1209647129616254080
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,6 +699,7 @@ GameObject:
   - component: {fileID: 2454995881855933981}
   - component: {fileID: 2322496085909686259}
   - component: {fileID: 829981450167424620}
+  - component: {fileID: 7853432363135475782}
   m_Layer: 0
   m_Name: SocketPoint (1)
   m_TagString: Untagged
@@ -789,6 +809,27 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.09
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &7853432363135475782
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269109360972931078}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.08
+  m_Center: {x: 0, y: -0.03, z: 0}
 --- !u!1 &1609544529945638627
 GameObject:
   m_ObjectHideFlags: 0
@@ -800,6 +841,7 @@ GameObject:
   - component: {fileID: 4360349882897061415}
   - component: {fileID: 3460353465976545424}
   - component: {fileID: 480238609753146307}
+  - component: {fileID: 2848029758998975571}
   m_Layer: 0
   m_Name: SocketPoint
   m_TagString: Untagged
@@ -909,6 +951,27 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.09
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &2848029758998975571
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609544529945638627}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.08
+  m_Center: {x: 0, y: -0.03, z: 0}
 --- !u!1 &1704276601010938533
 GameObject:
   m_ObjectHideFlags: 0
@@ -1991,7 +2054,6 @@ MonoBehaviour:
   _powerButton: {fileID: 740754764613808665}
   _socketInteractor1: {fileID: 3460353465976545424}
   _socketInteractor2: {fileID: 2322496085909686259}
-  _door: {fileID: 5668188151524241754}
 --- !u!1 &7308076162866192647
 GameObject:
   m_ObjectHideFlags: 0

@@ -233,6 +233,8 @@ namespace Core
         PenicilliumCapInteractable,
         PenicilliumPlenkaInteractable,
         PetriDishCapInteractable,
+        Door1Interactable,
+        Door2Interactable
     }
 
     public enum EPulverizatorHits : byte

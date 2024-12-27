@@ -24,7 +24,6 @@ namespace BioEngineerLab.Machines
         [SerializeField] private GameObject _bacteriumLight;
         [SerializeField] private GameObject _commonLight;
         [SerializeField] private GameObject _dLight;
-        [SerializeField] private GameObject _doorHandle;
         
         private GameManager _gameManager;
         private SavedData _savedData = new SavedData();
@@ -95,7 +94,6 @@ namespace BioEngineerLab.Machines
         private void OnKeyButtonClicked()
         {
             _isDoorOpened = !_isDoorOpened;
-            _doorHandle.SetActive(_isDoorOpened);
         }
 
         public void OnSaveScene()

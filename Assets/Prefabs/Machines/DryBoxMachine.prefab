@@ -73,7 +73,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dryButton: {fileID: 7420267398217166499}
   _socketInteractor: {fileID: 7787490981805541714}
-  _door: {fileID: 6991985489194717531}
 --- !u!1 &430669218194291302
 GameObject:
   m_ObjectHideFlags: 0
@@ -1219,6 +1218,7 @@ GameObject:
   - component: {fileID: 6991985489194717534}
   - component: {fileID: 2730912108339456632}
   - component: {fileID: 4285995014384577803}
+  - component: {fileID: 1773880352514906236}
   m_Layer: 0
   m_Name: hingedDoor
   m_TagString: Untagged
@@ -1331,6 +1331,24 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &1773880352514906236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6991985489194717528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7545c68c4b1ce34ca4131dc4e84e4e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _door: {fileID: 6991985489194717531}
+  _closed: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
+  _opened: {x: -0.70710677, y: 0, z: 0, w: 0.70710677}
+  _doorType: 0
+  _isOpenTaskSendable: 0
+  _isCloseTaskSendable: 1
 --- !u!1 &6991985489230582681
 GameObject:
   m_ObjectHideFlags: 0
