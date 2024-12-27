@@ -20,6 +20,7 @@ namespace Machines
         [SerializeField] private ButtonComponent _powerButton;
         [SerializeField] private VRSocketInteractor _socketInteractor1;
         [SerializeField] private VRSocketInteractor _socketInteractor2;
+        [SerializeField] private DoorMachine _doorMachine;
 
         [CanBeNull] private GameManager _gameManager;
         
@@ -40,6 +41,8 @@ namespace Machines
             
             _gameManager.Game.LoadGameEvent += OnLoadScene;
             _gameManager.Game.SaveGameEvent += OnSaveScene;
+
+            _doorMachine.DoorClosedEvent += Dry;
         }
 
         private void OnDisable()
@@ -49,8 +52,10 @@ namespace Machines
                 return;
             }
             
-            _gameManager.Game.LoadGameEvent += OnLoadScene;
-            _gameManager.Game.SaveGameEvent += OnSaveScene;
+            _gameManager.Game.LoadGameEvent -= OnLoadScene;
+            _gameManager.Game.SaveGameEvent -= OnSaveScene;
+            
+            _doorMachine.DoorClosedEvent -= Dry;
         }
 
         private void Start()

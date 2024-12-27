@@ -61,12 +61,12 @@ namespace Machines
                 Debug.Log(hit.collider.gameObject.name);
                 switch (hit.collider.gameObject.name)
                 {
-                    case ("Left Hand Model"):
+                    case ("Left Controller"):
                     {
                         _gameManager.Game.CompleteTask(new PulverizatorLabActivity(EPulverizatorHits.LeftHandHit));
                         return;
                     }
-                    case ("Right Hand Model"):
+                    case ("Right Controller"):
                     {
                         _gameManager.Game.CompleteTask(new PulverizatorLabActivity(EPulverizatorHits.RightHandHit));
                         return;

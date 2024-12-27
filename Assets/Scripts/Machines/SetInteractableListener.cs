@@ -22,6 +22,7 @@ namespace Machines
         private void Awake()
         {
             _gameManager = GameManager.Instance;
+            _savedData.Interactable = true;
         }
 
         private void OnEnable()

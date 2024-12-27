@@ -315,6 +315,7 @@ GameObject:
   - component: {fileID: 5130302913425727722}
   - component: {fileID: 6859158719416785020}
   - component: {fileID: 4918060267561598611}
+  - component: {fileID: 4680305502521262091}
   m_Layer: 11
   m_Name: Cup
   m_TagString: Untagged
@@ -569,6 +570,20 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &4680305502521262091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4591974597027119752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc049b87f325b1459fb5513ca58d563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _grabInteractable: {fileID: 4918060267561598611}
+  _interactableType: 2
 --- !u!1 &5014231895756217889
 GameObject:
   m_ObjectHideFlags: 0

@@ -609,7 +609,7 @@ MonoBehaviour:
   _closed: {x: 0, y: 1, z: 0, w: 0}
   _opened: {x: 0.000000021262332, y: -0.7660445, z: -0.0000000056636864, w: 0.64278764}
   _doorType: 5
-  _isOpenTaskSendable: 1
+  _isOpenTaskSendable: 0
   _isCloseTaskSendable: 1
 --- !u!1 &1209647129616254080
 GameObject:
@@ -2054,6 +2054,7 @@ MonoBehaviour:
   _powerButton: {fileID: 740754764613808665}
   _socketInteractor1: {fileID: 3460353465976545424}
   _socketInteractor2: {fileID: 2322496085909686259}
+  _doorMachine: {fileID: 5908220720785335502}
 --- !u!1 &7308076162866192647
 GameObject:
   m_ObjectHideFlags: 0

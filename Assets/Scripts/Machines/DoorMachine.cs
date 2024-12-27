@@ -11,6 +11,7 @@ namespace Machines
 {
     public class DoorMachine : MonoBehaviour, ISaveable
     {
+        public event Action DoorClosedEvent;
         private class SavedData
         {
             public bool IsOpen;
@@ -90,6 +91,7 @@ namespace Machines
                 {
                     _gameManager.Game.CompleteTask(new DoorLabActivity(_doorType, EDoorActivity.Closed));
                 }
+                DoorClosedEvent?.Invoke();
             }
         }
 
