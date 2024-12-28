@@ -46,6 +46,8 @@ namespace LocalManagers
         private DateTime _gameFinishTime;
         private bool _isGameStarted = false;
         private int _currentTaskID = 0;
+
+        private int _savedTaskID;
         
         public override void InitLab(ELab lab)
         {
@@ -64,11 +66,6 @@ namespace LocalManagers
 
         public override void SaveGame()
         {
-            foreach (var container in _containers)
-            {
-                container.Save();
-            }
-
             foreach (var socket in _sockets)
             {
                 socket.Save();
@@ -78,6 +75,28 @@ namespace LocalManagers
             {
                 grabInteractable.Save();
             }
+
+            foreach (var container in _containers)
+            {
+                container.Save();
+            }
+
+            foreach (var saveableUi in _saveableUis)
+            {
+                saveableUi.SaveUIState();
+            }
+
+            foreach (var saveableDoor in _saveableDoors)
+            {
+                saveableDoor.SaveDoorState();
+            }
+
+            foreach (var saveableOther in _saveableOthers)
+            {
+                saveableOther.Save();
+            }
+
+            _savedTaskID = _currentTaskID;
         }
 
         public override void LoadGame()
@@ -95,12 +114,32 @@ namespace LocalManagers
             foreach (var container in _containers)
             {
                 container.PutSavedSubstances();
+                container.PutSavedContainerType();
             }
 
             foreach (var socket in _sockets)
             {
                 socket.PutSavedInteractable();
             }
+
+            foreach (var saveableUi in _saveableUis)
+            {
+                saveableUi.LoadUIState();
+            }
+
+            foreach (var saveableDoor in _saveableDoors)
+            {
+                saveableDoor.LoadDoorState();
+            }
+
+            foreach (var saveableOther in _saveableOthers)
+            {
+                saveableOther.Load();
+            }
+
+            _currentTaskID = _savedTaskID;
+            
+            _tabletUI.OnTaskUpdated(CurrentTask);
         }
 
         public override void OnActivityComplete(LabActivity activity)
