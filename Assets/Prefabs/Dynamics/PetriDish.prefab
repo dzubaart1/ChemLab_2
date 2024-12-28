@@ -230,11 +230,11 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+  _scoketColliders: []
   _socketType: 7
   _isEnterTaskSendable: 0
   _isExitTaskSendable: 0
-  _isSubsctanceEnterSocket: 0
-  _isSubsctanceExitSocket: 0
+  _isSubstanceSocket: 0
   _isStartEnter: 0
 --- !u!1 &3230590819400659979
 GameObject:
@@ -376,7 +376,6 @@ GameObject:
   - component: {fileID: 2105233097244144506}
   - component: {fileID: 5613162757780011327}
   - component: {fileID: 2383104442359871331}
-  - component: {fileID: 7516711357595226793}
   m_Layer: 11
   m_Name: Cup
   m_TagString: Untagged
@@ -630,20 +629,6 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &7516711357595226793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3260846775235920523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cc049b87f325b1459fb5513ca58d563, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _grabInteractable: {fileID: 2383104442359871331}
-  _interactableType: 2
 --- !u!1 &4306010668973970202
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,7 +733,6 @@ GameObject:
   - component: {fileID: 4897719036803240956}
   - component: {fileID: 6260466943509335188}
   - component: {fileID: 5191312772487442592}
-  - component: {fileID: 5660953836305577752}
   m_Layer: 11
   m_Name: BasePetriDish
   m_TagString: SerializeTransferAndSubstance
@@ -1038,6 +1022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b4c490f479acb40a2f8d6668c5d1c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reagentsLabSubstanceProperty: {fileID: 0}
   _maxVolume: 9000
   _containerWeight: 0
   _containerType: 7
@@ -1072,18 +1057,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 614f3bff350847cba1fa99ddaa2cce0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5660953836305577752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5162445719867037894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3ccaeda41040798ddada03e99f1f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _labContainer: {fileID: 4897719036803240956}

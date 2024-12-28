@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4368961938040584888}
-  - component: {fileID: 7111568195170174268}
+  - component: {fileID: 7954359083734764204}
   m_Layer: 0
   m_Name: ShoeCovers
   m_TagString: Untagged
@@ -34,7 +34,7 @@ Transform:
   - {fileID: 9208152309250996910}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7111568195170174268
+--- !u!114 &7954359083734764204
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,13 +43,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 237859377638770077}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a69d188d39277b248800f548b982ac72, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ba3c9df8c474dd58317c2d977e714f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _machineType: 20
-  _vanishPrefab: {fileID: 8395339801215721492}
+  _meshRenderer: {fileID: 7564450541491683553}
   _grabInteractable: {fileID: 4637835557084295083}
-  _returnButton: {fileID: 0}
+  _machineType: 20
 --- !u!1 &2032313902171940575
 GameObject:
   m_ObjectHideFlags: 0

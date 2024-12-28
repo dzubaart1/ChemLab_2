@@ -355,6 +355,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfcabfa62ac942db922de950624bd0d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 8569025454902821838}
+  _grabInteractable: {fileID: 447580956252463071}
+  _collider: {fileID: 2837768673192478416}
+  _rigidbody: {fileID: 8569025454902821835}
 --- !u!136 &2837768673192478416
 CapsuleCollider:
   m_ObjectHideFlags: 0

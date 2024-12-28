@@ -380,11 +380,11 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+  _scoketColliders: []
   _socketType: 17
   _isEnterTaskSendable: 0
   _isExitTaskSendable: 0
-  _isSubsctanceEnterSocket: 0
-  _isSubsctanceExitSocket: 0
+  _isSubstanceSocket: 0
   _isStartEnter: 0
 --- !u!135 &2562155564905575613
 SphereCollider:
@@ -424,7 +424,6 @@ GameObject:
   - component: {fileID: 337074593456097543}
   - component: {fileID: 6774801599821961656}
   - component: {fileID: 3960298003647097438}
-  - component: {fileID: 979508930401615403}
   - component: {fileID: 3146644208879784138}
   m_Layer: 0
   m_Name: bottle
@@ -714,6 +713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b4c490f479acb40a2f8d6668c5d1c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reagentsLabSubstanceProperty: {fileID: 0}
   _maxVolume: 150
   _containerWeight: 0
   _containerType: 16
@@ -746,18 +746,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 614f3bff350847cba1fa99ddaa2cce0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &979508930401615403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5301012547981187017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3ccaeda41040798ddada03e99f1f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _labContainer: {fileID: 337074593456097543}

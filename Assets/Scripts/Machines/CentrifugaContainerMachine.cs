@@ -1,4 +1,5 @@
-﻿using Saveables;
+﻿using Core;
+using Saveables;
 using UI.Components;
 using UnityEngine;
 
@@ -19,6 +20,22 @@ namespace Machines
         [SerializeField] private string _closeState = "Close";
         
         private SavedData _savedData = new SavedData();
+        
+        private void Start()
+        {
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                return;
+            }
+
+            if (gameManager.CurrentBaseLocalManager == null)
+            {
+                return;
+            }
+            
+            gameManager.CurrentBaseLocalManager.AddSaveableUI(this);
+        }
         
         private void OnEnable()
         {

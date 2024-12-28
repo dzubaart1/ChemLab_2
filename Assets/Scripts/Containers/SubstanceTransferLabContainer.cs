@@ -12,31 +12,24 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 namespace Containers
 {
-    [RequireComponent(typeof(Collider), typeof(VRGrabInteractable), typeof(CupSocketLabContainer))]
     public class SubstanceTransferLabContainer : MonoBehaviour
     {
         private const float DELAY_TRIGGERED = 0.5f;
         
-        private XRGrabInteractable _xrGrabInteractable;
-        private LabContainer _labContainer;
-        private CupSocketLabContainer _cupSocketLabContainer;
+        [SerializeField] private LabContainer _labContainer;
         
         private bool _isAlreadyTriggered;
         
-        private void Awake()
-        {
-            _xrGrabInteractable = GetComponent<XRGrabInteractable>();
-            _labContainer = GetComponent<LabContainer>();
-            _cupSocketLabContainer = GetComponent<CupSocketLabContainer>();
-        }
-
         private void OnTriggerStay(Collider other)
         {
-            if (_xrGrabInteractable.interactorsSelecting.Count == 0)
+            VRGrabInteractable vrGrabInteractable = _labContainer.GetComponent<VRGrabInteractable>();
+            if(vrGrabInteractable != null && vrGrabInteractable.interactorsSelecting.Count == 0)
             {
                 return;
             }
-            if (_cupSocketLabContainer.IsClosed())
+
+            CupSocketLabContainer cup = _labContainer.GetComponent<CupSocketLabContainer>();
+            if (cup != null && cup.IsClosed())
             {
                 return;
             }
@@ -58,7 +51,7 @@ namespace Containers
                 return;
             }
 
-            IXRSelectInteractor interactor = _xrGrabInteractable.interactorsSelecting[0];
+            IXRSelectInteractor interactor = vrGrabInteractable.interactorsSelecting[0];
             if(interactor is null)
             {
                 return;

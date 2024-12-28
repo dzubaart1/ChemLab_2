@@ -5274,10 +5274,7 @@ GameObject:
   - component: {fileID: 202896990951114013}
   - component: {fileID: 15898089193066640}
   - component: {fileID: 4288533169392806908}
-  - component: {fileID: 8293337792450733021}
   - component: {fileID: 35894806345451629}
-  - component: {fileID: 1192548520406763144}
-  - component: {fileID: 7273750130844213799}
   m_Layer: 0
   m_Name: WaterDe
   m_TagString: Serializable
@@ -5538,6 +5535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b4c490f479acb40a2f8d6668c5d1c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reagentsLabSubstanceProperty: {fileID: 11400000, guid: b946579baff1f604fb911c58c97c7107, type: 2}
   _maxVolume: 9000
   _containerWeight: 0
   _containerType: 4
@@ -5546,20 +5544,6 @@ MonoBehaviour:
   _meshRendererConfigs:
   - Layer: 0
     MeshRenderer: {fileID: 5884424412494302232}
---- !u!114 &8293337792450733021
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6573443692718893234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d5688348ca44754803321668f063138, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _cupSocket: {fileID: 0}
-  _isNozzleNeed: 0
 --- !u!114 &35894806345451629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5572,32 +5556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614f3bff350847cba1fa99ddaa2cce0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1192548520406763144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6573443692718893234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3ccaeda41040798ddada03e99f1f69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _labContainer: {fileID: 4288533169392806908}
---- !u!114 &7273750130844213799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6573443692718893234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3006fa141b4c470590b614fd0a150b74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  reagentsLabSubstanceProperty: {fileID: 11400000, guid: b946579baff1f604fb911c58c97c7107, type: 2}
+  _xrGrabInteractable: {fileID: 15898089193066640}
   _labContainer: {fileID: 4288533169392806908}
 --- !u!1 &6869343159593377860
 GameObject:

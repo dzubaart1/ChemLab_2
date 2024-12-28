@@ -1,4 +1,3 @@
-using System;
 using BioEngineerLab.Tasks.SideEffects;
 using Core;
 using UnityEngine;
@@ -15,7 +14,7 @@ namespace Gameplay
         [SerializeField] private EMachine _machine;
         [SerializeField] private GameObject _docPrefab;
 
-        private void Awake()
+        private void Start()
         {
             GameManager gameManager = GameManager.Instance;
 

@@ -15,9 +15,7 @@ GameObject:
   - component: {fileID: 6883195785797476453}
   - component: {fileID: 6013259622337651814}
   - component: {fileID: 5650118537656890982}
-  - component: {fileID: 7022861838099661350}
   - component: {fileID: 5163627504370787568}
-  - component: {fileID: 1753780627716858593}
   - component: {fileID: 3562332896420257826}
   m_Layer: 11
   m_Name: CentrifugeContainer
@@ -303,6 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b4c490f479acb40a2f8d6668c5d1c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reagentsLabSubstanceProperty: {fileID: 0}
   _maxVolume: 10
   _containerWeight: 0
   _containerType: 12
@@ -313,20 +312,6 @@ MonoBehaviour:
     MeshRenderer: {fileID: 8910581703376041468}
   - Layer: 1
     MeshRenderer: {fileID: 7285620915262949269}
---- !u!114 &7022861838099661350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1827639142981799576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d5688348ca44754803321668f063138, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _cupSocket: {fileID: 0}
-  _isNozzleNeed: 0
 --- !u!114 &5163627504370787568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,18 +322,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 614f3bff350847cba1fa99ddaa2cce0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1753780627716858593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1827639142981799576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3ccaeda41040798ddada03e99f1f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _labContainer: {fileID: 5650118537656890982}
@@ -364,7 +337,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f95108f2038e84e4fb26c340c95829fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _button: {fileID: 2549657975540645544}
+  _openButton: {fileID: 2549657975540645544}
+  _animator: {fileID: 1827639142981799583}
+  _openState: Open
+  _closeState: Close
 --- !u!1 &1827639143014636154
 GameObject:
   m_ObjectHideFlags: 0

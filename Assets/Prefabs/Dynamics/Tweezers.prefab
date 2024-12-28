@@ -180,9 +180,7 @@ GameObject:
   - component: {fileID: 3731057835775268679}
   - component: {fileID: 6045300622459039873}
   - component: {fileID: 6872993991241265393}
-  - component: {fileID: 4270397128658542624}
   - component: {fileID: 9210805459069999569}
-  - component: {fileID: 4338754230944543843}
   m_Layer: 0
   m_Name: Tweezers
   m_TagString: SerializeTransferAndSubstance
@@ -442,6 +440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b4c490f479acb40a2f8d6668c5d1c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reagentsLabSubstanceProperty: {fileID: 0}
   _maxVolume: 30
   _containerWeight: 0
   _containerType: 13
@@ -450,20 +449,6 @@ MonoBehaviour:
   _meshRendererConfigs:
   - Layer: 0
     MeshRenderer: {fileID: 3731057835736345556}
---- !u!114 &4270397128658542624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3731057835775268674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d5688348ca44754803321668f063138, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _cupSocket: {fileID: 0}
-  _isNozzleNeed: 0
 --- !u!114 &9210805459069999569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,18 +461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614f3bff350847cba1fa99ddaa2cce0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4338754230944543843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3731057835775268674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3ccaeda41040798ddada03e99f1f69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  _xrGrabInteractable: {fileID: 6045300622459039873}
   _labContainer: {fileID: 6872993991241265393}
 --- !u!1 &5603070151144358256
 GameObject:

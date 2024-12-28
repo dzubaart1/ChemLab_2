@@ -13,16 +13,7 @@ namespace BioEngineerLab.Machines
         [FormerlySerializedAs("_numberButtons")]
         [SerializeField] private KeyboardKey[] _keyboardKeys;
         [SerializeField] private ButtonComponent _enterButton;
-
-        [Space]
-        [Header("Views")]
-        [SerializeField] private MeshRenderer _meshRenderer;
-        [SerializeField] private Material _errorMaterial;
-        [SerializeField] private Material _successMaterial;
         
-        [Space]
-        [Header("Refs")]
-        [SerializeField] private GameObject _handlePrefab;
 
         [FormerlySerializedAs("_currentPassword")]
         [Space]
@@ -30,11 +21,6 @@ namespace BioEngineerLab.Machines
         [SerializeField] private String _targetPassword;
         
         private String _currentString = "";
-
-        private void Start()
-        {
-            _meshRenderer.material = _errorMaterial;
-        }
 
         private void OnEnable()
         {
@@ -76,15 +62,7 @@ namespace BioEngineerLab.Machines
             
             if (_currentString == _targetPassword)
             {
-                _handlePrefab.SetActive(true);
-                _meshRenderer.material = _successMaterial;
-                
                 gameManager.CurrentBaseLocalManager.OnActivityComplete(new MachineLabActivity(EMachineActivity.OnEnter, EMachine.KeyboardMachine));
-            }
-            else
-            {
-                _handlePrefab.SetActive(false);
-                _meshRenderer.material = _errorMaterial;
             }
 
             _currentString = "";

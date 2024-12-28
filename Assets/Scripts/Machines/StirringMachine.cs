@@ -3,7 +3,6 @@ using Containers;
 using Core;
 using Core.Services;
 using Crafting;
-using JetBrains.Annotations;
 using Mechanics;
 using Saveables;
 using UI.Components;
@@ -28,6 +27,22 @@ namespace Machines
         
         private bool _isLoadEnter;
         private bool _isLoadExit;
+        
+        private void Start()
+        {
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                return;
+            }
+
+            if (gameManager.CurrentBaseLocalManager == null)
+            {
+                return;
+            }
+            
+            gameManager.CurrentBaseLocalManager.AddSaveableUI(this);
+        }
         
         private void OnEnable()
         {

@@ -32,6 +32,22 @@ namespace Machines
         
         private bool _isOpen = false;
         
+        private void Start()
+        {
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                return;
+            }
+
+            if (gameManager.CurrentBaseLocalManager == null)
+            {
+                return;
+            }
+            
+            gameManager.CurrentBaseLocalManager.AddSaveableUI(this);
+        }
+        
         private void OnEnable()
         {
             _lightButton.ClickBtnEvent += OnLButtonClick;

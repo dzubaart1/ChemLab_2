@@ -1,4 +1,5 @@
 ﻿using System;
+using Core;
 using Saveables;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -17,6 +18,22 @@ namespace Mechanics
         }
 
         private SavedData _savedData = new SavedData();
+        
+        private void Start()
+        {
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                return;
+            }
+
+            if (gameManager.CurrentBaseLocalManager == null)
+            {
+                return;
+            }
+            
+            gameManager.CurrentBaseLocalManager.AddGrabInteractables(this);
+        }
 
         protected override void OnEnable()
         {

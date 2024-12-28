@@ -275,10 +275,7 @@ GameObject:
   - component: {fileID: 3047446337776835221}
   - component: {fileID: 3288598820739737821}
   - component: {fileID: 6135443831722635874}
-  - component: {fileID: 5684789029810926728}
-  - component: {fileID: 777966865360511347}
   - component: {fileID: 8611235375072104142}
-  - component: {fileID: 1774886901494779421}
   m_Layer: 11
   m_Name: ChimicGlassContainer
   m_TagString: Untagged
@@ -538,6 +535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b4c490f479acb40a2f8d6668c5d1c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reagentsLabSubstanceProperty: {fileID: 0}
   _maxVolume: 9000
   _containerWeight: 0
   _containerType: 0
@@ -546,33 +544,6 @@ MonoBehaviour:
   _meshRendererConfigs:
   - Layer: 0
     MeshRenderer: {fileID: 9105776815122697774}
---- !u!114 &5684789029810926728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8752989905597421585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d5688348ca44754803321668f063138, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _cupSocket: {fileID: 0}
-  _isNozzleNeed: 0
---- !u!114 &777966865360511347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8752989905597421585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3ccaeda41040798ddada03e99f1f69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _labContainer: {fileID: 6135443831722635874}
 --- !u!114 &8611235375072104142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -585,16 +556,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614f3bff350847cba1fa99ddaa2cce0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1774886901494779421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8752989905597421585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad8e5fec15f040a2abb9ad1ad209ba25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  _xrGrabInteractable: {fileID: 3288598820739737821}
   _labContainer: {fileID: 6135443831722635874}

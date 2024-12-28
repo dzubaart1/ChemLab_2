@@ -3,13 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using BioEngineerLab.Activities;
 using Core;
+using Saveables;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Machines
 {
-    public class CleaningSurface : MonoBehaviour
+    public class CleaningSurface : MonoBehaviour, ISaveableOther
     {
+        private class SavedData
+        {
+            public List<WaterDrop> WaterDrops;
+            public bool IsAllWaterDropsSpawned;
+        }
+        
         [Header("Refs")]
         [SerializeField] private WaterDrop _waterDropPrefab;
         [SerializeField] private Transform _waterDropsPool;
@@ -17,10 +23,28 @@ namespace Machines
         [Space]
         [Header("Configs")]
         [SerializeField] private int _targetWaterDropsCount = 5;
+
+        private SavedData _savedData = new SavedData();
         
         private List<WaterDrop> _waterDrops = new List<WaterDrop>();
-
         private bool _isAllWaterDropsSpawned = false;
+
+        private void Start()
+        {
+            GameManager gameManager = GameManager.Instance;
+
+            if (gameManager == null)
+            {
+                return;
+            }
+
+            if (gameManager.CurrentBaseLocalManager == null)
+            {
+                return;
+            }
+            
+            gameManager.CurrentBaseLocalManager.AddSaveableOther(this);
+        }
 
         private void Update()
         {
@@ -79,6 +103,17 @@ namespace Machines
         {
             _isAllWaterDropsSpawned = false;
             _waterDrops.Clear();
+        }
+
+        public void Save()
+        {
+            _savedData.WaterDrops = _waterDrops;
+            _savedData.IsAllWaterDropsSpawned = _isAllWaterDropsSpawned;
+        }
+
+        public void Load()
+        {
+            
         }
     }
 }

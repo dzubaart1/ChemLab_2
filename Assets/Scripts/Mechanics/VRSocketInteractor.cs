@@ -48,6 +48,22 @@ namespace Mechanics
         public ESocket SocketType => _socketType;
 
         private SavedData _savedData = new SavedData();
+        
+        private void Start()
+        {
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                return;
+            }
+
+            if (gameManager.CurrentBaseLocalManager == null)
+            {
+                return;
+            }
+            
+            gameManager.CurrentBaseLocalManager.AddSaveableSocket(this);
+        }
 
         protected override void OnSelectEntered(SelectEnterEventArgs args)
         {

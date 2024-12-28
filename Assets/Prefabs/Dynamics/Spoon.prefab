@@ -129,9 +129,7 @@ GameObject:
   - component: {fileID: -2463100932087144849}
   - component: {fileID: 5445232615817109689}
   - component: {fileID: 272428972696992836}
-  - component: {fileID: 3987042698811636352}
   - component: {fileID: 875104710952133562}
-  - component: {fileID: 3559997166352229496}
   m_Layer: 11
   m_Name: Spoon
   m_TagString: SerializeTransferAndSubstance
@@ -395,6 +393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b4c490f479acb40a2f8d6668c5d1c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reagentsLabSubstanceProperty: {fileID: 0}
   _maxVolume: 9000
   _containerWeight: 0
   _containerType: 2
@@ -403,20 +402,6 @@ MonoBehaviour:
   _meshRendererConfigs:
   - Layer: 0
     MeshRenderer: {fileID: 3465982370952758567}
---- !u!114 &3987042698811636352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5699245959172087777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d5688348ca44754803321668f063138, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _cupSocket: {fileID: 0}
-  _isNozzleNeed: 0
 --- !u!114 &875104710952133562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -429,18 +414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614f3bff350847cba1fa99ddaa2cce0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3559997166352229496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5699245959172087777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3ccaeda41040798ddada03e99f1f69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  _xrGrabInteractable: {fileID: 5445232615817109689}
   _labContainer: {fileID: 272428972696992836}
 --- !u!1 &5699245960274934619
 GameObject:

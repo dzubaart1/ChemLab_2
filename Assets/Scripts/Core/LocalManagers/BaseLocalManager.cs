@@ -25,9 +25,13 @@ namespace LocalManagers
         }
 
         public abstract float GetGameTime();
-        public abstract List<LabTask> GetErrorTasks();
+        public abstract IReadOnlyCollection<LabTask> GetErrorTasks();
         
-        public abstract List<SOLabCraft> GetSOCrafts();
+        public abstract IReadOnlyList<SOLabCraft> GetSOCrafts();
+
+        public abstract void AddSaveableUI(ISaveableUI saveableUI);
+        public abstract void AddSaveableOther(ISaveableOther saveableOther);
+        public abstract void AddSaveableDoor(ISaveableDoor saveableDoor);
         public abstract void AddTabletUI(TabletUI tabletUI);
         public abstract void AddSideEffectActivator(ISideEffectActivator sideEffectActivator);
         public abstract void AddSaveableContainer(ISaveableContainer saveableContainer);

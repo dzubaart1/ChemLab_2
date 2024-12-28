@@ -663,11 +663,11 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+  _scoketColliders: []
   _socketType: 32
   _isEnterTaskSendable: 1
   _isExitTaskSendable: 1
-  _isSubsctanceEnterSocket: 1
-  _isSubsctanceExitSocket: 1
+  _isSubstanceSocket: 0
   _isStartEnter: 0
 --- !u!1 &2003069509996129159
 GameObject:
@@ -858,11 +858,11 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+  _scoketColliders: []
   _socketType: 32
   _isEnterTaskSendable: 1
   _isExitTaskSendable: 1
-  _isSubsctanceEnterSocket: 1
-  _isSubsctanceExitSocket: 1
+  _isSubstanceSocket: 0
   _isStartEnter: 0
 --- !u!1 &3619003907331480789
 GameObject:
@@ -918,6 +918,7 @@ MonoBehaviour:
   _socket1: {fileID: 3269213811409186265}
   _socket2: {fileID: 7186335146963377695}
   _socket3: {fileID: 9004879023720315032}
+  _animator: {fileID: 514363592271752860}
 --- !u!95 &514363592271752860
 Animator:
   serializedVersion: 5
@@ -1623,11 +1624,11 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+  _scoketColliders: []
   _socketType: 32
   _isEnterTaskSendable: 1
   _isExitTaskSendable: 1
-  _isSubsctanceEnterSocket: 1
-  _isSubsctanceExitSocket: 1
+  _isSubstanceSocket: 0
   _isStartEnter: 0
 --- !u!1 &8364005301772859617
 GameObject:

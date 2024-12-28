@@ -29,6 +29,22 @@ namespace Machines
         private SavedData _savedData = new SavedData();
         
         private bool _isShaking = false;
+        
+        private void Start()
+        {
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                return;
+            }
+
+            if (gameManager.CurrentBaseLocalManager == null)
+            {
+                return;
+            }
+            
+            gameManager.CurrentBaseLocalManager.AddSaveableUI(this);
+        }
 
         private void OnEnable()
         {

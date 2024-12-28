@@ -14,10 +14,6 @@ namespace LocalManagers
 {
     public class SpaceLabManager : BaseLocalManager
     {
-        public event Action<LabSideEffect> SideEffectActivatedEvent;
-        public event Action<LabTask> TaskUpdatedEvent;
-        public event Action TaskFailedEvent;
-        
         [CanBeNull]
         public LabTask CurrentTask
         {
@@ -31,11 +27,16 @@ namespace LocalManagers
                 return null;
             }
         }
-        
+
+        private List<ISaveableDoor> _saveableDoors = new List<ISaveableDoor>();
+        private List<ISaveableUI> _saveableUis = new List<ISaveableUI>();
+        private List<ISaveableOther> _saveableOthers = new List<ISaveableOther>();
         private List<ISideEffectActivator> _sideEffectActivators = new List<ISideEffectActivator>();
         private List<ISaveableContainer> _containers = new List<ISaveableContainer>();
         private List<ISaveableSocket> _sockets = new List<ISaveableSocket>();
         private List<ISaveableGrabInteractable> _grabInteractables = new List<ISaveableGrabInteractable>();
+        
+        private TabletUI _tabletUI;
         
         private HashSet<LabTask> _errorsTask = new HashSet<LabTask>();
         private List<LabTask> _tasksList = new List<LabTask>();
@@ -50,7 +51,7 @@ namespace LocalManagers
         {
             _soCrafts = ResourcesDatabase.ReadAllCraft();
             _tasksList = LabTasksDatabase.ReadAll(lab);
-
+            
             _isGameStarted = true;
             
             _currentTaskID = 0;
@@ -116,34 +117,49 @@ namespace LocalManagers
             }
             
             _errorsTask.Add(_tasksList[_currentTaskID]);
-            TaskFailedEvent?.Invoke();
+            _tabletUI.OnTaskFailed();
         }
 
         public override float GetGameTime()
         {
-            throw new NotImplementedException();
+            return (_gameFinishTime - _gameStartTime).Minutes;
         }
 
-        public override List<LabTask> GetErrorTasks()
+        public override IReadOnlyCollection<LabTask> GetErrorTasks()
         {
-            throw new NotImplementedException();
+            return _errorsTask;
         }
 
-        public override List<SOLabCraft> GetSOCrafts()
+        public override IReadOnlyList<SOLabCraft> GetSOCrafts()
         {
             return _soCrafts;
         }
 
+        public override void AddSaveableUI(ISaveableUI saveableUI)
+        {
+            _saveableUis.Add(saveableUI);
+        }
+
+        public override void AddSaveableOther(ISaveableOther saveableOther)
+        {
+            _saveableOthers.Add(saveableOther);
+        }
+
+        public override void AddSaveableDoor(ISaveableDoor saveableDoor)
+        {
+            _saveableDoors.Add(saveableDoor);
+        }
+
         public override void AddTabletUI(TabletUI tabletUI)
         {
-            throw new NotImplementedException();
+            _tabletUI = tabletUI;
         }
 
         public override void AddSideEffectActivator(ISideEffectActivator sideEffectActivator)
         {
             _sideEffectActivators.Add(sideEffectActivator);
         }
-
+        
         public override void AddSaveableContainer(ISaveableContainer saveableContainer)
         {
             _containers.Add(saveableContainer);
@@ -176,7 +192,7 @@ namespace LocalManagers
                 }
 
                 ActivateSideEffects(_tasksList[_currentTaskID], ESideEffectTime.StartTask);
-                TaskUpdatedEvent?.Invoke(_tasksList[_currentTaskID]);
+                _tabletUI.OnTaskUpdated(_tasksList[_currentTaskID]);
             }
         }
         
@@ -186,7 +202,10 @@ namespace LocalManagers
             {
                 if (sideEffect.SideEffectTimeType == sideEffectTime)
                 {
-                    SideEffectActivatedEvent?.Invoke(sideEffect);
+                    foreach (var sideEffectActivator in _sideEffectActivators)
+                    {
+                        sideEffectActivator.OnActivateSideEffect(sideEffect);
+                    }
                 }
             }
         }

@@ -557,7 +557,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7925852788634352702}
-  - component: {fileID: 915510599206178613}
+  - component: {fileID: 7069786331882697816}
   m_Layer: 0
   m_Name: LabCoat
   m_TagString: Untagged
@@ -582,7 +582,7 @@ Transform:
   - {fileID: 4031115718178682645}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &915510599206178613
+--- !u!114 &7069786331882697816
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -591,13 +591,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 9092902022790294811}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a69d188d39277b248800f548b982ac72, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d3f19e8f0034491938e76e01cc0ad07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _machineType: 19
-  _vanishPrefab: {fileID: 9194353299500987801}
+  _meshRenderer: {fileID: 5827924553115246900}
   _grabInteractable: {fileID: 6326978978859101113}
-  _returnButton: {fileID: 4104588191524813963}
+  _returnBtn: {fileID: 4104588191524813963}
+  _machineType: 2
 --- !u!1 &9194353299500987801
 GameObject:
   m_ObjectHideFlags: 0

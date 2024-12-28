@@ -599,10 +599,12 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+  _scoketColliders: []
   _socketType: 9
   _isEnterTaskSendable: 0
   _isExitTaskSendable: 0
-  _isSubsctanceSocket: 0
+  _isSubstanceSocket: 0
+  _isStartEnter: 0
 --- !u!1 &8513571751982461715
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,7 +746,6 @@ GameObject:
   - component: {fileID: 8513571751578003403}
   - component: {fileID: 8792329057904026415}
   - component: {fileID: 2251315681006490000}
-  - component: {fileID: 2065975324179437026}
   - component: {fileID: 7170330642210742360}
   - component: {fileID: 9079948206777681126}
   m_Layer: 11
@@ -1007,6 +1008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b4c490f479acb40a2f8d6668c5d1c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reagentsLabSubstanceProperty: {fileID: 0}
   _maxVolume: 9000
   _containerWeight: 0
   _containerType: 8
@@ -1015,19 +1017,6 @@ MonoBehaviour:
   _meshRendererConfigs:
   - Layer: 0
     MeshRenderer: {fileID: 4062999779071354566}
---- !u!114 &2065975324179437026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8513571752015484691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3ccaeda41040798ddada03e99f1f69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _labContainer: {fileID: 2251315681006490000}
 --- !u!114 &7170330642210742360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1054,6 +1043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614f3bff350847cba1fa99ddaa2cce0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _labContainer: {fileID: 2251315681006490000}
 --- !u!1 &8513571752801770520
 GameObject:
   m_ObjectHideFlags: 0

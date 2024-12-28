@@ -34,6 +34,23 @@ namespace Machines
         
         private bool _isAlreadyTriggered = false;
         private bool _isShellVisible = true;
+        
+        private void Start()
+        {
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                return;
+            }
+
+            if (gameManager.CurrentBaseLocalManager == null)
+            {
+                return;
+            }
+            
+            gameManager.CurrentBaseLocalManager.AddSaveableOther(this);
+        }
+
 
         private void OnEnable()
         {

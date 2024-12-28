@@ -30,6 +30,22 @@ namespace Machines
         private bool _isOpen = false;
         private SavedData _savedData = new SavedData();
         
+        private void Start()
+        {
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                return;
+            }
+
+            if (gameManager.CurrentBaseLocalManager == null)
+            {
+                return;
+            }
+            
+            gameManager.CurrentBaseLocalManager.AddSaveableDoor(this);
+        }
+        
         private void Update()
         {
             GameManager gameManager = GameManager.Instance;

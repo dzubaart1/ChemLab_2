@@ -30,6 +30,22 @@ namespace BioEngineerLab.Machines
         private bool _isDLightOn = true;
         private bool _isDoorOpened = false;
         
+        private void Start()
+        {
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                return;
+            }
+
+            if (gameManager.CurrentBaseLocalManager == null)
+            {
+                return;
+            }
+            
+            gameManager.CurrentBaseLocalManager.AddSaveableUI(this);
+        }
+        
         private void OnEnable()
         {
             _bacteriumButton.ClickBtnEvent += OnBacteriumButtonClicked;

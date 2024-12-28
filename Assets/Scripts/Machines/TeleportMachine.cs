@@ -21,6 +21,22 @@ namespace BioEngineerLab.Machines
         private SavedData _savedData = new SavedData();
         
         private List<Transform> _hiddenGameObjects = new List<Transform>();
+        
+        private void Start()
+        {
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                return;
+            }
+
+            if (gameManager.CurrentBaseLocalManager == null)
+            {
+                return;
+            }
+            
+            gameManager.CurrentBaseLocalManager.AddSaveableOther(this);
+        }
 
         private void OnEnable()
         {

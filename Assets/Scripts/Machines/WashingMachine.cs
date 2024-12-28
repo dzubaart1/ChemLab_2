@@ -2,7 +2,6 @@
 using BioEngineerLab.Activities;
 using Containers;
 using Core;
-using JetBrains.Annotations;
 using Mechanics;
 using Saveables;
 using UnityEngine;
@@ -20,6 +19,22 @@ namespace Machines
         private SavedData _savedData = new SavedData();
         
         private List<VRGrabInteractable> _hiddenGameObjects = new List<VRGrabInteractable>();
+        
+        private void Start()
+        {
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                return;
+            }
+
+            if (gameManager.CurrentBaseLocalManager == null)
+            {
+                return;
+            }
+            
+            gameManager.CurrentBaseLocalManager.AddSaveableOther(this);
+        }
         
         private void OnTriggerEnter(Collider other)
         {

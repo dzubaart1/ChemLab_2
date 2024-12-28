@@ -295,9 +295,7 @@ GameObject:
   - component: {fileID: 3326744819237182645}
   - component: {fileID: 3920372846692975955}
   - component: {fileID: 189108166976463557}
-  - component: {fileID: 493820691984096585}
   - component: {fileID: 1814814639452178535}
-  - component: {fileID: 7747890308580815501}
   m_Layer: 0
   m_Name: PuttyKnife
   m_TagString: SerializeTransferAndSubstance
@@ -557,6 +555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b4c490f479acb40a2f8d6668c5d1c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reagentsLabSubstanceProperty: {fileID: 0}
   _maxVolume: 10
   _containerWeight: 0
   _containerType: 10
@@ -567,20 +566,6 @@ MonoBehaviour:
     MeshRenderer: {fileID: 1487167155355127627}
   - Layer: 1
     MeshRenderer: {fileID: 3350946712003230631}
---- !u!114 &493820691984096585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7029700211736426441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d5688348ca44754803321668f063138, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _cupSocket: {fileID: 0}
-  _isNozzleNeed: 0
 --- !u!114 &1814814639452178535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -593,18 +578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614f3bff350847cba1fa99ddaa2cce0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7747890308580815501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7029700211736426441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3ccaeda41040798ddada03e99f1f69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  _xrGrabInteractable: {fileID: 3920372846692975955}
   _labContainer: {fileID: 189108166976463557}
 --- !u!1 &9011139058176427832
 GameObject:

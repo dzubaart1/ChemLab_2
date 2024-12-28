@@ -90,8 +90,8 @@ namespace Containers
         
         private LabSubstance[] _substances = new LabSubstance[MAX_SUBSTANCE_COUNT];
         private SavedData _savedData = new SavedData();
-        
-        private void Awake()
+
+        private void Start()
         {
             GameManager gameManager = GameManager.Instance;
 
@@ -107,10 +107,7 @@ namespace Containers
             
             gameManager.CurrentBaseLocalManager.AddSaveableContainer(this);
             gameManager.CurrentBaseLocalManager.AddSideEffectActivator(this);
-        }
-
-        private void Start()
-        {
+            
             UpdateView();
         }
 

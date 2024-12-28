@@ -690,11 +690,11 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+  _scoketColliders: []
   _socketType: 10
   _isEnterTaskSendable: 1
   _isExitTaskSendable: 0
-  _isSubsctanceEnterSocket: 1
-  _isSubsctanceExitSocket: 0
+  _isSubstanceSocket: 0
   _isStartEnter: 0
 --- !u!1 &1309052258123799040
 GameObject:
@@ -1870,9 +1870,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3be070ac473efc24aaac485582517a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _button: {fileID: 7319228643858654879}
-  _animator: {fileID: 7934800839252334490}
+  _scannerActivateButton: {fileID: 7319228643858654879}
   _canvas: {fileID: 1309052257596381100}
+  _animator: {fileID: 7934800839252334490}
   _socketInteractor: {fileID: 357819807565317205}
   _cup: {fileID: 0}
 --- !u!1 &3353997931463668438

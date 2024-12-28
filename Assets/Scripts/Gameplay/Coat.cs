@@ -1,4 +1,5 @@
-﻿using BioEngineerLab.Activities;
+﻿using System;
+using BioEngineerLab.Activities;
 using Core;
 using Mechanics;
 using Saveables;
@@ -26,7 +27,23 @@ namespace Gameplay
         private SavedData _savedData = new SavedData();
         
         private bool _isActive = true;
- 
+
+        private void Start()
+        {
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                return;
+            }
+
+            if (gameManager.CurrentBaseLocalManager == null)
+            {
+                return;
+            }
+            
+            gameManager.CurrentBaseLocalManager.AddSaveableOther(this);
+        }
+
         private void OnEnable()
         {
             _returnBtn.ClickBtnEvent += OnReturnBtnClicked;
