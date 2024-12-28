@@ -1,29 +1,35 @@
 ﻿using System;
-using System.Collections;
 using BioEngineerLab.Activities;
 using Containers;
 using Core;
-using Core.Services;
 using JetBrains.Annotations;
+using Saveables;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
 namespace Mechanics
 {
-    public class VRSocketInteractor : XRSocketInteractor, ISaveable
+    public class VRSocketInteractor : XRSocketInteractor, ISaveableSocket
     {
         private struct SavedData
         {
             public VRGrabInteractable GrabbedObject;
         }
 
+        public event Action<Transform> ExitedTransformEvent;
+        public event Action<Transform> EnteredTransformEvent;
+        
+        [Header("Refs")]
+        [SerializeField] private Collider[] _scoketColliders;
+        
+        [Space]
         [Header("Configs")]
         [SerializeField] private ESocket _socketType;
         [SerializeField] private bool _isEnterTaskSendable;
         [SerializeField] private bool _isExitTaskSendable;
 
-        [SerializeField] private bool _isSubsctanceEnterSocket;
-        [SerializeField] private bool _isSubsctanceExitSocket;
+        [SerializeField] private bool _isSubstanceSocket;
+        [SerializeField] private bool _isStartEnter;
 
         [CanBeNull]
         public Transform SelectedObject
@@ -39,250 +45,121 @@ namespace Mechanics
             }
         }
 
-        [CanBeNull] private GameManager _gameManager;
+        public ESocket SocketType => _socketType;
 
         private SavedData _savedData = new SavedData();
-        
-        private bool _isLoadSceneEnter;
-        private bool _isLoadSceneExit;
-        [SerializeField] private bool _isStartEnter;
-
-        protected override void Awake()
-        {
-            base.Awake();
-
-            ESocket socket = _socketType;
-            _gameManager = GameManager.Instance;
-        }
-
-        protected override void OnEnable()
-        {
-            base.OnEnable();
-
-            if (_gameManager == null)
-            {
-                return;
-            }
-            
-            _gameManager.Game.SaveGameEvent += OnSaveScene;
-            _gameManager.Game.LoadGameEvent += OnLoadScene;
-        }
-
-        protected override void OnDisable()
-        {
-            base.OnDisable();
-
-            if (_gameManager == null)
-            {
-                return;
-            }
-            
-            _gameManager.Game.SaveGameEvent -= OnSaveScene;
-            _gameManager.Game.LoadGameEvent -= OnLoadScene;
-        }
-
-        protected override void Start()
-        {
-            base.Start();
-
-            OnSaveScene();
-        }
 
         protected override void OnSelectEntered(SelectEnterEventArgs args)
         {
             base.OnSelectEntered(args);
-            
-            var other = args.interactableObject.transform.gameObject;
-
-            if (args.interactableObject is null)
-            {
-                return;
-            }
-            
-            SocketCollisionsIgnored(other, true);
-            
-            if (!_isEnterTaskSendable)
-            {
-                return;
-            }
 
             if (SelectedObject == null)
             {
                 return;
-            }            
+            }
             
+            SocketCollisionsIgnored(SelectedObject, true);
+            EnteredTransformEvent?.Invoke(SelectedObject);
+
             if (_isStartEnter)
             {
                 _isStartEnter = false;
                 return;
             }
 
-            if (_isLoadSceneEnter)
+            if (_isEnterTaskSendable)
             {
-                _isLoadSceneEnter = false;
-                return;
+                SendTryTaskComplete(SelectedObject, ESocketActivity.Enter);
             }
-            
-            SendTryTaskComplete(SelectedObject, ESocketActivity.Enter);
         }
-        
+
         protected override void OnSelectExited(SelectExitEventArgs args)
         {
             base.OnSelectExited(args);
-            
-            var other = args.interactableObject.transform.gameObject;
 
-            if (args.interactableObject is null)
-            {
-                return;
-            }
-            
-            SocketCollisionsIgnored(other, false);
+            IXRSelectInteractable exitedInteractable = args.interactableObject;
 
-            if (_gameManager == null)
+            if (exitedInteractable is null)
             {
                 return;
             }
-            
-            if (!_isExitTaskSendable)
+
+            Transform exitedTransform = exitedInteractable.transform;
+
+            SocketCollisionsIgnored(exitedTransform, false);
+            ExitedTransformEvent?.Invoke(exitedTransform);
+
+            if (_isExitTaskSendable)
             {
-                return;
+                SendTryTaskComplete(exitedTransform, ESocketActivity.Exit);
             }
-            
-            if (_isLoadSceneExit)
-            {
-                _isLoadSceneExit = false;
-                return;
-            }
-            
-            /*_gameManager.CompleteTask(new SocketLabActivity(_socketType, ESocketActivity.Exit));*/
-            SendTryTaskComplete(args.interactableObject.transform, ESocketActivity.Exit);
         }
         
-        private void SocketCollisionsIgnored(GameObject other, bool flag)
-        {        
-            GameObject parent = transform.parent.gameObject;
-            var myColliders = parent.GetComponentsInChildren<Collider>(true);
-            var theirColliders = other.GetComponentsInChildren<Collider>(true);
-    
-            foreach (var cA in myColliders)
-            foreach (var cB in theirColliders)
-                Physics.IgnoreCollision(cA, cB, flag);
+        public void Save()
+        {
+            _savedData.GrabbedObject = firstInteractableSelected as VRGrabInteractable;
+        }
+
+        public void ReleaseAllLoad()
+        {
+            interactionManager.CancelInteractorSelection((IXRSelectInteractor)this);
+        }
+
+        public void PutSavedInteractable()
+        {
+            if (_savedData.GrabbedObject == null)
+            {
+                return;
+            }
+
+            interactionManager.SelectEnter((IXRSelectInteractor)this, _savedData.GrabbedObject);
         }
         
         private void SendTryTaskComplete(Transform objectTransform, ESocketActivity socketActivity)
         {
-            if (_gameManager == null)
+            GameManager gameManager = GameManager.Instance;
+            
+            if (gameManager == null)
             {
                 return;
             }
-            
-            if (_isSubsctanceEnterSocket && socketActivity == ESocketActivity.Enter ||
-                _isSubsctanceExitSocket && socketActivity == ESocketActivity.Exit)
+
+            if (gameManager.CurrentBaseLocalManager == null)
+            {
+                return;
+            }
+
+            if (_isSubstanceSocket)
             {
                 LabContainer labContainer = objectTransform.GetComponent<LabContainer>();
                 if (labContainer == null)
                 {
                     return;
                 }
-                
-                _gameManager.CompleteTask(new SocketSubstancesLabActivity(_socketType, socketActivity, labContainer.GetSubstanceProperties()));
-                return;
-            }
-            
-            _gameManager.CompleteTask(new SocketLabActivity(_socketType, socketActivity));
-        }
 
-        public void OnSaveScene()
-        {
-            _savedData.GrabbedObject = firstInteractableSelected as VRGrabInteractable;
-        }
-
-        public void OnLoadScene()
-        {
-            
-            VRGrabInteractable localGrabInteractable = firstInteractableSelected as VRGrabInteractable;
-
-            if (_savedData.GrabbedObject == null && localGrabInteractable == null)
-            {
+                gameManager.CurrentBaseLocalManager.OnActivityComplete(new SocketSubstancesLabActivity(_socketType, socketActivity, labContainer.GetSubstanceProperties()));
                 return;
             }
 
-            if (_savedData.GrabbedObject == localGrabInteractable)
+            if (!_isSubstanceSocket)
             {
-                return;
-            }
-
-            if (_savedData.GrabbedObject == null && localGrabInteractable != null)
-            {
-                _isLoadSceneExit = true;
-
-                StartCoroutine(ForceDeselect(localGrabInteractable, this));
-                return;
-            }
-
-            if (_savedData.GrabbedObject != null && localGrabInteractable != null &&
-                _savedData.GrabbedObject.isSelected)
-            {
-                _isLoadSceneExit = true;
-                _isLoadSceneEnter = true;
-
-                StartCoroutine(ForceDeselect(_savedData.GrabbedObject,
-                    _savedData.GrabbedObject.firstInteractorSelecting));
-                StartCoroutine(ForceDeselect(localGrabInteractable,
-                    this));
-                interactionManager.SelectEnter((IXRSelectInteractor)this, _savedData.GrabbedObject);
-                return;
-            }
-
-            if (_savedData.GrabbedObject != null && localGrabInteractable != null &&
-                !_savedData.GrabbedObject.isSelected)
-            {
-                _isLoadSceneExit = true;
-                _isLoadSceneEnter = true;
-
-                StartCoroutine(ForceDeselect(localGrabInteractable, this));
-                interactionManager.SelectEnter((IXRSelectInteractor)this, _savedData.GrabbedObject);
-                return;
-            }
-
-            if (_savedData.GrabbedObject != null && localGrabInteractable == null &&
-                !_savedData.GrabbedObject.isSelected)
-            {
-                _isLoadSceneEnter = true;
-
-                interactionManager.SelectEnter((IXRSelectInteractor)this, _savedData.GrabbedObject);
-                return;
-            }
-
-            if (_savedData.GrabbedObject != null && firstInteractableSelected == null &&
-                _savedData.GrabbedObject.isSelected)
-            {
-                _isLoadSceneEnter = true;
-
-                StartCoroutine(ForceTransfer(_savedData.GrabbedObject,
-                    _savedData.GrabbedObject.firstInteractorSelecting, this));
+                gameManager.CurrentBaseLocalManager.OnActivityComplete(new SocketLabActivity(_socketType, socketActivity));
                 return;
             }
         }
 
-        private IEnumerator ForceTransfer(VRGrabInteractable interactable, IXRSelectInteractor from, IXRSelectInteractor to)
+        
+        private void SocketCollisionsIgnored(Transform targetObject, bool isIgnored)
         {
-            interactionManager.CancelInteractorSelection(from);
-            interactable.transform.GetComponent<XRBaseInteractable>().enabled = false;
-            yield return null;
-            interactable.transform.GetComponent<XRBaseInteractable>().enabled = true;
-            interactionManager.SelectEnter(to, interactable);
-        }
+            Collider[] targetObjectColliders = targetObject.GetComponentsInChildren<Collider>(true);
 
-        private IEnumerator ForceDeselect(VRGrabInteractable interactable, IXRSelectInteractor interactor)
-        {
-            interactionManager.CancelInteractorSelection(interactor);
-            interactable.transform.GetComponent<XRBaseInteractable>().enabled = false;
-            yield return null;
-            interactable.transform.GetComponent<XRBaseInteractable>().enabled = true;
-
-            interactable.LoadPosition();
+            foreach (var socketCollider in _scoketColliders)
+            {
+                foreach (var targetObjectCollider in targetObjectColliders)
+                {
+                    Physics.IgnoreCollision(socketCollider, targetObjectCollider, isIgnored);
+                }
+            }
         }
     }
 }

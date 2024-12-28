@@ -1,12 +1,11 @@
+using System;
 using BioEngineerLab.Tasks.SideEffects;
 using Core;
-using Core.Services;
-using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Gameplay
 {
-    public class DocHolder : MonoBehaviour
+    public class DocHolder : MonoBehaviour, ISideEffectActivator
     {
         [Header("Refs")]
         [SerializeField] private Transform _spawnPoint;
@@ -16,36 +15,26 @@ namespace Gameplay
         [SerializeField] private EMachine _machine;
         [SerializeField] private GameObject _docPrefab;
 
-        [CanBeNull] private GameManager _gameManager;
-
         private void Awake()
         {
-            _gameManager = GameManager.Instance;
-        }
+            GameManager gameManager = GameManager.Instance;
 
-        private void OnEnable()
-        {
-            if (_gameManager == null)
+            if (gameManager == null)
+            {
+                return;
+            }
+
+            if (gameManager.CurrentBaseLocalManager == null)
             {
                 return;
             }
             
-            _gameManager.Game.SideEffectActivatedEvent += OnSideEffectActivated;
+            gameManager.CurrentBaseLocalManager.AddSideEffectActivator(this);
         }
 
-        private void OnDisable()
+        public void OnActivateSideEffect(LabSideEffect sideEffect)
         {
-            if (_gameManager == null)
-            {
-                return;
-            }
-            
-            _gameManager.Game.SideEffectActivatedEvent -= OnSideEffectActivated;
-        }
-
-        private void OnSideEffectActivated(LabSideEffect labSideEffect)
-        {
-            if (labSideEffect is not SpawnDocLabSideEffect spawnDocLabSideEffect)
+            if (sideEffect is not SpawnDocLabSideEffect spawnDocLabSideEffect)
             {
                 return;
             }

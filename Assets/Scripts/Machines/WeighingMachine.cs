@@ -1,24 +1,23 @@
-using System;
 using Containers;
 using Core;
-using Gameplay;
 using TMPro;
 using UnityEngine;
 using Mechanics;
 using UI.Components;
-using UnityEngine.Serialization;
-using UnityEngine.UI;
-
 
 namespace BioEngineerLab.Machines
 {
     public class WeighingMachine : MonoBehaviour
     {
+        [Header("Refs")]
         [SerializeField] private VRSocketInteractor _socketInteractor;
+
+        [Header("UIs")]
         [SerializeField] private TextMeshProUGUI _textMesh;
         [SerializeField] private ButtonComponent _taraButton;
-
+        
         private float _taraWeight = 0;
+        
         private void OnEnable()
         {
             _taraButton.ClickBtnEvent += OnBtnClick;

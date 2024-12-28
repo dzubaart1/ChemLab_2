@@ -1,79 +1,44 @@
 ﻿using System.Collections.Generic;
 using BioEngineerLab.Activities;
 using Core;
-using Core.Services;
-using JetBrains.Annotations;
-using Mechanics;
+using Saveables;
 using UnityEngine;
 
 namespace Machines
 {
     [RequireComponent(typeof(Collider))]
-    public class PaperTrayMachine : MonoBehaviour, ISaveable
+    public class PaperTrayMachine : MonoBehaviour, ISaveableOther
     {
         private class SavedData
         {
-            public List<VRGrabInteractable> HiddenGameObjects = new List<VRGrabInteractable>();
+            public List<Transform> HiddenGameObjects = new List<Transform>();
         }
-
-        [CanBeNull] private GameManager _gameManager;
         
-        private List<VRGrabInteractable> _hiddenGameObjects = new List<VRGrabInteractable>();
         private SavedData _savedData = new SavedData();
-
-        private void Awake()
-        {
-            _gameManager = GameManager.Instance;
-        }
-
-        private void OnEnable()
-        {
-            if (_gameManager == null)
-            {
-                return;
-            }
-            
-            _gameManager.Game.LoadGameEvent += OnLoadScene;
-            _gameManager.Game.SaveGameEvent += OnSaveScene;
-        }
-
-        private void OnDisable()
-        {
-            if (_gameManager == null)
-            {
-                return;
-            }
-            
-            _gameManager.Game.LoadGameEvent -= OnLoadScene;
-            _gameManager.Game.SaveGameEvent -= OnSaveScene;
-        }
-
-        private void Start()
-        {
-            OnSaveScene();
-        }
+        
+        private List<Transform> _hiddenGameObjects = new List<Transform>();
 
         private void OnTriggerEnter(Collider other)
         {
-            if (_gameManager == null)
+            GameManager gameManager = GameManager.Instance;
+            
+            if (gameManager == null)
             {
                 return;
             }
-            
-            VRGrabInteractable interactable = other.GetComponentInParent<VRGrabInteractable>();
 
-            if (interactable == null)
+            if (gameManager.CurrentBaseLocalManager == null)
             {
                 return;
             }
             
-            interactable.gameObject.SetActive(false);
-            _hiddenGameObjects.Add(interactable);
+            other.gameObject.SetActive(false);
+            _hiddenGameObjects.Add(other.transform);
             
-            _gameManager.Game.CompleteTask(new MachineLabActivity(EMachineActivity.OnEnter, EMachine.PaperTrayMachine));
+            gameManager.CurrentBaseLocalManager.OnActivityComplete(new MachineLabActivity(EMachineActivity.OnEnter, EMachine.PaperTrayMachine));
         }
 
-        public void OnSaveScene()
+        public void Save()
         {
             _savedData.HiddenGameObjects.Clear();
             
@@ -83,12 +48,11 @@ namespace Machines
             }
         }
 
-        public void OnLoadScene()
+        public void Load()
         {
             foreach (var interactable in _hiddenGameObjects)
             {
                 interactable.gameObject.SetActive(true);
-                interactable.LoadPosition();
             }
 
             foreach (var interactable in _savedData.HiddenGameObjects)

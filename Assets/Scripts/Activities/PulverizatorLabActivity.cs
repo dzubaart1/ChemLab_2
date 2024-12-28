@@ -5,7 +5,7 @@ namespace BioEngineerLab.Activities
 {
     public class PulverizatorLabActivity : LabActivity
     {
-        public EPulverizatorHits Hits;
+        public EPulverizatorTarget Target;
 
         public PulverizatorLabActivity()
             : base(EActivity.PulveriazatorActivity)
@@ -15,13 +15,13 @@ namespace BioEngineerLab.Activities
         public PulverizatorLabActivity(PulverizatorLabActivity pulverizatorLabAcitivity)
             : base(EActivity.PulveriazatorActivity)
         {
-            Hits = pulverizatorLabAcitivity.Hits;
+            Target = pulverizatorLabAcitivity.Target;
         }
         
-        public PulverizatorLabActivity(EPulverizatorHits hits)
+        public PulverizatorLabActivity(EPulverizatorTarget target)
             : base(EActivity.PulveriazatorActivity)
         {
-            Hits = hits;
+            Target = target;
         }
 
         public override bool Equals(Object obj)
@@ -31,12 +31,12 @@ namespace BioEngineerLab.Activities
                 return false;
             }
 
-            return Hits == pulverizatorLabAcitivity.Hits;
+            return Target == pulverizatorLabAcitivity.Target;
         }
 
         public override int GetHashCode()
         {
-            return (int)Hits;
+            return (int)Target;
         }
     }
 }

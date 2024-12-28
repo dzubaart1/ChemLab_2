@@ -1,13 +1,11 @@
-using System;
-using BioEngineerLab.Activities;
 using Core;
+using Saveables;
 using UnityEngine;
 using UI.Components;
-using JetBrains.Annotations;
 
 namespace BioEngineerLab.Machines
 {
-    public class BoxPanelMachine : MonoBehaviour, ISaveable
+    public class BoxPanelMachine : MonoBehaviour, ISaveableUI
     {
         private struct SavedData
         {
@@ -25,26 +23,15 @@ namespace BioEngineerLab.Machines
         [SerializeField] private GameObject _commonLight;
         [SerializeField] private GameObject _dLight;
         
-        private GameManager _gameManager;
         private SavedData _savedData = new SavedData();
+        
         private bool _isBactLightOn = true;
         private bool _isCommonLightOn = false;
         private bool _isDLightOn = true;
         private bool _isDoorOpened = false;
-        private void Awake()
-        {
-            _gameManager = GameManager.Instance;
-        }
+        
         private void OnEnable()
         {
-            if (_gameManager == null)
-            {
-                return;
-            }
-            
-            _gameManager.Game.SaveGameEvent += OnSaveScene;
-            _gameManager.Game.LoadGameEvent += OnLoadScene;
-            
             _bacteriumButton.ClickBtnEvent += OnBacteriumButtonClicked;
             _lightButton.ClickBtnEvent += OnLightButtonClicked;
             _dlightButton.ClickBtnEvent += OnDLightButtonClicked;
@@ -53,14 +40,6 @@ namespace BioEngineerLab.Machines
 
         private void OnDisable()
         {
-            if (_gameManager == null)
-            {
-                return;
-            }
-            
-            _gameManager.Game.SaveGameEvent -= OnSaveScene;
-            _gameManager.Game.LoadGameEvent -= OnLoadScene;
-            
             _bacteriumButton.ClickBtnEvent -= OnBacteriumButtonClicked;
             _lightButton.ClickBtnEvent -= OnLightButtonClicked;
             _dlightButton.ClickBtnEvent -= OnDLightButtonClicked;
@@ -96,13 +75,13 @@ namespace BioEngineerLab.Machines
             _isDoorOpened = !_isDoorOpened;
         }
 
-        public void OnSaveScene()
+        public void SaveUIState()
         {
             _savedData.IsBactLightOn = _isBactLightOn;
             _savedData.IsCommonLightOn = _isCommonLightOn;
         }
-        
-        public void OnLoadScene()
+
+        public void LoadUIState()
         {
             _isBactLightOn = _savedData.IsBactLightOn;
             _bacteriumLight.SetActive(_isBactLightOn);

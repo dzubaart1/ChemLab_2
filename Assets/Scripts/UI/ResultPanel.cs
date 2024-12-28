@@ -6,24 +6,25 @@ using TMPro;
 
 public class ResultPanel : MonoBehaviour
 {
+    [Header("UIs")]
     [SerializeField] private TextMeshProUGUI _timeText;
     [SerializeField] private TextMeshProUGUI _errorsText;
-
-    [CanBeNull] private GameManager _gameManager;
-
-    private void Awake()
-    {
-        _gameManager = GameManager.Instance;
-    }
-
+    
     private void Start()
     {
-        if (_gameManager == null)
+        GameManager gameManager = GameManager.Instance;
+        
+        if (gameManager == null)
+        {
+            return;
+        }
+
+        if (gameManager.CurrentBaseLocalManager == null)
         {
             return;
         }
         
-        _timeText.text = "Время прохождения: " + (_gameManager.Game.GameFinishTime - _gameManager.Game.GameStartTime);
-        _errorsText.text = "Количество ошибок: " + _gameManager.Game.Errors.Count;
+        _timeText.text = "Время прохождения: " + gameManager.CurrentBaseLocalManager.GetGameTime();
+        _errorsText.text = "Количество ошибок: " + gameManager.CurrentBaseLocalManager.GetErrorTasks().Count;
     }
 }

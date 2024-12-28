@@ -1,59 +1,98 @@
+using System;
+using System.Collections.Generic;
 using BioEngineerLab.Tasks;
 using Core;
-using JetBrains.Annotations;
+using UI.TabletUI.Panels;
 using UnityEngine;
 
 namespace UI.TabletUI
 {
-    [RequireComponent(typeof(TabletPanelSwitcher))]
     public class TabletUI : MonoBehaviour
     {
-        [SerializeField] private TabletPanelSwitcher _panelSwitcher;
+        public enum ETabletUIPanel
+        {
+            EndGamePanel,
+            MainPanel,
+            TaskFailedPanel
+        }
         
-        [CanBeNull] private GameManager _gameManager;
+        [SerializeField] private List<BaseTabletPanel> _panels;
+
+        private BaseTabletPanel _currentPanel;
 
         private void Awake()
         {
-            _gameManager = GameManager.Instance;
-        }
+            GameManager gameManager = GameManager.Instance;
 
-        private void OnEnable()
-        {
-            if (_gameManager == null)
+            if (gameManager == null)
+            {
+                return;
+            }
+
+            if (gameManager.CurrentBaseLocalManager == null)
             {
                 return;
             }
             
-            _gameManager.Game.TaskFailedEvent += OnTaskFailed;
-            _gameManager.Game.TaskUpdatedEvent += OnTaskUpdated;
-            _gameManager.Game.FinishGameEvent += OnFinishGame;
+            gameManager.CurrentBaseLocalManager.AddTabletUI(this);
         }
 
-        private void OnDisable()
+        private void Start()
         {
-            if (_gameManager == null)
+            foreach (var panel in _panels)
+            {
+                panel.gameObject.SetActive(false);
+            }
+        }
+
+        public void OnTaskFailed()
+        {
+            if (!TryGetPanel(ETabletUIPanel.TaskFailedPanel, out BaseTabletPanel panel))
             {
                 return;
             }
             
-            _gameManager.Game.TaskFailedEvent -= OnTaskFailed;
-            _gameManager.Game.TaskUpdatedEvent -= OnTaskUpdated;
-            _gameManager.Game.FinishGameEvent -= OnFinishGame;
+            _currentPanel.gameObject.SetActive(false);
+            panel.gameObject.SetActive(true);
         }
 
-        private void OnTaskFailed()
+        public void OnFinishGame()
         {
-            _panelSwitcher.SwitchPanel(TabletPanelsType.TaskFailedPanel);
+            if (!TryGetPanel(ETabletUIPanel.EndGamePanel, out BaseTabletPanel panel))
+            {
+                return;
+            }
+            
+            _currentPanel.gameObject.SetActive(false);
+            panel.gameObject.SetActive(true);
         }
 
-        private void OnFinishGame()
+        public void OnTaskUpdated(LabTask task)
         {
-            _panelSwitcher.SwitchPanel(TabletPanelsType.EndGamePanel);
+            if (!TryGetPanel(ETabletUIPanel.MainPanel, out BaseTabletPanel panel))
+            {
+                return;
+            }
+            
+            _currentPanel.gameObject.SetActive(false);
+            panel.gameObject.SetActive(true);
+            panel.SetTaskToShow(task);
         }
 
-        private void OnTaskUpdated(LabTask task)
+        private bool TryGetPanel(ETabletUIPanel tabletUIPanelType, out BaseTabletPanel tabletPanel)
         {
-            _panelSwitcher.SwitchPanel(TabletPanelsType.MainPanel);
+            tabletPanel = null;
+            
+            foreach (var panel in _panels)
+            {
+                if (panel.TabletPanelType == tabletUIPanelType)
+                {
+                    tabletPanel = panel;
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }

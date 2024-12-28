@@ -4,58 +4,33 @@ using Containers;
 using Core;
 using JetBrains.Annotations;
 using Mechanics;
+using Saveables;
 using UnityEngine;
 
 namespace Machines
 {
     [RequireComponent(typeof(Collider))]
-    public class WashingMachine : MonoBehaviour, ISaveable
+    public class WashingMachine : MonoBehaviour, ISaveableOther
     {
         private class SavedData
         {
             public List<VRGrabInteractable> HiddenGameObjects = new List<VRGrabInteractable>();
         }
-
-        [CanBeNull] private GameManager _gameManager;
+        
+        private SavedData _savedData = new SavedData();
         
         private List<VRGrabInteractable> _hiddenGameObjects = new List<VRGrabInteractable>();
-        private SavedData _savedData = new SavedData();
-
-        private void Awake()
-        {
-            _gameManager = GameManager.Instance;
-        }
-
-        private void OnEnable()
-        {
-            if (_gameManager == null)
-            {
-                return;
-            }
-            
-            _gameManager.Game.LoadGameEvent += OnLoadScene;
-            _gameManager.Game.SaveGameEvent += OnSaveScene;
-        }
-
-        private void OnDisable()
-        {
-            if (_gameManager == null)
-            {
-                return;
-            }
-            
-            _gameManager.Game.LoadGameEvent -= OnLoadScene;
-            _gameManager.Game.SaveGameEvent -= OnSaveScene;
-        }
-
-        private void Start()
-        {
-            OnSaveScene();
-        }
-
+        
         private void OnTriggerEnter(Collider other)
         {
-            if (_gameManager == null)
+            GameManager gameManager = GameManager.Instance;
+            
+            if (gameManager == null)
+            {
+                return;
+            }
+
+            if (gameManager.CurrentBaseLocalManager == null)
             {
                 return;
             }
@@ -71,10 +46,10 @@ namespace Machines
             interactable.gameObject.SetActive(false);
             _hiddenGameObjects.Add(interactable);
             
-            _gameManager.CompleteTask(new MachineLabActivity(EMachineActivity.OnEnter, EMachine.WashingMachine));
+            gameManager.CurrentBaseLocalManager.OnActivityComplete(new MachineLabActivity(EMachineActivity.OnEnter, EMachine.WashingMachine));
         }
 
-        public void OnSaveScene()
+        public void Save()
         {
             _savedData.HiddenGameObjects.Clear();
             
@@ -84,12 +59,11 @@ namespace Machines
             }
         }
 
-        public void OnLoadScene()
+        public void Load()
         {
             foreach (var interactable in _hiddenGameObjects)
             {
                 interactable.gameObject.SetActive(true);
-                interactable.LoadPosition();
             }
 
             foreach (var interactable in _savedData.HiddenGameObjects)

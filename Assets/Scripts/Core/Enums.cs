@@ -237,7 +237,7 @@ namespace Core
         Door2Interactable
     }
 
-    public enum EPulverizatorHits : byte
+    public enum EPulverizatorTarget : byte
     {
         LeftHandHit,
         RightHandHit,
@@ -245,6 +245,6 @@ namespace Core
         GlukozaHit,
         LaktozaHit,
         SaharozaHit,
-        
+        CleaningSurface,
     }
 }

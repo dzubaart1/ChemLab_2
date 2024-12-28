@@ -26,7 +26,7 @@ namespace Activities.ActivitiesEditor
                 return;
             }
             
-            _pulverizatorLabActivity.Hits = (EPulverizatorHits)EditorGUILayout.EnumPopup("Hits", _pulverizatorLabActivity.Hits);
+            _pulverizatorLabActivity.Target = (EPulverizatorTarget)EditorGUILayout.EnumPopup("Hits", _pulverizatorLabActivity.Target);
         }
 
         public override EActivity GetActivityType()

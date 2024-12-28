@@ -1,37 +1,32 @@
-﻿using Containers;
-using Core;
-using Core.Services;
-using JetBrains.Annotations;
-using Mechanics;
+﻿using Mechanics;
+using Saveables;
 using UI.Components;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Machines
 {
     [RequireComponent(typeof(Collider))]
-    public class ScannerMachine : MonoBehaviour, ISaveable
+    public class ScannerMachine : MonoBehaviour, ISaveableUI
     {
         private class SavedData
         {
             public bool IsStarted;
         }
-
-        [SerializeField] private ButtonComponent _button;
-        [SerializeField] private Animator _animator;
+        
+        [Header("UIs")]
+        [SerializeField] private ButtonComponent _scannerActivateButton;
         [SerializeField] private GameObject _canvas;
+        
+        [Header("Refs")]
+        [SerializeField] private Animator _animator;
         [SerializeField] private VRSocketInteractor _socketInteractor;
         [SerializeField] private Transform _cup;
-
-        [CanBeNull] private GameManager _gameManager;
         
         private SavedData _savedData = new SavedData();
+
         private bool _isOpen;
-
-        private void Awake()
-        {
-            _gameManager = GameManager.Instance;
-        }
-
+        
         private void Update()
         {
             if (_cup.transform.rotation.x < -0.1)
@@ -45,7 +40,7 @@ namespace Machines
 
             if (!_isOpen)
             {
-                _canvas.SetActive(_button.IsOn);
+                _canvas.SetActive(_scannerActivateButton.IsOn);
             }
             else
             {
@@ -55,37 +50,12 @@ namespace Machines
 
         private void OnEnable()
         {
-            _button.ClickBtnEvent += OnScannerBtnClicked;
-            
-            _gameManager = GameManager.Instance;
-
-            if (_gameManager == null)
-            {
-                return;
-            }
-            
-            _gameManager.Game.LoadGameEvent += OnLoadScene;
-            _gameManager.Game.SaveGameEvent += OnSaveScene;
+            _scannerActivateButton.ClickBtnEvent += OnScannerBtnClicked;
         }
 
         private void OnDisable()
         {
-            _button.ClickBtnEvent -= OnScannerBtnClicked;
-            
-            _gameManager = GameManager.Instance;
-
-            if (_gameManager == null)
-            {
-                return;
-            }
-            
-            _gameManager.Game.LoadGameEvent -= OnLoadScene;
-            _gameManager.Game.SaveGameEvent -= OnSaveScene;
-        }
-
-        private void Start()
-        {
-            OnSaveScene();
+            _scannerActivateButton.ClickBtnEvent -= OnScannerBtnClicked;
         }
 
         private void OnScannerBtnClicked()
@@ -95,25 +65,26 @@ namespace Machines
                 return;
             }
             
-            _animator.Play(_button.IsOn ? "ButtonOn" : "ButtonOff");
-        }
-        public void OnSaveScene()
-        {
-            _savedData.IsStarted = _button.IsOn;
+            _animator.Play(_scannerActivateButton.IsOn ? "ButtonOn" : "ButtonOff");
         }
 
-        public void OnLoadScene()
+        public void SaveUIState()
         {
-            if (!_savedData.IsStarted & _button.IsOn)
+            _savedData.IsStarted = _scannerActivateButton.IsOn;
+        }
+
+        public void LoadUIState()
+        {
+            if (!_savedData.IsStarted & _scannerActivateButton.IsOn)
             {
-                _button.SetIsOn(_savedData.IsStarted);
-                _animator.Play(_button.IsOn ? "ButtonOn" : "ButtonOff");
+                _scannerActivateButton.SetIsOn(_savedData.IsStarted);
+                _animator.Play(_scannerActivateButton.IsOn ? "ButtonOn" : "ButtonOff");
             }
             
-            if (_savedData.IsStarted & !_button.IsOn)
+            if (_savedData.IsStarted & !_scannerActivateButton.IsOn)
             {
-                _button.SetIsOn(_savedData.IsStarted);
-                _animator.Play(_button.IsOn ? "ButtonOn" : "ButtonOff");
+                _scannerActivateButton.SetIsOn(_savedData.IsStarted);
+                _animator.Play(_scannerActivateButton.IsOn ? "ButtonOn" : "ButtonOff");
             }
         }
     }

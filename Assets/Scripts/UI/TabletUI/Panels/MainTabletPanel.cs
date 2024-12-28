@@ -1,4 +1,5 @@
-﻿using BioEngineerLab.Tasks;
+﻿using System;
+using BioEngineerLab.Tasks;
 using Core;
 using JetBrains.Annotations;
 using TMPro;
@@ -6,55 +7,27 @@ using UnityEngine;
 
 namespace UI.TabletUI.Panels
 {
-    public class MainTabletPanel : BasePanel<TabletPanelsType>
+    public class MainTabletPanel : BaseTabletPanel
     {
         [SerializeField] private TextMeshProUGUI _taskTitleText;
         [SerializeField] private TextMeshProUGUI _taskDescriptionText;
         
-        [CanBeNull] private GameManager _gameManager;
-        
-        private void Awake()
-        {
-            _gameManager = GameManager.Instance;
-        }
+        [CanBeNull] private LabTask _showingTask;
 
-        private void OnEnable()
+        private void Update()
         {
-            if (_gameManager == null)
+            if (_showingTask == null)
             {
                 return;
             }
-            
-            _gameManager.Game.TaskUpdatedEvent += OnTaskUpdate;
+
+            _taskTitleText.text = _showingTask.Title;
+            _taskDescriptionText.text = _showingTask.Description;
         }
 
-        private void OnDisable()
+        public override void SetTaskToShow(LabTask task)
         {
-            if (_gameManager == null)
-            {
-                return;
-            }
-            
-            _gameManager.Game.TaskUpdatedEvent -= OnTaskUpdate;
-        }
-
-        private void Start()
-        {
-            if (_gameManager == null)
-            {
-                return;
-            }
-            
-            if (_gameManager.Game.CurrentTask != null)
-            {
-                OnTaskUpdate(_gameManager.Game.CurrentTask);
-            }
-        }
-        
-        private void OnTaskUpdate(LabTask task)
-        {
-            _taskTitleText.text = task.Title;
-            _taskDescriptionText.text = task.Description;
+            _showingTask = task;
         }
     }
 }

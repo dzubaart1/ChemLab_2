@@ -1,14 +1,18 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using BioEngineerLab.Activities;
 using BioEngineerLab.Tasks;
+using BioEngineerLab.Tasks.SideEffects;
 using Core;
+using Gameplay;
 using JetBrains.Annotations;
+using Saveables;
 using UnityEngine;
 
 namespace Containers
 {
-    public class LabContainer : MonoBehaviour
+    public class LabContainer : MonoBehaviour, ISaveableContainer, ISideEffectActivator
     {
         [Serializable]
         private struct MeshRendererConfig
@@ -17,18 +21,30 @@ namespace Containers
             public MeshRenderer MeshRenderer;
         }
         
+        private struct SavedData
+        {
+            public Anchor Anchor;
+            public bool IsAnimating;
+            public LabSubstance[] Substances;
+            public EContainer ContainerType;
+        }
+        
         public const int MAX_SUBSTANCE_COUNT = 3;
 
         [Header("Container Configs")]
+        [SerializeField] private SOLabSubstanceProperty reagentsLabSubstanceProperty;
         [SerializeField] private float _maxVolume = 9000;
         [SerializeField] private float _containerWeight;
         [SerializeField] private EContainer _containerType;
         [SerializeField] private bool _isWeightableContainer;
         [SerializeField] private bool _isSpoonContainer;
 
+        [Space]
         [Header("Meshes")]
         [SerializeField] private MeshRendererConfig[] _meshRendererConfigs;
 
+        private Anchor Anchor { get; set; }
+        
         public float MaxVolume
         {
             get
@@ -36,6 +52,7 @@ namespace Containers
                 return _maxVolume;
             }
         }
+        
         public bool IsDirty { get; private set; }
 
         public IReadOnlyCollection<LabSubstance> Substances
@@ -72,6 +89,25 @@ namespace Containers
 
         
         private LabSubstance[] _substances = new LabSubstance[MAX_SUBSTANCE_COUNT];
+        private SavedData _savedData = new SavedData();
+        
+        private void Awake()
+        {
+            GameManager gameManager = GameManager.Instance;
+
+            if (gameManager == null)
+            {
+                return;
+            }
+
+            if (gameManager.CurrentBaseLocalManager == null)
+            {
+                return;
+            }
+            
+            gameManager.CurrentBaseLocalManager.AddSaveableContainer(this);
+            gameManager.CurrentBaseLocalManager.AddSideEffectActivator(this);
+        }
 
         private void Start()
         {
@@ -273,6 +309,118 @@ namespace Containers
             }
 
             return false;
+        }
+
+        public void Save()
+        {
+            _savedData.Substances = new LabSubstance[Substances.Count];
+            
+            for(int i = 0; i < Substances.Count; i++)
+            {
+                if(GetSubstanceByLayer((ESubstanceLayer)i) is not null)
+                    _savedData.Substances[i] = new LabSubstance(GetSubstanceByLayer((ESubstanceLayer)i));
+            }
+            
+            _savedData.ContainerType = ContainerType;
+        }
+
+        public void PutSavedContainerType()
+        {
+            UpdateSubstances(_savedData.Substances);
+        }
+
+        public void PutSavedSubstances()
+        {
+            ChangeContainerType(_savedData.ContainerType);
+        }
+
+        public void LoadAnchor()
+        {
+            if (_savedData.Anchor == null & Anchor == null)
+            {
+                AnimateAnchor(_savedData.IsAnimating);
+            }
+
+            if (_savedData.Anchor == null & Anchor != null)
+            {
+                ReleaseAnchor();
+            }
+
+            if (_savedData.Anchor != null & Anchor == null)
+            {
+                PutAnchor(_savedData.Anchor);
+                AnimateAnchor(_savedData.IsAnimating);
+            }
+
+            if (_savedData.Anchor != null & Anchor != null)
+            {
+                PutAnchor(_savedData.Anchor);
+                AnimateAnchor(_savedData.IsAnimating);
+            }
+        }
+        
+        public void PutAnchor(Anchor anchor)
+        {
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                return;
+            }
+            
+            if (gameManager.CurrentBaseLocalManager == null)
+            {
+                return;
+            }
+            
+            if (Anchor != null)
+            {
+                return;
+            }
+            
+            Anchor = anchor;
+            Anchor.TogglePhysics(false);
+            Anchor.transform.parent = transform;
+            Anchor.transform.localPosition = new Vector3(0, 0.01f, 0);
+            Anchor.transform.rotation = Quaternion.identity;
+            
+            gameManager.CurrentBaseLocalManager.OnActivityComplete(new AnchorLabActivity(ContainerType));
+        }
+
+        public void AnimateAnchor(bool value)
+        {
+            if (Anchor == null)
+            {
+                return;
+            }
+            
+            Anchor.ToggleAnimate(value);
+            _savedData.IsAnimating = value;
+        }
+
+        private void ReleaseAnchor()
+        {
+            if (Anchor == null)
+            {
+                return;
+            }
+            
+            Anchor.transform.parent = null;
+            Anchor.TogglePhysics(true);
+            
+            Anchor = null;
+        }
+
+        public void OnActivateSideEffect(LabSideEffect sideEffect)
+        {
+            if (sideEffect is not AddReagentsLabSideEffect addReagentsLabSideEffect)
+            {
+                return;
+            }
+
+            if (addReagentsLabSideEffect.LabSubstanceProperty.Equals(reagentsLabSubstanceProperty.LabSubstanceProperty))
+            {
+                PutSubstance(new LabSubstance(reagentsLabSubstanceProperty.LabSubstanceProperty, addReagentsLabSideEffect.Weight));
+            }
         }
     }
 }

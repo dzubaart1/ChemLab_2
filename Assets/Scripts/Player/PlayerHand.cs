@@ -1,11 +1,10 @@
-using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Core
 {
-    public class PlayerHand : MonoBehaviour, ISaveable
+    public class PlayerHand : MonoBehaviour
     {
-        [SerializeField] private PlayerHandType _handType;
+        /*[SerializeField] private PlayerHandType _handType;
         [SerializeField] private SkinnedMeshRenderer _skinnedMeshRenderer;
     
         private struct SavedData
@@ -43,7 +42,7 @@ namespace Core
             _handModelConfiguration = configurationsManager.HandModelConfiguration;
             _saveService = servicesManager.SaveService;
 
-            HandType = _handType;*/
+            HandType = _handType;#1#
         }
 
         private void OnEnable()
@@ -84,7 +83,7 @@ namespace Core
             }
 
             _skinnedMeshRenderer.material = targetMaterial;
-        }*/
+        }#1#
 
         public void OnSaveScene()
         {
@@ -94,6 +93,6 @@ namespace Core
         public void OnLoadScene()
         {
             _skinnedMeshRenderer.material = _savedData.HandMaterial;
-        }
+        }*/
     }
 }

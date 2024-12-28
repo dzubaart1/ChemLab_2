@@ -5,13 +5,14 @@ using Core.Services;
 using Crafting;
 using JetBrains.Annotations;
 using Mechanics;
+using Saveables;
 using UI.Components;
 using UnityEngine;
 
 namespace Machines
 {
     [RequireComponent(typeof(Collider))]
-    public class CentrifugaMachine : MonoBehaviour, ISaveable
+    public class CentrifugaMachine : MonoBehaviour, ISaveableUI
     {
         private class SavedData
         {
@@ -19,60 +20,49 @@ namespace Machines
             public bool IsStarted;
         }
 
+        [Header("UIs")]
         [SerializeField] private ButtonComponent _powerButton;
         [SerializeField] private ButtonComponent _startButton;
+        
+        [Space]
+        [Header("Refs")]
         [SerializeField] private Animator _animator;
         [SerializeField] private VRSocketInteractor _socketInteractor1;
         [SerializeField] private VRSocketInteractor _socketInteractor2;
         
-        [CanBeNull] private GameManager _gameManager;
-        
         private SavedData _savedData = new SavedData();
-
-        private void Awake()
-        {
-            _gameManager = GameManager.Instance;
-        }
 
         private void OnEnable()
         {
-            if (_gameManager == null)
-            {
-                return;
-            }
-            
-            _gameManager.Game.LoadGameEvent += OnLoadScene;
-            _gameManager.Game.SaveGameEvent += OnSaveScene;
-            
+            _powerButton.ClickBtnEvent += OnPowerBtnClicked;
             _startButton.ClickBtnEvent += OnStartBtnClicked;
         }
 
         private void OnDisable()
         {
-            if (_gameManager == null)
-            {
-                return;
-            }
-            
-            _gameManager.Game.LoadGameEvent += OnLoadScene;
-            _gameManager.Game.SaveGameEvent += OnSaveScene;
-            
+            _powerButton.ClickBtnEvent -= OnPowerBtnClicked;
             _startButton.ClickBtnEvent -= OnStartBtnClicked;
         }
 
-        private void Start()
+        private void OnPowerBtnClicked()
         {
-            OnSaveScene();
         }
         
         private void OnStartBtnClicked()
         {
-            if (_gameManager == null)
+            GameManager gameManager = GameManager.Instance;
+            
+            if (gameManager == null)
+            {
+                return;
+            }
+
+            if (gameManager.CurrentBaseLocalManager == null)
             {
                 return;
             }
             
-            if (_socketInteractor1.SelectedObject == null | _socketInteractor2.SelectedObject == null)
+            if (_socketInteractor1.SelectedObject == null || _socketInteractor2.SelectedObject == null)
             {
                 return;
             }
@@ -85,29 +75,27 @@ namespace Machines
                 return;
             }
             
-            if(_startButton.IsOn & _powerButton.IsOn)
+            if(_startButton.IsOn)
             {
-                _gameManager.Game.CompleteTask(new MachineLabActivity(EMachineActivity.OnStart, EMachine.CentrifugaMachine));
+                gameManager.CurrentBaseLocalManager.OnActivityComplete(new MachineLabActivity(EMachineActivity.OnStart, EMachine.CentrifugaMachine));
                 CheckAnimatorStatus();
                 return;
             }
 
-            if (!CraftTools.TryFindCraft(_gameManager.Game.SOCrafts, labContainer1.GetSubstanceProperties(), ECraft.Split, out SOLabCraft craftContainer1))
+            if (!CraftTools.TryFindCraft(gameManager.CurrentBaseLocalManager.GetSOCrafts(), labContainer1.GetSubstanceProperties(), ECraft.Split, out SOLabCraft craftContainer1))
             {
-                _gameManager.Game.CompleteTask(new BadLabActivity());
+                gameManager.CurrentBaseLocalManager.OnActivityComplete(new BadLabActivity());
                 return;
             }
             
-            if (!CraftTools.TryFindCraft(_gameManager.Game.SOCrafts, labContainer2.GetSubstanceProperties(), ECraft.Split, out SOLabCraft craftContainer2))
+            if (!CraftTools.TryFindCraft(gameManager.CurrentBaseLocalManager.GetSOCrafts(), labContainer2.GetSubstanceProperties(), ECraft.Split, out SOLabCraft craftContainer2))
             {
-                _gameManager.Game.CompleteTask(new BadLabActivity());
+                gameManager.CurrentBaseLocalManager.OnActivityComplete(new BadLabActivity());
                 return;
             }
             
             CraftTools.ApplyCraft(craftContainer1.LabCraft, labContainer1);
             CraftTools.ApplyCraft(craftContainer2.LabCraft, labContainer2);
-
-            _gameManager.Game.CompleteTask(new MachineLabActivity(EMachineActivity.OnFinish, EMachine.CentrifugaMachine));
         
             CheckAnimatorStatus();
         }
@@ -124,13 +112,13 @@ namespace Machines
             }
         }
         
-        public void OnSaveScene()
+        public void SaveUIState()
         {
             _savedData.IsPowered = _powerButton.IsOn;
             _savedData.IsStarted = _startButton.IsOn;
         }
 
-        public void OnLoadScene()
+        public void LoadUIState()
         {
             if (_savedData.IsPowered & !_powerButton.IsOn)
             {

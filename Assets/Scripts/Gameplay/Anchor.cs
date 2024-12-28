@@ -1,45 +1,31 @@
-﻿using System;
-using Containers;
+﻿using Containers;
 using Mechanics;
 using UnityEngine;
 
 namespace Gameplay
 {
-    [RequireComponent(typeof(Animator), typeof(VRGrabInteractable), typeof(Rigidbody))]
-    [RequireComponent(typeof(Collider))]
     public class Anchor : MonoBehaviour
     {
-        private Animator _animator;
-        private VRGrabInteractable _grabInteractable;
-        private Collider _collider;
-        private Rigidbody _rigidbody;
-        private bool _isGrabbed = false;
-        private void Awake()
-        {
-            _collider = GetComponent<Collider>();
-            _rigidbody = GetComponent<Rigidbody>();
-            _grabInteractable = GetComponent<VRGrabInteractable>();
-            _animator = GetComponent<Animator>();
-        }
-
-        private void Update()
-        {
-            if (_isGrabbed)
-            {
-                transform.position = transform.parent.position + Vector3.up * 0.1f;
-            }
-        } 
-
+        [SerializeField] private Animator _animator;
+        [SerializeField] private VRGrabInteractable _grabInteractable;
+        [SerializeField] private Collider _collider;
+        [SerializeField] private Rigidbody _rigidbody;
+        
         private void OnTriggerStay(Collider other)
         {
-            AnchorLabContainer anchorLabContainer = other.GetComponent<AnchorLabContainer>();
+            LabContainer labContainer = other.GetComponent<LabContainer>();
             
-            if (anchorLabContainer is null || _grabInteractable.isSelected)
+            if (labContainer is null)
+            {
+                return;
+            }
+
+            if (_grabInteractable.isSelected)
             {
                 return;
             }
             
-            anchorLabContainer.PutAnchor(this);
+            labContainer.PutAnchor(this);
         }
 
         public void TogglePhysics(bool isOn)
@@ -48,8 +34,6 @@ namespace Gameplay
             _rigidbody.isKinematic = !isOn;
             
             _collider.enabled = isOn;
-            
-            _isGrabbed = isOn;
         }
 
         public void ToggleAnimate(bool isEnable)

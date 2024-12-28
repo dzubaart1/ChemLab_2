@@ -1,21 +1,15 @@
-﻿using Core;
+﻿using BioEngineerLab.Tasks;
+using Core;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace UI.TabletUI.Panels
 {
-    public class TaskFailedTabletPanel : BasePanel<TabletPanelsType>
+    public class TaskFailedTabletPanel : BaseTabletPanel
     {
         [SerializeField] private Button _loadPrevSceneStateBtn;
-
-        [CanBeNull] private GameManager _gameManager;
         
-        private void Awake()
-        {
-            _gameManager = GameManager.Instance;
-        }
-
         private void OnEnable()
         {
             _loadPrevSceneStateBtn.onClick.AddListener(OnLoadPrevStateBtn);
@@ -28,12 +22,23 @@ namespace UI.TabletUI.Panels
 
         private void OnLoadPrevStateBtn()
         {
-            if (_gameManager == null)
+            GameManager gameManager = GameManager.Instance;
+            
+            if (gameManager == null)
+            {
+                return;
+            }
+
+            if (gameManager.CurrentBaseLocalManager == null)
             {
                 return;
             }
             
-            _gameManager.LoadGame();
+            gameManager.CurrentBaseLocalManager.LoadGame();
+        }
+
+        public override void SetTaskToShow(LabTask task)
+        {
         }
     }
 }

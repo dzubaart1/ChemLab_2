@@ -1,7 +1,6 @@
 ﻿using System;
 using BioEngineerLab.Activities;
 using Core;
-using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,13 +22,6 @@ namespace UI.Components
         [SerializeField] private Button _button;
 
         public bool IsOn { get; private set; }
-
-        [CanBeNull] private GameManager _gameManager;
-
-        private void Awake()
-        {
-            _gameManager = GameManager.Instance;
-        }
 
         private void Start()
         {
@@ -64,7 +56,14 @@ namespace UI.Components
 
         private void ChangeStatus()
         {
-            if (_gameManager == null)
+            GameManager gameManager = GameManager.Instance;
+            
+            if (gameManager == null)
+            {
+                return;
+            }
+
+            if (gameManager.CurrentBaseLocalManager == null)
             {
                 return;
             }
@@ -75,7 +74,7 @@ namespace UI.Components
             
             if (_isTaskSendable)
             {
-                _gameManager.CompleteTask(new ButtonClickedActivity(_buttonType));
+                gameManager.CurrentBaseLocalManager.OnActivityComplete(new ButtonClickedActivity(_buttonType));
             }
         }
     }

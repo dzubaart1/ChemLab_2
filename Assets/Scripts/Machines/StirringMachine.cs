@@ -1,4 +1,3 @@
-using System;
 using BioEngineerLab.Activities;
 using Containers;
 using Core;
@@ -6,52 +5,32 @@ using Core.Services;
 using Crafting;
 using JetBrains.Annotations;
 using Mechanics;
+using Saveables;
 using UI.Components;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
 namespace Machines
 {
-    public class StirringMachine : MonoBehaviour, ISaveable
+    public class StirringMachine : MonoBehaviour, ISaveableUI
     {
         private struct SavedData
         {
             public bool IsOnStirringBtn;
             public bool IsOnHeatingBtnState;
-            public VRGrabInteractable Interactable;
         }
         
         [SerializeField] private VRSocketInteractor _socketInteractor;
         [SerializeField] private ButtonComponent _stirringBtn;
         [SerializeField] private ButtonComponent _heatingBtn;
-
-        [CanBeNull] private GameManager _gameManager;
+        
+        private SavedData _savedData = new SavedData();
         
         private bool _isLoadEnter;
         private bool _isLoadExit;
         
-        private SavedData _savedData = new SavedData();
-
-        private void Awake()
-        {
-            _gameManager = GameManager.Instance;
-        }
-
-        private void Start()
-        {
-            OnSaveScene();
-        }
-
         private void OnEnable()
         {
-            if (_gameManager == null)
-            {
-                return;
-            }
-            
-            _gameManager.Game.SaveGameEvent += OnSaveScene;
-            _gameManager.Game.LoadGameEvent += OnLoadScene;
-
             _socketInteractor.selectEntered.AddListener(OnEnter);
             _socketInteractor.selectExited.AddListener(OnExit);
 
@@ -61,14 +40,6 @@ namespace Machines
 
         private void OnDisable()
         {
-            if (_gameManager == null)
-            {
-                return;
-            }
-            
-            _gameManager.Game.SaveGameEvent -= OnSaveScene;
-            _gameManager.Game.LoadGameEvent -= OnLoadScene;
-
             _socketInteractor.selectEntered.RemoveListener(OnEnter);
             _socketInteractor.selectExited.RemoveListener(OnExit);
 
@@ -161,20 +132,32 @@ namespace Machines
         
         private void StartMachineWork()
         {
-            if (_gameManager == null)
+            GameManager gameManager = GameManager.Instance;
+            
+            if (gameManager == null)
+            {
+                return;
+            }
+
+            if (gameManager.CurrentBaseLocalManager == null)
             {
                 return;
             }
             
             ToggleStirringAnimation(true);
-            _gameManager.Game.CompleteTask(new MachineLabActivity(EMachineActivity.OnStart,
+            gameManager.CurrentBaseLocalManager.OnActivityComplete(new MachineLabActivity(EMachineActivity.OnStart,
                 EMachine.StirringMachine));
-            
         }
 
         private void FinishMachineWork()
         {
-            if (_gameManager == null)
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                return;
+            }
+
+            if (gameManager.CurrentBaseLocalManager == null)
             {
                 return;
             }
@@ -186,16 +169,15 @@ namespace Machines
 
             LabContainer container = _socketInteractor.SelectedObject.transform.GetComponent<LabContainer>();
 
-            if (!CraftTools.TryFindCraft(_gameManager.Game.SOCrafts, container.GetSubstanceProperties(), ECraft.HeatStir, out SOLabCraft labCraft))
+            if (!CraftTools.TryFindCraft(gameManager.CurrentBaseLocalManager.GetSOCrafts(), container.GetSubstanceProperties(), ECraft.HeatStir, out SOLabCraft labCraft))
             {
-                _gameManager.Game.CompleteTask(new BadLabActivity());
+                gameManager.CurrentBaseLocalManager.OnActivityComplete(new BadLabActivity());
             }
             
             CraftTools.ApplyCraft(labCraft.LabCraft, container);
             
             ToggleStirringAnimation(false);
-            _gameManager.Game.CompleteTask(new MachineLabActivity(EMachineActivity.OnFinish,
-                EMachine.StirringMachine));
+            gameManager.CurrentBaseLocalManager.OnActivityComplete(new MachineLabActivity(EMachineActivity.OnFinish, EMachine.StirringMachine));
         }
 
         private void ToggleStirringAnimation(bool isEnable)
@@ -205,36 +187,25 @@ namespace Machines
                 return;
             }
             
-            AnchorLabContainer anchorContainer = _socketInteractor.SelectedObject.GetComponent<AnchorLabContainer>();
-            if (anchorContainer == null)
+            LabContainer labContainer = _socketInteractor.SelectedObject.GetComponent<LabContainer>();
+            if (labContainer == null)
             {
                 return;
             }
             
-            anchorContainer.AnimateAnchor(isEnable);
+            labContainer.AnimateAnchor(isEnable);
         }
 
-        public void OnSaveScene()
+        public void SaveUIState()
         {
             _savedData.IsOnHeatingBtnState = _heatingBtn.IsOn;
             _savedData.IsOnStirringBtn = _stirringBtn.IsOn;
-            _savedData.Interactable = _socketInteractor.firstInteractableSelected as VRGrabInteractable;
         }
 
-        public void OnLoadScene()
+        public void LoadUIState()
         {
             _heatingBtn.SetIsOn(_savedData.IsOnHeatingBtnState);
             _stirringBtn.SetIsOn(_savedData.IsOnStirringBtn);
-
-            if (_savedData.Interactable != null & _socketInteractor.SelectedObject == null)
-            {
-                _isLoadEnter = true;
-            }
-
-            if (_savedData.Interactable == null & _socketInteractor.SelectedObject != null)
-            {
-                _isLoadExit = true;
-            }
             
             CheckAnimatorStatus();
         }

@@ -3,69 +3,49 @@ using Containers;
 using Core;
 using Core.Services;
 using Crafting;
-using JetBrains.Annotations;
 using Mechanics;
+using Saveables;
 using UI.Components;
 using UnityEngine;
 
 namespace Machines
 {
     [RequireComponent(typeof(Collider))]
-    public class DryBoxMachine : MonoBehaviour, ISaveable
+    public class DryBoxMachine : MonoBehaviour, ISaveableUI
     {
         private class SavedData
         {
             public bool IsOn;
-            public bool IsOpen = false;
         }
 
+        [Header("UIs")]
         [SerializeField] private ButtonComponent _dryButton;
-        [SerializeField] private VRSocketInteractor _socketInteractor;
-
-        [CanBeNull] private GameManager _gameManager;
         
-        private bool _isOpen = false;
+        [Space]
+        [Header("Refs")]
+        [SerializeField] private VRSocketInteractor _socketInteractor;
+        
         private SavedData _savedData = new SavedData();
-
-        private void Awake()
-        {
-            _gameManager = GameManager.Instance;
-        }
-
+        
         private void OnEnable()
         {
-            if (_gameManager == null)
-            {
-                return;
-            }
-            
-            _gameManager.Game.LoadGameEvent += OnLoadScene;
-            _gameManager.Game.SaveGameEvent += OnSaveScene;
-
             _dryButton.ClickBtnEvent += OnClickDryBtn;
         }
 
         private void OnDisable()
         {
-            if (_gameManager == null)
-            {
-                return;
-            }
-            
-            _gameManager.Game.LoadGameEvent += OnLoadScene;
-            _gameManager.Game.SaveGameEvent += OnSaveScene;
-            
             _dryButton.ClickBtnEvent -= OnClickDryBtn;
-        }
-
-        private void Start()
-        {
-            OnSaveScene();
         }
 
         private void OnClickDryBtn()
         {
-            if (_gameManager == null)
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                return;
+            }
+
+            if (gameManager.CurrentBaseLocalManager == null)
             {
                 return;
             }
@@ -82,28 +62,23 @@ namespace Machines
                 return;
             }
             
-            if (_isOpen)
+            if (!CraftTools.TryFindCraft(gameManager.CurrentBaseLocalManager.GetSOCrafts(), container.GetSubstanceProperties(), ECraft.Dry, out SOLabCraft craftContainer))
             {
-                return;
-            }
-            
-            if (!CraftTools.TryFindCraft(_gameManager.Game.SOCrafts, container.GetSubstanceProperties(), ECraft.Dry, out SOLabCraft craftContainer))
-            {
-                _gameManager.Game.CompleteTask(new BadLabActivity());
+                gameManager.CurrentBaseLocalManager.OnActivityComplete(new BadLabActivity());
                 return;
             }
             
             CraftTools.ApplyCraft(craftContainer.LabCraft, container);
         }
-        
-        public void OnSaveScene()
+
+        public void SaveUIState()
         {
-            
+            _savedData.IsOn = _dryButton.IsOn;
         }
 
-        public void OnLoadScene()
+        public void LoadUIState()
         {
-            
+            _dryButton.SetIsOn(_savedData.IsOn);
         }
     }
 }

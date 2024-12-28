@@ -4,128 +4,62 @@ using Containers;
 using Core;
 using UnityEngine;
 using Mechanics;
-using UnityEngine.XR.Interaction.Toolkit;
-using BioEngineerLab.Tasks.SideEffects;
-using JetBrains.Annotations;
+using Saveables;
 
 namespace BioEngineerLab.Machines
 {
     [RequireComponent(typeof(Collider))]
-    public class TeleportMachine : MonoBehaviour, ISaveable
+    public class TeleportMachine : MonoBehaviour, ISaveableOther
     {
         private class SavedData
         {
-            public List<VRGrabInteractable> HiddenGameObjects = new List<VRGrabInteractable>();
+            public List<Transform> HiddenGameObjects = new List<Transform>();
         }
         
         [SerializeField] private VRSocketInteractor _socketInteractor;
-        [SerializeField] private ESocket _socketType;
-        [SerializeField] private EMachine _machineType;
-        [SerializeField] private GameObject _docObject;
-
-        [CanBeNull] private GameManager _gameManager;
         
-        private List<VRGrabInteractable> _hiddenGameObjects = new List<VRGrabInteractable>();
         private SavedData _savedData = new SavedData();
-
-        private void Awake()
-        {
-            _gameManager = GameManager.Instance;
-        }
+        
+        private List<Transform> _hiddenGameObjects = new List<Transform>();
 
         private void OnEnable()
         {
-            _socketInteractor.selectEntered.AddListener(OnEnter);
-            
-            if (_gameManager == null)
-            {
-                return;
-            }
-            
-            _gameManager.Game.LoadGameEvent += OnLoadScene;
-            _gameManager.Game.SaveGameEvent += OnSaveScene;
-            
-            _gameManager.Game.SideEffectActivatedEvent += OnActivatedSideEffect;
+            _socketInteractor.EnteredTransformEvent += OnEnterTransform;
         }
 
         private void OnDisable()
         {
-            _socketInteractor.selectEntered.RemoveListener(OnEnter);
-            
-            if (_gameManager == null)
-            {
-                return;
-            }
-            
-            _gameManager.Game.LoadGameEvent -= OnLoadScene;
-            _gameManager.Game.SaveGameEvent -= OnSaveScene;
-            
-            _gameManager.Game.SideEffectActivatedEvent -= OnActivatedSideEffect;
+            _socketInteractor.EnteredTransformEvent -= OnEnterTransform;
         }
 
-        private void Start()
+        private void OnEnterTransform(Transform enterTransform)
         {
-            OnSaveScene();
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                return;
+            }
+
+            if (gameManager.CurrentBaseLocalManager == null)
+            {
+                return;
+            }
+            
+            LabContainer[] labContainers = enterTransform.GetComponentsInChildren<LabContainer>();
+
+            if (labContainers.Length == 0)
+            {
+                return;
+            }
+
+            enterTransform.gameObject.SetActive(false);
+            _hiddenGameObjects.Add(enterTransform);
+
+            gameManager.CurrentBaseLocalManager.OnActivityComplete(
+                new SocketSubstancesLabActivity(_socketInteractor.SocketType, ESocketActivity.Enter, labContainers[0].GetSubstanceProperties()));
         }
 
-        private void OnEnter(SelectEnterEventArgs args)
-        {
-            if (_gameManager == null)
-            {
-                return;
-            }
-            
-            if (_socketInteractor.SelectedObject == null)
-            {
-                return;
-            }
-            
-            VRGrabInteractable interactable = _socketInteractor.SelectedObject.GetComponent<VRGrabInteractable>();
-
-            if (interactable == null)
-            {
-                return;
-            }
-            
-            if (_socketType == ESocket.TeleportCellResSocket)
-            {
-
-                LabContainer[] labContainers = interactable.GetComponentsInChildren<LabContainer>();
-
-                interactable.gameObject.SetActive(false);
-                _hiddenGameObjects.Add(interactable);
-
-                _gameManager.Game.CompleteTask(new SocketSubstancesLabActivity(_socketType, ESocketActivity.Enter,
-                    labContainers[0].GetSubstanceProperties()));
-            }
-            else
-            {
-                LabContainer labContainer = interactable.GetComponent<LabContainer>();
-                
-                interactable.gameObject.SetActive(false);
-                _hiddenGameObjects.Add(interactable);
-
-                _gameManager.Game.CompleteTask(new SocketSubstancesLabActivity(_socketType, ESocketActivity.Enter,
-                    labContainer.GetSubstanceProperties()));
-            }
-        }
-        
-        private void OnActivatedSideEffect(LabSideEffect sideEffect)
-        {
-            if (sideEffect is not SpawnDocLabSideEffect spawnDocLabSideEffect)
-            {
-                return;
-            }
-            
-            spawnDocLabSideEffect = sideEffect as SpawnDocLabSideEffect;
-
-            if (spawnDocLabSideEffect.MachineType == _machineType)
-            {
-                _docObject.SetActive(true);
-            }
-        }
-        
-        public void OnSaveScene()
+        public void Save()
         {
             _savedData.HiddenGameObjects.Clear();
             
@@ -135,12 +69,11 @@ namespace BioEngineerLab.Machines
             }
         }
 
-        public void OnLoadScene()
+        public void Load()
         {
             foreach (var interactable in _hiddenGameObjects)
             {
                 interactable.gameObject.SetActive(true);
-                interactable.LoadPosition();
             }
 
             foreach (var interactable in _savedData.HiddenGameObjects)

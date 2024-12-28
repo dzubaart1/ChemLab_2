@@ -13,16 +13,9 @@ public class StartPanelController : MonoBehaviour
     [Space]
     [Header("Configs")]
     [SerializeField] private RectTransform _defaultPanel;
-
-    [CanBeNull] private GameManager _gameManager;
     
     private RectTransform _currentRectTransform;
     private int _currentRuleNumber = 0;
-
-    private void Awake()
-    {
-        _gameManager = GameManager.Instance;
-    }
 
     private void Start()
     {
@@ -45,29 +38,38 @@ public class StartPanelController : MonoBehaviour
 
     public void BeginLab1()
     {
-        if (_gameManager == null)
+        GameManager gameManager = GameManager.Instance;
+        
+        if (gameManager == null)
         {
             return;
         }
         
-        _gameManager.StartGame(ELab.Lab1);
-        _gameManager.LoadScene(Game.LAB_1_SCENE_NAME);
+        gameManager.LoadScene(GameManager.LAB_1_SCENE_NAME);
     }
     
     public void BeginLab2()
     {
-        if (_gameManager == null)
+        GameManager gameManager = GameManager.Instance;
+        
+        if (gameManager == null)
         {
             return;
         }
         
-        _gameManager.StartGame(ELab.Lab2);
-        _gameManager.LoadScene(Game.LAB_2_SCENE_NAME);
+        gameManager.LoadScene(GameManager.LAB_2_SCENE_NAME);
     }
 
     public void Begin()
     {
-        _gameManager.LoadScene("LobbyScene");
+        GameManager gameManager = GameManager.Instance;
+        
+        if (gameManager == null)
+        {
+            return;
+        }
+        
+        gameManager.LoadScene(GameManager.LOBBY_SCENE_NAME);
     }
 
     public void Return()

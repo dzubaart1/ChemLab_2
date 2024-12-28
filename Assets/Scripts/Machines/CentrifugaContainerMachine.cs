@@ -1,97 +1,49 @@
-﻿using Core;
-using JetBrains.Annotations;
+﻿using Saveables;
 using UI.Components;
 using UnityEngine;
 
 namespace Machines
 {
     [RequireComponent(typeof(Collider))]
-    public class CentrifugaContainerMachine : MonoBehaviour, ISaveable
+    public class CentrifugaContainerMachine : MonoBehaviour, ISaveableUI
     {
         private class SavedData
         {
             public bool IsOpen;
         }
         
-        [SerializeField] private ButtonComponent _button;
-        
-        [CanBeNull] private Animator _animator;
-        public Animator Animator
-        {
-            get
-            {
-                return _animator ??= GetComponent<Animator>();
-            }
-        }
+        [SerializeField] private ButtonComponent _openButton;
+        [SerializeField] private Animator _animator;
 
-        [CanBeNull] private GameManager _gameManager;
+        [SerializeField] private string _openState = "Open";
+        [SerializeField] private string _closeState = "Close";
         
         private SavedData _savedData = new SavedData();
-
-        private void Awake()
-        {
-            _gameManager = GameManager.Instance;
-        }
-
+        
         private void OnEnable()
         {
-            if (_gameManager == null)
-            {
-                return;
-            }
-            
-            _gameManager.Game.LoadGameEvent += OnLoadScene;
-            _gameManager.Game.SaveGameEvent += OnSaveScene;
-
-            _button.ClickBtnEvent += OnClickButton;
+            _openButton.ClickBtnEvent += OnClickOpenButton;
         }
 
         private void OnDisable()
         {
-            if (_gameManager == null)
-            {
-                return;
-            }
-            
-            _gameManager.Game.LoadGameEvent -= OnLoadScene;
-            _gameManager.Game.SaveGameEvent -= OnSaveScene;
-            
-            _button.ClickBtnEvent -= OnClickButton;
+            _openButton.ClickBtnEvent -= OnClickOpenButton;
         }
 
-        private void Start()
+        private void OnClickOpenButton()
         {
-            OnSaveScene();
+            _animator.Play(_openButton.IsOn ? _openState : _closeState);
         }
 
-        private void OnClickButton()
+        public void SaveUIState()
         {
-            if (_button.IsOn)
-            {
-                Animator.Play("Open");
-            }
-            else
-            {
-                Animator.Play("Close");
-            }
-        }
-        public void OnSaveScene()
-        {
-            _savedData.IsOpen = _button.IsOn;
+            _savedData.IsOpen = _openButton.IsOn;
         }
 
-        public void OnLoadScene()
+        public void LoadUIState()
         {
-            if (_savedData.IsOpen & _button.IsOn)
-            {
-                _button.SetIsOn(_savedData.IsOpen);
-                Animator.Play("Open");
-            }
-            if(!_savedData.IsOpen & _button.IsOn)
-            {
-                _button.SetIsOn(_savedData.IsOpen);
-                Animator.Play("Close");
-            }
+            _openButton.SetIsOn(_savedData.IsOpen);
+            _animator.Play(_openButton.IsOn ? _openState : _closeState);
         }
     }
 }

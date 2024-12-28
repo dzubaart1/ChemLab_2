@@ -2,13 +2,8 @@
 {
     public enum TabletPanelsType : byte
     {
-        DebugPanel = 0,
         TaskFailedPanel = 1,
         MainPanel = 2,
-        SliderTaskPanel = 3,
-        DragLinePanel = 4,
-        HintTabletPanel = 5,
-        InfoTabletPanel = 6,
         EndGamePanel = 7,
     }
     

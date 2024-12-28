@@ -3,79 +3,54 @@ using Containers;
 using Core;
 using Core.Services;
 using Crafting;
-using JetBrains.Annotations;
 using Mechanics;
+using Saveables;
 using UI.Components;
 using UnityEngine;
 
 namespace Machines
 {
-    public class TermostatMachine : MonoBehaviour, ISaveable
+    public class TermostatMachine : MonoBehaviour, ISaveableUI
     {
         private class SavedData
         {
-            public bool IsOpen = false;
+            public bool IsPower;
         }
 
+        [Header("UIs")]
         [SerializeField] private ButtonComponent _powerButton;
+        
+        [Header("Refs")]
         [SerializeField] private VRSocketInteractor _socketInteractor1;
         [SerializeField] private VRSocketInteractor _socketInteractor2;
-        [SerializeField] private DoorMachine _doorMachine;
-
-        [CanBeNull] private GameManager _gameManager;
+        [SerializeField] private Door _door;
         
-        private bool _isOpen = false;
         private SavedData _savedData = new SavedData();
-
-        private void Awake()
-        {
-            _gameManager = GameManager.Instance;
-        }
-
+        
         private void OnEnable()
         {
-            if (_gameManager == null)
-            {
-                return;
-            }
-            
-            _gameManager.Game.LoadGameEvent += OnLoadScene;
-            _gameManager.Game.SaveGameEvent += OnSaveScene;
-
-            _doorMachine.DoorClosedEvent += Dry;
+            _door.DoorClosedEvent += OnDoorClosed;
         }
 
         private void OnDisable()
         {
-            if (_gameManager == null)
+            _door.DoorClosedEvent -= OnDoorClosed;
+        }
+
+        private void OnDoorClosed()
+        {
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                return;
+            }
+
+            if (gameManager.CurrentBaseLocalManager == null)
             {
                 return;
             }
             
-            _gameManager.Game.LoadGameEvent -= OnLoadScene;
-            _gameManager.Game.SaveGameEvent -= OnSaveScene;
-            
-            _doorMachine.DoorClosedEvent -= Dry;
-        }
-
-        private void Start()
-        {
-            OnSaveScene();
-        }
-
-        private void Dry()
-        {
             if (!_powerButton.IsOn)
-            {
-                return;
-            }
-            
-            if (_isOpen)
-            {
-                return;
-            }
-            
-            if (_gameManager == null)
             {
                 return;
             }
@@ -92,9 +67,9 @@ namespace Machines
                 return;
             }
             
-            if (!CraftTools.TryFindCraft(_gameManager.Game.SOCrafts, container1.GetSubstanceProperties(), ECraft.Dry, out SOLabCraft craftContainer1))
+            if (!CraftTools.TryFindCraft(gameManager.CurrentBaseLocalManager.GetSOCrafts(), container1.GetSubstanceProperties(), ECraft.Dry, out SOLabCraft craftContainer1))
             {
-                _gameManager.Game.CompleteTask(new BadLabActivity());
+                gameManager.CurrentBaseLocalManager.OnActivityComplete(new BadLabActivity());
                 return;
             }
             
@@ -112,23 +87,23 @@ namespace Machines
                 return;
             }
             
-            if (!CraftTools.TryFindCraft(_gameManager.Game.SOCrafts, container2.GetSubstanceProperties(), ECraft.Dry, out SOLabCraft craftContainer2))
+            if (!CraftTools.TryFindCraft(gameManager.CurrentBaseLocalManager.GetSOCrafts(), container2.GetSubstanceProperties(), ECraft.Dry, out SOLabCraft craftContainer2))
             {
-                _gameManager.Game.CompleteTask(new BadLabActivity());
+                gameManager.CurrentBaseLocalManager.OnActivityComplete(new BadLabActivity());
                 return;
             }
             
             CraftTools.ApplyCraft(craftContainer2.LabCraft, container2);
         }
         
-        public void OnSaveScene()
+        public void SaveUIState()
         {
-            _savedData.IsOpen = _isOpen;
+            _savedData.IsPower = _powerButton.IsOn;
         }
 
-        public void OnLoadScene()
+        public void LoadUIState()
         {
-            
+            _powerButton.SetIsOn(_savedData.IsPower);
         }
     }
 }

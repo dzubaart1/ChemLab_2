@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
-using BioEngineerLab.Activities;
 using JetBrains.Annotations;
+using LocalManagers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,13 +9,17 @@ namespace Core
 {
     public class GameManager : MonoBehaviour
     {
+        public const string LOBBY_SCENE_NAME = "LobbyScene";
+        public const string FINISH_SCENE_NAME = "FinishScene";
+        public const string START_SCENE_NAME = "StartScene";
+        public const string LAB_1_SCENE_NAME = "Lab1";
+        public const string LAB_2_SCENE_NAME = "Lab2";
+        public const string LAB_3_SCENE_NAME = "Lab2";
+        
         public event Action<string> LoadSceneCompleteEvent;
         
-        [SerializeField] private Game _game;
-
-        public Game Game => _game;
-        
         [CanBeNull] public static GameManager Instance { get; private set; }
+        [CanBeNull] public BaseLocalManager CurrentBaseLocalManager { get; private set; }
 
         private void Awake()
         {
@@ -24,30 +28,10 @@ namespace Core
                 Instance = this;
             }
         }
-        
-        public void StartGame(ELab lab)
-        {
-            _game.StartGame(lab);
-        }
-        
-        public void FinishGame()
-        {
-            _game.FinishGame();
-        }
 
-        public void SaveGame()
+        public void SetLocalManger(BaseLocalManager localManager)
         {
-            _game.SaveGame();
-        }
-
-        public void LoadGame()
-        {
-            _game.LoadGame();
-        }
-
-        public void CompleteTask(LabActivity activity)
-        {
-            _game.CompleteTask(activity);
+            CurrentBaseLocalManager = localManager;
         }
         
         public void LoadScene(string sceneName)

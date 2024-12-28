@@ -5,7 +5,7 @@ using BioEngineerLab.Tasks;
 using Core;
 using Core.Services;
 using Crafting;
-using JetBrains.Annotations;
+using LocalManagers;
 using Mechanics;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -16,8 +16,6 @@ namespace Containers
     public class SubstanceTransferLabContainer : MonoBehaviour
     {
         private const float DELAY_TRIGGERED = 0.5f;
-
-        [CanBeNull] private GameManager _gameManager;
         
         private XRGrabInteractable _xrGrabInteractable;
         private LabContainer _labContainer;
@@ -27,12 +25,6 @@ namespace Containers
         
         private void Awake()
         {
-            _gameManager = GameManager.Instance;
-            if (_gameManager == null)
-            {
-                return;
-            }
-            
             _xrGrabInteractable = GetComponent<XRGrabInteractable>();
             _labContainer = GetComponent<LabContainer>();
             _cupSocketLabContainer = GetComponent<CupSocketLabContainer>();
@@ -87,7 +79,14 @@ namespace Containers
 
         private void TryTransfer(LabContainer fromLabContainer, LabContainer toLabContainer)
         {
-            if (_gameManager == null)
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                return;
+            }
+
+            BaseLocalManager localManager = gameManager.CurrentBaseLocalManager;
+            if (localManager == null)
             {
                 return;
             }
@@ -97,7 +96,7 @@ namespace Containers
             {
                 if (CraftTools.TryAdd(toLabContainer, fromLabContainer, out LabSubstance transferSubstance))
                 {
-                    _gameManager.Game.CompleteTask(new AddSubstanceLabActivity(
+                    localManager.OnActivityComplete(new AddSubstanceLabActivity(
                         toLabContainer.ContainerType,
                         fromLabContainer.ContainerType,
                         transferSubstance.SubstanceProperty));   
@@ -108,10 +107,10 @@ namespace Containers
             if (fromLabContainer.IsSpoonContainer & fromLabContainer.GetSubstancesCount() != 0 &
                 toLabContainer.GetSubstancesCount() != 0)
             {
-                if (CraftTools.TryFindCraft(_gameManager.Game.SOCrafts, fromLabContainer.GetSubstanceProperties().Concat(toLabContainer.GetSubstanceProperties()).ToList(),ECraft.Mix ,out SOLabCraft targetCraft))
+                if (CraftTools.TryFindCraft(localManager.GetSOCrafts(), fromLabContainer.GetSubstanceProperties().Concat(toLabContainer.GetSubstanceProperties()).ToList(),ECraft.Mix ,out SOLabCraft targetCraft))
                 {
                     CraftTools.Mix(targetCraft.LabCraft, fromLabContainer, toLabContainer);
-                    _gameManager.Game.CompleteTask(new CraftSubstanceLabActivity(toLabContainer.ContainerType, targetCraft.LabCraft));
+                    localManager.OnActivityComplete(new CraftSubstanceLabActivity(toLabContainer.ContainerType, targetCraft.LabCraft));
                 }
                 return;
             }
@@ -121,7 +120,7 @@ namespace Containers
             {
                 if (CraftTools.TryAdd(fromLabContainer, toLabContainer, out LabSubstance transferSubstance))
                 {
-                    _gameManager.Game.CompleteTask(new AddSubstanceLabActivity(
+                    localManager.OnActivityComplete(new AddSubstanceLabActivity(
                         fromLabContainer.ContainerType,
                         toLabContainer.ContainerType,
                         transferSubstance.SubstanceProperty));   
@@ -136,10 +135,10 @@ namespace Containers
 
             if (toLabContainer.GetSubstancesCount() != 0)
             {
-                if (CraftTools.TryFindCraft(_gameManager.Game.SOCrafts, fromLabContainer.GetSubstanceProperties().Concat(toLabContainer.GetSubstanceProperties()).ToList(),ECraft.Mix ,out SOLabCraft targetCraft))
+                if (CraftTools.TryFindCraft(localManager.GetSOCrafts(), fromLabContainer.GetSubstanceProperties().Concat(toLabContainer.GetSubstanceProperties()).ToList(),ECraft.Mix ,out SOLabCraft targetCraft))
                 {
                     CraftTools.Mix(targetCraft.LabCraft, fromLabContainer, toLabContainer);
-                    _gameManager.Game.CompleteTask(new CraftSubstanceLabActivity(toLabContainer.ContainerType, targetCraft.LabCraft));
+                    localManager.OnActivityComplete(new CraftSubstanceLabActivity(toLabContainer.ContainerType, targetCraft.LabCraft));
                 }
                 return;
             }
@@ -148,7 +147,7 @@ namespace Containers
             {
                 if (CraftTools.TryAdd(fromLabContainer, toLabContainer, out LabSubstance transferSubstance))
                 {
-                    _gameManager.Game.CompleteTask(new AddSubstanceLabActivity(
+                    localManager.OnActivityComplete(new AddSubstanceLabActivity(
                         fromLabContainer.ContainerType,
                         toLabContainer.ContainerType,
                         transferSubstance.SubstanceProperty));   

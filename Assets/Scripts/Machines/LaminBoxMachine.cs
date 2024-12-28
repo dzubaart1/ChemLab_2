@@ -1,93 +1,70 @@
 ﻿using BioEngineerLab.Activities;
 using Core;
-using Core.Services;
-using JetBrains.Annotations;
+using Saveables;
 using UI.Components;
 using UnityEngine;
 
 namespace Machines
 {
-    public class LaminBoxMachine : MonoBehaviour, ISaveable
+    public class LaminBoxMachine : MonoBehaviour, ISaveableUI
     {
         private class SavedData
         {
-            public bool IsLightsOn;
+            public bool IsLight;
             public bool IsOpen;
         }
         
-        [SerializeField] private GameObject _lights;
-        [SerializeField] private ButtonComponent _lightButton;
+        [Header("Refs")]
+        [SerializeField] private GameObject _light;
+        [SerializeField] private Animator _animator;
         
+        [Space]
+        [Header("UIs")]
+        [SerializeField] private ButtonComponent _lightButton;
         [SerializeField] private ButtonComponent _openButton;
 
-        [CanBeNull] private GameManager _gameManager;
+        [Space]
+        [Header("Configs")]
+        [SerializeField] private string _openAnimatorState = "Open";
+        [SerializeField] private string _closeAnimatorState = "Close";
+        
+        private SavedData _savedData = new SavedData();
         
         private bool _isOpen = false;
-        private SavedData _savedData = new SavedData();
-        private Animator _animator;
         
-        private void Awake()
-        {
-            _gameManager = GameManager.Instance;
-            _animator = GetComponent<Animator>();
-        }
-
         private void OnEnable()
         {
-            if (_gameManager == null)
-            {
-                return;
-            }
-            
-            _gameManager.Game.LoadGameEvent += OnLoadScene;
-            _gameManager.Game.SaveGameEvent += OnSaveScene;
-            
             _lightButton.ClickBtnEvent += OnLButtonClick;
             _openButton.ClickBtnEvent += OnOpenButtonClick;
         }
 
         private void OnDisable()
         {
-            if (_gameManager == null)
-            {
-                return;
-            }
-            
-            _gameManager.Game.LoadGameEvent += OnLoadScene;
-            _gameManager.Game.SaveGameEvent += OnSaveScene;
-            
             _lightButton.ClickBtnEvent -= OnLButtonClick;
             _openButton.ClickBtnEvent -= OnOpenButtonClick;
         }
 
-        private void Start()
-        {
-            OnSaveScene();
-        }
-        
-
         private void OnLButtonClick()
         {
-            _lights.SetActive(_lightButton.IsOn);
+            _light.SetActive(_lightButton.IsOn);
         }
 
         private void OnOpenButtonClick()
         {
-            if (_isOpen)
-            {
-                _animator.Play("Close");
-                _isOpen = false;
-            }
-            else
-            {
-                _animator.Play("Open");
-                _isOpen = true;
-            }
+            _isOpen = !_isOpen;
+            _animator.Play(_isOpen ? _openAnimatorState : _closeAnimatorState);
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            if (_gameManager == null)
+            GameManager gameManager = GameManager.Instance;
+            
+            if (gameManager == null)
+            {
+                return;
+            }
+
+            if (gameManager.CurrentBaseLocalManager == null)
             {
                 return;
             }
@@ -97,29 +74,20 @@ namespace Machines
                 return;
             }
             
-            _gameManager.Game.CompleteTask(new MachineLabActivity(EMachineActivity.OnStart, EMachine.LaminBoxMachine));
+            gameManager.CurrentBaseLocalManager.OnActivityComplete(new MachineLabActivity(EMachineActivity.OnStart, EMachine.LaminBoxMachine));
+        }
+        
+        public void SaveUIState()
+        {
+            _savedData.IsLight = _lightButton.IsOn;
         }
 
-        public void OnSaveScene()
+        public void LoadUIState()
         {
-            _savedData.IsLightsOn = _lightButton.IsOn;
-            _savedData.IsOpen = _isOpen;
-        }
-
-        public void OnLoadScene()
-        {
-            _lightButton.SetIsOn(_savedData.IsLightsOn);
+            _lightButton.SetIsOn(_savedData.IsLight);
+            _isOpen = _savedData.IsOpen;
             
-            if (_savedData.IsOpen)
-            {
-                _animator.Play("Open");
-                _isOpen = true;
-            }
-            else
-            {
-                _animator.Play("Close");
-                _isOpen = false;
-            }
+            _animator.Play(_isOpen ? _openAnimatorState : _closeAnimatorState);
         }
     }
 }
