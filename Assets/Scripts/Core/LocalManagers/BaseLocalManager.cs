@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using BioEngineerLab.Activities;
 using BioEngineerLab.Tasks;
@@ -24,6 +25,18 @@ namespace LocalManagers
             gameManager.SetLocalManger(this);
         }
 
+        private IEnumerator Start()
+        {
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                yield break;
+            }
+            
+            InitLab(gameManager.CurrentLab);
+            SaveGame();
+        }
+
         public abstract float GetGameTime();
         public abstract IReadOnlyCollection<LabTask> GetErrorTasks();
         
@@ -32,7 +45,6 @@ namespace LocalManagers
         public abstract void AddSaveableUI(ISaveableUI saveableUI);
         public abstract void AddSaveableOther(ISaveableOther saveableOther);
         public abstract void AddSaveableDoor(ISaveableDoor saveableDoor);
-        public abstract void AddTabletUI(TabletUI tabletUI);
         public abstract void AddSideEffectActivator(ISideEffectActivator sideEffectActivator);
         public abstract void AddSaveableContainer(ISaveableContainer saveableContainer);
         public abstract void AddSaveableSocket(ISaveableSocket saveableSocket);

@@ -1,20 +1,11 @@
-using System.Collections.Generic;
 using Core;
-using Core.Services;
-using JetBrains.Annotations;
 using UnityEngine;
 
 public class FinishPanelController : MonoBehaviour
 {
     [SerializeField] private GameObject _mainPanel;
     [SerializeField] private GameObject _resultsPanel;
-    
-    [CanBeNull] private GameManager _gameManager;
 
-    private void Awake()
-    {
-        _gameManager = GameManager.Instance;
-    }
     public void ShowResultPanel()
     {
         _mainPanel.SetActive(false);
@@ -29,6 +20,17 @@ public class FinishPanelController : MonoBehaviour
 
     public void ReturnToLobby()
     {
-        _gameManager.LoadScene("LobbyScene");
+        GameManager gameManager = GameManager.Instance;
+        if (gameManager == null)
+        {
+            return;
+        }
+
+        if (gameManager.CurrentBaseLocalManager == null)
+        {
+            return;
+        }
+        
+        gameManager.LoadScene(GameManager.LOBBY_SCENE_NAME);
     }
 }

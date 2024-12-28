@@ -5270,8 +5270,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5796766697951785480}
   - component: {fileID: 6200841823151548302}
-  - component: {fileID: 4285647893529847349}
   - component: {fileID: 202896990951114013}
+  - component: {fileID: 4285647893529847349}
   - component: {fileID: 15898089193066640}
   - component: {fileID: 4288533169392806908}
   - component: {fileID: 35894806345451629}
@@ -5322,6 +5322,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.6881177, y: 1.4338603, z: 0.6881177}
   m_Center: {x: 0, y: 0.71693015, z: 0}
+--- !u!135 &202896990951114013
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6573443692718893234}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.2
+  m_Center: {x: 0, y: 1.8, z: 0.7}
 --- !u!54 &4285647893529847349
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5348,28 +5369,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!135 &202896990951114013
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6573443692718893234}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.2
-  m_Center: {x: 0, y: 1.8, z: 0.7}
+  m_CollisionDetection: 2
 --- !u!114 &15898089193066640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5481,20 +5481,20 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 0
+  m_MovementType: 1
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
   m_TrackPosition: 1
-  m_SmoothPosition: 0
+  m_SmoothPosition: 1
   m_SmoothPositionAmount: 8
   m_TightenPosition: 0.1
   m_TrackRotation: 1
-  m_SmoothRotation: 0
+  m_SmoothRotation: 1
   m_SmoothRotationAmount: 8
   m_TightenRotation: 0.1
-  m_TrackScale: 1
+  m_TrackScale: 0
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
@@ -5556,7 +5556,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614f3bff350847cba1fa99ddaa2cce0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _xrGrabInteractable: {fileID: 15898089193066640}
   _labContainer: {fileID: 4288533169392806908}
 --- !u!1 &6869343159593377860
 GameObject:

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using Core;
 using Saveables;
 using UnityEngine;
@@ -59,10 +60,33 @@ namespace Mechanics
 
         public void LoadSavedTransform()
         {
+            Debug.Log($"TRANSFORM LOAD {transform.parent.name}");
             transform.position = _savedData.Position;
             transform.rotation = _savedData.Rotation;
         }
 
+        public void TurnOffCollidersInSeconds(float sec)
+        {
+            StartCoroutine(Delay(sec));
+        }
+        
+        private IEnumerator Delay(float sec)
+        {
+            Collider[] targetColliders = GetComponentsInChildren<Collider>();
+
+            foreach (var c in targetColliders)
+            {
+                c.enabled = false;
+            }
+            
+            yield return new WaitForSeconds(sec);
+            
+            foreach (var c in targetColliders)
+            {
+                c.enabled = true;
+            }
+        }
+        
         private void OnGrab(SelectEnterEventArgs args)
         {
             GrabbedEvent?.Invoke();

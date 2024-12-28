@@ -11,16 +11,15 @@ namespace Core
     {
         public const string LOBBY_SCENE_NAME = "LobbyScene";
         public const string FINISH_SCENE_NAME = "FinishScene";
-        public const string START_SCENE_NAME = "StartScene";
-        public const string LAB_1_SCENE_NAME = "Lab1";
-        public const string LAB_2_SCENE_NAME = "Lab2";
-        public const string LAB_3_SCENE_NAME = "Lab2";
+        public const string SPACE_LAB_SCENE_NAME = "SpaceLab";
+        public const string CUBE_LAB_SCENE_NAME = "CubeLab";
         
         public event Action<string> LoadSceneCompleteEvent;
         
         [CanBeNull] public static GameManager Instance { get; private set; }
         [CanBeNull] public BaseLocalManager CurrentBaseLocalManager { get; private set; }
-
+        public ELab CurrentLab { get; private set; }
+        
         private void Awake()
         {
             if (Instance == null)
@@ -32,6 +31,24 @@ namespace Core
         public void SetLocalManger(BaseLocalManager localManager)
         {
             CurrentBaseLocalManager = localManager;
+        }
+
+        public void OnChooseLab(ELab lab)
+        {
+            CurrentLab = lab;
+            
+            switch (lab)
+            {
+                case ELab.Lab1:
+                    LoadScene(SPACE_LAB_SCENE_NAME);
+                    break;
+                case ELab.Lab2:
+                    LoadScene(CUBE_LAB_SCENE_NAME);
+                    break;
+                case ELab.Lab3:
+                    LoadScene(CUBE_LAB_SCENE_NAME);
+                    break;
+            }
         }
         
         public void LoadScene(string sceneName)

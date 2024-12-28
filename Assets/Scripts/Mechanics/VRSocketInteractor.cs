@@ -27,6 +27,7 @@ namespace Mechanics
         [SerializeField] private ESocket _socketType;
         [SerializeField] private bool _isEnterTaskSendable;
         [SerializeField] private bool _isExitTaskSendable;
+        [SerializeField] private float _timerDelay = 1f;
 
         [SerializeField] private bool _isSubstanceSocket;
         [SerializeField] private bool _isStartEnter;
@@ -48,7 +49,10 @@ namespace Mechanics
         public ESocket SocketType => _socketType;
 
         private SavedData _savedData = new SavedData();
-        
+
+        private bool _isLoadExit = false;
+        private bool _isLoadEnter = false;
+
         private void Start()
         {
             GameManager gameManager = GameManager.Instance;
@@ -75,7 +79,8 @@ namespace Mechanics
             }
             
             SocketCollisionsIgnored(SelectedObject, true);
-            EnteredTransformEvent?.Invoke(SelectedObject);
+            
+            Debug.Log($"ENTER {transform.parent.name}");
 
             if (_isStartEnter)
             {
@@ -83,6 +88,14 @@ namespace Mechanics
                 return;
             }
 
+            if (_isLoadEnter)
+            {
+                _isLoadEnter = false;
+                return;
+            }
+
+            EnteredTransformEvent?.Invoke(SelectedObject);
+            
             if (_isEnterTaskSendable)
             {
                 SendTryTaskComplete(SelectedObject, ESocketActivity.Enter);
@@ -99,10 +112,19 @@ namespace Mechanics
             {
                 return;
             }
+            
+            Debug.Log($"EXIT {transform.parent.name}");
 
             Transform exitedTransform = exitedInteractable.transform;
 
             SocketCollisionsIgnored(exitedTransform, false);
+
+            if (_isLoadExit)
+            {
+                _isLoadExit = false;
+                return;
+            }
+            
             ExitedTransformEvent?.Invoke(exitedTransform);
 
             if (_isExitTaskSendable)
@@ -118,7 +140,23 @@ namespace Mechanics
 
         public void ReleaseAllLoad()
         {
-            interactionManager.CancelInteractorSelection((IXRSelectInteractor)this);
+            if (SelectedObject == null)
+            {
+                return;
+            }
+            
+            VRGrabInteractable vrGrabInteractable = SelectedObject.GetComponentInChildren<VRGrabInteractable>();
+            if (vrGrabInteractable == null)
+            {
+                return;
+            }
+            
+            Debug.Log($"RELEASE LOAD {transform.name}");
+            _isLoadExit = true;
+            
+            interactionManager.SelectCancel((IXRSelectInteractor)this, vrGrabInteractable);
+            vrGrabInteractable.TurnOffCollidersInSeconds(1f);
+            vrGrabInteractable.transform.position = Vector3.zero;
         }
 
         public void PutSavedInteractable()
@@ -127,7 +165,10 @@ namespace Mechanics
             {
                 return;
             }
+            
+            Debug.Log($"PUT SAVED LOAD {transform.parent.name}");
 
+            _isLoadEnter = true;
             interactionManager.SelectEnter((IXRSelectInteractor)this, _savedData.GrabbedObject);
         }
         

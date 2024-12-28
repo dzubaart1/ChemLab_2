@@ -36,30 +36,6 @@ public class StartPanelController : MonoBehaviour
         SwitchPanel(_rulesPanels[_currentRuleNumber]);
     }
 
-    public void BeginLab1()
-    {
-        GameManager gameManager = GameManager.Instance;
-        
-        if (gameManager == null)
-        {
-            return;
-        }
-        
-        gameManager.LoadScene(GameManager.LAB_1_SCENE_NAME);
-    }
-    
-    public void BeginLab2()
-    {
-        GameManager gameManager = GameManager.Instance;
-        
-        if (gameManager == null)
-        {
-            return;
-        }
-        
-        gameManager.LoadScene(GameManager.LAB_2_SCENE_NAME);
-    }
-
     public void Begin()
     {
         GameManager gameManager = GameManager.Instance;

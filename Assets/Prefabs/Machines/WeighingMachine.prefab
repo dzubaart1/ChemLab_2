@@ -442,7 +442,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1277220319807999856}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: -0.5}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.018, y: 0.731, z: 0.434}
   m_LocalScale: {x: 3.333334, y: 3.333334, z: 3.333334}
   m_ConstrainProportionsScale: 0
@@ -450,7 +450,7 @@ Transform:
   - {fileID: 1277220320563143534}
   - {fileID: 7834672858918635412}
   m_Father: {fileID: 173499268342114646}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &1277220319807999870
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -532,10 +532,12 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+  _scoketColliders: []
   _socketType: 0
   _isEnterTaskSendable: 1
   _isExitTaskSendable: 0
-  _isSubsctanceSocket: 0
+  _isSubstanceSocket: 0
+  _isStartEnter: 0
 --- !u!1 &1277220320236358190
 GameObject:
   m_ObjectHideFlags: 0
@@ -1605,13 +1607,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5750806625186702390}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1277220319807999857}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5920425831358558601
 GameObject:
   m_ObjectHideFlags: 0

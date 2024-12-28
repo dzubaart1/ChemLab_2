@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 7238423984851564218}
   - component: {fileID: 5978358075401687074}
   - component: {fileID: 7498016193252486234}
-  - component: {fileID: 7713715763675438441}
   m_Layer: 0
   m_Name: polyetilen
   m_TagString: Untagged
@@ -246,20 +245,20 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 0
+  m_MovementType: 1
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
   m_TrackPosition: 1
-  m_SmoothPosition: 0
+  m_SmoothPosition: 1
   m_SmoothPositionAmount: 8
   m_TightenPosition: 0.1
   m_TrackRotation: 1
-  m_SmoothRotation: 0
+  m_SmoothRotation: 1
   m_SmoothRotationAmount: 8
   m_TightenRotation: 0.1
-  m_TrackScale: 1
+  m_TrackScale: 0
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
@@ -288,20 +287,6 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &7713715763675438441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 270110046400573506}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cc049b87f325b1459fb5513ca58d563, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _grabInteractable: {fileID: 7498016193252486234}
-  _interactableType: 1
 --- !u!1 &344917822942050068
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,11 +380,11 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+  _scoketColliders: []
   _socketType: 30
   _isEnterTaskSendable: 0
   _isExitTaskSendable: 1
-  _isSubsctanceEnterSocket: 0
-  _isSubsctanceExitSocket: 0
+  _isSubstanceSocket: 0
   _isStartEnter: 0
 --- !u!135 &2549987449156925141
 SphereCollider:
@@ -469,13 +454,11 @@ GameObject:
   - component: {fileID: 8093917137561427746}
   - component: {fileID: 8826579720493791657}
   - component: {fileID: 6982027113343057636}
-  - component: {fileID: 7306014128124949882}
-  - component: {fileID: 5905524151854265577}
   - component: {fileID: 2916212234927924224}
+  - component: {fileID: 7306014128124949882}
   - component: {fileID: 7226936729573442282}
   - component: {fileID: 1143321773962208775}
   - component: {fileID: 3850425803975726091}
-  - component: {fileID: 3283519234672898170}
   m_Layer: 0
   m_Name: jal
   m_TagString: Untagged
@@ -594,37 +577,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.00028332468
   m_Center: {x: 0, y: 0, z: 0.0003}
---- !u!114 &7306014128124949882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1087582902423479528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9b4c490f479acb40a2f8d6668c5d1c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxVolume: 9000
-  _containerWeight: 0
-  _containerType: 19
-  _isWeightableContainer: 0
-  _isSpoonContainer: 0
-  _meshRendererConfigs: []
---- !u!114 &5905524151854265577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1087582902423479528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3ccaeda41040798ddada03e99f1f69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _labContainer: {fileID: 7306014128124949882}
 --- !u!54 &2916212234927924224
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -651,7 +603,26 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
+--- !u!114 &7306014128124949882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087582902423479528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b4c490f479acb40a2f8d6668c5d1c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reagentsLabSubstanceProperty: {fileID: 0}
+  _maxVolume: 9000
+  _containerWeight: 0
+  _containerType: 19
+  _isWeightableContainer: 0
+  _isSpoonContainer: 0
+  _meshRendererConfigs: []
 --- !u!114 &7226936729573442282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -763,20 +734,20 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 0
+  m_MovementType: 1
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
   m_TrackPosition: 1
-  m_SmoothPosition: 0
+  m_SmoothPosition: 1
   m_SmoothPositionAmount: 8
   m_TightenPosition: 0.1
   m_TrackRotation: 1
-  m_SmoothRotation: 0
+  m_SmoothRotation: 1
   m_SmoothRotationAmount: 8
   m_TightenRotation: 0.1
-  m_TrackScale: 1
+  m_TrackScale: 0
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
@@ -831,19 +802,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614f3bff350847cba1fa99ddaa2cce0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3283519234672898170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1087582902423479528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3006fa141b4c470590b614fd0a150b74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  reagentsLabSubstanceProperty: {fileID: 11400000, guid: c5ce49e8c2c91344e83bb3083279bc74, type: 2}
   _labContainer: {fileID: 7306014128124949882}
 --- !u!1 &3960538511224791117
 GameObject:
@@ -859,7 +817,6 @@ GameObject:
   - component: {fileID: 4997556355115536597}
   - component: {fileID: 2005961227870078698}
   - component: {fileID: 9195656215374716350}
-  - component: {fileID: 468374806610193914}
   m_Layer: 0
   m_Name: cap
   m_TagString: Untagged
@@ -979,7 +936,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &9195656215374716350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1091,20 +1048,20 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 0
+  m_MovementType: 1
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
   m_TrackPosition: 1
-  m_SmoothPosition: 0
+  m_SmoothPosition: 1
   m_SmoothPositionAmount: 8
   m_TightenPosition: 0.1
   m_TrackRotation: 1
-  m_SmoothRotation: 0
+  m_SmoothRotation: 1
   m_SmoothRotationAmount: 8
   m_TightenRotation: 0.1
-  m_TrackScale: 1
+  m_TrackScale: 0
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
@@ -1133,20 +1090,6 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &468374806610193914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3960538511224791117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cc049b87f325b1459fb5513ca58d563, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _grabInteractable: {fileID: 9195656215374716350}
-  _interactableType: 0
 --- !u!1 &5223787509417432981
 GameObject:
   m_ObjectHideFlags: 0
@@ -1240,11 +1183,11 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+  _scoketColliders: []
   _socketType: 31
   _isEnterTaskSendable: 0
   _isExitTaskSendable: 1
-  _isSubsctanceEnterSocket: 0
-  _isSubsctanceExitSocket: 0
+  _isSubstanceSocket: 0
   _isStartEnter: 0
 --- !u!135 &7552575279915884812
 SphereCollider:

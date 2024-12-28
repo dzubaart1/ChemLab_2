@@ -1,10 +1,11 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 0,
   "Number": 1,
   "Title": "Задание 1",
   "Description": "Возьмите лодочку для взвешивания и поставьте ее на весы",
   "Warning": "",
-  "SaveableTask": true,
+  "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
     "SocketType": 0,

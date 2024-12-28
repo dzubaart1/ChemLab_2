@@ -114,10 +114,11 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+  _scoketColliders: []
   _socketType: 0
   _isEnterTaskSendable: 0
   _isExitTaskSendable: 0
-  _isSubsctanceSocket: 0
+  _isSubstanceSocket: 0
   _isStartEnter: 0
 --- !u!1 &2371176730548079022
 GameObject:
@@ -233,10 +234,11 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+  _scoketColliders: []
   _socketType: 0
   _isEnterTaskSendable: 0
   _isExitTaskSendable: 0
-  _isSubsctanceSocket: 0
+  _isSubstanceSocket: 0
   _isStartEnter: 0
 --- !u!1 &2711803781822491848
 GameObject:
@@ -352,10 +354,11 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+  _scoketColliders: []
   _socketType: 0
   _isEnterTaskSendable: 0
   _isExitTaskSendable: 0
-  _isSubsctanceSocket: 0
+  _isSubstanceSocket: 0
   _isStartEnter: 0
 --- !u!1 &2809214985972348722
 GameObject:
@@ -471,10 +474,11 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+  _scoketColliders: []
   _socketType: 0
   _isEnterTaskSendable: 0
   _isExitTaskSendable: 0
-  _isSubsctanceSocket: 0
+  _isSubstanceSocket: 0
   _isStartEnter: 0
 --- !u!1 &3978897118756166959
 GameObject:
@@ -700,7 +704,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &8924131575223347478
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -872,21 +876,21 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 0
+  m_MovementType: 1
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
   m_TrackPosition: 1
-  m_SmoothPosition: 0
+  m_SmoothPosition: 1
   m_SmoothPositionAmount: 8
   m_TightenPosition: 0.1
   m_TrackRotation: 1
-  m_SmoothRotation: 0
+  m_SmoothRotation: 1
   m_SmoothRotationAmount: 8
   m_TightenRotation: 0.1
-  m_TrackScale: 1
-  m_SmoothScale: 0
+  m_TrackScale: 0
+  m_SmoothScale: 1
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
   m_ThrowOnDetach: 1
@@ -1061,10 +1065,11 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+  _scoketColliders: []
   _socketType: 0
   _isEnterTaskSendable: 0
   _isExitTaskSendable: 0
-  _isSubsctanceSocket: 0
+  _isSubstanceSocket: 0
   _isStartEnter: 0
 --- !u!1 &6544054855432562679
 GameObject:
@@ -1180,8 +1185,9 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+  _scoketColliders: []
   _socketType: 0
   _isEnterTaskSendable: 0
   _isExitTaskSendable: 0
-  _isSubsctanceSocket: 0
+  _isSubstanceSocket: 0
   _isStartEnter: 0

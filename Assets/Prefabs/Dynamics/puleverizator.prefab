@@ -141,7 +141,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &5568608301153159146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,7 +307,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e94e0d54251ba4997a94ed5460a211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rayOrigin: {fileID: 6770947640751249532}
+  _vrGrabInteractable: {fileID: 5568608301153159146}
+  _rayOrigin: {fileID: 759603698602761574}
+  _tagConfigs: []
 --- !u!1 &5473259308576062867
 GameObject:
   m_ObjectHideFlags: 0

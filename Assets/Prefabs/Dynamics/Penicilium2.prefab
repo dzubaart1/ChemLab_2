@@ -93,11 +93,12 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+  _scoketColliders: []
   _socketType: 30
   _isEnterTaskSendable: 0
   _isExitTaskSendable: 1
-  _isSubsctanceEnterSocket: 0
-  _isSubsctanceExitSocket: 0
+  _isSubstanceSocket: 0
+  _isStartEnter: 0
 --- !u!135 &2549987449156925141
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -128,9 +129,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 318573965268965448}
-  - component: {fileID: 7500625691499253121}
   m_Layer: 0
-  m_Name: Penicilium
+  m_Name: Penicilium2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,21 +154,6 @@ Transform:
   - {fileID: 4502107507701270812}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7500625691499253121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 705488599800054162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cc049b87f325b1459fb5513ca58d563, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _grabInteractable: {fileID: 5069705133097344809}
-  _cap: {fileID: 8040156461951149190}
-  _plenka: {fileID: 6351435307603281391}
 --- !u!1 &2431292109492442544
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,14 +166,12 @@ GameObject:
   - component: {fileID: 4446739246565589915}
   - component: {fileID: 11458500430125622}
   - component: {fileID: 1513839197551476186}
+  - component: {fileID: 7427838821148237410}
   - component: {fileID: 3578142817866582644}
   - component: {fileID: 5069705133097344809}
-  - component: {fileID: 7427838821148237410}
   - component: {fileID: 7134891898461600859}
-  - component: {fileID: 4681790100045933651}
   - component: {fileID: 4196846101733701488}
   - component: {fileID: 7635843964225611693}
-  - component: {fileID: 5168274020570364637}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -284,6 +267,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &7427838821148237410
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2431292109492442544}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0.72, z: 0}
 --- !u!54 &3578142817866582644
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -310,7 +314,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &5069705133097344809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -422,20 +426,20 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 0
+  m_MovementType: 1
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
   m_TrackPosition: 1
-  m_SmoothPosition: 0
+  m_SmoothPosition: 1
   m_SmoothPositionAmount: 8
   m_TightenPosition: 0.1
   m_TrackRotation: 1
-  m_SmoothRotation: 0
+  m_SmoothRotation: 1
   m_SmoothRotationAmount: 8
   m_TightenRotation: 0.1
-  m_TrackScale: 1
+  m_TrackScale: 0
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
@@ -464,27 +468,6 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!135 &7427838821148237410
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2431292109492442544}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0.72, z: 0}
 --- !u!114 &7134891898461600859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -497,25 +480,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b4c490f479acb40a2f8d6668c5d1c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reagentsLabSubstanceProperty: {fileID: 0}
   _maxVolume: 9000
   _containerWeight: 0
   _containerType: 19
   _isWeightableContainer: 0
   _isSpoonContainer: 0
   _meshRendererConfigs: []
---- !u!114 &4681790100045933651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2431292109492442544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3ccaeda41040798ddada03e99f1f69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _labContainer: {fileID: 7134891898461600859}
 --- !u!114 &4196846101733701488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -542,19 +513,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614f3bff350847cba1fa99ddaa2cce0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5168274020570364637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2431292109492442544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3006fa141b4c470590b614fd0a150b74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  reagentsLabSubstanceProperty: {fileID: 11400000, guid: c5ce49e8c2c91344e83bb3083279bc74, type: 2}
   _labContainer: {fileID: 7134891898461600859}
 --- !u!1 &4478832806273374440
 GameObject:
@@ -689,7 +647,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &6351435307603281391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -801,20 +759,20 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 0
+  m_MovementType: 1
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
   m_TrackPosition: 1
-  m_SmoothPosition: 0
+  m_SmoothPosition: 1
   m_SmoothPositionAmount: 8
   m_TightenPosition: 0.1
   m_TrackRotation: 1
-  m_SmoothRotation: 0
+  m_SmoothRotation: 1
   m_SmoothRotationAmount: 8
   m_TightenRotation: 0.1
-  m_TrackScale: 1
+  m_TrackScale: 0
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
@@ -976,7 +934,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &8040156461951149190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1088,20 +1046,20 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 0
+  m_MovementType: 1
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
   m_TrackPosition: 1
-  m_SmoothPosition: 0
+  m_SmoothPosition: 1
   m_SmoothPositionAmount: 8
   m_TightenPosition: 0.1
   m_TrackRotation: 1
-  m_SmoothRotation: 0
+  m_SmoothRotation: 1
   m_SmoothRotationAmount: 8
   m_TightenRotation: 0.1
-  m_TrackScale: 1
+  m_TrackScale: 0
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
@@ -1223,11 +1181,12 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+  _scoketColliders: []
   _socketType: 31
   _isEnterTaskSendable: 0
   _isExitTaskSendable: 1
-  _isSubsctanceEnterSocket: 0
-  _isSubsctanceExitSocket: 0
+  _isSubstanceSocket: 0
+  _isStartEnter: 0
 --- !u!135 &7552575279915884812
 SphereCollider:
   m_ObjectHideFlags: 0

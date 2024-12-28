@@ -15,7 +15,7 @@ public class LabSplitPanelController : MonoBehaviour
         _currentRectTransform = _startPanel;
     }
 
-    public void BeginLab1()
+    public void LoadLab1()
     {
         GameManager gameManager = GameManager.Instance;
         
@@ -24,10 +24,10 @@ public class LabSplitPanelController : MonoBehaviour
             return;
         }
         
-        gameManager.LoadScene(GameManager.LAB_1_SCENE_NAME);
+        gameManager.OnChooseLab(ELab.Lab1);
     }
     
-    public void BeginLab2()
+    public void LoadLab2()
     {
         GameManager gameManager = GameManager.Instance;
         
@@ -36,10 +36,10 @@ public class LabSplitPanelController : MonoBehaviour
             return;
         }
         
-        gameManager.LoadScene(GameManager.LAB_2_SCENE_NAME);
+        gameManager.OnChooseLab(ELab.Lab2);
     }
     
-    public void BeginLab3()
+    public void LoadLab3()
     {
         GameManager gameManager = GameManager.Instance;
         
@@ -48,7 +48,7 @@ public class LabSplitPanelController : MonoBehaviour
             return;
         }
         
-        gameManager.LoadScene(GameManager.LAB_3_SCENE_NAME);
+        gameManager.OnChooseLab(ELab.Lab3);
     }
 
     public void Lab1Open()

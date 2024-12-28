@@ -905,7 +905,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 356214125}
         m_TargetAssemblyTypeName: LabSplitPanelController, Assembly-CSharp
-        m_MethodName: BeginLab1
+        m_MethodName: LoadLab1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4378,7 +4378,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 356214125}
         m_TargetAssemblyTypeName: LabSplitPanelController, Assembly-CSharp
-        m_MethodName: BeginLab2
+        m_MethodName: LoadLab2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5859,7 +5859,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 356214125}
         m_TargetAssemblyTypeName: LabSplitPanelController, Assembly-CSharp
-        m_MethodName: BeginLab3
+        m_MethodName: LoadLab3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

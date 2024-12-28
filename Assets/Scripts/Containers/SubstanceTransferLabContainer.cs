@@ -22,8 +22,25 @@ namespace Containers
         
         private void OnTriggerStay(Collider other)
         {
-            VRGrabInteractable vrGrabInteractable = _labContainer.GetComponent<VRGrabInteractable>();
-            if(vrGrabInteractable != null && vrGrabInteractable.interactorsSelecting.Count == 0)
+            VRGrabInteractable vrGrabInteractable = _labContainer.GetComponentInChildren<VRGrabInteractable>();
+            if (vrGrabInteractable == null)
+            {
+                return;
+            }
+            
+            if (vrGrabInteractable.interactorsSelecting.Count == 0)
+            {
+                return;
+            }
+            
+            IXRSelectInteractor interactor = vrGrabInteractable.interactorsSelecting[0];
+            if(interactor is null)
+            {
+                return;
+            }
+            
+            ActionBasedController controller = interactor.transform.GetComponent<ActionBasedController>();
+            if(controller is null)
             {
                 return;
             }
@@ -41,24 +58,7 @@ namespace Containers
             }
 
             CupSocketLabContainer targetCupSocketLabContainerCup = other.GetComponent<CupSocketLabContainer>();
-            if(targetCupSocketLabContainerCup is null)
-            {
-                return;
-            }
-
-            if (targetCupSocketLabContainerCup.IsClosed())
-            {
-                return;
-            }
-
-            IXRSelectInteractor interactor = vrGrabInteractable.interactorsSelecting[0];
-            if(interactor is null)
-            {
-                return;
-            }
-
-            ActionBasedController controller = interactor.transform.GetComponent<ActionBasedController>();
-            if(controller is null)
+            if(targetCupSocketLabContainerCup != null && targetCupSocketLabContainerCup.IsClosed())
             {
                 return;
             }

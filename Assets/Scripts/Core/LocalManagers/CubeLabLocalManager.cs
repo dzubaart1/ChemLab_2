@@ -14,7 +14,7 @@ namespace LocalManagers
 {
     public class CubeLabBaseLocalManager : BaseLocalManager
     {
-        [CanBeNull]
+   [CanBeNull]
         public LabTask CurrentTask
         {
             get
@@ -36,7 +36,7 @@ namespace LocalManagers
         private List<ISaveableSocket> _sockets = new List<ISaveableSocket>();
         private List<ISaveableGrabInteractable> _grabInteractables = new List<ISaveableGrabInteractable>();
         
-        private TabletUI _tabletUI;
+        [CanBeNull] private TabletUI _tabletUI;
         
         private HashSet<LabTask> _errorsTask = new HashSet<LabTask>();
         private List<LabTask> _tasksList = new List<LabTask>();
@@ -57,11 +57,17 @@ namespace LocalManagers
             _isGameStarted = true;
             
             _currentTaskID = 0;
+            _savedTaskID = 0;
             
             _gameStartTime = DateTime.Now;
             _gameFinishTime = DateTime.Now;
-            
-            MoveToNextTask();
+
+            TabletUI tabletUI = FindObjectOfType<TabletUI>();
+            if (tabletUI != null)
+            {
+                _tabletUI = tabletUI;
+                _tabletUI.OnTaskUpdated(CurrentTask);
+            }
         }
 
         public override void SaveGame()
@@ -139,7 +145,12 @@ namespace LocalManagers
 
             _currentTaskID = _savedTaskID;
             
-            _tabletUI.OnTaskUpdated(CurrentTask);
+            ActivateSideEffects(_tasksList[_currentTaskID], ESideEffectTime.StartTask);
+            
+            if (_tabletUI != null)
+            {
+                _tabletUI.OnTaskUpdated(CurrentTask);   
+            }
         }
 
         public override void OnActivityComplete(LabActivity activity)
@@ -155,8 +166,12 @@ namespace LocalManagers
                 return;
             }
             
+            if (_tabletUI != null)
+            {
+                _tabletUI.OnTaskFailed();   
+            }
+            
             _errorsTask.Add(_tasksList[_currentTaskID]);
-            _tabletUI.OnTaskFailed();
         }
 
         public override float GetGameTime()
@@ -187,11 +202,6 @@ namespace LocalManagers
         public override void AddSaveableDoor(ISaveableDoor saveableDoor)
         {
             _saveableDoors.Add(saveableDoor);
-        }
-
-        public override void AddTabletUI(TabletUI tabletUI)
-        {
-            _tabletUI = tabletUI;
         }
 
         public override void AddSideEffectActivator(ISideEffectActivator sideEffectActivator)
@@ -231,7 +241,10 @@ namespace LocalManagers
                 }
 
                 ActivateSideEffects(_tasksList[_currentTaskID], ESideEffectTime.StartTask);
-                _tabletUI.OnTaskUpdated(_tasksList[_currentTaskID]);
+                if (_tabletUI != null)
+                {
+                    _tabletUI.OnTaskUpdated(_tasksList[_currentTaskID]);   
+                }
             }
         }
         

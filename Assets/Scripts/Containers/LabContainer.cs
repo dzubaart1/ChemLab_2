@@ -21,11 +21,11 @@ namespace Containers
             public MeshRenderer MeshRenderer;
         }
         
-        private struct SavedData
+        private class SavedData
         {
             public Anchor Anchor;
             public bool IsAnimating;
-            public LabSubstance[] Substances;
+            public LabSubstance[] Substances = new LabSubstance[MAX_SUBSTANCE_COUNT];
             public EContainer ContainerType;
         }
         
@@ -409,6 +409,11 @@ namespace Containers
 
         public void OnActivateSideEffect(LabSideEffect sideEffect)
         {
+            if (reagentsLabSubstanceProperty == null)
+            {
+                return;
+            }
+            
             if (sideEffect is not AddReagentsLabSideEffect addReagentsLabSideEffect)
             {
                 return;
