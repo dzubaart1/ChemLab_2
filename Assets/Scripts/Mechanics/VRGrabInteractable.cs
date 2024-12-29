@@ -60,7 +60,6 @@ namespace Mechanics
 
         public void LoadSavedTransform()
         {
-            Debug.Log($"TRANSFORM LOAD {transform.parent.name}");
             transform.position = _savedData.Position;
             transform.rotation = _savedData.Rotation;
         }

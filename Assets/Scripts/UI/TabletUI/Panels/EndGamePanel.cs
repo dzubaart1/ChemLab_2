@@ -1,7 +1,6 @@
 using BioEngineerLab.Tasks;
 using UI.Components;
 using UnityEngine;
-using JetBrains.Annotations;
 using Core;
 
 namespace UI.TabletUI.Panels
@@ -32,6 +31,10 @@ namespace UI.TabletUI.Panels
         }
 
         public override void SetTaskToShow(LabTask task)
+        {
+        }
+
+        public override void SetLabToShow(ELab lab)
         {
         }
     }

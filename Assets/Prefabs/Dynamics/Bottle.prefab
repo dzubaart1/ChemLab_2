@@ -133,7 +133,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &1483114090821794059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,20 +245,20 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 0
+  m_MovementType: 1
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
   m_TrackPosition: 1
-  m_SmoothPosition: 0
+  m_SmoothPosition: 1
   m_SmoothPositionAmount: 8
   m_TightenPosition: 0.1
   m_TrackRotation: 1
-  m_SmoothRotation: 0
+  m_SmoothRotation: 1
   m_SmoothRotationAmount: 8
   m_TightenRotation: 0.1
-  m_TrackScale: 1
+  m_TrackScale: 0
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
@@ -339,7 +339,7 @@ MonoBehaviour:
   m_InteractionLayers:
     m_Bits: 16384
   m_AttachTransform: {fileID: 0}
-  m_KeepSelectedTargetValid: 1
+  m_KeepSelectedTargetValid: 0
   m_DisableVisualsWhenBlockedInGroup: 1
   m_StartingSelectedInteractable: {fileID: 0}
   m_StartingTargetFilter: {fileID: 0}
@@ -384,6 +384,7 @@ MonoBehaviour:
   _socketType: 17
   _isEnterTaskSendable: 0
   _isExitTaskSendable: 0
+  _timerDelay: 1
   _isSubstanceSocket: 0
   _isStartEnter: 0
 --- !u!135 &2562155564905575613
@@ -418,13 +419,13 @@ GameObject:
   - component: {fileID: 1532478101405847582}
   - component: {fileID: 6018311691730592812}
   - component: {fileID: 8773328508762096654}
+  - component: {fileID: 3146644208879784138}
   - component: {fileID: 377657099907614085}
   - component: {fileID: 381726411326740382}
   - component: {fileID: 3898002235910448417}
   - component: {fileID: 337074593456097543}
   - component: {fileID: 6774801599821961656}
   - component: {fileID: 3960298003647097438}
-  - component: {fileID: 3146644208879784138}
   m_Layer: 0
   m_Name: bottle
   m_TagString: Untagged
@@ -500,6 +501,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &3146644208879784138
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5301012547981187017}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.04
+  m_Center: {x: -0.0000000018626451, y: 0.18, z: 0}
 --- !u!65 &377657099907614085
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -749,27 +771,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _labContainer: {fileID: 337074593456097543}
---- !u!135 &3146644208879784138
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5301012547981187017}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.04
-  m_Center: {x: -0.0000000018626451, y: 0.18, z: 0}
 --- !u!1 &5359928095746997749
 GameObject:
   m_ObjectHideFlags: 0

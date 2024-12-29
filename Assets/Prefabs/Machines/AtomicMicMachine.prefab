@@ -403,6 +403,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6148589656473685642, guid: b54e06756f05bcc45a64a009e38cf00a, type: 3}
+      propertyPath: m_TrackScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6148589656473685642, guid: b54e06756f05bcc45a64a009e38cf00a, type: 3}
+      propertyPath: m_MovementType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6148589656473685642, guid: b54e06756f05bcc45a64a009e38cf00a, type: 3}
+      propertyPath: m_SmoothPosition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6148589656473685642, guid: b54e06756f05bcc45a64a009e38cf00a, type: 3}
+      propertyPath: m_SmoothRotation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6148589656473685642, guid: b54e06756f05bcc45a64a009e38cf00a, type: 3}
+      propertyPath: m_DistanceCalculationMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7813752632861529220, guid: b54e06756f05bcc45a64a009e38cf00a, type: 3}
       propertyPath: m_Name
       value: AtSilReport

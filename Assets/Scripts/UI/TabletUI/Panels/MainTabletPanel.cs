@@ -1,5 +1,4 @@
-﻿using System;
-using BioEngineerLab.Tasks;
+﻿using BioEngineerLab.Tasks;
 using Core;
 using JetBrains.Annotations;
 using TMPro;
@@ -28,6 +27,10 @@ namespace UI.TabletUI.Panels
         public override void SetTaskToShow(LabTask task)
         {
             _showingTask = task;
+        }
+
+        public override void SetLabToShow(ELab lab)
+        {
         }
     }
 }

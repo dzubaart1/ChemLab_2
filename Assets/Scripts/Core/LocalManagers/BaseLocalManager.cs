@@ -36,9 +36,6 @@ namespace LocalManagers
             InitLab(gameManager.CurrentLab);
             SaveGame();
         }
-
-        public abstract float GetGameTime();
-        public abstract IReadOnlyCollection<LabTask> GetErrorTasks();
         
         public abstract IReadOnlyList<SOLabCraft> GetSOCrafts();
 
@@ -51,6 +48,7 @@ namespace LocalManagers
         public abstract void AddGrabInteractables(ISaveableGrabInteractable saveableGrabInteractable);
 
         public abstract void InitLab(ELab lab);
+        public abstract void FinishGame();
         public abstract void SaveGame();
         public abstract void LoadGame();
         public abstract void OnActivityComplete(LabActivity activity);

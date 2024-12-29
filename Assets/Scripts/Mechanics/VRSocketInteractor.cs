@@ -50,8 +50,24 @@ namespace Mechanics
 
         private SavedData _savedData = new SavedData();
 
-        private bool _isLoadExit = false;
-        private bool _isLoadEnter = false;
+        private bool _isTimerActive = false;
+        private float _timer = 0f;
+        
+        private void Update()
+        {
+            if (!_isTimerActive)
+            {
+                return;
+            }
+
+            _timer += Time.deltaTime;
+
+            if (_timer > _timerDelay)
+            {
+                _isTimerActive = false;
+                _timer = 0f;
+            }
+        }
 
         private void Start()
         {
@@ -79,8 +95,6 @@ namespace Mechanics
             }
             
             SocketCollisionsIgnored(SelectedObject, true);
-            
-            Debug.Log($"ENTER {transform.parent.name}");
 
             if (_isStartEnter)
             {
@@ -88,9 +102,8 @@ namespace Mechanics
                 return;
             }
 
-            if (_isLoadEnter)
+            if (_isTimerActive)
             {
-                _isLoadEnter = false;
                 return;
             }
 
@@ -98,6 +111,7 @@ namespace Mechanics
             
             if (_isEnterTaskSendable)
             {
+                Debug.Log($" TRY COMPLETE ENTER!");
                 SendTryTaskComplete(SelectedObject, ESocketActivity.Enter);
             }
         }
@@ -112,16 +126,13 @@ namespace Mechanics
             {
                 return;
             }
-            
-            Debug.Log($"EXIT {transform.parent.name}");
 
             Transform exitedTransform = exitedInteractable.transform;
 
             SocketCollisionsIgnored(exitedTransform, false);
 
-            if (_isLoadExit)
+            if (_isTimerActive)
             {
-                _isLoadExit = false;
                 return;
             }
             
@@ -129,6 +140,7 @@ namespace Mechanics
 
             if (_isExitTaskSendable)
             {
+                Debug.Log($" TRY COMPLETE EXIT!");
                 SendTryTaskComplete(exitedTransform, ESocketActivity.Exit);
             }
         }
@@ -145,18 +157,12 @@ namespace Mechanics
                 return;
             }
             
-            VRGrabInteractable vrGrabInteractable = SelectedObject.GetComponentInChildren<VRGrabInteractable>();
-            if (vrGrabInteractable == null)
+            for (var i = interactablesSelected.Count - 1; i >= 0; --i)
             {
-                return;
+                interactionManager.SelectCancel(this, interactablesSelected[i]);
             }
-            
-            Debug.Log($"RELEASE LOAD {transform.name}");
-            _isLoadExit = true;
-            
-            interactionManager.SelectCancel((IXRSelectInteractor)this, vrGrabInteractable);
-            vrGrabInteractable.TurnOffCollidersInSeconds(1f);
-            vrGrabInteractable.transform.position = Vector3.zero;
+
+            _isTimerActive = true;
         }
 
         public void PutSavedInteractable()
@@ -166,10 +172,9 @@ namespace Mechanics
                 return;
             }
             
-            Debug.Log($"PUT SAVED LOAD {transform.parent.name}");
-
-            _isLoadEnter = true;
             interactionManager.SelectEnter((IXRSelectInteractor)this, _savedData.GrabbedObject);
+
+            _isTimerActive = false;
         }
         
         private void SendTryTaskComplete(Transform objectTransform, ESocketActivity socketActivity)

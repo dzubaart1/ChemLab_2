@@ -952,7 +952,7 @@ MonoBehaviour:
   m_InteractionLayers:
     m_Bits: 1048576
   m_AttachTransform: {fileID: 0}
-  m_KeepSelectedTargetValid: 1
+  m_KeepSelectedTargetValid: 0
   m_DisableVisualsWhenBlockedInGroup: 1
   m_StartingSelectedInteractable: {fileID: 0}
   m_StartingTargetFilter: {fileID: 0}
@@ -993,11 +993,12 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+  _scoketColliders: []
   _socketType: 28
   _isEnterTaskSendable: 0
   _isExitTaskSendable: 1
-  _isSubsctanceEnterSocket: 0
-  _isSubsctanceExitSocket: 0
+  _timerDelay: 1
+  _isSubstanceSocket: 0
   _isStartEnter: 0
 --- !u!1 &4947907315335025390
 GameObject:

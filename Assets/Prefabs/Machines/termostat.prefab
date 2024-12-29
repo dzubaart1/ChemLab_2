@@ -741,7 +741,7 @@ MonoBehaviour:
   m_InteractionLayers:
     m_Bits: 67108864
   m_AttachTransform: {fileID: 0}
-  m_KeepSelectedTargetValid: 1
+  m_KeepSelectedTargetValid: 0
   m_DisableVisualsWhenBlockedInGroup: 1
   m_StartingSelectedInteractable: {fileID: 0}
   m_StartingTargetFilter: {fileID: 0}
@@ -782,11 +782,12 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+  _scoketColliders: []
   _socketType: 33
   _isEnterTaskSendable: 1
   _isExitTaskSendable: 1
-  _isSubsctanceEnterSocket: 0
-  _isSubsctanceExitSocket: 0
+  _timerDelay: 1
+  _isSubstanceSocket: 0
   _isStartEnter: 0
 --- !u!135 &829981450167424620
 SphereCollider:
@@ -883,7 +884,7 @@ MonoBehaviour:
   m_InteractionLayers:
     m_Bits: 67108864
   m_AttachTransform: {fileID: 0}
-  m_KeepSelectedTargetValid: 1
+  m_KeepSelectedTargetValid: 0
   m_DisableVisualsWhenBlockedInGroup: 1
   m_StartingSelectedInteractable: {fileID: 0}
   m_StartingTargetFilter: {fileID: 0}
@@ -924,11 +925,12 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+  _scoketColliders: []
   _socketType: 33
   _isEnterTaskSendable: 1
   _isExitTaskSendable: 1
-  _isSubsctanceEnterSocket: 0
-  _isSubsctanceExitSocket: 0
+  _timerDelay: 1
+  _isSubstanceSocket: 0
   _isStartEnter: 0
 --- !u!135 &480238609753146307
 SphereCollider:
@@ -2054,7 +2056,7 @@ MonoBehaviour:
   _powerButton: {fileID: 740754764613808665}
   _socketInteractor1: {fileID: 3460353465976545424}
   _socketInteractor2: {fileID: 2322496085909686259}
-  _doorMachine: {fileID: 5908220720785335502}
+  _door: {fileID: 0}
 --- !u!1 &7308076162866192647
 GameObject:
   m_ObjectHideFlags: 0

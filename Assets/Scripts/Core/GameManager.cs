@@ -2,6 +2,7 @@
 using System.Collections;
 using JetBrains.Annotations;
 using LocalManagers;
+using UI.TabletUI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -18,7 +19,11 @@ namespace Core
         
         [CanBeNull] public static GameManager Instance { get; private set; }
         [CanBeNull] public BaseLocalManager CurrentBaseLocalManager { get; private set; }
+        
         public ELab CurrentLab { get; private set; }
+        public float GameTime { get; private set; }
+        public int ErrorsCount { get; private set; }
+        public bool IsGamePlayed { get; private set; }
         
         private void Awake()
         {
@@ -28,12 +33,30 @@ namespace Core
             }
         }
 
+        public void OnFinishGame(float gameTime, int errorsCount)
+        {
+            GameTime = gameTime;
+            ErrorsCount = errorsCount;
+            IsGamePlayed = true;
+        }
+
         public void SetLocalManger(BaseLocalManager localManager)
         {
             CurrentBaseLocalManager = localManager;
         }
 
-        public void OnChooseLab(ELab lab)
+        public void OnSelectLab(ELab lab)
+        {
+            TabletUI tabletUI = FindObjectOfType<TabletUI>();
+            if (tabletUI == null)
+            {
+                return;
+            }
+            
+            tabletUI.OnSelectLab(lab);
+        }
+
+        public void SetLab(ELab lab)
         {
             CurrentLab = lab;
             

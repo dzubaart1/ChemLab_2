@@ -183,15 +183,6 @@ namespace Core
     
     public enum ESocket : byte
     {
-        //PistonSocket,
-        //NeedleSocket,
-        //KRUSSSyringeSocket,
-        //KRUSSKuvetkaSocket,
-        //PAFBodySocket,
-        //HeptanBodySocket,
-        //KRUSSInteractablePanelSocket,
-        //StirringMachineSocket,
-        //LabCoatSocket,
         WeighingMachineSocket,
         BankCaCL2Socket,
         BankAgarSocket,

@@ -508,7 +508,7 @@ MonoBehaviour:
   m_InteractionLayers:
     m_Bits: 8192
   m_AttachTransform: {fileID: 5048447335429190233}
-  m_KeepSelectedTargetValid: 1
+  m_KeepSelectedTargetValid: 0
   m_DisableVisualsWhenBlockedInGroup: 1
   m_StartingSelectedInteractable: {fileID: 0}
   m_StartingTargetFilter: {fileID: 0}
@@ -549,11 +549,12 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+  _scoketColliders: []
   _socketType: 13
   _isEnterTaskSendable: 1
   _isExitTaskSendable: 0
-  _isSubsctanceEnterSocket: 1
-  _isSubsctanceExitSocket: 0
+  _timerDelay: 1
+  _isSubstanceSocket: 0
   _isStartEnter: 0
 --- !u!1 &5048447335646882374
 GameObject:
@@ -756,7 +757,7 @@ MonoBehaviour:
   m_InteractionLayers:
     m_Bits: 8192
   m_AttachTransform: {fileID: 5048447336167476503}
-  m_KeepSelectedTargetValid: 1
+  m_KeepSelectedTargetValid: 0
   m_DisableVisualsWhenBlockedInGroup: 1
   m_StartingSelectedInteractable: {fileID: 0}
   m_StartingTargetFilter: {fileID: 0}
@@ -797,11 +798,12 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+  _scoketColliders: []
   _socketType: 13
   _isEnterTaskSendable: 1
   _isExitTaskSendable: 0
-  _isSubsctanceEnterSocket: 1
-  _isSubsctanceExitSocket: 0
+  _timerDelay: 1
+  _isSubstanceSocket: 0
   _isStartEnter: 0
 --- !u!1 &5048447336343672714
 GameObject:

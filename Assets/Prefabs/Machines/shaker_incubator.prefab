@@ -622,7 +622,7 @@ MonoBehaviour:
   m_InteractionLayers:
     m_Bits: 16777216
   m_AttachTransform: {fileID: 0}
-  m_KeepSelectedTargetValid: 1
+  m_KeepSelectedTargetValid: 0
   m_DisableVisualsWhenBlockedInGroup: 1
   m_StartingSelectedInteractable: {fileID: 0}
   m_StartingTargetFilter: {fileID: 0}
@@ -667,6 +667,7 @@ MonoBehaviour:
   _socketType: 32
   _isEnterTaskSendable: 1
   _isExitTaskSendable: 1
+  _timerDelay: 1
   _isSubstanceSocket: 0
   _isStartEnter: 0
 --- !u!1 &2003069509996129159
@@ -817,7 +818,7 @@ MonoBehaviour:
   m_InteractionLayers:
     m_Bits: 16777216
   m_AttachTransform: {fileID: 0}
-  m_KeepSelectedTargetValid: 1
+  m_KeepSelectedTargetValid: 0
   m_DisableVisualsWhenBlockedInGroup: 1
   m_StartingSelectedInteractable: {fileID: 0}
   m_StartingTargetFilter: {fileID: 0}
@@ -862,6 +863,7 @@ MonoBehaviour:
   _socketType: 32
   _isEnterTaskSendable: 1
   _isExitTaskSendable: 1
+  _timerDelay: 1
   _isSubstanceSocket: 0
   _isStartEnter: 0
 --- !u!1 &3619003907331480789
@@ -1583,7 +1585,7 @@ MonoBehaviour:
   m_InteractionLayers:
     m_Bits: 16777216
   m_AttachTransform: {fileID: 0}
-  m_KeepSelectedTargetValid: 1
+  m_KeepSelectedTargetValid: 0
   m_DisableVisualsWhenBlockedInGroup: 1
   m_StartingSelectedInteractable: {fileID: 0}
   m_StartingTargetFilter: {fileID: 0}
@@ -1628,6 +1630,7 @@ MonoBehaviour:
   _socketType: 32
   _isEnterTaskSendable: 1
   _isExitTaskSendable: 1
+  _timerDelay: 1
   _isSubstanceSocket: 0
   _isStartEnter: 0
 --- !u!1 &8364005301772859617

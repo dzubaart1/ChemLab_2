@@ -40,5 +40,9 @@ namespace UI.TabletUI.Panels
         public override void SetTaskToShow(LabTask task)
         {
         }
+
+        public override void SetLabToShow(ELab lab)
+        {
+        }
     }
 }

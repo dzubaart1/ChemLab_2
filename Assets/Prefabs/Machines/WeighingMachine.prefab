@@ -491,7 +491,7 @@ MonoBehaviour:
   m_InteractionLayers:
     m_Bits: 4
   m_AttachTransform: {fileID: 7834672858918635412}
-  m_KeepSelectedTargetValid: 1
+  m_KeepSelectedTargetValid: 0
   m_DisableVisualsWhenBlockedInGroup: 1
   m_StartingSelectedInteractable: {fileID: 0}
   m_StartingTargetFilter: {fileID: 0}
@@ -536,6 +536,7 @@ MonoBehaviour:
   _socketType: 0
   _isEnterTaskSendable: 1
   _isExitTaskSendable: 0
+  _timerDelay: 1
   _isSubstanceSocket: 0
   _isStartEnter: 0
 --- !u!1 &1277220320236358190

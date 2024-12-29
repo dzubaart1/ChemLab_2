@@ -328,7 +328,7 @@ MonoBehaviour:
   m_InteractionLayers:
     m_Bits: 65536
   m_AttachTransform: {fileID: 1230457554445409548}
-  m_KeepSelectedTargetValid: 1
+  m_KeepSelectedTargetValid: 0
   m_DisableVisualsWhenBlockedInGroup: 1
   m_StartingSelectedInteractable: {fileID: 0}
   m_StartingTargetFilter: {fileID: 0}
@@ -369,11 +369,13 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+  _scoketColliders: []
   _socketType: 26
   _isEnterTaskSendable: 1
   _isExitTaskSendable: 1
-  _isSubsctanceEnterSocket: 1
-  _isSubsctanceExitSocket: 1
+  _timerDelay: 1
+  _isSubstanceSocket: 0
+  _isStartEnter: 0
 --- !u!135 &808051564525400671
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1078,7 +1080,7 @@ MonoBehaviour:
   m_InteractionLayers:
     m_Bits: 65536
   m_AttachTransform: {fileID: 2488769945252906300}
-  m_KeepSelectedTargetValid: 1
+  m_KeepSelectedTargetValid: 0
   m_DisableVisualsWhenBlockedInGroup: 1
   m_StartingSelectedInteractable: {fileID: 0}
   m_StartingTargetFilter: {fileID: 0}
@@ -1119,11 +1121,13 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+  _scoketColliders: []
   _socketType: 26
   _isEnterTaskSendable: 1
   _isExitTaskSendable: 1
-  _isSubsctanceEnterSocket: 1
-  _isSubsctanceExitSocket: 1
+  _timerDelay: 1
+  _isSubstanceSocket: 0
+  _isStartEnter: 0
 --- !u!135 &142534162703223231
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1617,7 +1621,7 @@ MonoBehaviour:
   m_InteractionLayers:
     m_Bits: 65536
   m_AttachTransform: {fileID: 2902984768168589050}
-  m_KeepSelectedTargetValid: 1
+  m_KeepSelectedTargetValid: 0
   m_DisableVisualsWhenBlockedInGroup: 1
   m_StartingSelectedInteractable: {fileID: 0}
   m_StartingTargetFilter: {fileID: 0}
@@ -1658,11 +1662,13 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+  _scoketColliders: []
   _socketType: 26
   _isEnterTaskSendable: 1
   _isExitTaskSendable: 1
-  _isSubsctanceEnterSocket: 1
-  _isSubsctanceExitSocket: 1
+  _timerDelay: 1
+  _isSubstanceSocket: 0
+  _isStartEnter: 0
 --- !u!135 &1877301406925646227
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2181,6 +2187,7 @@ MonoBehaviour:
   - {fileID: 7655825393577661180}
   - {fileID: 491250802451691021}
   - {fileID: 8121015318937162941}
+  _animator: {fileID: 0}
   _door: {fileID: 5377808913137170889}
 --- !u!95 &727964729788041473
 Animator:
@@ -2586,7 +2593,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 0
+  m_MovementType: 1
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1

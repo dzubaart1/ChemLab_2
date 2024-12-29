@@ -24,7 +24,7 @@ public class ResultPanel : MonoBehaviour
             return;
         }
         
-        _timeText.text = "Время прохождения: " + gameManager.CurrentBaseLocalManager.GetGameTime();
-        _errorsText.text = "Количество ошибок: " + gameManager.CurrentBaseLocalManager.GetErrorTasks().Count;
+        _timeText.text = "Время прохождения: " + gameManager.GameTime;
+        _errorsText.text = "Количество ошибок: " + gameManager.ErrorsCount;
     }
 }

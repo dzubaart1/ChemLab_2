@@ -14,7 +14,8 @@ namespace UI.TabletUI
         {
             EndGamePanel,
             MainPanel,
-            TaskFailedPanel
+            TaskFailedPanel,
+            LoadLabPanel
         }
         
         [SerializeField] private List<BaseTabletPanel> _panels;
@@ -26,6 +27,7 @@ namespace UI.TabletUI
             foreach (var panel in _panels)
             {
                 panel.gameObject.SetActive(false);
+                panel.TabletUI = this;
             }
         }
 
@@ -37,6 +39,17 @@ namespace UI.TabletUI
             }
 
             SwitchPanel(panel);
+        }
+
+        public void OnSelectLab(ELab lab)
+        {
+            if(!TryGetPanel(ETabletUIPanel.LoadLabPanel, out BaseTabletPanel panel))
+            {
+                return;
+            }
+            
+            SwitchPanel(panel);
+            panel.SetLabToShow(lab);
         }
 
         public void OnFinishGame()
@@ -58,6 +71,16 @@ namespace UI.TabletUI
             
             SwitchPanel(panel);
             panel.SetTaskToShow(task);
+        }
+
+        public void SwitchToMainPanel()
+        {
+            if (!TryGetPanel(ETabletUIPanel.MainPanel, out BaseTabletPanel mainPanel))
+            {
+                return;
+            }
+            
+            SwitchPanel(mainPanel);
         }
 
         private void SwitchPanel(BaseTabletPanel targetPanel)

@@ -436,7 +436,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_InteractionLayers:
     m_Bits: 130
-  m_DistanceCalculationMode: 1
+  m_DistanceCalculationMode: 0
   m_SelectMode: 0
   m_FocusMode: 1
   m_CustomReticle: {fileID: 0}
@@ -783,7 +783,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_InteractionLayers:
     m_Bits: 100699138
-  m_DistanceCalculationMode: 1
+  m_DistanceCalculationMode: 0
   m_SelectMode: 0
   m_FocusMode: 1
   m_CustomReticle: {fileID: 0}
@@ -1284,7 +1284,7 @@ MonoBehaviour:
   m_InteractionLayers:
     m_Bits: 128
   m_AttachTransform: {fileID: 1576855486722246591}
-  m_KeepSelectedTargetValid: 1
+  m_KeepSelectedTargetValid: 0
   m_DisableVisualsWhenBlockedInGroup: 1
   m_StartingSelectedInteractable: {fileID: 0}
   m_StartingTargetFilter: {fileID: 0}
@@ -1329,6 +1329,7 @@ MonoBehaviour:
   _socketType: 7
   _isEnterTaskSendable: 1
   _isExitTaskSendable: 0
+  _timerDelay: 1
   _isSubstanceSocket: 0
   _isStartEnter: 1
 --- !u!1 &8768462806427583023

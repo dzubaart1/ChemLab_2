@@ -9,6 +9,7 @@ using Database;
 using JetBrains.Annotations;
 using Saveables;
 using UI.TabletUI;
+using UnityEngine;
 
 namespace LocalManagers
 {
@@ -43,7 +44,6 @@ namespace LocalManagers
         private List<SOLabCraft> _soCrafts = new List<SOLabCraft>();
 
         private DateTime _gameStartTime;
-        private DateTime _gameFinishTime;
         private bool _isGameStarted = false;
         private int _currentTaskID = 0;
 
@@ -60,7 +60,6 @@ namespace LocalManagers
             _savedTaskID = 0;
             
             _gameStartTime = DateTime.Now;
-            _gameFinishTime = DateTime.Now;
 
             TabletUI tabletUI = FindObjectOfType<TabletUI>();
             if (tabletUI != null)
@@ -68,6 +67,17 @@ namespace LocalManagers
                 _tabletUI = tabletUI;
                 _tabletUI.OnTaskUpdated(CurrentTask);
             }
+        }
+
+        public override void FinishGame()
+        {
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                return;
+            }
+            
+            gameManager.OnFinishGame((DateTime.Now - _gameStartTime).Minutes, _errorsTask.Count);
         }
 
         public override void SaveGame()
@@ -114,20 +124,21 @@ namespace LocalManagers
 
             foreach (var grabInteractable in _grabInteractables)
             {
-                //grabInteractable.LoadSavedTransform();
+                grabInteractable.LoadSavedTransform();
             }
 
+            
             foreach (var container in _containers)
             {
                 container.PutSavedSubstances();
                 container.PutSavedContainerType();
             }
-
+            
             foreach (var socket in _sockets)
             {
                 socket.PutSavedInteractable();
             }
-
+            
             foreach (var saveableUi in _saveableUis)
             {
                 saveableUi.LoadUIState();
@@ -155,6 +166,8 @@ namespace LocalManagers
 
         public override void OnActivityComplete(LabActivity activity)
         {
+            Debug.Log(activity.ActivityType + $" TRY COMPLETE {activity.ActivityType}!");
+            
             if (!IsCorrectTaskID(_currentTaskID))
             {
                 return;
@@ -173,17 +186,7 @@ namespace LocalManagers
             
             _errorsTask.Add(_tasksList[_currentTaskID]);
         }
-
-        public override float GetGameTime()
-        {
-            return (_gameFinishTime - _gameStartTime).Minutes;
-        }
-
-        public override IReadOnlyCollection<LabTask> GetErrorTasks()
-        {
-            return _errorsTask;
-        }
-
+        
         public override IReadOnlyList<SOLabCraft> GetSOCrafts()
         {
             return _soCrafts;
