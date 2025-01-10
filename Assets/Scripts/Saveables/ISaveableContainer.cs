@@ -5,5 +5,6 @@
         public void Save();
         public void PutSavedContainerType();
         public void PutSavedSubstances();
+        public void PutSavedAnchor();
     }
 }

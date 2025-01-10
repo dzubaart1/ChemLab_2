@@ -830,6 +830,7 @@ MonoBehaviour:
   _containerType: 15
   _isWeightableContainer: 0
   _isSpoonContainer: 0
+  _isAnchorContainer: 0
   _meshRendererConfigs:
   - Layer: 0
     MeshRenderer: {fileID: 4084616398240571674}
@@ -952,13 +953,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7619184722996080576}
+  - component: {fileID: 682707388322755620}
   m_Layer: 0
   m_Name: ReportSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7619184722996080576
 Transform:
   m_ObjectHideFlags: 0
@@ -971,69 +973,21 @@ Transform:
   m_LocalPosition: {x: 0.1791, y: 0.267, z: 0.2321}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6632713510087750797}
+  m_Children: []
   m_Father: {fileID: 4084616399572737393}
   m_LocalEulerAnglesHint: {x: 90, y: -57.47, z: 0}
---- !u!1001 &8234722574177367445
-PrefabInstance:
+--- !u!114 &682707388322755620
+MonoBehaviour:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 7619184722996080576}
-    m_Modifications:
-    - target: {fileID: 3335968061504979224, guid: 293774929f4b43342afce713c62a2e37, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3335968061504979224, guid: 293774929f4b43342afce713c62a2e37, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3335968061504979224, guid: 293774929f4b43342afce713c62a2e37, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3335968061504979224, guid: 293774929f4b43342afce713c62a2e37, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3335968061504979224, guid: 293774929f4b43342afce713c62a2e37, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3335968061504979224, guid: 293774929f4b43342afce713c62a2e37, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3335968061504979224, guid: 293774929f4b43342afce713c62a2e37, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3335968061504979224, guid: 293774929f4b43342afce713c62a2e37, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3335968061504979224, guid: 293774929f4b43342afce713c62a2e37, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3335968061504979224, guid: 293774929f4b43342afce713c62a2e37, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7813752632861529220, guid: 293774929f4b43342afce713c62a2e37, type: 3}
-      propertyPath: m_Name
-      value: IKReport
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 293774929f4b43342afce713c62a2e37, type: 3}
---- !u!4 &6632713510087750797 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3335968061504979224, guid: 293774929f4b43342afce713c62a2e37, type: 3}
-  m_PrefabInstance: {fileID: 8234722574177367445}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6409738262353585608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358734d0036f28742a9c70de09a553f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnPoint: {fileID: 7619184722996080576}
+  _machine: 13
+  _docPrefab: {fileID: 7813752632861529220, guid: 293774929f4b43342afce713c62a2e37, type: 3}

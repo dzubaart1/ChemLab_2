@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b039a5b37f454f3aa624d34f60321383, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _meshRenderer: {fileID: 0}
+  _meshRendererL: {fileID: 6589008917885843470}
+  _meshRendererR: {fileID: 5120819369052474621}
   _grabInteractable: {fileID: 3297842666159507649}
   _machineType: 21
 --- !u!1 &620436438343107858

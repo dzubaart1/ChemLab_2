@@ -468,6 +468,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: snapPoint Variant (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7206176475531100780, guid: 584db9031b1d9f54cbfcde0958741517, type: 3}
+      propertyPath: _origin
+      value: 
+      objectReference: {fileID: 4947664849557086746}
+    - target: {fileID: 7206176475531100780, guid: 584db9031b1d9f54cbfcde0958741517, type: 3}
+      propertyPath: _socketColliders.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7206176475531100780, guid: 584db9031b1d9f54cbfcde0958741517, type: 3}
+      propertyPath: _socketColliders.Array.data[1]
+      value: 
+      objectReference: {fileID: 4947664849557086745}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -530,6 +542,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: snapPoint Variant (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7206176475531100780, guid: 584db9031b1d9f54cbfcde0958741517, type: 3}
+      propertyPath: _origin
+      value: 
+      objectReference: {fileID: 4947664849557086746}
+    - target: {fileID: 7206176475531100780, guid: 584db9031b1d9f54cbfcde0958741517, type: 3}
+      propertyPath: _socketColliders.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7206176475531100780, guid: 584db9031b1d9f54cbfcde0958741517, type: 3}
+      propertyPath: _socketColliders.Array.data[1]
+      value: 
+      objectReference: {fileID: 4947664849557086745}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -592,6 +616,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: snapPoint Variant (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7206176475531100780, guid: 584db9031b1d9f54cbfcde0958741517, type: 3}
+      propertyPath: _origin
+      value: 
+      objectReference: {fileID: 4947664849557086746}
+    - target: {fileID: 7206176475531100780, guid: 584db9031b1d9f54cbfcde0958741517, type: 3}
+      propertyPath: _socketColliders.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7206176475531100780, guid: 584db9031b1d9f54cbfcde0958741517, type: 3}
+      propertyPath: _socketColliders.Array.data[1]
+      value: 
+      objectReference: {fileID: 4947664849557086745}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -654,6 +690,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: snapPoint Variant (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7206176475531100780, guid: 584db9031b1d9f54cbfcde0958741517, type: 3}
+      propertyPath: _origin
+      value: 
+      objectReference: {fileID: 4947664849557086746}
+    - target: {fileID: 7206176475531100780, guid: 584db9031b1d9f54cbfcde0958741517, type: 3}
+      propertyPath: _socketColliders.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7206176475531100780, guid: 584db9031b1d9f54cbfcde0958741517, type: 3}
+      propertyPath: _socketColliders.Array.data[1]
+      value: 
+      objectReference: {fileID: 4947664849557086745}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -716,6 +764,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: snapPoint Variant (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7206176475531100780, guid: 584db9031b1d9f54cbfcde0958741517, type: 3}
+      propertyPath: _origin
+      value: 
+      objectReference: {fileID: 4947664849557086746}
+    - target: {fileID: 7206176475531100780, guid: 584db9031b1d9f54cbfcde0958741517, type: 3}
+      propertyPath: _socketColliders.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7206176475531100780, guid: 584db9031b1d9f54cbfcde0958741517, type: 3}
+      propertyPath: _socketColliders.Array.data[1]
+      value: 
+      objectReference: {fileID: 4947664849557086745}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -778,6 +838,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: snapPoint Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7206176475531100780, guid: 584db9031b1d9f54cbfcde0958741517, type: 3}
+      propertyPath: _origin
+      value: 
+      objectReference: {fileID: 4947664849557086746}
+    - target: {fileID: 7206176475531100780, guid: 584db9031b1d9f54cbfcde0958741517, type: 3}
+      propertyPath: _socketColliders.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7206176475531100780, guid: 584db9031b1d9f54cbfcde0958741517, type: 3}
+      propertyPath: _socketColliders.Array.data[1]
+      value: 
+      objectReference: {fileID: 4947664849557086745}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -840,6 +912,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: snapPoint Variant (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7206176475531100780, guid: 584db9031b1d9f54cbfcde0958741517, type: 3}
+      propertyPath: _origin
+      value: 
+      objectReference: {fileID: 4947664849557086746}
+    - target: {fileID: 7206176475531100780, guid: 584db9031b1d9f54cbfcde0958741517, type: 3}
+      propertyPath: _socketColliders.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7206176475531100780, guid: 584db9031b1d9f54cbfcde0958741517, type: 3}
+      propertyPath: _socketColliders.Array.data[1]
+      value: 
+      objectReference: {fileID: 4947664849557086745}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -902,6 +986,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: snapPoint Variant (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7206176475531100780, guid: 584db9031b1d9f54cbfcde0958741517, type: 3}
+      propertyPath: _origin
+      value: 
+      objectReference: {fileID: 4947664849557086746}
+    - target: {fileID: 7206176475531100780, guid: 584db9031b1d9f54cbfcde0958741517, type: 3}
+      propertyPath: _socketColliders.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7206176475531100780, guid: 584db9031b1d9f54cbfcde0958741517, type: 3}
+      propertyPath: _socketColliders.Array.data[1]
+      value: 
+      objectReference: {fileID: 4947664849557086745}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

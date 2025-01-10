@@ -30,7 +30,7 @@ RectTransform:
   m_GameObject: {fileID: 409296489915881170}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -0.879}
-  m_LocalScale: {x: 0.0001, y: 0.0001, z: 0.0001}
+  m_LocalScale: {x: 0.00013, y: 0.00013, z: 0.00013}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2943413762898823296}
@@ -540,11 +540,33 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 554147189252119422}
   m_SourcePrefab: {fileID: 100100000, guid: 87e9d9621020f9741b593954c21cb566, type: 3}
+--- !u!114 &5857520486632522719 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4881794659907249267, guid: 87e9d9621020f9741b593954c21cb566, type: 3}
+  m_PrefabInstance: {fileID: 1366149492933765036}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9178961299413479874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &7855397731443465541 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9220683886558542569, guid: 87e9d9621020f9741b593954c21cb566, type: 3}
   m_PrefabInstance: {fileID: 1366149492933765036}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8710338070824414687 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7643980666847709811, guid: 87e9d9621020f9741b593954c21cb566, type: 3}
+  m_PrefabInstance: {fileID: 1366149492933765036}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9178961299413479874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9178961299413479874 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7896975165420770926, guid: 87e9d9621020f9741b593954c21cb566, type: 3}
@@ -565,10 +587,10 @@ MonoBehaviour:
   _buttonType: 22
   _isTaskSendable: 0
   _isStartOn: 0
-  _btnImage: {fileID: 0}
+  _btnImage: {fileID: 8710338070824414687}
   _onSprite: {fileID: 0}
   _offSprite: {fileID: 0}
-  _button: {fileID: 0}
+  _button: {fileID: 5857520486632522719}
 --- !u!1001 &1590142122094285414
 PrefabInstance:
   m_ObjectHideFlags: 0

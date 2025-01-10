@@ -43,7 +43,7 @@ namespace Gameplay
                 return;
             }
 
-            Instantiate(_docPrefab, _spawnPoint.position, Quaternion.identity);
+            Instantiate(_docPrefab, _spawnPoint.position, _spawnPoint.rotation);
         }
     }
 }

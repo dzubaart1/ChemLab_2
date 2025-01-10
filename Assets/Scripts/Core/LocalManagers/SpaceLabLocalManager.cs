@@ -60,6 +60,8 @@ namespace LocalManagers
             _savedTaskID = 0;
             
             _gameStartTime = DateTime.Now;
+            
+            ActivateSideEffects(_tasksList[_currentTaskID], ESideEffectTime.StartTask);
 
             TabletUI tabletUI = FindObjectOfType<TabletUI>();
             if (tabletUI != null)
@@ -132,6 +134,7 @@ namespace LocalManagers
             {
                 container.PutSavedSubstances();
                 container.PutSavedContainerType();
+                container.PutSavedAnchor();
             }
             
             foreach (var socket in _sockets)

@@ -38,6 +38,7 @@ namespace Containers
         [SerializeField] private EContainer _containerType;
         [SerializeField] private bool _isWeightableContainer;
         [SerializeField] private bool _isSpoonContainer;
+        [SerializeField] private bool _isAnchorContainer;
 
         [Space]
         [Header("Meshes")]
@@ -319,16 +320,22 @@ namespace Containers
             }
             
             _savedData.ContainerType = ContainerType;
+            _savedData.Anchor = Anchor;
         }
 
         public void PutSavedContainerType()
         {
-            UpdateSubstances(_savedData.Substances);
+            ChangeContainerType(_savedData.ContainerType);
         }
 
         public void PutSavedSubstances()
         {
-            ChangeContainerType(_savedData.ContainerType);
+            UpdateSubstances(_savedData.Substances);
+        }
+
+        public void PutSavedAnchor()
+        {
+            LoadAnchor();
         }
 
         public void LoadAnchor()
@@ -365,6 +372,11 @@ namespace Containers
             }
             
             if (gameManager.CurrentBaseLocalManager == null)
+            {
+                return;
+            }
+
+            if (!_isAnchorContainer)
             {
                 return;
             }

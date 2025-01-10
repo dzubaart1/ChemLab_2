@@ -242,7 +242,11 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+  _socketColliders:
+  - {fileID: 2497269885942563046}
   _socketType: 8
   _isEnterTaskSendable: 0
   _isExitTaskSendable: 0
-  _isSubsctanceSocket: 0
+  _timerDelay: 1
+  _isSubstanceSocket: 0
+  _isStartEnter: 0

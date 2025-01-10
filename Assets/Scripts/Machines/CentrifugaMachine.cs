@@ -97,6 +97,11 @@ namespace Machines
                 CheckAnimatorStatus();
                 return;
             }
+            else
+            {
+                gameManager.CurrentBaseLocalManager.OnActivityComplete(new MachineLabActivity(EMachineActivity.OnFinish, EMachine.CentrifugaMachine));
+                CheckAnimatorStatus();
+            }
 
             if (!CraftTools.TryFindCraft(gameManager.CurrentBaseLocalManager.GetSOCrafts(), labContainer1.GetSubstanceProperties(), ECraft.Split, out SOLabCraft craftContainer1))
             {

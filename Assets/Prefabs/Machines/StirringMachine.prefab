@@ -955,12 +955,13 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
-  _scoketColliders: []
+  _socketColliders: []
+  _origin: {fileID: 8591927299114905605}
   _socketType: 4
   _isEnterTaskSendable: 1
   _isExitTaskSendable: 1
   _timerDelay: 1
-  _isSubstanceSocket: 0
+  _isSubstanceSocket: 1
   _isStartEnter: 0
 --- !u!1 &8591927298874484848
 GameObject:

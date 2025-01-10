@@ -1,5 +1,6 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 0,
   "Number": 57,
   "Title": "Задание 57",
   "Description": "Установите правой рукой значение на пипетдозаторе 1.00 мл.",
@@ -17,7 +18,41 @@
         "$type": "BioEngineerLab.Tasks.SideEffects.SetDozatorVolumeLabSideEffect, Assembly-CSharp",
         "DozatorVolume": 1.0,
         "SideEffectTimeType": 1,
-        "SideEffectType": 3
+        "SideEffectType": 1
+      },
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
+        "LabSubstanceProperty": {
+          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+          "SubstanceName": "StirCaCl2H20",
+          "SubstanceMode": 0,
+          "SubstanceLayer": 0,
+          "SubstanceColorR": 1.0,
+          "SubstanceColorG": 1.0,
+          "SubstanceColorB": 1.0,
+          "SubstanceColorA": 0.7294118,
+          "HintName": ""
+        },
+        "Weight": 100.0,
+        "SideEffectTimeType": 0,
+        "SideEffectType": 0
+      },
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
+        "LabSubstanceProperty": {
+          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+          "SubstanceName": "StirNa2HPO4AgarH20",
+          "SubstanceMode": 0,
+          "SubstanceLayer": 0,
+          "SubstanceColorR": 0.960826159,
+          "SubstanceColorG": 0.7882353,
+          "SubstanceColorB": 1.0,
+          "SubstanceColorA": 0.7294118,
+          "HintName": ""
+        },
+        "Weight": 100.0,
+        "SideEffectTimeType": 0,
+        "SideEffectType": 0
       }
     ]
   }

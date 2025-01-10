@@ -142,7 +142,7 @@ Transform:
   m_GameObject: {fileID: 3230590818201616869}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 0.000238}
+  m_LocalPosition: {x: 0, y: 0, z: 0.000281}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -230,13 +230,14 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
-  _scoketColliders: []
+  _socketColliders:
+  - {fileID: 7542012677016094186}
   _socketType: 7
   _isEnterTaskSendable: 0
   _isExitTaskSendable: 0
   _timerDelay: 1
   _isSubstanceSocket: 0
-  _isStartEnter: 0
+  _isStartEnter: 1
 --- !u!1 &3230590819400659979
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,7 +394,7 @@ Transform:
   m_GameObject: {fileID: 3260846775235920523}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.045, z: 0}
+  m_LocalPosition: {x: 0, y: 0.0298, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -681,8 +682,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.13423987, y: 0.13371362, z: 0.032026984}
-  m_Center: {x: -0.00014747892, y: -0.00014738578, z: -0.022815192}
+  m_Size: {x: 0.13423987, y: 0.13371362, z: 0.027560474}
+  m_Center: {x: -0.00014747892, y: -0.00014738312, z: -0.02504845}
 --- !u!1 &5159757095705977241
 GameObject:
   m_ObjectHideFlags: 0
@@ -1112,8 +1113,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.14656897, y: 0.14623599, z: 0.02}
-  m_Center: {x: 0.00033224782, y: 0.00016617199, z: 0.009000004}
+  m_Size: {x: 0.14656897, y: 0.14623599, z: 0.015733043}
+  m_Center: {x: 0.00033224782, y: 0.00016617199, z: 0.011133483}
 --- !u!1 &8327012979987512624
 GameObject:
   m_ObjectHideFlags: 0

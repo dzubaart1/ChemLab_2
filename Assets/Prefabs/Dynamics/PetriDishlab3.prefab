@@ -1325,7 +1325,8 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
-  _scoketColliders: []
+  _socketColliders: []
+  _origin: {fileID: 7535300113462959684}
   _socketType: 7
   _isEnterTaskSendable: 1
   _isExitTaskSendable: 0

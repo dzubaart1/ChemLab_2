@@ -690,12 +690,12 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
-  _scoketColliders: []
+  _socketColliders: []
   _socketType: 10
   _isEnterTaskSendable: 1
   _isExitTaskSendable: 0
   _timerDelay: 1
-  _isSubstanceSocket: 0
+  _isSubstanceSocket: 1
   _isStartEnter: 0
 --- !u!1 &1309052258123799040
 GameObject:
@@ -2367,8 +2367,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.4602146, y: 0.38146415, z: 4.461232}
-  m_Center: {x: 0, y: 0.1684132, z: 2.2246356}
+  m_Size: {x: 2.4602146, y: 0.1911335, z: 4.461232}
+  m_Center: {x: 0, y: 0.26357853, z: 2.2246356}
 --- !u!59 &4719103133362520264
 HingeJoint:
   m_ObjectHideFlags: 0

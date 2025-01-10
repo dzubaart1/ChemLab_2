@@ -1,8 +1,9 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 0,
   "Number": 81,
   "Title": "Задание 81",
-  "Description": "Выключите сканер правой рукой.",
+  "Description": "Закройте крышку сканера, чтобы увидеть кольца Лизергана. Выключите сканер правой рукой.",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {

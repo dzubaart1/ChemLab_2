@@ -307,6 +307,7 @@ MonoBehaviour:
   _containerType: 12
   _isWeightableContainer: 0
   _isSpoonContainer: 0
+  _isAnchorContainer: 0
   _meshRendererConfigs:
   - Layer: 0
     MeshRenderer: {fileID: 8910581703376041468}

@@ -14,7 +14,8 @@ namespace Gameplay
         }
         
         [Header("Refs")]
-        [SerializeField] private MeshRenderer _meshRenderer;
+        [SerializeField] private MeshRenderer _meshRendererL;
+        [SerializeField] private MeshRenderer _meshRendererR;
         [SerializeField] private VRGrabInteractable _grabInteractable;
         
         [Space]
@@ -65,7 +66,8 @@ namespace Gameplay
             }
             
             _isActive = false;
-            _meshRenderer.enabled = _isActive;
+            _meshRendererL.enabled = _isActive;
+            _meshRendererR.enabled = _isActive;
             
             gameManager.CurrentBaseLocalManager.OnActivityComplete(new MachineLabActivity(EMachineActivity.OnEnter, _machineType));            
         }
@@ -78,7 +80,8 @@ namespace Gameplay
         public void Load()
         {
             _isActive = _savedData.IsActive;
-            _meshRenderer.enabled = _isActive;
+            _meshRendererL.enabled = _isActive;
+            _meshRendererR.enabled = _isActive;
         }
     }
 }

@@ -7,10 +7,26 @@
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
+    "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",
     "SocketType": 11,
     "SocketActivityType": 1,
-    "ActivityType": 3
+    "LabSubstanceProperties": {
+      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
+      "$values": [
+        {
+          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+          "SubstanceName": "DryHardAgar",
+          "SubstanceMode": 0,
+          "SubstanceLayer": 0,
+          "SubstanceColorR": 0.9528302,
+          "SubstanceColorG": 0.680635035,
+          "SubstanceColorB": 0.4539427,
+          "SubstanceColorA": 1.0,
+          "HintName": ""
+        }
+      ]
+    },
+    "ActivityType": 2
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

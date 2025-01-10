@@ -357,7 +357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 8569025454902821838}
   _grabInteractable: {fileID: 447580956252463071}
-  _collider: {fileID: 2837768673192478416}
+  _collider: {fileID: 8569025454902821834}
   _rigidbody: {fileID: 8569025454902821835}
 --- !u!136 &2837768673192478416
 CapsuleCollider:

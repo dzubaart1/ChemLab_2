@@ -5,6 +5,7 @@ using Core;
 using JetBrains.Annotations;
 using Saveables;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.XR.Interaction.Toolkit;
 
 namespace Mechanics
@@ -19,8 +20,9 @@ namespace Mechanics
         public event Action<Transform> ExitedTransformEvent;
         public event Action<Transform> EnteredTransformEvent;
         
+        [FormerlySerializedAs("_socketColliders")]
         [Header("Refs")]
-        [SerializeField] private Collider[] _scoketColliders;
+        [SerializeField] private Collider[] _socketColliders;
         
         [Space]
         [Header("Configs")]
@@ -147,6 +149,7 @@ namespace Mechanics
         
         public void Save()
         {
+            ESocket s = _socketType;
             _savedData.GrabbedObject = firstInteractableSelected as VRGrabInteractable;
         }
 
@@ -213,9 +216,10 @@ namespace Mechanics
         
         private void SocketCollisionsIgnored(Transform targetObject, bool isIgnored)
         {
+            ESocket s = _socketType;
             Collider[] targetObjectColliders = targetObject.GetComponentsInChildren<Collider>(true);
 
-            foreach (var socketCollider in _scoketColliders)
+            foreach (var socketCollider in _socketColliders)
             {
                 foreach (var targetObjectCollider in targetObjectColliders)
                 {
