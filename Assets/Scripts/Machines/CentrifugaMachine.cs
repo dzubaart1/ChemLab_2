@@ -97,11 +97,6 @@ namespace Machines
                 CheckAnimatorStatus();
                 return;
             }
-            else
-            {
-                gameManager.CurrentBaseLocalManager.OnActivityComplete(new MachineLabActivity(EMachineActivity.OnFinish, EMachine.CentrifugaMachine));
-                CheckAnimatorStatus();
-            }
 
             if (!CraftTools.TryFindCraft(gameManager.CurrentBaseLocalManager.GetSOCrafts(), labContainer1.GetSubstanceProperties(), ECraft.Split, out SOLabCraft craftContainer1))
             {
@@ -118,6 +113,7 @@ namespace Machines
             CraftTools.ApplyCraft(craftContainer1.LabCraft, labContainer1);
             CraftTools.ApplyCraft(craftContainer2.LabCraft, labContainer2);
         
+            gameManager.CurrentBaseLocalManager.OnActivityComplete(new MachineLabActivity(EMachineActivity.OnFinish, EMachine.CentrifugaMachine));
             CheckAnimatorStatus();
         }
 

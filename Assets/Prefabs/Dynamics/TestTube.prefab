@@ -209,8 +209,8 @@ Rigidbody:
   m_GameObject: {fileID: 6520981219896858496}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 1
+  m_AngularDrag: 0.5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -806,8 +806,8 @@ Rigidbody:
   m_GameObject: {fileID: 8513571752015484691}
   serializedVersion: 4
   m_Mass: 50
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 1
+  m_AngularDrag: 0.5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1016,6 +1016,7 @@ MonoBehaviour:
   _containerType: 8
   _isWeightableContainer: 0
   _isSpoonContainer: 0
+  _isAnchorContainer: 0
   _meshRendererConfigs:
   - Layer: 0
     MeshRenderer: {fileID: 4062999779071354566}

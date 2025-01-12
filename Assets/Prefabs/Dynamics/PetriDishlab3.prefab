@@ -398,8 +398,8 @@ Rigidbody:
   m_GameObject: {fileID: 4591974597027119752}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 1
+  m_AngularDrag: 0.5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -724,8 +724,8 @@ Rigidbody:
   m_GameObject: {fileID: 5122648907647934680}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 1
+  m_AngularDrag: 0.5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -934,6 +934,7 @@ MonoBehaviour:
   _containerType: 7
   _isWeightableContainer: 0
   _isSpoonContainer: 0
+  _isAnchorContainer: 0
   _meshRendererConfigs:
   - Layer: 0
     MeshRenderer: {fileID: 4110215037377912453}
@@ -1326,7 +1327,6 @@ MonoBehaviour:
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   _socketColliders: []
-  _origin: {fileID: 7535300113462959684}
   _socketType: 7
   _isEnterTaskSendable: 1
   _isExitTaskSendable: 0

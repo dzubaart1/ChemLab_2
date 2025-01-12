@@ -221,21 +221,6 @@ namespace Containers
             
             UpdateView();
         }
-
-        public void UpdateSubstances(LabSubstance[] substances)
-        {
-            if (substances.Length != MAX_SUBSTANCE_COUNT)
-            {
-                return;
-            }
-            
-            _substances[0] = substances[0];
-            _substances[1] = substances[1];
-            _substances[2] = substances[2];
-            
-            IsDirty = true;
-            UpdateView();
-        }
         
         public void PrintContainerInfo()
         {
@@ -311,6 +296,8 @@ namespace Containers
 
         public void Save()
         {
+            _savedData.ContainerType = ContainerType;
+            _savedData.Anchor = Anchor;
             _savedData.Substances = new LabSubstance[Substances.Count];
             
             for(int i = 0; i < Substances.Count; i++)
@@ -318,14 +305,29 @@ namespace Containers
                 if(GetSubstanceByLayer((ESubstanceLayer)i) is not null)
                     _savedData.Substances[i] = new LabSubstance(GetSubstanceByLayer((ESubstanceLayer)i));
             }
+        }
+        
+        public void OnActivateSideEffect(LabSideEffect sideEffect)
+        {
+            if (reagentsLabSubstanceProperty == null)
+            {
+                return;
+            }
             
-            _savedData.ContainerType = ContainerType;
-            _savedData.Anchor = Anchor;
+            if (sideEffect is not AddReagentsLabSideEffect addReagentsLabSideEffect)
+            {
+                return;
+            }
+
+            if (addReagentsLabSideEffect.LabSubstanceProperty.Equals(reagentsLabSubstanceProperty.LabSubstanceProperty))
+            {
+                PutSubstance(new LabSubstance(reagentsLabSubstanceProperty.LabSubstanceProperty, addReagentsLabSideEffect.Weight));
+            }
         }
 
         public void PutSavedContainerType()
         {
-            ChangeContainerType(_savedData.ContainerType);
+            _containerType = _savedData.ContainerType;
         }
 
         public void PutSavedSubstances()
@@ -418,23 +420,20 @@ namespace Containers
             
             Anchor = null;
         }
-
-        public void OnActivateSideEffect(LabSideEffect sideEffect)
+        
+        private void UpdateSubstances(LabSubstance[] substances)
         {
-            if (reagentsLabSubstanceProperty == null)
+            if (substances.Length != MAX_SUBSTANCE_COUNT)
             {
                 return;
             }
             
-            if (sideEffect is not AddReagentsLabSideEffect addReagentsLabSideEffect)
-            {
-                return;
-            }
-
-            if (addReagentsLabSideEffect.LabSubstanceProperty.Equals(reagentsLabSubstanceProperty.LabSubstanceProperty))
-            {
-                PutSubstance(new LabSubstance(reagentsLabSubstanceProperty.LabSubstanceProperty, addReagentsLabSideEffect.Weight));
-            }
+            _substances[0] = substances[0];
+            _substances[1] = substances[1];
+            _substances[2] = substances[2];
+            
+            IsDirty = true;
+            UpdateView();
         }
     }
 }

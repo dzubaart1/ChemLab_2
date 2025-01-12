@@ -149,7 +149,6 @@ namespace Mechanics
         
         public void Save()
         {
-            ESocket s = _socketType;
             _savedData.GrabbedObject = firstInteractableSelected as VRGrabInteractable;
         }
 
@@ -216,7 +215,6 @@ namespace Mechanics
         
         private void SocketCollisionsIgnored(Transform targetObject, bool isIgnored)
         {
-            ESocket s = _socketType;
             Collider[] targetObjectColliders = targetObject.GetComponentsInChildren<Collider>(true);
 
             foreach (var socketCollider in _socketColliders)
