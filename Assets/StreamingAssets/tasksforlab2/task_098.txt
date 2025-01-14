@@ -8,7 +8,7 @@
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.PulverizatorLabActivity, Assembly-CSharp",
-    "Hits": 3,
+    "Target": 3,
     "ActivityType": 8
   },
   "LabSideEffects": {

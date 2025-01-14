@@ -1,7 +1,9 @@
 using System;
+using System.Net.Mime;
 using BioEngineerLab.Activities;
 using Core;
 using UnityEngine;
+using UnityEngine.UI;
 using UI.Components;
 using UnityEngine.Serialization;
 
@@ -19,6 +21,7 @@ namespace BioEngineerLab.Machines
         [Space]
         [Header("Others")]
         [SerializeField] private String _targetPassword;
+        [SerializeField] private Image _sygnalImage;
         
         private String _currentString = "";
 
@@ -63,6 +66,11 @@ namespace BioEngineerLab.Machines
             if (_currentString == _targetPassword)
             {
                 gameManager.CurrentBaseLocalManager.OnActivityComplete(new MachineLabActivity(EMachineActivity.OnEnter, EMachine.KeyboardMachine));
+                _sygnalImage.color = Color.green;
+            }
+            else
+            {
+                _sygnalImage.color = Color.red;
             }
 
             _currentString = "";

@@ -79,6 +79,7 @@ namespace Machines
                 }
                 
                 cleaningSurface.OnPulverizatorHit(hit.point);
+                return;
             }
             
             gameManager.CurrentBaseLocalManager.OnActivityComplete(new PulverizatorLabActivity(tagConfig.TargetType));

@@ -295,8 +295,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.50428873, y: 0.13339688, z: 0.48119703}
-  m_Center: {x: -0.015809584, y: 0.7981753, z: 0.4361383}
+  m_Size: {x: 0.50428873, y: 0.049483377, z: 0.48119703}
+  m_Center: {x: -0.015809584, y: 0.7397118, z: 0.4361383}
 --- !u!1 &173499268440391081
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,7 +443,7 @@ Transform:
   m_GameObject: {fileID: 1277220319807999856}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.018, y: 0.731, z: 0.434}
+  m_LocalPosition: {x: -0.018, y: 0.717, z: 0.434}
   m_LocalScale: {x: 3.333334, y: 3.333334, z: 3.333334}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -533,7 +533,6 @@ MonoBehaviour:
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   _socketColliders: []
-  _origin: {fileID: 173499268342114646}
   _socketType: 0
   _isEnterTaskSendable: 1
   _isExitTaskSendable: 0

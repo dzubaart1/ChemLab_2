@@ -90,6 +90,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saharoza
       objectReference: {fileID: 0}
+    - target: {fileID: 5301012547981187017, guid: bb54045afd1f1fa46a276eca56d039a1, type: 3}
+      propertyPath: m_TagString
+      value: Saharoza
+      objectReference: {fileID: 0}
     - target: {fileID: 5359928095746997749, guid: bb54045afd1f1fa46a276eca56d039a1, type: 3}
       propertyPath: m_Name
       value: Saharoza
@@ -164,6 +168,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Glukoza
       objectReference: {fileID: 0}
+    - target: {fileID: 5301012547981187017, guid: bb54045afd1f1fa46a276eca56d039a1, type: 3}
+      propertyPath: m_TagString
+      value: Glukoza
+      objectReference: {fileID: 0}
     - target: {fileID: 5359928095746997749, guid: bb54045afd1f1fa46a276eca56d039a1, type: 3}
       propertyPath: m_Name
       value: Glukoza
@@ -236,6 +244,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5301012547981187017, guid: bb54045afd1f1fa46a276eca56d039a1, type: 3}
       propertyPath: m_Name
+      value: Laktoza
+      objectReference: {fileID: 0}
+    - target: {fileID: 5301012547981187017, guid: bb54045afd1f1fa46a276eca56d039a1, type: 3}
+      propertyPath: m_TagString
       value: Laktoza
       objectReference: {fileID: 0}
     - target: {fileID: 5359928095746997749, guid: bb54045afd1f1fa46a276eca56d039a1, type: 3}

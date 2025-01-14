@@ -1169,10 +1169,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 231579928002665165, guid: 68e483e42270d0042b410578eb1f8013, type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 694544625896109083, guid: 68e483e42270d0042b410578eb1f8013, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.3211522
@@ -3261,7 +3257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7736622502032692014, guid: ed5824fe0bc1c5b488b01e9676374b27, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.427
+      value: 0.3618
       objectReference: {fileID: 0}
     - target: {fileID: 7736622502032692014, guid: ed5824fe0bc1c5b488b01e9676374b27, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3356,10 +3352,6 @@ PrefabInstance:
     - target: {fileID: 8740721374802212262, guid: 0a670103bb8a3b94982eeb83be0c8984, type: 3}
       propertyPath: m_Name
       value: WeightingContainer3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8740721374802212262, guid: 0a670103bb8a3b94982eeb83be0c8984, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

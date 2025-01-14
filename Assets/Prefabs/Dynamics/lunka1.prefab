@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5291134463425725196}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: basePref
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 7275085481379197107}
   - component: {fileID: 1481073774735110037}
   - component: {fileID: 1671731178018737713}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: lunka1
   m_TagString: SerializeSubstance
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 7275085482336851365}
   - component: {fileID: 7275085482336851366}
   - component: {fileID: 7275085482336851367}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: LunkaPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

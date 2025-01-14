@@ -17,6 +17,11 @@ TagManager:
   - LHand
   - RHand
   - PenicilliumSocket
+  - CleaningSurface
+  - Glukoza
+  - Laktoza
+  - Saharoza
+  - Penicillium
   layers:
   - Default
   - TransparentFX

@@ -597,7 +597,7 @@ MonoBehaviour:
   _meshRenderer: {fileID: 5827924553115246900}
   _grabInteractable: {fileID: 6326978978859101113}
   _returnBtn: {fileID: 4104588191524813963}
-  _machineType: 2
+  _machineType: 19
 --- !u!1 &9194353299500987801
 GameObject:
   m_ObjectHideFlags: 0
@@ -822,16 +822,16 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 1
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
-  m_TrackPosition: 1
+  m_TrackPosition: 0
   m_SmoothPosition: 1
   m_SmoothPositionAmount: 8
   m_TightenPosition: 0.1
-  m_TrackRotation: 1
+  m_TrackRotation: 0
   m_SmoothRotation: 1
   m_SmoothRotationAmount: 8
   m_TightenRotation: 0.1

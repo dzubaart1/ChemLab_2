@@ -12,12 +12,12 @@ namespace Machines
     {
         private class SavedData
         {
-            public List<WaterDrop> WaterDrops;
+            public List<GameObject> WaterDrops;
             public bool IsAllWaterDropsSpawned;
         }
         
         [Header("Refs")]
-        [SerializeField] private WaterDrop _waterDropPrefab;
+        [SerializeField] private GameObject _waterDropPrefab;
         [SerializeField] private Transform _waterDropsPool;
         
         [Space]
@@ -26,7 +26,7 @@ namespace Machines
 
         private SavedData _savedData = new SavedData();
         
-        private List<WaterDrop> _waterDrops = new List<WaterDrop>();
+        private List<GameObject> _waterDrops = new List<GameObject>();
         private bool _isAllWaterDropsSpawned = false;
 
         private void Start()
@@ -89,7 +89,7 @@ namespace Machines
                 return;
             }
 
-            WaterDrop waterDrop = Instantiate(_waterDropPrefab, point, Quaternion.identity, _waterDropsPool);
+            GameObject waterDrop = Instantiate(_waterDropPrefab, point, _waterDropPrefab.transform.rotation, _waterDropsPool);
             _waterDrops.Add(waterDrop);
 
             if (_waterDrops.Count == _targetWaterDropsCount)

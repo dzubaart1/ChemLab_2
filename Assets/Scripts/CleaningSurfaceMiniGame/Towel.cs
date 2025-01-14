@@ -13,7 +13,7 @@ namespace Machines
                 return;
             }
             
-            waterDrop.gameObject.SetActive(false);
+            other.gameObject.SetActive(false);
         }
     }
 }

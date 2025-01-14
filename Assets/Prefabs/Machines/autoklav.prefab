@@ -2050,7 +2050,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6016591048608597158}
   serializedVersion: 4
-  m_Mass: 100
+  m_Mass: 10
   m_Drag: 1
   m_AngularDrag: 0.5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -2187,7 +2187,7 @@ MonoBehaviour:
   - {fileID: 7655825393577661180}
   - {fileID: 491250802451691021}
   - {fileID: 8121015318937162941}
-  _animator: {fileID: 0}
+  _animator: {fileID: 727964729788041473}
   _door: {fileID: 5377808913137170889}
 --- !u!95 &727964729788041473
 Animator:
