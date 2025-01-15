@@ -58,7 +58,7 @@ namespace Machines
                 return;
             }
             
-            interactable.gameObject.SetActive(false);
+            other.gameObject.SetActive(false);
             _hiddenGameObjects.Add(interactable);
             
             gameManager.CurrentBaseLocalManager.OnActivityComplete(new MachineLabActivity(EMachineActivity.OnEnter, EMachine.WashingMachine));

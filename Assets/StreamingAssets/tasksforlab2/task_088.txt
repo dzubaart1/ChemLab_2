@@ -3,7 +3,7 @@
   "Lab": 1,
   "Number": 88,
   "Title": "Задание 88",
-  "Description": "Немного приоткройте нижнюю панель",
+  "Description": "Откройте нижнюю панель",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {

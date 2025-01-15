@@ -3,12 +3,12 @@
   "Lab": 1,
   "Number": 153,
   "Title": "Задание 153",
-  "Description": "Снимите перчатки, выбросите их в мусорную корзину",
+  "Description": "Подойдите к шейкеру, выключите процесс нажав кнопку выключения «0»",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 31,
+    "ButtonType": 27,
     "ActivityType": 6
   },
   "LabSideEffects": {

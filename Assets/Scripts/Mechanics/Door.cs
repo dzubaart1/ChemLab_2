@@ -116,5 +116,10 @@ namespace Machines
                 rb.velocity = Vector3.zero;
             }
         }
+
+        public void SetIsOpen(bool isOpen)
+        {
+            _isOpen = isOpen;
+        }
     }
 }

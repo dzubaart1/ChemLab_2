@@ -3,7 +3,7 @@
   "Lab": 2,
   "Number": 57,
   "Title": "Задание 57",
-  "Description": "Возьмите упаковку со шпателем, вытащите шпатель",
+  "Description": "Возьмите упаковку со шпателем, вытащите шпатель.",
   "Warning": "",
   "SaveableTask": true,
   "LabActivity": {

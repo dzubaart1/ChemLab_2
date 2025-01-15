@@ -3,12 +3,12 @@
   "Lab": 1,
   "Number": 152,
   "Title": "Задание 152",
-  "Description": "Два раза нажмите кнопку «UV» (ультрафиолет)",
+  "Description": "Снимите перчатки, выбросите их в мусорную корзину",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 16,
+    "ButtonType": 31,
     "ActivityType": 6
   },
   "LabSideEffects": {

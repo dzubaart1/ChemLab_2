@@ -3,12 +3,12 @@
   "Lab": 1,
   "Number": 162,
   "Title": "Задание 162",
-  "Description": "Снимите бахилы, выбросите их в мусорную корзину",
+  "Description": "Подойдите к панели управления и нажмите «ДЕЖУРНОЕ ОСВЕЩЕНИЕ»",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 32,
+    "ButtonType": 34,
     "ActivityType": 6
   },
   "LabSideEffects": {

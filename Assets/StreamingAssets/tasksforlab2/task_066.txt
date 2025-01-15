@@ -13,6 +13,58 @@
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": []
+    "$values": [
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
+        "LabSubstanceProperty": {
+          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+          "SubstanceName": "Glukoza and Purple Sol",
+          "SubstanceMode": 0,
+          "SubstanceLayer": 0,
+          "SubstanceColorR": 0.527487159,
+          "SubstanceColorG": 0.4627451,
+          "SubstanceColorB": 0.6509804,
+          "SubstanceColorA": 0.8509804,
+          "HintName": ""
+        },
+        "Weight": 120.0,
+        "SideEffectTimeType": 0,
+        "SideEffectType": 0
+      },
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
+        "LabSubstanceProperty": {
+          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+          "SubstanceName": "Laktoza and Purple Sol",
+          "SubstanceMode": 0,
+          "SubstanceLayer": 0,
+          "SubstanceColorR": 0.6509804,
+          "SubstanceColorG": 0.4627451,
+          "SubstanceColorB": 0.6353192,
+          "SubstanceColorA": 0.8862745,
+          "HintName": ""
+        },
+        "Weight": 120.0,
+        "SideEffectTimeType": 0,
+        "SideEffectType": 0
+      },
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
+        "LabSubstanceProperty": {
+          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+          "SubstanceName": "Sakaroza and Purple Sol",
+          "SubstanceMode": 0,
+          "SubstanceLayer": 0,
+          "SubstanceColorR": 0.61556536,
+          "SubstanceColorG": 0.46364364,
+          "SubstanceColorB": 0.6509434,
+          "SubstanceColorA": 0.8666667,
+          "HintName": ""
+        },
+        "Weight": 120.0,
+        "SideEffectTimeType": 0,
+        "SideEffectType": 0
+      }
+    ]
   }
 }

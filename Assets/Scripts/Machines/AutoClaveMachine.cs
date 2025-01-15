@@ -3,6 +3,7 @@ using Mechanics;
 using Saveables;
 using UI.Components;
 using UnityEngine;
+using System.Collections;
 
 namespace Machines
 {
@@ -12,6 +13,7 @@ namespace Machines
         {
             public bool IsPowerButtonOn;
             public bool IsPullButtonOn;
+            public bool IsOpened;
         }
 
         [Header("UIs")]
@@ -72,12 +74,42 @@ namespace Machines
         {
             _savedData.IsPowerButtonOn = _powerButton.IsOn;
             _savedData.IsPullButtonOn = _pullButton.IsOn;
+            _savedData.IsOpened = _isOpen;
         }
 
         public void LoadUIState()
         {
             _powerButton.SetIsOn(_savedData.IsPowerButtonOn);
             _pullButton.SetIsOn(_savedData.IsPullButtonOn);
+            
+            if (_savedData.IsOpened)
+            {
+                _isOpen = true;
+                _door.transform.rotation = new Quaternion(-0.7f, 0, 0, 0.7f);
+            }
+            else
+            {
+                _isOpen = false;
+                if (_isPulled)
+                {
+                    StartCoroutine(PlayCloseAnimation());
+                    _isPulled = false;
+                }
+                else
+                {
+                    _door.transform.rotation = new Quaternion(-0.5f, -0.5f, -0.5f, 0.5f);
+                }
+            }
+        }
+
+        private IEnumerator PlayCloseAnimation()
+        {
+            _door.transform.rotation = new Quaternion(-0.7f, 0, 0, 0.7f);
+            _animator.Play("Close");
+            yield return new WaitForSeconds(1.0f);
+            _door.GetComponent<Door>().SetIsOpen(false);
+            _isOpen = false;
+            _door.transform.rotation = new Quaternion(-0.5f, -0.5f, -0.5f, 0.5f);
         }
     }
 }

@@ -68,6 +68,7 @@ namespace Gameplay
             _isActive = false;
             _meshRendererL.enabled = _isActive;
             _meshRendererR.enabled = _isActive;
+            GetComponent<Collider>().enabled = _isActive;
             
             gameManager.CurrentBaseLocalManager.OnActivityComplete(new MachineLabActivity(EMachineActivity.OnEnter, _machineType));            
         }
@@ -82,6 +83,7 @@ namespace Gameplay
             _isActive = _savedData.IsActive;
             _meshRendererL.enabled = _isActive;
             _meshRendererR.enabled = _isActive;
+            GetComponent<Collider>().enabled = _isActive;
         }
     }
 }

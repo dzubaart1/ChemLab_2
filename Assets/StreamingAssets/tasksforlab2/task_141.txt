@@ -3,12 +3,12 @@
   "Lab": 1,
   "Number": 141,
   "Title": "Задание 141",
-  "Description": "Возьмите пульверизатор, обработайте рабочую поверхность ламинарного бокса",
+  "Description": "Возьмите салфетку, протрите рабочую поверхность ламинарного бокса",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 1,
+    "MachineActivityType": 2,
     "MachineType": 17,
     "ActivityType": 1
   },

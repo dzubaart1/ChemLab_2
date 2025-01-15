@@ -42,10 +42,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 259774938875112046}
     m_Modifications:
-    - target: {fileID: 337074593456097543, guid: bb54045afd1f1fa46a276eca56d039a1, type: 3}
-      propertyPath: _containerType
-      value: 16
-      objectReference: {fileID: 0}
     - target: {fileID: 3927687518678438592, guid: bb54045afd1f1fa46a276eca56d039a1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -106,6 +102,10 @@ PrefabInstance:
       propertyPath: reagentsLabSubstanceProperty
       value: 
       objectReference: {fileID: 11400000, guid: 19201377d7ac18040a42ad8aa758ccbc, type: 2}
+    - target: {fileID: 6724216691336714140, guid: bb54045afd1f1fa46a276eca56d039a1, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4583608495286796349, guid: c71e6d02a3d250a4b86c98653a693577, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -198,10 +198,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 259774938875112046}
     m_Modifications:
-    - target: {fileID: 337074593456097543, guid: bb54045afd1f1fa46a276eca56d039a1, type: 3}
-      propertyPath: _containerType
-      value: 16
-      objectReference: {fileID: 0}
     - target: {fileID: 3927687518678438592, guid: bb54045afd1f1fa46a276eca56d039a1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -262,6 +258,10 @@ PrefabInstance:
       propertyPath: reagentsLabSubstanceProperty
       value: 
       objectReference: {fileID: 11400000, guid: e6dc8730a1e3ab640bc9025d00f59b33, type: 2}
+    - target: {fileID: 6724216691336714140, guid: bb54045afd1f1fa46a276eca56d039a1, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 5024711576176862150, guid: c71e6d02a3d250a4b86c98653a693577, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

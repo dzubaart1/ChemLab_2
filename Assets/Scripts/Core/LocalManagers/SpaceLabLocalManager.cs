@@ -61,6 +61,7 @@ namespace LocalManagers
             
             _gameStartTime = DateTime.Now;
             
+            SaveGame();
             ActivateSideEffects(_tasksList[_currentTaskID], ESideEffectTime.StartTask);
 
             TabletUI tabletUI = FindObjectOfType<TabletUI>();
@@ -251,6 +252,10 @@ namespace LocalManagers
                 {
                     _tabletUI.OnTaskUpdated(_tasksList[_currentTaskID]);   
                 }
+            }
+            else
+            {
+                FinishGame();
             }
         }
         

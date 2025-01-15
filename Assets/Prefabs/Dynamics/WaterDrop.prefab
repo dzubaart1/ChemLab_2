@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1512181752120472584}
   - component: {fileID: 6141381395517710823}
   - component: {fileID: 8905494784725176937}
-  - component: {fileID: 8847008886015884902}
   - component: {fileID: 6261320689498366435}
+  - component: {fileID: 8678571432292254930}
   m_Layer: 0
   m_Name: WaterDrop
   m_TagString: Untagged
@@ -85,8 +85,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8847008886015884902
-BoxCollider:
+--- !u!114 &6261320689498366435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7796870753063067228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ea9755163565c4190b3b1a7d964038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &8678571432292254930
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -104,17 +116,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.0000006, y: 1, z: 1.0000006}
+  m_Radius: 0.5000001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6261320689498366435
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7796870753063067228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65ea9755163565c4190b3b1a7d964038, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -3,25 +3,17 @@
   "Lab": 1,
   "Number": 159,
   "Title": "Задание 159",
-  "Description": "Откройте дверь в предбоксник, зайдите туда",
+  "Description": "Закройте дверь",
   "Warning": "",
   "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.DoorLabActivity, Assembly-CSharp",
     "Door": 3,
-    "DoorActivity": 0,
+    "DoorActivity": 1,
     "ActivityType": 7
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.SetInteractableSideEffect, Assembly-CSharp",
-        "InteractableObject": 4,
-        "IsInteractable": true,
-        "SideEffectTimeType": 0,
-        "SideEffectType": 3
-      }
-    ]
+    "$values": []
   }
 }

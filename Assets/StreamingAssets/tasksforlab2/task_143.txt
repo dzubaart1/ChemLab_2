@@ -3,13 +3,13 @@
   "Lab": 1,
   "Number": 143,
   "Title": "Задание 143",
-  "Description": "Выбросьте салфетку в ёмкость для внешних отходов",
+  "Description": "Возьмите специальный ключ, разблокируйте ламинарный бокс",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 0,
-    "MachineType": 6,
+    "MachineActivityType": 1,
+    "MachineType": 16,
     "ActivityType": 1
   },
   "LabSideEffects": {

@@ -24,7 +24,7 @@ namespace Machines
         
         [Header("Refs")]
         [SerializeField] private VRGrabInteractable _vrGrabInteractable;
-        [SerializeField] private MeshRenderer _shell;
+        [SerializeField] private GameObject _pack;
         
         [Space]
         [Header("UIs")]
@@ -65,7 +65,7 @@ namespace Machines
         private void OnShellToggleVisibleButtonClick()
         {
             _isShellVisible = false;
-            _shell.enabled = false;
+            _pack.SetActive(false);
         }
 
         private void OnTriggerStay(Collider other)
@@ -142,7 +142,7 @@ namespace Machines
         public void Load()
         {
             _isShellVisible = _savedData.IsShellVisible;
-            _shell.enabled = _isShellVisible;
+            _pack.SetActive(_isShellVisible);
         }
     }
 }

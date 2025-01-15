@@ -1797,10 +1797,6 @@ PrefabInstance:
       propertyPath: reagentsLabSubstanceProperty
       value: 
       objectReference: {fileID: 11400000, guid: 051810af826d9ba4c84f785fc366ba21, type: 2}
-    - target: {fileID: 4903417721036576240, guid: f712123dac2f6a84e9e7da5ec53f97aa, type: 3}
-      propertyPath: _socketColliders.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5159757095705977241, guid: f712123dac2f6a84e9e7da5ec53f97aa, type: 3}
       propertyPath: m_Name
       value: PetriDish2

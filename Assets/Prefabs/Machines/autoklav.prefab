@@ -374,7 +374,7 @@ MonoBehaviour:
   _isEnterTaskSendable: 1
   _isExitTaskSendable: 1
   _timerDelay: 1
-  _isSubstanceSocket: 0
+  _isSubstanceSocket: 1
   _isStartEnter: 0
 --- !u!135 &808051564525400671
 SphereCollider:
@@ -1126,7 +1126,7 @@ MonoBehaviour:
   _isEnterTaskSendable: 1
   _isExitTaskSendable: 1
   _timerDelay: 1
-  _isSubstanceSocket: 0
+  _isSubstanceSocket: 1
   _isStartEnter: 0
 --- !u!135 &142534162703223231
 SphereCollider:
@@ -1667,7 +1667,7 @@ MonoBehaviour:
   _isEnterTaskSendable: 1
   _isExitTaskSendable: 1
   _timerDelay: 1
-  _isSubstanceSocket: 0
+  _isSubstanceSocket: 1
   _isStartEnter: 0
 --- !u!135 &1877301406925646227
 SphereCollider:
@@ -1963,6 +1963,7 @@ GameObject:
   - component: {fileID: 9021481290414159110}
   - component: {fileID: 6345315835783385120}
   - component: {fileID: 513813278220076464}
+  - component: {fileID: 8959392804461360946}
   m_Layer: 0
   m_Name: door
   m_TagString: Untagged
@@ -2129,6 +2130,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.00031151882, y: 0.0034299584, z: 0.0037791692}
   m_Center: {x: -0.00021447714, y: 0.0016107428, z: 4.4704512e-10}
+--- !u!114 &8959392804461360946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6016591048608597158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7545c68c4b1ce34ca4131dc4e84e4e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _door: {fileID: 5377808913137170889}
+  _closed: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  _opened: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
+  _doorType: 1
+  _isOpenTaskSendable: 0
+  _isCloseTaskSendable: 1
 --- !u!1 &7124554909176146324
 GameObject:
   m_ObjectHideFlags: 0
@@ -2156,7 +2175,7 @@ Transform:
   m_GameObject: {fileID: 7124554909176146324}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.1521626, y: 0.37972417, z: -4.423442}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2502,7 +2521,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_InteractionLayers:
     m_Bits: 2
-  m_DistanceCalculationMode: 1
+  m_DistanceCalculationMode: 0
   m_SelectMode: 0
   m_FocusMode: 1
   m_CustomReticle: {fileID: 0}
@@ -2587,13 +2606,13 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 1
+  m_UseDynamicAttach: 0
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 1
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1

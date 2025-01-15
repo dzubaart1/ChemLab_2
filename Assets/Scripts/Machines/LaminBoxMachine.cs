@@ -96,6 +96,7 @@ namespace Machines
         public void SaveUIState()
         {
             _savedData.IsLight = _lightButton.IsOn;
+            _savedData.IsOpen = _isOpen;
         }
 
         public void LoadUIState()

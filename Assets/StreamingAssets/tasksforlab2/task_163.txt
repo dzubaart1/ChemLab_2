@@ -3,12 +3,12 @@
   "Lab": 1,
   "Number": 163,
   "Title": "Задание 163",
-  "Description": "Подойдите к панели управления и нажмите «ДЕЖУРНОЕ ОСВЕЩЕНИЕ»",
+  "Description": "Нажмите  «БАКТЕРИЦИДНАЯ ОЧИСТКА» ",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 34,
+    "ButtonType": 23,
     "ActivityType": 6
   },
   "LabSideEffects": {

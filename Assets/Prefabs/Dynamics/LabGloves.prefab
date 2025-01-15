@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4368961938040584888}
-  - component: {fileID: 390967877563011988}
   m_Layer: 0
   m_Name: LabGloves
   m_TagString: Untagged
@@ -27,28 +26,12 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 276948338133573544}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &390967877563011988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 237859377638770077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b039a5b37f454f3aa624d34f60321383, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _meshRendererL: {fileID: 6589008917885843470}
-  _meshRendererR: {fileID: 5120819369052474621}
-  _grabInteractable: {fileID: 3297842666159507649}
-  _machineType: 21
 --- !u!1 &620436438343107858
 GameObject:
   m_ObjectHideFlags: 0
@@ -61,6 +44,7 @@ GameObject:
   - component: {fileID: 5236743443502144065}
   - component: {fileID: 5570414177107346748}
   - component: {fileID: 3297842666159507649}
+  - component: {fileID: 4688322786653285638}
   m_Layer: 0
   m_Name: gloves
   m_TagString: Untagged
@@ -78,8 +62,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1724037067692471701}
   - {fileID: 3959857635191907391}
@@ -286,6 +270,22 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &4688322786653285638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620436438343107858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b039a5b37f454f3aa624d34f60321383, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _meshRendererL: {fileID: 6589008917885843470}
+  _meshRendererR: {fileID: 5120819369052474621}
+  _grabInteractable: {fileID: 3297842666159507649}
+  _machineType: 21
 --- !u!1 &6568208360715866819
 GameObject:
   m_ObjectHideFlags: 0

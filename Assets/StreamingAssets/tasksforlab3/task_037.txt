@@ -14,6 +14,41 @@
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": []
+    "$values": [
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
+        "LabSubstanceProperty": {
+          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+          "SubstanceName": "LizerganRings",
+          "SubstanceMode": 0,
+          "SubstanceLayer": 0,
+          "SubstanceColorR": 0.4943396,
+          "SubstanceColorG": 0.397799224,
+          "SubstanceColorB": 0.349768579,
+          "SubstanceColorA": 0.858823538,
+          "HintName": ""
+        },
+        "Weight": 100.0,
+        "SideEffectTimeType": 0,
+        "SideEffectType": 0
+      },
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
+        "LabSubstanceProperty": {
+          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+          "SubstanceName": "LizerganRings2",
+          "SubstanceMode": 0,
+          "SubstanceLayer": 0,
+          "SubstanceColorR": 0.4943396,
+          "SubstanceColorG": 0.397799224,
+          "SubstanceColorB": 0.349768579,
+          "SubstanceColorA": 0.8235294,
+          "HintName": ""
+        },
+        "Weight": 100.0,
+        "SideEffectTimeType": 0,
+        "SideEffectType": 0
+      }
+    ]
   }
 }

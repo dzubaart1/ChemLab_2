@@ -3,7 +3,7 @@
   "Lab": 1,
   "Number": 156,
   "Title": "Задание 156",
-  "Description": "Достаньте ёмкость с надписью «Глюкоза» и поставьте ее на стол",
+  "Description": "Достаньте ёмкость с надписью «Лактоза» и поставьте ее на стол",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
@@ -15,12 +15,12 @@
       "$values": [
         {
           "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "ShakedGlukoza",
+          "SubstanceName": "ShakedLaktoza",
           "SubstanceMode": 0,
           "SubstanceLayer": 0,
           "SubstanceColorR": 1.0,
-          "SubstanceColorG": 0.9508505,
-          "SubstanceColorB": 0.760377347,
+          "SubstanceColorG": 0.8221353,
+          "SubstanceColorB": 0.2924527,
           "SubstanceColorA": 0.7607843,
           "HintName": ""
         }

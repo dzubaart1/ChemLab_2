@@ -430,7 +430,7 @@ MonoBehaviour:
   m_InteractionLayers:
     m_Bits: 64
   m_AttachTransform: {fileID: 3710242570046410902}
-  m_KeepSelectedTargetValid: 1
+  m_KeepSelectedTargetValid: 0
   m_DisableVisualsWhenBlockedInGroup: 1
   m_StartingSelectedInteractable: {fileID: 0}
   m_StartingTargetFilter: {fileID: 0}

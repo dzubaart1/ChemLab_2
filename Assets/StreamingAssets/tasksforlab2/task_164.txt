@@ -3,16 +3,24 @@
   "Lab": 1,
   "Number": 164,
   "Title": "Задание 164",
-  "Description": "Нажмите  «БАКТЕРИЦИДНАЯ ОЧИСТКА» ",
+  "Description": "Для открытия двери нажмите кнопку «ключ»",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 23,
+    "ButtonType": 35,
     "ActivityType": 6
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": []
+    "$values": [
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.SetInteractableSideEffect, Assembly-CSharp",
+        "InteractableObject": 3,
+        "IsInteractable": true,
+        "SideEffectTimeType": 1,
+        "SideEffectType": 3
+      }
+    ]
   }
 }
