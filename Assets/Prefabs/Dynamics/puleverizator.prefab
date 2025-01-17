@@ -260,7 +260,7 @@ MonoBehaviour:
     TargetType: 1
   - Tag: Penicillium
     TargetType: 2
-  - Tag: Glokoza
+  - Tag: Glukoza
     TargetType: 3
   - Tag: Laktoza
     TargetType: 4

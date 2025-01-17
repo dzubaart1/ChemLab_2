@@ -1368,13 +1368,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 520447141}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.5650516, y: -0.5, z: 0.15792628}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -8.219, y: -0.5, z: 4.238}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &529496100
 GameObject:
   m_ObjectHideFlags: 0
@@ -3410,7 +3410,7 @@ PrefabInstance:
     - target: {fileID: 6135443831722635874, guid: 2ee547a66d8d549419de9fec899d55a4, type: 3}
       propertyPath: reagentsLabSubstanceProperty
       value: 
-      objectReference: {fileID: 11400000, guid: c156695ee7b038e40b1176fd9230f3fe, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 8752989905597421585, guid: 2ee547a66d8d549419de9fec899d55a4, type: 3}
       propertyPath: m_Name
       value: ChimicGlassContainer2
@@ -3880,7 +3880,7 @@ PrefabInstance:
     - target: {fileID: 6135443831722635874, guid: 2ee547a66d8d549419de9fec899d55a4, type: 3}
       propertyPath: reagentsLabSubstanceProperty
       value: 
-      objectReference: {fileID: 11400000, guid: a37e992e7afdfb84bbf3471b6bcfb87e, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 8752989905597421585, guid: 2ee547a66d8d549419de9fec899d55a4, type: 3}
       propertyPath: m_Name
       value: ChimicGlassContainer1
