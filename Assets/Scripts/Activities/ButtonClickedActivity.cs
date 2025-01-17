@@ -19,7 +19,7 @@ namespace BioEngineerLab.Activities
         }
         
         public ButtonClickedActivity(EButton buttonType)
-            : base(EActivity.MachineActivity)
+            : base(EActivity.ButtonClickedActivity)
         {
             ButtonType = buttonType;
         }

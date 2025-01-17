@@ -15,6 +15,8 @@ namespace Mechanics
         private struct SavedData
         {
             public VRGrabInteractable GrabbedObject;
+            public VRGrabInteractable LockedObject;
+            public bool IsLocked;
         }
 
         public event Action<Transform> ExitedTransformEvent;
@@ -49,8 +51,11 @@ namespace Mechanics
 
         public ESocket SocketType => _socketType;
 
+        [CanBeNull] private VRGrabInteractable _lockedObject;
+        
         private SavedData _savedData = new SavedData();
 
+        private bool _isLocked = false;
         private bool _isTimerActive = false;
         private float _timer = 0f;
         
@@ -110,6 +115,8 @@ namespace Mechanics
 
             EnteredTransformEvent?.Invoke(SelectedObject);
             
+            Lock();
+            
             if (_isEnterTaskSendable)
             {
                 Debug.Log($" TRY COMPLETE ENTER!");
@@ -158,12 +165,13 @@ namespace Mechanics
                 return;
             }
             
+            _isTimerActive = true;
+            _timer = 0f;
+            
             for (var i = interactablesSelected.Count - 1; i >= 0; --i)
             {
                 interactionManager.SelectCancel(this, interactablesSelected[i]);
             }
-
-            _isTimerActive = true;
         }
 
         public void PutSavedInteractable()
@@ -173,9 +181,43 @@ namespace Mechanics
                 return;
             }
             
+            _isTimerActive = true;
+            _timer = 0f;
+            
             interactionManager.SelectEnter((IXRSelectInteractor)this, _savedData.GrabbedObject);
+        }
 
-            _isTimerActive = false;
+        public void Lock()
+        {
+            if (SelectedObject == null)
+            {
+                return;
+            }
+
+            VRGrabInteractable grabInteractable = SelectedObject.GetComponentInChildren<VRGrabInteractable>();
+            if (grabInteractable == null)
+            {
+                return;
+            }
+
+            Rigidbody rigidbody = SelectedObject.GetComponentInChildren<Rigidbody>();
+            if (rigidbody == null)
+            {
+                return;
+            }
+            
+            rigidbody.useGravity = false;
+            rigidbody.isKinematic = true;
+            
+            _lockedObject = grabInteractable;
+            _lockedObject.transform.SetParent(attachTransform);
+            
+            _isLocked = true;
+            socketActive = false;
+        }
+
+        public void UnLock()
+        {
         }
         
         private void SendTryTaskComplete(Transform objectTransform, ESocketActivity socketActivity)

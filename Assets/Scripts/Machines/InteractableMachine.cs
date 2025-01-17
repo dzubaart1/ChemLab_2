@@ -41,17 +41,17 @@ namespace Machines
 
         public void OnActivateSideEffect(LabSideEffect sideEffect)
         {
-            if (sideEffect is not SetInteractableSideEffect setInteractableSideEffect)
+            if (sideEffect is not ConstructorSideEffect setInteractableSideEffect)
             {
                 return;
             }
 
-            if (setInteractableSideEffect.InteractableObject != _interactableType)
+            /*if (setInteractableSideEffect.SocketType != _interactableType)
             {
                 return;
-            }
+            }*/
 
-            if (setInteractableSideEffect.IsInteractable)
+            if (setInteractableSideEffect.IsLock)
             {
                 InteractionLayerMask layers = _grabInteractable.interactionLayers;
                 layers.value |= 2;
