@@ -145,6 +145,8 @@ namespace Mechanics
             }
             
             ExitedTransformEvent?.Invoke(exitedTransform);
+            
+            UnLock();
 
             if (_isExitTaskSendable)
             {
@@ -212,12 +214,45 @@ namespace Mechanics
             _lockedObject = grabInteractable;
             _lockedObject.transform.SetParent(attachTransform);
             
+            /*InteractionLayerMask layers = grabInteractable.interactionLayers;
+            layers.value &= ~2;
+            grabInteractable.interactionLayers = layers;*/
+            
             _isLocked = true;
-            socketActive = false;
+            //socketActive = false;
         }
 
         public void UnLock()
         {
+            if (_lockedObject == null)
+            {
+                return;
+            }
+
+            VRGrabInteractable grabInteractable = _lockedObject.GetComponentInChildren<VRGrabInteractable>();
+            if (grabInteractable == null)
+            {
+                return;
+            }
+
+            Rigidbody rigidbody = _lockedObject.GetComponentInChildren<Rigidbody>();
+            if (rigidbody == null)
+            {
+                return;
+            }
+            
+            _lockedObject.transform.parent = null;
+             
+            rigidbody.useGravity = true;
+            rigidbody.isKinematic = false;
+            
+            /*InteractionLayerMask layers = grabInteractable.interactionLayers;
+            layers.value |= 2;
+            grabInteractable.interactionLayers = layers;*/
+            
+            _isLocked = false;
+            _lockedObject = null;
+            //socketActive = false;
         }
         
         private void SendTryTaskComplete(Transform objectTransform, ESocketActivity socketActivity)

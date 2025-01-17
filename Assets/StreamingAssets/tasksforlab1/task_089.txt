@@ -3,7 +3,7 @@
   "Lab": 0,
   "Number": 89,
   "Title": "Задание 89",
-  "Description": "Перелейте воду из мерного цилиндра в стакан с твёрдым Agar и веществом.",
+  "Description": "Перелейте воду из мерного цилиндра в стакан с твёрдым Agar и веществом",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {

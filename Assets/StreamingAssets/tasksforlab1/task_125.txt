@@ -3,7 +3,7 @@
   "Lab": 0,
   "Number": 125,
   "Title": "Задание 125",
-  "Description": "Включите сушильный шкаф правой рукой.",
+  "Description": "Включите сушильный шкаф правой рукой",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {

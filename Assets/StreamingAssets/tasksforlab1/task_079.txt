@@ -1,8 +1,9 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 0,
   "Number": 79,
   "Title": "Задание 79",
-  "Description": "Возьмите Чашку Петри с растворами хлорида кальция и Na2HPO4 и Agar и положите ее на сканер.",
+  "Description": "Возьмите Чашку Петри с растворами хлорида кальция и Na2HPO4 и Agar и положите ее на сканер",
   "Warning": "",
   "SaveableTask": true,
   "LabActivity": {

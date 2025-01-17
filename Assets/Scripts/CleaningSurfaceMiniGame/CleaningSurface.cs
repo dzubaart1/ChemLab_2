@@ -89,7 +89,7 @@ namespace Machines
                 return;
             }
 
-            WaterDrop waterDrop = Instantiate(_waterDropPrefab, point, Quaternion.identity, _waterDropsPool);
+            WaterDrop waterDrop = Instantiate(_waterDropPrefab, point, _waterDropPrefab.transform.rotation, _waterDropsPool);
             _waterDrops.Add(waterDrop);
 
             if (_waterDrops.Count == _targetWaterDropsCount)

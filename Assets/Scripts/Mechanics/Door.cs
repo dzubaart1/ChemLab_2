@@ -112,7 +112,13 @@ namespace Machines
             {
                 _isOpen = false;
                 _door.transform.rotation = _closed;
+                
                 Rigidbody rb = _door.GetComponent<Rigidbody>();
+                if (rb == null)
+                {
+                    return;
+                }
+                
                 rb.velocity = Vector3.zero;
             }
         }

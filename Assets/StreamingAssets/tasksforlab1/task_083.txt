@@ -3,7 +3,7 @@
   "Lab": 0,
   "Number": 83,
   "Title": "Задание 83",
-  "Description": "Закройте сушильный шкаф.",
+  "Description": "Закройте сушильный шкаф",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {

@@ -3,7 +3,7 @@
   "Lab": 0,
   "Number": 101,
   "Title": "Задание 101",
-  "Description": "Включите центрифугу, нажав правой рукой кнопкy \"Power\".",
+  "Description": "Включите центрифугу, нажав правой рукой кнопкy \"Power\"",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {

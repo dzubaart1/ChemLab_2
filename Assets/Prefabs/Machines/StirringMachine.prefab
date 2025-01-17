@@ -956,7 +956,6 @@ MonoBehaviour:
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   _socketColliders: []
-  _origin: {fileID: 8591927299114905605}
   _socketType: 4
   _isEnterTaskSendable: 1
   _isExitTaskSendable: 1
@@ -1527,7 +1526,7 @@ MeshRenderer:
   - {fileID: 8590054973678440960, guid: 8ff2ab4d07e0d854a8587752d290ca51, type: 3}
   - {fileID: 8861988348289632520, guid: 8ff2ab4d07e0d854a8587752d290ca51, type: 3}
   - {fileID: 7394619036151602513, guid: 8ff2ab4d07e0d854a8587752d290ca51, type: 3}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: bb92e7dc89d73d24ba6c18bec7f57c36, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

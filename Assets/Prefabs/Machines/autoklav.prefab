@@ -2207,7 +2207,7 @@ MonoBehaviour:
   - {fileID: 491250802451691021}
   - {fileID: 8121015318937162941}
   _animator: {fileID: 727964729788041473}
-  _door: {fileID: 5377808913137170889}
+  _door: {fileID: 8959392804461360946}
 --- !u!95 &727964729788041473
 Animator:
   serializedVersion: 5

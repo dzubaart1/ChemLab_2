@@ -1,8 +1,9 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 0,
   "Number": 13,
   "Title": "Задание 13",
-  "Description": "Выключите кнопки «Тепло» и «Мешать».",
+  "Description": "Выключите кнопки «Тепло» и «Мешать»",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {

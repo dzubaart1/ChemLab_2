@@ -514,7 +514,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8740721374802212254, guid: 0a670103bb8a3b94982eeb83be0c8984, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.378
+      value: 2.39
       objectReference: {fileID: 0}
     - target: {fileID: 8740721374802212254, guid: 0a670103bb8a3b94982eeb83be0c8984, type: 3}
       propertyPath: m_LocalRotation.w
@@ -889,21 +889,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1353240813}
     m_Modifications:
-    - target: {fileID: 12465112451432319, guid: 61fd32c73cd975a49b0ef57035ffb92d, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 12465113412104643, guid: 61fd32c73cd975a49b0ef57035ffb92d, type: 3}
       propertyPath: m_Name
       value: DozatorCup3
-      objectReference: {fileID: 0}
-    - target: {fileID: 12465113412104643, guid: 61fd32c73cd975a49b0ef57035ffb92d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 12465113412104643, guid: 61fd32c73cd975a49b0ef57035ffb92d, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 12465113412104653, guid: 61fd32c73cd975a49b0ef57035ffb92d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1231,21 +1219,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1353240813}
     m_Modifications:
-    - target: {fileID: 12465112451432319, guid: 61fd32c73cd975a49b0ef57035ffb92d, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 12465113412104643, guid: 61fd32c73cd975a49b0ef57035ffb92d, type: 3}
       propertyPath: m_Name
       value: DozatorCup1
-      objectReference: {fileID: 0}
-    - target: {fileID: 12465113412104643, guid: 61fd32c73cd975a49b0ef57035ffb92d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 12465113412104643, guid: 61fd32c73cd975a49b0ef57035ffb92d, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 12465113412104653, guid: 61fd32c73cd975a49b0ef57035ffb92d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2169,21 +2145,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1353240813}
     m_Modifications:
-    - target: {fileID: 12465112451432319, guid: 61fd32c73cd975a49b0ef57035ffb92d, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 12465113412104643, guid: 61fd32c73cd975a49b0ef57035ffb92d, type: 3}
       propertyPath: m_Name
       value: DozatorCup2
-      objectReference: {fileID: 0}
-    - target: {fileID: 12465113412104643, guid: 61fd32c73cd975a49b0ef57035ffb92d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 12465113412104643, guid: 61fd32c73cd975a49b0ef57035ffb92d, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 12465113412104653, guid: 61fd32c73cd975a49b0ef57035ffb92d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3319,7 +3283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8740721374802212254, guid: 0a670103bb8a3b94982eeb83be0c8984, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.359297
+      value: 2.39
       objectReference: {fileID: 0}
     - target: {fileID: 8740721374802212254, guid: 0a670103bb8a3b94982eeb83be0c8984, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4587,7 +4551,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8740721374802212254, guid: 0a670103bb8a3b94982eeb83be0c8984, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.378
+      value: 2.39
       objectReference: {fileID: 0}
     - target: {fileID: 8740721374802212254, guid: 0a670103bb8a3b94982eeb83be0c8984, type: 3}
       propertyPath: m_LocalRotation.w

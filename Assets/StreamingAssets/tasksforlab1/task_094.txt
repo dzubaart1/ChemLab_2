@@ -3,7 +3,7 @@
   "Lab": 0,
   "Number": 94,
   "Title": "Задание 94",
-  "Description": "Возьмите термостойкий стакан \"3\" с плитки.",
+  "Description": "Возьмите термостойкий стакан \"3\" с плитки",
   "Warning": "",
   "SaveableTask": true,
   "LabActivity": {

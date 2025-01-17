@@ -107,6 +107,7 @@ namespace Core
         SetDozatorVolumeSideEffect,
         SpawnDocSideEffect,
         ConstructorSideEffect,
+        SetInteractableSideEffect,
     }
 
     public enum ESideEffectTime : byte

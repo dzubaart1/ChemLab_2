@@ -3,7 +3,7 @@
   "Lab": 0,
   "Number": 104,
   "Title": "Задание 104",
-  "Description": "Откройте одну из пробирок.",
+  "Description": "Откройте одну из пробирок",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {

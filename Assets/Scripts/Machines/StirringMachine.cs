@@ -183,15 +183,16 @@ namespace Machines
             }
 
             LabContainer container = _socketInteractor.SelectedObject.transform.GetComponent<LabContainer>();
+            ToggleStirringAnimation(false);
 
             if (!CraftTools.TryFindCraft(gameManager.CurrentBaseLocalManager.GetSOCrafts(), container.GetSubstanceProperties(), ECraft.HeatStir, out SOLabCraft labCraft))
             {
                 gameManager.CurrentBaseLocalManager.OnActivityComplete(new BadLabActivity());
+                return;
             }
             
             CraftTools.ApplyCraft(labCraft.LabCraft, container);
             
-            ToggleStirringAnimation(false);
             gameManager.CurrentBaseLocalManager.OnActivityComplete(new MachineLabActivity(EMachineActivity.OnFinish, EMachine.StirringMachine));
         }
 

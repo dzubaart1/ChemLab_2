@@ -1,8 +1,9 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 0,
   "Number": 63,
   "Title": "Задание 63",
-  "Description": "Добавьте раствор из пипет-дозатора в чашку Петри с раствором Na2HPO4 и Agar. Необходимый объем раствора: 0,05 мл.",
+  "Description": "Добавьте раствор из пипет-дозатора в чашку Петри с раствором Na2HPO4 и Agar. Необходимый объем раствора: 0,05 мл",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {

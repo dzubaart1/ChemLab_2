@@ -1,8 +1,9 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 0,
   "Number": 56,
   "Title": "Задание 56",
-  "Description": "Снимите наконечник с пипет-дозатора, выбросьте в емкость для отходов.  ",
+  "Description": "Снимите наконечник с пипет-дозатора, выбросьте в емкость для отходов",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {

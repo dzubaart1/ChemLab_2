@@ -3,7 +3,7 @@
   "Lab": 0,
   "Number": 119,
   "Title": "Задание 119",
-  "Description": "Заберите из сушильного шкафа чашку Петри с растворами хлорида кальция и Na2HPO4 и Agar. ",
+  "Description": "Заберите из сушильного шкафа чашку Петри с растворами хлорида кальция и Na2HPO4 и Agar",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {

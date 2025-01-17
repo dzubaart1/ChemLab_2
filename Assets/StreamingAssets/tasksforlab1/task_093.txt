@@ -3,7 +3,7 @@
   "Lab": 0,
   "Number": 93,
   "Title": "Задание 93",
-  "Description": "Выключите плитку, нажав правой рукой кнопки \"Stirring\" и \"Heating\" ( “Мешать” и “Тепло”). ",
+  "Description": "Выключите плитку, нажав правой рукой кнопки \"Stirring\" и \"Heating\" ( “Мешать” и “Тепло”)",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {

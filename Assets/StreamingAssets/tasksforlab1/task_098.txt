@@ -3,7 +3,7 @@
   "Lab": 0,
   "Number": 98,
   "Title": "Задание 98",
-  "Description": "Закройте пробирки.",
+  "Description": "Закройте пробирки",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {

@@ -3,7 +3,7 @@
   "Lab": 0,
   "Number": 100,
   "Title": "Задание 100",
-  "Description": "Поставьте пробирки в центрифугу напротив друг друга. ",
+  "Description": "Поставьте пробирки в центрифугу напротив друг друга",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {

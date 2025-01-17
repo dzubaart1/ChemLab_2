@@ -3,7 +3,7 @@
   "Lab": 0,
   "Number": 118,
   "Title": "Задание 118",
-  "Description": "Выключите сушильный шкаф правой рукой.",
+  "Description": "Выключите сушильный шкаф",
   "Warning": "",
   "SaveableTask": true,
   "LabActivity": {

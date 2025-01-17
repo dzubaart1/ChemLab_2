@@ -1,8 +1,9 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 0,
   "Number": 59,
   "Title": "Задание 59",
-  "Description": "С помощью пипет-дозатора отберите раствор хлорида кальция из термостойкого стакана.",
+  "Description": "С помощью пипет-дозатора отберите раствор хлорида кальция из термостойкого стакана",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {

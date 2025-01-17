@@ -3,7 +3,7 @@
   "Lab": 0,
   "Number": 88,
   "Title": "Задание 88",
-  "Description": "Наберите 100 мл дистиллированной воды в мерный цилиндр.",
+  "Description": "Наберите 100 мл дистиллированной воды в мерный цилиндр",
   "Warning": "",
   "SaveableTask": true,
   "LabActivity": {

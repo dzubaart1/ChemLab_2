@@ -3,7 +3,7 @@
   "Lab": 0,
   "Number": 86,
   "Title": "Задание 86",
-  "Description": "Твердый Agar с веществом пересыпьте в термостойкий стакан.",
+  "Description": "Твердый Agar с веществом пересыпьте в термостойкий стакан",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {

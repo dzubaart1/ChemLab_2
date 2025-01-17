@@ -3,7 +3,7 @@
   "Lab": 0,
   "Number": 106,
   "Title": "Задание 106",
-  "Description": "Наденьте на пипет-дозатор чистый наконечник. ",
+  "Description": "Наденьте на пипет-дозатор чистый наконечник",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
