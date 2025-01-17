@@ -267,9 +267,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7545c68c4b1ce34ca4131dc4e84e4e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _door: {fileID: 0}
+  _door: {fileID: 7109617957452938966}
   _closed: {x: 0, y: 0, z: 0, w: 1}
-  _opened: {x: 0, y: 0, z: 0, w: 0}
+  _opened: {x: -0.000000025449648, y: -0.6427876, z: 0.0000000017558701, w: 0.7660445}
   _doorType: 5
   _isOpenTaskSendable: 0
   _isCloseTaskSendable: 0
