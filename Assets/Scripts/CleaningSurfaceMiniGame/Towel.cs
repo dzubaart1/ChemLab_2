@@ -4,6 +4,5 @@ namespace Machines
 {
     public class Towel : MonoBehaviour
     {
-        
     }
 }

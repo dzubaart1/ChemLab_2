@@ -20,7 +20,6 @@ namespace Mechanics
         public event Action<Transform> ExitedTransformEvent;
         public event Action<Transform> EnteredTransformEvent;
         
-        [FormerlySerializedAs("_socketColliders")]
         [Header("Refs")]
         [SerializeField] private Collider[] _socketColliders;
         

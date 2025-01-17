@@ -41,20 +41,22 @@ namespace UI.Components
         public void SetIsOn(bool value, bool isLoad = true)
         {
             IsOn = value;
-
+            _btnImage.sprite = IsOn ? _onSprite : _offSprite;
+            
             if (!isLoad)
             {
-                ChangeStatus();   
+                ActivitySend();   
             }
         }
 
         private void OnClickBtn()
         {
             IsOn = !IsOn;
-            ChangeStatus();
+            _btnImage.sprite = IsOn ? _onSprite : _offSprite;
+            ActivitySend();
         }
 
-        private void ChangeStatus()
+        private void ActivitySend()
         {
             GameManager gameManager = GameManager.Instance;
             
@@ -67,8 +69,6 @@ namespace UI.Components
             {
                 return;
             }
-            
-            _btnImage.sprite = IsOn ? _onSprite : _offSprite;
             
             ClickBtnEvent?.Invoke();
             

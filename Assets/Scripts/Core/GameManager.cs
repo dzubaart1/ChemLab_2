@@ -23,7 +23,7 @@ namespace Core
         public ELab CurrentLab { get; private set; }
         public float GameTime { get; private set; }
         public int ErrorsCount { get; private set; }
-        public bool IsGamePlayed { get; private set; }
+        public bool IsGameFinished { get; private set; }
         
         private void Awake()
         {
@@ -37,7 +37,7 @@ namespace Core
         {
             GameTime = gameTime;
             ErrorsCount = errorsCount;
-            IsGamePlayed = true;
+            IsGameFinished = true;
         }
 
         public void SetLocalManger(BaseLocalManager localManager)

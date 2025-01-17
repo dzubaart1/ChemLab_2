@@ -42,7 +42,7 @@ namespace UI
         {
             GameManager gameManager = GameManager.Instance;
             
-            _resultLoadButton.gameObject.SetActive(gameManager != null && gameManager.IsGamePlayed);
+            _resultLoadButton.gameObject.SetActive(gameManager != null && gameManager.IsGameFinished);
             
             _startPanel.gameObject.SetActive(false);
             _lab1Panel.gameObject.SetActive(false);

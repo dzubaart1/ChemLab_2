@@ -10,6 +10,8 @@ namespace Gameplay
         [SerializeField] private VRGrabInteractable _grabInteractable;
         [SerializeField] private Collider _collider;
         [SerializeField] private Rigidbody _rigidbody;
+
+        public bool IsAnimating => _animator.enabled;
         
         private void OnTriggerStay(Collider other)
         {

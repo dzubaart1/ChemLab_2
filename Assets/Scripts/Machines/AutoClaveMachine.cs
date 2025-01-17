@@ -23,7 +23,7 @@ namespace Machines
         [Header("Refs")]
         [SerializeField] private VRSocketInteractor[] _socketInteractors;
         [SerializeField] private Animator _animator;
-        [SerializeField] private Transform _door;
+        [SerializeField] private Door _door;
         
         private SavedData _savedData = new SavedData();
         
@@ -107,7 +107,7 @@ namespace Machines
             _door.transform.rotation = new Quaternion(-0.7f, 0, 0, 0.7f);
             _animator.Play("Close");
             yield return new WaitForSeconds(1.0f);
-            _door.GetComponent<Door>().SetIsOpen(false);
+            _door.SetIsOpen(false);
             _isOpen = false;
             _door.transform.rotation = new Quaternion(-0.5f, -0.5f, -0.5f, 0.5f);
         }

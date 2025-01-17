@@ -24,7 +24,7 @@ namespace Containers
         private class SavedData
         {
             public Anchor Anchor;
-            public bool IsAnimating;
+            public bool IsAnimatingAnchor;
             public LabSubstance[] Substances = new LabSubstance[MAX_SUBSTANCE_COUNT];
             public EContainer ContainerType;
         }
@@ -298,6 +298,7 @@ namespace Containers
         {
             _savedData.ContainerType = ContainerType;
             _savedData.Anchor = Anchor;
+            _savedData.IsAnimatingAnchor = Anchor != null && Anchor.IsAnimating;
             _savedData.Substances = new LabSubstance[Substances.Count];
             
             for(int i = 0; i < Substances.Count; i++)
@@ -342,9 +343,9 @@ namespace Containers
 
         public void LoadAnchor()
         {
-            if (_savedData.Anchor == null & Anchor == null)
+            if (_savedData.Anchor != null)
             {
-                AnimateAnchor(_savedData.IsAnimating);
+                _savedData.Anchor.ToggleAnimate(_savedData.IsAnimatingAnchor);
             }
 
             if (_savedData.Anchor == null & Anchor != null)
@@ -355,13 +356,6 @@ namespace Containers
             if (_savedData.Anchor != null & Anchor == null)
             {
                 PutAnchor(_savedData.Anchor);
-                AnimateAnchor(_savedData.IsAnimating);
-            }
-
-            if (_savedData.Anchor != null & Anchor != null)
-            {
-                PutAnchor(_savedData.Anchor);
-                AnimateAnchor(_savedData.IsAnimating);
             }
         }
         
@@ -405,7 +399,7 @@ namespace Containers
             }
             
             Anchor.ToggleAnimate(value);
-            _savedData.IsAnimating = value;
+            _savedData.IsAnimatingAnchor = value;
         }
 
         private void ReleaseAnchor()

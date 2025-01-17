@@ -124,12 +124,11 @@ namespace LocalManagers
             {
                 socket.ReleaseAllLoad();
             }
-
+            
             foreach (var grabInteractable in _grabInteractables)
             {
                 grabInteractable.LoadSavedTransform();
             }
-
             
             foreach (var container in _containers)
             {
@@ -253,7 +252,8 @@ namespace LocalManagers
                     _tabletUI.OnTaskUpdated(_tasksList[_currentTaskID]);   
                 }
             }
-            else
+            
+            if(_currentTaskID == _tasksList.Count)
             {
                 FinishGame();
             }
