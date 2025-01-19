@@ -3,7 +3,6 @@ using Containers;
 using Core;
 using Core.Services;
 using Crafting;
-using JetBrains.Annotations;
 using Mechanics;
 using Saveables;
 using UI.Components;
@@ -11,7 +10,6 @@ using UnityEngine;
 
 namespace Machines
 {
-    [RequireComponent(typeof(Collider))]
     public class CentrifugaMachine : MonoBehaviour, ISaveableUI
     {
         private class SavedData

@@ -11,7 +11,6 @@ namespace Core
     public class GameManager : MonoBehaviour
     {
         public const string LOBBY_SCENE_NAME = "LobbyScene";
-        public const string FINISH_SCENE_NAME = "FinishScene";
         public const string SPACE_LAB_SCENE_NAME = "SpaceLab";
         public const string CUBE_LAB_SCENE_NAME = "CubeLab";
         

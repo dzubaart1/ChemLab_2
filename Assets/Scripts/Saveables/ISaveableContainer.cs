@@ -6,5 +6,6 @@
         public void PutSavedContainerType();
         public void PutSavedSubstances();
         public void PutSavedAnchor();
+        public void ReleaseAnchor();
     }
 }

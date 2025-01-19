@@ -338,40 +338,6 @@ namespace Containers
 
         public void PutSavedAnchor()
         {
-            LoadAnchor();
-        }
-
-        public void LoadAnchor()
-        {
-            if (_savedData.Anchor != null)
-            {
-                _savedData.Anchor.ToggleAnimate(_savedData.IsAnimatingAnchor);
-            }
-
-            if (_savedData.Anchor == null & Anchor != null)
-            {
-                ReleaseAnchor();
-            }
-
-            if (_savedData.Anchor != null & Anchor == null)
-            {
-                PutAnchor(_savedData.Anchor);
-            }
-        }
-        
-        public void PutAnchor(Anchor anchor)
-        {
-            GameManager gameManager = GameManager.Instance;
-            if (gameManager == null)
-            {
-                return;
-            }
-            
-            if (gameManager.CurrentBaseLocalManager == null)
-            {
-                return;
-            }
-
             if (!_isAnchorContainer)
             {
                 return;
@@ -382,15 +348,37 @@ namespace Containers
                 return;
             }
             
-            Anchor = anchor;
-            Anchor.TogglePhysics(false);
-            Anchor.transform.parent = transform;
-            Anchor.transform.localPosition = new Vector3(0, 0.01f, 0);
-            Anchor.transform.rotation = Quaternion.identity;
+            if (_savedData.Anchor == null)
+            {
+                return;
+            }
             
-            gameManager.CurrentBaseLocalManager.OnActivityComplete(new AnchorLabActivity(ContainerType));
+            _savedData.Anchor.ToggleAnimate(_savedData.IsAnimatingAnchor);
+            
+            MakePutAnchor(_savedData.Anchor);
         }
 
+        public bool TryPutAnchor(Anchor anchor)
+        {
+            if (!_isAnchorContainer)
+            {
+                return false;
+            }
+            
+            if (Anchor != null)
+            {
+                return false;
+            }
+            
+            MakePutAnchor(anchor);
+            return true;
+        }
+
+        public void ReleaseAnchor()
+        {
+            MakeReleaseAnchor();
+        }
+        
         public void AnimateAnchor(bool value)
         {
             if (Anchor == null)
@@ -401,8 +389,17 @@ namespace Containers
             Anchor.ToggleAnimate(value);
             _savedData.IsAnimatingAnchor = value;
         }
+        
+        private void MakePutAnchor(Anchor anchor)
+        {
+            Anchor = anchor;
+            Anchor.TogglePhysics(false);
+            Anchor.transform.parent = transform;
+            Anchor.transform.localPosition = new Vector3(0, 0.01f, 0);
+            Anchor.transform.rotation = Quaternion.identity;
+        }
 
-        private void ReleaseAnchor()
+        private void MakeReleaseAnchor()
         {
             if (Anchor == null)
             {
@@ -411,6 +408,7 @@ namespace Containers
             
             Anchor.transform.parent = null;
             Anchor.TogglePhysics(true);
+            Anchor.ToggleAnimate(false);
             
             Anchor = null;
         }

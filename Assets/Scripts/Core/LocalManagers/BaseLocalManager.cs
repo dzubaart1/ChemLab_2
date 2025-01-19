@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using BioEngineerLab.Activities;
-using BioEngineerLab.Tasks;
 using BioEngineerLab.Tasks.SideEffects;
 using Core;
 using Crafting;
 using Saveables;
-using UI.TabletUI;
 using UnityEngine;
 
 namespace LocalManagers
@@ -34,7 +31,6 @@ namespace LocalManagers
             }
             
             InitLab(gameManager.CurrentLab);
-            SaveGame();
         }
         
         public abstract IReadOnlyList<SOLabCraft> GetSOCrafts();

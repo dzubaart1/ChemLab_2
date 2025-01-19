@@ -81,10 +81,16 @@ namespace LocalManagers
             }
             
             gameManager.OnFinishGame((DateTime.Now - _gameStartTime).Minutes, _errorsTask.Count);
+            if (_tabletUI != null)
+            {
+                _tabletUI.OnFinishGame();
+            }
         }
 
         public override void SaveGame()
         {
+            _savedTaskID = _currentTaskID;
+            
             foreach (var socket in _sockets)
             {
                 socket.Save();
@@ -114,8 +120,6 @@ namespace LocalManagers
             {
                 saveableOther.Save();
             }
-
-            _savedTaskID = _currentTaskID;
         }
 
         public override void LoadGame()
@@ -124,23 +128,32 @@ namespace LocalManagers
             {
                 socket.ReleaseAllLoad();
             }
+            
+            foreach (var container in _containers)
+            {
+                container.ReleaseAnchor();
+            }
+            
+            foreach (var socket in _sockets)
+            {
+                socket.ReleaseLocks();
+            }
 
             foreach (var grabInteractable in _grabInteractables)
             {
                 grabInteractable.LoadSavedTransform();
             }
-
+            
+            foreach (var socket in _sockets)
+            {
+                socket.PutSavedLocks();
+            }
             
             foreach (var container in _containers)
             {
                 container.PutSavedSubstances();
                 container.PutSavedContainerType();
                 container.PutSavedAnchor();
-            }
-            
-            foreach (var socket in _sockets)
-            {
-                socket.PutSavedInteractable();
             }
             
             foreach (var saveableUi in _saveableUis)
@@ -156,6 +169,11 @@ namespace LocalManagers
             foreach (var saveableOther in _saveableOthers)
             {
                 saveableOther.Load();
+            }
+            
+            foreach (var socket in _sockets)
+            {
+                socket.PutSavedInteractable();
             }
 
             _currentTaskID = _savedTaskID;
@@ -242,18 +260,20 @@ namespace LocalManagers
 
             if (IsCorrectTaskID(_currentTaskID))
             {
-                if (_tasksList[_currentTaskID].SaveableTask)
-                {
-                    SaveGame();
-                }
-
                 ActivateSideEffects(_tasksList[_currentTaskID], ESideEffectTime.StartTask);
+                
                 if (_tabletUI != null)
                 {
                     _tabletUI.OnTaskUpdated(_tasksList[_currentTaskID]);   
                 }
+                
+                if (_tasksList[_currentTaskID].SaveableTask)
+                {
+                    SaveGame();
+                }
             }
-            else
+            
+            if(_currentTaskID == _tasksList.Count)
             {
                 FinishGame();
             }

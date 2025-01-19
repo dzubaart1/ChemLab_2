@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6547023520705266073}
   - component: {fileID: 1483114090821794059}
   m_Layer: 0
-  m_Name: bottle_cup
+  m_Name: Cup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -606,7 +606,7 @@ GameObject:
   - component: {fileID: 6774801599821961656}
   - component: {fileID: 3960298003647097438}
   m_Layer: 0
-  m_Name: bottle
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -931,7 +931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cupSocket: {fileID: 8269479090754633260}
-  _isNozzleNeed: 0
+  _isClosedWhenCupIn: 1
 --- !u!114 &3960298003647097438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -990,7 +990,7 @@ GameObject:
   - component: {fileID: 7370744188404416283}
   - component: {fileID: 8318244865055672879}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: SubstancePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

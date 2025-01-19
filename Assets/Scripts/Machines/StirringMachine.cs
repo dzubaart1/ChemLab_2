@@ -46,8 +46,8 @@ namespace Machines
         
         private void OnEnable()
         {
-            _socketInteractor.selectEntered.AddListener(OnEnter);
-            _socketInteractor.selectExited.AddListener(OnExit);
+            _socketInteractor.EnteredTransformEvent += OnEnter;
+            _socketInteractor.ExitedTransformEvent += OnExit;
 
             _stirringBtn.ClickBtnEvent += CheckMachineStates;
             _heatingBtn.ClickBtnEvent += CheckMachineStates;
@@ -55,14 +55,14 @@ namespace Machines
 
         private void OnDisable()
         {
-            _socketInteractor.selectEntered.RemoveListener(OnEnter);
-            _socketInteractor.selectExited.RemoveListener(OnExit);
+            _socketInteractor.EnteredTransformEvent -= OnEnter;
+            _socketInteractor.ExitedTransformEvent -= OnExit;
 
             _stirringBtn.ClickBtnEvent -= CheckMachineStates;
             _heatingBtn.ClickBtnEvent -= CheckMachineStates;
         }
 
-        private void OnEnter(SelectEnterEventArgs args)
+        private void OnEnter(Transform obj)
         {
             if (_isLoadEnter)
             {
@@ -70,33 +70,7 @@ namespace Machines
                 return;
             }
             
-            CheckAnimatorStatus();
-        }
-
-        private void OnExit(SelectExitEventArgs args)
-        {
-            if (_isLoadExit)
-            {
-                _isLoadExit = false;
-                return;
-            }
-            
-            CheckAnimatorStatus();
-        }
-
-        private void Update()
-        {
-            if (_socketInteractor is null)
-            {
-                return;
-            }
-            
-            if (_socketInteractor.SelectedObject is null)
-            {
-                return;
-            }
-            
-            LabContainer container = _socketInteractor.SelectedObject.GetComponent<LabContainer>();
+            LabContainer container = obj.GetComponentInChildren<LabContainer>();
             
             if (container == null)
             {
@@ -104,21 +78,28 @@ namespace Machines
             }
 
             container.ChangeContainerType(EContainer.StirringContainer);
+            
+            CheckAnimatorStatus();
         }
 
-        private void OnTriggerExit(Collider other)
+        private void OnExit(Transform obj)
         {
-            LabContainer container = other.GetComponent<LabContainer>();
+            if (_isLoadExit)
+            {
+                _isLoadExit = false;
+                return;
+            }
+            
+            LabContainer container = obj.GetComponentInChildren<LabContainer>();
             
             if (container == null)
             {
                 return;
             }
 
-            if (container.ContainerType == EContainer.StirringContainer)
-            {
-                container.ChangeContainerType(EContainer.ChemicGlassContainer);
-            }
+            container.ChangeContainerType(EContainer.ChemicGlassContainer);
+            
+            CheckAnimatorStatus();
         }
 
         private void CheckMachineStates()

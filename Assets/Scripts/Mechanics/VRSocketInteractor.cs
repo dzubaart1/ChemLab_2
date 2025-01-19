@@ -5,7 +5,6 @@ using Core;
 using JetBrains.Annotations;
 using Saveables;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.XR.Interaction.Toolkit;
 
 namespace Mechanics
@@ -40,12 +39,17 @@ namespace Mechanics
         {
             get
             {
-                if (firstInteractableSelected == null)
+                if (firstInteractableSelected != null)
                 {
-                    return null;
+                    return firstInteractableSelected.transform;;
                 }
 
-                return firstInteractableSelected.transform;
+                if (_isLocked && _lockedObject != null)
+                {
+                    return _lockedObject.transform;
+                }
+
+                return null;
             }
         }
 
@@ -61,17 +65,20 @@ namespace Mechanics
         
         private void Update()
         {
-            if (!_isTimerActive)
+            if (_isTimerActive)
             {
-                return;
+                _timer += Time.deltaTime;
+
+                if (_timer > _timerDelay)
+                {
+                    _isTimerActive = false;
+                }
             }
 
-            _timer += Time.deltaTime;
-
-            if (_timer > _timerDelay)
+            if (_isLocked && _lockedObject != null)
             {
-                _isTimerActive = false;
-                _timer = 0f;
+                _lockedObject.transform.localPosition = Vector3.zero;
+                _lockedObject.transform.localRotation = Quaternion.identity;
             }
         }
 
@@ -99,8 +106,6 @@ namespace Mechanics
             {
                 return;
             }
-            
-            SocketCollisionsIgnored(SelectedObject, true);
 
             if (_isStartEnter)
             {
@@ -114,8 +119,6 @@ namespace Mechanics
             }
 
             EnteredTransformEvent?.Invoke(SelectedObject);
-            
-            Lock();
             
             if (_isEnterTaskSendable)
             {
@@ -137,16 +140,12 @@ namespace Mechanics
 
             Transform exitedTransform = exitedInteractable.transform;
 
-            SocketCollisionsIgnored(exitedTransform, false);
-
             if (_isTimerActive)
             {
                 return;
             }
             
             ExitedTransformEvent?.Invoke(exitedTransform);
-            
-            UnLock();
 
             if (_isExitTaskSendable)
             {
@@ -157,6 +156,8 @@ namespace Mechanics
         
         public void Save()
         {
+            _savedData.IsLocked = _isLocked;
+            _savedData.LockedObject = _lockedObject;
             _savedData.GrabbedObject = firstInteractableSelected as VRGrabInteractable;
         }
 
@@ -167,8 +168,7 @@ namespace Mechanics
                 return;
             }
             
-            _isTimerActive = true;
-            _timer = 0f;
+            RestartTimer();
             
             for (var i = interactablesSelected.Count - 1; i >= 0; --i)
             {
@@ -183,76 +183,151 @@ namespace Mechanics
                 return;
             }
             
-            _isTimerActive = true;
-            _timer = 0f;
+            RestartTimer();
             
-            interactionManager.SelectEnter((IXRSelectInteractor)this, _savedData.GrabbedObject);
+            interactionManager.FocusEnter(this, _savedData.GrabbedObject);
+            if (CanHover((IXRHoverInteractable)_savedData.GrabbedObject))
+            {
+                interactionManager.HoverEnter(this, (IXRHoverInteractable)_savedData.GrabbedObject);   
+            }
+            
+            _savedData.GrabbedObject.transform.position = attachTransform.position;
+            _savedData.GrabbedObject.transform.rotation = attachTransform.rotation;
         }
 
-        public void Lock()
+        public void PutSavedLocks()
+        {
+            if (!_savedData.IsLocked)
+            {
+                return;
+            }
+
+            if (_savedData.LockedObject == null)
+            {
+                return;
+            }
+            
+            MakeLock(_savedData.LockedObject);
+        }
+
+        public void ReleaseLocks()
+        {
+            if (!_isLocked)
+            {
+                return;
+            }
+            
+            if (_lockedObject == null)
+            {
+                return;
+            }
+            
+            MakeUnlock(_lockedObject);
+        }
+
+        public void LockSelected()
         {
             if (SelectedObject == null)
             {
                 return;
             }
 
-            VRGrabInteractable grabInteractable = SelectedObject.GetComponentInChildren<VRGrabInteractable>();
-            if (grabInteractable == null)
-            {
-                return;
-            }
+            VRGrabInteractable vrGrabInteractable = SelectedObject.GetComponentInChildren<VRGrabInteractable>();
 
-            Rigidbody rigidbody = SelectedObject.GetComponentInChildren<Rigidbody>();
-            if (rigidbody == null)
+            if (vrGrabInteractable == null)
             {
                 return;
             }
             
-            rigidbody.useGravity = false;
-            rigidbody.isKinematic = true;
-            
-            _lockedObject = grabInteractable;
-            _lockedObject.transform.SetParent(attachTransform);
-            
-            /*InteractionLayerMask layers = grabInteractable.interactionLayers;
-            layers.value &= ~2;
-            grabInteractable.interactionLayers = layers;*/
-            
-            _isLocked = true;
-            //socketActive = false;
+            MakeLock(vrGrabInteractable);
         }
-
-        public void UnLock()
+        
+        public void UnlockSelectedObject()
         {
             if (_lockedObject == null)
             {
                 return;
             }
+            
+            MakeUnlock(_lockedObject);
+        }
 
-            VRGrabInteractable grabInteractable = _lockedObject.GetComponentInChildren<VRGrabInteractable>();
-            if (grabInteractable == null)
+        private void MakeLock(VRGrabInteractable grabInteractable)
+        {
+            if (_isLocked)
             {
                 return;
             }
-
-            Rigidbody rigidbody = _lockedObject.GetComponentInChildren<Rigidbody>();
+            
+            Rigidbody rigidbody = grabInteractable.GetComponentInChildren<Rigidbody>();
             if (rigidbody == null)
             {
                 return;
             }
+
+            Collider[] colliders = grabInteractable.GetComponentsInChildren<Collider>();
+            if (colliders.Length == 0)
+            {
+                return;
+            }
             
-            _lockedObject.transform.parent = null;
-             
-            rigidbody.useGravity = true;
+            RestartTimer();
+
+            foreach (var collider in colliders)
+            {
+                collider.enabled = false;
+            }
+            
+            grabInteractable.enabled = false;
+            rigidbody.isKinematic = true;
+            
+            socketActive = false;
+            
+            grabInteractable.transform.SetParent(attachTransform);
+            grabInteractable.transform.localPosition = Vector3.zero;
+            grabInteractable.transform.localRotation = Quaternion.identity;
+            
+            _isLocked = true;
+            _lockedObject = grabInteractable;
+        }
+
+        private void MakeUnlock(VRGrabInteractable grabInteractable)
+        {
+            if (!_isLocked)
+            {
+                return;
+            }
+
+            Rigidbody rigidbody = grabInteractable.GetComponentInChildren<Rigidbody>();
+            if (rigidbody == null)
+            {
+                return;
+            }
+
+            Collider[] colliders = grabInteractable.GetComponentsInChildren<Collider>();
+            if (colliders.Length == 0)
+            {
+                return;
+            }
+            
+            RestartTimer();
+            
+            foreach (var collider in colliders)
+            {
+                collider.enabled = true;
+            }
+            
+            grabInteractable.transform.SetParent(null);
+            grabInteractable.enabled = true;
+            
             rigidbody.isKinematic = false;
             
-            /*InteractionLayerMask layers = grabInteractable.interactionLayers;
-            layers.value |= 2;
-            grabInteractable.interactionLayers = layers;*/
+            socketActive = true;
             
+            interactionManager.SelectEnter((IXRSelectInteractor)this, grabInteractable);
+
             _isLocked = false;
             _lockedObject = null;
-            //socketActive = false;
         }
         
         private void SendTryTaskComplete(Transform objectTransform, ESocketActivity socketActivity)
@@ -288,18 +363,10 @@ namespace Mechanics
             }
         }
 
-        
-        private void SocketCollisionsIgnored(Transform targetObject, bool isIgnored)
+        private void RestartTimer()
         {
-            Collider[] targetObjectColliders = targetObject.GetComponentsInChildren<Collider>(true);
-
-            foreach (var socketCollider in _socketColliders)
-            {
-                foreach (var targetObjectCollider in targetObjectColliders)
-                {
-                    Physics.IgnoreCollision(socketCollider, targetObjectCollider, isIgnored);
-                }
-            }
+            _isTimerActive = true;
+            _timer = 0f;
         }
     }
 }

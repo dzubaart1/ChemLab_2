@@ -1,4 +1,6 @@
-﻿using Containers;
+﻿using BioEngineerLab.Activities;
+using Containers;
+using Core;
 using Mechanics;
 using UnityEngine;
 
@@ -15,6 +17,17 @@ namespace Gameplay
         
         private void OnTriggerStay(Collider other)
         {
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                return;
+            }
+            
+            if (gameManager.CurrentBaseLocalManager == null)
+            {
+                return;
+            }
+            
             LabContainer labContainer = other.GetComponent<LabContainer>();
             
             if (labContainer is null)
@@ -27,7 +40,10 @@ namespace Gameplay
                 return;
             }
             
-            labContainer.PutAnchor(this);
+            if(labContainer.TryPutAnchor(this))
+            {
+                gameManager.CurrentBaseLocalManager.OnActivityComplete(new AnchorLabActivity(labContainer.ContainerType));   
+            }
         }
 
         public void TogglePhysics(bool isOn)

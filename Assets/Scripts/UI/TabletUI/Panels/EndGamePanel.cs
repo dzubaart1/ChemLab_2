@@ -27,7 +27,7 @@ namespace UI.TabletUI.Panels
                 return;
             }
             
-            gameManager.LoadScene(GameManager.FINISH_SCENE_NAME);
+            gameManager.LoadScene(GameManager.LOBBY_SCENE_NAME);
         }
 
         public override void SetTaskToShow(LabTask task)

@@ -40,11 +40,11 @@ namespace Constructors
                 {
                     if (constructorSideEffect.IsLock)
                     {
-                        socket.Lock();
+                        socket.LockSelected();
                     }
                     else
                     {
-                        socket.UnLock();
+                        socket.UnlockSelectedObject();
                     }
                 }
             }

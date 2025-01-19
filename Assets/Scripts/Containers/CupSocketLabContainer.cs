@@ -6,21 +6,18 @@ namespace Containers
     public class CupSocketLabContainer : MonoBehaviour
     {
         [SerializeField] private VRSocketInteractor _cupSocket;
-        [SerializeField] private bool _isNozzleNeed;
+        [SerializeField] private bool _isClosedWhenCupIn = true;
 
         public bool IsClosed()
         {
-            if (_cupSocket == null)
+            if (_isClosedWhenCupIn)
             {
-                return _isNozzleNeed;
+                return _cupSocket.SelectedObject != null;
             }
-
-            if (_cupSocket.firstInteractableSelected == null)
+            else
             {
-                return _isNozzleNeed;
+                return _cupSocket.SelectedObject == null;
             }
-            
-            return !_isNozzleNeed;
         }
     }
 }

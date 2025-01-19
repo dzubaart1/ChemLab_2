@@ -878,7 +878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cupSocket: {fileID: 3336934357289109587}
-  _isNozzleNeed: 1
+  _isClosedWhenCupIn: 0
 --- !u!114 &6143796264293191323
 MonoBehaviour:
   m_ObjectHideFlags: 0
