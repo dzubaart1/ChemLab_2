@@ -149,7 +149,7 @@ namespace Mechanics
 
             if (_isExitTaskSendable)
             {
-                Debug.Log($" TRY COMPLETE EXIT!");
+                Debug.Log($" TRY COMPLETE EXIT! {gameObject.name}");
                 SendTryTaskComplete(exitedTransform, ESocketActivity.Exit);
             }
         }

@@ -44,7 +44,7 @@ namespace Machines
                 return;
             }
             
-            Ray ray = new Ray(_rayOrigin.transform.position, _rayOrigin.transform.up);
+            Ray ray = new Ray(_rayOrigin.transform.position, _rayOrigin.transform.forward);
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
                 CheckRaycastHit(hit);

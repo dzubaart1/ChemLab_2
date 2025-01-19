@@ -108,7 +108,7 @@ MonoBehaviour:
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 0
   m_DisableVisualsWhenBlockedInGroup: 1
-  m_StartingSelectedInteractable: {fileID: 0}
+  m_StartingSelectedInteractable: {fileID: 5904932283230295179}
   m_StartingTargetFilter: {fileID: 0}
   m_HoverEntered:
     m_PersistentCalls:
@@ -154,7 +154,7 @@ MonoBehaviour:
   _isExitTaskSendable: 1
   _timerDelay: 1
   _isSubstanceSocket: 0
-  _isStartEnter: 0
+  _isStartEnter: 1
 --- !u!1 &406801781614770454
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,7 +627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cupSocket: {fileID: 4610094521424754830}
-  _isNozzleNeed: 0
+  _isClosedWhenCupIn: 1
 --- !u!114 &6727197343405305730
 MonoBehaviour:
   m_ObjectHideFlags: 0

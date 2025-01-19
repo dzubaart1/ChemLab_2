@@ -19,9 +19,9 @@ namespace BioEngineerLab.Machines
         [SerializeField] private ButtonComponent _lightButton;
         [SerializeField] private ButtonComponent _dlightButton;
         [SerializeField] private ButtonComponent _keyButton;
-        [SerializeField] private GameObject _bacteriumLight;
-        [SerializeField] private GameObject _commonLight;
-        [SerializeField] private GameObject _dLight;
+        [SerializeField] private Light _bacteriumLight;
+        [SerializeField] private Light _commonLight;
+        [SerializeField] private Light _dLight;
         
         private SavedData _savedData = new SavedData();
         
@@ -65,7 +65,7 @@ namespace BioEngineerLab.Machines
         private void OnBacteriumButtonClicked()
         {
             _isBactLightOn = !_isBactLightOn;
-            _bacteriumLight.SetActive(_isBactLightOn);
+            _bacteriumLight.gameObject.SetActive(_isBactLightOn);
         }
 
         private void OnLightButtonClicked()
@@ -73,8 +73,8 @@ namespace BioEngineerLab.Machines
             _isCommonLightOn = true;
             _isDLightOn = false;
             
-            _commonLight.SetActive(_isCommonLightOn);
-            _dLight.SetActive(_isDLightOn);
+            _commonLight.gameObject.SetActive(_isCommonLightOn);
+            _dLight.gameObject.SetActive(_isDLightOn);
         }
         
         private void OnDLightButtonClicked()
@@ -82,8 +82,8 @@ namespace BioEngineerLab.Machines
             _isCommonLightOn = false;
             _isDLightOn = true;
             
-            _commonLight.SetActive(_isCommonLightOn);
-            _dLight.SetActive(_isDLightOn);
+            _commonLight.gameObject.SetActive(_isCommonLightOn);
+            _dLight.gameObject.SetActive(_isDLightOn);
         }
 
         private void OnKeyButtonClicked()
@@ -100,10 +100,10 @@ namespace BioEngineerLab.Machines
         public void LoadUIState()
         {
             _isBactLightOn = _savedData.IsBactLightOn;
-            _bacteriumLight.SetActive(_isBactLightOn);
+            _bacteriumLight.gameObject.SetActive(_isBactLightOn);
             
             _isCommonLightOn = _savedData.IsCommonLightOn;
-            _commonLight.SetActive(_isCommonLightOn);
+            _commonLight.gameObject.SetActive(_isCommonLightOn);
         }
     }
 }

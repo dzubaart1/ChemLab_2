@@ -2239,8 +2239,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _door: {fileID: 5377808913137170889}
-  _closed: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  _opened: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
+  _closed: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
+  _opened: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   _doorType: 1
   _isOpenTaskSendable: 0
   _isCloseTaskSendable: 1
