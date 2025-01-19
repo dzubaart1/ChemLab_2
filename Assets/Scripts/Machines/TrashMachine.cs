@@ -4,7 +4,6 @@ using Core;
 using Mechanics;
 using Saveables;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Machines
 {
@@ -79,7 +78,7 @@ namespace Machines
         {
             foreach (var interactable in _hiddenGameObjects)
             {
-                interactable.gameObject.SetActive(true); ;
+                interactable.gameObject.SetActive(true);
             }
 
             foreach (var interactable in _savedData.HiddenGameObjects)

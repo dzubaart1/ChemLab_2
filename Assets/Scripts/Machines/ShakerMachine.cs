@@ -90,23 +90,29 @@ namespace Machines
             LabContainer container1 = _socket1.SelectedObject.transform.GetComponent<LabContainer>();
             LabContainer container2 = _socket2.SelectedObject.transform.GetComponent<LabContainer>();
             LabContainer container3 = _socket3.SelectedObject.transform.GetComponent<LabContainer>();
+
+            if (container1 == null || container2 == null || container3 == null)
+            {
+                return;
+            }
                     
             if (!CraftTools.TryFindCraft(gameManager.CurrentBaseLocalManager.GetSOCrafts(), container1.GetSubstanceProperties(), ECraft.HeatStir, out SOLabCraft labCraft1))
             {
                 return;
             }
-            CraftTools.ApplyCraft(labCraft1.LabCraft, container1);
-                    
+            
             if (!CraftTools.TryFindCraft(gameManager.CurrentBaseLocalManager.GetSOCrafts(), container2.GetSubstanceProperties(), ECraft.HeatStir, out SOLabCraft labCraft2))
             {
                 return;
             }
-            CraftTools.ApplyCraft(labCraft2.LabCraft, container2);
                     
             if (!CraftTools.TryFindCraft(gameManager.CurrentBaseLocalManager.GetSOCrafts(), container3.GetSubstanceProperties(), ECraft.HeatStir, out SOLabCraft labCraft3))
             {
                 return;
             }
+            
+            CraftTools.ApplyCraft(labCraft1.LabCraft, container1);
+            CraftTools.ApplyCraft(labCraft2.LabCraft, container2);
             CraftTools.ApplyCraft(labCraft3.LabCraft, container3);
         }
         

@@ -2786,7 +2786,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8383232544099711048, guid: 2e6e53c709558ea46ae2c05fa53d3ec5, type: 3}
       propertyPath: m_Name
-      value: lamin_box
+      value: LaminBox
       objectReference: {fileID: 0}
     - target: {fileID: 9159452176378946290, guid: 2e6e53c709558ea46ae2c05fa53d3ec5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4511,7 +4511,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3619003907331480789, guid: 51d0b80da83f9cd40ab9bc2d4dcc3957, type: 3}
       propertyPath: m_Name
-      value: shaker_incubator
+      value: Shaker
       objectReference: {fileID: 0}
     - target: {fileID: 4139538467133458031, guid: 51d0b80da83f9cd40ab9bc2d4dcc3957, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5148,7 +5148,7 @@ PrefabInstance:
       objectReference: {fileID: 1372123625}
     - target: {fileID: 6848284354802082394, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: m_Name
-      value: PanelMachine
+      value: BoxPanelMachine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5243,7 +5243,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7285395401206161354, guid: 12f585747faa82a478be0b6e9aeea4f3, type: 3}
       propertyPath: m_Name
-      value: termostat
+      value: Termostat
       objectReference: {fileID: 0}
     - target: {fileID: 7949200960110724464, guid: 12f585747faa82a478be0b6e9aeea4f3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5347,7 +5347,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 409296489915881170, guid: 1a9efccc5c375f24cbc2a6c0b325f5a7, type: 3}
       propertyPath: m_Name
-      value: PultMachine
+      value: Keyboard
       objectReference: {fileID: 0}
     - target: {fileID: 2237785550432477326, guid: 1a9efccc5c375f24cbc2a6c0b325f5a7, type: 3}
       propertyPath: m_Pivot.x
@@ -5492,7 +5492,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1205133086155748648, guid: 0fcc46e39817e8442b6376ef19107f96, type: 3}
       propertyPath: m_Name
-      value: fridge
+      value: Fridge
       objectReference: {fileID: 0}
     - target: {fileID: 2013863868464525202, guid: 0fcc46e39817e8442b6376ef19107f96, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5607,7 +5607,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7124554909176146324, guid: 2554d92803c16264b9e36b5b5100c12e, type: 3}
       propertyPath: m_Name
-      value: autoklav
+      value: Autoklav
       objectReference: {fileID: 0}
     - target: {fileID: 7607794034564002606, guid: 2554d92803c16264b9e36b5b5100c12e, type: 3}
       propertyPath: m_LocalPosition.x

@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 5653936636945550798}
   - component: {fileID: 4761238301846342846}
   m_Layer: 5
-  m_Name: urnCanvas (1)
+  m_Name: urnCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1064,7 +1064,7 @@ GameObject:
   - component: {fileID: 7143841531290270156}
   - component: {fileID: 4954224899065236742}
   m_Layer: 0
-  m_Name: Litter bin2
+  m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

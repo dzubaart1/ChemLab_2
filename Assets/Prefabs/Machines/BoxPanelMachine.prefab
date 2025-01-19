@@ -469,7 +469,6 @@ GameObject:
   - component: {fileID: 7089238340130845389}
   - component: {fileID: 5187125903963536033}
   - component: {fileID: 2030173913495960441}
-  - component: {fileID: 6044742473071514328}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -538,26 +537,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6044742473071514328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5730534564630108553}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4799a88febb747a4a9a7fd4d120fd880, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bacteriumButton: {fileID: 6417557707874513206}
-  _lightButton: {fileID: 6699084911366499359}
-  _dlightButton: {fileID: 4283557192268909177}
-  _keyButton: {fileID: 3144709600822991557}
-  _bacteriumLight: {fileID: 0}
-  _commonLight: {fileID: 0}
-  _dLight: {fileID: 0}
-  _doorHandle: {fileID: 0}
 --- !u!1 &6848284354802082394
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,8 +550,9 @@ GameObject:
   - component: {fileID: 7618276009647556110}
   - component: {fileID: 2661796708644725320}
   - component: {fileID: 6261047319882778041}
+  - component: {fileID: 4632761823282653852}
   m_Layer: 5
-  m_Name: PanelMachine
+  m_Name: BoxPanelMachine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -680,6 +660,25 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RaycastTriggerInteraction: 1
+--- !u!114 &4632761823282653852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6848284354802082394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4799a88febb747a4a9a7fd4d120fd880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bacteriumButton: {fileID: 6417557707874513206}
+  _lightButton: {fileID: 6699084911366499359}
+  _dlightButton: {fileID: 4283557192268909177}
+  _keyButton: {fileID: 3144709600822991557}
+  _bacteriumLight: {fileID: 0}
+  _commonLight: {fileID: 0}
+  _dLight: {fileID: 0}
 --- !u!1 &7435199160409476901
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 964690363027125455}
   - component: {fileID: 3097374775986515028}
   m_Layer: 0
-  m_Name: fridge_display_bc
+  m_Name: UIContent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,11 +27,11 @@ Transform:
   m_GameObject: {fileID: 102774724242903718}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000015454313, y: -0.70710677, z: 0.000000015454312, w: 0.7071068}
-  m_LocalPosition: {x: -0.27652144, y: 0.7446764, z: -0.18076715}
+  m_LocalPosition: {x: -0.27652168, y: 0.74467635, z: -0.18076706}
   m_LocalScale: {x: 4.1640625, y: 4.1640625, z: 4.1640625}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2013863868464525202}
+  m_Father: {fileID: 1499103570099040222}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &964690363027125455
 MeshFilter:
@@ -83,6 +83,40 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &573309642060964650
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1499103570099040222}
+  m_Layer: 0
+  m_Name: Content
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1499103570099040222
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573309642060964650}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7254112189979787287}
+  - {fileID: 1760850681713807777}
+  - {fileID: 2042289038584682898}
+  m_Father: {fileID: 2013863868464525202}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1205133086155748648
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,7 +127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2013863868464525202}
   m_Layer: 0
-  m_Name: fridge
+  m_Name: Fridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,11 +146,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7254112189979787287}
   - {fileID: 6129371351242845324}
-  - {fileID: 1760850681713807777}
-  - {fileID: 2042289038584682898}
   - {fileID: 7341239492114307878}
+  - {fileID: 1499103570099040222}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1340651789294443135
@@ -237,7 +269,7 @@ GameObject:
   - component: {fileID: 5564215425437648841}
   - component: {fileID: 7690318233748320474}
   m_Layer: 0
-  m_Name: mf_39_door.001
+  m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -905,13 +937,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4851924861802245592}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.11300087, y: 0.338, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2013863868464525202}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &3094097821920677411
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1012,7 +1044,7 @@ GameObject:
   - component: {fileID: 7382048112316078102}
   - component: {fileID: 912155589794125115}
   m_Layer: 0
-  m_Name: mf_39_fridge
+  m_Name: Corpus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1027,11 +1059,11 @@ Transform:
   m_GameObject: {fileID: 4947907315335025390}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071067, y: -0.000000030908616, z: 0.000000030908623, w: 0.7071068}
-  m_LocalPosition: {x: -0.17546697, y: 0.13750096, z: -0.000620611}
-  m_LocalScale: {x: 0.08564153, y: 0.08564153, z: 0.08564153}
+  m_LocalPosition: {x: -0.17546654, y: 0.137501, z: -0.000620842}
+  m_LocalScale: {x: 0.08564153, y: 0.085641526, z: 0.085641526}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2013863868464525202}
+  m_Father: {fileID: 1499103570099040222}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7382048112316078102
 MeshFilter:
@@ -1093,7 +1125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2042289038584682898}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Polki
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1107,7 +1139,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5612331727071393522}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1118,7 +1150,7 @@ Transform:
   - {fileID: 2847214315872446876}
   - {fileID: 7790602969934402577}
   - {fileID: 8083176397844056615}
-  m_Father: {fileID: 2013863868464525202}
+  m_Father: {fileID: 1499103570099040222}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5732954046554327254
 GameObject:

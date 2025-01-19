@@ -13,7 +13,7 @@ namespace Machines
         {
             public bool IsPowerButtonOn;
             public bool IsPullButtonOn;
-            public bool IsOpened;
+            public bool AnimationParamDoorOpened;
         }
 
         [Header("UIs")]
@@ -27,7 +27,7 @@ namespace Machines
         
         private SavedData _savedData = new SavedData();
         
-        private bool _isOpen = false;
+        private bool _animationParamDoorOpened = false;
         private bool _isPulled = false;
         
         private void Start()
@@ -58,38 +58,29 @@ namespace Machines
 
         private void OnPullButtonClick()
         {
-            if (_isPulled)
-            {
-                _isPulled = false;
-                _animator.Play("Close");
-            }
-            else
-            {
-                _isPulled = true;
-                _animator.Play("Open");
-            }
+            _isPulled = !_isPulled;
+            _animator.Play(_isPulled ? "Open" : "Close");
         }
 
         public void SaveUIState()
         {
             _savedData.IsPowerButtonOn = _powerButton.IsOn;
             _savedData.IsPullButtonOn = _pullButton.IsOn;
-            _savedData.IsOpened = _isOpen;
+            _savedData.AnimationParamDoorOpened = _animationParamDoorOpened;
         }
 
         public void LoadUIState()
         {
             _powerButton.SetIsOn(_savedData.IsPowerButtonOn);
             _pullButton.SetIsOn(_savedData.IsPullButtonOn);
-            
-            if (_savedData.IsOpened)
+
+            _animationParamDoorOpened = _savedData.AnimationParamDoorOpened;
+            if (_savedData.AnimationParamDoorOpened)
             {
-                _isOpen = true;
                 _door.transform.rotation = new Quaternion(-0.7f, 0, 0, 0.7f);
             }
             else
             {
-                _isOpen = false;
                 if (_isPulled)
                 {
                     StartCoroutine(PlayCloseAnimation());
@@ -106,9 +97,11 @@ namespace Machines
         {
             _door.transform.rotation = new Quaternion(-0.7f, 0, 0, 0.7f);
             _animator.Play("Close");
+            
             yield return new WaitForSeconds(1.0f);
+            
             _door.SetIsOpen(false);
-            _isOpen = false;
+            _animationParamDoorOpened = false;
             _door.transform.rotation = new Quaternion(-0.5f, -0.5f, -0.5f, 0.5f);
         }
     }

@@ -1223,7 +1223,7 @@ GameObject:
   - component: {fileID: 2803996973998519044}
   - component: {fileID: 8877909106208276286}
   m_Layer: 0
-  m_Name: door_incide
+  m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1616,7 +1616,7 @@ GameObject:
   - component: {fileID: 6646238125641829387}
   - component: {fileID: 4267592729957875796}
   m_Layer: 5
-  m_Name: Canvas (1)
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1941,7 +1941,7 @@ GameObject:
   - component: {fileID: 5916033290372276093}
   - component: {fileID: 2062630926341543975}
   m_Layer: 0
-  m_Name: body
+  m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2031,7 +2031,7 @@ GameObject:
   - component: {fileID: 7949200960110724464}
   - component: {fileID: 7126480618283495708}
   m_Layer: 0
-  m_Name: termostat
+  m_Name: Termostat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2089,7 +2089,7 @@ GameObject:
   - component: {fileID: 5041482396281996220}
   - component: {fileID: 3943080879196591325}
   m_Layer: 0
-  m_Name: door_outside
+  m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

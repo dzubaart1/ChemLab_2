@@ -76,39 +76,30 @@ namespace Machines
                 return;
             }
             
+            if (_socketInteractor2.SelectedObject == null)
+            {
+                return;
+            }
+            
             LabContainer container1 = _socketInteractor1.SelectedObject.GetComponent<LabContainer>();
+            LabContainer container2 = _socketInteractor1.SelectedObject.GetComponent<LabContainer>();
 
-            if (container1 is null)
+            if (container1 is null || container2 == null)
             {
                 return;
             }
             
             if (!CraftTools.TryFindCraft(gameManager.CurrentBaseLocalManager.GetSOCrafts(), container1.GetSubstanceProperties(), ECraft.Dry, out SOLabCraft craftContainer1))
             {
-                gameManager.CurrentBaseLocalManager.OnActivityComplete(new BadLabActivity());
-                return;
-            }
-            
-            CraftTools.ApplyCraft(craftContainer1.LabCraft, container1);
-            
-            if (_socketInteractor2.SelectedObject == null)
-            {
-                return;
-            }
-            
-            LabContainer container2 = _socketInteractor1.SelectedObject.GetComponent<LabContainer>();
-
-            if (container2 is null)
-            {
                 return;
             }
             
             if (!CraftTools.TryFindCraft(gameManager.CurrentBaseLocalManager.GetSOCrafts(), container2.GetSubstanceProperties(), ECraft.Dry, out SOLabCraft craftContainer2))
             {
-                gameManager.CurrentBaseLocalManager.OnActivityComplete(new BadLabActivity());
                 return;
             }
             
+            CraftTools.ApplyCraft(craftContainer1.LabCraft, container1);
             CraftTools.ApplyCraft(craftContainer2.LabCraft, container2);
         }
         
