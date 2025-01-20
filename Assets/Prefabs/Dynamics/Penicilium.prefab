@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 7238423984851564218}
   - component: {fileID: 5978358075401687074}
   - component: {fileID: 7498016193252486234}
-  - component: {fileID: 8766041795940065013}
   m_Layer: 0
   m_Name: polyetilen
   m_TagString: Untagged
@@ -154,7 +153,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 8388608
+    m_Bits: 8388610
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -288,20 +287,6 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &8766041795940065013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 270110046400573506}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef7f09b9dcc82b840b8e2fbc92395f1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _grabInteractable: {fileID: 7498016193252486234}
-  _interactableType: 1
 --- !u!1 &344917822942050068
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,6 +459,7 @@ GameObject:
   - component: {fileID: 7226936729573442282}
   - component: {fileID: 1143321773962208775}
   - component: {fileID: 3850425803975726091}
+  - component: {fileID: 8693113643532862619}
   m_Layer: 0
   m_Name: jal
   m_TagString: Penicillium
@@ -755,7 +741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cupSocket: {fileID: 2831905657260157408}
-  _isNozzleNeed: 0
+  _isClosedWhenCupIn: 1
 --- !u!114 &3850425803975726091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -769,6 +755,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _labContainer: {fileID: 7306014128124949882}
+--- !u!114 &8693113643532862619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087582902423479528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5ce9b498491422ca892a40be4373504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sockets:
+  - {fileID: 2831905657260157408}
+  - {fileID: 5065850228862986962}
 --- !u!1 &1856110967396785439
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,7 +869,6 @@ GameObject:
   - component: {fileID: 4997556355115536597}
   - component: {fileID: 2005961227870078698}
   - component: {fileID: 9195656215374716350}
-  - component: {fileID: 2992276417103649232}
   m_Layer: 0
   m_Name: cap
   m_TagString: Untagged
@@ -1008,7 +1008,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 4194304
+    m_Bits: 4194306
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -1142,20 +1142,6 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &2992276417103649232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3960538511224791117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef7f09b9dcc82b840b8e2fbc92395f1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _grabInteractable: {fileID: 9195656215374716350}
-  _interactableType: 0
 --- !u!1 &5223787509417432981
 GameObject:
   m_ObjectHideFlags: 0

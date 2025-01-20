@@ -18,13 +18,8 @@ public class ResultPanel : MonoBehaviour
         {
             return;
         }
-
-        if (gameManager.CurrentBaseLocalManager == null)
-        {
-            return;
-        }
         
-        _timeText.text = "Время прохождения: " + gameManager.GameTime;
-        _errorsText.text = "Количество ошибок: " + gameManager.ErrorsCount;
+        _timeText.text = gameManager.GameTime.ToString() + " минут";
+        _errorsText.text = gameManager.ErrorsCount.ToString();
     }
 }

@@ -91,8 +91,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.00095969177, y: 0.0009596924, z: 0.0014676776}
-  m_Center: {x: 0.0000000013783574, y: -9.313226e-10, z: -0.000009947195}
+  m_Size: {x: 0.09795489, y: 0.14796306, z: 0.09843762}
+  m_Center: {x: 0.00079706684, y: -0.00014523417, z: 0.00016918592}
 --- !u!135 &5888718667842666636
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b4c490f479acb40a2f8d6668c5d1c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reagentsLabSubstanceProperty: {fileID: 0}
+  reagentsLabSubstanceProperty: {fileID: 11400000, guid: d1d06eabed187b443ae4ec31b7d8c990, type: 2}
   _maxVolume: 9000
   _containerWeight: 0
   _containerType: 1
@@ -607,7 +607,7 @@ Transform:
   m_GameObject: {fileID: 5840336584262721964}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.048, z: -0.108}
+  m_LocalPosition: {x: -0, y: 0.2115, z: 0.0006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -634,8 +634,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.00073679414, y: 0.00073679537, z: 0.0002814482}
-  m_Center: {x: 6.693881e-10, y: 0.0000000040017762, z: 0.00008683364}
+  m_Size: {x: 0.07536009, y: 0.029295683, z: 0.07471625}
+  m_Center: {x: 0.00012001395, y: 0.008892074, z: 0.000048790127}
 --- !u!54 &366513881096733532
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -273,7 +273,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -6.110572, y: 0.42134905, z: 3.3623462}
+  m_ConnectedAnchor: {x: -4.803, y: 3.185, z: 2.808}
   serializedVersion: 2
   m_UseSpring: 0
   m_Spring:
@@ -750,7 +750,7 @@ Transform:
   m_GameObject: {fileID: 5048447336167476502}
   serializedVersion: 2
   m_LocalRotation: {x: 0.18301274, y: -0.6830127, z: 0.18301274, w: 0.6830127}
-  m_LocalPosition: {x: 0.0602, y: 0.019, z: 0.0008}
+  m_LocalPosition: {x: 0.0428, y: 0.0316, z: 0.0015}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1014,7 +1014,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5048447336628602100}
   m_LocalRotation: {x: 0, y: 0.7660445, z: -0.6427876, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0.1155}
+  m_LocalPosition: {x: 0, y: 0, z: 0.1157}
   m_LocalScale: {x: 0.005, y: 0.005, z: 0.005}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -1023,7 +1023,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 80, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.0235, y: 0.1019}
+  m_AnchoredPosition: {x: -0.0235, y: 0.1032}
   m_SizeDelta: {x: 40, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5048447336628602106
@@ -1491,7 +1491,7 @@ Transform:
   m_GameObject: {fileID: 5048447337314484829}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.798, y: 3.108, z: 2.966}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -400,7 +400,6 @@ GameObject:
   - component: {fileID: 1713765740577491284}
   - component: {fileID: 5123472726678766353}
   - component: {fileID: 3165382205555412301}
-  - component: {fileID: 9014471135880766453}
   m_Layer: 0
   m_Name: Cap
   m_TagString: Untagged
@@ -656,20 +655,6 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &9014471135880766453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2864030260130789541}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef7f09b9dcc82b840b8e2fbc92395f1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _grabInteractable: {fileID: 3165382205555412301}
-  _interactableType: 2
 --- !u!1 &3550354850888418720
 GameObject:
   m_ObjectHideFlags: 0
@@ -892,6 +877,7 @@ GameObject:
   - component: {fileID: 5262455093653514706}
   - component: {fileID: 6637860554541758138}
   - component: {fileID: 4824747128342776462}
+  - component: {fileID: 1533060245209128581}
   m_Layer: 0
   m_Name: BasePetriDish
   m_TagString: SerializeTransferAndSubstance
@@ -1157,7 +1143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cupSocket: {fileID: 5689100715759726558}
-  _isNozzleNeed: 0
+  _isClosedWhenCupIn: 1
 --- !u!114 &4824747128342776462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1171,6 +1157,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _labContainer: {fileID: 5262455093653514706}
+--- !u!114 &1533060245209128581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5574189162960249576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5ce9b498491422ca892a40be4373504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sockets:
+  - {fileID: 5689100715759726558}
 --- !u!1 &5751288759987789541
 GameObject:
   m_ObjectHideFlags: 0

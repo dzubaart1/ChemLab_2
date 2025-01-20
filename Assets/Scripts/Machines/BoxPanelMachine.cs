@@ -19,9 +19,9 @@ namespace BioEngineerLab.Machines
         [SerializeField] private ButtonComponent _lightButton;
         [SerializeField] private ButtonComponent _dlightButton;
         [SerializeField] private ButtonComponent _keyButton;
-        [SerializeField] private Light _bacteriumLight;
-        [SerializeField] private Light _commonLight;
-        [SerializeField] private Light _dLight;
+        [SerializeField] private GameObject _bacteriumLight;
+        [SerializeField] private GameObject _commonLight;
+        [SerializeField] private GameObject _dLight;
         
         private SavedData _savedData = new SavedData();
         
