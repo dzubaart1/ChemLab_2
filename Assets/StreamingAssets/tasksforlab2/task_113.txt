@@ -5,7 +5,7 @@
   "Title": "Задание 113",
   "Description": "Перелейте вещество из пипет-дозатора в ёмкость с надписью «Глюкоза»",
   "Warning": "",
-  "SaveableTask": true,
+  "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.CraftSubstanceLabActivity, Assembly-CSharp",
     "LabCraft": {

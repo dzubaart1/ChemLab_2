@@ -5,7 +5,7 @@
   "Title": "Задание 133",
   "Description": "Возьмите ёмкость с надписью «Лактоза»",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",
     "SocketType": 29,

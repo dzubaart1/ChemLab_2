@@ -14,58 +14,6 @@
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
-        "LabSubstanceProperty": {
-          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "PenicilliumLaktoza",
-          "SubstanceMode": 0,
-          "SubstanceLayer": 0,
-          "SubstanceColorR": 0.7058824,
-          "SubstanceColorG": 0.5372549,
-          "SubstanceColorB": 0.6553261,
-          "SubstanceColorA": 0.8352941,
-          "HintName": ""
-        },
-        "Weight": 120.0,
-        "SideEffectTimeType": 0,
-        "SideEffectType": 0
-      },
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
-        "LabSubstanceProperty": {
-          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "PenicilliumSaharoza",
-          "SubstanceMode": 0,
-          "SubstanceLayer": 0,
-          "SubstanceColorR": 0.6296133,
-          "SubstanceColorG": 0.5372549,
-          "SubstanceColorB": 0.7058824,
-          "SubstanceColorA": 0.8352941,
-          "HintName": ""
-        },
-        "Weight": 120.0,
-        "SideEffectTimeType": 0,
-        "SideEffectType": 0
-      },
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
-        "LabSubstanceProperty": {
-          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "PenicilliumGlukoza",
-          "SubstanceMode": 0,
-          "SubstanceLayer": 0,
-          "SubstanceColorR": 0.6644016,
-          "SubstanceColorG": 0.537335336,
-          "SubstanceColorB": 0.7075472,
-          "SubstanceColorA": 0.8352941,
-          "HintName": ""
-        },
-        "Weight": 120.0,
-        "SideEffectTimeType": 0,
-        "SideEffectType": 0
-      }
-    ]
+    "$values": []
   }
 }

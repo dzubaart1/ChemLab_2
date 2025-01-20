@@ -5,7 +5,7 @@
   "Title": "Задание 112",
   "Description": "Возьмите ёмкость с надписью «Глюкоза»",
   "Warning": "",
-  "SaveableTask": true,
+  "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",
     "SocketType": 29,

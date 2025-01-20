@@ -5,7 +5,7 @@
   "Title": "Задание 122",
   "Description": "Наденьте наконечник на пипет-дозатор поднеся пипет-дозатор к наконечнику. ",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
     "SocketType": 6,
@@ -14,6 +14,14 @@
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": []
+    "$values": [
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.ConstructorSideEffect, Assembly-CSharp",
+        "SocketType": 6,
+        "IsLock": true,
+        "SideEffectTimeType": 1,
+        "SideEffectType": 3
+      }
+    ]
   }
 }

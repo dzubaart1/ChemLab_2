@@ -19,6 +19,8 @@ namespace Mechanics
         }
 
         private SavedData _savedData = new SavedData();
+
+        [SerializeField] private bool _isSaveble = true;
         
         private void Start()
         {
@@ -60,8 +62,11 @@ namespace Mechanics
 
         public void LoadSavedTransform()
         {
-            transform.position = _savedData.Position;
-            transform.rotation = _savedData.Rotation;
+            if (_isSaveble)
+            {
+                transform.position = _savedData.Position;
+                transform.rotation = _savedData.Rotation;
+            }            
         }
 
         public void TurnOffCollidersInSeconds(float sec)

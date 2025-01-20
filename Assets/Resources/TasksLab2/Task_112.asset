@@ -19,5 +19,5 @@ MonoBehaviour:
     Description: "\u0412\u043E\u0437\u044C\u043C\u0438\u0442\u0435 \u0451\u043C\u043A\u043E\u0441\u0442\u044C
       \u0441 \u043D\u0430\u0434\u043F\u0438\u0441\u044C\u044E \xAB\u0413\u043B\u044E\u043A\u043E\u0437\u0430\xBB"
     Warning: 
-    SaveableTask: 1
+    SaveableTask: 0
     LabSideEffects: []

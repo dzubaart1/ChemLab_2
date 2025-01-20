@@ -103,6 +103,11 @@ namespace Machines
             _door.SetIsOpen(false);
             _animationParamDoorOpened = false;
             _door.transform.rotation = new Quaternion(-0.5f, -0.5f, -0.5f, 0.5f);
+            Rigidbody rb = _door.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.velocity = Vector3.zero;
+            }            
         }
     }
 }
