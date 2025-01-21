@@ -108,7 +108,7 @@ MonoBehaviour:
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 0
   m_DisableVisualsWhenBlockedInGroup: 1
-  m_StartingSelectedInteractable: {fileID: 5904932283230295179}
+  m_StartingSelectedInteractable: {fileID: 0}
   m_StartingTargetFilter: {fileID: 0}
   m_HoverEntered:
     m_PersistentCalls:
@@ -154,7 +154,7 @@ MonoBehaviour:
   _isExitTaskSendable: 1
   _timerDelay: 1
   _isSubstanceSocket: 0
-  _isStartEnter: 1
+  _isStartEnter: 0
 --- !u!1 &406801781614770454
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,6 +370,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+  _isSaveble: 1
 --- !u!1 &3055693038327567119
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,6 +615,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+  _isSaveble: 1
 --- !u!114 &1052600119535284414
 MonoBehaviour:
   m_ObjectHideFlags: 0

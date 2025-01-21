@@ -15,7 +15,7 @@ namespace LocalManagers
 {
     public class SpaceLabManager : BaseLocalManager
     {
-       [CanBeNull]
+            [CanBeNull]
         public LabTask CurrentTask
         {
             get
@@ -36,9 +36,9 @@ namespace LocalManagers
         private List<ISaveableContainer> _containers = new List<ISaveableContainer>();
         private List<ISaveableSocket> _sockets = new List<ISaveableSocket>();
         private List<ISaveableGrabInteractable> _grabInteractables = new List<ISaveableGrabInteractable>();
-        
+
         [CanBeNull] private TabletUI _tabletUI;
-        
+
         private HashSet<LabTask> _errorsTask = new HashSet<LabTask>();
         private List<LabTask> _tasksList = new List<LabTask>();
         private List<SOLabCraft> _soCrafts = new List<SOLabCraft>();
@@ -48,19 +48,20 @@ namespace LocalManagers
         private int _currentTaskID = 0;
 
         private int _savedTaskID;
-        
+        private bool _isError = false;
+
         public override void InitLab(ELab lab)
         {
             _soCrafts = ResourcesDatabase.ReadAllCraft();
             _tasksList = LabTasksDatabase.ReadAll(lab);
-            
+
             _isGameStarted = true;
-            
+
             _currentTaskID = 0;
             _savedTaskID = 0;
-            
+
             _gameStartTime = DateTime.Now;
-            
+
             SaveGame();
             ActivateSideEffects(_tasksList[_currentTaskID], ESideEffectTime.StartTask);
 
@@ -79,7 +80,7 @@ namespace LocalManagers
             {
                 return;
             }
-            
+
             gameManager.OnFinishGame((DateTime.Now - _gameStartTime).Minutes, _errorsTask.Count);
             if (_tabletUI != null)
             {
@@ -90,7 +91,7 @@ namespace LocalManagers
         public override void SaveGame()
         {
             _savedTaskID = _currentTaskID;
-            
+
             foreach (var socket in _sockets)
             {
                 socket.Save();
@@ -124,16 +125,18 @@ namespace LocalManagers
 
         public override void LoadGame()
         {
+            _isError = false;
+            
             foreach (var socket in _sockets)
             {
                 socket.ReleaseAllLoad();
             }
-            
+
             foreach (var container in _containers)
             {
                 container.ReleaseAnchor();
             }
-            
+
             foreach (var socket in _sockets)
             {
                 socket.ReleaseLocks();
@@ -143,19 +146,19 @@ namespace LocalManagers
             {
                 grabInteractable.LoadSavedTransform();
             }
-            
+
             foreach (var socket in _sockets)
             {
                 socket.PutSavedLocks();
             }
-            
+
             foreach (var container in _containers)
             {
                 container.PutSavedSubstances();
                 container.PutSavedContainerType();
                 container.PutSavedAnchor();
             }
-            
+
             foreach (var saveableUi in _saveableUis)
             {
                 saveableUi.LoadUIState();
@@ -170,26 +173,26 @@ namespace LocalManagers
             {
                 saveableOther.Load();
             }
-            
+
             foreach (var socket in _sockets)
             {
                 socket.PutSavedInteractable();
             }
 
             _currentTaskID = _savedTaskID;
-            
+
             ActivateSideEffects(_tasksList[_currentTaskID], ESideEffectTime.StartTask);
-            
+
             if (_tabletUI != null)
             {
-                _tabletUI.OnTaskUpdated(CurrentTask);   
+                _tabletUI.OnTaskUpdated(CurrentTask);
             }
         }
 
         public override void OnActivityComplete(LabActivity activity)
         {
             Debug.Log(activity.ActivityType + $" TRY COMPLETE {activity.ActivityType}!");
-            
+
             if (!IsCorrectTaskID(_currentTaskID))
             {
                 return;
@@ -200,15 +203,16 @@ namespace LocalManagers
                 MoveToNextTask();
                 return;
             }
-            
+
             if (_tabletUI != null)
             {
-                _tabletUI.OnTaskFailed();   
+                _tabletUI.OnTaskFailed();
+                _isError = true;
             }
-            
+
             _errorsTask.Add(_tasksList[_currentTaskID]);
         }
-        
+
         public override IReadOnlyList<SOLabCraft> GetSOCrafts()
         {
             return _soCrafts;
@@ -233,7 +237,7 @@ namespace LocalManagers
         {
             _sideEffectActivators.Add(sideEffectActivator);
         }
-        
+
         public override void AddSaveableContainer(ISaveableContainer saveableContainer)
         {
             _containers.Add(saveableContainer);
@@ -251,34 +255,39 @@ namespace LocalManagers
 
         private void MoveToNextTask()
         {
-            if (IsCorrectTaskID(_currentTaskID))
+            if (_isError)
             {
-                ActivateSideEffects(_tasksList[_currentTaskID], ESideEffectTime.EndTask);   
+                return;
             }
             
+            if (IsCorrectTaskID(_currentTaskID))
+            {
+                ActivateSideEffects(_tasksList[_currentTaskID], ESideEffectTime.EndTask);
+            }
+
             _currentTaskID++;
 
             if (IsCorrectTaskID(_currentTaskID))
             {
                 ActivateSideEffects(_tasksList[_currentTaskID], ESideEffectTime.StartTask);
-                
+
                 if (_tabletUI != null)
                 {
-                    _tabletUI.OnTaskUpdated(_tasksList[_currentTaskID]);   
+                    _tabletUI.OnTaskUpdated(_tasksList[_currentTaskID]);
                 }
-                
+
                 if (_tasksList[_currentTaskID].SaveableTask)
                 {
                     SaveGame();
                 }
             }
-            
-            if(_currentTaskID == _tasksList.Count)
+
+            if (_currentTaskID == _tasksList.Count)
             {
                 FinishGame();
             }
         }
-        
+
         private void ActivateSideEffects(LabTask labTask, ESideEffectTime sideEffectTime)
         {
             foreach (var sideEffect in labTask.LabSideEffects)
@@ -292,7 +301,7 @@ namespace LocalManagers
                 }
             }
         }
-        
+
         private bool IsCorrectTaskID(int id)
         {
             return id >= 0 && id < _tasksList.Count;

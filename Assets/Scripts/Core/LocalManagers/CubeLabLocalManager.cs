@@ -48,6 +48,7 @@ namespace LocalManagers
         private int _currentTaskID = 0;
 
         private int _savedTaskID;
+        private bool _isError = false;
 
         public override void InitLab(ELab lab)
         {
@@ -124,6 +125,8 @@ namespace LocalManagers
 
         public override void LoadGame()
         {
+            _isError = false;
+            
             foreach (var socket in _sockets)
             {
                 socket.ReleaseAllLoad();
@@ -204,6 +207,7 @@ namespace LocalManagers
             if (_tabletUI != null)
             {
                 _tabletUI.OnTaskFailed();
+                _isError = true;
             }
 
             _errorsTask.Add(_tasksList[_currentTaskID]);
@@ -251,6 +255,11 @@ namespace LocalManagers
 
         private void MoveToNextTask()
         {
+            if (_isError)
+            {
+                return;
+            }
+            
             if (IsCorrectTaskID(_currentTaskID))
             {
                 ActivateSideEffects(_tasksList[_currentTaskID], ESideEffectTime.EndTask);
