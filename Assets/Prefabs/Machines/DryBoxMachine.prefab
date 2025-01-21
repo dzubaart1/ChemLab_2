@@ -1207,6 +1207,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+  _isSaveble: 1
 --- !u!1 &6991985489194717528
 GameObject:
   m_ObjectHideFlags: 0
@@ -1446,7 +1447,7 @@ MeshRenderer:
   - {fileID: -576257647392366031, guid: 50d2ab063b0e5fe4e9a34d66ebc511a4, type: 3}
   - {fileID: -6169798721395175660, guid: 50d2ab063b0e5fe4e9a34d66ebc511a4, type: 3}
   - {fileID: 5916912933003525809, guid: 50d2ab063b0e5fe4e9a34d66ebc511a4, type: 3}
-  - {fileID: -6478536213147159724, guid: 78fa0220cbd594542a77ab373cf60797, type: 3}
+  - {fileID: 2100000, guid: 20fee1197dccf0e4382ae609d208b97d, type: 2}
   - {fileID: -3522955778539423533, guid: 50d2ab063b0e5fe4e9a34d66ebc511a4, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
