@@ -1,5 +1,6 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 0,
   "Number": 42,
   "Title": "Задание 42",
   "Description": "Разместите раствор Na2HPO4 и Agar из пипет-дозатора в чашке Петри. Необходимая объем материала: 8 мл ",

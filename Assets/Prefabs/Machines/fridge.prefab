@@ -127,7 +127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2013863868464525202}
   m_Layer: 0
-  m_Name: Fridge
+  m_Name: fridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -565,7 +565,7 @@ GameObject:
   - component: {fileID: 7010110524477926136}
   - component: {fileID: 4856825532704885410}
   m_Layer: 0
-  m_Name: Door
+  m_Name: FridgeDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -806,6 +806,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+  _isSaveble: 1
 --- !u!1 &4321242492945675126
 GameObject:
   m_ObjectHideFlags: 0
@@ -983,7 +984,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_InteractionLayers:
     m_Bits: 1048576
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 7341239492114307878}
   m_KeepSelectedTargetValid: 0
   m_DisableVisualsWhenBlockedInGroup: 1
   m_StartingSelectedInteractable: {fileID: 0}
@@ -1025,7 +1026,13 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
-  _socketColliders: []
+  _socketColliders:
+  - {fileID: 2987494776563819254}
+  - {fileID: 7227334935131738671}
+  - {fileID: 739838785062090810}
+  - {fileID: 7187857620506640511}
+  - {fileID: 7221047203653117094}
+  - {fileID: 7996820253397462586}
   _socketType: 28
   _isEnterTaskSendable: 0
   _isExitTaskSendable: 1

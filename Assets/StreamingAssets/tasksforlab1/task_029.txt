@@ -1,5 +1,6 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 0,
   "Number": 29,
   "Title": "Задание 29",
   "Description": "Наберите 30 мл дистиллированной воды в мерный цилиндр",
@@ -40,7 +41,7 @@
         },
         "Weight": 30.0,
         "SideEffectTimeType": 0,
-        "SideEffectType": 2
+        "SideEffectType": 0
       }
     ]
   }

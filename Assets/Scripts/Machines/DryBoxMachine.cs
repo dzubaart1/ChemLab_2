@@ -80,7 +80,6 @@ namespace Machines
             
             if (!CraftTools.TryFindCraft(gameManager.CurrentBaseLocalManager.GetSOCrafts(), container.GetSubstanceProperties(), ECraft.Dry, out SOLabCraft craftContainer))
             {
-                gameManager.CurrentBaseLocalManager.OnActivityComplete(new BadLabActivity());
                 return;
             }
             

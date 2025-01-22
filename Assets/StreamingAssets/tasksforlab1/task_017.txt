@@ -1,5 +1,6 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 0,
   "Number": 17,
   "Title": "Задание 17",
   "Description": "Возьмите мерную ложечку и наберите необходимое количество гидрофосфата натрия",
@@ -40,7 +41,7 @@
         },
         "Weight": 0.0852,
         "SideEffectTimeType": 0,
-        "SideEffectType": 2
+        "SideEffectType": 0
       }
     ]
   }

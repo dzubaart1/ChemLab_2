@@ -91,6 +91,11 @@ namespace LocalManagers
         public override void SaveGame()
         {
             _savedTaskID = _currentTaskID;
+            
+            foreach (var saveableDoor in _saveableDoors)
+            {
+                saveableDoor.SaveDoorState();
+            }
 
             foreach (var socket in _sockets)
             {
@@ -110,11 +115,6 @@ namespace LocalManagers
             foreach (var saveableUi in _saveableUis)
             {
                 saveableUi.SaveUIState();
-            }
-
-            foreach (var saveableDoor in _saveableDoors)
-            {
-                saveableDoor.SaveDoorState();
             }
 
             foreach (var saveableOther in _saveableOthers)
@@ -164,11 +164,6 @@ namespace LocalManagers
                 saveableUi.LoadUIState();
             }
 
-            foreach (var saveableDoor in _saveableDoors)
-            {
-                saveableDoor.LoadDoorState();
-            }
-
             foreach (var saveableOther in _saveableOthers)
             {
                 saveableOther.Load();
@@ -177,6 +172,11 @@ namespace LocalManagers
             foreach (var socket in _sockets)
             {
                 socket.PutSavedInteractable();
+            }
+            
+            foreach (var saveableDoor in _saveableDoors)
+            {
+                saveableDoor.LoadDoorState();
             }
 
             _currentTaskID = _savedTaskID;
@@ -191,7 +191,7 @@ namespace LocalManagers
 
         public override void OnActivityComplete(LabActivity activity)
         {
-            Debug.Log(activity.ActivityType + $" TRY COMPLETE {activity.ActivityType}!");
+            Debug.Log($" TRY COMPLETE {activity.ActivityType}! {activity} {_tasksList[_currentTaskID].LabActivity}");
 
             if (!IsCorrectTaskID(_currentTaskID))
             {

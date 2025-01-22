@@ -1,5 +1,6 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 0,
   "Number": 3,
   "Title": "Задание 3",
   "Description": "Возьмите мерную ложечку и наберите необходимое количество реагента",
@@ -40,7 +41,7 @@
         },
         "Weight": 3.33,
         "SideEffectTimeType": 0,
-        "SideEffectType": 2
+        "SideEffectType": 0
       }
     ]
   }

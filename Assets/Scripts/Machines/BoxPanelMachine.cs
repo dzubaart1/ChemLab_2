@@ -95,6 +95,8 @@ namespace BioEngineerLab.Machines
         {
             _savedData.IsBactLightOn = _isBactLightOn;
             _savedData.IsCommonLightOn = _isCommonLightOn;
+            _savedData.IsDLightOn = _isDLightOn;
+            _savedData.IsDoorOpened = _isDoorOpened;
         }
 
         public void LoadUIState()
@@ -104,6 +106,9 @@ namespace BioEngineerLab.Machines
             
             _isCommonLightOn = _savedData.IsCommonLightOn;
             _commonLight.gameObject.SetActive(_isCommonLightOn);
+            
+            _isDLightOn = _savedData.IsDLightOn;
+            _dLight.gameObject.SetActive(_isDLightOn);
         }
     }
 }

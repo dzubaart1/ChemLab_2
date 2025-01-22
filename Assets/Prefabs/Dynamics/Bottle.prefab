@@ -215,6 +215,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+  _isSaveble: 1
 --- !u!1 &991886195837819432
 GameObject:
   m_ObjectHideFlags: 0
@@ -896,6 +897,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+  _isSaveble: 1
 --- !u!114 &337074593456097543
 MonoBehaviour:
   m_ObjectHideFlags: 0

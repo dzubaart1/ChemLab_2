@@ -1,5 +1,6 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 0,
   "Number": 12,
   "Title": "Задание 12",
   "Description": "На плитке нажмите кнопку «Тепло», затем нажмите кнопку «Мешать».",

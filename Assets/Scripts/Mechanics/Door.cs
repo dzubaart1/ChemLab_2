@@ -88,11 +88,11 @@ namespace Machines
         {
             bool result = true;
             
-            result &= (Math.Abs(_door.transform.rotation.x - q.x) < accuracy);
+            result &= (Math.Abs(transform.rotation.x - q.x) < accuracy);
             
-            result &= (Math.Abs(_door.transform.rotation.y - q.y) < accuracy);
+            result &= (Math.Abs(transform.rotation.y - q.y) < accuracy);
             
-            result &= (Math.Abs(_door.transform.rotation.z - q.z) < accuracy);
+            result &= (Math.Abs(transform.rotation.z - q.z) < accuracy);
             
             return result;
         }
@@ -104,23 +104,23 @@ namespace Machines
 
         public void LoadDoorState()
         {
+            Rigidbody rb = GetComponent<Rigidbody>();
+            if (rb == null)
+            {
+                return;
+            }
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            
             if (_savedData.IsOpen)
             {
                 _isOpen = true;
-                _door.transform.rotation = _opened;
+                transform.rotation = _opened;
             }
             else
             {
                 _isOpen = false;
-                _door.transform.rotation = _closed;
-                
-                Rigidbody rb = _door.GetComponent<Rigidbody>();
-                if (rb == null)
-                {
-                    return;
-                }
-                
-                rb.velocity = Vector3.zero;
+                transform.SetPositionAndRotation(_door.transform.position, _closed);
             }
         }
 

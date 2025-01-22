@@ -255,6 +255,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+  _isSaveble: 0
 --- !u!114 &6534046357442751347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -573,6 +574,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+  _isSaveble: 0
 --- !u!59 &8469360754638961980
 HingeJoint:
   m_ObjectHideFlags: 0
@@ -2031,7 +2033,7 @@ GameObject:
   - component: {fileID: 7949200960110724464}
   - component: {fileID: 7126480618283495708}
   m_Layer: 0
-  m_Name: Termostat
+  m_Name: termostat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

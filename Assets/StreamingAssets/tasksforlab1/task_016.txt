@@ -1,5 +1,6 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 0,
   "Number": 16,
   "Title": "Задание 16",
   "Description": "Возьмите банку с гидрофосфатом натрия Na2HPO4, откройте крышку",

@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 5514949965449457933}
   - component: {fileID: 4073264128216121817}
   - component: {fileID: 4245250623994565690}
+  - component: {fileID: 4362228399081918897}
   - component: {fileID: 4617383879618304254}
   - component: {fileID: 6594839635057893051}
   - component: {fileID: 7443998286029428095}
-  - component: {fileID: 4362228399081918897}
-  - component: {fileID: 8311925089623152916}
+  - component: {fileID: 3334880613649779790}
   m_Layer: 0
   m_Name: door1
   m_TagString: Untagged
@@ -94,6 +94,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4362228399081918897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023233375504003751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7545c68c4b1ce34ca4131dc4e84e4e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _door: {fileID: 5514949965449457933}
+  _closed: {x: 0, y: 0, z: 0, w: 1}
+  _opened: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  _doorType: 2
+  _isOpenTaskSendable: 1
+  _isCloseTaskSendable: 1
 --- !u!65 &4617383879618304254
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -123,7 +141,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1023233375504003751}
   serializedVersion: 4
-  m_Mass: 10
+  m_Mass: 30
   m_Drag: 1
   m_AngularDrag: 0.5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -154,7 +172,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0.5563319, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -22.788425, y: 2.0140958, z: 4.794059}
+  m_ConnectedAnchor: {x: -17.529558, y: 1.5493045, z: 4.794059}
   serializedVersion: 2
   m_UseSpring: 0
   m_Spring:
@@ -170,10 +188,10 @@ HingeJoint:
   m_ExtendedLimits: 0
   m_UseAcceleration: 0
   m_Limits:
-    min: 0
+    min: -10
     max: 90
     bounciness: 0
-    bounceMinVelocity: 0.2
+    bounceMinVelocity: 100
     contactDistance: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
@@ -181,7 +199,7 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &4362228399081918897
+--- !u!114 &3334880613649779790
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -190,25 +208,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1023233375504003751}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7545c68c4b1ce34ca4131dc4e84e4e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _door: {fileID: 5514949965449457933}
-  _closed: {x: 0, y: 0, z: 0, w: 1}
-  _opened: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  _doorType: 2
-  _isOpenTaskSendable: 1
-  _isCloseTaskSendable: 1
---- !u!114 &8311925089623152916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023233375504003751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab9dda560154433c911b335ebc2ff5e6, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
@@ -219,7 +219,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_InteractionLayers:
     m_Bits: 2
-  m_DistanceCalculationMode: 0
+  m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
   m_CustomReticle: {fileID: 0}
@@ -316,11 +316,11 @@ MonoBehaviour:
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
   m_TrackPosition: 1
-  m_SmoothPosition: 0
+  m_SmoothPosition: 1
   m_SmoothPositionAmount: 8
   m_TightenPosition: 0.1
   m_TrackRotation: 1
-  m_SmoothRotation: 0
+  m_SmoothRotation: 1
   m_SmoothRotationAmount: 8
   m_TightenRotation: 0.1
   m_TrackScale: 1
@@ -352,7 +352,6 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
-  _isSaveble: 0
 --- !u!1 &4727804060264326377
 GameObject:
   m_ObjectHideFlags: 0

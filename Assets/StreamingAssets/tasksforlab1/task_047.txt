@@ -1,5 +1,6 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 0,
   "Number": 47,
   "Title": "Задание 47",
   "Description": "Добавьте пипет-дозатором раствор Na2HPO4 и Agar в каждую из шести лунок культурального планшета. Необходимый объем материала в каждой лунке: 2 мл",

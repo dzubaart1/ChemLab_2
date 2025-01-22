@@ -35,7 +35,10 @@ namespace Mechanics
                 return;
             }
             
-            gameManager.CurrentBaseLocalManager.AddGrabInteractables(this);
+            if (_isSaveble)
+            {
+                gameManager.CurrentBaseLocalManager.AddGrabInteractables(this);
+            }
         }
 
         protected override void OnEnable()

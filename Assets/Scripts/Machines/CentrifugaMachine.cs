@@ -98,13 +98,11 @@ namespace Machines
 
             if (!CraftTools.TryFindCraft(gameManager.CurrentBaseLocalManager.GetSOCrafts(), labContainer1.GetSubstanceProperties(), ECraft.Split, out SOLabCraft craftContainer1))
             {
-                gameManager.CurrentBaseLocalManager.OnActivityComplete(new BadLabActivity());
                 return;
             }
             
             if (!CraftTools.TryFindCraft(gameManager.CurrentBaseLocalManager.GetSOCrafts(), labContainer2.GetSubstanceProperties(), ECraft.Split, out SOLabCraft craftContainer2))
             {
-                gameManager.CurrentBaseLocalManager.OnActivityComplete(new BadLabActivity());
                 return;
             }
             

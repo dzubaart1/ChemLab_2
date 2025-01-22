@@ -1,5 +1,6 @@
 {
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 0,
   "Number": 9,
   "Title": "Задание 9",
   "Description": "Перелейте воду из мерного цилиндра в термостойкий стакан с реагентом «1»",

@@ -191,7 +191,7 @@ namespace LocalManagers
 
         public override void OnActivityComplete(LabActivity activity)
         {
-            Debug.Log(activity.ActivityType + $" TRY COMPLETE {activity.ActivityType}!");
+            Debug.Log($" TRY COMPLETE {activity.ActivityType}! {activity} {_tasksList[_currentTaskID].LabActivity}");
 
             if (!IsCorrectTaskID(_currentTaskID))
             {

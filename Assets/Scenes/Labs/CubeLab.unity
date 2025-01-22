@@ -5284,6 +5284,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoxPanelMachine
       objectReference: {fileID: 0}
+    - target: {fileID: 7618276009647556110, guid: f08f436649915d941b1de008c06fc522, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5937,10 +5941,6 @@ PrefabInstance:
       propertyPath: reagentsLabSubstanceProperty
       value: 
       objectReference: {fileID: 11400000, guid: 3f7d506fdb94d5945a72f67424750e85, type: 2}
-    - target: {fileID: 9005526391321572954, guid: 8cdb6480f0be1bc4883dac0cd7f692b2, type: 3}
-      propertyPath: m_InteractionLayers.m_Bits
-      value: 2162690
-      objectReference: {fileID: 0}
     - target: {fileID: 9221314989176711208, guid: 8cdb6480f0be1bc4883dac0cd7f692b2, type: 3}
       propertyPath: reagentsLabSubstanceProperty
       value: 
