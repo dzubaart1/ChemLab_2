@@ -55,6 +55,11 @@ namespace Machines
 
         private void OnClickDryBtn()
         {
+            if (!_dryButton.IsOn)
+            {
+                return;
+            }
+            
             GameManager gameManager = GameManager.Instance;
             if (gameManager == null)
             {

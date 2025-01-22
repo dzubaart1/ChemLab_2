@@ -247,7 +247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 147269492}
   m_Layer: 0
-  m_Name: STATICS
+  m_Name: --STATICS--
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1283,7 +1283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 451433227}
   m_Layer: 0
-  m_Name: TELEPORTS
+  m_Name: --TELEPORTS--
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1927,7 +1927,7 @@ GameObject:
   m_Component:
   - component: {fileID: 709096728}
   m_Layer: 0
-  m_Name: LIGHT
+  m_Name: --LIGHTS--
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1960,7 +1960,7 @@ GameObject:
   m_Component:
   - component: {fileID: 724844796}
   m_Layer: 0
-  m_Name: MACHINES
+  m_Name: --MACHINES--
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3034,7 +3034,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1353240813}
   m_Layer: 0
-  m_Name: DYNAMICS
+  m_Name: --DYNAMICS--
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5286,7 +5286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2013605164376489185}
   m_Layer: 0
-  m_Name: Location
+  m_Name: --ENVIRONMENT--
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7045,11 +7045,11 @@ MeshFilter:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 2013605164376489185}
   - {fileID: 724844796}
   - {fileID: 1353240813}
   - {fileID: 147269492}
   - {fileID: 451433227}
   - {fileID: 709096728}
-  - {fileID: 2013605164376489185}
   - {fileID: 520447143}
   - {fileID: 198010594}
