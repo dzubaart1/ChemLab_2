@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using BioEngineerLab.Activities;
 using BioEngineerLab.Tasks;
@@ -50,10 +51,12 @@ namespace LocalManagers
         private int _savedTaskID;
         private bool _isError = false;
 
-        public override void InitLab(ELab lab)
+        public override IEnumerator InitLab(ELab lab)
         {
             _soCrafts = ResourcesDatabase.ReadAllCraft();
             _tasksList = LabTasksDatabase.ReadAll(lab);
+
+            yield return new WaitForSeconds(3f);
 
             _isGameStarted = true;
 

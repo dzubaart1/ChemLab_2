@@ -30,7 +30,7 @@ namespace LocalManagers
                 yield break;
             }
             
-            InitLab(gameManager.CurrentLab);
+            StartCoroutine(InitLab(gameManager.CurrentLab));
         }
         
         public abstract IReadOnlyList<SOLabCraft> GetSOCrafts();
@@ -43,7 +43,7 @@ namespace LocalManagers
         public abstract void AddSaveableSocket(ISaveableSocket saveableSocket);
         public abstract void AddGrabInteractables(ISaveableGrabInteractable saveableGrabInteractable);
 
-        public abstract void InitLab(ELab lab);
+        public abstract IEnumerator InitLab(ELab lab);
         public abstract void FinishGame();
         public abstract void SaveGame();
         public abstract void LoadGame();
