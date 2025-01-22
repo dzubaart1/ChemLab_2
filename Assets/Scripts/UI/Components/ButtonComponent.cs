@@ -14,6 +14,7 @@ namespace UI.Components
         [SerializeField] private EButton _buttonType;
         [SerializeField] private bool _isTaskSendable;
         [SerializeField] private bool _isStartOn;
+        [SerializeField] private float _timerDelay = 1f;
         
         [Header("UIs")]
         [SerializeField] private Image _btnImage;
@@ -23,11 +24,27 @@ namespace UI.Components
 
         public bool IsOn { get; private set; }
 
+        private bool _isTimerActive;
+        private float _timer;
+
         private void Start()
         {
             IsOn = _isStartOn;
         }
-        
+
+        private void Update()
+        {
+            if (_isTimerActive)
+            {
+                _timer += Time.deltaTime;
+
+                if (_timer > _timerDelay)
+                {
+                    _isTimerActive = false;
+                }
+            }
+        }
+
         private void OnEnable()
         {
             _button.onClick.AddListener(OnClickBtn);
@@ -51,6 +68,13 @@ namespace UI.Components
 
         private void OnClickBtn()
         {
+            if (_isTimerActive)
+            {
+                return;
+            }
+            
+            _isTimerActive = true;
+            
             IsOn = !IsOn;
             _btnImage.sprite = IsOn ? _onSprite : _offSprite;
             ActivitySend();
