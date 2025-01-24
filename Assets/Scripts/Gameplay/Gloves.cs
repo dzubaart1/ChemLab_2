@@ -3,6 +3,8 @@ using Core;
 using Mechanics;
 using Saveables;
 using UnityEngine;
+using System;
+using Machines;
 
 namespace Gameplay
 {
@@ -12,6 +14,8 @@ namespace Gameplay
         {
             public bool IsActive = true;
         }
+
+        public event Action GlovesTakeEvent;
         
         [Header("Refs")]
         [SerializeField] private MeshRenderer _meshRendererL;
@@ -21,6 +25,8 @@ namespace Gameplay
         [Space]
         [Header("Configs")]
         [SerializeField] private EMachine _machineType;
+        
+        private HandsMachine _handsMachine;
 
         private SavedData _savedData = new SavedData();
         
@@ -40,6 +46,8 @@ namespace Gameplay
             }
             
             gameManager.CurrentBaseLocalManager.AddSaveableOther(this);
+
+            _handsMachine = FindObjectOfType<HandsMachine>();
         }
  
         private void OnEnable()
@@ -70,7 +78,9 @@ namespace Gameplay
             _meshRendererR.enabled = _isActive;
             GetComponent<Collider>().enabled = _isActive;
             
-            gameManager.CurrentBaseLocalManager.OnActivityComplete(new MachineLabActivity(EMachineActivity.OnEnter, _machineType));            
+            gameManager.CurrentBaseLocalManager.OnActivityComplete(new MachineLabActivity(EMachineActivity.OnEnter, _machineType));    
+            
+            _handsMachine.OnGlovesTaken();
         }
 
         public void Save()

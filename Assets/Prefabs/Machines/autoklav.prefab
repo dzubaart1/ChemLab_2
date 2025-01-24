@@ -272,6 +272,7 @@ MonoBehaviour:
   _buttonType: 13
   _isTaskSendable: 1
   _isStartOn: 0
+  _timerDelay: 1
   _btnImage: {fileID: 5437015258827762869}
   _onSprite: {fileID: 21300000, guid: f88297c69db64ef49807e133e80b29da, type: 3}
   _offSprite: {fileID: 21300000, guid: b9ebc7e858423614ebf71703881ba7e5, type: 3}
@@ -1105,9 +1106,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d39d395b3b7b5824db6230d2ad735584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttonType: 0
+  _buttonType: 37
   _isTaskSendable: 0
   _isStartOn: 0
+  _timerDelay: 1
   _btnImage: {fileID: 4772872851987942996}
   _onSprite: {fileID: 0}
   _offSprite: {fileID: 0}
@@ -1457,7 +1459,7 @@ Transform:
   m_GameObject: {fileID: 4082792372601383568}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.1038, y: 0.1058, z: 0.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1486,8 +1488,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0026863571, y: 0.001572836, z: 0.00003082643}
-  m_Center: {x: -5.820766e-11, y: 0.0000000037252903, z: 0}
+  m_Size: {x: 0.27528873, y: 0.004282549, z: 0.16093153}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4124355315778837313
 GameObject:
   m_ObjectHideFlags: 0
@@ -3081,6 +3083,7 @@ MonoBehaviour:
   _buttonType: 12
   _isTaskSendable: 1
   _isStartOn: 0
+  _timerDelay: 1
   _btnImage: {fileID: 3228457905871508503}
   _onSprite: {fileID: 21300000, guid: d66b180b2d8dadb4981b3f8bfcece870, type: 3}
   _offSprite: {fileID: 21300000, guid: ca2abbf0c3a722740b053b8deba8955f, type: 3}
@@ -3112,7 +3115,7 @@ Transform:
   m_GameObject: {fileID: 8786763691333728810}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.11, y: 0.10472628, z: 0.060998954}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -606,6 +606,7 @@ GameObject:
   - component: {fileID: 337074593456097543}
   - component: {fileID: 6774801599821961656}
   - component: {fileID: 3960298003647097438}
+  - component: {fileID: 8680769986089245073}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -763,7 +764,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 18939906
+    m_Bits: 153157634
   m_DistanceCalculationMode: 0
   m_SelectMode: 0
   m_FocusMode: 1
@@ -947,6 +948,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _labContainer: {fileID: 337074593456097543}
+--- !u!114 &8680769986089245073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5301012547981187017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5ce9b498491422ca892a40be4373504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sockets:
+  - {fileID: 8269479090754633260}
 --- !u!1 &5359928095746997749
 GameObject:
   m_ObjectHideFlags: 0

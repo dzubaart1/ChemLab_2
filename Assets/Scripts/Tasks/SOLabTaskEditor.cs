@@ -5,6 +5,7 @@ using Core;
 using Database;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace BioEngineerLab.Tasks
 {
@@ -143,10 +144,13 @@ namespace BioEngineerLab.Tasks
 
         private void ShowTaskInfo()
         {
+            GUIStyle style = new GUIStyle(EditorStyles.textArea);
+            style.wordWrap = true;
+            
             _soLabTask.LabTask.Lab = (ELab)EditorGUILayout.EnumPopup("Lab", _soLabTask.LabTask.Lab);
             _soLabTask.LabTask.Number = EditorGUILayout.IntField("Number", _soLabTask.LabTask.Number);
             _soLabTask.LabTask.Title = EditorGUILayout.TextField("Title", _soLabTask.LabTask.Title);
-            _soLabTask.LabTask.Description = EditorGUILayout.TextField("Description", _soLabTask.LabTask.Description);
+            _soLabTask.LabTask.Description = EditorGUILayout.TextField("Description", _soLabTask.LabTask.Description, style, GUILayout.Height(50));
             _soLabTask.LabTask.Warning = EditorGUILayout.TextField("Warning", _soLabTask.LabTask.Warning);
             _soLabTask.LabTask.SaveableTask = EditorGUILayout.Toggle("Saveable Task", _soLabTask.LabTask.SaveableTask);
         }

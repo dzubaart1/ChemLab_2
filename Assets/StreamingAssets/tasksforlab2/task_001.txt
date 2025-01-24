@@ -3,7 +3,7 @@
   "Lab": 1,
   "Number": 1,
   "Title": "Задание 1",
-  "Description": "Подойдите к двери и наберите шифр «123»",
+  "Description": "Подойдите к двери и наберите шифр «123», затем нажмите «Enter»",
   "Warning": "",
   "SaveableTask": true,
   "LabActivity": {

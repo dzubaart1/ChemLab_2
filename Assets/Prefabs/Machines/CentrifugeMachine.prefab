@@ -474,6 +474,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+  _isSaveble: 1
 --- !u!1 &5048447335429190232
 GameObject:
   m_ObjectHideFlags: 0
@@ -981,6 +982,7 @@ MonoBehaviour:
   _buttonType: 7
   _isTaskSendable: 0
   _isStartOn: 0
+  _timerDelay: 1
   _btnImage: {fileID: 5048447336343672717}
   _onSprite: {fileID: 21300000, guid: f88297c69db64ef49807e133e80b29da, type: 3}
   _offSprite: {fileID: 21300000, guid: b9ebc7e858423614ebf71703881ba7e5, type: 3}
@@ -1383,6 +1385,7 @@ MonoBehaviour:
   _buttonType: 6
   _isTaskSendable: 1
   _isStartOn: 0
+  _timerDelay: 1
   _btnImage: {fileID: 5048447336821434610}
   _onSprite: {fileID: 21300000, guid: d66b180b2d8dadb4981b3f8bfcece870, type: 3}
   _offSprite: {fileID: 21300000, guid: ca2abbf0c3a722740b053b8deba8955f, type: 3}
@@ -1637,8 +1640,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5.692944, y: 2.5872254, z: 6.344197}
-  m_Center: {x: -0.00013470648, y: 1.5541685, z: 0.0122860065}
+  m_Size: {x: 5.692944, y: 1.7237079, z: 6.344197}
+  m_Center: {x: -0.0001347065, y: 0.84608376, z: 0.012286007}
 --- !u!1 &6067462569174012865
 GameObject:
   m_ObjectHideFlags: 0

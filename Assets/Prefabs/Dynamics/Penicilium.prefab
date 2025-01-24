@@ -287,6 +287,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+  _isSaveble: 1
 --- !u!1 &344917822942050068
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,7 +595,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1048578
+    m_Bits: 135266306
   m_DistanceCalculationMode: 0
   m_SelectMode: 0
   m_FocusMode: 1
@@ -728,6 +729,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+  _isSaveble: 1
 --- !u!114 &1143321773962208775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1142,6 +1144,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+  _isSaveble: 1
 --- !u!1 &5223787509417432981
 GameObject:
   m_ObjectHideFlags: 0

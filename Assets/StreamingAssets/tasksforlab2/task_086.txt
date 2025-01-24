@@ -3,7 +3,7 @@
   "Lab": 1,
   "Number": 86,
   "Title": "Задание 86",
-  "Description": "Возьмите специальный ключ, включите ламинарный бокс",
+  "Description": "Повесьте ключ на прежнее место",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {

@@ -373,7 +373,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ca2abbf0c3a722740b053b8deba8955f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5e2bc04460716f7439f61f6e29a94fc6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -402,17 +402,17 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: d66b180b2d8dadb4981b3f8bfcece870, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: 5e2bc04460716f7439f61f6e29a94fc6, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: d66b180b2d8dadb4981b3f8bfcece870, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: d66b180b2d8dadb4981b3f8bfcece870, type: 3}
     m_DisabledSprite: {fileID: 21300000, guid: ca2abbf0c3a722740b053b8deba8955f, type: 3}
@@ -442,6 +442,7 @@ MonoBehaviour:
   _buttonType: 0
   _isTaskSendable: 0
   _isStartOn: 0
+  _timerDelay: 1
   _btnImage: {fileID: 8591927298385850373}
   _onSprite: {fileID: 21300000, guid: d66b180b2d8dadb4981b3f8bfcece870, type: 3}
   _offSprite: {fileID: 21300000, guid: ca2abbf0c3a722740b053b8deba8955f, type: 3}
@@ -513,7 +514,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ca2abbf0c3a722740b053b8deba8955f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5e2bc04460716f7439f61f6e29a94fc6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -542,17 +543,17 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: d66b180b2d8dadb4981b3f8bfcece870, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: 5e2bc04460716f7439f61f6e29a94fc6, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: d66b180b2d8dadb4981b3f8bfcece870, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: d66b180b2d8dadb4981b3f8bfcece870, type: 3}
     m_DisabledSprite: {fileID: 21300000, guid: ca2abbf0c3a722740b053b8deba8955f, type: 3}
@@ -582,6 +583,7 @@ MonoBehaviour:
   _buttonType: 0
   _isTaskSendable: 0
   _isStartOn: 0
+  _timerDelay: 1
   _btnImage: {fileID: 8591927298526100171}
   _onSprite: {fileID: 21300000, guid: d66b180b2d8dadb4981b3f8bfcece870, type: 3}
   _offSprite: {fileID: 21300000, guid: ca2abbf0c3a722740b053b8deba8955f, type: 3}
@@ -955,7 +957,8 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
-  _socketColliders: []
+  _socketColliders:
+  - {fileID: 8591927298829307495}
   _socketType: 4
   _isEnterTaskSendable: 1
   _isExitTaskSendable: 1
@@ -1375,7 +1378,6 @@ GameObject:
   - component: {fileID: 8591927299114905605}
   - component: {fileID: 8591927299114905607}
   - component: {fileID: 6453379500856110761}
-  - component: {fileID: 4533376002340048689}
   m_Layer: 0
   m_Name: StirringMachine
   m_TagString: Animator
@@ -1439,27 +1441,6 @@ MonoBehaviour:
   _socketInteractor: {fileID: 7263640709728593048}
   _stirringBtn: {fileID: 2408893441762500333}
   _heatingBtn: {fileID: 8538057502334100231}
---- !u!65 &4533376002340048689
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8591927299114905604}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.1421599, y: 0.16547197, z: 0.14083618}
-  m_Center: {x: 0.00070054084, y: 0.18850625, z: 0.03214217}
 --- !u!1 &8591927299824722291
 GameObject:
   m_ObjectHideFlags: 0

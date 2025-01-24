@@ -64,6 +64,15 @@ namespace Machines
             if (!IsRotationEqual(_closed, 0.01f) && !_isOpen)
             {
                 _isOpen = true;
+                
+                Rigidbody rb = GetComponent<Rigidbody>();
+                if (rb == null)
+                {
+                    return;
+                }
+                rb.velocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+                
                 if (_isOpenTaskSendable)
                 {
                     gameManager.CurrentBaseLocalManager.OnActivityComplete(new DoorLabActivity(_doorType, EDoorActivity.Open));
@@ -75,6 +84,15 @@ namespace Machines
             else if (IsRotationEqual(_closed, 0.01f) && _isOpen)
             {
                 _isOpen = false;
+                
+                Rigidbody rb = GetComponent<Rigidbody>();
+                if (rb == null)
+                {
+                    return;
+                }
+                rb.velocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+                
                 if (_isCloseTaskSendable)
                 {
                     gameManager.CurrentBaseLocalManager.OnActivityComplete(new DoorLabActivity(_doorType, EDoorActivity.Closed));
@@ -119,8 +137,12 @@ namespace Machines
             }
             else
             {
+                rb.useGravity = false;
+                rb.isKinematic = true;
                 _isOpen = false;
                 transform.SetPositionAndRotation(_door.transform.position, _closed);
+                rb.useGravity = true;
+                rb.isKinematic = false;
             }
         }
 
