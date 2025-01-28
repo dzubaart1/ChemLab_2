@@ -151,10 +151,10 @@ MonoBehaviour:
   - {fileID: 8948059102027821863}
   _socketType: 2
   _isEnterTaskSendable: 0
-  _isExitTaskSendable: 1
+  _isExitTaskSendable: 0
   _timerDelay: 1
   _isSubstanceSocket: 0
-  _isStartEnter: 1
+  _isStartEnter: 0
 --- !u!1 &406801781614770454
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,14 +3,13 @@
   "Lab": 0,
   "Number": 16,
   "Title": "Задание 16",
-  "Description": "Возьмите банку с гидрофосфатом натрия Na2HPO4, откройте крышку",
+  "Description": "Обнулите значение на весах. Нажмите на кнопку «Тара»",
   "Warning": "",
-  "SaveableTask": true,
+  "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
-    "SocketType": 3,
-    "SocketActivityType": 1,
-    "ActivityType": 3
+    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
+    "ButtonType": 25,
+    "ActivityType": 6
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

@@ -3,7 +3,7 @@
   "Lab": 1,
   "Number": 40,
   "Title": "Задание 40",
-  "Description": "Выключите кнопки «Тепло» и «Мешать».",
+  "Description": "Выключите кнопки «Тепло» и «Мешать»",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {

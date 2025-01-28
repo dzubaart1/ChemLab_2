@@ -1,8 +1,11 @@
 ﻿using System.Collections.Generic;
 using BioEngineerLab.Activities;
 using Core;
+using JetBrains.Annotations;
 using Mechanics;
 using Saveables;
+using UI.Components;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Machines
@@ -15,10 +18,11 @@ namespace Machines
             public List<VRGrabInteractable> HiddenGameObjects = new List<VRGrabInteractable>();
         }
 
-        [SerializeField] private EMachine _machineType; 
+        [SerializeField] private EMachine _machineType;
+        [SerializeField] [CanBeNull] private ButtonComponent _button;
         
+        private HandsMachine _handsMachine;
         private SavedData _savedData = new SavedData();
-        
         private List<VRGrabInteractable> _hiddenGameObjects = new List<VRGrabInteractable>();
         
         private void Start()
@@ -35,6 +39,40 @@ namespace Machines
             }
             
             gameManager.CurrentBaseLocalManager.AddSaveableOther(this);
+            
+            _handsMachine = FindObjectOfType<HandsMachine>();
+        }
+        
+        private void OnEnable()
+        {
+            if (_button == null)
+            {
+                return;
+            }
+            
+            _button.ClickBtnEvent += OnButtonClicked;
+        }
+
+        private void OnDisable()
+        {
+            if (_button == null)
+            {
+                return;
+            }
+            
+            _button.ClickBtnEvent -= OnButtonClicked;
+        }
+
+        private void OnButtonClicked()
+        {
+            if (_button.ButtonType == EButton.TrashGloversButton)
+            {
+                if (_handsMachine == null)
+                {
+                    return;
+                }
+                _handsMachine.TakeGlovesOff();
+            }
         }
 
         private void OnTriggerEnter(Collider other)

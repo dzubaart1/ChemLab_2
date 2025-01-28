@@ -46,7 +46,7 @@ namespace Machines
             gameManager.CurrentBaseLocalManager.AddSaveableOther(this);
         }
 
-        public void OnGlovesTaken()
+        public void WearGloves()
         {
             _rightHandMesh.material = _glovesMaterial;
             _leftHandMesh.material = _glovesMaterial;
@@ -54,7 +54,7 @@ namespace Machines
             _isGloves = true;
         }
 
-        public void OnButtonClicked()
+        public void TakeGlovesOff()
         {
             _rightHandMesh.material = _handsMaterial;
             _leftHandMesh.material = _handsMaterial;

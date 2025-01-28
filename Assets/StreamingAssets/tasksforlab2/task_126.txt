@@ -3,30 +3,60 @@
   "Lab": 1,
   "Number": 126,
   "Title": "Задание 126",
-  "Description": "Верните ёмкость с надписью «Сахароза» на прежнее место",
+  "Description": "Перелейте вещество из пипет-дозатора в ёмкость с надписью «Сахароза»",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",
-    "SocketType": 29,
-    "SocketActivityType": 0,
-    "LabSubstanceProperties": {
-      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
-      "$values": [
-        {
-          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "PenicilliumSaharoza",
-          "SubstanceMode": 0,
-          "SubstanceLayer": 0,
-          "SubstanceColorR": 0.6296133,
-          "SubstanceColorG": 0.5372549,
-          "SubstanceColorB": 0.7058824,
-          "SubstanceColorA": 0.8352941,
-          "HintName": ""
-        }
-      ]
+    "$type": "BioEngineerLab.Activities.CraftSubstanceLabActivity, Assembly-CSharp",
+    "LabCraft": {
+      "$type": "Crafting.LabCraft, Assembly-CSharp",
+      "SubstancesFrom": {
+        "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
+        "$values": [
+          {
+            "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+            "SubstanceName": "Sakaroza and Purple Sol",
+            "SubstanceMode": 0,
+            "SubstanceLayer": 0,
+            "SubstanceColorR": 0.61556536,
+            "SubstanceColorG": 0.46364364,
+            "SubstanceColorB": 0.6509434,
+            "SubstanceColorA": 0.8666667,
+            "HintName": ""
+          },
+          {
+            "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+            "SubstanceName": "Penicillium",
+            "SubstanceMode": 0,
+            "SubstanceLayer": 1,
+            "SubstanceColorR": 0.9528302,
+            "SubstanceColorG": 0.927144468,
+            "SubstanceColorB": 0.7775454,
+            "SubstanceColorA": 0.807843149,
+            "HintName": ""
+          }
+        ]
+      },
+      "CraftType": 3,
+      "SubstancesRes": {
+        "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
+        "$values": [
+          {
+            "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+            "SubstanceName": "PenicilliumSaharoza",
+            "SubstanceMode": 0,
+            "SubstanceLayer": 0,
+            "SubstanceColorR": 0.6296133,
+            "SubstanceColorG": 0.5372549,
+            "SubstanceColorB": 0.7058824,
+            "SubstanceColorA": 0.8352941,
+            "HintName": ""
+          }
+        ]
+      }
     },
-    "ActivityType": 2
+    "Container": 16,
+    "ActivityType": 5
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

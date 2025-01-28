@@ -3,25 +3,16 @@
   "Lab": 1,
   "Number": 107,
   "Title": "Задание 107",
-  "Description": "Откройте пенициллиновый флакон с бактериями «S.t. 56-45»",
+  "Description": "Возьмите пульверизатор, обработайте ёмкость с надписью «Сахароза»",
   "Warning": "",
-  "SaveableTask": true,
+  "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
-    "SocketType": 30,
-    "SocketActivityType": 1,
-    "ActivityType": 3
+    "$type": "BioEngineerLab.Activities.PulverizatorLabActivity, Assembly-CSharp",
+    "Target": 5,
+    "ActivityType": 8
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.ConstructorSideEffect, Assembly-CSharp",
-        "SocketType": 30,
-        "IsLock": false,
-        "SideEffectTimeType": 0,
-        "SideEffectType": 3
-      }
-    ]
+    "$values": []
   }
 }

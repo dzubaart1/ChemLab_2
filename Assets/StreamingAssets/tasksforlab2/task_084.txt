@@ -3,12 +3,12 @@
   "Lab": 1,
   "Number": 84,
   "Title": "Задание 84",
-  "Description": "На приборной панели нажмите кнопку «UV» (включение ультрафиолетовой лампы)",
+  "Description": "Закройте ламинарный бокс",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 16,
+    "ButtonType": 21,
     "ActivityType": 6
   },
   "LabSideEffects": {

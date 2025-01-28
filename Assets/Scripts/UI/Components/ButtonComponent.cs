@@ -2,6 +2,7 @@
 using BioEngineerLab.Activities;
 using Core;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace UI.Components
@@ -10,8 +11,9 @@ namespace UI.Components
     {
         public event Action ClickBtnEvent;
 
+        [FormerlySerializedAs("_buttonType")]
         [Header("Configs")]
-        [SerializeField] private EButton _buttonType;
+        [SerializeField] public EButton ButtonType;
         [SerializeField] private bool _isTaskSendable;
         [SerializeField] private bool _isStartOn;
         [SerializeField] private float _timerDelay = 1f;
@@ -98,7 +100,7 @@ namespace UI.Components
             
             if (_isTaskSendable)
             {
-                gameManager.CurrentBaseLocalManager.OnActivityComplete(new ButtonClickedActivity(_buttonType));
+                gameManager.CurrentBaseLocalManager.OnActivityComplete(new ButtonClickedActivity(ButtonType));
             }
         }
     }

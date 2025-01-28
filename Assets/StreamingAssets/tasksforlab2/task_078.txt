@@ -3,14 +3,14 @@
   "Lab": 1,
   "Number": 78,
   "Title": "Задание 78",
-  "Description": "Выбросьте салфетку в ёмкость для внешних отходов",
+  "Description": "Повесьте специальный ключ на то же место",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 0,
-    "MachineType": 6,
-    "ActivityType": 1
+    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
+    "SocketType": 27,
+    "SocketActivityType": 0,
+    "ActivityType": 3
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

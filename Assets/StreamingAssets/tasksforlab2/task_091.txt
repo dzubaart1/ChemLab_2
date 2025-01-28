@@ -3,32 +3,17 @@
   "Lab": 1,
   "Number": 91,
   "Title": "Задание 91",
-  "Description": "Достаньте из морозильной камеры пенициллиновый флакон с бактериями «S.t. 56-45»",
+  "Description": "Повесьте ключ на прежнее место",
   "Warning": "",
-  "SaveableTask": true,
+  "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
-    "SocketType": 28,
-    "SocketActivityType": 1,
+    "SocketType": 27,
+    "SocketActivityType": 0,
     "ActivityType": 3
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.ConstructorSideEffect, Assembly-CSharp",
-        "SocketType": 30,
-        "IsLock": true,
-        "SideEffectTimeType": 0,
-        "SideEffectType": 3
-      },
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.ConstructorSideEffect, Assembly-CSharp",
-        "SocketType": 31,
-        "IsLock": true,
-        "SideEffectTimeType": 0,
-        "SideEffectType": 3
-      }
-    ]
+    "$values": []
   }
 }

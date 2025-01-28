@@ -3,30 +3,14 @@
   "Lab": 1,
   "Number": 114,
   "Title": "Задание 114",
-  "Description": "Верните ёмкость с надписью «Глюкоза» на прежнее место",
+  "Description": "Выбросьте крышку в емкость для отходов внутри ламинарного бокса",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",
-    "SocketType": 29,
-    "SocketActivityType": 0,
-    "LabSubstanceProperties": {
-      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
-      "$values": [
-        {
-          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "PenicilliumGlukoza",
-          "SubstanceMode": 0,
-          "SubstanceLayer": 0,
-          "SubstanceColorR": 0.6644016,
-          "SubstanceColorG": 0.537335336,
-          "SubstanceColorB": 0.7075472,
-          "SubstanceColorA": 0.8352941,
-          "HintName": ""
-        }
-      ]
-    },
-    "ActivityType": 2
+    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
+    "MachineActivityType": 0,
+    "MachineType": 23,
+    "ActivityType": 1
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

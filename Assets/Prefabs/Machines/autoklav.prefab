@@ -1107,7 +1107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _buttonType: 37
-  _isTaskSendable: 0
+  _isTaskSendable: 1
   _isStartOn: 0
   _timerDelay: 1
   _btnImage: {fileID: 4772872851987942996}
@@ -1638,8 +1638,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1652,10 +1652,10 @@ HingeJoint:
   m_GameObject: {fileID: 4558818512338020602}
   m_ConnectedBody: {fileID: 0}
   m_ConnectedArticulationBody: {fileID: 0}
-  m_Anchor: {x: 0, y: 0, z: 0}
+  m_Anchor: {x: -0.00025, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.2909374, y: 0.19, z: 0.2137224}
+  m_ConnectedAnchor: {x: -0.3159374, y: 0.19, z: 0.2137224}
   serializedVersion: 2
   m_UseSpring: 0
   m_Spring:
@@ -1674,8 +1674,8 @@ HingeJoint:
     min: 0
     max: 90
     bounciness: 0
-    bounceMinVelocity: 100
-    contactDistance: 0
+    bounceMinVelocity: 0
+    contactDistance: 1
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
@@ -1701,8 +1701,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.00043420432, y: 0.0031355354, z: 0.0037791696}
-  m_Center: {x: -0.00015313446, y: 0.0017579516, z: -2.1270806e-17}
+  m_Size: {x: 0.00027500896, y: 0.0030325244, z: 0.0037791696}
+  m_Center: {x: -0.00023273214, y: 0.0014255163, z: -1.3889257e-17}
 --- !u!114 &7053878463500711569
 MonoBehaviour:
   m_ObjectHideFlags: 0

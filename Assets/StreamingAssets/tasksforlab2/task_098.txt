@@ -3,16 +3,25 @@
   "Lab": 1,
   "Number": 98,
   "Title": "Задание 98",
-  "Description": "Возьмите пульверизатор, обработайте ёмкость с надписью «Глюкоза»",
+  "Description": "Внесите пенициллиновый флакон в ламинарный бокс для размораживания",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.PulverizatorLabActivity, Assembly-CSharp",
-    "Target": 3,
-    "ActivityType": 8
+    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
+    "SocketType": 28,
+    "SocketActivityType": 0,
+    "ActivityType": 3
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": []
+    "$values": [
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.ConstructorSideEffect, Assembly-CSharp",
+        "SocketType": 28,
+        "IsLock": true,
+        "SideEffectTimeType": 1,
+        "SideEffectType": 3
+      }
+    ]
   }
 }

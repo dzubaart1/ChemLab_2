@@ -3,12 +3,12 @@
   "Lab": 1,
   "Number": 79,
   "Title": "Задание 79",
-  "Description": "Закройте ламинарный бокс",
+  "Description": "На приборной панели нажмите кнопку «L»",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 21,
+    "ButtonType": 14,
     "ActivityType": 6
   },
   "LabSideEffects": {

@@ -3,63 +3,25 @@
   "Lab": 1,
   "Number": 113,
   "Title": "Задание 113",
-  "Description": "Перелейте вещество из пипет-дозатора в ёмкость с надписью «Глюкоза»",
+  "Description": "Откройте пенициллиновый флакон с бактериями «S.t. 56-45»",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.CraftSubstanceLabActivity, Assembly-CSharp",
-    "LabCraft": {
-      "$type": "Crafting.LabCraft, Assembly-CSharp",
-      "SubstancesFrom": {
-        "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
-        "$values": [
-          {
-            "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-            "SubstanceName": "Glukoza and Purple Sol",
-            "SubstanceMode": 0,
-            "SubstanceLayer": 0,
-            "SubstanceColorR": 0.527487159,
-            "SubstanceColorG": 0.4627451,
-            "SubstanceColorB": 0.6509804,
-            "SubstanceColorA": 0.8509804,
-            "HintName": ""
-          },
-          {
-            "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-            "SubstanceName": "Penicillium",
-            "SubstanceMode": 0,
-            "SubstanceLayer": 1,
-            "SubstanceColorR": 0.9528302,
-            "SubstanceColorG": 0.927144468,
-            "SubstanceColorB": 0.7775454,
-            "SubstanceColorA": 0.807843149,
-            "HintName": ""
-          }
-        ]
-      },
-      "CraftType": 3,
-      "SubstancesRes": {
-        "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
-        "$values": [
-          {
-            "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-            "SubstanceName": "PenicilliumGlukoza",
-            "SubstanceMode": 0,
-            "SubstanceLayer": 0,
-            "SubstanceColorR": 0.6644016,
-            "SubstanceColorG": 0.537335336,
-            "SubstanceColorB": 0.7075472,
-            "SubstanceColorA": 0.8352941,
-            "HintName": ""
-          }
-        ]
-      }
-    },
-    "Container": 16,
-    "ActivityType": 5
+    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
+    "SocketType": 30,
+    "SocketActivityType": 1,
+    "ActivityType": 3
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": []
+    "$values": [
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.ConstructorSideEffect, Assembly-CSharp",
+        "SocketType": 30,
+        "IsLock": false,
+        "SideEffectTimeType": 0,
+        "SideEffectType": 3
+      }
+    ]
   }
 }

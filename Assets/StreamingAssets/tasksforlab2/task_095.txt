@@ -3,13 +3,13 @@
   "Lab": 1,
   "Number": 95,
   "Title": "Задание 95",
-  "Description": "Возьмите пульверизатор, обработайте ёмкость с надписью «Лактоза»",
+  "Description": "Нажмите кнопку «Звук» ",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.PulverizatorLabActivity, Assembly-CSharp",
-    "Target": 4,
-    "ActivityType": 8
+    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
+    "ButtonType": 17,
+    "ActivityType": 6
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

@@ -3,7 +3,7 @@
   "Lab": 1,
   "Number": 86,
   "Title": "Задание 86",
-  "Description": "Повесьте ключ на прежнее место",
+  "Description": "Повесьте специальный ключ на тоже место",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {

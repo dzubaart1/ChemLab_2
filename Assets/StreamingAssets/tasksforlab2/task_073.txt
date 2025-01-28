@@ -3,14 +3,30 @@
   "Lab": 1,
   "Number": 73,
   "Title": "Задание 73",
-  "Description": "Повесьте специальный ключ на то же место",
+  "Description": "Поставьте ёмкость с надписью «Лактоза» в автоклав",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
-    "SocketType": 27,
+    "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",
+    "SocketType": 26,
     "SocketActivityType": 0,
-    "ActivityType": 3
+    "LabSubstanceProperties": {
+      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
+      "$values": [
+        {
+          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+          "SubstanceName": "Laktoza and Purple Sol",
+          "SubstanceMode": 0,
+          "SubstanceLayer": 0,
+          "SubstanceColorR": 0.6509804,
+          "SubstanceColorG": 0.4627451,
+          "SubstanceColorB": 0.6353192,
+          "SubstanceColorA": 0.8862745,
+          "HintName": ""
+        }
+      ]
+    },
+    "ActivityType": 2
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

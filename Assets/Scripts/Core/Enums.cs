@@ -217,7 +217,8 @@ namespace Core
         PenicilliumCapSocket,
         PenicilliumPlenkaSocket,
         ShakerSocket,
-        TermostatSocket
+        TermostatSocket,
+        BottleCapSocket
     }
 
     public enum EInteractable : byte

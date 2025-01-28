@@ -3,7 +3,7 @@
   "Lab": 1,
   "Number": 100,
   "Title": "Задание 100",
-  "Description": "Подойдите к автоклаву, извлеките ёмкость с надписью «Сахароза» ",
+  "Description": "Возьмите прихватку и извлеките ёмкость с надписью «Лактоза». ",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
@@ -15,13 +15,13 @@
       "$values": [
         {
           "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "Sakaroza and Purple Sol",
+          "SubstanceName": "Laktoza and Purple Sol",
           "SubstanceMode": 0,
           "SubstanceLayer": 0,
-          "SubstanceColorR": 0.61556536,
-          "SubstanceColorG": 0.46364364,
-          "SubstanceColorB": 0.6509434,
-          "SubstanceColorA": 0.8666667,
+          "SubstanceColorR": 0.6509804,
+          "SubstanceColorG": 0.4627451,
+          "SubstanceColorB": 0.6353192,
+          "SubstanceColorA": 0.8862745,
           "HintName": ""
         }
       ]

@@ -3,13 +3,14 @@
   "Lab": 1,
   "Number": 83,
   "Title": "Задание 83",
-  "Description": "Установите временной интервал двадцать минут, нажмите кнопку «стрелка вверх» ",
+  "Description": "Выбросьте салфетку в ёмкость для внешних отходов",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 19,
-    "ActivityType": 6
+    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
+    "MachineActivityType": 0,
+    "MachineType": 6,
+    "ActivityType": 1
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

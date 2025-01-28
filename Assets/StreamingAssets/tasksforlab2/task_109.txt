@@ -3,22 +3,28 @@
   "Lab": 1,
   "Number": 109,
   "Title": "Задание 109",
-  "Description": "Откройте ёмкость с наконечниками для пипет-дозатора. Наденьте наконечник на пипет-дозатор поднеся пипет-дозатор к наконечнику. ",
+  "Description": "Возьмите пульверизатор в правую руку и обработайте левую руку спиртом",
   "Warning": "",
-  "SaveableTask": true,
+  "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
-    "SocketType": 6,
-    "SocketActivityType": 0,
-    "ActivityType": 3
+    "$type": "BioEngineerLab.Activities.PulverizatorLabActivity, Assembly-CSharp",
+    "Target": 0,
+    "ActivityType": 8
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
     "$values": [
       {
         "$type": "BioEngineerLab.Tasks.SideEffects.ConstructorSideEffect, Assembly-CSharp",
-        "SocketType": 6,
+        "SocketType": 29,
         "IsLock": true,
+        "SideEffectTimeType": 1,
+        "SideEffectType": 3
+      },
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.ConstructorSideEffect, Assembly-CSharp",
+        "SocketType": 34,
+        "IsLock": false,
         "SideEffectTimeType": 1,
         "SideEffectType": 3
       }

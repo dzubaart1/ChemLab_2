@@ -3,14 +3,13 @@
   "Lab": 1,
   "Number": 70,
   "Title": "Задание 70",
-  "Description": "Закройте дверь автоклава",
+  "Description": "Откройте автоклав и нажмите кнопку «Pull»",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.DoorLabActivity, Assembly-CSharp",
-    "Door": 1,
-    "DoorActivity": 1,
-    "ActivityType": 7
+    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
+    "ButtonType": 37,
+    "ActivityType": 6
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

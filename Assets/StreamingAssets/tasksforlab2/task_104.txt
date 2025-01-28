@@ -3,12 +3,12 @@
   "Lab": 1,
   "Number": 104,
   "Title": "Задание 104",
-  "Description": "Возьмите пульверизатор в левую руку и обработайте правую руку спиртом",
+  "Description": "Возьмите пульверизатор, обработайте ёмкость с надписью «Глюкоза»",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.PulverizatorLabActivity, Assembly-CSharp",
-    "Target": 1,
+    "Target": 3,
     "ActivityType": 8
   },
   "LabSideEffects": {

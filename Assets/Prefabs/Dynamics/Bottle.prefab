@@ -210,7 +210,7 @@ MonoBehaviour:
   m_ThrowVelocityScale: 1.5
   m_ThrowAngularVelocityScale: 1
   m_ForceGravityOnDetach: 0
-  m_RetainTransformParent: 1
+  m_RetainTransformParent: 0
   m_AttachPointCompatibilityMode: 0
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
@@ -562,12 +562,12 @@ MonoBehaviour:
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   _socketColliders:
   - {fileID: 6354897372901713821}
-  _socketType: 17
-  _isEnterTaskSendable: 0
+  _socketType: 34
+  _isEnterTaskSendable: 1
   _isExitTaskSendable: 0
   _timerDelay: 1
   _isSubstanceSocket: 0
-  _isStartEnter: 0
+  _isStartEnter: 1
 --- !u!135 &2562155564905575613
 SphereCollider:
   m_ObjectHideFlags: 0

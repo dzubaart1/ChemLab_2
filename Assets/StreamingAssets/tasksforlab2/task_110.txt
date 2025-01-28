@@ -3,23 +3,16 @@
   "Lab": 1,
   "Number": 110,
   "Title": "Задание 110",
-  "Description": "Установите на пипет-дозаторе значение 100мкл",
+  "Description": "Возьмите пульверизатор в левую руку и обработайте правую руку спиртом",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 2,
-    "ActivityType": 6
+    "$type": "BioEngineerLab.Activities.PulverizatorLabActivity, Assembly-CSharp",
+    "Target": 1,
+    "ActivityType": 8
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.SetDozatorVolumeLabSideEffect, Assembly-CSharp",
-        "DozatorVolume": 0.0001,
-        "SideEffectTimeType": 1,
-        "SideEffectType": 1
-      }
-    ]
+    "$values": []
   }
 }

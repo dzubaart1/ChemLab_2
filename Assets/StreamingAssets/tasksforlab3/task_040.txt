@@ -5,7 +5,7 @@
   "Title": "Задание 40",
   "Description": "Возьмите пульверизатор в правую руку и обработайте левую руку спиртом",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.PulverizatorLabActivity, Assembly-CSharp",
     "Target": 0,

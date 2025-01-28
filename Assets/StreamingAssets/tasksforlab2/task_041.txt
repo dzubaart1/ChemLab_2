@@ -3,7 +3,7 @@
   "Lab": 1,
   "Number": 41,
   "Title": "Задание 41",
-  "Description": "Возьмите стакан и поставьте на стол.",
+  "Description": "Возьмите стакан и поставьте на стол",
   "Warning": "",
   "SaveableTask": true,
   "LabActivity": {

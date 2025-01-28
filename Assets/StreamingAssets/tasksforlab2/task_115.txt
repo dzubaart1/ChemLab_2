@@ -3,25 +3,17 @@
   "Lab": 1,
   "Number": 115,
   "Title": "Задание 115",
-  "Description": "Переместите наконечник с пипет-дозатора в ёмкость для отходов",
+  "Description": "Откройте ёмкость с наконечниками для пипет-дозатора. Наденьте наконечник на пипет-дозатор поднеся пипет-дозатор к наконечнику. ",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 0,
-    "MachineType": 23,
-    "ActivityType": 1
+    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
+    "SocketType": 6,
+    "SocketActivityType": 0,
+    "ActivityType": 3
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.ConstructorSideEffect, Assembly-CSharp",
-        "SocketType": 6,
-        "IsLock": false,
-        "SideEffectTimeType": 0,
-        "SideEffectType": 3
-      }
-    ]
+    "$values": []
   }
 }

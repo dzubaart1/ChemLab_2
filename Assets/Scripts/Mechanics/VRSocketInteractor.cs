@@ -122,7 +122,7 @@ namespace Mechanics
             
             if (_isEnterTaskSendable)
             {
-                Debug.Log($" TRY COMPLETE ENTER!");
+                Debug.Log($" TRY COMPLETE ENTER! {_socketType}");
                 SendTryTaskComplete(SelectedObject, ESocketActivity.Enter);
             }
         }
@@ -149,7 +149,7 @@ namespace Mechanics
 
             if (_isExitTaskSendable)
             {
-                Debug.Log($" TRY COMPLETE EXIT! {gameObject.name}");
+                Debug.Log($" TRY COMPLETE EXIT! {gameObject.name}  {_socketType}");
                 SendTryTaskComplete(exitedTransform, ESocketActivity.Exit);
             }
         }
@@ -271,11 +271,25 @@ namespace Mechanics
                 return;
             }
             
+            LabContainer labContainer = grabInteractable.GetComponentInChildren<LabContainer>();
+            
             RestartTimer();
 
             foreach (var collider in colliders)
             {
                 collider.enabled = false;
+            }
+
+            if (labContainer != null)
+            {
+                Collider [] labContainerColliders = labContainer.GetComponents<Collider>();
+                foreach (var labContainerCollider in labContainerColliders)
+                {
+                    if (labContainerCollider.isTrigger)
+                    {
+                        labContainerCollider.enabled = true;
+                    }
+                }
             }
             
             grabInteractable.enabled = false;
@@ -284,8 +298,8 @@ namespace Mechanics
             socketActive = false;
             
             grabInteractable.transform.SetParent(attachTransform);
-            grabInteractable.transform.localPosition = Vector3.zero;
-            grabInteractable.transform.localRotation = Quaternion.identity;
+            /*grabInteractable.transform.localPosition = Vector3.zero;
+            grabInteractable.transform.localRotation = Quaternion.identity;*/
             
             _isLocked = true;
             _lockedObject = grabInteractable;
@@ -309,6 +323,12 @@ namespace Mechanics
             {
                 return;
             }
+
+            Collider socketCollider = GetComponent<Collider>();
+            if (socketCollider == null)
+            {
+                return;
+            }
             
             RestartTimer();
             
@@ -323,6 +343,7 @@ namespace Mechanics
             rigidbody.isKinematic = false;
             
             socketActive = true;
+            socketCollider.enabled = true;
             
             interactionManager.SelectEnter((IXRSelectInteractor)this, grabInteractable);
 

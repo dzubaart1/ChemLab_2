@@ -27,9 +27,7 @@ namespace Gameplay
         [SerializeField] private EMachine _machineType;
         
         private HandsMachine _handsMachine;
-
         private SavedData _savedData = new SavedData();
-        
         private bool _isActive = true;
         
         private void Start()
@@ -80,7 +78,7 @@ namespace Gameplay
             
             gameManager.CurrentBaseLocalManager.OnActivityComplete(new MachineLabActivity(EMachineActivity.OnEnter, _machineType));    
             
-            _handsMachine.OnGlovesTaken();
+            _handsMachine.WearGloves();
         }
 
         public void Save()

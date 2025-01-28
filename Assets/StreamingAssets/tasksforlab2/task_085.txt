@@ -5,7 +5,7 @@
   "Title": "Задание 85",
   "Description": "Возьмите специальный ключ, включите ламинарный бокс",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
     "MachineActivityType": 1,

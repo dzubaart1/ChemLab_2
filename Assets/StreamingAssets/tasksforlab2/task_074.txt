@@ -3,12 +3,12 @@
   "Lab": 1,
   "Number": 74,
   "Title": "Задание 74",
-  "Description": "На приборной панели нажмите кнопку «L»",
+  "Description": "Нажмите на кнопку «Pull»",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 14,
+    "ButtonType": 37,
     "ActivityType": 6
   },
   "LabSideEffects": {

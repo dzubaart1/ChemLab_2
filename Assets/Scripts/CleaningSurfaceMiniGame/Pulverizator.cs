@@ -20,6 +20,12 @@ namespace Machines
         [Header("Refs")]
         [SerializeField] private VRGrabInteractable _vrGrabInteractable;
         [SerializeField] private Transform _rayOrigin;
+        [SerializeField] private XRInteractorLineVisual _lineVisual;
+        
+        [Header("Configs")]
+        [SerializeField] private Gradient _handsGradient;
+        [SerializeField] private Gradient _surfaceGradient;
+        [SerializeField] private Gradient _otherGradient;
         
         [Space]
         [SerializeField] private TagConfig[] _tagConfigs;
@@ -28,6 +34,12 @@ namespace Machines
         
         private void Update()
         {
+            Ray colorRay = new Ray(_rayOrigin.transform.position, _rayOrigin.transform.forward);
+            if (Physics.Raycast(colorRay, out RaycastHit colorHit))
+            {
+                ChangeColor(colorHit);
+            }
+            
             if (_vrGrabInteractable.interactorsSelecting.Count == 0)
             {
                 return;
@@ -77,12 +89,63 @@ namespace Machines
                 {
                     return;
                 }
-                
                 cleaningSurface.OnPulverizatorHit(hit.point);
                 return;
             }
+
+            if (tagConfig.TargetType == EPulverizatorTarget.RightHandHit ||
+                tagConfig.TargetType == EPulverizatorTarget.LeftHandHit)
+            {
+                Ray ray = new Ray(hit.point, _rayOrigin.transform.forward);
+                if (Physics.Raycast(ray, out RaycastHit hit2))
+                {
+                    if (TryGetTagConfig(hit2.collider.gameObject.tag, out TagConfig tagConfig2))
+                    {
+                        gameManager.CurrentBaseLocalManager.OnActivityComplete(new PulverizatorLabActivity(tagConfig2.TargetType));
+                        return;
+                    }
+                    else
+                    {
+                        gameManager.CurrentBaseLocalManager.OnActivityComplete(new PulverizatorLabActivity(tagConfig.TargetType));
+                        return;
+                    }
+                }
+            }
             
             gameManager.CurrentBaseLocalManager.OnActivityComplete(new PulverizatorLabActivity(tagConfig.TargetType));
+        }
+        
+        private void ChangeColor(RaycastHit hit)
+        {
+            if (TryGetTagConfig(hit.collider.gameObject.tag, out TagConfig tagConfig))
+            {
+                if (tagConfig.TargetType == EPulverizatorTarget.RightHandHit ||
+                    tagConfig.TargetType == EPulverizatorTarget.LeftHandHit)
+                {
+                    Ray ray = new Ray(hit.point, _rayOrigin.transform.forward);
+                    if (Physics.Raycast(ray, out RaycastHit hit2))
+                    {
+                        if (TryGetTagConfig(hit2.collider.gameObject.tag, out TagConfig tagConfig2) &&
+                            tagConfig2.TargetType != EPulverizatorTarget.LeftHandHit &&
+                            tagConfig2.TargetType != EPulverizatorTarget.RightHandHit)
+                        {
+                            _lineVisual.validColorGradient = _otherGradient;
+                        }
+                        else
+                        {
+                            _lineVisual.validColorGradient = _handsGradient;
+                        }
+                    }
+                }
+                else if (tagConfig.TargetType == EPulverizatorTarget.CleaningSurface)
+                {
+                    _lineVisual.validColorGradient = _surfaceGradient;
+                }
+                else
+                {
+                    _lineVisual.validColorGradient = _otherGradient;
+                }
+            }
         }
 
         private bool TryGetTagConfig(string tag, out TagConfig targetTagConfig)
@@ -94,6 +157,7 @@ namespace Machines
                 if (tagConfig.Tag == tag)
                 {
                     targetTagConfig = tagConfig;
+                    Debug.Log(targetTagConfig.Tag);
                     return true;
                 }
             }

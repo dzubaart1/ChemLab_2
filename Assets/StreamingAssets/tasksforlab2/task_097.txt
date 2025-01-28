@@ -3,30 +3,13 @@
   "Lab": 1,
   "Number": 97,
   "Title": "Задание 97",
-  "Description": "Подойдите к автоклаву, извлеките ёмкость с надписью «Глюкоза» ",
+  "Description": "Возьмите пульверизатор, обработайте пенициллиновый флакон",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",
-    "SocketType": 26,
-    "SocketActivityType": 1,
-    "LabSubstanceProperties": {
-      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
-      "$values": [
-        {
-          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "Glukoza and Purple Sol",
-          "SubstanceMode": 0,
-          "SubstanceLayer": 0,
-          "SubstanceColorR": 0.527487159,
-          "SubstanceColorG": 0.4627451,
-          "SubstanceColorB": 0.6509804,
-          "SubstanceColorA": 0.8509804,
-          "HintName": ""
-        }
-      ]
-    },
-    "ActivityType": 2
+    "$type": "BioEngineerLab.Activities.PulverizatorLabActivity, Assembly-CSharp",
+    "Target": 2,
+    "ActivityType": 8
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

@@ -3,12 +3,12 @@
   "Lab": 1,
   "Number": 101,
   "Title": "Задание 101",
-  "Description": "Возьмите пульверизатор, обработайте ёмкость с надписью «Сахароза»",
+  "Description": "Возьмите пульверизатор, обработайте ёмкость с надписью «Лактоза»",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.PulverizatorLabActivity, Assembly-CSharp",
-    "Target": 5,
+    "Target": 4,
     "ActivityType": 8
   },
   "LabSideEffects": {

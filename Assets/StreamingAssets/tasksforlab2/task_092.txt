@@ -3,13 +3,13 @@
   "Lab": 1,
   "Number": 92,
   "Title": "Задание 92",
-  "Description": "Возьмите пульверизатор, обработайте пенициллиновый флакон",
+  "Description": "На приборной панели нажмите кнопку «L»/«Esc» ",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.PulverizatorLabActivity, Assembly-CSharp",
-    "Target": 2,
-    "ActivityType": 8
+    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
+    "ButtonType": 14,
+    "ActivityType": 6
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

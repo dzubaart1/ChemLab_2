@@ -167,14 +167,14 @@ namespace LocalManagers
                 saveableUi.LoadUIState();
             }
 
-            foreach (var saveableOther in _saveableOthers)
-            {
-                saveableOther.Load();
-            }
-
             foreach (var socket in _sockets)
             {
                 socket.PutSavedInteractable();
+            }
+            
+            foreach (var saveableOther in _saveableOthers)
+            {
+                saveableOther.Load();
             }
             
             foreach (var saveableDoor in _saveableDoors)

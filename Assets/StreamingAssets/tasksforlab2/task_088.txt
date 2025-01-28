@@ -3,12 +3,12 @@
   "Lab": 1,
   "Number": 88,
   "Title": "Задание 88",
-  "Description": "Откройте нижнюю панель",
+  "Description": "Установите временной интервал двадцать минут, нажмите кнопку «стрелка вверх» ",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 21,
+    "ButtonType": 19,
     "ActivityType": 6
   },
   "LabSideEffects": {

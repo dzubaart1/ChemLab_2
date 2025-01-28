@@ -3,45 +3,24 @@
   "Lab": 1,
   "Number": 111,
   "Title": "Задание 111",
-  "Description": "С помощью пипет-дозатора отберите раствор из ёмкости с бактериями «S.t. 56-45» объёмом 100 мкл ",
+  "Description": "Снимите плёнку с пенициллинового флакона",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
-    "FromContainer": 19,
-    "ToContainer": 6,
-    "LabSubstanceProperty": {
-      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-      "SubstanceName": "Penicillium",
-      "SubstanceMode": 0,
-      "SubstanceLayer": 1,
-      "SubstanceColorR": 0.9528302,
-      "SubstanceColorG": 0.927144468,
-      "SubstanceColorB": 0.7775454,
-      "SubstanceColorA": 0.807843149,
-      "HintName": ""
-    },
-    "ActivityType": 0
+    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
+    "SocketType": 31,
+    "SocketActivityType": 1,
+    "ActivityType": 3
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
     "$values": [
       {
-        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
-        "LabSubstanceProperty": {
-          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "Penicillium",
-          "SubstanceMode": 0,
-          "SubstanceLayer": 1,
-          "SubstanceColorR": 0.9528302,
-          "SubstanceColorG": 0.927144468,
-          "SubstanceColorB": 0.7775454,
-          "SubstanceColorA": 0.807843149,
-          "HintName": ""
-        },
-        "Weight": 100.0,
+        "$type": "BioEngineerLab.Tasks.SideEffects.ConstructorSideEffect, Assembly-CSharp",
+        "SocketType": 31,
+        "IsLock": false,
         "SideEffectTimeType": 0,
-        "SideEffectType": 0
+        "SideEffectType": 3
       }
     ]
   }
