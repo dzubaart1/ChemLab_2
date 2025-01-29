@@ -14,9 +14,9 @@ using UnityEngine;
 
 namespace LocalManagers
 {
-    public class SpaceLabManager : BaseLocalManager
+    public class LabLocalManager : BaseLocalManager
     {
-            [CanBeNull]
+        [CanBeNull]
         public LabTask CurrentTask
         {
             get
@@ -55,7 +55,7 @@ namespace LocalManagers
         {
             _soCrafts = ResourcesDatabase.ReadAllCraft();
             _tasksList = LabTasksDatabase.ReadAll(lab);
-
+            
             yield return new WaitForSeconds(3f);
 
             _isGameStarted = true;
@@ -94,6 +94,11 @@ namespace LocalManagers
         public override void SaveGame()
         {
             _savedTaskID = _currentTaskID;
+            
+            foreach (var saveableDoor in _saveableDoors)
+            {
+                saveableDoor.SaveDoorState();
+            }
 
             foreach (var socket in _sockets)
             {
@@ -115,11 +120,6 @@ namespace LocalManagers
                 saveableUi.SaveUIState();
             }
 
-            foreach (var saveableDoor in _saveableDoors)
-            {
-                saveableDoor.SaveDoorState();
-            }
-
             foreach (var saveableOther in _saveableOthers)
             {
                 saveableOther.Save();
@@ -128,7 +128,15 @@ namespace LocalManagers
 
         public override void LoadGame()
         {
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                return;
+            }
+            
             _isError = false;
+            
+            gameManager.PlayerSpawner.Player.ReleaseAllGrabbables();
             
             foreach (var socket in _sockets)
             {
@@ -167,19 +175,19 @@ namespace LocalManagers
                 saveableUi.LoadUIState();
             }
 
-            foreach (var saveableDoor in _saveableDoors)
+            foreach (var socket in _sockets)
             {
-                saveableDoor.LoadDoorState();
+                socket.PutSavedInteractable();
             }
-
+            
             foreach (var saveableOther in _saveableOthers)
             {
                 saveableOther.Load();
             }
-
-            foreach (var socket in _sockets)
+            
+            foreach (var saveableDoor in _saveableDoors)
             {
-                socket.PutSavedInteractable();
+                saveableDoor.LoadDoorState();
             }
 
             _currentTaskID = _savedTaskID;
