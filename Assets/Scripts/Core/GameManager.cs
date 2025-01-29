@@ -13,11 +13,13 @@ namespace Core
         public const string LOBBY_SCENE_NAME = "LobbyScene";
         public const string SPACE_LAB_SCENE_NAME = "SpaceLab";
         public const string CUBE_LAB_SCENE_NAME = "CubeLab";
-        
-        public event Action<string> LoadSceneCompleteEvent;
+
+        [SerializeField] private PlayerSpawner _playerSpawner;
         
         [CanBeNull] public static GameManager Instance { get; private set; }
         [CanBeNull] public BaseLocalManager CurrentBaseLocalManager { get; private set; }
+
+        public PlayerSpawner PlayerSpawner => _playerSpawner;
         
         public ELab CurrentLab { get; private set; }
         public float GameTime { get; private set; }
@@ -87,7 +89,7 @@ namespace Core
                 yield return null;
             }
             
-            LoadSceneCompleteEvent?.Invoke(sceneName);
+            _playerSpawner.SpawnPlayer();
         }
     }
 }
