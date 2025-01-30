@@ -277,18 +277,9 @@ namespace Mechanics
 
             foreach (var collider in colliders)
             {
-                collider.enabled = false;
-            }
-
-            if (labContainer != null)
-            {
-                Collider [] labContainerColliders = labContainer.GetComponents<Collider>();
-                foreach (var labContainerCollider in labContainerColliders)
+                if (!collider.isTrigger)
                 {
-                    if (labContainerCollider.isTrigger)
-                    {
-                        labContainerCollider.enabled = true;
-                    }
+                    collider.enabled = false;
                 }
             }
             

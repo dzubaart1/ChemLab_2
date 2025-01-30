@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7545c68c4b1ce34ca4131dc4e84e4e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _door: {fileID: 5514949965449457933}
+  _rigidbody: {fileID: 6594839635057893051}
   _closed: {x: 0, y: 0, z: 0, w: 1}
   _opened: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   _doorType: 2
@@ -143,7 +143,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 30
   m_Drag: 1
-  m_AngularDrag: 0.5
+  m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}

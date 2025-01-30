@@ -2,14 +2,16 @@
 using System;
 using Core;
 using Gameplay;
+using JetBrains.Annotations;
 using Saveables;
 using UI.Components;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Machines
 {
     [RequireComponent(typeof(Collider))]
-    public class HandsMachine : MonoBehaviour, ISaveableOther
+    public class HandsChanger : MonoBehaviour, ISaveableOther
     {
         private class SavedData
         {
@@ -24,10 +26,10 @@ namespace Machines
         [SerializeField] private SkinnedMeshRenderer _rightHandMesh;
         [SerializeField] private SkinnedMeshRenderer _leftHandMesh;
         
-        /*private Gloves _gloves;
-        private ButtonComponent _button;*/
+        [CanBeNull] private Gloves _gloves;
+        [CanBeNull] private ButtonComponent _button;
         
-        private bool _isGloves;
+        private bool _isGloves = false;
         private SavedData _savedData = new SavedData();
         
         private void Start()
@@ -45,6 +47,8 @@ namespace Machines
             
             gameManager.CurrentBaseLocalManager.AddSaveableOther(this);
         }
+
+        
 
         public void WearGloves()
         {
@@ -70,17 +74,8 @@ namespace Machines
         public void Load()
         {
             _isGloves = _savedData.IsGloves;
-
-            if (_isGloves)
-            {
-                _rightHandMesh.material = _glovesMaterial;
-                _leftHandMesh.material = _glovesMaterial;
-            }
-            else
-            {
-                _rightHandMesh.material = _handsMaterial;
-                _leftHandMesh.material = _handsMaterial;
-            }
+            
+            _rightHandMesh.material = _leftHandMesh.material = _isGloves ? _glovesMaterial : _handsMaterial;
         }
     }
 }

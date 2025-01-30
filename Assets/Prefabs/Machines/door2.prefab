@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7545c68c4b1ce34ca4131dc4e84e4e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _door: {fileID: 4104437585970318505}
+  _rigidbody: {fileID: 4816578669693659842}
   _closed: {x: 0, y: -0.70710677, z: 0, w: 0.7071068}
   _opened: {x: 0, y: 0, z: 0, w: 1}
   _doorType: 3

@@ -18,7 +18,7 @@ namespace Machines
         public event Action DoorClosedEvent;
         
         [Header("Refs")]
-        [SerializeField] private Transform _door;
+        [SerializeField] private Rigidbody _rigidbody;
         
         [Space]
         [Header("Configs")]
@@ -49,6 +49,10 @@ namespace Machines
         
         private void Update()
         {
+            if (_doorType == EDoor.AutoClaveDoor)
+            {
+                Debug.Log(transform.rotation);
+            }
             GameManager gameManager = GameManager.Instance;
             
             if (gameManager == null)
@@ -65,13 +69,8 @@ namespace Machines
             {
                 _isOpen = true;
                 
-                Rigidbody rb = GetComponent<Rigidbody>();
-                if (rb == null)
-                {
-                    return;
-                }
-                rb.velocity = Vector3.zero;
-                rb.angularVelocity = Vector3.zero;
+                _rigidbody.velocity = Vector3.zero;
+                _rigidbody.angularVelocity = Vector3.zero;
                 
                 if (_isOpenTaskSendable)
                 {
@@ -85,13 +84,8 @@ namespace Machines
             {
                 _isOpen = false;
                 
-                Rigidbody rb = GetComponent<Rigidbody>();
-                if (rb == null)
-                {
-                    return;
-                }
-                rb.velocity = Vector3.zero;
-                rb.angularVelocity = Vector3.zero;
+                _rigidbody.velocity = Vector3.zero;
+                _rigidbody.angularVelocity = Vector3.zero;
                 
                 if (_isCloseTaskSendable)
                 {
@@ -122,13 +116,8 @@ namespace Machines
 
         public void LoadDoorState()
         {
-            Rigidbody rb = GetComponent<Rigidbody>();
-            if (rb == null)
-            {
-                return;
-            }
-            rb.velocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
+            _rigidbody.velocity = Vector3.zero;
+            _rigidbody.angularVelocity = Vector3.zero;
             
             if (_savedData.IsOpen)
             {
@@ -137,12 +126,8 @@ namespace Machines
             }
             else
             {
-                rb.useGravity = false;
-                rb.isKinematic = true;
                 _isOpen = false;
-                transform.SetPositionAndRotation(_door.transform.position, _closed);
-                rb.useGravity = true;
-                rb.isKinematic = false;
+                transform.rotation = _closed;
             }
         }
 

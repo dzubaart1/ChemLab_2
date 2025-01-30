@@ -970,9 +970,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d39d395b3b7b5824db6230d2ad735584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttonType: 4
+  ButtonType: 4
   _isTaskSendable: 1
   _isStartOn: 0
+  _timerDelay: 1
   _btnImage: {fileID: 6991985488850963506}
   _onSprite: {fileID: 21300000, guid: 5e50711882004914f9a57566ce715b39, type: 3}
   _offSprite: {fileID: 21300000, guid: f88297c69db64ef49807e133e80b29da, type: 3}
@@ -1345,7 +1346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7545c68c4b1ce34ca4131dc4e84e4e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _door: {fileID: 6991985489194717531}
+  _rigidbody: {fileID: 2730912108339456632}
   _closed: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
   _opened: {x: -0.70710677, y: 0, z: 0, w: 0.70710677}
   _doorType: 0

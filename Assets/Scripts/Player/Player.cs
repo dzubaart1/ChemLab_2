@@ -1,3 +1,4 @@
+using Machines;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -5,6 +6,7 @@ namespace Core
 {
     public class Player : MonoBehaviour
     {
+        [SerializeField] private HandsChanger HandsChanger;
         [SerializeField] private XRDirectInteractor _leftDirectInteractor;
         [SerializeField] private XRDirectInteractor _rightDirectInteractor;
 
@@ -13,8 +15,13 @@ namespace Core
             DontDestroyOnLoad(gameObject);
         }
 
-        public void ReleaseAllGrabbables()
+        public HandsChanger GetHandsChanger()
         {
+            return HandsChanger;
+        }
+
+        public void ReleaseAllGrabbables()
+        { 
             for (var i = _leftDirectInteractor.interactablesSelected.Count - 1; i >= 0; --i)
             {
                 _leftDirectInteractor.interactionManager.SelectCancel(_leftDirectInteractor, _leftDirectInteractor.interactablesSelected[i]);

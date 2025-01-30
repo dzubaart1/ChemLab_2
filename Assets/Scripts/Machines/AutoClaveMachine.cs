@@ -23,12 +23,9 @@ namespace Machines
         [Header("Refs")]
         [SerializeField] private VRSocketInteractor[] _socketInteractors;
         [SerializeField] private Animator _animator;
-        [SerializeField] private Door _door;
+        [SerializeField] private Transform _karetka;
         
         private SavedData _savedData = new SavedData();
-        
-        private bool _animationParamDoorOpened = false;
-        private bool _isPulled = false;
         
         private void Start()
         {
@@ -58,15 +55,13 @@ namespace Machines
 
         private void OnPullButtonClick()
         {
-            _isPulled = !_isPulled;
-            _animator.Play(_isPulled ? "Open" : "Close");
+            _animator.Play(_pullButton.IsOn ? "Open" : "Close");
         }
 
         public void SaveUIState()
         {
             _savedData.IsPowerButtonOn = _powerButton.IsOn;
             _savedData.IsPullButtonOn = _pullButton.IsOn;
-            _savedData.AnimationParamDoorOpened = _animationParamDoorOpened;
         }
 
         public void LoadUIState()
@@ -74,40 +69,15 @@ namespace Machines
             _powerButton.SetIsOn(_savedData.IsPowerButtonOn);
             _pullButton.SetIsOn(_savedData.IsPullButtonOn);
 
-            _animationParamDoorOpened = _savedData.AnimationParamDoorOpened;
-            if (_savedData.AnimationParamDoorOpened)
+            if (_pullButton.IsOn)
             {
-                _door.transform.rotation = new Quaternion(-0.7f, 0, 0, 0.7f);
+                _animator.Play("Open");
             }
             else
             {
-                if (_isPulled)
-                {
-                    StartCoroutine(PlayCloseAnimation());
-                    _isPulled = false;
-                }
-                else
-                {
-                    _door.transform.rotation = new Quaternion(-0.5f, -0.5f, -0.5f, 0.5f);
-                }
+                _animator.Play("Base");
+                _karetka.localPosition = new Vector3(-0.1038f, 0.1058f, 0.06f);
             }
-        }
-
-        private IEnumerator PlayCloseAnimation()
-        {
-            _door.transform.rotation = new Quaternion(-0.7f, 0, 0, 0.7f);
-            _animator.Play("Close");
-            
-            yield return new WaitForSeconds(1.0f);
-            
-            _door.SetIsOpen(false);
-            _animationParamDoorOpened = false;
-            _door.transform.rotation = new Quaternion(-0.5f, -0.5f, -0.5f, 0.5f);
-            Rigidbody rb = _door.GetComponent<Rigidbody>();
-            if (rb != null)
-            {
-                rb.velocity = Vector3.zero;
-            }            
         }
     }
 }

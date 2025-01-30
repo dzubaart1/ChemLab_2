@@ -34,6 +34,7 @@ namespace Machines
         [SerializeField] private string _closeAnimatorState = "Close";
         
         private SavedData _savedData = new SavedData();
+        private int c = 1;
         
         private void Start()
         {
@@ -69,7 +70,11 @@ namespace Machines
 
         private void OnLightButtonClicked()
         {
-            _mainLight.SetActive(_lightButton.IsOn);
+            c--;
+            if (c < 0)
+            {
+                _mainLight.SetActive(_lightButton.IsOn);
+            }
         }
         private void OnUVButtonClicked()
         {

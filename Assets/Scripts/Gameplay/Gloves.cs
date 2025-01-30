@@ -26,7 +26,7 @@ namespace Gameplay
         [Header("Configs")]
         [SerializeField] private EMachine _machineType;
         
-        private HandsMachine _handsMachine;
+        private HandsChanger _handsChanger;
         private SavedData _savedData = new SavedData();
         private bool _isActive = true;
         
@@ -45,7 +45,7 @@ namespace Gameplay
             
             gameManager.CurrentBaseLocalManager.AddSaveableOther(this);
 
-            _handsMachine = FindObjectOfType<HandsMachine>();
+            _handsChanger = gameManager.PlayerSpawner.Player.GetHandsChanger();
         }
  
         private void OnEnable()
@@ -78,7 +78,7 @@ namespace Gameplay
             
             gameManager.CurrentBaseLocalManager.OnActivityComplete(new MachineLabActivity(EMachineActivity.OnEnter, _machineType));    
             
-            _handsMachine.WearGloves();
+            _handsChanger.WearGloves();
         }
 
         public void Save()

@@ -13,7 +13,8 @@ namespace Machines
     {
         private class SavedData
         {
-            public bool IsShaking;
+            public bool IsPowered;
+            public bool IsRPM;
         }
         
         [Header("UIs")]
@@ -27,8 +28,6 @@ namespace Machines
         [SerializeField] private Animator _animator;
         
         private SavedData _savedData = new SavedData();
-        
-        private bool _isShaking = false;
         
         private void Start()
         {
@@ -71,13 +70,14 @@ namespace Machines
             
             if (!_powerButton.IsOn)
             {
+                _rpmButton.SetIsOn(false);
+                _animator.enabled = _rpmButton.IsOn;
                 return;
             }
             
             _animator.enabled = _rpmButton.IsOn;
-            _isShaking = _rpmButton.IsOn;
 
-            if (_isShaking)
+            if (_rpmButton.IsOn)
             {
                 return;
             }
@@ -118,13 +118,16 @@ namespace Machines
         
         public void SaveUIState()
         {
-            _savedData.IsShaking = _isShaking;
+            _savedData.IsPowered = _powerButton.IsOn;
+            _savedData.IsRPM = _rpmButton.IsOn;
         }
 
         public void LoadUIState()
         {
-            _animator.enabled = _savedData.IsShaking;
-            _isShaking = _savedData.IsShaking;
+            _rpmButton.SetIsOn(_savedData.IsRPM);
+            _powerButton.SetIsOn(_savedData.IsPowered);
+            
+            _animator.enabled = _rpmButton.IsOn && _savedData.IsPowered;
         }
     }
 }

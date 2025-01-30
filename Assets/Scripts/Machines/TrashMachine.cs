@@ -21,7 +21,7 @@ namespace Machines
         [SerializeField] private EMachine _machineType;
         [SerializeField] [CanBeNull] private ButtonComponent _button;
         
-        private HandsMachine _handsMachine;
+        private HandsChanger _handsChanger;
         private SavedData _savedData = new SavedData();
         private List<VRGrabInteractable> _hiddenGameObjects = new List<VRGrabInteractable>();
         
@@ -40,7 +40,7 @@ namespace Machines
             
             gameManager.CurrentBaseLocalManager.AddSaveableOther(this);
             
-            _handsMachine = FindObjectOfType<HandsMachine>();
+            _handsChanger = gameManager.PlayerSpawner.Player.GetHandsChanger();
         }
         
         private void OnEnable()
@@ -67,11 +67,11 @@ namespace Machines
         {
             if (_button.ButtonType == EButton.TrashGloversButton)
             {
-                if (_handsMachine == null)
+                if (_handsChanger == null)
                 {
                     return;
                 }
-                _handsMachine.TakeGlovesOff();
+                _handsChanger.TakeGlovesOff();
             }
         }
 

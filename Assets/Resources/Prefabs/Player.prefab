@@ -59,8 +59,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.0722214
-  m_Center: {x: -0.0307573, y: -0.00935185, z: -0.0124691725}
+  m_Radius: 0.08
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7679962342144197958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -618,7 +618,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3dd6b9b7fa3877418e513c42332d3f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Camera: {fileID: 7496176277636006819}
+  HandsChanger: {fileID: 722393541438107483}
+  _leftDirectInteractor: {fileID: 7035385901366129742}
+  _rightDirectInteractor: {fileID: 4863586686890968215}
 --- !u!114 &10682636241646401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -984,8 +986,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.06979689
-  m_Center: {x: 0.03325115, y: 0, z: -0.025215417}
+  m_Radius: 0.08
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7228542152097202842
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@
 using BioEngineerLab.Activities;
 using Core;
 using Mechanics;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -96,7 +97,7 @@ namespace Machines
             if (tagConfig.TargetType == EPulverizatorTarget.RightHandHit ||
                 tagConfig.TargetType == EPulverizatorTarget.LeftHandHit)
             {
-                Ray ray = new Ray(hit.point, _rayOrigin.transform.forward);
+                Ray ray = new Ray(hit.point + _rayOrigin.transform.forward.Multiply(new Vector3(0.01f, 0.01f, 0.01f)), _rayOrigin.transform.forward);
                 if (Physics.Raycast(ray, out RaycastHit hit2))
                 {
                     if (TryGetTagConfig(hit2.collider.gameObject.tag, out TagConfig tagConfig2))
@@ -122,7 +123,7 @@ namespace Machines
                 if (tagConfig.TargetType == EPulverizatorTarget.RightHandHit ||
                     tagConfig.TargetType == EPulverizatorTarget.LeftHandHit)
                 {
-                    Ray ray = new Ray(hit.point, _rayOrigin.transform.forward);
+                    Ray ray = new Ray(hit.point + _rayOrigin.transform.forward.Multiply(new Vector3(0.01f, 0.01f, 0.01f)), _rayOrigin.transform.forward);
                     if (Physics.Raycast(ray, out RaycastHit hit2))
                     {
                         if (TryGetTagConfig(hit2.collider.gameObject.tag, out TagConfig tagConfig2) &&
@@ -157,7 +158,6 @@ namespace Machines
                 if (tagConfig.Tag == tag)
                 {
                     targetTagConfig = tagConfig;
-                    Debug.Log(targetTagConfig.Tag);
                     return true;
                 }
             }
