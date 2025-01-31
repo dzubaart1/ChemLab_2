@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 173499268300358320}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.205, z: 0}
+  m_LocalPosition: {x: 0.029, y: 1.205, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -555,6 +555,7 @@ GameObject:
   - component: {fileID: 1277220320236358186}
   - component: {fileID: 1277220320236358185}
   - component: {fileID: 1277220320236358184}
+  - component: {fileID: 6046199023978534075}
   m_Layer: 0
   m_Name: colliders
   m_TagString: Untagged
@@ -638,8 +639,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.045984585, y: 1, z: 0.9585117}
-  m_Center: {x: -0.49021482, y: 1.1, z: 0.45074418}
+  m_Size: {x: 0.064202346, y: 1, z: 0.22048791}
+  m_Center: {x: 1.3191091, y: 1.1, z: -0.05289793}
 --- !u!65 &1277220320236358186
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -703,6 +704,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.4099852, y: 0.13133287, z: 1}
   m_Center: {x: -0.2049923, y: 0.40066668, z: 0.43}
+--- !u!65 &6046199023978534075
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277220320236358190}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.045984585, y: 1, z: 0.9724306}
+  m_Center: {x: -0.49021482, y: 1.1, z: 0.44378474}
 --- !u!1 &1277220320563143533
 GameObject:
   m_ObjectHideFlags: 0
@@ -1392,8 +1414,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 9.409772, y: 9.292044, z: 0.45817643}
-  m_Center: {x: 5.056426, y: -1.4880071, z: -0.17574604}
+  m_Size: {x: 9.409772, y: 8.197904, z: 0.45817643}
+  m_Center: {x: 5.056426, y: -0.9409365, z: -0.17574604}
 --- !u!1 &4354067495452639841
 GameObject:
   m_ObjectHideFlags: 0
@@ -1869,7 +1891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d39d395b3b7b5824db6230d2ad735584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttonType: 25
+  ButtonType: 25
   _isTaskSendable: 1
   _isStartOn: 0
   _timerDelay: 1

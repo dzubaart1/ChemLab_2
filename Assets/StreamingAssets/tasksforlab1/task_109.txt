@@ -5,7 +5,7 @@
   "Title": "Задание 109",
   "Description": "Откройте вторую пробирку",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
     "ButtonType": 5,

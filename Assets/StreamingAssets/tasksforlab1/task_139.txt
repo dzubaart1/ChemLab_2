@@ -3,14 +3,25 @@
   "Lab": 0,
   "Number": 139,
   "Title": "Задание 139",
-  "Description": "Сбросьте грязный металический шпатель в емкость для мытья лабораторной посуды",
+  "Description": "Разместите высушенный пастообразный осадок в инфракрасном спектрофотометре ",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 0,
-    "MachineType": 4,
-    "ActivityType": 1
+    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
+    "FromContainer": 10,
+    "ToContainer": 15,
+    "LabSubstanceProperty": {
+      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+      "SubstanceName": "DryAgarSed",
+      "SubstanceMode": 0,
+      "SubstanceLayer": 0,
+      "SubstanceColorR": 0.6415094,
+      "SubstanceColorG": 0.495189816,
+      "SubstanceColorB": 0.3721965,
+      "SubstanceColorA": 1.0,
+      "HintName": ""
+    },
+    "ActivityType": 0
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

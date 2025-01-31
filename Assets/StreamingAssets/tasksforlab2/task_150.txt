@@ -3,12 +3,12 @@
   "Lab": 1,
   "Number": 150,
   "Title": "Задание 150",
-  "Description": "Два раза нажмите кнопку «UV» (ультрафиолет)",
+  "Description": "Закройте ламинарный бокс (поднимите и задвиньте нижнюю панель)",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 16,
+    "ButtonType": 21,
     "ActivityType": 6
   },
   "LabSideEffects": {

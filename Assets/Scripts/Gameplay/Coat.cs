@@ -17,6 +17,7 @@ namespace Gameplay
         
         [Header("Refs")]
         [SerializeField] private MeshRenderer _meshRenderer;
+        [SerializeField] private Collider _collider;
         [SerializeField] private VRGrabInteractable _grabInteractable;
         [SerializeField] private ButtonComponent _returnBtn;
         
@@ -71,6 +72,8 @@ namespace Gameplay
             
             _isActive = false;
             _meshRenderer.enabled = _isActive;
+            _collider.enabled = _isActive;
+            _returnBtn.transform.gameObject.SetActive(!_isActive);
             
             gameManager.CurrentBaseLocalManager.OnActivityComplete(new MachineLabActivity(EMachineActivity.OnEnter, _machineType));            
         }
@@ -84,12 +87,16 @@ namespace Gameplay
         {
             _isActive = _savedData.IsActive;
             _meshRenderer.enabled = _isActive;
+            _collider.enabled = _isActive;
+            _returnBtn.transform.gameObject.SetActive(!_isActive);
         }
 
         private void OnReturnBtnClicked()
         {
             _isActive = true;
             _meshRenderer.enabled = _isActive;
+            _collider.enabled = _isActive;
+            _returnBtn.transform.gameObject.SetActive(!_isActive);
         }
     }
 }

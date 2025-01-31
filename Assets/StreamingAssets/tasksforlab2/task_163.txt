@@ -3,12 +3,12 @@
   "Lab": 1,
   "Number": 163,
   "Title": "Задание 163",
-  "Description": "Нажмите  «БАКТЕРИЦИДНАЯ ОЧИСТКА» ",
+  "Description": "Снимите и повесьте халат",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 23,
+    "ButtonType": 33,
     "ActivityType": 6
   },
   "LabSideEffects": {

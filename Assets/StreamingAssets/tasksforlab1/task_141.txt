@@ -3,17 +3,23 @@
   "Lab": 0,
   "Number": 141,
   "Title": "Задание 141",
-  "Description": "Ознакомьтесь с полученными результатами и положите их в лоток для бумаг",
+  "Description": "Подойдите к телепорту и заберите результаты из лаборатории сканирующей электронной микроскопии",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 0,
-    "MachineType": 9,
-    "ActivityType": 1
+    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
+    "ButtonType": 10,
+    "ActivityType": 6
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": []
+    "$values": [
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.SpawnDocLabSideEffect, Assembly-CSharp",
+        "MachineType": 11,
+        "SideEffectTimeType": 1,
+        "SideEffectType": 2
+      }
+    ]
   }
 }

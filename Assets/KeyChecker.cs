@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class KeyChecker : MonoBehaviour
 {
+    public event Action KeyboardUnlockedEvent;
     private void OnTriggerEnter(Collider other)
     {
         GameManager gameManager = GameManager.Instance;
@@ -25,5 +26,6 @@ public class KeyChecker : MonoBehaviour
         }
             
         gameManager.CurrentBaseLocalManager.OnActivityComplete(new MachineLabActivity(EMachineActivity.OnStart, EMachine.LaminBoxMachine));
+        KeyboardUnlockedEvent?.Invoke();
     }
 }

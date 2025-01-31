@@ -49,10 +49,6 @@ namespace Machines
         
         private void Update()
         {
-            if (_doorType == EDoor.AutoClaveDoor)
-            {
-                Debug.Log(transform.rotation);
-            }
             GameManager gameManager = GameManager.Instance;
             
             if (gameManager == null)

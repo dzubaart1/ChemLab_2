@@ -173,7 +173,8 @@ namespace Core
         ShoeCoversMachine,
         LabGlovesMachine,
         ShakerMachine,
-        MiniTrashMachine
+        MiniTrashMachine,
+        PenSinkMachine
     }
     
     public enum ESocketActivity : byte

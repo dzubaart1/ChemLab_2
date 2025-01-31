@@ -5,7 +5,7 @@
   "Title": "Задание 78",
   "Description": "Возьмите культуральный планшет и с помощью телепорта отправьте его в лабораторию клеточных исследований",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",
     "SocketType": 14,

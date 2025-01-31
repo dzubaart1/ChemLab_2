@@ -3,23 +3,17 @@
   "Lab": 0,
   "Number": 142,
   "Title": "Задание 142",
-  "Description": "Подойдите к телепорту и заберите результаты исследований в рентгенофазовом дифрактометре",
+  "Description": "Ознакомьтесь с полученными результатами и положите их в лоток для бумаг",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 11,
-    "ActivityType": 6
+    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
+    "MachineActivityType": 0,
+    "MachineType": 9,
+    "ActivityType": 1
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.SpawnDocLabSideEffect, Assembly-CSharp",
-        "MachineType": 12,
-        "SideEffectTimeType": 1,
-        "SideEffectType": 2
-      }
-    ]
+    "$values": []
   }
 }

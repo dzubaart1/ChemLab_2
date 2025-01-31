@@ -3,17 +3,23 @@
   "Lab": 0,
   "Number": 145,
   "Title": "Задание 145",
-  "Description": "Ознакомьтесь с полученными результатами и положите их в лоток для бумаг",
+  "Description": "Подойдите к инфракрасному спектрофотометру и заберите результаты исследований",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 0,
-    "MachineType": 9,
-    "ActivityType": 1
+    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
+    "ButtonType": 8,
+    "ActivityType": 6
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": []
+    "$values": [
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.SpawnDocLabSideEffect, Assembly-CSharp",
+        "MachineType": 13,
+        "SideEffectTimeType": 1,
+        "SideEffectType": 2
+      }
+    ]
   }
 }

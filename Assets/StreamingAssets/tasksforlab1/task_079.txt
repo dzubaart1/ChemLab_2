@@ -5,7 +5,7 @@
   "Title": "Задание 79",
   "Description": "Возьмите Чашку Петри с растворами хлорида кальция и Na2HPO4 и Agar и положите ее на сканер",
   "Warning": "",
-  "SaveableTask": true,
+  "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",
     "SocketType": 10,

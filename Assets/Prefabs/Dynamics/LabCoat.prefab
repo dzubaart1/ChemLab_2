@@ -344,6 +344,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+  _isSaveble: 1
 --- !u!1 &5233568821538375479
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,7 +662,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2830749946515786235
 RectTransform:
   m_ObjectHideFlags: 0
@@ -776,9 +777,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d39d395b3b7b5824db6230d2ad735584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttonType: 33
+  ButtonType: 33
   _isTaskSendable: 1
   _isStartOn: 0
+  _timerDelay: 1
   _btnImage: {fileID: 677721880488167667}
   _onSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   _offSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
@@ -831,6 +833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _meshRenderer: {fileID: 5827924553115246900}
+  _collider: {fileID: 799404812185003010}
   _grabInteractable: {fileID: 3390436394151078008}
   _returnBtn: {fileID: 4104588191524813963}
   _machineType: 19

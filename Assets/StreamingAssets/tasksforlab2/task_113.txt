@@ -5,7 +5,7 @@
   "Title": "Задание 113",
   "Description": "Откройте пенициллиновый флакон с бактериями «S.t. 56-45»",
   "Warning": "",
-  "SaveableTask": true,
+  "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
     "SocketType": 30,

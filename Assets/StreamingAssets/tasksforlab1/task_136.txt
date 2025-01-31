@@ -3,12 +3,12 @@
   "Lab": 0,
   "Number": 136,
   "Title": "Задание 136",
-  "Description": "Возьмите другую чашку Петри с высушенным пастообразным осадком и, с помощью телепорта, отправьте ее для исследований в рентгенофазовом дифрактометре",
+  "Description": "Отправьте одну из чашек Петри с высушенным пастообразным осадком с помощью телепорта в лабораторию сканирующей электронной микроскопии",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",
-    "SocketType": 16,
+    "SocketType": 15,
     "SocketActivityType": 0,
     "LabSubstanceProperties": {
       "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",

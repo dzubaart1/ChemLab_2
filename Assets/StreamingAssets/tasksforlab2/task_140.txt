@@ -3,14 +3,13 @@
   "Lab": 1,
   "Number": 140,
   "Title": "Задание 140",
-  "Description": "Возьмите пульверизатор, обработайте рабочую поверхность ламинарного бокса",
+  "Description": "Нажмите кнопку «rpm», начнется перемешивание",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 1,
-    "MachineType": 17,
-    "ActivityType": 1
+    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
+    "ButtonType": 27,
+    "ActivityType": 6
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

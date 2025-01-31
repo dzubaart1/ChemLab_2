@@ -457,9 +457,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d39d395b3b7b5824db6230d2ad735584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttonType: 8
+  ButtonType: 8
   _isTaskSendable: 1
   _isStartOn: 0
+  _timerDelay: 1
   _btnImage: {fileID: 4084616398216383276}
   _onSprite: {fileID: 21300000, guid: c257edbf2a53c7c479f5ef16edd32543, type: 3}
   _offSprite: {fileID: 21300000, guid: 3d09c26e92cc73e4492e8f9af47b11ca, type: 3}
@@ -969,13 +970,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6409738262353585608}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.6200285, y: -0.3399481, z: 0.3399481, w: 0.6200285}
+  m_LocalRotation: {x: 0, y: -0.4807592, z: 0, w: 0.8768527}
   m_LocalPosition: {x: 0.1791, y: 0.267, z: 0.2321}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4084616399572737393}
-  m_LocalEulerAnglesHint: {x: 90, y: -57.47, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -57.47, z: 0}
 --- !u!114 &682707388322755620
 MonoBehaviour:
   m_ObjectHideFlags: 0

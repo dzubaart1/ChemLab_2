@@ -3,12 +3,12 @@
   "Lab": 1,
   "Number": 153,
   "Title": "Задание 153",
-  "Description": "Подойдите к шейкеру, выключите процесс нажав кнопку «rpm»",
+  "Description": "Два раза нажмите кнопку «UV» (ультрафиолет)",
   "Warning": "",
-  "SaveableTask": true,
+  "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 27,
+    "ButtonType": 16,
     "ActivityType": 6
   },
   "LabSideEffects": {

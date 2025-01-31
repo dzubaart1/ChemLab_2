@@ -3,13 +3,13 @@
   "Lab": 1,
   "Number": 141,
   "Title": "Задание 141",
-  "Description": "Возьмите салфетку, протрите рабочую поверхность ламинарного бокса",
+  "Description": "Возьмите ёмкость для отходов из ламинарного бокса, выбросите мусор в корзину для мусора",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 2,
-    "MachineType": 17,
+    "MachineActivityType": 0,
+    "MachineType": 6,
     "ActivityType": 1
   },
   "LabSideEffects": {

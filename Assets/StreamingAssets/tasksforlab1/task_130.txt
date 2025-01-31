@@ -3,25 +3,14 @@
   "Lab": 0,
   "Number": 130,
   "Title": "Задание 130",
-  "Description": "C помощью темного шпателя, пересыпьте по трети состава в две чистые чашки Петри",
+  "Description": "Закройте дверь сушильного шкафа",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
-    "FromContainer": 7,
-    "ToContainer": 11,
-    "LabSubstanceProperty": {
-      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-      "SubstanceName": "DryAgarSed",
-      "SubstanceMode": 0,
-      "SubstanceLayer": 0,
-      "SubstanceColorR": 0.6415094,
-      "SubstanceColorG": 0.495189816,
-      "SubstanceColorB": 0.3721965,
-      "SubstanceColorA": 1.0,
-      "HintName": ""
-    },
-    "ActivityType": 0
+    "$type": "BioEngineerLab.Activities.DoorLabActivity, Assembly-CSharp",
+    "Door": 0,
+    "DoorActivity": 1,
+    "ActivityType": 7
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

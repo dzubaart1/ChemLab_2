@@ -3,13 +3,13 @@
   "Lab": 0,
   "Number": 138,
   "Title": "Задание 138",
-  "Description": "Разместите высушенный пастообразный осадок в инфракрасном спектрофотометре ",
+  "Description": "Возьмите оставшуюся чашку Петри с высушенным пастообразным осадком и, с помощью металического шпателя, возьмите из нее осадок",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
-    "FromContainer": 10,
-    "ToContainer": 15,
+    "FromContainer": 7,
+    "ToContainer": 10,
     "LabSubstanceProperty": {
       "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
       "SubstanceName": "DryAgarSed",

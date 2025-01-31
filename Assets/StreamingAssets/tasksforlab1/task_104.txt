@@ -5,7 +5,7 @@
   "Title": "Задание 104",
   "Description": "Откройте одну из пробирок",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
     "ButtonType": 5,

@@ -3,25 +3,28 @@
   "Lab": 1,
   "Number": 127,
   "Title": "Задание 127",
-  "Description": "Переместите наконечник с пипет-дозатора в ёмкость для отходов",
+  "Description": "С помощью пипет-дозатора отберите раствор из ёмкости с бактериями «S.t. 56-45» объёмом 100 мкл ",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 0,
-    "MachineType": 23,
-    "ActivityType": 1
+    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
+    "FromContainer": 19,
+    "ToContainer": 6,
+    "LabSubstanceProperty": {
+      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+      "SubstanceName": "Penicillium",
+      "SubstanceMode": 0,
+      "SubstanceLayer": 1,
+      "SubstanceColorR": 0.9528302,
+      "SubstanceColorG": 0.927144468,
+      "SubstanceColorB": 0.7775454,
+      "SubstanceColorA": 0.807843149,
+      "HintName": ""
+    },
+    "ActivityType": 0
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.ConstructorSideEffect, Assembly-CSharp",
-        "SocketType": 6,
-        "IsLock": false,
-        "SideEffectTimeType": 0,
-        "SideEffectType": 3
-      }
-    ]
+    "$values": []
   }
 }

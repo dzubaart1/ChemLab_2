@@ -103,8 +103,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.00089999987, y: 0.0008999998, z: 0.00009580135}
-  m_Center: {x: -0.0000000015646219, y: -0.000000001899898, z: 0.000047900696}
+  m_Size: {x: 0.00089999987, y: 0.0008999998, z: 0.00011092667}
+  m_Center: {x: -0.0000000015646219, y: -0.000000001899898, z: 0.00004033804}
 --- !u!1 &1370163925304813924
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,6 +655,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+  _isSaveble: 1
 --- !u!1 &3550354850888418720
 GameObject:
   m_ObjectHideFlags: 0
@@ -1106,6 +1107,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+  _isSaveble: 1
 --- !u!114 &5262455093653514706
 MonoBehaviour:
   m_ObjectHideFlags: 0

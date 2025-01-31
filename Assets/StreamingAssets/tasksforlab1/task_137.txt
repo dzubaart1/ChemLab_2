@@ -3,25 +3,30 @@
   "Lab": 0,
   "Number": 137,
   "Title": "Задание 137",
-  "Description": "Возьмите оставшуюся чашку Петри с высушенным пастообразным осадком и, с помощью металического шпателя, возьмите из нее осадок",
+  "Description": "Возьмите другую чашку Петри с высушенным пастообразным осадком и, с помощью телепорта, отправьте ее для исследований в рентгенофазовом дифрактометре",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
-    "FromContainer": 7,
-    "ToContainer": 10,
-    "LabSubstanceProperty": {
-      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-      "SubstanceName": "DryAgarSed",
-      "SubstanceMode": 0,
-      "SubstanceLayer": 0,
-      "SubstanceColorR": 0.6415094,
-      "SubstanceColorG": 0.495189816,
-      "SubstanceColorB": 0.3721965,
-      "SubstanceColorA": 1.0,
-      "HintName": ""
+    "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",
+    "SocketType": 16,
+    "SocketActivityType": 0,
+    "LabSubstanceProperties": {
+      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
+      "$values": [
+        {
+          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
+          "SubstanceName": "DryAgarSed",
+          "SubstanceMode": 0,
+          "SubstanceLayer": 0,
+          "SubstanceColorR": 0.6415094,
+          "SubstanceColorG": 0.495189816,
+          "SubstanceColorB": 0.3721965,
+          "SubstanceColorA": 1.0,
+          "HintName": ""
+        }
+      ]
     },
-    "ActivityType": 0
+    "ActivityType": 2
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

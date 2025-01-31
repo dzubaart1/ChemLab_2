@@ -3,14 +3,13 @@
   "Lab": 1,
   "Number": 166,
   "Title": "Задание 166",
-  "Description": "Выйдите и закройте дверь",
+  "Description": "Нажмите  «БАКТЕРИЦИДНАЯ ОЧИСТКА» ",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.DoorLabActivity, Assembly-CSharp",
-    "Door": 2,
-    "DoorActivity": 1,
-    "ActivityType": 7
+    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
+    "ButtonType": 23,
+    "ActivityType": 6
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

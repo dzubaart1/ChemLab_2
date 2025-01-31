@@ -3,30 +3,14 @@
   "Lab": 0,
   "Number": 135,
   "Title": "Задание 135",
-  "Description": "Отправьте одну из чашек Петри с высушенным пастообразным осадком с помощью телепорта в лабораторию сканирующей электронной микроскопии",
+  "Description": "Сбросьте грязный металический шпатель в емкость для мытья лабораторной посуды",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",
-    "SocketType": 15,
-    "SocketActivityType": 0,
-    "LabSubstanceProperties": {
-      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
-      "$values": [
-        {
-          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "DryAgarSed",
-          "SubstanceMode": 0,
-          "SubstanceLayer": 0,
-          "SubstanceColorR": 0.6415094,
-          "SubstanceColorG": 0.495189816,
-          "SubstanceColorB": 0.3721965,
-          "SubstanceColorA": 1.0,
-          "HintName": ""
-        }
-      ]
-    },
-    "ActivityType": 2
+    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
+    "MachineActivityType": 0,
+    "MachineType": 4,
+    "ActivityType": 1
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

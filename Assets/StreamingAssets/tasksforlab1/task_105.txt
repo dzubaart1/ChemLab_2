@@ -5,7 +5,7 @@
   "Title": "Задание 105",
   "Description": "Установите правой рукой на пипет-дозаторе значение 5.0 мл",
   "Warning": "",
-  "SaveableTask": true,
+  "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
     "ButtonType": 2,

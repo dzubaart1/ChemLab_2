@@ -3,12 +3,12 @@
   "Lab": 1,
   "Number": 164,
   "Title": "Задание 164",
-  "Description": "Для открытия двери нажмите кнопку «ключ»",
+  "Description": "Снимите бахилы, выбросите их в мусорную корзину",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 35,
+    "ButtonType": 32,
     "ActivityType": 6
   },
   "LabSideEffects": {
