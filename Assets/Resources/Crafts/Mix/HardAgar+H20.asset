@@ -16,7 +16,7 @@ MonoBehaviour:
     SubstancesFrom:
     - SubstanceName: HardAgar
       SubstanceMode: 0
-      SubstanceLayer: 0
+      SubstanceLayer: 1
       SubstanceColorR: 0.5007565
       SubstanceColorG: 0.8773585
       SubstanceColorB: 0.8356848
@@ -24,7 +24,7 @@ MonoBehaviour:
       HintName: 
     - SubstanceName: H2O
       SubstanceMode: 0
-      SubstanceLayer: 0
+      SubstanceLayer: 1
       SubstanceColorR: 0.40726238
       SubstanceColorG: 0.4974264
       SubstanceColorB: 0.6037736
@@ -34,7 +34,7 @@ MonoBehaviour:
     SubstancesRes:
     - SubstanceName: HardAgarrH20
       SubstanceMode: 0
-      SubstanceLayer: 0
+      SubstanceLayer: 1
       SubstanceColorR: 0.7924528
       SubstanceColorG: 0.7289252
       SubstanceColorB: 0.5420078

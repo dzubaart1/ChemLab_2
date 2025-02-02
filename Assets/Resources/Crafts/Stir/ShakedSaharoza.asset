@@ -16,7 +16,7 @@ MonoBehaviour:
     SubstancesFrom:
     - SubstanceName: PenicilliumSaharoza
       SubstanceMode: 0
-      SubstanceLayer: 0
+      SubstanceLayer: 1
       SubstanceColorR: 0.6296133
       SubstanceColorG: 0.5372549
       SubstanceColorB: 0.7058824
@@ -26,7 +26,7 @@ MonoBehaviour:
     SubstancesRes:
     - SubstanceName: ShakedSaharoza
       SubstanceMode: 0
-      SubstanceLayer: 0
+      SubstanceLayer: 1
       SubstanceColorR: 1
       SubstanceColorG: 0.51886785
       SubstanceColorB: 0.8988223

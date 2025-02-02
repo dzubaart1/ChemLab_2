@@ -16,7 +16,7 @@ MonoBehaviour:
     SubstancesFrom:
     - SubstanceName: Glukoza and Purple Sol
       SubstanceMode: 0
-      SubstanceLayer: 0
+      SubstanceLayer: 1
       SubstanceColorR: 0.52748716
       SubstanceColorG: 0.4627451
       SubstanceColorB: 0.6509804
@@ -34,7 +34,7 @@ MonoBehaviour:
     SubstancesRes:
     - SubstanceName: PenicilliumGlukoza
       SubstanceMode: 0
-      SubstanceLayer: 0
+      SubstanceLayer: 1
       SubstanceColorR: 0.6644016
       SubstanceColorG: 0.53733534
       SubstanceColorB: 0.7075472

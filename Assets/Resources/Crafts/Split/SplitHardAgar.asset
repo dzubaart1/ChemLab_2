@@ -16,7 +16,7 @@ MonoBehaviour:
     SubstancesFrom:
     - SubstanceName: StirHardAgarH2O
       SubstanceMode: 0
-      SubstanceLayer: 0
+      SubstanceLayer: 1
       SubstanceColorR: 1
       SubstanceColorG: 0.93553257
       SubstanceColorB: 0.7971698
@@ -26,7 +26,7 @@ MonoBehaviour:
     SubstancesRes:
     - SubstanceName: H2O
       SubstanceMode: 0
-      SubstanceLayer: 0
+      SubstanceLayer: 1
       SubstanceColorR: 0.40726238
       SubstanceColorG: 0.4974264
       SubstanceColorB: 0.6037736
@@ -34,7 +34,7 @@ MonoBehaviour:
       HintName: 
     - SubstanceName: SplitHardAgarSed
       SubstanceMode: 0
-      SubstanceLayer: 1
+      SubstanceLayer: 2
       SubstanceColorR: 1
       SubstanceColorG: 0.7995272
       SubstanceColorB: 0.495283

@@ -16,7 +16,7 @@ MonoBehaviour:
     SubstancesFrom:
     - SubstanceName: PenLizergan
       SubstanceMode: 0
-      SubstanceLayer: 0
+      SubstanceLayer: 1
       SubstanceColorR: 0.735849
       SubstanceColorG: 0.55008656
       SubstanceColorB: 0.281844
@@ -26,7 +26,7 @@ MonoBehaviour:
     SubstancesRes:
     - SubstanceName: DryLizergan100
       SubstanceMode: 0
-      SubstanceLayer: 0
+      SubstanceLayer: 1
       SubstanceColorR: 0.7924528
       SubstanceColorG: 0.567497
       SubstanceColorB: 0.3252047

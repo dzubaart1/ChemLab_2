@@ -16,7 +16,7 @@ MonoBehaviour:
     SubstancesFrom:
     - SubstanceName: PenicilliumGlukoza
       SubstanceMode: 0
-      SubstanceLayer: 0
+      SubstanceLayer: 1
       SubstanceColorR: 0.6644016
       SubstanceColorG: 0.53733534
       SubstanceColorB: 0.7075472
@@ -26,7 +26,7 @@ MonoBehaviour:
     SubstancesRes:
     - SubstanceName: ShakedGlukoza
       SubstanceMode: 0
-      SubstanceLayer: 0
+      SubstanceLayer: 1
       SubstanceColorR: 1
       SubstanceColorG: 0.9508505
       SubstanceColorB: 0.76037735

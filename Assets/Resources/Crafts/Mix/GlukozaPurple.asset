@@ -16,15 +16,15 @@ MonoBehaviour:
     SubstancesFrom:
     - SubstanceName: Glukoza
       SubstanceMode: 0
-      SubstanceLayer: 0
-      SubstanceColorR: 0.8490566
-      SubstanceColorG: 0.8490566
-      SubstanceColorB: 0.8490566
+      SubstanceLayer: 1
+      SubstanceColorR: 0.89433956
+      SubstanceColorG: 0.6867853
+      SubstanceColorB: 0.6867853
       SubstanceColorA: 0.84313726
       HintName: 
     - SubstanceName: StirPurbleSol
       SubstanceMode: 0
-      SubstanceLayer: 0
+      SubstanceLayer: 1
       SubstanceColorR: 0.32063177
       SubstanceColorG: 0.24029905
       SubstanceColorB: 0.3773585
@@ -34,7 +34,7 @@ MonoBehaviour:
     SubstancesRes:
     - SubstanceName: Glukoza and Purple Sol
       SubstanceMode: 0
-      SubstanceLayer: 0
+      SubstanceLayer: 1
       SubstanceColorR: 0.52748716
       SubstanceColorG: 0.4627451
       SubstanceColorB: 0.6509804

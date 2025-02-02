@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LabCraft:
     SubstancesFrom:
-    - SubstanceName: Laktoza and Purple Sol
+    - SubstanceName: Laktoza
       SubstanceMode: 0
-      SubstanceLayer: 0
-      SubstanceColorR: 0.6509804
-      SubstanceColorG: 0.4627451
-      SubstanceColorB: 0.6353192
-      SubstanceColorA: 0.8862745
+      SubstanceLayer: 1
+      SubstanceColorR: 0.9433962
+      SubstanceColorG: 0.92427117
+      SubstanceColorB: 0.81434673
+      SubstanceColorA: 0.84313726
       HintName: 
     - SubstanceName: Penicillium
       SubstanceMode: 0
@@ -34,7 +34,7 @@ MonoBehaviour:
     SubstancesRes:
     - SubstanceName: PenicilliumLaktoza
       SubstanceMode: 0
-      SubstanceLayer: 0
+      SubstanceLayer: 1
       SubstanceColorR: 0.7058824
       SubstanceColorG: 0.5372549
       SubstanceColorB: 0.6553261

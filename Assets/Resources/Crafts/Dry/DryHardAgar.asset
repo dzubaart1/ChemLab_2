@@ -16,7 +16,7 @@ MonoBehaviour:
     SubstancesFrom:
     - SubstanceName: HardAgar
       SubstanceMode: 0
-      SubstanceLayer: 0
+      SubstanceLayer: 1
       SubstanceColorR: 0.5007565
       SubstanceColorG: 0.8773585
       SubstanceColorB: 0.8356848
@@ -26,7 +26,7 @@ MonoBehaviour:
     SubstancesRes:
     - SubstanceName: DryHardAgar
       SubstanceMode: 0
-      SubstanceLayer: 0
+      SubstanceLayer: 1
       SubstanceColorR: 0.9528302
       SubstanceColorG: 0.68063504
       SubstanceColorB: 0.4539427

@@ -16,7 +16,7 @@ MonoBehaviour:
     SubstancesFrom:
     - SubstanceName: Agar
       SubstanceMode: 0
-      SubstanceLayer: 0
+      SubstanceLayer: 1
       SubstanceColorR: 0.8773585
       SubstanceColorG: 0.8595068
       SubstanceColorB: 0.3600481
@@ -24,7 +24,7 @@ MonoBehaviour:
       HintName: 
     - SubstanceName: Na2HPO4
       SubstanceMode: 0
-      SubstanceLayer: 0
+      SubstanceLayer: 1
       SubstanceColorR: 0.66522783
       SubstanceColorG: 0.8082283
       SubstanceColorB: 0.9339623
@@ -34,7 +34,7 @@ MonoBehaviour:
     SubstancesRes:
     - SubstanceName: Na2HPO4Agar
       SubstanceMode: 0
-      SubstanceLayer: 0
+      SubstanceLayer: 1
       SubstanceColorR: 0.8396226
       SubstanceColorG: 0.7783719
       SubstanceColorB: 0.5584282

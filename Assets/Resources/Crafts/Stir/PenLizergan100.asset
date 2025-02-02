@@ -34,7 +34,7 @@ MonoBehaviour:
     SubstancesRes:
     - SubstanceName: PenLizergan
       SubstanceMode: 0
-      SubstanceLayer: 0
+      SubstanceLayer: 1
       SubstanceColorR: 0.735849
       SubstanceColorG: 0.55008656
       SubstanceColorB: 0.281844

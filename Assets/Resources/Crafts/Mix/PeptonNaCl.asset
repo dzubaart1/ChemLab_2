@@ -16,7 +16,7 @@ MonoBehaviour:
     SubstancesFrom:
     - SubstanceName: Pepton
       SubstanceMode: 0
-      SubstanceLayer: 0
+      SubstanceLayer: 1
       SubstanceColorR: 0.735849
       SubstanceColorG: 0.50076604
       SubstanceColorB: 0.2256141
@@ -24,17 +24,17 @@ MonoBehaviour:
       HintName: 
     - SubstanceName: NaCl
       SubstanceMode: 0
-      SubstanceLayer: 0
-      SubstanceColorR: 0.8018868
-      SubstanceColorG: 0.8018868
-      SubstanceColorB: 0.8018868
+      SubstanceLayer: 1
+      SubstanceColorR: 0.9622642
+      SubstanceColorG: 0.70989674
+      SubstanceColorB: 0.70989674
       SubstanceColorA: 0.74509805
       HintName: 
     CraftType: 3
     SubstancesRes:
     - SubstanceName: PeptonNaCl
       SubstanceMode: 0
-      SubstanceLayer: 0
+      SubstanceLayer: 1
       SubstanceColorR: 0.8207547
       SubstanceColorG: 0.71031445
       SubstanceColorB: 0.615566

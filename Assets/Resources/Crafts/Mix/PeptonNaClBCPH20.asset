@@ -16,7 +16,7 @@ MonoBehaviour:
     SubstancesFrom:
     - SubstanceName: PeptonNaClBCP
       SubstanceMode: 0
-      SubstanceLayer: 0
+      SubstanceLayer: 1
       SubstanceColorR: 0.2735849
       SubstanceColorG: 0.16066316
       SubstanceColorB: 0.10194909
@@ -24,7 +24,7 @@ MonoBehaviour:
       HintName: 
     - SubstanceName: H2O
       SubstanceMode: 0
-      SubstanceLayer: 0
+      SubstanceLayer: 1
       SubstanceColorR: 0.40726238
       SubstanceColorG: 0.4974264
       SubstanceColorB: 0.6037736
@@ -34,7 +34,7 @@ MonoBehaviour:
     SubstancesRes:
     - SubstanceName: PeptonNaClBCPH20
       SubstanceMode: 0
-      SubstanceLayer: 0
+      SubstanceLayer: 1
       SubstanceColorR: 0.6509434
       SubstanceColorG: 0.26099145
       SubstanceColorB: 0.6329314

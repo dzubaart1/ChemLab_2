@@ -16,7 +16,7 @@ MonoBehaviour:
     SubstancesFrom:
     - SubstanceName: Laktoza
       SubstanceMode: 0
-      SubstanceLayer: 0
+      SubstanceLayer: 1
       SubstanceColorR: 0.9433962
       SubstanceColorG: 0.92427117
       SubstanceColorB: 0.81434673
@@ -24,7 +24,7 @@ MonoBehaviour:
       HintName: 
     - SubstanceName: StirPurbleSol
       SubstanceMode: 0
-      SubstanceLayer: 0
+      SubstanceLayer: 1
       SubstanceColorR: 0.32063177
       SubstanceColorG: 0.24029905
       SubstanceColorB: 0.3773585
@@ -34,7 +34,7 @@ MonoBehaviour:
     SubstancesRes:
     - SubstanceName: Laktoza and Purple Sol
       SubstanceMode: 0
-      SubstanceLayer: 0
+      SubstanceLayer: 1
       SubstanceColorR: 0.6509804
       SubstanceColorG: 0.4627451
       SubstanceColorB: 0.6353192
