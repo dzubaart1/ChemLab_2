@@ -15,23 +15,23 @@
         "$values": [
           {
             "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-            "SubstanceName": "CaCl2",
+            "SubstanceName": "H2O",
             "SubstanceMode": 0,
-            "SubstanceLayer": 0,
-            "SubstanceColorR": 0.5030705,
-            "SubstanceColorG": 0.8962264,
-            "SubstanceColorB": 0.820959449,
+            "SubstanceLayer": 1,
+            "SubstanceColorR": 0.407262385,
+            "SubstanceColorG": 0.4974264,
+            "SubstanceColorB": 0.6037736,
             "SubstanceColorA": 0.8117647,
             "HintName": ""
           },
           {
             "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-            "SubstanceName": "H2O",
+            "SubstanceName": "CaCl2",
             "SubstanceMode": 0,
-            "SubstanceLayer": 0,
-            "SubstanceColorR": 0.407262385,
-            "SubstanceColorG": 0.4974264,
-            "SubstanceColorB": 0.6037736,
+            "SubstanceLayer": 1,
+            "SubstanceColorR": 0.5030705,
+            "SubstanceColorG": 0.8962264,
+            "SubstanceColorB": 0.820959449,
             "SubstanceColorA": 0.8117647,
             "HintName": ""
           }
@@ -45,7 +45,7 @@
             "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
             "SubstanceName": "CaCl2H2O",
             "SubstanceMode": 0,
-            "SubstanceLayer": 0,
+            "SubstanceLayer": 1,
             "SubstanceColorR": 0.4719206,
             "SubstanceColorG": 0.822406769,
             "SubstanceColorB": 0.9528302,
