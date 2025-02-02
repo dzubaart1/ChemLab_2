@@ -254,6 +254,16 @@ namespace Containers
         
         private void UpdateView()
         {
+            if (reagentsLabSubstanceProperty != null)
+            {
+                if (TryGetMeshRendererByLayer(ESubstanceLayer.Bottom, out MeshRenderer meshRenderer))
+                {
+                    meshRenderer.enabled = true;
+                }
+                
+                return;
+            }
+            
             for (int i = 0; i < _substances.Length; i++)
             {
                 if (!TryGetMeshRendererByLayer((ESubstanceLayer)i, out MeshRenderer meshRenderer))
