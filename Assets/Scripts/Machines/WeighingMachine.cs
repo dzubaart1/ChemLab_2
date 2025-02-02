@@ -3,13 +3,19 @@ using Core;
 using TMPro;
 using UnityEngine;
 using Mechanics;
+using Saveables;
 using UI.Components;
 using UnityEngine.Serialization;
 
 namespace BioEngineerLab.Machines
 {
-    public class WeighingMachine : MonoBehaviour
+    public class WeighingMachine : MonoBehaviour, ISaveableOther
     {
+        private struct SavedData
+        {
+            public float TaraWeight;
+        }
+        
         [Header("Refs")]
         [SerializeField] private VRSocketInteractor _socketInteractor;
 
@@ -17,8 +23,26 @@ namespace BioEngineerLab.Machines
         [Header("UIs")]
         [SerializeField] private TextMeshProUGUI _weightText;
         [SerializeField] private ButtonComponent _taraButton;
+
+        private SavedData _savedData = new SavedData();
         
         private float _taraWeight = 0;
+        
+        private void Start()
+        {
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                return;
+            }
+
+            if (gameManager.CurrentBaseLocalManager == null)
+            {
+                return;
+            }
+            
+            gameManager.CurrentBaseLocalManager.AddSaveableOther(this);
+        }
         
         private void OnEnable()
         {
@@ -38,6 +62,8 @@ namespace BioEngineerLab.Machines
         {
             if (_socketInteractor.SelectedObject == null)
             {
+                _taraWeight = 0f;
+                UpdateWeightText(0f);
                 return;
             }
 
@@ -107,6 +133,16 @@ namespace BioEngineerLab.Machines
         private void UpdateWeightText(float weight)
         {
             _weightText.text = weight.ToString("F4") + "g";
+        }
+
+        public void Save()
+        {
+            _savedData.TaraWeight = _taraWeight;
+        }
+
+        public void Load()
+        {
+            _taraWeight = _savedData.TaraWeight;
         }
     }
 }
