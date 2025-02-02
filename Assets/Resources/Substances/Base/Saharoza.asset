@@ -15,7 +15,7 @@ MonoBehaviour:
   LabSubstanceProperty:
     SubstanceName: Saharoza
     SubstanceMode: 0
-    SubstanceLayer: 0
+    SubstanceLayer: 1
     SubstanceColorR: 0.9300523
     SubstanceColorG: 0.8726415
     SubstanceColorB: 1

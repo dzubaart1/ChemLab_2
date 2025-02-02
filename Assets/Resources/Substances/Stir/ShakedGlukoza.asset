@@ -15,7 +15,7 @@ MonoBehaviour:
   LabSubstanceProperty:
     SubstanceName: ShakedGlukoza
     SubstanceMode: 0
-    SubstanceLayer: 0
+    SubstanceLayer: 1
     SubstanceColorR: 1
     SubstanceColorG: 0.9508505
     SubstanceColorB: 0.76037735

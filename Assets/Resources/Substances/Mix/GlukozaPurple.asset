@@ -15,7 +15,7 @@ MonoBehaviour:
   LabSubstanceProperty:
     SubstanceName: Glukoza and Purple Sol
     SubstanceMode: 0
-    SubstanceLayer: 0
+    SubstanceLayer: 1
     SubstanceColorR: 0.52748716
     SubstanceColorG: 0.4627451
     SubstanceColorB: 0.6509804

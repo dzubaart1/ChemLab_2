@@ -575,6 +575,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+  _isSaveble: 1
 --- !u!114 &189108166976463557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -595,8 +596,6 @@ MonoBehaviour:
   _isSpoonContainer: 1
   _isAnchorContainer: 0
   _meshRendererConfigs:
-  - Layer: 0
-    MeshRenderer: {fileID: 1487167155355127627}
   - Layer: 1
     MeshRenderer: {fileID: 3350946712003230631}
 --- !u!114 &1814814639452178535

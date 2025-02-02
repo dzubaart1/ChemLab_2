@@ -15,7 +15,7 @@ MonoBehaviour:
   LabSubstanceProperty:
     SubstanceName: Na2HPO4
     SubstanceMode: 0
-    SubstanceLayer: 0
+    SubstanceLayer: 1
     SubstanceColorR: 0.66522783
     SubstanceColorG: 0.8082283
     SubstanceColorB: 0.9339623

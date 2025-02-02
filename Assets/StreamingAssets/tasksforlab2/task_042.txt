@@ -14,7 +14,7 @@
       "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
       "SubstanceName": "StirPurbleSol",
       "SubstanceMode": 0,
-      "SubstanceLayer": 0,
+      "SubstanceLayer": 1,
       "SubstanceColorR": 0.320631772,
       "SubstanceColorG": 0.240299046,
       "SubstanceColorB": 0.3773585,

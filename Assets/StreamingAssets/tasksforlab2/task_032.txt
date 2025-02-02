@@ -14,7 +14,7 @@
       "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
       "SubstanceName": "Bromocresol purple",
       "SubstanceMode": 0,
-      "SubstanceLayer": 0,
+      "SubstanceLayer": 1,
       "SubstanceColorR": 0.1877714,
       "SubstanceColorG": 0.1254902,
       "SubstanceColorB": 0.1882353,

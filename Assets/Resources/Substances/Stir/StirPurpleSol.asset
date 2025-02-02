@@ -15,7 +15,7 @@ MonoBehaviour:
   LabSubstanceProperty:
     SubstanceName: StirPurbleSol
     SubstanceMode: 0
-    SubstanceLayer: 0
+    SubstanceLayer: 1
     SubstanceColorR: 0.32063177
     SubstanceColorG: 0.24029905
     SubstanceColorB: 0.3773585

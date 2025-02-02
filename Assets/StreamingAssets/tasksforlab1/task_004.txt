@@ -14,7 +14,7 @@
       "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
       "SubstanceName": "CaCl2",
       "SubstanceMode": 0,
-      "SubstanceLayer": 0,
+      "SubstanceLayer": 1,
       "SubstanceColorR": 0.5030705,
       "SubstanceColorG": 0.8962264,
       "SubstanceColorB": 0.820959449,

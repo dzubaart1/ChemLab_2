@@ -15,7 +15,7 @@ MonoBehaviour:
   LabSubstanceProperty:
     SubstanceName: ShakedLaktoza
     SubstanceMode: 0
-    SubstanceLayer: 0
+    SubstanceLayer: 1
     SubstanceColorR: 1
     SubstanceColorG: 0.8221353
     SubstanceColorB: 0.2924527

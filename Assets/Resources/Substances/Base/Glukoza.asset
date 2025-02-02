@@ -15,7 +15,7 @@ MonoBehaviour:
   LabSubstanceProperty:
     SubstanceName: Glukoza
     SubstanceMode: 0
-    SubstanceLayer: 0
+    SubstanceLayer: 1
     SubstanceColorR: 0.89433956
     SubstanceColorG: 0.6867853
     SubstanceColorB: 0.6867853

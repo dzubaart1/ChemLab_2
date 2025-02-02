@@ -17,7 +17,7 @@
           "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
           "SubstanceName": "ShakedGlukoza",
           "SubstanceMode": 0,
-          "SubstanceLayer": 0,
+          "SubstanceLayer": 1,
           "SubstanceColorR": 1.0,
           "SubstanceColorG": 0.9508505,
           "SubstanceColorB": 0.760377347,

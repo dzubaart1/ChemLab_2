@@ -737,6 +737,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+  _isSaveble: 1
 --- !u!1 &3795035300235313223
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,6 +1119,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+  _isSaveble: 1
 --- !u!114 &4897719036803240956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1138,10 +1140,8 @@ MonoBehaviour:
   _isSpoonContainer: 0
   _isAnchorContainer: 0
   _meshRendererConfigs:
-  - Layer: 0
+  - Layer: 2
     MeshRenderer: {fileID: 2505635319577200111}
-  - Layer: 1
-    MeshRenderer: {fileID: 2931434654485337571}
 --- !u!114 &6260466943509335188
 MonoBehaviour:
   m_ObjectHideFlags: 0

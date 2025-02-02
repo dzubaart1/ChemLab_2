@@ -17,7 +17,7 @@
           "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
           "SubstanceName": "DryAgarSed",
           "SubstanceMode": 0,
-          "SubstanceLayer": 0,
+          "SubstanceLayer": 1,
           "SubstanceColorR": 0.6415094,
           "SubstanceColorG": 0.495189816,
           "SubstanceColorB": 0.3721965,

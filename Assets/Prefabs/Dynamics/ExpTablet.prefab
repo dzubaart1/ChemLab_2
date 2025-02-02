@@ -398,37 +398,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4142000584765382238}
     m_Modifications:
-    - target: {fileID: 4580016325927207706, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5291134463425725196, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5291134463425725196, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5291134463425725196, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5291134463425725196, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7099264360301394832, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_Interpolate
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7275085481379197112, guid: 36594accebeec47469e46238584d5735, type: 3}
       propertyPath: m_Name
       value: lunka1 (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7275085481379197112, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_Layer
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7275085481379197119, guid: 36594accebeec47469e46238584d5735, type: 3}
       propertyPath: m_LocalPosition.x
@@ -470,14 +442,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7275085482336851360, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_Name
-      value: LunkaPrefab
-      objectReference: {fileID: 0}
-    - target: {fileID: 7275085482336851360, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -496,21 +460,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4142000584765382238}
     m_Modifications:
-    - target: {fileID: 4580016325927207706, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7099264360301394832, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_Interpolate
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7275085481379197112, guid: 36594accebeec47469e46238584d5735, type: 3}
       propertyPath: m_Name
       value: lunka1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7275085481379197112, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_Layer
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7275085481379197119, guid: 36594accebeec47469e46238584d5735, type: 3}
       propertyPath: m_LocalPosition.x
@@ -552,10 +504,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7275085482336851360, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -574,37 +522,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4142000584765382238}
     m_Modifications:
-    - target: {fileID: 4580016325927207706, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5291134463425725196, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5291134463425725196, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5291134463425725196, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5291134463425725196, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7099264360301394832, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_Interpolate
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7275085481379197112, guid: 36594accebeec47469e46238584d5735, type: 3}
       propertyPath: m_Name
       value: lunka1 (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7275085481379197112, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_Layer
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7275085481379197119, guid: 36594accebeec47469e46238584d5735, type: 3}
       propertyPath: m_LocalPosition.x
@@ -646,14 +566,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7275085482336851360, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_Name
-      value: LunkaPrefab
-      objectReference: {fileID: 0}
-    - target: {fileID: 7275085482336851360, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -672,37 +584,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4142000584765382238}
     m_Modifications:
-    - target: {fileID: 4580016325927207706, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5291134463425725196, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5291134463425725196, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5291134463425725196, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5291134463425725196, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7099264360301394832, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_Interpolate
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7275085481379197112, guid: 36594accebeec47469e46238584d5735, type: 3}
       propertyPath: m_Name
       value: lunka1 (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7275085481379197112, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_Layer
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7275085481379197119, guid: 36594accebeec47469e46238584d5735, type: 3}
       propertyPath: m_LocalPosition.x
@@ -744,14 +628,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7275085482336851360, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_Name
-      value: LunkaPrefab
-      objectReference: {fileID: 0}
-    - target: {fileID: 7275085482336851360, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -770,37 +646,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4142000584765382238}
     m_Modifications:
-    - target: {fileID: 4580016325927207706, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5291134463425725196, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5291134463425725196, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5291134463425725196, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5291134463425725196, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7099264360301394832, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_Interpolate
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7275085481379197112, guid: 36594accebeec47469e46238584d5735, type: 3}
       propertyPath: m_Name
       value: lunka1 (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7275085481379197112, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_Layer
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7275085481379197119, guid: 36594accebeec47469e46238584d5735, type: 3}
       propertyPath: m_LocalPosition.x
@@ -842,14 +690,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7275085482336851360, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_Name
-      value: LunkaPrefab
-      objectReference: {fileID: 0}
-    - target: {fileID: 7275085482336851360, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -868,37 +708,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4142000584765382238}
     m_Modifications:
-    - target: {fileID: 4580016325927207706, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5291134463425725196, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5291134463425725196, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5291134463425725196, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5291134463425725196, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7099264360301394832, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_Interpolate
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7275085481379197112, guid: 36594accebeec47469e46238584d5735, type: 3}
       propertyPath: m_Name
       value: lunka1 (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7275085481379197112, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_Layer
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7275085481379197119, guid: 36594accebeec47469e46238584d5735, type: 3}
       propertyPath: m_LocalPosition.x
@@ -938,14 +750,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7275085481379197119, guid: 36594accebeec47469e46238584d5735, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7275085482336851360, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_Name
-      value: LunkaPrefab
-      objectReference: {fileID: 0}
-    - target: {fileID: 7275085482336851360, guid: 36594accebeec47469e46238584d5735, type: 3}
-      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

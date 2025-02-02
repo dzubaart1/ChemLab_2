@@ -14,7 +14,7 @@
       "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
       "SubstanceName": "Laktoza",
       "SubstanceMode": 0,
-      "SubstanceLayer": 0,
+      "SubstanceLayer": 1,
       "SubstanceColorR": 0.9433962,
       "SubstanceColorG": 0.924271166,
       "SubstanceColorB": 0.814346731,

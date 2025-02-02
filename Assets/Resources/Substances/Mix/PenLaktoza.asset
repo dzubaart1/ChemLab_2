@@ -15,7 +15,7 @@ MonoBehaviour:
   LabSubstanceProperty:
     SubstanceName: PenicilliumLaktoza
     SubstanceMode: 0
-    SubstanceLayer: 0
+    SubstanceLayer: 1
     SubstanceColorR: 0.7058824
     SubstanceColorG: 0.5372549
     SubstanceColorB: 0.6553261

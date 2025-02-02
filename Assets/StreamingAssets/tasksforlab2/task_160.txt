@@ -17,7 +17,7 @@
           "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
           "SubstanceName": "ShakedSaharoza",
           "SubstanceMode": 0,
-          "SubstanceLayer": 0,
+          "SubstanceLayer": 1,
           "SubstanceColorR": 1.0,
           "SubstanceColorG": 0.51886785,
           "SubstanceColorB": 0.8988223,

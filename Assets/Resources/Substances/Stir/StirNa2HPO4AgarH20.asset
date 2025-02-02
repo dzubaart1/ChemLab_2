@@ -15,7 +15,7 @@ MonoBehaviour:
   LabSubstanceProperty:
     SubstanceName: StirNa2HPO4AgarH20
     SubstanceMode: 0
-    SubstanceLayer: 0
+    SubstanceLayer: 1
     SubstanceColorR: 0.96082616
     SubstanceColorG: 0.7882353
     SubstanceColorB: 1

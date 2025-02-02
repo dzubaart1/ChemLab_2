@@ -14,7 +14,7 @@
       "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
       "SubstanceName": "Pepton",
       "SubstanceMode": 0,
-      "SubstanceLayer": 0,
+      "SubstanceLayer": 1,
       "SubstanceColorR": 0.735849,
       "SubstanceColorG": 0.500766039,
       "SubstanceColorB": 0.2256141,

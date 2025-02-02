@@ -297,6 +297,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+  _isSaveble: 1
 --- !u!114 &5650118537656890982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,9 +318,9 @@ MonoBehaviour:
   _isSpoonContainer: 0
   _isAnchorContainer: 0
   _meshRendererConfigs:
-  - Layer: 0
-    MeshRenderer: {fileID: 8910581703376041468}
   - Layer: 1
+    MeshRenderer: {fileID: 8910581703376041468}
+  - Layer: 2
     MeshRenderer: {fileID: 7285620915262949269}
 --- !u!114 &5163627504370787568
 MonoBehaviour:
@@ -855,9 +856,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d39d395b3b7b5824db6230d2ad735584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttonType: 5
+  ButtonType: 5
   _isTaskSendable: 1
   _isStartOn: 1
+  _timerDelay: 1
   _btnImage: {fileID: 1827639143910393391}
   _onSprite: {fileID: 21300000, guid: 5e2bc04460716f7439f61f6e29a94fc6, type: 3}
   _offSprite: {fileID: 21300000, guid: 5e2bc04460716f7439f61f6e29a94fc6, type: 3}

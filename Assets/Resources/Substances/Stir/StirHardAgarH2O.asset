@@ -15,7 +15,7 @@ MonoBehaviour:
   LabSubstanceProperty:
     SubstanceName: StirHardAgarH2O
     SubstanceMode: 0
-    SubstanceLayer: 0
+    SubstanceLayer: 1
     SubstanceColorR: 1
     SubstanceColorG: 0.93553257
     SubstanceColorB: 0.7971698

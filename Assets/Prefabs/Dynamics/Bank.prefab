@@ -650,7 +650,7 @@ MonoBehaviour:
   _isSpoonContainer: 0
   _isAnchorContainer: 0
   _meshRendererConfigs:
-  - Layer: 2
+  - Layer: 1
     MeshRenderer: {fileID: 7039664695848158085}
 --- !u!114 &8756979923528428486
 MonoBehaviour:

@@ -267,9 +267,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d39d395b3b7b5824db6230d2ad735584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttonType: 2
+  ButtonType: 2
   _isTaskSendable: 1
   _isStartOn: 0
+  _timerDelay: 1
   _btnImage: {fileID: 3710242569604255270}
   _onSprite: {fileID: 21300000, guid: 5e2bc04460716f7439f61f6e29a94fc6, type: 3}
   _offSprite: {fileID: 21300000, guid: 5e2bc04460716f7439f61f6e29a94fc6, type: 3}
@@ -862,8 +863,6 @@ MonoBehaviour:
   _isSpoonContainer: 1
   _isAnchorContainer: 0
   _meshRendererConfigs:
-  - Layer: 0
-    MeshRenderer: {fileID: 3710242569939836729}
   - Layer: 1
     MeshRenderer: {fileID: 2805884070990007502}
 --- !u!114 &6874410171802595286

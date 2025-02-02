@@ -15,7 +15,7 @@ MonoBehaviour:
   LabSubstanceProperty:
     SubstanceName: PenicilliumGlukoza
     SubstanceMode: 0
-    SubstanceLayer: 0
+    SubstanceLayer: 1
     SubstanceColorR: 0.6644016
     SubstanceColorG: 0.53733534
     SubstanceColorB: 0.7075472

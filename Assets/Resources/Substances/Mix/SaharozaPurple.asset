@@ -15,7 +15,7 @@ MonoBehaviour:
   LabSubstanceProperty:
     SubstanceName: Sakaroza and Purple Sol
     SubstanceMode: 0
-    SubstanceLayer: 0
+    SubstanceLayer: 1
     SubstanceColorR: 0.61556536
     SubstanceColorG: 0.46364364
     SubstanceColorB: 0.6509434

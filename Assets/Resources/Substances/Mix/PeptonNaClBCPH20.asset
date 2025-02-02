@@ -15,7 +15,7 @@ MonoBehaviour:
   LabSubstanceProperty:
     SubstanceName: PeptonNaClBCPH20
     SubstanceMode: 0
-    SubstanceLayer: 0
+    SubstanceLayer: 1
     SubstanceColorR: 0.6509434
     SubstanceColorG: 0.26099145
     SubstanceColorB: 0.6329314
