@@ -26,9 +26,6 @@ namespace Machines
         [SerializeField] private SkinnedMeshRenderer _rightHandMesh;
         [SerializeField] private SkinnedMeshRenderer _leftHandMesh;
         
-        [CanBeNull] private Gloves _gloves;
-        [CanBeNull] private ButtonComponent _button;
-        
         private bool _isGloves = false;
         private SavedData _savedData = new SavedData();
         
@@ -47,8 +44,6 @@ namespace Machines
             
             gameManager.CurrentBaseLocalManager.AddSaveableOther(this);
         }
-
-        
 
         public void WearGloves()
         {
@@ -75,7 +70,8 @@ namespace Machines
         {
             _isGloves = _savedData.IsGloves;
             
-            _rightHandMesh.material = _leftHandMesh.material = _isGloves ? _glovesMaterial : _handsMaterial;
+            _rightHandMesh.material = _isGloves ? _glovesMaterial : _handsMaterial;
+            _leftHandMesh.material = _isGloves ? _glovesMaterial : _handsMaterial;
         }
     }
 }

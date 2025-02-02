@@ -6,6 +6,7 @@ using UnityEngine;
 public class KeyChecker : MonoBehaviour
 {
     public event Action KeyboardUnlockedEvent;
+    
     private void OnTriggerEnter(Collider other)
     {
         GameManager gameManager = GameManager.Instance;

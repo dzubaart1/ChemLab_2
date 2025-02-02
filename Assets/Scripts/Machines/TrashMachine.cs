@@ -19,9 +19,10 @@ namespace Machines
         }
 
         [SerializeField] private EMachine _machineType;
-        [SerializeField] [CanBeNull] private ButtonComponent _button;
+        [SerializeField] private ButtonComponent _button;
         
-        private HandsChanger _handsChanger;
+        [CanBeNull] private HandsChanger _handsChanger;
+        
         private SavedData _savedData = new SavedData();
         private List<VRGrabInteractable> _hiddenGameObjects = new List<VRGrabInteractable>();
         
@@ -71,6 +72,7 @@ namespace Machines
                 {
                     return;
                 }
+                
                 _handsChanger.TakeGlovesOff();
             }
         }
@@ -106,9 +108,9 @@ namespace Machines
         {
             _savedData.HiddenGameObjects.Clear();
             
-            foreach (var gameObject in _hiddenGameObjects)
+            foreach (var vrGrab in _hiddenGameObjects)
             {
-                _savedData.HiddenGameObjects.Add(gameObject);
+                _savedData.HiddenGameObjects.Add(vrGrab);
             }
         }
 

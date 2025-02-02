@@ -289,8 +289,6 @@ namespace Mechanics
             socketActive = false;
             
             grabInteractable.transform.SetParent(attachTransform);
-            /*grabInteractable.transform.localPosition = Vector3.zero;
-            grabInteractable.transform.localRotation = Quaternion.identity;*/
             
             _isLocked = true;
             _lockedObject = grabInteractable;
