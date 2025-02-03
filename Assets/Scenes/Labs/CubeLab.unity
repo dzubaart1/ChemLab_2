@@ -3966,10 +3966,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6135443831722635874, guid: 2ee547a66d8d549419de9fec899d55a4, type: 3}
-      propertyPath: reagentsLabSubstanceProperty
-      value: 
-      objectReference: {fileID: 11400000, guid: c0b8a460237aabd479928a3f0aad88e7, type: 2}
     - target: {fileID: 8752989905597421585, guid: 2ee547a66d8d549419de9fec899d55a4, type: 3}
       propertyPath: m_Name
       value: ChimicGlassContainer
@@ -3977,16 +3973,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8752989905597421585, guid: 2ee547a66d8d549419de9fec899d55a4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1842471844}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ee547a66d8d549419de9fec899d55a4, type: 3}
---- !u!1 &1465833017 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8752989905597421585, guid: 2ee547a66d8d549419de9fec899d55a4, type: 3}
-  m_PrefabInstance: {fileID: 1465833016}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1470068723
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4832,18 +4820,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4439357001458672255, guid: 2ee547a66d8d549419de9fec899d55a4, type: 3}
   m_PrefabInstance: {fileID: 1465833016}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1842471844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1465833017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3006fa141b4c470590b614fd0a150b74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1873741946
 PrefabInstance:
   m_ObjectHideFlags: 0
