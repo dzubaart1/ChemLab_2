@@ -520,6 +520,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+  _isSaveble: 1
 --- !u!1 &7787663932316607581
 GameObject:
   m_ObjectHideFlags: 0
@@ -1094,6 +1095,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+  _isSaveble: 1
 --- !u!114 &2251315681006490000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1114,7 +1116,7 @@ MonoBehaviour:
   _isSpoonContainer: 0
   _isAnchorContainer: 0
   _meshRendererConfigs:
-  - Layer: 0
+  - Layer: 1
     MeshRenderer: {fileID: 4062999779071354566}
 --- !u!114 &7170330642210742360
 MonoBehaviour:
@@ -1129,7 +1131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cupSocket: {fileID: 6644713009601138111}
-  _isNozzleNeed: 0
+  _isClosedWhenCupIn: 1
 --- !u!114 &9079948206777681126
 MonoBehaviour:
   m_ObjectHideFlags: 0

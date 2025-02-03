@@ -290,7 +290,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5815447371757338929}
   m_Layer: 0
-  m_Name: basePrefTop
+  m_Name: basePrefBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -598,6 +598,8 @@ MonoBehaviour:
   _meshRendererConfigs:
   - Layer: 1
     MeshRenderer: {fileID: 3350946712003230631}
+  - Layer: 2
+    MeshRenderer: {fileID: 1487167155355127627}
 --- !u!114 &1814814639452178535
 MonoBehaviour:
   m_ObjectHideFlags: 0
