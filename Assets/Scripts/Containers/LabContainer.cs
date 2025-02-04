@@ -254,11 +254,15 @@ namespace Containers
         
         private void UpdateView()
         {
-            if (reagentsLabSubstanceProperty != null)
+            if (_containerType == EContainer.BankContainer)
             {
                 if (TryGetMeshRendererByLayer(ESubstanceLayer.Bottom, out MeshRenderer meshRenderer))
                 {
                     meshRenderer.enabled = true;
+                    meshRenderer.material.color = new Color(reagentsLabSubstanceProperty.LabSubstanceProperty.SubstanceColorR, 
+                        reagentsLabSubstanceProperty.LabSubstanceProperty.SubstanceColorG, 
+                        reagentsLabSubstanceProperty.LabSubstanceProperty.SubstanceColorB, 
+                        reagentsLabSubstanceProperty.LabSubstanceProperty.SubstanceColorA);
                 }
                 
                 return;

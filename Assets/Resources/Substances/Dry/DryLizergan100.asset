@@ -15,7 +15,7 @@ MonoBehaviour:
   LabSubstanceProperty:
     SubstanceName: DryLizergan100
     SubstanceMode: 0
-    SubstanceLayer: 1
+    SubstanceLayer: 0
     SubstanceColorR: 0.7924528
     SubstanceColorG: 0.567497
     SubstanceColorB: 0.3252047

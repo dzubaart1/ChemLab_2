@@ -3966,6 +3966,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6135443831722635874, guid: 2ee547a66d8d549419de9fec899d55a4, type: 3}
+      propertyPath: reagentsLabSubstanceProperty
+      value: 
+      objectReference: {fileID: 11400000, guid: c0b8a460237aabd479928a3f0aad88e7, type: 2}
     - target: {fileID: 8752989905597421585, guid: 2ee547a66d8d549419de9fec899d55a4, type: 3}
       propertyPath: m_Name
       value: ChimicGlassContainer

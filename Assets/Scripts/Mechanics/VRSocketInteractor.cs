@@ -271,8 +271,6 @@ namespace Mechanics
                 return;
             }
             
-            LabContainer labContainer = grabInteractable.GetComponentInChildren<LabContainer>();
-            
             RestartTimer();
 
             foreach (var collider in colliders)

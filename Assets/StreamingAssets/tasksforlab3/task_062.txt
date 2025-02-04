@@ -45,7 +45,7 @@
             "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
             "SubstanceName": "PenLizergan",
             "SubstanceMode": 0,
-            "SubstanceLayer": 1,
+            "SubstanceLayer": 0,
             "SubstanceColorR": 0.735849,
             "SubstanceColorG": 0.550086558,
             "SubstanceColorB": 0.281844,
