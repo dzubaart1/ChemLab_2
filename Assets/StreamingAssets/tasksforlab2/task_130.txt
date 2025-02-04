@@ -21,6 +21,12 @@
         "IsLock": false,
         "SideEffectTimeType": 0,
         "SideEffectType": 3
+      },
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.TriggerActivatorSideEffect, Assembly-CSharp",
+        "IsActive": false,
+        "SideEffectTimeType": 1,
+        "SideEffectType": 4
       }
     ]
   }

@@ -21,6 +21,13 @@
         "IsLock": true,
         "SideEffectTimeType": 0,
         "SideEffectType": 3
+      },
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.WarningTextLabSideEffect, Assembly-CSharp",
+        "WarningText": null,
+        "IsActive": false,
+        "SideEffectTimeType": 0,
+        "SideEffectType": 5
       }
     ]
   }

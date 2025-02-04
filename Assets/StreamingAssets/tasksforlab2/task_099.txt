@@ -20,6 +20,13 @@
         "IsLock": false,
         "SideEffectTimeType": 1,
         "SideEffectType": 3
+      },
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.WarningTextLabSideEffect, Assembly-CSharp",
+        "WarningText": "Процесс автоклавирования завершен!",
+        "IsActive": true,
+        "SideEffectTimeType": 0,
+        "SideEffectType": 5
       }
     ]
   }

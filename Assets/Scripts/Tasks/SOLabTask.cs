@@ -111,6 +111,10 @@ namespace BioEngineerLab.Tasks
                     return new SpawnDocSideEffectEditor(labSideEffect);
                 case ESideEffect.ConstructorSideEffect:
                     return new ConstructorLabSideEffectEditor(labSideEffect);
+                case ESideEffect.TriggerActivatorSideEffect:
+                    return new TriggerActivatorSideEffectEditor(labSideEffect);
+                case ESideEffect.WarningTextSideEffect:
+                    return new WarningTextLabSideEffectEditor(labSideEffect);
             }
 #endif
             return null;

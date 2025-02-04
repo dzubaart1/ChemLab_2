@@ -21,6 +21,19 @@
         "IsLock": false,
         "SideEffectTimeType": 0,
         "SideEffectType": 3
+      },
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.TriggerActivatorSideEffect, Assembly-CSharp",
+        "IsActive": true,
+        "SideEffectTimeType": 0,
+        "SideEffectType": 4
+      },
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.WarningTextLabSideEffect, Assembly-CSharp",
+        "WarningText": "НЕ ВЫНИМАЙТЕ РУКИ ИЗ БОКСА!",
+        "IsActive": true,
+        "SideEffectTimeType": 0,
+        "SideEffectType": 5
       }
     ]
   }

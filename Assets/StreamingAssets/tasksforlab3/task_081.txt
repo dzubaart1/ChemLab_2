@@ -14,6 +14,14 @@
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": []
+    "$values": [
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.WarningTextLabSideEffect, Assembly-CSharp",
+        "WarningText": "Прошло 24 часа, необходимо проверить образцы",
+        "IsActive": true,
+        "SideEffectTimeType": 0,
+        "SideEffectType": 5
+      }
+    ]
   }
 }
