@@ -258,11 +258,13 @@ namespace Containers
             {
                 if (TryGetMeshRendererByLayer(ESubstanceLayer.Bottom, out MeshRenderer meshRenderer))
                 {
+                    LabSubstanceProperty labSubstanceProperty = reagentsLabSubstanceProperty.LabSubstanceProperty;
+                    meshRenderer.material.color = new Color(labSubstanceProperty.SubstanceColorR, 
+                        labSubstanceProperty.SubstanceColorG, 
+                        labSubstanceProperty.SubstanceColorB, 
+                        labSubstanceProperty.SubstanceColorA);
+                    
                     meshRenderer.enabled = true;
-                    meshRenderer.material.color = new Color(reagentsLabSubstanceProperty.LabSubstanceProperty.SubstanceColorR, 
-                        reagentsLabSubstanceProperty.LabSubstanceProperty.SubstanceColorG, 
-                        reagentsLabSubstanceProperty.LabSubstanceProperty.SubstanceColorB, 
-                        reagentsLabSubstanceProperty.LabSubstanceProperty.SubstanceColorA);
                 }
                 
                 return;
