@@ -5,7 +5,7 @@
   "Title": "Задание 52",
   "Description": "Наденьте новый наконечник на пипет-дозатор",
   "Warning": "",
-  "SaveableTask": true,
+  "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
     "SocketType": 6,

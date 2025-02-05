@@ -5,7 +5,7 @@
   "Title": "Задание 57",
   "Description": "Возьмите упаковку со шпателем, вытащите шпатель.",
   "Warning": "",
-  "SaveableTask": true,
+  "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
     "ButtonType": 36,

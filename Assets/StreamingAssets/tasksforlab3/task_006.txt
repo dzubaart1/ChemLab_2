@@ -5,7 +5,7 @@
   "Title": "Задание 6",
   "Description": "Возьмите и наденьте бахилы ",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
     "MachineActivityType": 0,
