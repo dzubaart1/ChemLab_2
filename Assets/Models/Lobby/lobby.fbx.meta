@@ -3,7 +3,92 @@ guid: 6764c6b622cefcc4d88f0e66fccbbb84
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BodyBlack
+    second: {fileID: -1580535799172915004, guid: 16ba7656e5696354a8dc50d7a2540f4a, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cylinder_Pillow_Beige.001
+    second: {fileID: 2100000, guid: f987e483176099441ac5131cb1f03929, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dark Ceramic
+    second: {fileID: 2100000, guid: 55c0b0fb422b33c40a35ab4a49b28082, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Display_tablet
+    second: {fileID: 2100000, guid: a66f888434b4e77419abf2ed28238b0c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fabric075
+    second: {fileID: 2100000, guid: f987e483176099441ac5131cb1f03929, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: -6271897200390792742, guid: d27220d89c55ade41ba4b31b3a3c1cc1, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass_sh
+    second: {fileID: 2100000, guid: a976e0a9dd9289c42a34105e75382f40, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GlossyWhite
+    second: {fileID: -576257647392366031, guid: 50d2ab063b0e5fe4e9a34d66ebc511a4, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Handle
+    second: {fileID: -1846457343604418357, guid: ab3c5b086d952604ab093415878be903, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LightGreen
+    second: {fileID: 2100000, guid: 7a2bb8e1c10fbba4295554b5bbc154d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Matte Black.001
+    second: {fileID: -1580535799172915004, guid: 16ba7656e5696354a8dc50d7a2540f4a, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Screen01
+    second: {fileID: 3589333493158463532, guid: 24bb829f454a7c04196cc980d627921a, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor
+    second: {fileID: 2100000, guid: 7b1aaa4ff17d71f409c696e796b852fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: leave_1_MatSG
+    second: {fileID: 2100000, guid: 7a2bb8e1c10fbba4295554b5bbc154d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: marble
+    second: {fileID: 2100000, guid: febbb53d1f134aa45b54f1a87630ba19, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_grey
+    second: {fileID: 2100000, guid: 2bc5b52125537034487f128e358364c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wood
+    second: {fileID: 2100000, guid: aa894c609a515ef4fb63fa834d9847b9, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

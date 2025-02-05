@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _meshRenderer: {fileID: 8035197310399332801}
+  _collider: {fileID: 3592446676271759745}
   _grabInteractable: {fileID: 386987710497509203}
   _machineType: 20
 --- !u!114 &386987710497509203

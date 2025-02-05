@@ -46,7 +46,8 @@ namespace Core
         Light2Button,
         KeyButton,
         ShpatelButton,
-        AutoClavePullButton
+        AutoClavePullButton,
+        NotSpecificButton
     }
 
     public enum ECraft : byte

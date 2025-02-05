@@ -157,7 +157,7 @@ namespace BioEngineerLab.Tasks
             _soLabTask.LabTask.Number = EditorGUILayout.IntField("Number", _soLabTask.LabTask.Number);
             _soLabTask.LabTask.Title = EditorGUILayout.TextField("Title", _soLabTask.LabTask.Title);
             _soLabTask.LabTask.Description = EditorGUILayout.TextField("Description", _soLabTask.LabTask.Description, style, GUILayout.Height(100));
-            _soLabTask.LabTask.Warning = EditorGUILayout.TextField("Warning", _soLabTask.LabTask.Warning);
+            _soLabTask.LabTask.Warning = EditorGUILayout.TextField("Warning", _soLabTask.LabTask.Warning, style, GUILayout.Height(150));
             _soLabTask.LabTask.SaveableTask = EditorGUILayout.Toggle("Saveable Task", _soLabTask.LabTask.SaveableTask);
         }
 

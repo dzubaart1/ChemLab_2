@@ -649,6 +649,8 @@ MonoBehaviour:
   HandsChanger: {fileID: 722393541438107483}
   _leftDirectInteractor: {fileID: 7035385901366129742}
   _rightDirectInteractor: {fileID: 4863586686890968215}
+  _leftRayInteractor: {fileID: 442439145472789048}
+  _rightRayInteractor: {fileID: 3998452331141132978}
 --- !u!114 &10682636241646401
 MonoBehaviour:
   m_ObjectHideFlags: 0
