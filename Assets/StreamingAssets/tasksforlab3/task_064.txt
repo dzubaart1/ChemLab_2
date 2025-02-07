@@ -3,12 +3,12 @@
   "Lab": 2,
   "Number": 64,
   "Title": "Задание 64",
-  "Description": "Закройте чашку Петри с номером I",
+  "Description": "Переместите обе чашки Петри вверх дном внутрь термостата",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
-    "SocketType": 7,
+    "SocketType": 33,
     "SocketActivityType": 0,
     "ActivityType": 3
   },
@@ -16,10 +16,18 @@
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
     "$values": [
       {
-        "$type": "BioEngineerLab.Tasks.SideEffects.TriggerActivatorSideEffect, Assembly-CSharp",
+        "$type": "BioEngineerLab.Tasks.SideEffects.ConstructorSideEffect, Assembly-CSharp",
+        "SocketType": 7,
+        "IsLock": true,
+        "SideEffectTimeType": 0,
+        "SideEffectType": 3
+      },
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.WarningTextLabSideEffect, Assembly-CSharp",
+        "WarningText": null,
         "IsActive": false,
-        "SideEffectTimeType": 1,
-        "SideEffectType": 4
+        "SideEffectTimeType": 0,
+        "SideEffectType": 5
       }
     ]
   }

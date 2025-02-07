@@ -3,12 +3,12 @@
   "Lab": 1,
   "Number": 166,
   "Title": "Задание 166",
-  "Description": "Нажмите  «БАКТЕРИЦИДНАЯ ОЧИСТКА» ",
+  "Description": "Снимите бахилы, выбросите их в мусорную корзину",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 23,
+    "ButtonType": 32,
     "ActivityType": 6
   },
   "LabSideEffects": {

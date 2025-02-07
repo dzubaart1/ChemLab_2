@@ -4,7 +4,7 @@
   "Number": 15,
   "Title": "Задание 15",
   "Description": "Откройте весы. Возьмите лодочку для взвешивания и поставьте ее на весы",
-  "Warning": "",
+  "Warning": "Для точного взвешивания необходимых реагентов используется специальная емкость для взвешивания (лодочка) и аналитические весы. ",
   "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",

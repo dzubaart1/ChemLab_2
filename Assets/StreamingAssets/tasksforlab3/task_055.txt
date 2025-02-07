@@ -3,74 +3,25 @@
   "Lab": 2,
   "Number": 55,
   "Title": "Задание 55",
-  "Description": "Откройте чашку Петри с номером II, с помощью пипет-дозатора поместите бактерии внутрь чашки Петри",
+  "Description": "Переместите наконечник с пипет-дозатора в ёмкость для отходов",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.CraftSubstanceLabActivity, Assembly-CSharp",
-    "LabCraft": {
-      "$type": "Crafting.LabCraft, Assembly-CSharp",
-      "SubstancesFrom": {
-        "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
-        "$values": [
-          {
-            "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-            "SubstanceName": "LizerganRings2",
-            "SubstanceMode": 0,
-            "SubstanceLayer": 0,
-            "SubstanceColorR": 0.4943396,
-            "SubstanceColorG": 0.397799224,
-            "SubstanceColorB": 0.349768579,
-            "SubstanceColorA": 0.8235294,
-            "HintName": ""
-          },
-          {
-            "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-            "SubstanceName": "Penicillium",
-            "SubstanceMode": 0,
-            "SubstanceLayer": 1,
-            "SubstanceColorR": 0.9528302,
-            "SubstanceColorG": 0.927144468,
-            "SubstanceColorB": 0.7775454,
-            "SubstanceColorA": 0.807843149,
-            "HintName": ""
-          }
-        ]
-      },
-      "CraftType": 3,
-      "SubstancesRes": {
-        "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
-        "$values": [
-          {
-            "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-            "SubstanceName": "LizerganRings2",
-            "SubstanceMode": 0,
-            "SubstanceLayer": 0,
-            "SubstanceColorR": 0.4943396,
-            "SubstanceColorG": 0.397799224,
-            "SubstanceColorB": 0.349768579,
-            "SubstanceColorA": 0.8235294,
-            "HintName": ""
-          },
-          {
-            "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-            "SubstanceName": "Penicillium",
-            "SubstanceMode": 0,
-            "SubstanceLayer": 1,
-            "SubstanceColorR": 0.9528302,
-            "SubstanceColorG": 0.927144468,
-            "SubstanceColorB": 0.7775454,
-            "SubstanceColorA": 0.807843149,
-            "HintName": ""
-          }
-        ]
-      }
-    },
-    "Container": 7,
-    "ActivityType": 5
+    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
+    "MachineActivityType": 0,
+    "MachineType": 23,
+    "ActivityType": 1
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": []
+    "$values": [
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.ConstructorSideEffect, Assembly-CSharp",
+        "SocketType": 6,
+        "IsLock": false,
+        "SideEffectTimeType": 0,
+        "SideEffectType": 3
+      }
+    ]
   }
 }

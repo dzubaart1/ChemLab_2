@@ -3,13 +3,13 @@
   "Lab": 1,
   "Number": 144,
   "Title": "Задание 144",
-  "Description": "Возьмите салфетку, протрите рабочую поверхность ламинарного бокса",
+  "Description": "Возьмите из ламинарного бокса крышку от пенициллинового флакона и поместите в ёмкость для мытья, на которой написано «Для ёмкости с бактериями»",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 2,
-    "MachineType": 17,
+    "MachineActivityType": 0,
+    "MachineType": 24,
     "ActivityType": 1
   },
   "LabSideEffects": {

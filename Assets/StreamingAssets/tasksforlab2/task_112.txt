@@ -3,14 +3,13 @@
   "Lab": 1,
   "Number": 112,
   "Title": "Задание 112",
-  "Description": "Выбросьте пленку в емкость для отходов внутри ламинарного бокса",
+  "Description": "Возьмите пульверизатор в левую руку и обработайте правую руку спиртом",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 0,
-    "MachineType": 23,
-    "ActivityType": 1
+    "$type": "BioEngineerLab.Activities.PulverizatorLabActivity, Assembly-CSharp",
+    "Target": 1,
+    "ActivityType": 8
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

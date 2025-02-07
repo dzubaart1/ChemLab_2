@@ -4,7 +4,7 @@
   "Number": 107,
   "Title": "Задание 107",
   "Description": "Возьмите пульверизатор, обработайте ёмкость с надписью «Сахароза»",
-  "Warning": "",
+  "Warning": "Луч пульверизатора должен окраситься в зеленый цвет, что означает, что он попадает не в руку, а в предмет в руке.",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.PulverizatorLabActivity, Assembly-CSharp",

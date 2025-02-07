@@ -4,7 +4,7 @@
   "Number": 97,
   "Title": "Задание 97",
   "Description": "Возьмите пульверизатор, обработайте пенициллиновый флакон",
-  "Warning": "",
+  "Warning": "Луч пульверизатора должен окраситься в зеленый цвет, что означает, что он попадает не в руку, а в предмет в руке.",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.PulverizatorLabActivity, Assembly-CSharp",

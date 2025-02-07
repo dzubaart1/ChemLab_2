@@ -3,12 +3,12 @@
   "Lab": 1,
   "Number": 167,
   "Title": "Задание 167",
-  "Description": "Для открытия двери нажмите кнопку «ключ»",
+  "Description": "Подойдите к панели управления и нажмите «ДЕЖУРНОЕ ОСВЕЩЕНИЕ»",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 35,
+    "ButtonType": 34,
     "ActivityType": 6
   },
   "LabSideEffects": {

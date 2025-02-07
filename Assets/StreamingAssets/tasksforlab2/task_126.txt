@@ -3,14 +3,14 @@
   "Lab": 1,
   "Number": 126,
   "Title": "Задание 126",
-  "Description": "Наденьте наконечник на пипет-дозатор поднеся пипет-дозатор к наконечнику. ",
+  "Description": "Переместите наконечник с пипет-дозатора в ёмкость для отходов",
   "Warning": "",
-  "SaveableTask": true,
+  "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
-    "SocketType": 6,
-    "SocketActivityType": 0,
-    "ActivityType": 3
+    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
+    "MachineActivityType": 0,
+    "MachineType": 23,
+    "ActivityType": 1
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
@@ -18,8 +18,8 @@
       {
         "$type": "BioEngineerLab.Tasks.SideEffects.ConstructorSideEffect, Assembly-CSharp",
         "SocketType": 6,
-        "IsLock": true,
-        "SideEffectTimeType": 1,
+        "IsLock": false,
+        "SideEffectTimeType": 0,
         "SideEffectType": 3
       }
     ]

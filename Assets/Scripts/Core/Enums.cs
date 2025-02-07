@@ -142,7 +142,7 @@ namespace Core
         EnterDoor2,
         ShakerDoor,
         TermostatDoor,
-        
+        FrigeDoor
     }
 
     public enum EDoorActivity : byte

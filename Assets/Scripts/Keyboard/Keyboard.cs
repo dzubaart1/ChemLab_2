@@ -8,6 +8,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UI.Components;
 using UnityEngine.Serialization;
+using UnityEngine.XR.Interaction.Toolkit;
 
 namespace BioEngineerLab.Machines
 {
@@ -97,7 +98,9 @@ namespace BioEngineerLab.Machines
             {
                 gameManager.CurrentBaseLocalManager.OnActivityComplete(new MachineLabActivity(EMachineActivity.OnEnter, EMachine.KeyboardMachine));
                 _sygnalImage.color = Color.green;
-                _doorInteractable.enabled = true;
+                InteractionLayerMask layers = _doorInteractable.interactionLayers;
+                layers.value = 2;
+                _doorInteractable.interactionLayers = layers;
             }
             else
             {
@@ -109,22 +112,29 @@ namespace BioEngineerLab.Machines
 
         private void OnKeyButtonClick()
         {
-            _doorInteractable.enabled = true;
+            InteractionLayerMask layers = _doorInteractable.interactionLayers;
+            layers.value = 2;
+            _doorInteractable.interactionLayers = layers;
         }
 
         private void OnDoorClosed()
         {
-            _doorInteractable.enabled = false;
+            InteractionLayerMask layers = _doorInteractable.interactionLayers;
+            layers.value = 0;
+            _doorInteractable.interactionLayers = layers;
         }
         
         public void Save()
         {
-            _savedData.IsDoorActive = _doorInteractable.enabled;
+            InteractionLayerMask layers = _doorInteractable.interactionLayers;
+            _savedData.IsDoorActive = layers.value == 2;
         }
 
         public void Load()
         {
-            _doorInteractable.enabled = _savedData.IsDoorActive;
+            InteractionLayerMask layers = _doorInteractable.interactionLayers;
+            layers.value = _savedData.IsDoorActive ? 2 : 0;
+            _doorInteractable.interactionLayers = layers;
         }
     }
 }

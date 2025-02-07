@@ -4,7 +4,7 @@
   "Number": 104,
   "Title": "Задание 104",
   "Description": "Возьмите пульверизатор, обработайте ёмкость с надписью «Глюкоза»",
-  "Warning": "",
+  "Warning": "Луч пульверизатора должен окраситься в зеленый цвет, что означает, что он попадает не в руку, а в предмет в руке.",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.PulverizatorLabActivity, Assembly-CSharp",

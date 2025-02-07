@@ -3,22 +3,24 @@
   "Lab": 1,
   "Number": 116,
   "Title": "Задание 116",
-  "Description": "Установите на пипет-дозаторе значение 100мкл",
+  "Description": "Откройте ёмкость с наконечниками для пипет-дозатора. Наденьте наконечник на пипет-дозатор поднеся пипет-дозатор к наконечнику. ",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 2,
-    "ActivityType": 6
+    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
+    "SocketType": 6,
+    "SocketActivityType": 0,
+    "ActivityType": 3
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
     "$values": [
       {
-        "$type": "BioEngineerLab.Tasks.SideEffects.SetDozatorVolumeLabSideEffect, Assembly-CSharp",
-        "DozatorVolume": 0.001,
+        "$type": "BioEngineerLab.Tasks.SideEffects.ConstructorSideEffect, Assembly-CSharp",
+        "SocketType": 6,
+        "IsLock": true,
         "SideEffectTimeType": 1,
-        "SideEffectType": 1
+        "SideEffectType": 3
       }
     ]
   }

@@ -3,25 +3,16 @@
   "Lab": 1,
   "Number": 157,
   "Title": "Задание 157",
-  "Description": "Откройте дверцу шейкера",
+  "Description": "Снимите перчатки, выбросите их в мусорную корзину",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.DoorLabActivity, Assembly-CSharp",
-    "Door": 4,
-    "DoorActivity": 0,
-    "ActivityType": 7
+    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
+    "ButtonType": 31,
+    "ActivityType": 6
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.WarningTextLabSideEffect, Assembly-CSharp",
-        "WarningText": null,
-        "IsActive": false,
-        "SideEffectTimeType": 0,
-        "SideEffectType": 5
-      }
-    ]
+    "$values": []
   }
 }

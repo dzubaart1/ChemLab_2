@@ -3,13 +3,14 @@
   "Lab": 1,
   "Number": 164,
   "Title": "Задание 164",
-  "Description": "Снимите бахилы, выбросите их в мусорную корзину",
+  "Description": "Закройте дверь",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 32,
-    "ActivityType": 6
+    "$type": "BioEngineerLab.Activities.DoorLabActivity, Assembly-CSharp",
+    "Door": 3,
+    "DoorActivity": 1,
+    "ActivityType": 7
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

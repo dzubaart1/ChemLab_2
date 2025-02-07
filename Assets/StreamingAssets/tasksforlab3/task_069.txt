@@ -3,7 +3,7 @@
   "Lab": 2,
   "Number": 69,
   "Title": "Задание 69",
-  "Description": "Возьмите из ламинарного бокса пенициллиновый флакон «S.t. 56-45» и поместите в ёмкость для мытья, на которой написано «Для ёмкости с бактериями»",
+  "Description": "Возьмите из ламинарного бокса крышку от пенициллинового флакона и поместите в ёмкость для мытья, на которой написано «Для ёмкости с бактериями»",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
@@ -14,14 +14,6 @@
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.ConstructorSideEffect, Assembly-CSharp",
-        "SocketType": 28,
-        "IsLock": false,
-        "SideEffectTimeType": 0,
-        "SideEffectType": 3
-      }
-    ]
+    "$values": []
   }
 }

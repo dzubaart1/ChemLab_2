@@ -3,31 +3,30 @@
   "Lab": 1,
   "Number": 131,
   "Title": "Задание 131",
-  "Description": "Откройте дверь шейкер-инкубатора",
+  "Description": "Переместите наконечник с пипет-дозатора в ёмкость для отходов",
   "Warning": "",
-  "SaveableTask": true,
+  "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.DoorLabActivity, Assembly-CSharp",
-    "Door": 4,
-    "DoorActivity": 0,
-    "ActivityType": 7
+    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
+    "MachineActivityType": 0,
+    "MachineType": 23,
+    "ActivityType": 1
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
     "$values": [
       {
         "$type": "BioEngineerLab.Tasks.SideEffects.ConstructorSideEffect, Assembly-CSharp",
-        "SocketType": 34,
-        "IsLock": true,
+        "SocketType": 6,
+        "IsLock": false,
         "SideEffectTimeType": 0,
         "SideEffectType": 3
       },
       {
-        "$type": "BioEngineerLab.Tasks.SideEffects.WarningTextLabSideEffect, Assembly-CSharp",
-        "WarningText": null,
+        "$type": "BioEngineerLab.Tasks.SideEffects.TriggerActivatorSideEffect, Assembly-CSharp",
         "IsActive": false,
-        "SideEffectTimeType": 0,
-        "SideEffectType": 5
+        "SideEffectTimeType": 1,
+        "SideEffectType": 4
       }
     ]
   }

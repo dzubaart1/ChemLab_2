@@ -3,13 +3,14 @@
   "Lab": 1,
   "Number": 154,
   "Title": "Задание 154",
-  "Description": "Два раза нажмите кнопку «UV» (ультрафиолет)",
+  "Description": "Повесьте специальный ключ на то же место",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 16,
-    "ActivityType": 6
+    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
+    "SocketType": 27,
+    "SocketActivityType": 0,
+    "ActivityType": 3
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

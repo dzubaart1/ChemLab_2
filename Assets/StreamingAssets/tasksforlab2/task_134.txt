@@ -3,24 +3,24 @@
   "Lab": 1,
   "Number": 134,
   "Title": "Задание 134",
-  "Description": "Возьмите ёмкость с надписью «Глюкоза»",
+  "Description": "Поместите ёмкость «Сахароза» в прибор «Шейкер-инкубатор».",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",
-    "SocketType": 29,
-    "SocketActivityType": 1,
+    "SocketType": 32,
+    "SocketActivityType": 0,
     "LabSubstanceProperties": {
       "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
       "$values": [
         {
           "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "PenicilliumGlukoza",
+          "SubstanceName": "PenicilliumSaharoza",
           "SubstanceMode": 0,
           "SubstanceLayer": 1,
-          "SubstanceColorR": 0.6644016,
-          "SubstanceColorG": 0.537335336,
-          "SubstanceColorB": 0.7075472,
+          "SubstanceColorR": 0.6296133,
+          "SubstanceColorG": 0.5372549,
+          "SubstanceColorB": 0.7058824,
           "SubstanceColorA": 0.8352941,
           "HintName": ""
         }

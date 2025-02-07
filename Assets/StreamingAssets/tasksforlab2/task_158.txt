@@ -3,30 +3,13 @@
   "Lab": 1,
   "Number": 158,
   "Title": "Задание 158",
-  "Description": "Достаньте ёмкость с надписью «Глюкоза» и поставьте ее на стол",
+  "Description": "Подойдите к шейкеру, выключите процесс нажав кнопку «rpm»",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",
-    "SocketType": 32,
-    "SocketActivityType": 1,
-    "LabSubstanceProperties": {
-      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
-      "$values": [
-        {
-          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "ShakedGlukoza",
-          "SubstanceMode": 0,
-          "SubstanceLayer": 1,
-          "SubstanceColorR": 1.0,
-          "SubstanceColorG": 0.9508505,
-          "SubstanceColorB": 0.760377347,
-          "SubstanceColorA": 0.7607843,
-          "HintName": ""
-        }
-      ]
-    },
-    "ActivityType": 2
+    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
+    "ButtonType": 27,
+    "ActivityType": 6
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

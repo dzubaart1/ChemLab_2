@@ -3,14 +3,13 @@
   "Lab": 1,
   "Number": 169,
   "Title": "Задание 169",
-  "Description": "Выйдите и закройте дверь",
+  "Description": "Для открытия двери нажмите кнопку «ключ»",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.DoorLabActivity, Assembly-CSharp",
-    "Door": 2,
-    "DoorActivity": 1,
-    "ActivityType": 7
+    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
+    "ButtonType": 35,
+    "ActivityType": 6
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

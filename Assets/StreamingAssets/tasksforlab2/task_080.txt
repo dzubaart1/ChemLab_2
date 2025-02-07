@@ -3,7 +3,7 @@
   "Lab": 1,
   "Number": 80,
   "Title": "Задание 80",
-  "Description": "Откройте ламинарный бокс (нажмите на кнопку «OPEN/CLOSE»)",
+  "Description": "Откройте ламинарный бокс (нажмите на кнопку «OPEN/CLOSE» внизу)",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {

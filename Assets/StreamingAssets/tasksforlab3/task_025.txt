@@ -3,7 +3,7 @@
   "Lab": 2,
   "Number": 25,
   "Title": "Задание 25",
-  "Description": "Закройте ламинарный бокс",
+  "Description": "Закройте ламинарный бокс (нажмите на  «OPEN/CLOSE» внизу)",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {

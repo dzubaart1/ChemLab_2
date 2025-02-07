@@ -3,12 +3,12 @@
   "Lab": 1,
   "Number": 165,
   "Title": "Задание 165",
-  "Description": "Подойдите к панели управления и нажмите «ДЕЖУРНОЕ ОСВЕЩЕНИЕ»",
+  "Description": "Снимите и повесьте халат",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 34,
+    "ButtonType": 33,
     "ActivityType": 6
   },
   "LabSideEffects": {

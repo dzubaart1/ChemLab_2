@@ -3,13 +3,14 @@
   "Lab": 1,
   "Number": 140,
   "Title": "Задание 140",
-  "Description": "Нажмите кнопку «rpm», начнется перемешивание",
+  "Description": "Закройте дверцу шейкер-инкубатора",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 27,
-    "ActivityType": 6
+    "$type": "BioEngineerLab.Activities.DoorLabActivity, Assembly-CSharp",
+    "Door": 4,
+    "DoorActivity": 1,
+    "ActivityType": 7
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

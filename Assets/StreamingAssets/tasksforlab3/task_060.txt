@@ -3,14 +3,13 @@
   "Lab": 2,
   "Number": 60,
   "Title": "Задание 60",
-  "Description": "Закройте чашку Петри с номером II",
+  "Description": "Возьмите упаковку со шпателем, вытащите шпатель.",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
-    "SocketType": 7,
-    "SocketActivityType": 0,
-    "ActivityType": 3
+    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
+    "ButtonType": 36,
+    "ActivityType": 6
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

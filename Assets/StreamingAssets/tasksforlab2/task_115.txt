@@ -3,13 +3,13 @@
   "Lab": 1,
   "Number": 115,
   "Title": "Задание 115",
-  "Description": "Откройте ёмкость с наконечниками для пипет-дозатора. Наденьте наконечник на пипет-дозатор поднеся пипет-дозатор к наконечнику. ",
+  "Description": "Откройте пенициллиновый флакон с бактериями «S.t. 56-45». Положите его внутрь ламинарного бокса",
   "Warning": "",
-  "SaveableTask": true,
+  "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
-    "SocketType": 6,
-    "SocketActivityType": 0,
+    "SocketType": 30,
+    "SocketActivityType": 1,
     "ActivityType": 3
   },
   "LabSideEffects": {
@@ -17,9 +17,9 @@
     "$values": [
       {
         "$type": "BioEngineerLab.Tasks.SideEffects.ConstructorSideEffect, Assembly-CSharp",
-        "SocketType": 6,
-        "IsLock": true,
-        "SideEffectTimeType": 1,
+        "SocketType": 30,
+        "IsLock": false,
+        "SideEffectTimeType": 0,
         "SideEffectType": 3
       }
     ]

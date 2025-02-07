@@ -5,7 +5,7 @@
   "Title": "Задание 65",
   "Description": "Переместите обе чашки Петри вверх дном внутрь термостата",
   "Warning": "",
-  "SaveableTask": true,
+  "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
     "SocketType": 33,
@@ -14,21 +14,6 @@
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.ConstructorSideEffect, Assembly-CSharp",
-        "SocketType": 7,
-        "IsLock": true,
-        "SideEffectTimeType": 0,
-        "SideEffectType": 3
-      },
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.WarningTextLabSideEffect, Assembly-CSharp",
-        "WarningText": null,
-        "IsActive": false,
-        "SideEffectTimeType": 0,
-        "SideEffectType": 5
-      }
-    ]
+    "$values": []
   }
 }

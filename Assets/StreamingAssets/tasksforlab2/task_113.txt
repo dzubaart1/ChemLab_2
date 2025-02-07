@@ -3,12 +3,12 @@
   "Lab": 1,
   "Number": 113,
   "Title": "Задание 113",
-  "Description": "Откройте пенициллиновый флакон с бактериями «S.t. 56-45»",
+  "Description": "Снимите плёнку с пенициллинового флакона",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
-    "SocketType": 30,
+    "SocketType": 31,
     "SocketActivityType": 1,
     "ActivityType": 3
   },
@@ -17,10 +17,23 @@
     "$values": [
       {
         "$type": "BioEngineerLab.Tasks.SideEffects.ConstructorSideEffect, Assembly-CSharp",
-        "SocketType": 30,
+        "SocketType": 31,
         "IsLock": false,
         "SideEffectTimeType": 0,
         "SideEffectType": 3
+      },
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.TriggerActivatorSideEffect, Assembly-CSharp",
+        "IsActive": true,
+        "SideEffectTimeType": 0,
+        "SideEffectType": 4
+      },
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.WarningTextLabSideEffect, Assembly-CSharp",
+        "WarningText": "НЕ ВЫНИМАЙТЕ РУКИ ИЗ БОКСА!",
+        "IsActive": true,
+        "SideEffectTimeType": 0,
+        "SideEffectType": 5
       }
     ]
   }

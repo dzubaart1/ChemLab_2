@@ -3,40 +3,31 @@
   "Lab": 1,
   "Number": 132,
   "Title": "Задание 132",
-  "Description": "Возьмите ёмкость с надписью «Сахароза»",
+  "Description": "Откройте дверь шейкер-инкубатора",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",
-    "SocketType": 29,
-    "SocketActivityType": 1,
-    "LabSubstanceProperties": {
-      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
-      "$values": [
-        {
-          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "PenicilliumSaharoza",
-          "SubstanceMode": 0,
-          "SubstanceLayer": 1,
-          "SubstanceColorR": 0.6296133,
-          "SubstanceColorG": 0.5372549,
-          "SubstanceColorB": 0.7058824,
-          "SubstanceColorA": 0.8352941,
-          "HintName": ""
-        }
-      ]
-    },
-    "ActivityType": 2
+    "$type": "BioEngineerLab.Activities.DoorLabActivity, Assembly-CSharp",
+    "Door": 4,
+    "DoorActivity": 0,
+    "ActivityType": 7
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
     "$values": [
       {
         "$type": "BioEngineerLab.Tasks.SideEffects.ConstructorSideEffect, Assembly-CSharp",
-        "SocketType": 29,
-        "IsLock": false,
+        "SocketType": 34,
+        "IsLock": true,
         "SideEffectTimeType": 0,
         "SideEffectType": 3
+      },
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.WarningTextLabSideEffect, Assembly-CSharp",
+        "WarningText": null,
+        "IsActive": false,
+        "SideEffectTimeType": 0,
+        "SideEffectType": 5
       }
     ]
   }

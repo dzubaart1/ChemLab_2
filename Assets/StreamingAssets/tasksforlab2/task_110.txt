@@ -3,13 +3,14 @@
   "Lab": 1,
   "Number": 110,
   "Title": "Задание 110",
-  "Description": "Возьмите пульверизатор в левую руку и обработайте правую руку спиртом",
+  "Description": "Закройте дверь автоклава",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.PulverizatorLabActivity, Assembly-CSharp",
-    "Target": 1,
-    "ActivityType": 8
+    "$type": "BioEngineerLab.Activities.DoorLabActivity, Assembly-CSharp",
+    "Door": 1,
+    "DoorActivity": 1,
+    "ActivityType": 7
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

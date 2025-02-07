@@ -3,13 +3,13 @@
   "Lab": 1,
   "Number": 146,
   "Title": "Задание 146",
-  "Description": "Возьмите специальный ключ, разблокируйте ламинарный бокс",
+  "Description": "Возьмите салфетку, протрите рабочую поверхность ламинарного бокса",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 1,
-    "MachineType": 16,
+    "MachineActivityType": 2,
+    "MachineType": 17,
     "ActivityType": 1
   },
   "LabSideEffects": {

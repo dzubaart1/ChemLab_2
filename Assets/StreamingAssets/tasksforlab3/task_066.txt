@@ -3,14 +3,14 @@
   "Lab": 2,
   "Number": 66,
   "Title": "Задание 66",
-  "Description": "Переместите обе чашки Петри вверх дном внутрь термостата",
+  "Description": "Закройте дверь термостата",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
-    "SocketType": 33,
-    "SocketActivityType": 0,
-    "ActivityType": 3
+    "$type": "BioEngineerLab.Activities.DoorLabActivity, Assembly-CSharp",
+    "Door": 5,
+    "DoorActivity": 1,
+    "ActivityType": 7
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

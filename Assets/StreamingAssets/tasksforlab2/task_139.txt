@@ -3,14 +3,13 @@
   "Lab": 1,
   "Number": 139,
   "Title": "Задание 139",
-  "Description": "Закройте дверцу шейкер-инкубатора",
+  "Description": "Включите шейкер нажав на кнопку включения",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.DoorLabActivity, Assembly-CSharp",
-    "Door": 4,
-    "DoorActivity": 1,
-    "ActivityType": 7
+    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
+    "ButtonType": 26,
+    "ActivityType": 6
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
