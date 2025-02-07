@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using BioEngineerLab.Activities;
+using Containers;
 using Core;
 using JetBrains.Annotations;
 using Mechanics;
@@ -89,6 +90,16 @@ namespace Machines
             if (gameManager.CurrentBaseLocalManager == null)
             {
                 return;
+            }
+            
+            LabContainer labContainer = other.GetComponentInParent<LabContainer>();
+
+            if (labContainer != null)
+            {
+                if (labContainer.ContainerType == EContainer.DozatorContainer)
+                {
+                    return;
+                }
             }
             
             VRGrabInteractable interactable = other.GetComponentInParent<VRGrabInteractable>();
