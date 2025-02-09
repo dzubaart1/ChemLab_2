@@ -8,6 +8,7 @@ using Core;
 using Gameplay;
 using JetBrains.Annotations;
 using Saveables;
+using TMPro;
 using UnityEngine;
 
 namespace Containers
@@ -37,8 +38,11 @@ namespace Containers
         [SerializeField] private float _containerWeight;
         [SerializeField] private EContainer _containerType;
         [SerializeField] private bool _isWeightableContainer;
+        [SerializeField] private bool _isTrashableContainer;
+        [SerializeField] private bool _isWashingContainer;
         [SerializeField] private bool _isSpoonContainer;
         [SerializeField] private bool _isAnchorContainer;
+        [SerializeField] private AnimationCurve _bottomMediumMeshesYScaleWeightSubstanceCurve;
 
         [Space]
         [Header("Meshes")]
@@ -54,40 +58,12 @@ namespace Containers
             }
         }
         
-        public bool IsDirty { get; private set; }
-
-        public IReadOnlyCollection<LabSubstance> Substances
-        {
-            get
-            {
-                return _substances;
-            }
-        }
-
-        public EContainer ContainerType
-        {
-            get
-            {
-                return _containerType;
-            }
-        }
-
-        public bool IsWeightableContainer
-        {
-            get
-            {
-                return _isWeightableContainer;
-            }
-        }
-
-        public bool IsSpoonContainer
-        {
-            get
-            {
-                return _isSpoonContainer;
-            }
-        }
-
+        public IReadOnlyCollection<LabSubstance> Substances => _substances;
+        public EContainer ContainerType => _containerType;
+        public bool IsTrashableContainer => _isTrashableContainer;
+        public bool IsWashingContainer => _isWashingContainer;
+        public bool IsWeightableContainer => _isWeightableContainer;
+        public bool IsSpoonContainer => _isSpoonContainer;
         
         private LabSubstance[] _substances = new LabSubstance[MAX_SUBSTANCE_COUNT];
         private SavedData _savedData = new SavedData();
@@ -190,8 +166,7 @@ namespace Containers
                     _substances[2] = labSubstance;
                     break;
             }
-
-            IsDirty = true;
+            
             UpdateView();
         }
 
@@ -285,6 +260,29 @@ namespace Containers
                 {
                     meshRenderer.enabled = true;
                     meshRenderer.material.color = _substances[i].GetColor();
+                }
+            }
+
+            for (int i = 0; i < _substances.Length; i++)
+            {
+                if (!TryGetMeshRendererByLayer((ESubstanceLayer)i, out MeshRenderer meshRenderer))
+                {
+                    continue;
+                }
+
+                if (_substances[i] == null)
+                {
+                    continue;
+                }
+                
+                if ((ESubstanceLayer)i == ESubstanceLayer.Bottom || (ESubstanceLayer)i == ESubstanceLayer.Middle)
+                {
+                    Vector3 scale = meshRenderer.transform.localScale;
+
+                    meshRenderer.transform.localScale = new Vector3(
+                        scale.x,
+                        _bottomMediumMeshesYScaleWeightSubstanceCurve.Evaluate(_substances[i].Weight),
+                        scale.z);
                 }
             }
         }
@@ -440,7 +438,6 @@ namespace Containers
             _substances[1] = substances[1];
             _substances[2] = substances[2];
             
-            IsDirty = true;
             UpdateView();
         }
     }

@@ -115,6 +115,8 @@ namespace BioEngineerLab.Tasks
                     return new TriggerActivatorSideEffectEditor(labSideEffect);
                 case ESideEffect.WarningTextSideEffect:
                     return new WarningTextLabSideEffectEditor(labSideEffect);
+                case ESideEffect.SetHintImgSideEffect:
+                    return new SetHintImgSideEffectEditor(labSideEffect);
             }
 #endif
             return null;

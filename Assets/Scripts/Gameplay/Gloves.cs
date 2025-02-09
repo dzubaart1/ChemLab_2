@@ -45,7 +45,7 @@ namespace Gameplay
             
             gameManager.CurrentBaseLocalManager.AddSaveableOther(this);
 
-            _handsChanger = gameManager.PlayerSpawner.Player.GetHandsChanger();
+            _handsChanger = gameManager.PlayerSpawner.Player.HandsChanger;
         }
  
         private void OnEnable()

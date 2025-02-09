@@ -32,6 +32,11 @@ namespace Database
                 .Where(filter.Invoke).ToList();
         }
 
+        public static Sprite ReadHintImage(string hintImageFullName)
+        {
+            return Resources.Load<Sprite>($"HintsImages/{hintImageFullName}");
+        }
+
         public static void LoadAllTaskFromDataBase(ELab lab)
         {
             List<SOLabTask> scriptableObjects =

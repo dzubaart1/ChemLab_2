@@ -111,6 +111,7 @@ namespace Core
         ConstructorSideEffect,
         TriggerActivatorSideEffect,
         WarningTextSideEffect,
+        SetHintImgSideEffect
     }
 
     public enum ESideEffectTime : byte

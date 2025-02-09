@@ -28,8 +28,8 @@ namespace Machines
         
         private bool _isGloves = false;
         private SavedData _savedData = new SavedData();
-        
-        private void Start()
+
+        public void Init()
         {
             GameManager gameManager = GameManager.Instance;
             if (gameManager == null)

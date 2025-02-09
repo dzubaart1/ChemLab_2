@@ -105,6 +105,9 @@ namespace BioEngineerLab.Tasks
                 case ESideEffect.WarningTextSideEffect:
                     _soLabTask.SetSideEffect(new WarningTextLabSideEffect(), effectID);
                     break;
+                case ESideEffect.SetHintImgSideEffect:
+                    _soLabTask.SetSideEffect(new SetHintImgSideEffect(), effectID);
+                    break;
                 default:
                     Debug.LogError("Can't find Side effect!");
                     break;

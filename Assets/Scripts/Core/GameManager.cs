@@ -89,7 +89,7 @@ namespace Core
                 yield return null;
             }
             
-            _playerSpawner.SpawnPlayer();
+            _playerSpawner.InitPlayer();
         }
     }
 }

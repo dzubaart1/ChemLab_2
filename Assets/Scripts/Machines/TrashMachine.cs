@@ -42,7 +42,7 @@ namespace Machines
             
             gameManager.CurrentBaseLocalManager.AddSaveableOther(this);
             
-            _handsChanger = gameManager.PlayerSpawner.Player.GetHandsChanger();
+            _handsChanger = gameManager.PlayerSpawner.Player.HandsChanger;
         }
         
         private void OnEnable()
@@ -94,12 +94,9 @@ namespace Machines
             
             LabContainer labContainer = other.GetComponentInParent<LabContainer>();
 
-            if (labContainer != null)
+            if (!labContainer.IsTrashableContainer)
             {
-                if (labContainer.ContainerType == EContainer.DozatorContainer)
-                {
-                    return;
-                }
+                return;
             }
             
             VRGrabInteractable interactable = other.GetComponentInParent<VRGrabInteractable>();

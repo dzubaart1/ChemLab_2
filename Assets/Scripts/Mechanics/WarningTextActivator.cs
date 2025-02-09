@@ -14,14 +14,13 @@ namespace Machines
             public string Text;
         }
 
-        [Header("UI")]
+        [Header("UIs")]
         [SerializeField] private TextMeshProUGUI _text;
-        
         
         private bool _isActive = false;
         private SavedData _savedData = new SavedData();
-        
-        private void Start()
+
+        public void Init()
         {
             GameManager gameManager = GameManager.Instance;
             if (gameManager == null)

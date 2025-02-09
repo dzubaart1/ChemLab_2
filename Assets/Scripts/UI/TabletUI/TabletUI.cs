@@ -1,10 +1,9 @@
-using System;
 using System.Collections.Generic;
 using BioEngineerLab.Tasks;
 using Core;
 using JetBrains.Annotations;
+using Machines;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace UI.TabletUI
 {
@@ -19,9 +18,11 @@ namespace UI.TabletUI
             HintPanel,
             InfoPanel,
         }
+
+        [Header("Refs")]
+        [SerializeField] private WarningTextActivator _warningTextActivator;
         
         [SerializeField] private List<BaseTabletPanel> _panels;
-        [SerializeField] private Transform _controlPanel;
 
         [CanBeNull] private BaseTabletPanel _currentPanel;
 
@@ -32,7 +33,11 @@ namespace UI.TabletUI
                 panel.gameObject.SetActive(false);
                 panel.TabletUI = this;
             }
-            _controlPanel.gameObject.SetActive(false);
+        }
+
+        public void Init()
+        {
+            _warningTextActivator.Init();
         }
 
         public void OnTaskFailed()
@@ -41,8 +46,7 @@ namespace UI.TabletUI
             {
                 return;
             }
-
-            _controlPanel.gameObject.SetActive(false);
+            
             SwitchPanel(panel);
         }
 
@@ -53,7 +57,6 @@ namespace UI.TabletUI
                 return;
             }
             
-            _controlPanel.gameObject.SetActive(false);
             SwitchPanel(panel);
             panel.SetLabToShow(lab);
         }
@@ -65,7 +68,6 @@ namespace UI.TabletUI
                 return;
             }
             
-            _controlPanel.gameObject.SetActive(false);
             SwitchPanel(panel);
         }
 
@@ -85,8 +87,7 @@ namespace UI.TabletUI
             {
                 return;
             }
-            
-            _controlPanel.gameObject.SetActive(true);
+
             SwitchPanel(mainPanel);
             mainPanel.SetTaskToShow(task);
             hintPanel.SetTaskToShow(task);
@@ -120,7 +121,6 @@ namespace UI.TabletUI
                 return;
             }
             
-            _controlPanel.gameObject.SetActive(true);
             SwitchPanel(mainPanel);
         }
 
@@ -131,8 +131,8 @@ namespace UI.TabletUI
                 _currentPanel.gameObject.SetActive(false);
             }
 
+            targetPanel.gameObject.SetActive(true);
             _currentPanel = targetPanel;
-            _currentPanel.gameObject.SetActive(true);
         }
 
         private bool TryGetPanel(ETabletUIPanel tabletUIPanelType, out BaseTabletPanel tabletPanel)

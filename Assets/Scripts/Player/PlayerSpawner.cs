@@ -9,7 +9,7 @@ namespace Core
         
         public Player Player { get; private set; }
 
-        public void SpawnPlayer()
+        public void InitPlayer()
         {
             if (Player == null)
             {
@@ -28,6 +28,8 @@ namespace Core
                 Player.transform.position = playerSpawnPoint.Position;
                 Player.transform.rotation = playerSpawnPoint.Rotation;
             }
+            
+            Player.Init();
         }
     }
 }

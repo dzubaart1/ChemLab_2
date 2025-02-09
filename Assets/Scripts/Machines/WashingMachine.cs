@@ -57,6 +57,11 @@ namespace Machines
             {
                 return;
             }
+
+            if (!container.IsWeightableContainer)
+            {
+                return;
+            }
             
             other.gameObject.SetActive(false);
             _hiddenGameObjects.Add(interactable);
