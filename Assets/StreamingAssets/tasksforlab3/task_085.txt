@@ -5,7 +5,7 @@
   "Title": "Задание 85",
   "Description": "Снимите и повесьте халат",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
     "ButtonType": 33,

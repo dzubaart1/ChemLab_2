@@ -91,6 +91,8 @@ namespace BioEngineerLab.Tasks
                     return new DoorLabActivityEditor(labActivity);
                 case EActivity.PulveriazatorActivity:
                     return new PulverizatorLabActivityEditor(labActivity);
+                case EActivity.TrashActivity:
+                    return new TrashActivityEditor(labActivity);
             }
 #endif
 

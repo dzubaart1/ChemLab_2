@@ -441,7 +441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8593f4f987cf624883750d920da5dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _machineType: 23
+  _trashType: 3
   _button: {fileID: 0}
 --- !u!114 &8513577511733521651
 MonoBehaviour:

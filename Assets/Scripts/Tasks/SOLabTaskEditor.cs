@@ -145,6 +145,9 @@ namespace BioEngineerLab.Tasks
                 case EActivity.PulveriazatorActivity:
                     _soLabTask.SetActivity(new PulverizatorLabActivity());
                     break;
+                case EActivity.TrashActivity:
+                    _soLabTask.SetActivity(new TrashLabActivity());
+                    break;
                 default:
                     Debug.LogError("Can't find action!");
                     break;

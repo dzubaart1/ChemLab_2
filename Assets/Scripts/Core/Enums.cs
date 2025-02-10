@@ -76,6 +76,7 @@ namespace Core
         ButtonClickedActivity,
         DoorActivity,
         PulveriazatorActivity,
+        TrashActivity,
         BadActivity
     }
     
@@ -244,6 +245,14 @@ namespace Core
         LaktozaHit,
         SaharozaHit,
         CleaningSurface,
+    }
+
+    public enum ETrashType : byte
+    {
+        Sink,
+        PenSink,
+        Trash,
+        MiniTrash,
     }
 
     public enum ETrashableObject : byte

@@ -4,7 +4,7 @@
   "Number": 1,
   "Title": "Задание 1",
   "Description": "Подойдите к двери и наберите шифр «123», затем нажмите «Enter»",
-  "Warning": "",
+  "Warning": "Замок с паролем открывает дверь в лабораторию. С обратной стороны эту дверь можно открыть, нажав на кнопку с изображением ключа.",
   "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
