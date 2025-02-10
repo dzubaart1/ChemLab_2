@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 8248729231644485752}
   - component: {fileID: 6698786474231480199}
   - component: {fileID: 6148589656473685642}
+  - component: {fileID: -4390721636878067511}
   m_Layer: 0
   m_Name: AtSilReport
   m_TagString: Untagged
@@ -351,3 +352,17 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+  _isSaveble: 1
+--- !u!114 &-4390721636878067511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7813752632861529220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9d3dd864d754ef081daae4962ad91ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _trashableObjectType: 10

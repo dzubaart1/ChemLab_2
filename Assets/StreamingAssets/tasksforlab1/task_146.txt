@@ -7,10 +7,10 @@
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 0,
-    "MachineType": 9,
-    "ActivityType": 1
+    "$type": "BioEngineerLab.Activities.TrashLabActivity, Assembly-CSharp",
+    "TrashType": 4,
+    "TrashObject": 10,
+    "ActivityType": 9
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

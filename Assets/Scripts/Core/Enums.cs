@@ -253,6 +253,7 @@ namespace Core
         PenSink,
         Trash,
         MiniTrash,
+        PaperTray
     }
 
     public enum ETrashableObject : byte
@@ -267,5 +268,6 @@ namespace Core
         WeighingTrashableObject,
         TowelTrashableObject,
         MiniTrashableObject,
+        ReportTrashableObject,
     }
 }
