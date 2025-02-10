@@ -141,8 +141,8 @@ Transform:
   m_GameObject: {fileID: 4654904198178951026}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.01, z: 0}
-  m_LocalScale: {x: 0.001, y: 0.001, z: 0.001}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4587751075904456374}
@@ -222,9 +222,9 @@ Transform:
   m_GameObject: {fileID: 7896803843611560997}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0.0035, z: 0}
+  m_LocalScale: {x: 0.001, y: 0.001, z: 0.001}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4554022333029281075}
   m_Father: {fileID: 8740721374802212254}
@@ -244,6 +244,7 @@ GameObject:
   - component: {fileID: 4660221639887872837}
   - component: {fileID: 4262532184810490834}
   - component: {fileID: 7138819018714276454}
+  - component: {fileID: 5360898600642249588}
   m_Layer: 0
   m_Name: WeightingContainer
   m_TagString: SerializeTransferAndSubstance
@@ -505,12 +506,84 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reagentsLabSubstanceProperty: {fileID: 0}
-  _maxVolume: 9000
+  _maxVolume: 4
   _containerWeight: 20
   _containerType: 3
   _isWeightableContainer: 1
   _isSpoonContainer: 0
   _isAnchorContainer: 0
+  _bottomMediumMeshesXScaleWeightSubstanceCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0.225
+      outSlope: 0.225
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 4
+      value: 1
+      inSlope: 0.225
+      outSlope: 0.225
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _bottomMediumMeshesYScaleWeightSubstanceCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0.225
+      outSlope: 0.225
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 4
+      value: 1
+      inSlope: 0.225
+      outSlope: 0.225
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _bottomMediumMeshesZScaleWeightSubstanceCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0.225
+      outSlope: 0.225
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 4
+      value: 1
+      inSlope: 0.225
+      outSlope: 0.225
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _meshRendererConfigs:
   - Layer: 1
     MeshRenderer: {fileID: 5582702596160937989}
@@ -527,3 +600,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _labContainer: {fileID: 4262532184810490834}
+--- !u!114 &5360898600642249588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8740721374802212262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9d3dd864d754ef081daae4962ad91ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _trashableObjectType: 7

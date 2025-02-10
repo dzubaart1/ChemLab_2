@@ -219,9 +219,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d39d395b3b7b5824db6230d2ad735584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttonType: 31
+  ButtonType: 31
   _isTaskSendable: 1
   _isStartOn: 0
+  _timerDelay: 1
   _btnImage: {fileID: 4696441437689800964}
   _onSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   _offSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
@@ -728,6 +729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _machineType: 6
+  _button: {fileID: 0}
 --- !u!1 &5981172752968543808
 GameObject:
   m_ObjectHideFlags: 0
@@ -1113,7 +1115,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 89302d044e06924449ff307389de06f4, type: 2}
+  - {fileID: 3357285729034273263, guid: b61a49d61bb0b724184032c635113495, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

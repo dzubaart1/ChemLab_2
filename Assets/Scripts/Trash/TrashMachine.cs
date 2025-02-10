@@ -4,12 +4,12 @@ using Containers;
 using Core;
 using JetBrains.Annotations;
 using Mechanics;
+using Machines;
 using Saveables;
 using UI.Components;
-using Unity.VisualScripting;
 using UnityEngine;
 
-namespace Machines
+namespace Trash
 {
     [RequireComponent(typeof(Collider))]
     public class TrashMachine : MonoBehaviour, ISaveableOther
@@ -92,9 +92,9 @@ namespace Machines
                 return;
             }
             
-            LabContainer labContainer = other.GetComponentInParent<LabContainer>();
+            TrashableObject trashableObject = other.GetComponentInParent<TrashableObject>();
 
-            if (!labContainer.IsTrashableContainer)
+            if (trashableObject == null)
             {
                 return;
             }

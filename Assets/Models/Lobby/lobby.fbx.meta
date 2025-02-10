@@ -83,12 +83,23 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: wall_grey
-    second: {fileID: 2100000, guid: 2bc5b52125537034487f128e358364c6, type: 2}
+    second: {fileID: 2100000, guid: b6fd5b065463cb449a0a5f19bb43689b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: walls
+    second: {fileID: 2100000, guid: 54e7a6e4842531a4f9ef74a845a0d804, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: wood
     second: {fileID: 2100000, guid: aa894c609a515ef4fb63fa834d9847b9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u041B\u043E\u0433\u043E \u043E\u0441\u043D\u043E\u0432\u043D\u043E\u0439
+        \u0440\u0443\u0441\u0441\u043A\u0438\u0439 \u0447\u0435\u0440\u043D\u044B\u0439"
+    second: {fileID: 969967454803318022, guid: 869e4014a9e30f041aa284969009b818, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -38,11 +38,11 @@ namespace Containers
         [SerializeField] private float _containerWeight;
         [SerializeField] private EContainer _containerType;
         [SerializeField] private bool _isWeightableContainer;
-        [SerializeField] private bool _isTrashableContainer;
-        [SerializeField] private bool _isWashingContainer;
         [SerializeField] private bool _isSpoonContainer;
         [SerializeField] private bool _isAnchorContainer;
+        [SerializeField] private AnimationCurve _bottomMediumMeshesXScaleWeightSubstanceCurve;
         [SerializeField] private AnimationCurve _bottomMediumMeshesYScaleWeightSubstanceCurve;
+        [SerializeField] private AnimationCurve _bottomMediumMeshesZScaleWeightSubstanceCurve;
 
         [Space]
         [Header("Meshes")]
@@ -60,8 +60,6 @@ namespace Containers
         
         public IReadOnlyCollection<LabSubstance> Substances => _substances;
         public EContainer ContainerType => _containerType;
-        public bool IsTrashableContainer => _isTrashableContainer;
-        public bool IsWashingContainer => _isWashingContainer;
         public bool IsWeightableContainer => _isWeightableContainer;
         public bool IsSpoonContainer => _isSpoonContainer;
         
@@ -280,9 +278,9 @@ namespace Containers
                     Vector3 scale = meshRenderer.transform.localScale;
 
                     meshRenderer.transform.localScale = new Vector3(
-                        scale.x,
+                        _bottomMediumMeshesXScaleWeightSubstanceCurve.Evaluate(_substances[i].Weight),
                         _bottomMediumMeshesYScaleWeightSubstanceCurve.Evaluate(_substances[i].Weight),
-                        scale.z);
+                        _bottomMediumMeshesZScaleWeightSubstanceCurve.Evaluate(_substances[i].Weight));
                 }
             }
         }

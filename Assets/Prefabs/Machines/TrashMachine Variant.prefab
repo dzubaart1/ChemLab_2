@@ -182,6 +182,7 @@ GameObject:
   - component: {fileID: 4446498388261742314}
   - component: {fileID: 8904528669084441358}
   - component: {fileID: 7252182303980394463}
+  - component: {fileID: 8513577511733521651}
   m_Layer: 0
   m_Name: TrashMachine Variant
   m_TagString: Untagged
@@ -427,6 +428,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+  _isSaveble: 1
 --- !u!114 &7252182303980394463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -440,6 +442,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _machineType: 23
+  _button: {fileID: 0}
+--- !u!114 &8513577511733521651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8333653112805918313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9d3dd864d754ef081daae4962ad91ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _trashableObjectType: 9
 --- !u!1 &9180161829888154081
 GameObject:
   m_ObjectHideFlags: 0

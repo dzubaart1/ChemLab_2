@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1156157200896932626}
   - component: {fileID: 6720624454896595303}
   - component: {fileID: 7836574416469727500}
+  - component: {fileID: 2633812813007379310}
   m_Layer: 0
   m_Name: Towel
   m_TagString: Towel
@@ -237,6 +238,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+  _isSaveble: 1
 --- !u!114 &7836574416469727500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,6 +251,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a66eebc9918499d8ea52209e364f3a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2633812813007379310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4042458178183961541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9d3dd864d754ef081daae4962ad91ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _trashableObjectType: 8
 --- !u!1 &6427522766220377011
 GameObject:
   m_ObjectHideFlags: 0

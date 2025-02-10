@@ -11,8 +11,19 @@ namespace UI.TabletUI.Panels
     public class InfoTabletPanel : BaseTabletPanel
     {
         [SerializeField] private TextMeshProUGUI _taskInfoText;
+        [SerializeField] private Button _returnButton;
         
         [CanBeNull] private LabTask _showingTask;
+
+        private void OnEnable()
+        {
+            _returnButton.onClick.AddListener(OnReturnButtonClicked);
+        }
+
+        private void OnDisable()
+        {
+            _returnButton.onClick.RemoveListener(OnReturnButtonClicked);
+        }
 
         private void Update()
         {
@@ -22,6 +33,11 @@ namespace UI.TabletUI.Panels
             }
 
             _taskInfoText.text = _showingTask.Warning;
+        }
+
+        private void OnReturnButtonClicked()
+        {
+            TabletUI.SwitchToMainPanel();
         }
 
         public override void SetTaskToShow(LabTask task)

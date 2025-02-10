@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 12465113412104652}
   - component: {fileID: 2938548103462592171}
   - component: {fileID: 2731335251779436630}
+  - component: {fileID: 7977574897842096155}
   m_Layer: 0
   m_Name: DozatorCap
   m_TagString: Untagged
@@ -320,6 +321,20 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+  _isSaveble: 1
+--- !u!114 &7977574897842096155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12465113412104643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9d3dd864d754ef081daae4962ad91ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _trashableObjectType: 0
 --- !u!1 &6945466271308105258
 GameObject:
   m_ObjectHideFlags: 0

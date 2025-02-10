@@ -1,4 +1,5 @@
-﻿using BioEngineerLab.Tasks;
+﻿using System;
+using BioEngineerLab.Tasks;
 using Core;
 using JetBrains.Annotations;
 using TMPro;
@@ -10,8 +11,19 @@ namespace UI.TabletUI.Panels
     public class HintTabletPanel : BaseTabletPanel
     {
         [SerializeField] private Image _taskHintImage;
+        [SerializeField] private Button _returnButton;
         
         [CanBeNull] private LabTask _showingTask;
+
+        private void OnEnable()
+        {
+            _returnButton.onClick.AddListener(OnReturnButtonClicked);
+        }
+
+        private void OnDisable()
+        {
+            _returnButton.onClick.RemoveListener(OnReturnButtonClicked);
+        }
 
         private void Update()
         {
@@ -19,6 +31,11 @@ namespace UI.TabletUI.Panels
             {
                 return;
             }
+        }
+
+        private void OnReturnButtonClicked()
+        {
+            TabletUI.SwitchToMainPanel();
         }
 
         public override void SetTaskToShow(LabTask task)

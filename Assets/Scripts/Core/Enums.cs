@@ -245,4 +245,18 @@ namespace Core
         SaharozaHit,
         CleaningSurface,
     }
+
+    public enum ETrashableObject : byte
+    {
+        DozatorTrashableObject,
+        PenicilliumJarTrashableObject,
+        PenicilliumCapTrashableObject,
+        PenicilliumPlenkaTrashableObject,
+        PuttyKnifeTrashableObject,
+        SpatulaTrashableObject,
+        SpoonTrashableObject,
+        WeighingTrashableObject,
+        TowelTrashableObject,
+        MiniTrashableObject,
+    }
 }

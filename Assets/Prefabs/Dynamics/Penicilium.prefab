@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7238423984851564218}
   - component: {fileID: 5978358075401687074}
   - component: {fileID: 7498016193252486234}
+  - component: {fileID: 1069212889257057543}
   m_Layer: 0
   m_Name: polyetilen
   m_TagString: Untagged
@@ -237,6 +238,19 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   _isSaveble: 1
+--- !u!114 &1069212889257057543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270110046400573506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9d3dd864d754ef081daae4962ad91ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _trashableObjectType: 3
 --- !u!1 &344917822942050068
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,6 +507,7 @@ GameObject:
   - component: {fileID: 1143321773962208775}
   - component: {fileID: 3850425803975726091}
   - component: {fileID: 8693113643532862619}
+  - component: {fileID: 341774366213298632}
   m_Layer: 0
   m_Name: jal
   m_TagString: Penicillium
@@ -607,6 +622,12 @@ MonoBehaviour:
   _isWeightableContainer: 0
   _isSpoonContainer: 0
   _isAnchorContainer: 0
+  _bottomMediumMeshesYScaleWeightSubstanceCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _meshRendererConfigs: []
 --- !u!114 &7226936729573442282
 MonoBehaviour:
@@ -804,6 +825,19 @@ MonoBehaviour:
   _sockets:
   - {fileID: 2831905657260157408}
   - {fileID: 5065850228862986962}
+--- !u!114 &341774366213298632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087582902423479528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9d3dd864d754ef081daae4962ad91ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _trashableObjectType: 1
 --- !u!1 &1856110967396785439
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,6 +1018,7 @@ GameObject:
   - component: {fileID: 4997556355115536597}
   - component: {fileID: 2005961227870078698}
   - component: {fileID: 9195656215374716350}
+  - component: {fileID: 8891251130306078854}
   m_Layer: 0
   m_Name: cap
   m_TagString: Untagged
@@ -1209,6 +1244,19 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   _isSaveble: 1
+--- !u!114 &8891251130306078854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3960538511224791117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9d3dd864d754ef081daae4962ad91ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _trashableObjectType: 2
 --- !u!1 &5223787509417432981
 GameObject:
   m_ObjectHideFlags: 0

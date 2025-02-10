@@ -53,13 +53,14 @@ namespace Core.Services
             mixSubstances.AddRange(fromLabContainer.GetSubstanceProperties());
             mixSubstances.AddRange(toLabContainer.GetSubstanceProperties());
             
-            float transferWeight = Math.Min(toLabContainer.GetAvailableWeight(), fromLabContainer.GetSubstancesWeight() + toLabContainer.GetSubstancesWeight());
-            float weightForEachSubstance = transferWeight / mixCraft.SubstancesRes.Length;
+            float transferWeight = Math.Min(toLabContainer.GetAvailableWeight(), fromLabContainer.GetSubstancesWeight());
+            float toContainerWeight = toLabContainer.GetSubstancesWeight() + transferWeight;
+            float fromContainerWeight = fromLabContainer.GetSubstancesWeight() - transferWeight;
             
             toLabContainer.ClearContainer();
             foreach (LabSubstanceProperty substanceProperty in mixCraft.SubstancesRes)
             {
-                toLabContainer.PutSubstance(new LabSubstance(substanceProperty, weightForEachSubstance));
+                toLabContainer.PutSubstance(new LabSubstance(substanceProperty, toContainerWeight / mixCraft.SubstancesRes.Length));
             }
             
             foreach (LabSubstance substance in fromLabContainer.Substances)
@@ -69,9 +70,9 @@ namespace Core.Services
                     continue;
                 }
                 
-                if (substance.Weight > weightForEachSubstance)
+                if (fromContainerWeight > 0)
                 {
-                    substance.RemoveWeight(weightForEachSubstance);
+                    substance.RemoveWeight(transferWeight);
                 }
                 else
                 {

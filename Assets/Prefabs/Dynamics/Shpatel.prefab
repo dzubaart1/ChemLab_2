@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5779223494984188430}
   - component: {fileID: 4891525819069343726}
   - component: {fileID: 4023740020182382100}
+  - component: {fileID: 6112787871600105605}
   m_Layer: 0
   m_Name: Shpatel
   m_TagString: SerializeTransferAndSubstance
@@ -261,6 +262,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+  _isSaveble: 1
 --- !u!114 &4023740020182382100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,6 +278,19 @@ MonoBehaviour:
   _vrGrabInteractable: {fileID: 4891525819069343726}
   _pack: {fileID: 394289399295903423}
   _shellToggleVisibleButton: {fileID: 9102741261679562380}
+--- !u!114 &6112787871600105605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186677704137567466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9d3dd864d754ef081daae4962ad91ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _trashableObjectType: 5
 --- !u!1 &394289399295903423
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,9 +768,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d39d395b3b7b5824db6230d2ad735584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttonType: 36
+  ButtonType: 36
   _isTaskSendable: 1
   _isStartOn: 0
+  _timerDelay: 1
   _btnImage: {fileID: 8780974968961751711}
   _onSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   _offSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
