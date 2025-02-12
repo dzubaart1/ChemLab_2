@@ -47,7 +47,8 @@ namespace Core
         KeyButton,
         ShpatelButton,
         AutoClavePullButton,
-        NotSpecificButton
+        NotSpecificButton,
+        PotholderButton,
     }
 
     public enum ECraft : byte
@@ -179,7 +180,8 @@ namespace Core
         LabGlovesMachine,
         ShakerMachine,
         MiniTrashMachine,
-        PenSinkMachine
+        PenSinkMachine,
+        PotholderMachine
     }
     
     public enum ESocketActivity : byte
@@ -269,5 +271,11 @@ namespace Core
         TowelTrashableObject,
         MiniTrashableObject,
         ReportTrashableObject,
+    }
+
+    public enum ETriggerType : byte
+    {
+        LaminBoxTrigger,
+        LeftHandTrigger,
     }
 }

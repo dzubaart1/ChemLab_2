@@ -30,6 +30,8 @@ namespace Machines
         
         private bool _isOpen = false;
         private SavedData _savedData = new SavedData();
+
+        public bool IsOpen => _isOpen;
         
         private void Start()
         {

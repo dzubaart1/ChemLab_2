@@ -10,6 +10,8 @@ namespace Gameplay
 
         private Animator _anim;
 
+        public bool IsGrabbableAnimationActive = true;
+
         private void Start()
         {
             _anim = GetComponent<Animator>();
@@ -20,8 +22,11 @@ namespace Gameplay
             float triggerValue = _triggerAction.action.ReadValue<float>();
             float gripValue = _gripAction.action.ReadValue<float>();
 
+            if (IsGrabbableAnimationActive)
+            {
+                _anim.SetFloat("Grip", gripValue);
+            } 
             _anim.SetFloat("Trigger", triggerValue);
-            _anim.SetFloat("Grip", gripValue);
         }
     }
 }

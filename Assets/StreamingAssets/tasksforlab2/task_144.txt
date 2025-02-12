@@ -3,13 +3,13 @@
   "Lab": 1,
   "Number": 144,
   "Title": "Задание 144",
-  "Description": "Возьмите из ламинарного бокса крышку от пенициллинового флакона и поместите в ёмкость для мытья, на которой написано «Для ёмкости с бактериями»",
+  "Description": "Возьмите ёмкость для отходов из ламинарного бокса, выбросите мусор в корзину для мусора",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.TrashLabActivity, Assembly-CSharp",
-    "TrashType": 1,
-    "TrashObject": 2,
+    "TrashType": 2,
+    "TrashObject": 9,
     "ActivityType": 9
   },
   "LabSideEffects": {

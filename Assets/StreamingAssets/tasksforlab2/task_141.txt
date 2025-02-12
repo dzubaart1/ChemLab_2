@@ -3,12 +3,12 @@
   "Lab": 1,
   "Number": 141,
   "Title": "Задание 141",
-  "Description": "Нажмите кнопку «rpm», начнется перемешивание",
+  "Description": "Включите шейкер нажав на кнопку включения",
   "Warning": "",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 27,
+    "ButtonType": 26,
     "ActivityType": 6
   },
   "LabSideEffects": {

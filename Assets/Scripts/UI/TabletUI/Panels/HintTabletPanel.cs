@@ -3,6 +3,7 @@ using System.IO;
 using BioEngineerLab.Tasks;
 using Core;
 using BioEngineerLab.Tasks.SideEffects;
+using Database;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,7 +15,7 @@ namespace UI.TabletUI.Panels
         [SerializeField] private Image _taskHintImage;
         [SerializeField] private Button _returnButton;
         
-        private void Start()
+        public void Init()
         {
             GameManager gameManager = GameManager.Instance;
             if (gameManager == null)
@@ -28,7 +29,6 @@ namespace UI.TabletUI.Panels
             }
             
             gameManager.CurrentBaseLocalManager.AddSideEffectActivator(this);
-            _taskHintImage.gameObject.SetActive(false);
         }
 
         private void OnEnable()
@@ -41,23 +41,14 @@ namespace UI.TabletUI.Panels
             _returnButton.onClick.RemoveListener(OnReturnButtonClicked);
         }
 
-        private void Update()
-        {
-            
-        }
-
         private void OnReturnButtonClicked()
         {
             TabletUI.SwitchToMainPanel();
         }
 
-        public override void SetTaskToShow(LabTask task)
+        public void NewTask()
         {
-            _taskHintImage.gameObject.SetActive(false);
-        }
-
-        public override void SetLabToShow(ELab lab)
-        {
+            _taskHintImage.sprite = null;
         }
         
         public void OnActivateSideEffect(LabSideEffect sideEffect)
@@ -66,8 +57,15 @@ namespace UI.TabletUI.Panels
             {
                 return;
             }
+            _taskHintImage.sprite = ResourcesDatabase.ReadHintImage(setHintImgSideEffect.HintImageFullName);
+        }
 
-            _taskHintImage.gameObject.SetActive(true);
+        public override void SetTaskToShow(LabTask task)
+        {
+        }
+
+        public override void SetLabToShow(ELab lab)
+        {
         }
     }
 }

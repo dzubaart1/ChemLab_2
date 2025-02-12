@@ -3,14 +3,14 @@
   "Lab": 1,
   "Number": 146,
   "Title": "Задание 146",
-  "Description": "Возьмите салфетку, протрите рабочую поверхность ламинарного бокса",
+  "Description": "Возьмите из ламинарного бокса крышку от пенициллинового флакона и поместите в ёмкость для мытья, на которой написано «Для ёмкости с бактериями»",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
-    "MachineActivityType": 2,
-    "MachineType": 17,
-    "ActivityType": 1
+    "$type": "BioEngineerLab.Activities.TrashLabActivity, Assembly-CSharp",
+    "TrashType": 1,
+    "TrashObject": 2,
+    "ActivityType": 9
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

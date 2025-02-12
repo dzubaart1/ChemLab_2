@@ -3,6 +3,8 @@ using BioEngineerLab.Tasks;
 using Core;
 using JetBrains.Annotations;
 using Machines;
+using UI.TabletUI.Panels;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace UI.TabletUI
@@ -21,6 +23,7 @@ namespace UI.TabletUI
 
         [Header("Refs")]
         [SerializeField] private WarningTextActivator _warningTextActivator;
+        [SerializeField] private HintTabletPanel _hintTabletPanel;
         
         [SerializeField] private List<BaseTabletPanel> _panels;
 
@@ -38,6 +41,7 @@ namespace UI.TabletUI
         public void Init()
         {
             _warningTextActivator.Init();
+            _hintTabletPanel.Init();
         }
 
         public void OnTaskFailed()

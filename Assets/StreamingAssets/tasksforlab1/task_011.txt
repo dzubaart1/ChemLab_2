@@ -13,6 +13,13 @@
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": []
+    "$values": [
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.SetHintImgSideEffect, Assembly-CSharp",
+        "HintImageFullName": "Lab1/9",
+        "SideEffectTimeType": 0,
+        "SideEffectType": 6
+      }
+    ]
   }
 }

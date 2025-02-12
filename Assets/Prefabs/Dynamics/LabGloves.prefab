@@ -236,6 +236,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+  _isSaveble: 1
 --- !u!114 &1816822032204318840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,7 +347,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -4174297436756840863, guid: d0618fce30aa5b146b3cb18734ed43b3, type: 3}
+  - {fileID: 2100000, guid: 259e10bd2099576429b990d7a6cbe32c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -429,7 +430,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -4174297436756840863, guid: d0618fce30aa5b146b3cb18734ed43b3, type: 3}
+  - {fileID: 2100000, guid: 259e10bd2099576429b990d7a6cbe32c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

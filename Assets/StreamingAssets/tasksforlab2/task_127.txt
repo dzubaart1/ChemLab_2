@@ -3,25 +3,17 @@
   "Lab": 1,
   "Number": 127,
   "Title": "Задание 127",
-  "Description": "Наденьте наконечник на пипет-дозатор поднеся пипет-дозатор к наконечнику. ",
+  "Description": "Закройте ёмкость с надписью «Лактоза» крышкой",
   "Warning": "",
-  "SaveableTask": true,
+  "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
-    "SocketType": 6,
+    "SocketType": 34,
     "SocketActivityType": 0,
     "ActivityType": 3
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.ConstructorSideEffect, Assembly-CSharp",
-        "SocketType": 6,
-        "IsLock": true,
-        "SideEffectTimeType": 1,
-        "SideEffectType": 3
-      }
-    ]
+    "$values": []
   }
 }

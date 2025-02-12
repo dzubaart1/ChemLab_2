@@ -3,32 +3,17 @@
   "Lab": 1,
   "Number": 132,
   "Title": "Задание 132",
-  "Description": "Откройте дверь шейкер-инкубатора",
+  "Description": "Закройте ёмкость с надписью «Сахароза» крышкой",
   "Warning": "",
-  "SaveableTask": true,
+  "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.DoorLabActivity, Assembly-CSharp",
-    "Door": 4,
-    "DoorActivity": 0,
-    "ActivityType": 7
+    "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
+    "SocketType": 34,
+    "SocketActivityType": 0,
+    "ActivityType": 3
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.ConstructorSideEffect, Assembly-CSharp",
-        "SocketType": 34,
-        "IsLock": true,
-        "SideEffectTimeType": 0,
-        "SideEffectType": 3
-      },
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.WarningTextLabSideEffect, Assembly-CSharp",
-        "WarningText": null,
-        "IsActive": false,
-        "SideEffectTimeType": 0,
-        "SideEffectType": 5
-      }
-    ]
+    "$values": []
   }
 }

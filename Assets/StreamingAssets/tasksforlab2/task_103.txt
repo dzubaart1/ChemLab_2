@@ -3,25 +3,25 @@
   "Lab": 1,
   "Number": 103,
   "Title": "Задание 103",
-  "Description": "Подойдите к автоклаву, извлеките ёмкость с надписью «Глюкоза» ",
+  "Description": "Поставьте ёмкостью с надписью «Лактоза» в ламинарный бокс",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",
-    "SocketType": 26,
-    "SocketActivityType": 1,
+    "SocketType": 29,
+    "SocketActivityType": 0,
     "LabSubstanceProperties": {
       "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
       "$values": [
         {
           "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "Glukoza and Purple Sol",
+          "SubstanceName": "Laktoza and Purple Sol",
           "SubstanceMode": 0,
           "SubstanceLayer": 1,
-          "SubstanceColorR": 0.527487159,
+          "SubstanceColorR": 0.6509804,
           "SubstanceColorG": 0.4627451,
-          "SubstanceColorB": 0.6509804,
-          "SubstanceColorA": 0.8509804,
+          "SubstanceColorB": 0.6353192,
+          "SubstanceColorA": 0.8862745,
           "HintName": ""
         }
       ]

@@ -1,5 +1,6 @@
 ﻿using System;
 using System;
+using System.Linq;
 using Core;
 using Gameplay;
 using JetBrains.Annotations;
@@ -16,17 +17,20 @@ namespace Machines
         private class SavedData
         {
             public bool IsGloves;
+            public bool IsPotholder;
         }
 
         [Header("Materials")]
         [SerializeField] private Material _glovesMaterial;
         [SerializeField] private Material _handsMaterial;
+        [SerializeField] private Material _potholderMaterial;
         
         [Header("References")]
         [SerializeField] private SkinnedMeshRenderer _rightHandMesh;
         [SerializeField] private SkinnedMeshRenderer _leftHandMesh;
         
         private bool _isGloves = false;
+        private bool _isPotholder = false;
         private SavedData _savedData = new SavedData();
 
         public void Init()
@@ -47,7 +51,14 @@ namespace Machines
 
         public void WearGloves()
         {
-            _rightHandMesh.material = _glovesMaterial;
+            if (_isPotholder)
+            {
+                _rightHandMesh.materials = new Material[] {_glovesMaterial, _potholderMaterial};
+            }
+            else
+            {
+                _rightHandMesh.materials = new Material[] {_glovesMaterial};
+            }
             _leftHandMesh.material = _glovesMaterial;
             
             _isGloves = true;
@@ -55,22 +66,52 @@ namespace Machines
 
         public void TakeGlovesOff()
         {
-            _rightHandMesh.material = _handsMaterial;
+            if (_isPotholder)
+            {
+                _rightHandMesh.materials = new Material[] {_handsMaterial, _potholderMaterial};
+            }
+            else
+            {
+                _rightHandMesh.materials = new Material[] {_handsMaterial};
+            }
             _leftHandMesh.material = _handsMaterial;
             
             _isGloves = false;
         }
 
+        public void WearPotholder()
+        {
+            _rightHandMesh.materials = new Material[] {_isGloves ? _glovesMaterial : _handsMaterial, _potholderMaterial};
+            
+            _isPotholder = true;
+        }
+
+        public void TakePotholderOff()
+        {
+            _rightHandMesh.materials = new Material[] {_isGloves ? _glovesMaterial : _handsMaterial};
+            
+            _isPotholder = false;
+        }
+
         public void Save()
         {
             _savedData.IsGloves = _isGloves;
+            _savedData.IsPotholder = _isPotholder;
         }
 
         public void Load()
         {
             _isGloves = _savedData.IsGloves;
+            _isPotholder = _savedData.IsPotholder;
             
-            _rightHandMesh.material = _isGloves ? _glovesMaterial : _handsMaterial;
+            if (_isPotholder)
+            {
+                _rightHandMesh.materials = new Material[] {_isGloves ? _glovesMaterial : _handsMaterial, _potholderMaterial};
+            }
+            else
+            {
+                _rightHandMesh.materials = new Material[] {_isGloves ? _glovesMaterial : _handsMaterial};
+            }
             _leftHandMesh.material = _isGloves ? _glovesMaterial : _handsMaterial;
         }
     }

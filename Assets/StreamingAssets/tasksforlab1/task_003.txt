@@ -42,6 +42,12 @@
         "Weight": 3.33,
         "SideEffectTimeType": 0,
         "SideEffectType": 0
+      },
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.SetHintImgSideEffect, Assembly-CSharp",
+        "HintImageFullName": "Lab1/2",
+        "SideEffectTimeType": 0,
+        "SideEffectType": 6
       }
     ]
   }

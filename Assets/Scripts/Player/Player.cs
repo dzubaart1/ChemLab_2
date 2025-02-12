@@ -1,3 +1,4 @@
+using System;
 using Machines;
 using UI.TabletUI;
 using UnityEngine;
@@ -8,6 +9,7 @@ namespace Core
 {
     public class Player : MonoBehaviour
     {
+        public event Action LeftHandGrabbedEvent;
         [Header("Refs")]
         [SerializeField] private HandsChanger _handsChanger;
         [SerializeField] private TabletUI _tabletUI;
@@ -76,6 +78,8 @@ namespace Core
         private void OnLeftHandSelected(SelectEnterEventArgs args)
         {
             _leftRayInteractor.enableUIInteraction = false;
+            
+            LeftHandGrabbedEvent?.Invoke();
         }
 
         private void OnLeftHandExited(SelectExitEventArgs args)

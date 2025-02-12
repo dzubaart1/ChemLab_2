@@ -3,40 +3,24 @@
   "Lab": 1,
   "Number": 100,
   "Title": "Задание 100",
-  "Description": "Возьмите прихватку и извлеките ёмкость с надписью «Лактоза». ",
+  "Description": "Наденьте прихватку",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",
-    "SocketType": 26,
-    "SocketActivityType": 1,
-    "LabSubstanceProperties": {
-      "$type": "BioEngineerLab.Tasks.LabSubstanceProperty[], Assembly-CSharp",
-      "$values": [
-        {
-          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "Laktoza and Purple Sol",
-          "SubstanceMode": 0,
-          "SubstanceLayer": 1,
-          "SubstanceColorR": 0.6509804,
-          "SubstanceColorG": 0.4627451,
-          "SubstanceColorB": 0.6353192,
-          "SubstanceColorA": 0.8862745,
-          "HintName": ""
-        }
-      ]
-    },
-    "ActivityType": 2
+    "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
+    "MachineActivityType": 0,
+    "MachineType": 25,
+    "ActivityType": 1
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
     "$values": [
       {
-        "$type": "BioEngineerLab.Tasks.SideEffects.WarningTextLabSideEffect, Assembly-CSharp",
-        "WarningText": null,
-        "IsActive": false,
-        "SideEffectTimeType": 0,
-        "SideEffectType": 5
+        "$type": "BioEngineerLab.Tasks.SideEffects.TriggerActivatorSideEffect, Assembly-CSharp",
+        "IsActive": true,
+        "TriggerType": 1,
+        "SideEffectTimeType": 1,
+        "SideEffectType": 4
       }
     ]
   }

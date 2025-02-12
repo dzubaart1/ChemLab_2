@@ -80,6 +80,11 @@ namespace Machines
                 return;
             }
 
+            if (triggerActivatorSideEffect.TriggerType != ETriggerType.LaminBoxTrigger)
+            {
+                return;
+            }
+
             _triggerCollider.enabled = triggerActivatorSideEffect.IsActive;
         }
     }

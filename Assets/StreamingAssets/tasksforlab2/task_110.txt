@@ -3,17 +3,24 @@
   "Lab": 1,
   "Number": 110,
   "Title": "Задание 110",
-  "Description": "Закройте дверь автоклава",
+  "Description": "Снимите прихватку",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.DoorLabActivity, Assembly-CSharp",
-    "Door": 1,
-    "DoorActivity": 1,
-    "ActivityType": 7
+    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
+    "ButtonType": 39,
+    "ActivityType": 6
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": []
+    "$values": [
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.TriggerActivatorSideEffect, Assembly-CSharp",
+        "IsActive": false,
+        "TriggerType": 1,
+        "SideEffectTimeType": 1,
+        "SideEffectType": 4
+      }
+    ]
   }
 }

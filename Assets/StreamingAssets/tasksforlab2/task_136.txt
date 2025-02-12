@@ -3,7 +3,7 @@
   "Lab": 1,
   "Number": 136,
   "Title": "Задание 136",
-  "Description": "Поместите ёмкость «Глюкоза» в прибор «Шейкер-инкубатор».",
+  "Description": "Поместите ёмкость «Сахароза» в прибор «Шейкер-инкубатор».",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
@@ -15,12 +15,12 @@
       "$values": [
         {
           "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "PenicilliumGlukoza",
+          "SubstanceName": "PenicilliumSaharoza",
           "SubstanceMode": 0,
           "SubstanceLayer": 1,
-          "SubstanceColorR": 0.6644016,
-          "SubstanceColorG": 0.537335336,
-          "SubstanceColorB": 0.7075472,
+          "SubstanceColorR": 0.6296133,
+          "SubstanceColorG": 0.5372549,
+          "SubstanceColorB": 0.7058824,
           "SubstanceColorA": 0.8352941,
           "HintName": ""
         }

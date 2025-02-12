@@ -3,7 +3,7 @@
   "Lab": 1,
   "Number": 137,
   "Title": "Задание 137",
-  "Description": "Возьмите ёмкость с надписью «Лактоза»",
+  "Description": "Возьмите ёмкость с надписью «Глюкоза»",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
@@ -15,12 +15,12 @@
       "$values": [
         {
           "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "PenicilliumLaktoza",
+          "SubstanceName": "PenicilliumGlukoza",
           "SubstanceMode": 0,
           "SubstanceLayer": 1,
-          "SubstanceColorR": 0.7058824,
-          "SubstanceColorG": 0.5372549,
-          "SubstanceColorB": 0.6553261,
+          "SubstanceColorR": 0.6644016,
+          "SubstanceColorG": 0.537335336,
+          "SubstanceColorB": 0.7075472,
           "SubstanceColorA": 0.8352941,
           "HintName": ""
         }

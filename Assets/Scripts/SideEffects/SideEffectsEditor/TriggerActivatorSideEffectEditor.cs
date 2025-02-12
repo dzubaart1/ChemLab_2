@@ -28,6 +28,7 @@ namespace BioEngineerLab.Tasks.SideEffects
             
             _sideEffect.SideEffectTimeType = (ESideEffectTime)EditorGUILayout.EnumPopup("Side Effect Time", _sideEffect.SideEffectTimeType);
             _sideEffect.IsActive = EditorGUILayout.Toggle("Is Active", _sideEffect.IsActive);
+            _sideEffect.TriggerType = (ETriggerType)EditorGUILayout.EnumPopup("Trigger Type", _sideEffect.TriggerType);
         }
 
         public override ESideEffect GetSideEffectType()

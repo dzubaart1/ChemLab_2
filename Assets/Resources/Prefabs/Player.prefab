@@ -719,8 +719,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0284475e65599e4da270bb2e67e9f72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _glovesMaterial: {fileID: 2100000, guid: 5cb351b430f952e439701ddfc5686df7, type: 2}
+  _glovesMaterial: {fileID: 2100000, guid: 259e10bd2099576429b990d7a6cbe32c, type: 2}
   _handsMaterial: {fileID: 2100000, guid: 6b000c283cf8a6d4497cc6d6bc8f66e0, type: 2}
+  _potholderMaterial: {fileID: 2100000, guid: f8e7f1ea0f7884e44bb4436359e1fc37, type: 2}
   _rightHandMesh: {fileID: 2867423242891368681}
   _leftHandMesh: {fileID: 2001217914139188124}
 --- !u!1 &3496704469017972518
@@ -3109,6 +3110,7 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 6558622148059887818, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  IsGrabbableAnimationActive: 1
 --- !u!4 &2001217914144623242 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 109434732395451517, guid: 65847589f926b734d9eaed6e25f0046b, type: 3}
@@ -3122,6 +3124,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4997758349498308481}
     m_Modifications:
+    - target: {fileID: 4211647561433544713, guid: 694c6bf6b4f1b634fae760b6de4a44d5, type: 3}
+      propertyPath: _hintTabletPanel
+      value: 
+      objectReference: {fileID: 4572352198669469025}
     - target: {fileID: 4211647561433544713, guid: 694c6bf6b4f1b634fae760b6de4a44d5, type: 3}
       propertyPath: _warningTextActivator
       value: 
@@ -3224,6 +3230,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7973759061487289576, guid: 694c6bf6b4f1b634fae760b6de4a44d5, type: 3}
   m_PrefabInstance: {fileID: 6049127709344774524}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4572352198669469025 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7820099995735702557, guid: 694c6bf6b4f1b634fae760b6de4a44d5, type: 3}
+  m_PrefabInstance: {fileID: 6049127709344774524}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dbbdd9e3418415e8e396bcf2cfffd22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7602101178684752245 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4211647561433544713, guid: 694c6bf6b4f1b634fae760b6de4a44d5, type: 3}
@@ -3256,11 +3273,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5686134208185136530, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.001
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5686134208185136530, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.001
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5686134208185136530, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3421,9 +3438,17 @@ PrefabInstance:
     - target: {fileID: 5686134208196863108, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -6673785176958977228, guid: 5d3603a0b1cc2f842bdb38e2576fb6e5, type: 3}
+      objectReference: {fileID: 2424622706892375604, guid: 652314cf2b946d94681043fc0f7a3a69, type: 3}
+    - target: {fileID: 5686134208196863108, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5686134208196863108, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
       propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5381e6e59054f3642acf46e7b450f6f1, type: 2}
+    - target: {fileID: 5686134208196863108, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
+      propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 5381e6e59054f3642acf46e7b450f6f1, type: 2}
     m_RemovedComponents: []
@@ -3485,3 +3510,4 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: -1758520528963094988, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  IsGrabbableAnimationActive: 1
