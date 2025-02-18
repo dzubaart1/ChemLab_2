@@ -30,6 +30,7 @@ namespace Machines
         [SerializeField] private Transform _karetka;
         [SerializeField] private Transform _arrow;
         [SerializeField] Door _door;
+        [SerializeField] ParticleSystem _particle;
         
         private SavedData _savedData = new SavedData();
         
@@ -94,6 +95,7 @@ namespace Machines
             
             _startButton.SetIsOn(false);
             _arrowAnimator.Play("ArrowLeft");
+            _particle.Play();
         }
 
         public void SaveUIState()

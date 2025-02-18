@@ -3,8 +3,14 @@
   "Lab": 0,
   "Number": 12,
   "Title": "Задание 12",
+  "TitleEnglish": null,
   "Description": "На плитке нажмите кнопку «Тепло», затем нажмите кнопку «Мешать».",
+  "DescriptionEnglish": null,
   "Warning": "",
+  "WarningEnglish": null,
+  "SafetyPrecautions": null,
+  "SafetyPrecautionsEnglish": null,
+  "HintImagePath": "Lab1/11",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
@@ -14,13 +20,6 @@
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.SetHintImgSideEffect, Assembly-CSharp",
-        "HintImageFullName": "Lab1/11",
-        "SideEffectTimeType": 0,
-        "SideEffectType": 6
-      }
-    ]
+    "$values": []
   }
 }

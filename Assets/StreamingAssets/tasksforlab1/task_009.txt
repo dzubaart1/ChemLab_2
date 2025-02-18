@@ -3,8 +3,14 @@
   "Lab": 0,
   "Number": 9,
   "Title": "Задание 9",
+  "TitleEnglish": null,
   "Description": "Перелейте воду из мерного цилиндра в термостойкий стакан с реагентом «1»",
+  "DescriptionEnglish": null,
   "Warning": "",
+  "WarningEnglish": null,
+  "SafetyPrecautions": null,
+  "SafetyPrecautionsEnglish": null,
+  "HintImagePath": "Lab1/8",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.CraftSubstanceLabActivity, Assembly-CSharp",
@@ -60,13 +66,6 @@
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.SetHintImgSideEffect, Assembly-CSharp",
-        "HintImageFullName": "Lab1/8",
-        "SideEffectTimeType": 0,
-        "SideEffectType": 6
-      }
-    ]
+    "$values": []
   }
 }

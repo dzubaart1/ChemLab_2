@@ -3,8 +3,14 @@
   "Lab": 0,
   "Number": 10,
   "Title": "Задание 10",
+  "TitleEnglish": null,
   "Description": "Поставьте термостойкий стакан «1» на плитку",
+  "DescriptionEnglish": null,
   "Warning": "",
+  "WarningEnglish": null,
+  "SafetyPrecautions": null,
+  "SafetyPrecautionsEnglish": null,
+  "HintImagePath": "Lab1/9",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",
@@ -30,13 +36,6 @@
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.SetHintImgSideEffect, Assembly-CSharp",
-        "HintImageFullName": "Lab1/9",
-        "SideEffectTimeType": 0,
-        "SideEffectType": 6
-      }
-    ]
+    "$values": []
   }
 }
