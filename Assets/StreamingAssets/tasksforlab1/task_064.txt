@@ -3,8 +3,14 @@
   "Lab": 0,
   "Number": 64,
   "Title": "Задание 64",
+  "TitleEnglish": null,
   "Description": "Установите на пипетдозаторе значение 0,01 мл",
+  "DescriptionEnglish": null,
   "Warning": "",
+  "WarningEnglish": null,
+  "SafetyPrecautions": null,
+  "SafetyPrecautionsEnglish": null,
+  "HintImagePath": null,
   "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
@@ -15,8 +21,9 @@
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
     "$values": [
       {
-        "$type": "BioEngineerLab.Tasks.SideEffects.SetDozatorVolumeLabSideEffect, Assembly-CSharp",
-        "DozatorVolume": 0.01,
+        "$type": "BioEngineerLab.Tasks.SideEffects.SetVolumeLabSideEffect, Assembly-CSharp",
+        "Volume": 0.01,
+        "Container": 6,
         "SideEffectTimeType": 1,
         "SideEffectType": 1
       }

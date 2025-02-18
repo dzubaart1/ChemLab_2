@@ -6,16 +6,16 @@ using UnityEditor;
 
 namespace BioEngineerLab.Tasks.SideEffects
 {
-    public class SetDozatorVolumeLabSideEffectEditor : EditorSideEffect
+    public class SetVolumeLabSideEffectEditor : EditorSideEffect
     {
 #if UNITY_EDITOR
-        [CanBeNull] private SetDozatorVolumeLabSideEffect _sideEffect;
+        [CanBeNull] private SetVolumeLabSideEffect _sideEffect;
         [CanBeNull] private SOLabSubstanceProperty _newSoLabSubstanceProperty;
         
-        public SetDozatorVolumeLabSideEffectEditor(LabSideEffect labSideEffect)
+        public SetVolumeLabSideEffectEditor(LabSideEffect labSideEffect)
             : base(labSideEffect)
         {
-            if (labSideEffect is SetDozatorVolumeLabSideEffect handler)
+            if (labSideEffect is SetVolumeLabSideEffect handler)
             {
                 _sideEffect = handler;
             }
@@ -28,12 +28,13 @@ namespace BioEngineerLab.Tasks.SideEffects
                 return;
             }
             
-            _sideEffect.DozatorVolume = EditorGUILayout.FloatField("Dozator Volume", _sideEffect.DozatorVolume);
+            _sideEffect.Volume = EditorGUILayout.FloatField("Volume", _sideEffect.Volume);
+            _sideEffect.Container = (EContainer)EditorGUILayout.EnumPopup("Container", _sideEffect.Container);
         }
 
         public override ESideEffect GetSideEffectType()
         {
-            return ESideEffect.SetDozatorVolumeSideEffect;
+            return ESideEffect.SetVolumeSideEffect;
         }
 #endif
     }

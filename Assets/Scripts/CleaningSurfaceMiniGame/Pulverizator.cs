@@ -2,6 +2,7 @@
 using BioEngineerLab.Activities;
 using Core;
 using Mechanics;
+using TMPro;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -16,6 +17,7 @@ namespace Machines
         {
             public string Tag;
             public EPulverizatorTarget TargetType;
+            public String TargetName;
         }
 
         [Header("Refs")]
@@ -23,6 +25,12 @@ namespace Machines
         [SerializeField] private Transform _rayOrigin;
         [SerializeField] private XRInteractorLineVisual _lineVisual;
         
+        [Space]
+        [Header("UI Elements")] 
+        [SerializeField] private TextMeshProUGUI _text;
+        [SerializeField] private RectTransform _panel;
+        
+        [Space]
         [Header("Configs")]
         [SerializeField] private Gradient _handsGradient;
         [SerializeField] private Gradient _surfaceGradient;
@@ -32,7 +40,18 @@ namespace Machines
         [SerializeField] private TagConfig[] _tagConfigs;
         
         private bool _isAlreadyTriggered = false;
-        
+        private Player _player;
+
+        private void Start()
+        {
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                return;
+            }
+            
+            _player = gameManager.PlayerSpawner.Player;
+        }
         private void Update()
         {
             Ray colorRay = new Ray(_rayOrigin.transform.position, _rayOrigin.transform.forward);
@@ -61,6 +80,10 @@ namespace Machines
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
                 CheckRaycastHit(hit);
+            }
+            else
+            {
+                _panel.gameObject.SetActive(false);
             }
         }
 
@@ -120,6 +143,9 @@ namespace Machines
         {
             if (TryGetTagConfig(hit.collider.gameObject.tag, out TagConfig tagConfig))
             {
+                _panel.gameObject.SetActive(true);
+                _panel.rotation = Quaternion.LookRotation(_panel.position - _player.transform.position, new Vector3(0, 1, 0));
+                _panel.rotation = Quaternion.Euler(0, _panel.rotation.eulerAngles.y, 0);
                 if (tagConfig.TargetType == EPulverizatorTarget.RightHandHit ||
                     tagConfig.TargetType == EPulverizatorTarget.LeftHandHit)
                 {
@@ -131,21 +157,29 @@ namespace Machines
                             tagConfig2.TargetType != EPulverizatorTarget.RightHandHit)
                         {
                             _lineVisual.validColorGradient = _otherGradient;
+                            _text.text = tagConfig2.TargetName;
                         }
                         else
                         {
                             _lineVisual.validColorGradient = _handsGradient;
+                            _text.text = tagConfig.TargetName;
                         }
                     }
                 }
                 else if (tagConfig.TargetType == EPulverizatorTarget.CleaningSurface)
                 {
                     _lineVisual.validColorGradient = _surfaceGradient;
+                    _text.text = tagConfig.TargetName;
                 }
                 else
                 {
                     _lineVisual.validColorGradient = _otherGradient;
+                    _text.text = tagConfig.TargetName;
                 }
+            }
+
+            else {
+                _panel.gameObject.SetActive(false);
             }
         }
 

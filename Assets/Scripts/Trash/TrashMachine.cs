@@ -21,6 +21,7 @@ namespace Trash
 
         [SerializeField] private ETrashType _trashType;
         [SerializeField] private ButtonComponent _button;
+        [CanBeNull][SerializeField] private ParticleSystem _particleSystem;
         
         [CanBeNull] private HandsChanger _handsChanger;
         
@@ -108,6 +109,11 @@ namespace Trash
             
             interactable.gameObject.SetActive(false);
             _hiddenGameObjects.Add(interactable);
+
+            if (_particleSystem != null)
+            {
+                _particleSystem.Play();
+            }
             
             gameManager.CurrentBaseLocalManager.OnActivityComplete(new TrashLabActivity(_trashType, trashableObject.TrashableObjectType));
         }

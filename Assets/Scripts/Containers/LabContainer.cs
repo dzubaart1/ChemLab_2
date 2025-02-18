@@ -225,7 +225,7 @@ namespace Containers
             return _substances[(int)layer];
         }
         
-        private void UpdateView()
+        public void UpdateView()
         {
             if (_containerType == EContainer.BankContainer)
             {
@@ -322,19 +322,26 @@ namespace Containers
         
         public void OnActivateSideEffect(LabSideEffect sideEffect)
         {
-            if (reagentsLabSubstanceProperty == null)
+            if (sideEffect is AddReagentsLabSideEffect addReagentsLabSideEffect)
             {
-                return;
+                if (reagentsLabSubstanceProperty == null)
+                {
+                    return;
+                }
+                
+                if (addReagentsLabSideEffect.LabSubstanceProperty.Equals(reagentsLabSubstanceProperty.LabSubstanceProperty))
+                {
+                    PutSubstance(new LabSubstance(reagentsLabSubstanceProperty.LabSubstanceProperty, addReagentsLabSideEffect.Weight));
+                }
             }
             
-            if (sideEffect is not AddReagentsLabSideEffect addReagentsLabSideEffect)
+            else if (sideEffect is SetVolumeLabSideEffect setVolumeLabSideEffect)
             {
-                return;
-            }
-
-            if (addReagentsLabSideEffect.LabSubstanceProperty.Equals(reagentsLabSubstanceProperty.LabSubstanceProperty))
-            {
-                PutSubstance(new LabSubstance(reagentsLabSubstanceProperty.LabSubstanceProperty, addReagentsLabSideEffect.Weight));
+                if (setVolumeLabSideEffect.Container != ContainerType)
+                {
+                    return;
+                }
+                ChangeMaxVolume(setVolumeLabSideEffect.Volume);
             }
         }
 

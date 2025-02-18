@@ -3,8 +3,14 @@
   "Lab": 0,
   "Number": 1,
   "Title": "Задание 1",
+  "TitleEnglish": null,
   "Description": "Возьмите лодочку для взвешивания и поставьте ее на весы",
+  "DescriptionEnglish": null,
   "Warning": "",
+  "WarningEnglish": null,
+  "SafetyPrecautions": null,
+  "SafetyPrecautionsEnglish": null,
+  "HintImagePath": "Lab1/1",
   "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
@@ -14,13 +20,6 @@
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.SetHintImgSideEffect, Assembly-CSharp",
-        "HintImageFullName": "Lab1/1",
-        "SideEffectTimeType": 0,
-        "SideEffectType": 6
-      }
-    ]
+    "$values": []
   }
 }

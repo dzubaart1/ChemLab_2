@@ -4,6 +4,7 @@ using Core;
 using Machines;
 using Mechanics;
 using Saveables;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UI.Components;
@@ -24,6 +25,7 @@ namespace BioEngineerLab.Machines
         [SerializeField] private KeyboardKey[] _keyboardKeys;
         [SerializeField] private ButtonComponent _enterButton;
         [SerializeField] private ButtonComponent _keyButton;
+        [SerializeField] private TextMeshProUGUI _text;
         
 
         [FormerlySerializedAs("_currentPassword")]
@@ -51,6 +53,8 @@ namespace BioEngineerLab.Machines
             }
             
             gameManager.CurrentBaseLocalManager.AddSaveableOther(this);
+            
+            _text.text = _currentString;
         }
         private void OnEnable()
         {
@@ -79,6 +83,7 @@ namespace BioEngineerLab.Machines
         private void OnButtonClick(int value)
         {
             _currentString += value.ToString();
+            _text.text = _currentString;
         }
 
         private void OnEnterButtonClick()
@@ -108,6 +113,7 @@ namespace BioEngineerLab.Machines
             }
 
             _currentString = "";
+            _text.text = _currentString;
         }
 
         private void OnKeyButtonClick()

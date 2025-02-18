@@ -19,11 +19,11 @@ namespace UI.TabletUI
             LoadLabPanel,
             HintPanel,
             InfoPanel,
+            SafetyPanel,
         }
 
         [Header("Refs")]
         [SerializeField] private WarningTextActivator _warningTextActivator;
-        [SerializeField] private HintTabletPanel _hintTabletPanel;
         
         [SerializeField] private List<BaseTabletPanel> _panels;
 
@@ -41,7 +41,6 @@ namespace UI.TabletUI
         public void Init()
         {
             _warningTextActivator.Init();
-            _hintTabletPanel.Init();
         }
 
         public void OnTaskFailed()
@@ -91,11 +90,17 @@ namespace UI.TabletUI
             {
                 return;
             }
+            
+            if (!TryGetPanel(ETabletUIPanel.SafetyPanel, out BaseTabletPanel safetyPanel))
+            {
+                return;
+            }
 
             SwitchPanel(mainPanel);
             mainPanel.SetTaskToShow(task);
             hintPanel.SetTaskToShow(task);
             infoPanel.SetTaskToShow(task);
+            safetyPanel.SetTaskToShow(task);
         }
         
         public void SwitchToHintPanel()
@@ -106,6 +111,16 @@ namespace UI.TabletUI
             }
             
             SwitchPanel(hintPanel);
+        }
+        
+        public void SwitchToSafetyPanel()
+        {
+            if (!TryGetPanel(ETabletUIPanel.SafetyPanel, out BaseTabletPanel safetyPanel))
+            {
+                return;
+            }
+            
+            SwitchPanel(safetyPanel);
         }
 
         public void SwitchToInfoPanel()

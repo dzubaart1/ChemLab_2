@@ -108,7 +108,7 @@ namespace Core
     public enum ESideEffect : byte
     {
         AddReagentsSideEffect,
-        SetDozatorVolumeSideEffect,
+        SetVolumeSideEffect,
         SpawnDocSideEffect,
         ConstructorSideEffect,
         TriggerActivatorSideEffect,
@@ -145,7 +145,8 @@ namespace Core
         EnterDoor2,
         ShakerDoor,
         TermostatDoor,
-        FrigeDoor
+        FrigeDoor,
+        CentrifugeCap
     }
 
     public enum EDoorActivity : byte

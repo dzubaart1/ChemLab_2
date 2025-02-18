@@ -3,8 +3,14 @@
   "Lab": 1,
   "Number": 36,
   "Title": "Задание 36",
+  "TitleEnglish": null,
   "Description": "Возьмите емкость с дистиллированной водой и перелейте 450 мл дистиллированной воды в ёмкость с пептоном, хлоридом натрия и бромкрезоловым пурпурным.",
+  "DescriptionEnglish": null,
   "Warning": "",
+  "WarningEnglish": null,
+  "SafetyPrecautions": null,
+  "SafetyPrecautionsEnglish": null,
+  "HintImagePath": null,
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.CraftSubstanceLabActivity, Assembly-CSharp",
@@ -74,7 +80,7 @@
           "SubstanceColorA": 0.8117647,
           "HintName": ""
         },
-        "Weight": 120.0,
+        "Weight": 450.0,
         "SideEffectTimeType": 0,
         "SideEffectType": 0
       }

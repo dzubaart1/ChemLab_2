@@ -51,6 +51,12 @@ namespace Containers
                 return;
             }
             
+            CupSocketCentrifugeContainer centrifugeCup = _labContainer.GetComponent<CupSocketCentrifugeContainer>();
+            if (centrifugeCup != null && centrifugeCup.IsClosed())
+            {
+                return;
+            }
+            
             SubstanceTransferLabContainer targetSubstanceTransferLabContainer = other.GetComponent<SubstanceTransferLabContainer>();
             if(targetSubstanceTransferLabContainer is null)
             {
@@ -59,6 +65,12 @@ namespace Containers
 
             CupSocketLabContainer targetCupSocketLabContainerCup = other.GetComponent<CupSocketLabContainer>();
             if(targetCupSocketLabContainerCup != null && targetCupSocketLabContainerCup.IsClosed())
+            {
+                return;
+            }
+            
+            CupSocketCentrifugeContainer targetCupSocketCentrifugeContainerCup = other.GetComponent<CupSocketCentrifugeContainer>();
+            if (targetCupSocketCentrifugeContainerCup != null && targetCupSocketCentrifugeContainerCup.IsClosed())
             {
                 return;
             }

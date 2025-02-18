@@ -17,6 +17,7 @@ namespace BioEngineerLab.Machines
         }
         
         [SerializeField] private VRSocketInteractor _socketInteractor;
+        [SerializeField] private ParticleSystem _particleSystem;
         
         private SavedData _savedData = new SavedData();
         
@@ -70,6 +71,8 @@ namespace BioEngineerLab.Machines
 
             enterTransform.gameObject.SetActive(false);
             _hiddenGameObjects.Add(enterTransform);
+            
+            _particleSystem.Play();
 
             gameManager.CurrentBaseLocalManager.OnActivityComplete(
                 new SocketSubstancesLabActivity(_socketInteractor.SocketType, ESocketActivity.Enter, labContainers[0].GetSubstanceProperties()));

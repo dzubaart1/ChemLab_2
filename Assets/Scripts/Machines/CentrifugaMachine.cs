@@ -25,6 +25,7 @@ namespace Machines
         [Space]
         [Header("Refs")]
         [SerializeField] private Animator _animator;
+        [SerializeField] private Door _cap;
         [SerializeField] private VRSocketInteractor _socketInteractor1;
         [SerializeField] private VRSocketInteractor _socketInteractor2;
         
@@ -78,6 +79,14 @@ namespace Machines
             
             if (_socketInteractor1.SelectedObject == null || _socketInteractor2.SelectedObject == null)
             {
+                _startButton.SetIsOn(false);
+                return;
+            }
+
+            if (_cap.IsOpen == false)
+            {
+                gameManager.CurrentBaseLocalManager.OnActivityComplete(new BadLabActivity());
+                _startButton.SetIsOn(false);
                 return;
             }
             

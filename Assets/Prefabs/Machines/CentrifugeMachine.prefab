@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: 7603579695401703034}
   - component: {fileID: 8337645163517747434}
   - component: {fileID: 458582037175783546}
+  - component: {fileID: 7979565819386389440}
   m_Layer: 0
   m_Name: Cube.003
   m_TagString: Untagged
@@ -177,7 +178,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4909179212008260321}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.005, y: 0.077, z: -0.158}
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_ConstrainProportionsScale: 0
@@ -212,7 +213,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2818731276855967373, guid: c5f23d335810ebf44868fc41bd0f9b69, type: 3}
+  - {fileID: 2100000, guid: e71d330837be81843b3ceaa9fe32f443, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -475,6 +476,24 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   _isSaveble: 1
+--- !u!114 &7979565819386389440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4909179212008260321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7545c68c4b1ce34ca4131dc4e84e4e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 8696690366712548401}
+  _closed: {x: 0, y: 0, z: 0, w: 1}
+  _opened: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  _doorType: 7
+  _isOpenTaskSendable: 0
+  _isCloseTaskSendable: 0
 --- !u!1 &5048447335429190232
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,7 +603,7 @@ MonoBehaviour:
   m_InteractableCantHoverMeshMaterial: {fileID: 2100000, guid: c4e839d4834f5d146b064c72c579681c, type: 2}
   m_SocketActive: 1
   m_InteractableHoverScale: 1
-  m_RecycleDelayTime: 1
+  m_RecycleDelayTime: 0.2
   m_HoverSocketSnapping: 0
   m_SocketSnappingRadius: 0.1
   m_SocketScaleMode: 0
@@ -833,7 +852,7 @@ MonoBehaviour:
   m_InteractableCantHoverMeshMaterial: {fileID: 2100000, guid: c4e839d4834f5d146b064c72c579681c, type: 2}
   m_SocketActive: 1
   m_InteractableHoverScale: 1
-  m_RecycleDelayTime: 1
+  m_RecycleDelayTime: 0.2
   m_HoverSocketSnapping: 0
   m_SocketSnappingRadius: 0.1
   m_SocketScaleMode: 0
@@ -979,7 +998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d39d395b3b7b5824db6230d2ad735584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttonType: 7
+  ButtonType: 7
   _isTaskSendable: 0
   _isStartOn: 0
   _timerDelay: 1
@@ -1382,7 +1401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d39d395b3b7b5824db6230d2ad735584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttonType: 6
+  ButtonType: 6
   _isTaskSendable: 1
   _isStartOn: 0
   _timerDelay: 1
@@ -1478,6 +1497,7 @@ GameObject:
   - component: {fileID: 5048447337314484830}
   - component: {fileID: 6907150953457956327}
   - component: {fileID: 1051489395627623540}
+  - component: {fileID: 1294503568992027853}
   m_Layer: 0
   m_Name: CentrifugeMachine
   m_TagString: Untagged
@@ -1534,8 +1554,24 @@ MonoBehaviour:
   _powerButton: {fileID: 922089284141183124}
   _startButton: {fileID: 6317786668227578334}
   _animator: {fileID: 9116136619588807942}
+  _cap: {fileID: 0}
   _socketInteractor1: {fileID: 7094006255286764229}
   _socketInteractor2: {fileID: 5877749221852302192}
+--- !u!114 &1294503568992027853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5048447337314484829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5ce9b498491422ca892a40be4373504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sockets:
+  - {fileID: 7094006255286764229}
+  - {fileID: 5877749221852302192}
 --- !u!1 &6016526882853854452
 GameObject:
   m_ObjectHideFlags: 0

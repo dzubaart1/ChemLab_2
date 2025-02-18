@@ -13,6 +13,7 @@ namespace UI.TabletUI.Panels
         [Header("UIs")]
         [SerializeField] private Button _hintButton;
         [SerializeField] private Button _infoButton;
+        [SerializeField] private Button _safetyButton;
         [SerializeField] private TextMeshProUGUI _taskTitleText;
         [SerializeField] private TextMeshProUGUI _taskDescriptionText;
         
@@ -22,12 +23,14 @@ namespace UI.TabletUI.Panels
         {
             _hintButton.onClick.AddListener(OnHintButtonClick);
             _infoButton.onClick.AddListener(OnInfoButtonClick);
+            _safetyButton.onClick.AddListener(OnSafetyButtonClick);
         }
 
         private void OnDisable()
         {
             _hintButton.onClick.RemoveListener(OnHintButtonClick);
             _infoButton.onClick.RemoveListener(OnInfoButtonClick);
+            _safetyButton.onClick.RemoveListener(OnSafetyButtonClick);
         }
 
         private void OnHintButtonClick()
@@ -38,6 +41,11 @@ namespace UI.TabletUI.Panels
         private void OnInfoButtonClick()
         {
             TabletUI.SwitchToInfoPanel();
+        }
+        
+        private void OnSafetyButtonClick()
+        {
+            TabletUI.SwitchToSafetyPanel();
         }
 
         private void Update()

@@ -3,8 +3,14 @@
   "Lab": 0,
   "Number": 36,
   "Title": "Задание 36",
+  "TitleEnglish": null,
   "Description": "Возьмите пипет-дозатор и установите на нём значение 6.00 мл",
+  "DescriptionEnglish": null,
   "Warning": "",
+  "WarningEnglish": null,
+  "SafetyPrecautions": null,
+  "SafetyPrecautionsEnglish": null,
+  "HintImagePath": null,
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
@@ -15,8 +21,9 @@
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
     "$values": [
       {
-        "$type": "BioEngineerLab.Tasks.SideEffects.SetDozatorVolumeLabSideEffect, Assembly-CSharp",
-        "DozatorVolume": 6.0,
+        "$type": "BioEngineerLab.Tasks.SideEffects.SetVolumeLabSideEffect, Assembly-CSharp",
+        "Volume": 6.0,
+        "Container": 6,
         "SideEffectTimeType": 1,
         "SideEffectType": 1
       }

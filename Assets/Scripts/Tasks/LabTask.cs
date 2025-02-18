@@ -12,8 +12,14 @@ namespace BioEngineerLab.Tasks
         public ELab Lab;
         public int Number;
         public string Title;
+        public string TitleEnglish;
         public string Description;
+        public string DescriptionEnglish;
         public string Warning;
+        public string WarningEnglish;
+        public string SafetyPrecautions;
+        public string SafetyPrecautionsEnglish;
+        public string HintImagePath;
         public bool SaveableTask;
 
         public LabActivity LabActivity = new AnchorLabActivity();

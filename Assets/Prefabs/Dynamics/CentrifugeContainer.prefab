@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 5650118537656890982}
   - component: {fileID: 5163627504370787568}
   - component: {fileID: 3562332896420257826}
+  - component: {fileID: 7940693730576836047}
   m_Layer: 0
   m_Name: CentrifugeContainer
   m_TagString: SerializeTransferAndSubstance
@@ -423,6 +424,19 @@ MonoBehaviour:
   _animator: {fileID: 1827639142981799583}
   _openState: Open
   _closeState: Close
+--- !u!114 &7940693730576836047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827639142981799576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 150b62d26b094b4180b2acc5acc1590a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 2549657975540645544}
 --- !u!1 &1827639143061138873
 GameObject:
   m_ObjectHideFlags: 0

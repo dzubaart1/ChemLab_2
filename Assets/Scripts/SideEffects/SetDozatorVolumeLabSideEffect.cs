@@ -3,26 +3,29 @@ using Core;
 
 namespace BioEngineerLab.Tasks.SideEffects
 {
-    public class SetDozatorVolumeLabSideEffect : LabSideEffect
+    public class SetVolumeLabSideEffect : LabSideEffect
     {
-        public float DozatorVolume;
+        public float Volume;
+        public EContainer Container;
 
-        public SetDozatorVolumeLabSideEffect()
-            : base(ESideEffect.SetDozatorVolumeSideEffect, ESideEffectTime.EndTask)
+        public SetVolumeLabSideEffect()
+            : base(ESideEffect.SetVolumeSideEffect, ESideEffectTime.EndTask)
         {
             
         }
 
-        public SetDozatorVolumeLabSideEffect(SetDozatorVolumeLabSideEffect sideEffect)
-            : base(ESideEffect.SetDozatorVolumeSideEffect, sideEffect.SideEffectTimeType)
+        public SetVolumeLabSideEffect(SetVolumeLabSideEffect sideEffect)
+            : base(ESideEffect.SetVolumeSideEffect, sideEffect.SideEffectTimeType)
         {
-            DozatorVolume = sideEffect.DozatorVolume;
+            Volume = sideEffect.Volume;
+            Container = sideEffect.Container;
         }
 
-        public SetDozatorVolumeLabSideEffect(float dozatorVolume)
-            : base(ESideEffect.SetDozatorVolumeSideEffect, ESideEffectTime.EndTask)
+        public SetVolumeLabSideEffect(float volume, EContainer container)
+            : base(ESideEffect.SetVolumeSideEffect, ESideEffectTime.EndTask)
         {
-            DozatorVolume = dozatorVolume;
+            Volume = volume;
+            Container = container;
         }
     }
 }

@@ -3,8 +3,14 @@
   "Lab": 1,
   "Number": 43,
   "Title": "Задание 43",
+  "TitleEnglish": null,
   "Description": "Возьмите стакан с получившимся раствором и последовательно разлейте по 150 мл в чистые пустые емкости с надписями «Сахароза», «Глюкоза», «Лактоза»",
+  "DescriptionEnglish": null,
   "Warning": "",
+  "WarningEnglish": null,
+  "SafetyPrecautions": null,
+  "SafetyPrecautionsEnglish": null,
+  "HintImagePath": null,
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
@@ -25,24 +31,6 @@
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
-        "LabSubstanceProperty": {
-          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "StirPurbleSol",
-          "SubstanceMode": 0,
-          "SubstanceLayer": 1,
-          "SubstanceColorR": 0.320631772,
-          "SubstanceColorG": 0.240299046,
-          "SubstanceColorB": 0.3773585,
-          "SubstanceColorA": 0.807843149,
-          "HintName": ""
-        },
-        "Weight": 120.0,
-        "SideEffectTimeType": 0,
-        "SideEffectType": 0
-      }
-    ]
+    "$values": []
   }
 }

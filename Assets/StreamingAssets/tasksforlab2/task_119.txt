@@ -3,8 +3,14 @@
   "Lab": 1,
   "Number": 119,
   "Title": "Задание 119",
+  "TitleEnglish": null,
   "Description": "Установите на пипет-дозаторе значение 100мкл",
+  "DescriptionEnglish": null,
   "Warning": "",
+  "WarningEnglish": null,
+  "SafetyPrecautions": null,
+  "SafetyPrecautionsEnglish": null,
+  "HintImagePath": null,
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
@@ -15,8 +21,9 @@
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
     "$values": [
       {
-        "$type": "BioEngineerLab.Tasks.SideEffects.SetDozatorVolumeLabSideEffect, Assembly-CSharp",
-        "DozatorVolume": 0.001,
+        "$type": "BioEngineerLab.Tasks.SideEffects.SetVolumeLabSideEffect, Assembly-CSharp",
+        "Volume": 0.001,
+        "Container": 6,
         "SideEffectTimeType": 1,
         "SideEffectType": 1
       }

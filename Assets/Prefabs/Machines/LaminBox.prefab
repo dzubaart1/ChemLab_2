@@ -180,7 +180,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2400, y: 600}
+  m_SizeDelta: {x: 3500, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8410643650911101847
 CanvasRenderer:
@@ -539,7 +539,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: OPEN/CLOSE
+  m_Text: "\u041E\u0422\u041A\u0420\u042B\u0422\u042C/\u0417\u0410\u041A\u0420\u042B\u0422\u042C"
 --- !u!1 &1237246599089773826
 GameObject:
   m_ObjectHideFlags: 0
@@ -1366,7 +1366,7 @@ Transform:
   m_GameObject: {fileID: 2652628127091273401}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.31748587, y: 0.45313084, z: 0.20450875}
+  m_LocalPosition: {x: 0.302, y: 0.453, z: 0.205}
   m_LocalScale: {x: 1.2499996, y: 1.25, z: 1.2499996}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3178,8 +3178,8 @@ MeshRenderer:
   m_Materials:
   - {fileID: 630725860703056086, guid: 3a5f3437cd92e8241876c21dd0257047, type: 3}
   - {fileID: 7989473283760073973, guid: 3a5f3437cd92e8241876c21dd0257047, type: 3}
-  - {fileID: -7670605103691095389, guid: 3a5f3437cd92e8241876c21dd0257047, type: 3}
-  - {fileID: 723496057387062996, guid: 3a5f3437cd92e8241876c21dd0257047, type: 3}
+  - {fileID: 2100000, guid: fb346f84bd85aae4abc26fb1ac96769b, type: 2}
+  - {fileID: 2100000, guid: 9d7b76ccf0fed1f48b23e5882ee9445e, type: 2}
   - {fileID: -5995221663958690155, guid: 3a5f3437cd92e8241876c21dd0257047, type: 3}
   - {fileID: 5746220504281124774, guid: 3a5f3437cd92e8241876c21dd0257047, type: 3}
   - {fileID: 131695951205099084, guid: 3a5f3437cd92e8241876c21dd0257047, type: 3}
@@ -3309,10 +3309,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 71fa6e291c0d1554ca78ace76dbdcde7, type: 3}
-    m_FontSize: 267
+    m_FontSize: 180
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 267
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -3320,9 +3320,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Bottles
-
-'
+  m_Text: "\u0411\u0443\u0442\u044B\u043B\u043E\u0447\u043A\u0438"
 --- !u!1 &6480526928300409214
 GameObject:
   m_ObjectHideFlags: 0
@@ -3390,10 +3388,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 71fa6e291c0d1554ca78ace76dbdcde7, type: 3}
-    m_FontSize: 267
+    m_FontSize: 180
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 267
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -3401,7 +3399,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Petri Dishes
+  m_Text: "\u0427\u0430\u0448\u0438 \u043F\u0435\u0442\u0440\u0438"
 --- !u!1 &6554935487267407840
 GameObject:
   m_ObjectHideFlags: 0
@@ -4550,10 +4548,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 71fa6e291c0d1554ca78ace76dbdcde7, type: 3}
-    m_FontSize: 267
+    m_FontSize: 180
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 267
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -4561,7 +4559,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Bacterial vial
+  m_Text: "\u0411\u0430\u043D\u043E\u0447\u043A\u0430 \u0441 \u0431\u0430\u043A\u0442\u0435\u0440\u0438\u044F\u043C\u0438"
 --- !u!1 &7492408783232776125
 GameObject:
   m_ObjectHideFlags: 0
@@ -4990,7 +4988,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -0.22199315, y: -0.3625047}
-  m_SizeDelta: {x: 2400, y: 600}
+  m_SizeDelta: {x: 3500, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5446058122716269481
 Canvas:
@@ -5597,8 +5595,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.1960003, y: 0.5790532, z: 0.048504528}
-  m_Center: {x: -0.0009702494, y: -0.021081556, z: 0.04694505}
+  m_Size: {x: 1.1960007, y: 0.5790532, z: 0.053159527}
+  m_Center: {x: -0.00097028416, y: -0.021081557, z: 0.04927257}
 --- !u!114 &4005749007764579355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6239,9 +6237,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5411123788944938235}
     m_Modifications:
+    - target: {fileID: 534678857631573333, guid: f86b3624d38d0ab45ac0441fdf0af869, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4069361605357640269, guid: f86b3624d38d0ab45ac0441fdf0af869, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8333653112805918313, guid: f86b3624d38d0ab45ac0441fdf0af869, type: 3}
       propertyPath: m_Name
       value: TrashMachine Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8333653112805918313, guid: f86b3624d38d0ab45ac0441fdf0af869, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8333653112805918314, guid: f86b3624d38d0ab45ac0441fdf0af869, type: 3}
       propertyPath: m_LocalScale.x
@@ -6293,6 +6303,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8333653112805918314, guid: f86b3624d38d0ab45ac0441fdf0af869, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9180161829888154081, guid: f86b3624d38d0ab45ac0441fdf0af869, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6367,6 +6381,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7736622502032692014, guid: ed5824fe0bc1c5b488b01e9676374b27, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7736622502646861205, guid: ed5824fe0bc1c5b488b01e9676374b27, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

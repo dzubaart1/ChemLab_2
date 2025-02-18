@@ -10,12 +10,14 @@ using UnityEngine.UI;
 
 namespace UI.TabletUI.Panels
 {
-    public class HintTabletPanel : BaseTabletPanel, ISideEffectActivator
+    public class HintTabletPanel : BaseTabletPanel
     {
         [SerializeField] private Image _taskHintImage;
         [SerializeField] private Button _returnButton;
         
-        public void Init()
+        [CanBeNull] private LabTask _showingTask;
+        
+        /*public void Init()
         {
             GameManager gameManager = GameManager.Instance;
             if (gameManager == null)
@@ -29,7 +31,7 @@ namespace UI.TabletUI.Panels
             }
             
             gameManager.CurrentBaseLocalManager.AddSideEffectActivator(this);
-        }
+        }*/
 
         private void OnEnable()
         {
@@ -46,22 +48,24 @@ namespace UI.TabletUI.Panels
             TabletUI.SwitchToMainPanel();
         }
 
+        private void Update()
+        {
+            if (_showingTask == null)
+            {
+                return;
+            }
+
+            _taskHintImage.sprite = ResourcesDatabase.ReadHintImage(_showingTask.HintImagePath);
+        }
+
         public void NewTask()
         {
             _taskHintImage.sprite = null;
         }
-        
-        public void OnActivateSideEffect(LabSideEffect sideEffect)
-        {
-            if (sideEffect is not SetHintImgSideEffect setHintImgSideEffect)
-            {
-                return;
-            }
-            _taskHintImage.sprite = ResourcesDatabase.ReadHintImage(setHintImgSideEffect.HintImageFullName);
-        }
 
         public override void SetTaskToShow(LabTask task)
         {
+            _showingTask = task;
         }
 
         public override void SetLabToShow(ELab lab)

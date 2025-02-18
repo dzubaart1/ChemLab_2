@@ -90,8 +90,8 @@ namespace BioEngineerLab.Tasks
                 case ESideEffect.AddReagentsSideEffect:
                     _soLabTask.SetSideEffect(new AddReagentsLabSideEffect(), effectID);
                     break;
-                case ESideEffect.SetDozatorVolumeSideEffect:
-                    _soLabTask.SetSideEffect(new SetDozatorVolumeLabSideEffect(), effectID);
+                case ESideEffect.SetVolumeSideEffect:
+                    _soLabTask.SetSideEffect(new SetVolumeLabSideEffect(), effectID);
                     break;
                 case ESideEffect.SpawnDocSideEffect:
                     _soLabTask.SetSideEffect(new SpawnDocLabSideEffect(), effectID);
@@ -162,8 +162,14 @@ namespace BioEngineerLab.Tasks
             _soLabTask.LabTask.Lab = (ELab)EditorGUILayout.EnumPopup("Lab", _soLabTask.LabTask.Lab);
             _soLabTask.LabTask.Number = EditorGUILayout.IntField("Number", _soLabTask.LabTask.Number);
             _soLabTask.LabTask.Title = EditorGUILayout.TextField("Title", _soLabTask.LabTask.Title);
+            _soLabTask.LabTask.TitleEnglish = EditorGUILayout.TextField("Title English", _soLabTask.LabTask.TitleEnglish);
             _soLabTask.LabTask.Description = EditorGUILayout.TextField("Description", _soLabTask.LabTask.Description, style, GUILayout.Height(100));
+            _soLabTask.LabTask.DescriptionEnglish = EditorGUILayout.TextField("Description English", _soLabTask.LabTask.DescriptionEnglish, style, GUILayout.Height(100));
             _soLabTask.LabTask.Warning = EditorGUILayout.TextField("Warning", _soLabTask.LabTask.Warning, style, GUILayout.Height(150));
+            _soLabTask.LabTask.WarningEnglish = EditorGUILayout.TextField("Warning English", _soLabTask.LabTask.WarningEnglish, style, GUILayout.Height(150));
+            _soLabTask.LabTask.SafetyPrecautions = EditorGUILayout.TextField("Safety Precautions", _soLabTask.LabTask.SafetyPrecautions, style, GUILayout.Height(150));
+            _soLabTask.LabTask.SafetyPrecautionsEnglish = EditorGUILayout.TextField("Safety Precautions English", _soLabTask.LabTask.SafetyPrecautionsEnglish, style, GUILayout.Height(150));
+            _soLabTask.LabTask.HintImagePath = EditorGUILayout.TextField("Hint Image Path", _soLabTask.LabTask.HintImagePath);
             _soLabTask.LabTask.SaveableTask = EditorGUILayout.Toggle("Saveable Task", _soLabTask.LabTask.SaveableTask);
         }
 

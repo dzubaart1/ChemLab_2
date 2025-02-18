@@ -43,6 +43,9 @@ namespace Core.Services
             {
                 fromLabContainer.DeleteSubstanceByLayer(transferSubstance.SubstanceProperty.SubstanceLayer);
             }
+            
+            fromLabContainer.UpdateView();
+            toLabContainer.UpdateView();
 
             return true;
         }

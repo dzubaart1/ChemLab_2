@@ -3,7 +3,7 @@
   "Lab": 0,
   "Number": 103,
   "Title": "Задание 103",
-  "Description": "Остановите центрифугу",
+  "Description": "Остановите центрифугу и откройте крышку",
   "Warning": "",
   "SaveableTask": false,
   "LabActivity": {
@@ -14,14 +14,6 @@
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.ConstructorSideEffect, Assembly-CSharp",
-        "SocketType": 13,
-        "IsLock": false,
-        "SideEffectTimeType": 1,
-        "SideEffectType": 3
-      }
-    ]
+    "$values": []
   }
 }

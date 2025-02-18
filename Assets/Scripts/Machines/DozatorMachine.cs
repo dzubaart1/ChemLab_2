@@ -33,14 +33,17 @@ namespace BioEngineerLab.Machines
 
         public void OnActivateSideEffect(LabSideEffect sideEffect)
         {
-            if (sideEffect is not SetDozatorVolumeLabSideEffect setDozatorVolumeLabSideEffect)
+            if (sideEffect is not SetVolumeLabSideEffect setVolumeLabSideEffect)
             {
                 return;
             }
 
-            _text.text = setDozatorVolumeLabSideEffect.DozatorVolume.ToString("F4");
-            
-            _labContainer.ChangeMaxVolume(setDozatorVolumeLabSideEffect.DozatorVolume);
+            if (setVolumeLabSideEffect.Container != EContainer.DozatorContainer)
+            {
+                return;
+            }
+
+            _text.text = setVolumeLabSideEffect.Volume.ToString("F4");
         }
     }
 }
