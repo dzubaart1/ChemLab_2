@@ -4,9 +4,9 @@
   "Number": 87,
   "Title": "Задание 87",
   "TitleEnglish": null,
-  "Description": "Подойдите к панели управления и нажмите «ДЕЖУРНОЕ ОСВЕЩЕНИЕ»",
+  "Description": "Снимите бахилы, выбросите их в мусорную корзину",
   "DescriptionEnglish": null,
-  "Warning": "Дежурное освещение — это система освещения, предназначенная для поддержания минимально необходимого уровня освещенности во время перерывов в работе или в ночное время. Такое освещение позволяет сохранять видимость внутри лаборатории для обеспечения безопасности, поддержания работы оборудования и быстрого реагирования в случае необходимости.",
+  "Warning": "",
   "WarningEnglish": null,
   "SafetyPrecautions": null,
   "SafetyPrecautionsEnglish": null,
@@ -14,7 +14,7 @@
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 34,
+    "ButtonType": 32,
     "ActivityType": 6
   },
   "LabSideEffects": {

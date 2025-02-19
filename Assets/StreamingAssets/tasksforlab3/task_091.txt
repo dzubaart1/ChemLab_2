@@ -3,13 +3,19 @@
   "Lab": 2,
   "Number": 91,
   "Title": "Задание 91",
-  "Description": "Выйдите и закройте дверь",
+  "TitleEnglish": null,
+  "Description": "Откройте дверь в куб",
+  "DescriptionEnglish": null,
   "Warning": "",
+  "WarningEnglish": null,
+  "SafetyPrecautions": null,
+  "SafetyPrecautionsEnglish": null,
+  "HintImagePath": null,
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.DoorLabActivity, Assembly-CSharp",
     "Door": 2,
-    "DoorActivity": 1,
+    "DoorActivity": 0,
     "ActivityType": 7
   },
   "LabSideEffects": {

@@ -3,12 +3,18 @@
   "Lab": 2,
   "Number": 86,
   "Title": "Задание 86",
-  "Description": "Снимите бахилы, выбросите их в мусорную корзину",
+  "TitleEnglish": null,
+  "Description": "Снимите и повесьте халат",
+  "DescriptionEnglish": null,
   "Warning": "",
-  "SaveableTask": false,
+  "WarningEnglish": null,
+  "SafetyPrecautions": null,
+  "SafetyPrecautionsEnglish": null,
+  "HintImagePath": null,
+  "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 32,
+    "ButtonType": 33,
     "ActivityType": 6
   },
   "LabSideEffects": {

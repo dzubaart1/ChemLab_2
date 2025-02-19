@@ -3,12 +3,18 @@
   "Lab": 2,
   "Number": 89,
   "Title": "Задание 89",
-  "Description": "Для открытия двери нажмите кнопку «ключ»",
-  "Warning": "",
+  "TitleEnglish": null,
+  "Description": "Нажмите  «БАКТЕРИЦИДНАЯ ОЧИСТКА» ",
+  "DescriptionEnglish": null,
+  "Warning": "Бактерицидная очистка — это процесс удаления или уничтожения бактерий на различных поверхностях и в воздухе с целью предотвращения загрязнения образцов и обеспечения стерильных условий для исследований. Для этого обычно используются такие методы, как:\r\n\r\n•\tИспользование ультрафиолетовых ламп для дезинфекции воздуха и поверхностей;\r\n•\tХимическая обработка, включающая дезинфицирующие средства;\r\n•\tФильтрация воздуха с помощью HEPA-фильтров, которые удаляют бактерии и другие микробы.\r\n",
+  "WarningEnglish": null,
+  "SafetyPrecautions": null,
+  "SafetyPrecautionsEnglish": null,
+  "HintImagePath": null,
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 35,
+    "ButtonType": 23,
     "ActivityType": 6
   },
   "LabSideEffects": {
