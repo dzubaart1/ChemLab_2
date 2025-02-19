@@ -17,6 +17,7 @@ MonoBehaviour:
     - SubstanceName: SplitHardAgarSed
       SubstanceMode: 0
       SubstanceLayer: 2
+      IsLiquid: 1
       SubstanceColorR: 1
       SubstanceColorG: 0.7995272
       SubstanceColorB: 0.495283
@@ -27,6 +28,7 @@ MonoBehaviour:
     - SubstanceName: SplitHardAgarSed
       SubstanceMode: 0
       SubstanceLayer: 2
+      IsLiquid: 1
       SubstanceColorR: 1
       SubstanceColorG: 0.7995272
       SubstanceColorB: 0.495283

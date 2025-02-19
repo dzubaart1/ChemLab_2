@@ -16,6 +16,7 @@ MonoBehaviour:
     SubstanceName: NaCl
     SubstanceMode: 0
     SubstanceLayer: 1
+    IsLiquid: 0
     SubstanceColorR: 0.9622642
     SubstanceColorG: 0.70989674
     SubstanceColorB: 0.70989674

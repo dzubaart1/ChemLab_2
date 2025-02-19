@@ -35,6 +35,7 @@ namespace BioEngineerLab.Tasks
             _soSubstanceProperty.LabSubstanceProperty.SubstanceLayer = (ESubstanceLayer)EditorGUILayout.EnumPopup("Substance Layer", _soSubstanceProperty.LabSubstanceProperty.SubstanceLayer);
             _soSubstanceProperty.LabSubstanceProperty.SubstanceMode = (ESubstanceMode)EditorGUILayout.EnumPopup("Substance Mode", _soSubstanceProperty.LabSubstanceProperty.SubstanceMode);
             
+            _soSubstanceProperty.LabSubstanceProperty.IsLiquid = EditorGUILayout.Toggle("Liquid", _soSubstanceProperty.LabSubstanceProperty.IsLiquid);
             substanceColor = EditorGUILayout.ColorField("Substance Color", substanceColor);
 
             _soSubstanceProperty.LabSubstanceProperty.SubstanceColorR = substanceColor.r;

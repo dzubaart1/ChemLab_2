@@ -16,6 +16,7 @@ MonoBehaviour:
     SubstanceName: PeptonNaClBCP
     SubstanceMode: 0
     SubstanceLayer: 1
+    IsLiquid: 0
     SubstanceColorR: 0.2735849
     SubstanceColorG: 0.16066316
     SubstanceColorB: 0.10194909

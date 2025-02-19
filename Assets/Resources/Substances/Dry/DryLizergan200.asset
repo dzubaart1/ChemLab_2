@@ -16,6 +16,7 @@ MonoBehaviour:
     SubstanceName: DryLizergan100
     SubstanceMode: 0
     SubstanceLayer: 0
+    IsLiquid: 0
     SubstanceColorR: 0.8396226
     SubstanceColorG: 0.7201092
     SubstanceColorB: 0.59011215

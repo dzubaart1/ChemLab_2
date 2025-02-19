@@ -17,6 +17,7 @@ MonoBehaviour:
     - SubstanceName: Saharoza
       SubstanceMode: 0
       SubstanceLayer: 1
+      IsLiquid: 0
       SubstanceColorR: 0.9300523
       SubstanceColorG: 0.8726415
       SubstanceColorB: 1
@@ -25,6 +26,7 @@ MonoBehaviour:
     - SubstanceName: StirPurbleSol
       SubstanceMode: 0
       SubstanceLayer: 1
+      IsLiquid: 1
       SubstanceColorR: 0.32063177
       SubstanceColorG: 0.24029905
       SubstanceColorB: 0.3773585
@@ -35,6 +37,7 @@ MonoBehaviour:
     - SubstanceName: Sakaroza and Purple Sol
       SubstanceMode: 0
       SubstanceLayer: 1
+      IsLiquid: 1
       SubstanceColorR: 0.61556536
       SubstanceColorG: 0.46364364
       SubstanceColorB: 0.6509434

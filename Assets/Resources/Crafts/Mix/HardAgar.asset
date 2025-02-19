@@ -17,6 +17,7 @@ MonoBehaviour:
     - SubstanceName: StirCaCl2H20
       SubstanceMode: 0
       SubstanceLayer: 1
+      IsLiquid: 1
       SubstanceColorR: 0.94716984
       SubstanceColorG: 0.6701673
       SubstanceColorB: 0.6701673
@@ -25,6 +26,7 @@ MonoBehaviour:
     - SubstanceName: StirNa2HPO4AgarH20
       SubstanceMode: 0
       SubstanceLayer: 1
+      IsLiquid: 1
       SubstanceColorR: 0.96082616
       SubstanceColorG: 0.7882353
       SubstanceColorB: 1
@@ -35,6 +37,7 @@ MonoBehaviour:
     - SubstanceName: HardAgar
       SubstanceMode: 0
       SubstanceLayer: 1
+      IsLiquid: 1
       SubstanceColorR: 0.5007565
       SubstanceColorG: 0.8773585
       SubstanceColorB: 0.8356848

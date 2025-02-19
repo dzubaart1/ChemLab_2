@@ -17,6 +17,7 @@ MonoBehaviour:
     - SubstanceName: Na2HPO4AgarH20
       SubstanceMode: 0
       SubstanceLayer: 1
+      IsLiquid: 1
       SubstanceColorR: 0.7509978
       SubstanceColorG: 0.5568628
       SubstanceColorB: 0.8392157
@@ -27,6 +28,7 @@ MonoBehaviour:
     - SubstanceName: StirNa2HPO4AgarH20
       SubstanceMode: 0
       SubstanceLayer: 1
+      IsLiquid: 1
       SubstanceColorR: 0.96082616
       SubstanceColorG: 0.7882353
       SubstanceColorB: 1

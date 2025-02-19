@@ -16,6 +16,7 @@ MonoBehaviour:
     SubstanceName: Bromocresol purple
     SubstanceMode: 0
     SubstanceLayer: 1
+    IsLiquid: 0
     SubstanceColorR: 0.1877714
     SubstanceColorG: 0.1254902
     SubstanceColorB: 0.1882353

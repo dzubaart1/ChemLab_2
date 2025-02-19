@@ -16,6 +16,7 @@ MonoBehaviour:
     SubstanceName: HardAgar
     SubstanceMode: 0
     SubstanceLayer: 1
+    IsLiquid: 1
     SubstanceColorR: 0.5007565
     SubstanceColorG: 0.8773585
     SubstanceColorB: 0.8356848

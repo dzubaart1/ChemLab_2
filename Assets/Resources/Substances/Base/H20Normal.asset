@@ -16,6 +16,7 @@ MonoBehaviour:
     SubstanceName: H2O
     SubstanceMode: 0
     SubstanceLayer: 1
+    IsLiquid: 1
     SubstanceColorR: 0.40726238
     SubstanceColorG: 0.4974264
     SubstanceColorB: 0.6037736

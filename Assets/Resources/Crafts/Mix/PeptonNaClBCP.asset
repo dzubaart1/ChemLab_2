@@ -17,6 +17,7 @@ MonoBehaviour:
     - SubstanceName: PeptonNaCl
       SubstanceMode: 0
       SubstanceLayer: 1
+      IsLiquid: 0
       SubstanceColorR: 0.8207547
       SubstanceColorG: 0.71031445
       SubstanceColorB: 0.615566
@@ -25,6 +26,7 @@ MonoBehaviour:
     - SubstanceName: Bromocresol purple
       SubstanceMode: 0
       SubstanceLayer: 1
+      IsLiquid: 0
       SubstanceColorR: 0.1877714
       SubstanceColorG: 0.1254902
       SubstanceColorB: 0.1882353
@@ -35,6 +37,7 @@ MonoBehaviour:
     - SubstanceName: PeptonNaClBCP
       SubstanceMode: 0
       SubstanceLayer: 1
+      IsLiquid: 0
       SubstanceColorR: 0.2735849
       SubstanceColorG: 0.16066316
       SubstanceColorB: 0.10194909

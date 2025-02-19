@@ -16,6 +16,7 @@ MonoBehaviour:
     SubstanceName: LizerganRings
     SubstanceMode: 0
     SubstanceLayer: 0
+    IsLiquid: 0
     SubstanceColorR: 0.4943396
     SubstanceColorG: 0.39779922
     SubstanceColorB: 0.34976858

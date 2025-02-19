@@ -16,6 +16,7 @@ MonoBehaviour:
     SubstanceName: StirCaCl2H20
     SubstanceMode: 0
     SubstanceLayer: 1
+    IsLiquid: 1
     SubstanceColorR: 0.94716984
     SubstanceColorG: 0.6701673
     SubstanceColorB: 0.6701673

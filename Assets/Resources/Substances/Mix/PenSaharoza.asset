@@ -16,6 +16,7 @@ MonoBehaviour:
     SubstanceName: PenicilliumSaharoza
     SubstanceMode: 0
     SubstanceLayer: 1
+    IsLiquid: 1
     SubstanceColorR: 0.6296133
     SubstanceColorG: 0.5372549
     SubstanceColorB: 0.7058824

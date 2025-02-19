@@ -16,10 +16,15 @@ namespace Containers
     public class LabContainer : MonoBehaviour, ISaveableContainer, ISideEffectActivator
     {
         [Serializable]
-        private struct MeshRendererConfig
+        private struct MeshRendererConfig 
         {
             public ESubstanceLayer Layer;
             public MeshRenderer MeshRenderer;
+            
+            public bool IsLiquid;
+            public AnimationCurve XScaleWeightSubstanceCurve;
+            public AnimationCurve YScaleWeightSubstanceCurve;
+            public AnimationCurve ZScaleWeightSubstanceCurve;
         }
         
         private class SavedData
@@ -40,9 +45,6 @@ namespace Containers
         [SerializeField] private bool _isWeightableContainer;
         [SerializeField] private bool _isSpoonContainer;
         [SerializeField] private bool _isAnchorContainer;
-        [SerializeField] private AnimationCurve _bottomMediumMeshesXScaleWeightSubstanceCurve;
-        [SerializeField] private AnimationCurve _bottomMediumMeshesYScaleWeightSubstanceCurve;
-        [SerializeField] private AnimationCurve _bottomMediumMeshesZScaleWeightSubstanceCurve;
 
         [Space]
         [Header("Meshes")]
@@ -252,12 +254,32 @@ namespace Containers
 
                 if (_substances[i] == null)
                 {
-                    meshRenderer.enabled = false;
+                    if (TryGetMeshRendererByLayerAndLiquid((ESubstanceLayer)i, true,
+                            out MeshRendererConfig meshRendererConfigLiquid))
+                    {
+                        meshRendererConfigLiquid.MeshRenderer.enabled = false;
+                    }
+                    
+                    if (TryGetMeshRendererByLayerAndLiquid((ESubstanceLayer)i, false,
+                            out MeshRendererConfig meshRendererConfigDry))
+                    {
+                        meshRendererConfigDry.MeshRenderer.enabled = false;
+                    }
                 }
                 else
                 {
-                    meshRenderer.enabled = true;
-                    meshRenderer.material.color = _substances[i].GetColor();
+                    if (TryGetMeshRendererByLayerAndLiquid((ESubstanceLayer)i, !_substances[i].SubstanceProperty.IsLiquid,
+                            out MeshRendererConfig meshRendererConfigDry))
+                    {
+                        meshRendererConfigDry.MeshRenderer.enabled = false;
+                    }
+                    
+                     if (TryGetMeshRendererByLayerAndLiquid((ESubstanceLayer)i, _substances[i].SubstanceProperty.IsLiquid,
+                            out MeshRendererConfig meshRendererConfigLiquid))
+                    {
+                        meshRendererConfigLiquid.MeshRenderer.enabled = true;
+                        meshRendererConfigLiquid.MeshRenderer.material.color = _substances[i].GetColor();
+                    }
                 }
             }
 
@@ -273,14 +295,15 @@ namespace Containers
                     continue;
                 }
                 
-                if ((ESubstanceLayer)i == ESubstanceLayer.Bottom || (ESubstanceLayer)i == ESubstanceLayer.Middle)
+                if (TryGetMeshRendererByLayerAndLiquid((ESubstanceLayer)i, _substances[i].SubstanceProperty.IsLiquid,
+                        out MeshRendererConfig meshRendererConfig))
                 {
-                    Vector3 scale = meshRenderer.transform.localScale;
+                    Vector3 scale = meshRendererConfig.MeshRenderer.transform.localScale;
 
-                    meshRenderer.transform.localScale = new Vector3(
-                        _bottomMediumMeshesXScaleWeightSubstanceCurve.Evaluate(_substances[i].Weight),
-                        _bottomMediumMeshesYScaleWeightSubstanceCurve.Evaluate(_substances[i].Weight),
-                        _bottomMediumMeshesZScaleWeightSubstanceCurve.Evaluate(_substances[i].Weight));
+                    meshRendererConfig.MeshRenderer.transform.localScale = new Vector3(
+                        meshRendererConfig.XScaleWeightSubstanceCurve.Evaluate(_substances[i].Weight),
+                        meshRendererConfig.YScaleWeightSubstanceCurve.Evaluate(_substances[i].Weight),
+                        meshRendererConfig.ZScaleWeightSubstanceCurve.Evaluate(_substances[i].Weight));
                 }
             }
         }
@@ -299,6 +322,22 @@ namespace Containers
                 if (config.Layer == layer)
                 {
                     meshRenderer = config.MeshRenderer;
+                    return true;
+                }
+            }
+
+            return false;
+        }
+        
+        private bool TryGetMeshRendererByLayerAndLiquid(ESubstanceLayer layer, bool isLiquid, out MeshRendererConfig meshRendererConfig)
+        {
+            meshRendererConfig = new MeshRendererConfig();
+            
+            foreach (var config in _meshRendererConfigs)
+            {
+                if (config.Layer == layer && config.IsLiquid == isLiquid)
+                {
+                    meshRendererConfig = config;
                     return true;
                 }
             }

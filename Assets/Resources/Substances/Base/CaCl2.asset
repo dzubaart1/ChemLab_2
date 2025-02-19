@@ -16,6 +16,7 @@ MonoBehaviour:
     SubstanceName: CaCl2
     SubstanceMode: 0
     SubstanceLayer: 1
+    IsLiquid: 0
     SubstanceColorR: 0.5030705
     SubstanceColorG: 0.8962264
     SubstanceColorB: 0.82095945

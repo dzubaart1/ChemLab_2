@@ -16,6 +16,7 @@ MonoBehaviour:
     SubstanceName: Bad
     SubstanceMode: 0
     SubstanceLayer: 1
+    IsLiquid: 0
     SubstanceColorR: 0
     SubstanceColorG: 0.2981131
     SubstanceColorB: 0.028053224

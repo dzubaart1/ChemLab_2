@@ -16,6 +16,7 @@ MonoBehaviour:
     SubstanceName: DryAgarSed
     SubstanceMode: 0
     SubstanceLayer: 1
+    IsLiquid: 0
     SubstanceColorR: 0.6415094
     SubstanceColorG: 0.49518982
     SubstanceColorB: 0.3721965

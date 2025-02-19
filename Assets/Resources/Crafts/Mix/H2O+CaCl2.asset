@@ -17,6 +17,7 @@ MonoBehaviour:
     - SubstanceName: H2O
       SubstanceMode: 0
       SubstanceLayer: 1
+      IsLiquid: 1
       SubstanceColorR: 0.40726238
       SubstanceColorG: 0.4974264
       SubstanceColorB: 0.6037736
@@ -25,6 +26,7 @@ MonoBehaviour:
     - SubstanceName: CaCl2
       SubstanceMode: 0
       SubstanceLayer: 1
+      IsLiquid: 0
       SubstanceColorR: 0.5030705
       SubstanceColorG: 0.8962264
       SubstanceColorB: 0.82095945
@@ -35,6 +37,7 @@ MonoBehaviour:
     - SubstanceName: CaCl2H2O
       SubstanceMode: 0
       SubstanceLayer: 1
+      IsLiquid: 1
       SubstanceColorR: 0.4719206
       SubstanceColorG: 0.82240677
       SubstanceColorB: 0.9528302

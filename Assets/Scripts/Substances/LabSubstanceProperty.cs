@@ -9,6 +9,7 @@ namespace BioEngineerLab.Tasks
         public string SubstanceName;
         public ESubstanceMode SubstanceMode;
         public ESubstanceLayer SubstanceLayer;
+        public bool IsLiquid;
         public float SubstanceColorR;
         public float SubstanceColorG;
         public float SubstanceColorB;
@@ -24,6 +25,7 @@ namespace BioEngineerLab.Tasks
             SubstanceName = labSubstanceProperty.SubstanceName;
             SubstanceMode = labSubstanceProperty.SubstanceMode;
             SubstanceLayer = labSubstanceProperty.SubstanceLayer;
+            IsLiquid = labSubstanceProperty.IsLiquid;
             SubstanceColorA = labSubstanceProperty.SubstanceColorA;
             SubstanceColorB = labSubstanceProperty.SubstanceColorB;
             SubstanceColorG = labSubstanceProperty.SubstanceColorG;

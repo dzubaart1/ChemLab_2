@@ -17,6 +17,7 @@ MonoBehaviour:
     - SubstanceName: LizerganRings
       SubstanceMode: 0
       SubstanceLayer: 0
+      IsLiquid: 0
       SubstanceColorR: 0.4943396
       SubstanceColorG: 0.39779922
       SubstanceColorB: 0.34976858
@@ -25,6 +26,7 @@ MonoBehaviour:
     - SubstanceName: Penicillium
       SubstanceMode: 0
       SubstanceLayer: 1
+      IsLiquid: 1
       SubstanceColorR: 0.9528302
       SubstanceColorG: 0.92714447
       SubstanceColorB: 0.7775454
@@ -35,6 +37,7 @@ MonoBehaviour:
     - SubstanceName: LizerganRings
       SubstanceMode: 0
       SubstanceLayer: 0
+      IsLiquid: 0
       SubstanceColorR: 0.4943396
       SubstanceColorG: 0.39779922
       SubstanceColorB: 0.34976858
@@ -43,6 +46,7 @@ MonoBehaviour:
     - SubstanceName: Penicillium
       SubstanceMode: 0
       SubstanceLayer: 1
+      IsLiquid: 1
       SubstanceColorR: 0.9528302
       SubstanceColorG: 0.92714447
       SubstanceColorB: 0.7775454

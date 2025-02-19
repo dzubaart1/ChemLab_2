@@ -17,6 +17,7 @@ MonoBehaviour:
     - SubstanceName: Sakaroza and Purple Sol
       SubstanceMode: 0
       SubstanceLayer: 1
+      IsLiquid: 1
       SubstanceColorR: 0.61556536
       SubstanceColorG: 0.46364364
       SubstanceColorB: 0.6509434
@@ -25,6 +26,7 @@ MonoBehaviour:
     - SubstanceName: Penicillium
       SubstanceMode: 0
       SubstanceLayer: 1
+      IsLiquid: 1
       SubstanceColorR: 0.9528302
       SubstanceColorG: 0.92714447
       SubstanceColorB: 0.7775454
@@ -35,6 +37,7 @@ MonoBehaviour:
     - SubstanceName: PenicilliumSaharoza
       SubstanceMode: 0
       SubstanceLayer: 1
+      IsLiquid: 1
       SubstanceColorR: 0.6296133
       SubstanceColorG: 0.5372549
       SubstanceColorB: 0.7058824

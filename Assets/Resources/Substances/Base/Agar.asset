@@ -16,6 +16,7 @@ MonoBehaviour:
     SubstanceName: Agar
     SubstanceMode: 0
     SubstanceLayer: 1
+    IsLiquid: 0
     SubstanceColorR: 0.8773585
     SubstanceColorG: 0.8595068
     SubstanceColorB: 0.3600481

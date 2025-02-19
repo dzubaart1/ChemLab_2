@@ -17,6 +17,7 @@ MonoBehaviour:
     - SubstanceName: PenicilliumLaktoza
       SubstanceMode: 0
       SubstanceLayer: 1
+      IsLiquid: 1
       SubstanceColorR: 0.7058824
       SubstanceColorG: 0.5372549
       SubstanceColorB: 0.6553261
@@ -27,6 +28,7 @@ MonoBehaviour:
     - SubstanceName: ShakedLaktoza
       SubstanceMode: 0
       SubstanceLayer: 1
+      IsLiquid: 1
       SubstanceColorR: 1
       SubstanceColorG: 0.8221353
       SubstanceColorB: 0.2924527
