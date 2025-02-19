@@ -5,6 +5,7 @@ using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 namespace UI.TabletUI.Panels
 {
@@ -57,6 +58,24 @@ namespace UI.TabletUI.Panels
 
             _taskTitleText.text = _showingTask.Title;
             _taskDescriptionText.text = _showingTask.Description;
+
+            if (String.IsNullOrEmpty(_showingTask.Warning))
+            {
+                _infoButton.interactable = false;
+            }
+            else
+            {
+                _infoButton.interactable = true;
+            }
+
+            if (String.IsNullOrEmpty(_showingTask.SafetyPrecautions))
+            {
+                _safetyButton.interactable = false;
+            }
+            else
+            {
+                _safetyButton.interactable = true;
+            }
         }
 
         public override void SetTaskToShow(LabTask task)

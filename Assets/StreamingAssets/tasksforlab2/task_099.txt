@@ -8,7 +8,7 @@
   "DescriptionEnglish": null,
   "Warning": "",
   "WarningEnglish": null,
-  "SafetyPrecautions": null,
+  "SafetyPrecautions": "Открывать необходимо медленно, во избежание резкого перепада температуры и в целях избежание большого потока горячего пара",
   "SafetyPrecautionsEnglish": null,
   "HintImagePath": null,
   "SaveableTask": true,

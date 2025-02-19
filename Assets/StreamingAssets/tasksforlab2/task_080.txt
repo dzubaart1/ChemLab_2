@@ -8,7 +8,7 @@
   "DescriptionEnglish": null,
   "Warning": "",
   "WarningEnglish": null,
-  "SafetyPrecautions": null,
+  "SafetyPrecautions": "Опускать дверцу следует медленно и аккуратно, во избежание поломки УФ-лампы.",
   "SafetyPrecautionsEnglish": null,
   "HintImagePath": null,
   "SaveableTask": false,

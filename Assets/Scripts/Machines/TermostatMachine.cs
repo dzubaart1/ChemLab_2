@@ -1,12 +1,15 @@
-﻿using BioEngineerLab.Activities;
+﻿using System;
+using BioEngineerLab.Activities;
 using Containers;
 using Core;
 using Core.Services;
 using Crafting;
 using Mechanics;
 using Saveables;
+using TMPro;
 using UI.Components;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Machines
 {
@@ -15,17 +18,25 @@ namespace Machines
         private class SavedData
         {
             public bool IsPower;
+            public bool IsHeating;
         }
 
         [Header("UIs")]
         [SerializeField] private ButtonComponent _powerButton;
+        [SerializeField] private ButtonComponent _UpButton;
+        [SerializeField] private ButtonComponent _PButton;
+        [SerializeField] private TextMeshProUGUI _text;
         
         [Header("Refs")]
         [SerializeField] private VRSocketInteractor _socketInteractor1;
         [SerializeField] private VRSocketInteractor _socketInteractor2;
         [SerializeField] private Door _door;
+        [SerializeField] private Light _heatingLight;
         
         private SavedData _savedData = new SavedData();
+        private float _timer = 2.0f;
+        private float _temperature;
+        private bool _isHeating;
         
         private void Start()
         {
@@ -41,16 +52,65 @@ namespace Machines
             }
             
             gameManager.CurrentBaseLocalManager.AddSaveableUI(this);
+            _text.text = "";
         }
         
         private void OnEnable()
         {
             _door.DoorClosedEvent += OnDoorClosed;
+            
+            _powerButton.ClickBtnEvent += OnPowerButtonClick;
+            _UpButton.ClickBtnEvent += OnUpButtonClick;
+            _PButton.ClickBtnEvent += OnPButtonClick;
         }
 
         private void OnDisable()
         {
             _door.DoorClosedEvent -= OnDoorClosed;
+            
+            _powerButton.ClickBtnEvent -= OnPowerButtonClick;
+            _UpButton.ClickBtnEvent -= OnUpButtonClick;
+            _PButton.ClickBtnEvent -= OnPButtonClick;
+        }
+
+        private void Update()
+        {
+            if (_isHeating)
+            {
+                _timer -= Time.deltaTime;
+
+                if (_timer <= 0)
+                {
+                    _temperature += 0.5f;
+                    _text.text = _temperature.ToString("F1");
+                    _timer = 2.0f;
+                }
+
+                if (_temperature >= 37.0f)
+                {
+                    _isHeating = false;
+                    _heatingLight.enabled = false;
+                }
+            }
+        }
+
+        private void OnPowerButtonClick()
+        {
+            _temperature = 22.5f;
+            _text.text = _temperature.ToString("F1");
+            _heatingLight.enabled = true;
+            _isHeating = true;
+        }
+
+        private void OnPButtonClick()
+        {
+            _isHeating = true;
+        }
+
+        private void OnUpButtonClick()
+        {
+            _text.text = "37.0";
+            _isHeating = false;
         }
 
         private void OnDoorClosed()
@@ -106,11 +166,14 @@ namespace Machines
         public void SaveUIState()
         {
             _savedData.IsPower = _powerButton.IsOn;
+            _savedData.IsHeating = _isHeating;
         }
 
         public void LoadUIState()
         {
             _powerButton.SetIsOn(_savedData.IsPower);
+            
+            _isHeating = _savedData.IsHeating;
         }
     }
 }

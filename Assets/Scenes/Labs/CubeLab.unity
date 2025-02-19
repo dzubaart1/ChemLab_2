@@ -3713,11 +3713,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 318573965268965448, guid: b833671e2e80877449e79015c733a6ab, type: 3}
   m_PrefabInstance: {fileID: 7819376071565511555}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1480160797 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8965542519714934375, guid: 2554d92803c16264b9e36b5b5100c12e, type: 3}
-  m_PrefabInstance: {fileID: 3731901498842514326}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1482886729
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6335,10 +6330,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 756995425}
     m_Modifications:
-    - target: {fileID: 1877689252919649134, guid: 2554d92803c16264b9e36b5b5100c12e, type: 3}
-      propertyPath: _arrow
-      value: 
-      objectReference: {fileID: 1480160797}
     - target: {fileID: 7124554909176146324, guid: 2554d92803c16264b9e36b5b5100c12e, type: 3}
       propertyPath: m_Name
       value: Autoklav
@@ -6383,17 +6374,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8965542519714934375, guid: 2554d92803c16264b9e36b5b5100c12e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.99939084
+    - target: {fileID: 8788831457164440585, guid: 2554d92803c16264b9e36b5b5100c12e, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.2
       objectReference: {fileID: 0}
-    - target: {fileID: 8965542519714934375, guid: 2554d92803c16264b9e36b5b5100c12e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.034899585
+    - target: {fileID: 8788831457164440585, guid: 2554d92803c16264b9e36b5b5100c12e, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.a
+      value: 0.53333336
       objectReference: {fileID: 0}
-    - target: {fileID: 8965542519714934375, guid: 2554d92803c16264b9e36b5b5100c12e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -4
+    - target: {fileID: 8788831457164440585, guid: 2554d92803c16264b9e36b5b5100c12e, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.m_ColorSpace
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

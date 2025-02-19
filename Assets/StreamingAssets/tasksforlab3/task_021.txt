@@ -6,7 +6,7 @@
   "TitleEnglish": null,
   "Description": "Откройте ламинарный бокс (нажмите на  «ОТКРЫТЬ/ЗАКРЫТЬ» внизу)",
   "DescriptionEnglish": null,
-  "Warning": "",
+  "Warning": "Опускать дверцу следует медленно и аккуратно, во избежание поломки УФ-лампы.",
   "WarningEnglish": null,
   "SafetyPrecautions": null,
   "SafetyPrecautionsEnglish": null,

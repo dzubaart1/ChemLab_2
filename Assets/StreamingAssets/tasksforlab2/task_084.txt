@@ -6,7 +6,7 @@
   "TitleEnglish": null,
   "Description": "Закройте ламинарный бокс (нажмите на кнопку «ОТКРЫТЬ/ЗАКРЫТЬ» внизу)",
   "DescriptionEnglish": null,
-  "Warning": "",
+  "Warning": "Закрытие ламинарного бокса необходимо для проведения обработки рабочей камеры с помощью УФ-облучения. ",
   "WarningEnglish": null,
   "SafetyPrecautions": null,
   "SafetyPrecautionsEnglish": null,

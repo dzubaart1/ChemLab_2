@@ -3,8 +3,14 @@
   "Lab": 2,
   "Number": 42,
   "Title": "Задание 42",
+  "TitleEnglish": null,
   "Description": "Снимите плёнку с пенициллинового флакона",
-  "Warning": "",
+  "DescriptionEnglish": null,
+  "Warning": "Пенициллиновый флакон с бактериями закрывают парафильмом для обеспечения герметичности и предотвращения контаминации. Парафильм — это эластичная, восковая пленка, используемая в лабораториях для герметизации емкостей, таких как колбы, пробирки и флаконы. Она обладает водо- и воздухонепроницаемыми свойствами, что предотвращает испарение жидкостей, утечку и контаминацию содержимого емкости. Парафильм легко растягивается и плотно оборачивает горлышко контейнеров, создавая надежную герметизацию.",
+  "WarningEnglish": null,
+  "SafetyPrecautions": null,
+  "SafetyPrecautionsEnglish": null,
+  "HintImagePath": null,
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
@@ -25,6 +31,7 @@
       {
         "$type": "BioEngineerLab.Tasks.SideEffects.TriggerActivatorSideEffect, Assembly-CSharp",
         "IsActive": true,
+        "TriggerType": 0,
         "SideEffectTimeType": 0,
         "SideEffectType": 4
       },
