@@ -1002,88 +1002,13 @@ MonoBehaviour:
   _meshRendererConfigs:
   - Layer: 0
     MeshRenderer: {fileID: 2898629900085280705}
-    IsLiquid: 1
-    XScaleWeightSubstanceCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1.54
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 500
-        value: 1.54
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    YScaleWeightSubstanceCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1.54
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 500
-        value: 1.54
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    ZScaleWeightSubstanceCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1.54
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 500
-        value: 1.54
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  - Layer: 0
-    MeshRenderer: {fileID: 2898629900085280705}
     IsLiquid: 0
     XScaleWeightSubstanceCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1.54
+        value: 150
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -1092,7 +1017,7 @@ MonoBehaviour:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 500
-        value: 1.54
+        value: 150
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -1107,7 +1032,7 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1.54
+        value: 150
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -1116,7 +1041,7 @@ MonoBehaviour:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 500
-        value: 1.54
+        value: 150
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -1131,7 +1056,7 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1.54
+        value: 150
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -1140,7 +1065,7 @@ MonoBehaviour:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 500
-        value: 1.54
+        value: 150
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -1157,19 +1082,19 @@ MonoBehaviour:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 1.54
-        inSlope: 0
-        outSlope: 0
+        time: 0.0001
+        value: 1
+        inSlope: 5399.9995
+        outSlope: 5399.9995
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 500
+        time: 0.0002
         value: 1.54
-        inSlope: 0
-        outSlope: 0
+        inSlope: 5399.9995
+        outSlope: 5399.9995
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -1181,19 +1106,19 @@ MonoBehaviour:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 1.54
-        inSlope: 0
-        outSlope: 0
+        time: 0.001
+        value: 1
+        inSlope: 539.99994
+        outSlope: 539.99994
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 500
+        time: 0.002
         value: 1.54
-        inSlope: 0
-        outSlope: 0
+        inSlope: 539.99994
+        outSlope: 539.99994
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -1205,94 +1130,19 @@ MonoBehaviour:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 1.54
-        inSlope: 0
-        outSlope: 0
+        time: 0.001
+        value: 1
+        inSlope: 539.99994
+        outSlope: 539.99994
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 500
+        time: 0.002
         value: 1.54
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  - Layer: 1
-    MeshRenderer: {fileID: 5071347734482746168}
-    IsLiquid: 0
-    XScaleWeightSubstanceCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1.54
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 500
-        value: 1.54
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    YScaleWeightSubstanceCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1.54
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 500
-        value: 1.54
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    ZScaleWeightSubstanceCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1.54
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 500
-        value: 1.54
-        inSlope: 0
-        outSlope: 0
+        inSlope: 539.99994
+        outSlope: 539.99994
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334

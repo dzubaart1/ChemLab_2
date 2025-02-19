@@ -141,7 +141,7 @@ Transform:
   m_GameObject: {fileID: 4654904198178951026}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -175,7 +175,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6160380864732227344, guid: 4737f973a52703c41b7a7ff3920a2803, type: 3}
+  - {fileID: 9059103488058893338, guid: 6000f911e263a3e498668b79aaaf282a, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -512,78 +512,6 @@ MonoBehaviour:
   _isWeightableContainer: 1
   _isSpoonContainer: 0
   _isAnchorContainer: 0
-  _bottomMediumMeshesXScaleWeightSubstanceCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.15
-      inSlope: 0.2125
-      outSlope: 0.2125
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 4
-      value: 1
-      inSlope: 0.2125
-      outSlope: 0.2125
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _bottomMediumMeshesYScaleWeightSubstanceCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.15
-      inSlope: 0.2125
-      outSlope: 0.2125
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 4
-      value: 1
-      inSlope: 0.2125
-      outSlope: 0.2125
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _bottomMediumMeshesZScaleWeightSubstanceCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.15
-      inSlope: 0.2125
-      outSlope: 0.2125
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 4
-      value: 1
-      inSlope: 0.2125
-      outSlope: 0.2125
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
   _meshRendererConfigs:
   - Layer: 1
     MeshRenderer: {fileID: 5582702596160937989}

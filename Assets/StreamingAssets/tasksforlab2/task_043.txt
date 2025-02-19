@@ -4,7 +4,7 @@
   "Number": 43,
   "Title": "Задание 43",
   "TitleEnglish": null,
-  "Description": "Возьмите стакан с получившимся раствором и последовательно разлейте по 150 мл в чистые пустые емкости с надписями «Сахароза», «Глюкоза», «Лактоза»",
+  "Description": "Возьмите стакан с получившимся раствором и последовательно разлейте по 150 мл в чистые пустые емкости с надписями в порядке «Лактоза», «Глюкоза», «Сахароза»",
   "DescriptionEnglish": null,
   "Warning": "",
   "WarningEnglish": null,
@@ -15,12 +15,13 @@
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.AddSubstanceLabActivity, Assembly-CSharp",
     "FromContainer": 0,
-    "ToContainer": 16,
+    "ToContainer": 19,
     "LabSubstanceProperty": {
       "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
       "SubstanceName": "StirPurbleSol",
       "SubstanceMode": 0,
       "SubstanceLayer": 1,
+      "IsLiquid": true,
       "SubstanceColorR": 0.320631772,
       "SubstanceColorG": 0.240299046,
       "SubstanceColorB": 0.3773585,

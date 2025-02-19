@@ -3,8 +3,14 @@
   "Lab": 1,
   "Number": 131,
   "Title": "Задание 131",
+  "TitleEnglish": null,
   "Description": "Перелейте вещество из пипет-дозатора в ёмкость с надписью «Сахароза»",
+  "DescriptionEnglish": null,
   "Warning": "",
+  "WarningEnglish": null,
+  "SafetyPrecautions": null,
+  "SafetyPrecautionsEnglish": null,
+  "HintImagePath": null,
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.CraftSubstanceLabActivity, Assembly-CSharp",
@@ -18,6 +24,7 @@
             "SubstanceName": "Sakaroza and Purple Sol",
             "SubstanceMode": 0,
             "SubstanceLayer": 1,
+            "IsLiquid": true,
             "SubstanceColorR": 0.61556536,
             "SubstanceColorG": 0.46364364,
             "SubstanceColorB": 0.6509434,
@@ -29,6 +36,7 @@
             "SubstanceName": "Penicillium",
             "SubstanceMode": 0,
             "SubstanceLayer": 1,
+            "IsLiquid": true,
             "SubstanceColorR": 0.9528302,
             "SubstanceColorG": 0.927144468,
             "SubstanceColorB": 0.7775454,
@@ -46,6 +54,7 @@
             "SubstanceName": "PenicilliumSaharoza",
             "SubstanceMode": 0,
             "SubstanceLayer": 1,
+            "IsLiquid": true,
             "SubstanceColorR": 0.6296133,
             "SubstanceColorG": 0.5372549,
             "SubstanceColorB": 0.7058824,
@@ -55,7 +64,7 @@
         ]
       }
     },
-    "Container": 16,
+    "Container": 21,
     "ActivityType": 5
   },
   "LabSideEffects": {

@@ -24,7 +24,21 @@
       {
         "$type": "BioEngineerLab.Tasks.SideEffects.SetVolumeLabSideEffect, Assembly-CSharp",
         "Volume": 160.0,
-        "Container": 16,
+        "Container": 19,
+        "SideEffectTimeType": 1,
+        "SideEffectType": 1
+      },
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.SetVolumeLabSideEffect, Assembly-CSharp",
+        "Volume": 160.0,
+        "Container": 20,
+        "SideEffectTimeType": 1,
+        "SideEffectType": 1
+      },
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.SetVolumeLabSideEffect, Assembly-CSharp",
+        "Volume": 160.0,
+        "Container": 21,
         "SideEffectTimeType": 1,
         "SideEffectType": 1
       }

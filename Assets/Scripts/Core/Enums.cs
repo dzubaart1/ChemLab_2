@@ -99,10 +99,12 @@ namespace Core
         TweezersContainer,
         AtomicMicContainer,
         KspectrometerContainer,
-        BottleContainer,
+        PenicilliumContainer,
         WeighingContainer,
         StirringContainer,
-        PenicilliumContainer,
+        BottleGlukozaContainer,
+        BottleLaktozaContainer,
+        BottleSaharozaContainer,
     }
     
     public enum ESideEffect : byte

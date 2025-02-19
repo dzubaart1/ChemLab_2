@@ -3,8 +3,14 @@
   "Lab": 1,
   "Number": 126,
   "Title": "Задание 126",
+  "TitleEnglish": null,
   "Description": "Перелейте вещество из пипет-дозатора в ёмкость с надписью «Лактоза»",
+  "DescriptionEnglish": null,
   "Warning": "",
+  "WarningEnglish": null,
+  "SafetyPrecautions": null,
+  "SafetyPrecautionsEnglish": null,
+  "HintImagePath": null,
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.CraftSubstanceLabActivity, Assembly-CSharp",
@@ -18,6 +24,7 @@
             "SubstanceName": "Laktoza and Purple Sol",
             "SubstanceMode": 0,
             "SubstanceLayer": 1,
+            "IsLiquid": true,
             "SubstanceColorR": 0.6509804,
             "SubstanceColorG": 0.4627451,
             "SubstanceColorB": 0.6353192,
@@ -29,6 +36,7 @@
             "SubstanceName": "Penicillium",
             "SubstanceMode": 0,
             "SubstanceLayer": 1,
+            "IsLiquid": true,
             "SubstanceColorR": 0.9528302,
             "SubstanceColorG": 0.927144468,
             "SubstanceColorB": 0.7775454,
@@ -46,6 +54,7 @@
             "SubstanceName": "PenicilliumLaktoza",
             "SubstanceMode": 0,
             "SubstanceLayer": 1,
+            "IsLiquid": true,
             "SubstanceColorR": 0.7058824,
             "SubstanceColorG": 0.5372549,
             "SubstanceColorB": 0.6553261,
@@ -55,7 +64,7 @@
         ]
       }
     },
-    "Container": 16,
+    "Container": 20,
     "ActivityType": 5
   },
   "LabSideEffects": {

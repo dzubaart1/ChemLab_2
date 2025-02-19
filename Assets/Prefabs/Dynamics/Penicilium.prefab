@@ -653,7 +653,7 @@ MonoBehaviour:
   reagentsLabSubstanceProperty: {fileID: 11400000, guid: c5ce49e8c2c91344e83bb3083279bc74, type: 2}
   _maxVolume: 9000
   _containerWeight: 0
-  _containerType: 19
+  _containerType: 16
   _isWeightableContainer: 0
   _isSpoonContainer: 0
   _isAnchorContainer: 0
