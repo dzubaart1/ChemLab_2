@@ -859,7 +859,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &249488089 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8835554319100063893, guid: b3d9770fa3e9a3a46b8207ed4900bf9d, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4521365642376203168, guid: b3d9770fa3e9a3a46b8207ed4900bf9d, type: 3}
   m_PrefabInstance: {fileID: 249488087}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -2275,7 +2275,7 @@ PrefabInstance:
     - target: {fileID: 6340311704619527465, guid: 99438f111805b3740ad3340deb20e0c4, type: 3}
       propertyPath: _lobby
       value: 
-      objectReference: {fileID: 249488089}
+      objectReference: {fileID: 0}
     - target: {fileID: 6766298181629796231, guid: 99438f111805b3740ad3340deb20e0c4, type: 3}
       propertyPath: m_text
       value: 2
@@ -3021,6 +3021,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 249488089}
+    - target: {fileID: 5320657071921733086, guid: 99438f111805b3740ad3340deb20e0c4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadLab1
+      objectReference: {fileID: 0}
     - target: {fileID: 6820655124178533678, guid: 99438f111805b3740ad3340deb20e0c4, type: 3}
       propertyPath: m_Name
       value: Pult
@@ -3109,7 +3113,7 @@ PrefabInstance:
     - target: {fileID: 6340311704619527465, guid: 99438f111805b3740ad3340deb20e0c4, type: 3}
       propertyPath: _lobby
       value: 
-      objectReference: {fileID: 249488089}
+      objectReference: {fileID: 0}
     - target: {fileID: 6766298181629796231, guid: 99438f111805b3740ad3340deb20e0c4, type: 3}
       propertyPath: m_text
       value: 3

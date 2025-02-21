@@ -25,7 +25,7 @@ namespace Machines
         [Space]
         [Header("Refs")]
         [SerializeField] private Animator _animator;
-        [SerializeField] private Door _cap;
+        [SerializeField] private Door _door;
         [SerializeField] private VRSocketInteractor _socketInteractor1;
         [SerializeField] private VRSocketInteractor _socketInteractor2;
         
@@ -61,6 +61,22 @@ namespace Machines
 
         private void OnPowerBtnClicked()
         {
+            /*if (_door.IsOpen)
+            {
+                _powerButton.SetIsOn(false);
+                GameManager gameManager = GameManager.Instance;
+            
+                if (gameManager == null)
+                {
+                    return;
+                }
+
+                if (gameManager.CurrentBaseLocalManager == null)
+                {
+                    return;
+                }
+                gameManager.CurrentBaseLocalManager.OnActivityComplete(new BadLabActivity());
+            }*/
         }
         
         private void OnStartBtnClicked()
@@ -83,12 +99,12 @@ namespace Machines
                 return;
             }
 
-            if (_cap.IsOpen == false)
+            /*if (_door.IsOpen)
             {
                 gameManager.CurrentBaseLocalManager.OnActivityComplete(new BadLabActivity());
                 _startButton.SetIsOn(false);
                 return;
-            }
+            }*/
             
             LabContainer labContainer1 = _socketInteractor1.SelectedObject.GetComponent<LabContainer>();
             LabContainer labContainer2 = _socketInteractor2.SelectedObject.GetComponent<LabContainer>();

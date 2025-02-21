@@ -16,11 +16,18 @@ MonoBehaviour:
     Lab: 0
     Number: 32
     Title: "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 32"
+    TitleEnglish: Task 32
     Description: "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u044F\u043A\u043E\u0440\u044C
       \u0434\u043B\u044F \u043C\u0430\u0433\u043D\u0438\u0442\u043D\u043E\u0439 \u043C\u0435\u0448\u0430\u043B\u043A\u0438
       \u0432 \u0442\u0435\u0440\u043C\u043E\u0441\u0442\u043E\u0439\u043A\u0438\u0439
       \u0441\u0442\u0430\u043A\u0430\u043D \u0441 \u0440\u0430\u0441\u0442\u0432\u043E\u0440\u043E\u043C
       \xAB2\xBB"
+    DescriptionEnglish: "Place the stir bar for the magnetic stirrer into the heat-resistant
+      beaker with the solution \xAB2\xBB"
     Warning: 
+    WarningEnglish: 
+    SafetyPrecautions: 
+    SafetyPrecautionsEnglish: 
+    HintImagePath: Lab1/9
     SaveableTask: 0
     LabSideEffects: []
