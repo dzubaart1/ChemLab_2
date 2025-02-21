@@ -16,22 +16,6 @@ namespace UI.TabletUI.Panels
         [SerializeField] private Button _returnButton;
         
         [CanBeNull] private LabTask _showingTask;
-        
-        /*public void Init()
-        {
-            GameManager gameManager = GameManager.Instance;
-            if (gameManager == null)
-            {
-                return;
-            }
-
-            if (gameManager.CurrentBaseLocalManager == null)
-            {
-                return;
-            }
-            
-            gameManager.CurrentBaseLocalManager.AddSideEffectActivator(this);
-        }*/
 
         private void OnEnable()
         {
@@ -48,16 +32,6 @@ namespace UI.TabletUI.Panels
             TabletUI.SwitchToMainPanel();
         }
 
-        private void Update()
-        {
-            if (_showingTask == null)
-            {
-                return;
-            }
-
-            _taskHintImage.sprite = ResourcesDatabase.ReadHintImage(_showingTask.HintImagePath);
-        }
-
         public void NewTask()
         {
             _taskHintImage.sprite = null;
@@ -66,6 +40,13 @@ namespace UI.TabletUI.Panels
         public override void SetTaskToShow(LabTask task)
         {
             _showingTask = task;
+            
+            if (_showingTask == null)
+            {
+                return;
+            }
+
+            _taskHintImage.sprite = ResourcesDatabase.ReadHintImage(_showingTask.HintImagePath);
         }
 
         public override void SetLabToShow(ELab lab)

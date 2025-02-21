@@ -25,16 +25,6 @@ namespace UI.TabletUI.Panels
             _returnButton.onClick.RemoveListener(OnReturnButtonClicked);
         }
 
-        private void Update()
-        {
-            if (_showingTask == null)
-            {
-                return;
-            }
-
-            _taskSafetyText.text = _showingTask.SafetyPrecautions;
-        }
-
         private void OnReturnButtonClicked()
         {
             TabletUI.SwitchToMainPanel();
@@ -43,6 +33,13 @@ namespace UI.TabletUI.Panels
         public override void SetTaskToShow(LabTask task)
         {
             _showingTask = task;
+            
+            if (_showingTask == null)
+            {
+                return;
+            }
+            
+            _taskSafetyText.text = _showingTask.SafetyPrecautions;
         }
 
         public override void SetLabToShow(ELab lab)
