@@ -225,8 +225,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
@@ -443,7 +443,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
-  _isSaveble: 1
+  _isSaveble: 0
 --- !u!114 &7979565819386389440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -457,8 +457,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 8696690366712548401}
-  _closed: {x: 0, y: 0, z: 0, w: 1}
-  _opened: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  _closed: {x: 0, y: -0.70711, z: 0, w: 0.70711}
+  _opened: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
   _doorType: 7
   _isOpenTaskSendable: 0
   _isCloseTaskSendable: 0

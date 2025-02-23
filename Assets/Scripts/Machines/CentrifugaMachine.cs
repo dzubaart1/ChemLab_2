@@ -61,7 +61,7 @@ namespace Machines
 
         private void OnPowerBtnClicked()
         {
-            /*if (_door.IsOpen)
+            if (_door.IsOpen)
             {
                 _powerButton.SetIsOn(false);
                 GameManager gameManager = GameManager.Instance;
@@ -76,7 +76,7 @@ namespace Machines
                     return;
                 }
                 gameManager.CurrentBaseLocalManager.OnActivityComplete(new BadLabActivity());
-            }*/
+            }
         }
         
         private void OnStartBtnClicked()
@@ -99,12 +99,12 @@ namespace Machines
                 return;
             }
 
-            /*if (_door.IsOpen)
+            if (_door.IsOpen)
             {
                 gameManager.CurrentBaseLocalManager.OnActivityComplete(new BadLabActivity());
                 _startButton.SetIsOn(false);
                 return;
-            }*/
+            }
             
             LabContainer labContainer1 = _socketInteractor1.SelectedObject.GetComponent<LabContainer>();
             LabContainer labContainer2 = _socketInteractor2.SelectedObject.GetComponent<LabContainer>();
@@ -120,6 +120,9 @@ namespace Machines
                 CheckAnimatorStatus();
                 return;
             }
+            
+            gameManager.CurrentBaseLocalManager.OnActivityComplete(new MachineLabActivity(EMachineActivity.OnFinish, EMachine.CentrifugaMachine));
+            CheckAnimatorStatus();
 
             if (!CraftTools.TryFindCraft(gameManager.CurrentBaseLocalManager.GetSOCrafts(), labContainer1.GetSubstanceProperties(), ECraft.Split, out SOLabCraft craftContainer1))
             {
@@ -133,9 +136,6 @@ namespace Machines
             
             CraftTools.ApplyCraft(craftContainer1.LabCraft, labContainer1);
             CraftTools.ApplyCraft(craftContainer2.LabCraft, labContainer2);
-        
-            gameManager.CurrentBaseLocalManager.OnActivityComplete(new MachineLabActivity(EMachineActivity.OnFinish, EMachine.CentrifugaMachine));
-            CheckAnimatorStatus();
         }
 
         private void CheckAnimatorStatus()
