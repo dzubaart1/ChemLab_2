@@ -1,9 +1,7 @@
-﻿using System;
-using BioEngineerLab.Tasks;
+﻿using BioEngineerLab.Tasks;
 using Core;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace UI.TabletUI.Panels

@@ -20,7 +20,6 @@ namespace Containers
         {
             public ESubstanceLayer Layer;
             public MeshRenderer MeshRenderer;
-            
             public bool IsLiquid;
             public AnimationCurve XScaleWeightSubstanceCurve;
             public AnimationCurve YScaleWeightSubstanceCurve;
@@ -247,7 +246,7 @@ namespace Containers
             
             for (int i = 0; i < _substances.Length; i++)
             {
-                if (!TryGetMeshRendererByLayer((ESubstanceLayer)i, out MeshRenderer meshRenderer))
+                if (!TryGetMeshRendererByLayer((ESubstanceLayer)i, out _))
                 {
                     continue;
                 }
@@ -274,7 +273,7 @@ namespace Containers
                         meshRendererConfigDry.MeshRenderer.enabled = false;
                     }
                     
-                     if (TryGetMeshRendererByLayerAndLiquid((ESubstanceLayer)i, _substances[i].SubstanceProperty.IsLiquid,
+                    if (TryGetMeshRendererByLayerAndLiquid((ESubstanceLayer)i, _substances[i].SubstanceProperty.IsLiquid,
                             out MeshRendererConfig meshRendererConfigLiquid))
                     {
                         meshRendererConfigLiquid.MeshRenderer.enabled = true;
@@ -285,7 +284,7 @@ namespace Containers
 
             for (int i = 0; i < _substances.Length; i++)
             {
-                if (!TryGetMeshRendererByLayer((ESubstanceLayer)i, out MeshRenderer meshRenderer))
+                if (!TryGetMeshRendererByLayer((ESubstanceLayer)i, out _))
                 {
                     continue;
                 }
@@ -298,8 +297,6 @@ namespace Containers
                 if (TryGetMeshRendererByLayerAndLiquid((ESubstanceLayer)i, _substances[i].SubstanceProperty.IsLiquid,
                         out MeshRendererConfig meshRendererConfig))
                 {
-                    Vector3 scale = meshRendererConfig.MeshRenderer.transform.localScale;
-
                     meshRendererConfig.MeshRenderer.transform.localScale = new Vector3(
                         meshRendererConfig.XScaleWeightSubstanceCurve.Evaluate(_substances[i].Weight),
                         meshRendererConfig.YScaleWeightSubstanceCurve.Evaluate(_substances[i].Weight),

@@ -61,20 +61,21 @@ namespace Machines
 
         private void OnPowerBtnClicked()
         {
+            GameManager gameManager = GameManager.Instance;
+            
+            if (gameManager == null)
+            {
+                return;
+            }
+
+            if (gameManager.CurrentBaseLocalManager == null)
+            {
+                return;
+            }
+            
             if (_door.IsOpen)
             {
                 _powerButton.SetIsOn(false);
-                GameManager gameManager = GameManager.Instance;
-            
-                if (gameManager == null)
-                {
-                    return;
-                }
-
-                if (gameManager.CurrentBaseLocalManager == null)
-                {
-                    return;
-                }
                 gameManager.CurrentBaseLocalManager.OnActivityComplete(new BadLabActivity());
             }
         }
