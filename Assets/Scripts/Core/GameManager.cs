@@ -22,6 +22,7 @@ namespace Core
         public PlayerSpawner PlayerSpawner => _playerSpawner;
         
         public ELab CurrentLab { get; private set; }
+        public ELabLanguage CurrentLanguage { get; private set; }
         public float GameTime { get; private set; }
         public int ErrorsCount { get; private set; }
         public bool IsGameFinished { get; private set; }
@@ -73,6 +74,11 @@ namespace Core
                     LoadScene(CUBE_LAB_SCENE_NAME);
                     break;
             }
+        }
+
+        public void SetLanguage(ELabLanguage language)
+        {
+            CurrentLanguage = language;
         }
         
         public void LoadScene(string sceneName)

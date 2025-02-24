@@ -39,13 +39,12 @@ namespace UI.TabletUI.Panels
 
         public override void SetTaskToShow(LabTask task)
         {
-            _showingTask = task;
-            
-            if (_showingTask == null)
+            if (task == null)
             {
                 return;
             }
 
+            _showingTask = task;
             _taskHintImage.sprite = ResourcesDatabase.ReadHintImage(_showingTask.HintImagePath);
         }
 

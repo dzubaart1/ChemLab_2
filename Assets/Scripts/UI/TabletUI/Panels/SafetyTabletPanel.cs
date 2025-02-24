@@ -31,14 +31,31 @@ namespace UI.TabletUI.Panels
 
         public override void SetTaskToShow(LabTask task)
         {
-            _showingTask = task;
-            
-            if (_showingTask == null)
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
             {
                 return;
             }
             
-            _taskSafetyText.text = _showingTask.SafetyPrecautions;
+            if (task == null)
+            {
+                return;
+            }
+            
+            _showingTask = task;
+            
+            switch (gameManager.CurrentLanguage)
+            {
+                case ELabLanguage.English:
+                    _taskSafetyText.text = _showingTask.SafetyPrecautionsEnglish;
+                    break;
+                case ELabLanguage.Russia:
+                    _taskSafetyText.text = _showingTask.SafetyPrecautions;
+                    break;
+                default:
+                    Debug.LogError("Can't find language!");
+                    break;
+            }
         }
 
         public override void SetLabToShow(ELab lab)

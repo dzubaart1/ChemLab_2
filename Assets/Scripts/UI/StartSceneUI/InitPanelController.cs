@@ -1,14 +1,15 @@
 using System.Collections.Generic;
 using Core;
-using Core.Services;
-using JetBrains.Annotations;
 using UnityEngine;
 
-public class StartPanelController : MonoBehaviour
+public class InitPanelController : MonoBehaviour
 {
-    [Header("Panels")]
-    [SerializeField] private RectTransform _startPanel;
     [SerializeField] private List<RectTransform> _rulesPanels;
+    
+    [Space]
+    [Header("Panels")]
+    [SerializeField] private RectTransform _chooseLanguagePanel;
+    [SerializeField] private RectTransform _startPanel;
 
     [Space]
     [Header("Configs")]
@@ -19,6 +20,7 @@ public class StartPanelController : MonoBehaviour
 
     private void Start()
     {
+        _chooseLanguagePanel.gameObject.SetActive(false);
         _startPanel.gameObject.SetActive(false);
 
         foreach (var rulePanel in _rulesPanels)
@@ -34,6 +36,32 @@ public class StartPanelController : MonoBehaviour
     public void OpenRulesPanel()
     {
         SwitchPanel(_rulesPanels[_currentRuleNumber]);
+    }
+
+    public void ChooseRussianLanguage()
+    {
+        GameManager gameManager = GameManager.Instance;
+        
+        if (gameManager == null)
+        {
+            return;
+        }
+        
+        gameManager.SetLanguage(ELabLanguage.Russia);
+        SwitchPanel(_startPanel);
+    }
+
+    public void ChooseEnglishLanguage()
+    {
+        GameManager gameManager = GameManager.Instance;
+        
+        if (gameManager == null)
+        {
+            return;
+        }
+        
+        gameManager.SetLanguage(ELabLanguage.English);
+        SwitchPanel(_startPanel);
     }
 
     public void Begin()

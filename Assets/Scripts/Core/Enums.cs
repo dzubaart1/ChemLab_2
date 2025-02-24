@@ -139,6 +139,12 @@ namespace Core
         Lab3
     }
 
+    public enum ELabLanguage : byte
+    {
+        Russia,
+        English
+    }
+
     public enum EDoor : byte
     {
         DryMachineDoor,

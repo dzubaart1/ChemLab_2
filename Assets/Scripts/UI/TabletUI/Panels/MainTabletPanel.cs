@@ -51,13 +51,42 @@ namespace UI.TabletUI.Panels
 
         private void Update()
         {
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                return;
+            }
+            
             if (_showingTask == null)
             {
                 return;
             }
 
-            _taskTitleText.text = _showingTask.Title;
-            _taskDescriptionText.text = _showingTask.Description;
+            switch (gameManager.CurrentLanguage)
+            {
+                case ELabLanguage.English:
+                    _taskTitleText.text = _showingTask.TitleEnglish;
+                    break;
+                case ELabLanguage.Russia:
+                    _taskTitleText.text = _showingTask.Title;
+                    break;
+                default:
+                    Debug.LogError("Can't find language!");
+                    break;
+            }
+            
+            switch (gameManager.CurrentLanguage)
+            {
+                case ELabLanguage.English:
+                    _taskDescriptionText.text = _showingTask.DescriptionEnglish;
+                    break;
+                case ELabLanguage.Russia:
+                    _taskDescriptionText.text = _showingTask.Description;
+                    break;
+                default:
+                    Debug.LogError("Can't find language!");
+                    break;
+            }
 
             if (String.IsNullOrEmpty(_showingTask.Warning))
             {
