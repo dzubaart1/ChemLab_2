@@ -10,7 +10,7 @@
   "WarningEnglish": null,
   "SafetyPrecautions": "Якорь в стакан желательно добавлять по стенке. Не рекомендуется бросать якорь в стакан напрямую, чтобы не разбить дно.",
   "SafetyPrecautionsEnglish": null,
-  "HintImagePath": null,
+  "HintImagePath": "Lab2/37",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.AnchorLabActivity, Assembly-CSharp",

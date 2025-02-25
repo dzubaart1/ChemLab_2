@@ -10,7 +10,7 @@
   "WarningEnglish": null,
   "SafetyPrecautions": "Запрещается работать с неисправным оборудованием и приборами. Категорически запрещается использовать для подключения электроприборы с оголенными проводами или с поврежденной изоляцией.",
   "SafetyPrecautionsEnglish": null,
-  "HintImagePath": null,
+  "HintImagePath": "Lab2/37",
   "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",

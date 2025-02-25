@@ -10,7 +10,7 @@
   "WarningEnglish": null,
   "SafetyPrecautions": null,
   "SafetyPrecautionsEnglish": null,
-  "HintImagePath": "Lab2/IMG",
+  "HintImagePath": "Lab2/1",
   "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
@@ -34,12 +34,6 @@
         "IsLock": true,
         "SideEffectTimeType": 0,
         "SideEffectType": 3
-      },
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.SetHintImgSideEffect, Assembly-CSharp",
-        "HintImageFullName": "Lab2/IMG",
-        "SideEffectTimeType": 0,
-        "SideEffectType": 6
       }
     ]
   }

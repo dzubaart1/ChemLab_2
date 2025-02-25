@@ -10,7 +10,7 @@
   "WarningEnglish": null,
   "SafetyPrecautions": "Лабораторную посуду следует брать посередине и устойчиво, чтобы не выронить",
   "SafetyPrecautionsEnglish": null,
-  "HintImagePath": null,
+  "HintImagePath": "Lab2/41",
   "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",

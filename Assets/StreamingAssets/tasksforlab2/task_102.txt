@@ -10,7 +10,7 @@
   "WarningEnglish": null,
   "SafetyPrecautions": "Обрабатывать горячие банки необходимо аккуратно, во избежание резкого перепада температуры, что может привести к трещинам",
   "SafetyPrecautionsEnglish": null,
-  "HintImagePath": null,
+  "HintImagePath": "Lab2/102",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.PulverizatorLabActivity, Assembly-CSharp",

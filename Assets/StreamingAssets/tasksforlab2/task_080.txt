@@ -10,7 +10,7 @@
   "WarningEnglish": null,
   "SafetyPrecautions": "Опускать дверцу следует медленно и аккуратно, во избежание поломки УФ-лампы.",
   "SafetyPrecautionsEnglish": null,
-  "HintImagePath": null,
+  "HintImagePath": "Lab2/80",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",

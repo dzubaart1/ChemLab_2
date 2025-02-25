@@ -10,7 +10,7 @@
   "WarningEnglish": null,
   "SafetyPrecautions": "Открывать необходимо медленно, во избежание резкого перепада температуры и в целях избежание большого потока горячего пара",
   "SafetyPrecautionsEnglish": null,
-  "HintImagePath": null,
+  "HintImagePath": "Lab2/70",
   "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
