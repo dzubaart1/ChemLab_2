@@ -10,7 +10,7 @@
   "WarningEnglish": null,
   "SafetyPrecautions": null,
   "SafetyPrecautionsEnglish": null,
-  "HintImagePath": null,
+  "HintImagePath": "Lab3/48",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.CraftSubstanceLabActivity, Assembly-CSharp",

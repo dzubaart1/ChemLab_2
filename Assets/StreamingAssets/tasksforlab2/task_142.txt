@@ -3,14 +3,19 @@
   "Lab": 1,
   "Number": 142,
   "Title": "Задание 142",
-  "Description": "Закройте дверцу шейкер-инкубатора",
-  "Warning": "",
-  "SaveableTask": false,
+  "TitleEnglish": null,
+  "Description": "Включите шейкер нажав на кнопку включения",
+  "DescriptionEnglish": null,
+  "Warning": "Культивирование бактерий при 37°C необходимо, потому что эта температура является оптимальной для роста микроорганизмов. При этой температуре они наиболее активно размножаются, достигают максимальной скорости роста и метаболической активности, что важно для успешного культивирования и проведения экспериментов",
+  "WarningEnglish": null,
+  "SafetyPrecautions": null,
+  "SafetyPrecautionsEnglish": null,
+  "HintImagePath": "Lab2/142",
+  "SaveableTask": true,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.DoorLabActivity, Assembly-CSharp",
-    "Door": 4,
-    "DoorActivity": 1,
-    "ActivityType": 7
+    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
+    "ButtonType": 26,
+    "ActivityType": 6
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

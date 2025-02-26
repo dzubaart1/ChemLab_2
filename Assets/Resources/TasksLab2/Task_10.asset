@@ -88,6 +88,6 @@ MonoBehaviour:
       \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0438\u044F \u043F\u0440\u043E\u0446\u0435\u0434\u0443\u0440\u044B
       \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0438 \u0440\u0443\u043A."
     SafetyPrecautionsEnglish: 
-    HintImagePath: 
+    HintImagePath: Lab2/10
     SaveableTask: 1
     LabSideEffects: []

@@ -26,6 +26,6 @@ MonoBehaviour:
     WarningEnglish: 
     SafetyPrecautions: 
     SafetyPrecautionsEnglish: 
-    HintImagePath: 
+    HintImagePath: Lab2/15
     SaveableTask: 1
     LabSideEffects: []

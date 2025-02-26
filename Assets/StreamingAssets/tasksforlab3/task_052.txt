@@ -10,7 +10,7 @@
   "WarningEnglish": null,
   "SafetyPrecautions": null,
   "SafetyPrecautionsEnglish": null,
-  "HintImagePath": null,
+  "HintImagePath": "Lab2/119",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
@@ -22,7 +22,7 @@
     "$values": [
       {
         "$type": "BioEngineerLab.Tasks.SideEffects.SetVolumeLabSideEffect, Assembly-CSharp",
-        "Volume": 0.0002,
+        "Volume": 0.2,
         "Container": 6,
         "SideEffectTimeType": 1,
         "SideEffectType": 1

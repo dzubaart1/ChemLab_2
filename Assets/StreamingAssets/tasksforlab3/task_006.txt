@@ -8,9 +8,9 @@
   "DescriptionEnglish": null,
   "Warning": "",
   "WarningEnglish": null,
-  "SafetyPrecautions": "•\tБахилы следует надевать, избегая прикосновения к полу и внешней стороне бахил, чтобы предотвратить контаминацию. \r\n•\tБахилы должны плотно облегать обувь, закрывая её полностью, чтобы минимизировать риск попадания загрязнений в стерильную зону.\r",
+  "SafetyPrecautions": "Бахилы следует надевать, избегая прикосновения к полу и внешней стороне бахил, чтобы предотвратить контаминацию.  \nБахилы должны плотно облегать обувь, закрывая её полностью, чтобы минимизировать риск попадания загрязнений в стерильную зону. ",
   "SafetyPrecautionsEnglish": null,
-  "HintImagePath": null,
+  "HintImagePath": "Lab2/6",
   "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",

@@ -10,7 +10,7 @@
   "WarningEnglish": "",
   "SafetyPrecautions": "",
   "SafetyPrecautionsEnglish": "",
-  "HintImagePath": "",
+  "HintImagePath": "Lab3/66",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.DoorLabActivity, Assembly-CSharp",
