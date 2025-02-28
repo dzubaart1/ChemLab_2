@@ -5650,30 +5650,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Puleverizator
       objectReference: {fileID: 0}
-    - target: {fileID: 2996332932898579924, guid: bba921a5b8780914387dcaa48e6154fb, type: 3}
-      propertyPath: _handsGradient.key0.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2996332932898579924, guid: bba921a5b8780914387dcaa48e6154fb, type: 3}
-      propertyPath: _handsGradient.key0.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2996332932898579924, guid: bba921a5b8780914387dcaa48e6154fb, type: 3}
-      propertyPath: _handsGradient.key0.g
-      value: 0.7804972
-      objectReference: {fileID: 0}
-    - target: {fileID: 2996332932898579924, guid: bba921a5b8780914387dcaa48e6154fb, type: 3}
-      propertyPath: _handsGradient.key0.r
-      value: 0.7688679
-      objectReference: {fileID: 0}
-    - target: {fileID: 2996332932898579924, guid: bba921a5b8780914387dcaa48e6154fb, type: 3}
-      propertyPath: _otherGradient.key0.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2996332932898579924, guid: bba921a5b8780914387dcaa48e6154fb, type: 3}
-      propertyPath: _surfaceGradient.key0.a
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3314361091001859121, guid: bba921a5b8780914387dcaa48e6154fb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.588
@@ -6372,18 +6348,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7607794034564002606, guid: 2554d92803c16264b9e36b5b5100c12e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8788831457164440585, guid: 2554d92803c16264b9e36b5b5100c12e, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.a
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8788831457164440585, guid: 2554d92803c16264b9e36b5b5100c12e, type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.key1.a
-      value: 0.53333336
-      objectReference: {fileID: 0}
-    - target: {fileID: 8788831457164440585, guid: 2554d92803c16264b9e36b5b5100c12e, type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.m_ColorSpace
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

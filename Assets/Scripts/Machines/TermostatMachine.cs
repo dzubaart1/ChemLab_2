@@ -109,7 +109,7 @@ namespace Machines
 
         private void OnUpButtonClick()
         {
-            _text.text = "37.0";
+            _text.text = "37,0";
             _isHeating = false;
         }
 

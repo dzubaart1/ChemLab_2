@@ -438,7 +438,7 @@ MonoBehaviour:
   _panel: {fileID: 7704943885493807486}
   _handsGradient:
     serializedVersion: 2
-    key0: {r: 0.2688679, g: 0.3009057, b: 1, a: 1}
+    key0: {r: 0.7688679, g: 0.7804972, b: 1, a: 0}
     key1: {r: 1, g: 0, b: 0.8391533, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
@@ -468,7 +468,7 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   _surfaceGradient:
     serializedVersion: 2
-    key0: {r: 0.27058825, g: 0.3019608, b: 1, a: 1}
+    key0: {r: 0.27058825, g: 0.3019608, b: 1, a: 0}
     key1: {r: 1, g: 0.45709425, b: 0, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
@@ -498,7 +498,7 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   _otherGradient:
     serializedVersion: 2
-    key0: {r: 0.27450982, g: 0.3019608, b: 0.9921569, a: 1}
+    key0: {r: 0.27450982, g: 0.3019608, b: 0.9921569, a: 0}
     key1: {r: 0, g: 1, b: 0.08852029, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
@@ -1058,7 +1058,7 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 0, y: 0.18, z: -0.0547}
+  - {x: 0, y: 0.185, z: -0.0547}
   - {x: 0, y: 0.18, z: -0.76}
   m_Parameters:
     serializedVersion: 3
