@@ -263,78 +263,6 @@ MonoBehaviour:
   _isWeightableContainer: 0
   _isSpoonContainer: 0
   _isAnchorContainer: 0
-  _bottomMediumMeshesXScaleWeightSubstanceCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 60
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 100
-      value: 60
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _bottomMediumMeshesYScaleWeightSubstanceCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 60
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 100
-      value: 60
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _bottomMediumMeshesZScaleWeightSubstanceCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 2.3
-      outSlope: 2.3
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 100
-      value: 230
-      inSlope: 2.3
-      outSlope: 2.3
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
   _meshRendererConfigs:
   - Layer: 1
     MeshRenderer: {fileID: 4276077970511615857}
@@ -392,9 +320,9 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
-        inSlope: 2.3
-        outSlope: 2.3
+        value: 230
+        inSlope: 0
+        outSlope: 0
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
@@ -402,8 +330,8 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 100
         value: 230
-        inSlope: 2.3
-        outSlope: 2.3
+        inSlope: 0
+        outSlope: 0
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -10256,6 +10184,7 @@ GameObject:
   - component: {fileID: 2647245188953538711}
   - component: {fileID: 842495008403047444}
   - component: {fileID: 4276077970511615857}
+  - component: {fileID: 3911565765536084052}
   m_Layer: 0
   m_Name: prefab
   m_TagString: Untagged
@@ -10306,7 +10235,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a38c7974e2b96744f927d71796981dc5, type: 2}
+  - {fileID: 2100000, guid: 34d79fa0334e4b14fae14a16e6a11156, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10328,6 +10257,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3911565765536084052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7679200332688259816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc5e2f38a4fecab439741d6b0bcbffc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxWobble: 5
+  WobbleSpeed: 1
+  Recovery: 1
 --- !u!1 &7874771744943440589
 GameObject:
   m_ObjectHideFlags: 0
