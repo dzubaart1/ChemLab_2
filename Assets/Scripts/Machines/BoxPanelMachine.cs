@@ -21,7 +21,6 @@ namespace BioEngineerLab.Machines
         private struct MyLight
         {
             public Texture2D LightTexture;
-            public Texture2D ShadowTexture;
             public Texture2D DirTexture;
         }
         
@@ -29,6 +28,8 @@ namespace BioEngineerLab.Machines
         [SerializeField] private ButtonComponent _lightButton;
         [SerializeField] private ButtonComponent _dlightButton;
         [SerializeField] private ButtonComponent _keyButton;
+
+        [SerializeField] private Transform AddLight;
         
         [SerializeField] private MyLight _UVlight;
         [SerializeField] private MyLight _nonelight;
@@ -66,14 +67,12 @@ namespace BioEngineerLab.Machines
             LightmapData uvlmdata = new LightmapData();
             uvlmdata.lightmapDir = _UVlight.DirTexture;
             uvlmdata.lightmapColor = _UVlight.LightTexture;
-            uvlmdata.shadowMask = _UVlight.ShadowTexture;
             _UVLight = uvlightmap.ToArray();
             
             List<LightmapData> nonelightmap = new List<LightmapData>();
             LightmapData nonelmdata = new LightmapData();
             nonelmdata.lightmapDir = _nonelight.DirTexture;
             nonelmdata.lightmapColor = _nonelight.LightTexture;
-            nonelmdata.shadowMask = _nonelight.ShadowTexture;
             nonelightmap.Add(nonelmdata);
             _noneLight = nonelightmap.ToArray();
             
@@ -81,7 +80,6 @@ namespace BioEngineerLab.Machines
             LightmapData fulllmdata = new LightmapData();
             fulllmdata.lightmapDir = _fulllight.DirTexture;
             fulllmdata.lightmapColor = _fulllight.LightTexture;
-            fulllmdata.shadowMask = _fulllight.ShadowTexture;
             fulllightmap.Add(fulllmdata);
             _fullLight = fulllightmap.ToArray();
             
@@ -89,7 +87,6 @@ namespace BioEngineerLab.Machines
             LightmapData dlmdata = new LightmapData();
             dlmdata.lightmapDir = _dlight.DirTexture;
             dlmdata.lightmapColor = _dlight.LightTexture;
-            dlmdata.shadowMask = _dlight.ShadowTexture;
             dlightmap.Add(dlmdata);
             _DLight = dlightmap.ToArray();
         }
@@ -113,7 +110,7 @@ namespace BioEngineerLab.Machines
         private void OnBacteriumButtonClicked()
         {
             _isBactLightOn = !_isBactLightOn;
-            LightmapSettings.lightmaps = _isBactLightOn ? _UVLight : _noneLight;
+            SwitchLightUV(_isBactLightOn);
         }
 
         private void OnLightButtonClicked()
@@ -121,7 +118,7 @@ namespace BioEngineerLab.Machines
             _isCommonLightOn = true;
             _isDLightOn = false;
             
-            LightmapSettings.lightmaps = _fullLight;
+            SwitchFullLight();
         }
         
         private void OnDLightButtonClicked()
@@ -129,7 +126,7 @@ namespace BioEngineerLab.Machines
             _isCommonLightOn = false;
             _isDLightOn = true;
             
-            LightmapSettings.lightmaps = _DLight;
+            SwitchDLight();
         }
 
         private void OnKeyButtonClicked()
@@ -152,8 +149,36 @@ namespace BioEngineerLab.Machines
             _isCommonLightOn = _savedData.IsCommonLightOn;
             
             _isDLightOn = _savedData.IsDLightOn;
-            
-            LightmapSettings.lightmaps = _isCommonLightOn ? _fullLight : _DLight ;
+
+            if (_isCommonLightOn)
+            {
+                SwitchFullLight();
+            }
+            else if (_isDLightOn)
+            {
+                SwitchDLight();
+            }
+            else
+            {
+                SwitchLightUV(_isBactLightOn);
+            }
+        }
+
+        private void SwitchLightUV(bool isOn)
+        {
+            AddLight.gameObject.SetActive(false);
+            LightmapSettings.lightmaps = isOn ? _noneLight : _UVLight;
+        }
+        private void SwitchDLight()
+        {
+            AddLight.gameObject.SetActive(false);
+            LightmapSettings.lightmaps = _DLight;
+        }
+
+        private void SwitchFullLight()
+        {
+            AddLight.gameObject.SetActive(true);
+            LightmapSettings.lightmaps = _fullLight;
         }
     }
 }

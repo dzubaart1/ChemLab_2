@@ -17,7 +17,10 @@ namespace Gameplay
         private void Start()
         {
             _anim = GetComponent<Animator>();
-            
+        }
+
+        public void Init()
+        {
             GameManager gameManager = GameManager.Instance;
             if (gameManager == null)
             {
