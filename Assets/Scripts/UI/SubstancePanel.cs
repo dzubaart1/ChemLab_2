@@ -56,7 +56,7 @@ namespace UI
                 _panel.rotation = Quaternion.LookRotation(_panel.position - _player.transform.position, new Vector3(0, 1, 0));
                 _panel.rotation = Quaternion.Euler(0, _panel.rotation.eulerAngles.y, 0);
 
-                _text.text = _labContainer.GetTopSubstance().SubstanceProperty.NameForPanel;
+               //_text.text = _labContainer.GetTopSubstance().SubstanceProperty.NameForPanel;
             }
         }
 
