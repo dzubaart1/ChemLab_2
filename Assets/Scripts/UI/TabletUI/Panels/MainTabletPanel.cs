@@ -5,13 +5,13 @@ using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using System;
 
 namespace UI.TabletUI.Panels
 {
     public class MainTabletPanel : BaseTabletPanel
     {
         [Header("UIs")]
+        [SerializeField] private Button _homeButton;
         [SerializeField] private Button _hintButton;
         [SerializeField] private Button _infoButton;
         [SerializeField] private Button _safetyButton;
@@ -22,6 +22,7 @@ namespace UI.TabletUI.Panels
 
         private void OnEnable()
         {
+            _homeButton.onClick.AddListener(OnHomeButtonClick);
             _hintButton.onClick.AddListener(OnHintButtonClick);
             _infoButton.onClick.AddListener(OnInfoButtonClick);
             _safetyButton.onClick.AddListener(OnSafetyButtonClick);
@@ -29,11 +30,19 @@ namespace UI.TabletUI.Panels
 
         private void OnDisable()
         {
+            _showingTask = null;
+            
+            _homeButton.onClick.RemoveListener(OnHomeButtonClick);
             _hintButton.onClick.RemoveListener(OnHintButtonClick);
             _infoButton.onClick.RemoveListener(OnInfoButtonClick);
             _safetyButton.onClick.RemoveListener(OnSafetyButtonClick);
         }
 
+        private void OnHomeButtonClick()
+        {
+            TabletUI.SwitchToLoadLobbyPanel();
+        }
+        
         private void OnHintButtonClick()
         {
             TabletUI.SwitchToHintPanel();
@@ -59,6 +68,11 @@ namespace UI.TabletUI.Panels
             
             if (_showingTask == null)
             {
+                _taskTitleText.text = "TITLE";
+                _taskDescriptionText.text = "DESCRIPTION";
+                _infoButton.interactable = false;
+                _hintButton.interactable = false;
+                _safetyButton.interactable = false;
                 return;
             }
 
