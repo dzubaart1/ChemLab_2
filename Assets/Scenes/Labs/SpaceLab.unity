@@ -2868,7 +2868,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 705897363681648716, guid: 980f6097fb9635a4aab55225348485c0, type: 3}
       propertyPath: m_Lightmapping
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 705897363681648716, guid: 980f6097fb9635a4aab55225348485c0, type: 3}
       propertyPath: m_Shadows.m_Strength
@@ -2944,7 +2944,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 705897364456218269, guid: 980f6097fb9635a4aab55225348485c0, type: 3}
       propertyPath: m_Lightmapping
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 705897364456218269, guid: 980f6097fb9635a4aab55225348485c0, type: 3}
       propertyPath: m_Shadows.m_Strength
@@ -2956,7 +2956,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 705897364589650865, guid: 980f6097fb9635a4aab55225348485c0, type: 3}
       propertyPath: m_Lightmapping
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 705897364589650865, guid: 980f6097fb9635a4aab55225348485c0, type: 3}
       propertyPath: m_Shadows.m_Strength
@@ -2968,7 +2968,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 705897365489115732, guid: 980f6097fb9635a4aab55225348485c0, type: 3}
       propertyPath: m_Lightmapping
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 705897365489115732, guid: 980f6097fb9635a4aab55225348485c0, type: 3}
       propertyPath: m_Shadows.m_Strength
@@ -2980,7 +2980,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7982727077190995318, guid: 980f6097fb9635a4aab55225348485c0, type: 3}
       propertyPath: m_Lightmapping
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7982727077190995318, guid: 980f6097fb9635a4aab55225348485c0, type: 3}
       propertyPath: m_Shadows.m_Strength
@@ -4629,17 +4629,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6135443831722635874, guid: 2ee547a66d8d549419de9fec899d55a4, type: 3}
-      propertyPath: reagentsLabSubstanceProperty
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8752989905597421585, guid: 2ee547a66d8d549419de9fec899d55a4, type: 3}
       propertyPath: m_Name
       value: ChimicGlassContainer1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752989905597421585, guid: 2ee547a66d8d549419de9fec899d55a4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

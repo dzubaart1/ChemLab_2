@@ -239,7 +239,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
@@ -435,7 +435,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
@@ -712,7 +712,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
@@ -1318,7 +1318,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
@@ -3228,7 +3228,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1277588607
 Transform:
   m_ObjectHideFlags: 0
@@ -4323,7 +4323,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1372123626
 Transform:
   m_ObjectHideFlags: 0
@@ -4486,13 +4486,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1386690324}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.85697335, y: -0.14680456, z: -0.02469591, w: 0.49339163}
+  m_LocalRotation: {x: 0.4818688, y: 0.31394944, z: -0.70909506, w: 0.4079491}
   m_LocalPosition: {x: -9.529999, y: 0.13, z: 2.67}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 709096728}
-  m_LocalEulerAnglesHint: {x: 123.02899, y: -339.914, z: -329.58002}
+  m_LocalEulerAnglesHint: {x: 123.02899, y: -231.612, z: -329.58002}
 --- !u!108 &1386690326
 Light:
   m_ObjectHideFlags: 0
@@ -4504,7 +4504,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.8207547, g: 0.6742851, b: 0.5071645, a: 1}
+  m_Color: {r: 0.9150943, g: 0.8452213, b: 0.7640174, a: 1}
   m_Intensity: 0.55
   m_Range: 40
   m_SpotAngle: 45
@@ -6566,13 +6566,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2138829811}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.6450203, y: -0.01601861, z: -0.4828205, w: 0.5920951}
+  m_LocalRotation: {x: -0.013600915, y: 0.47054973, z: -0.8055941, w: 0.3597446}
   m_LocalPosition: {x: -9.529999, y: 0.13, z: 2.67}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 709096728}
-  m_LocalEulerAnglesHint: {x: 131.552, y: -255.383, z: -296.729}
+  m_LocalEulerAnglesHint: {x: 131.552, y: -147.081, z: -296.729}
 --- !u!108 &2138829813
 Light:
   m_ObjectHideFlags: 0
@@ -6584,7 +6584,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.19263972, g: 0.22862941, b: 0.3490566, a: 1}
+  m_Color: {r: 0.7989943, g: 0.82087153, b: 0.8962264, a: 1}
   m_Intensity: 0.48
   m_Range: 40
   m_SpotAngle: 45
@@ -6929,7 +6929,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1001 &772963756150363219
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7209,11 +7209,11 @@ PrefabInstance:
     - target: {fileID: 4632761823282653852, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: _dlight.DirTexture
       value: 
-      objectReference: {fileID: 2800000, guid: 90bd09b94c07a8840b140729196d831f, type: 3}
+      objectReference: {fileID: 2800000, guid: 10e15c312a46f3e46b471f9757bac189, type: 3}
     - target: {fileID: 4632761823282653852, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: _UVlight.DirTexture
       value: 
-      objectReference: {fileID: 2800000, guid: 486b9f7257d1340428e5badf44e4a635, type: 3}
+      objectReference: {fileID: 2800000, guid: 3f02c352d41dfc64f84808452807d127, type: 3}
     - target: {fileID: 4632761823282653852, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: _UVlight.DirtTexture
       value: 
@@ -7221,43 +7221,43 @@ PrefabInstance:
     - target: {fileID: 4632761823282653852, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: _dlight.LightTexture
       value: 
-      objectReference: {fileID: 2800000, guid: 9c4783e7ef2eb5d45b2cc12e0367e7c0, type: 3}
+      objectReference: {fileID: 2800000, guid: 0a5fe62a5f106b445a08adcc9380df34, type: 3}
     - target: {fileID: 4632761823282653852, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: _UVlight.LightTexture
       value: 
-      objectReference: {fileID: 2800000, guid: d3cde47f54144aa45bb16267092e2c6c, type: 3}
+      objectReference: {fileID: 2800000, guid: 89604576bae49c340af791e5649e8ca1, type: 3}
     - target: {fileID: 4632761823282653852, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: _dlight.ShadowTexture
       value: 
-      objectReference: {fileID: 2800000, guid: 5e63d9542a1aeef4d8630e76532fcec9, type: 3}
+      objectReference: {fileID: 2800000, guid: c0f17559df4135343b07f3c74b6a5cc2, type: 3}
     - target: {fileID: 4632761823282653852, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: _fulllight.DirTexture
       value: 
-      objectReference: {fileID: 2800000, guid: bb40bbeb7fae6e04fb1dba34270557a8, type: 3}
+      objectReference: {fileID: 2800000, guid: 3f96c0005ace18c43b0f27660ce45506, type: 3}
     - target: {fileID: 4632761823282653852, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: _nonelight.DirTexture
       value: 
-      objectReference: {fileID: 2800000, guid: 2fb048750e002bd4d9466d73d4915e4d, type: 3}
+      objectReference: {fileID: 2800000, guid: 606039cfeecab30448328c5a2989756a, type: 3}
     - target: {fileID: 4632761823282653852, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: _UVlight.ShadowTexture
       value: 
-      objectReference: {fileID: 2800000, guid: 3015763b9fb6d644b915e009d6ddf609, type: 3}
+      objectReference: {fileID: 2800000, guid: 597b9fe6cb57df54cb62ca38247505a7, type: 3}
     - target: {fileID: 4632761823282653852, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: _fulllight.LightTexture
       value: 
-      objectReference: {fileID: 2800000, guid: 9400f6476ba546c479b50890452b1123, type: 3}
+      objectReference: {fileID: 2800000, guid: 23d30420c58af3c4c8b4e54dcad49248, type: 3}
     - target: {fileID: 4632761823282653852, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: _nonelight.LightTexture
       value: 
-      objectReference: {fileID: 2800000, guid: 581321d5cc706c64b95239308408681e, type: 3}
+      objectReference: {fileID: 2800000, guid: 193b1a703073436409d6fbff580af6e7, type: 3}
     - target: {fileID: 4632761823282653852, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: _fulllight.ShadowTexture
       value: 
-      objectReference: {fileID: 2800000, guid: cfc78b3117d74be4a81042c0d8185581, type: 3}
+      objectReference: {fileID: 2800000, guid: f458d1f869f677a49820e6e63f120078, type: 3}
     - target: {fileID: 4632761823282653852, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: _nonelight.ShadowTexture
       value: 
-      objectReference: {fileID: 2800000, guid: 51083d5ef32078d46b9952d2ca9b9b80, type: 3}
+      objectReference: {fileID: 2800000, guid: d1215080c90757f4884c944a7743917d, type: 3}
     - target: {fileID: 5454244855187153186, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
