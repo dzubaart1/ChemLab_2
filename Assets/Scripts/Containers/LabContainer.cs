@@ -278,6 +278,7 @@ namespace Containers
                     {
                         meshRendererConfigLiquid.MeshRenderer.enabled = true;
                         meshRendererConfigLiquid.MeshRenderer.material.color = _substances[i].GetColor();
+                        meshRendererConfigLiquid.MeshRenderer.material.SetColor("_Color", _substances[i].GetColor());
                     }
                 }
             }
@@ -301,6 +302,7 @@ namespace Containers
                         meshRendererConfig.XScaleWeightSubstanceCurve.Evaluate(_substances[i].Weight),
                         meshRendererConfig.YScaleWeightSubstanceCurve.Evaluate(_substances[i].Weight),
                         meshRendererConfig.ZScaleWeightSubstanceCurve.Evaluate(_substances[i].Weight));
+                    meshRendererConfig.MeshRenderer.material.SetFloat("_LiquidAmount", _substances[i].Weight / MaxVolume);
                 }
             }
         }

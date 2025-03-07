@@ -10,6 +10,7 @@ namespace Core
     public class Player : MonoBehaviour
     {
         public event Action LeftHandGrabbedEvent;
+        public event Action RightHandGrabbedEvent;
         [Header("Refs")]
         [SerializeField] private HandsChanger _handsChanger;
         [SerializeField] private TabletUI _tabletUI;
@@ -68,6 +69,8 @@ namespace Core
         private void OnRightHandSelected(SelectEnterEventArgs args)
         {
             _rightRayInteractor.enableUIInteraction = false;
+            
+            RightHandGrabbedEvent?.Invoke();
         }
         
         private void OnRightHandExited(SelectExitEventArgs args)

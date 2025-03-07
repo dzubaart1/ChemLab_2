@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 363585809087722434}
   - component: {fileID: 430686839917501712}
   - component: {fileID: 9105776815122697774}
+  - component: {fileID: 8573762158046912533}
   m_Layer: 0
   m_Name: CylinderTop
   m_TagString: Untagged
@@ -175,7 +176,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a38c7974e2b96744f927d71796981dc5, type: 2}
+  - {fileID: 2100000, guid: 34d79fa0334e4b14fae14a16e6a11156, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -197,6 +198,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8573762158046912533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4789137107588063329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc5e2f38a4fecab439741d6b0bcbffc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxWobble: 5
+  WobbleSpeed: 1
+  Recovery: 1
 --- !u!1 &5344392013207698912
 GameObject:
   m_ObjectHideFlags: 0
@@ -820,9 +836,9 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
-        inSlope: 0.6
-        outSlope: 0.6
+        value: 300
+        inSlope: 0
+        outSlope: 0
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
@@ -830,8 +846,8 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 500
         value: 300
-        inSlope: 0.6
-        outSlope: 0.6
+        inSlope: 0
+        outSlope: 0
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334

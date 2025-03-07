@@ -2,6 +2,8 @@ using Core;
 using Saveables;
 using UnityEngine;
 using UI.Components;
+using System;
+using System.Collections.Generic;
 
 namespace BioEngineerLab.Machines
 {
@@ -15,13 +17,28 @@ namespace BioEngineerLab.Machines
             public bool IsDoorOpened;
         }
         
+        [Serializable]
+        private struct MyLight
+        {
+            public Texture2D LightTexture;
+            public Texture2D ShadowTexture;
+            public Texture2D DirTexture;
+        }
+        
         [SerializeField] private ButtonComponent _bacteriumButton;
         [SerializeField] private ButtonComponent _lightButton;
         [SerializeField] private ButtonComponent _dlightButton;
         [SerializeField] private ButtonComponent _keyButton;
-        [SerializeField] private GameObject _bacteriumLight;
-        [SerializeField] private GameObject _commonLight;
-        [SerializeField] private GameObject _dLight;
+        
+        [SerializeField] private MyLight _UVlight;
+        [SerializeField] private MyLight _nonelight;
+        [SerializeField] private MyLight _fulllight;
+        [SerializeField] private MyLight _dlight;
+
+        private LightmapData[] _noneLight;
+        private LightmapData[] _UVLight;
+        private LightmapData[] _DLight;
+        private LightmapData[] _fullLight;
         
         private SavedData _savedData = new SavedData();
         
@@ -44,6 +61,37 @@ namespace BioEngineerLab.Machines
             }
             
             gameManager.CurrentBaseLocalManager.AddSaveableUI(this);
+            
+            List<LightmapData> uvlightmap = new List<LightmapData>();
+            LightmapData uvlmdata = new LightmapData();
+            uvlmdata.lightmapDir = _UVlight.DirTexture;
+            uvlmdata.lightmapColor = _UVlight.LightTexture;
+            uvlmdata.shadowMask = _UVlight.ShadowTexture;
+            _UVLight = uvlightmap.ToArray();
+            
+            List<LightmapData> nonelightmap = new List<LightmapData>();
+            LightmapData nonelmdata = new LightmapData();
+            nonelmdata.lightmapDir = _nonelight.DirTexture;
+            nonelmdata.lightmapColor = _nonelight.LightTexture;
+            nonelmdata.shadowMask = _nonelight.ShadowTexture;
+            nonelightmap.Add(nonelmdata);
+            _noneLight = nonelightmap.ToArray();
+            
+            List<LightmapData> fulllightmap = new List<LightmapData>();
+            LightmapData fulllmdata = new LightmapData();
+            fulllmdata.lightmapDir = _fulllight.DirTexture;
+            fulllmdata.lightmapColor = _fulllight.LightTexture;
+            fulllmdata.shadowMask = _fulllight.ShadowTexture;
+            fulllightmap.Add(fulllmdata);
+            _fullLight = fulllightmap.ToArray();
+            
+            List<LightmapData> dlightmap = new List<LightmapData>();
+            LightmapData dlmdata = new LightmapData();
+            dlmdata.lightmapDir = _dlight.DirTexture;
+            dlmdata.lightmapColor = _dlight.LightTexture;
+            dlmdata.shadowMask = _dlight.ShadowTexture;
+            dlightmap.Add(dlmdata);
+            _DLight = dlightmap.ToArray();
         }
         
         private void OnEnable()
@@ -65,7 +113,7 @@ namespace BioEngineerLab.Machines
         private void OnBacteriumButtonClicked()
         {
             _isBactLightOn = !_isBactLightOn;
-            _bacteriumLight.gameObject.SetActive(_isBactLightOn);
+            LightmapSettings.lightmaps = _isBactLightOn ? _UVLight : _noneLight;
         }
 
         private void OnLightButtonClicked()
@@ -73,8 +121,7 @@ namespace BioEngineerLab.Machines
             _isCommonLightOn = true;
             _isDLightOn = false;
             
-            _commonLight.gameObject.SetActive(_isCommonLightOn);
-            _dLight.gameObject.SetActive(_isDLightOn);
+            LightmapSettings.lightmaps = _fullLight;
         }
         
         private void OnDLightButtonClicked()
@@ -82,8 +129,7 @@ namespace BioEngineerLab.Machines
             _isCommonLightOn = false;
             _isDLightOn = true;
             
-            _commonLight.gameObject.SetActive(_isCommonLightOn);
-            _dLight.gameObject.SetActive(_isDLightOn);
+            LightmapSettings.lightmaps = _DLight;
         }
 
         private void OnKeyButtonClicked()
@@ -102,13 +148,12 @@ namespace BioEngineerLab.Machines
         public void LoadUIState()
         {
             _isBactLightOn = _savedData.IsBactLightOn;
-            _bacteriumLight.gameObject.SetActive(_isBactLightOn);
             
             _isCommonLightOn = _savedData.IsCommonLightOn;
-            _commonLight.gameObject.SetActive(_isCommonLightOn);
             
             _isDLightOn = _savedData.IsDLightOn;
-            _dLight.gameObject.SetActive(_isDLightOn);
+            
+            LightmapSettings.lightmaps = _isCommonLightOn ? _fullLight : _DLight ;
         }
     }
 }
