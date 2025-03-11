@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3799382638158621440}
   - component: {fileID: 4511779416628014160}
   m_Layer: 0
-  m_Name: Smoke
+  m_Name: Steam
   m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

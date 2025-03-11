@@ -383,6 +383,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1532478101405847582}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1174408652680211275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 747587789448095695}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &747587789448095695
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174408652680211275}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.0575, z: -0}
+  m_LocalScale: {x: 3.14, y: 3.14, z: 4.86}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6194664196160758847}
+  m_Father: {fileID: 1532478101405847582}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &3010782723357967432
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,7 +661,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4396599366770081107}
-  - {fileID: 6194664196160758847}
+  - {fileID: 747587789448095695}
   - {fileID: 1223548410225965671}
   - {fileID: 3597742664974151980}
   m_Father: {fileID: 3927687518678438592}
@@ -928,7 +960,7 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 120
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -936,8 +968,8 @@ MonoBehaviour:
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 160
-        value: 120
+        time: 500
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -952,7 +984,7 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 120
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -960,8 +992,8 @@ MonoBehaviour:
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 160
-        value: 120
+        time: 500
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -976,7 +1008,7 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 90
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -984,8 +1016,8 @@ MonoBehaviour:
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 160
-        value: 90
+        time: 500
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -1109,13 +1141,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8940516597102218534}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.0096, z: 0}
-  m_LocalScale: {x: 120, y: 120, z: 90}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1532478101405847582}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_Father: {fileID: 747587789448095695}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7370744188404416283
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1123,7 +1155,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8940516597102218534}
-  m_Mesh: {fileID: 2534964839176971238, guid: 24244f2d490c61f44a3fcca84b8f6bb7, type: 3}
+  m_Mesh: {fileID: 2534964839176971238, guid: caf756a1ad3bc6a499d88933d9c80dca, type: 3}
 --- !u!23 &8318244865055672879
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1144,7 +1176,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 34d79fa0334e4b14fae14a16e6a11156, type: 2}
+  - {fileID: 2100000, guid: 0b4a6a137ffb4ad45930ceb6b4963467, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1178,6 +1210,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc5e2f38a4fecab439741d6b0bcbffc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxWobble: 5
+  MaxWobble: 1
   WobbleSpeed: 1
   Recovery: 1

@@ -6966,7 +6966,7 @@ PrefabInstance:
     - target: {fileID: 4632761823282653852, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: _fulllight.DirTexture
       value: 
-      objectReference: {fileID: 2800000, guid: dd4d4bad68072634eadd7234d1abd9d4, type: 3}
+      objectReference: {fileID: 2800000, guid: ee348b13e0986ce449700576941f9faf, type: 3}
     - target: {fileID: 4632761823282653852, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: _nonelight.DirTexture
       value: 
@@ -6978,7 +6978,7 @@ PrefabInstance:
     - target: {fileID: 4632761823282653852, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: _fulllight.LightTexture
       value: 
-      objectReference: {fileID: 2800000, guid: a2e2164c1b71fa04282fea9c7a62759a, type: 3}
+      objectReference: {fileID: 2800000, guid: 8f3ed0d367b73454e98d78f357859d83, type: 3}
     - target: {fileID: 4632761823282653852, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: _nonelight.LightTexture
       value: 

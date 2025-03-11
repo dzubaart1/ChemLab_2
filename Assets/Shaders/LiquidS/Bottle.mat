@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: LiquidShaderMat
+  m_Name: Bottle
   m_Shader: {fileID: -6465566751694194690, guid: ab6701c5c0a82164aab703f012a6e8a9, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -70,9 +70,10 @@ Material:
     - _CastShadows: 1
     - _Cull: 2
     - _DstBlend: 0
-    - _LiquidAmount: 0.822
+    - _LiquidAmount: 0.759
     - _QueueControl: 1
     - _QueueOffset: 0
+    - _ScaleValue: 65
     - _SrcBlend: 1
     - _Surface: 0
     - _WobbleX: 0
@@ -81,7 +82,7 @@ Material:
     - _ZWrite: 1
     - _ZWriteControl: 0
     m_Colors:
-    - _Color: {r: 0, g: 0, b: 0, a: 0}
+    - _Color: {r: 0.35243854, g: 0.59288996, b: 0.75471693, a: 1}
     - _SideColor: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
     - _TopColor: {r: 0.754717, g: 0.26699895, b: 0.26699895, a: 1}
   m_BuildTextureStacks: []

@@ -532,7 +532,6 @@ GameObject:
   - component: {fileID: 7159056372955933755}
   - component: {fileID: 3735085461242495707}
   - component: {fileID: 4062999779071354566}
-  - component: {fileID: 8191780786511314693}
   m_Layer: 0
   m_Name: test_tube_50ml.001
   m_TagString: Untagged
@@ -583,7 +582,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 34d79fa0334e4b14fae14a16e6a11156, type: 2}
+  - {fileID: 2100000, guid: a38c7974e2b96744f927d71796981dc5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -605,21 +604,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8191780786511314693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7787663932316607581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc5e2f38a4fecab439741d6b0bcbffc9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxWobble: 5
-  WobbleSpeed: 1
-  Recovery: 1
 --- !u!1 &8513571751734786861
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,7 +678,7 @@ MonoBehaviour:
   m_InteractionLayers:
     m_Bits: 512
   m_AttachTransform: {fileID: 8513571751982461714}
-  m_KeepSelectedTargetValid: 0
+  m_KeepSelectedTargetValid: 1
   m_DisableVisualsWhenBlockedInGroup: 1
   m_StartingSelectedInteractable: {fileID: 0}
   m_StartingTargetFilter: {fileID: 0}
@@ -956,8 +940,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.03
-  m_Center: {x: 0, y: 0.1, z: 0}
+  m_Radius: 0.04
+  m_Center: {x: 0, y: 0.12, z: 0}
 --- !u!114 &8792329057904026415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1164,9 +1148,9 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
+        value: 0
+        inSlope: 0.05
+        outSlope: 0.05
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
@@ -1174,8 +1158,8 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 20
         value: 1
-        inSlope: 0
-        outSlope: 0
+        inSlope: 0.05
+        outSlope: 0.05
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
