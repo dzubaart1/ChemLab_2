@@ -380,6 +380,7 @@ namespace Containers
                     return;
                 }
                 ChangeMaxVolume(setVolumeLabSideEffect.Volume);
+                UpdateView();
             }
         }
 

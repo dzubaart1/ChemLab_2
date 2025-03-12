@@ -70,7 +70,7 @@ Material:
     - _CastShadows: 1
     - _Cull: 2
     - _DstBlend: 0
-    - _LiquidAmount: 0.759
+    - _LiquidAmount: 1
     - _QueueControl: 1
     - _QueueOffset: 0
     - _ScaleValue: 1500
