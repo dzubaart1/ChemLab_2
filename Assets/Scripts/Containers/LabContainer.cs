@@ -302,7 +302,7 @@ namespace Containers
                         meshRendererConfig.XScaleWeightSubstanceCurve.Evaluate(_substances[i].Weight),
                         meshRendererConfig.YScaleWeightSubstanceCurve.Evaluate(_substances[i].Weight),
                         meshRendererConfig.ZScaleWeightSubstanceCurve.Evaluate(_substances[i].Weight));
-                    meshRendererConfig.MeshRenderer.material.SetFloat("_LiquidAmount", _substances[i].Weight / MaxVolume);
+                    meshRendererConfig.MeshRenderer.material.SetFloat("_LiquidAmount", _substances[i].Weight / MaxVolume * 0.9f);
                 }
             }
         }

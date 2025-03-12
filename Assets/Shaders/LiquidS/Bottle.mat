@@ -73,7 +73,7 @@ Material:
     - _LiquidAmount: 0.759
     - _QueueControl: 1
     - _QueueOffset: 0
-    - _ScaleValue: 65
+    - _ScaleValue: 1500
     - _SrcBlend: 1
     - _Surface: 0
     - _WobbleX: 0
@@ -83,6 +83,7 @@ Material:
     - _ZWriteControl: 0
     m_Colors:
     - _Color: {r: 0.35243854, g: 0.59288996, b: 0.75471693, a: 1}
+    - _Scales: {r: 1, g: 1, b: 1, a: 0}
     - _SideColor: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
     - _TopColor: {r: 0.754717, g: 0.26699895, b: 0.26699895, a: 1}
   m_BuildTextureStacks: []

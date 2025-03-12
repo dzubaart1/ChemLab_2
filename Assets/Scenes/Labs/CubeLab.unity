@@ -3381,7 +3381,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1277588607
 Transform:
   m_ObjectHideFlags: 0
@@ -4019,7 +4019,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1372123626
 Transform:
   m_ObjectHideFlags: 0
@@ -4964,9 +4964,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8280704227580990285, guid: 987a08c0c32cbe54593ef00d2d72e306, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a082350f8785fb44aa7c801cafb5ddbb, type: 2}
+    - target: {fileID: 8280704227580990285, guid: 987a08c0c32cbe54593ef00d2d72e306, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: f0dc9ce8d4fa2da46b643dfa83868ad0, type: 2}
+    - target: {fileID: 8280704227580990285, guid: 987a08c0c32cbe54593ef00d2d72e306, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: -6271897200390792742, guid: 9dbe4096d742be647b309c552d692dc0, type: 3}
+      objectReference: {fileID: 2100000, guid: 3d9516237830d1e47932f88c4af976e5, type: 2}
     - target: {fileID: 8280704227580990285, guid: 987a08c0c32cbe54593ef00d2d72e306, type: 3}
       propertyPath: m_Materials.Array.data[7]
       value: 
@@ -6942,11 +6950,11 @@ PrefabInstance:
     - target: {fileID: 4632761823282653852, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: _dlight.DirTexture
       value: 
-      objectReference: {fileID: 2800000, guid: 1bb2427325fbeac40b21bba7e062832b, type: 3}
+      objectReference: {fileID: 2800000, guid: 5a8940515df2822459d73ca74c80eb5a, type: 3}
     - target: {fileID: 4632761823282653852, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: _UVlight.DirTexture
       value: 
-      objectReference: {fileID: 2800000, guid: d6cb497e258faee4da589daca1a5ad8d, type: 3}
+      objectReference: {fileID: 2800000, guid: a45520e114cff9b48aed68f3d7c44338, type: 3}
     - target: {fileID: 4632761823282653852, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: _UVlight.DirtTexture
       value: 
@@ -6954,11 +6962,11 @@ PrefabInstance:
     - target: {fileID: 4632761823282653852, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: _dlight.LightTexture
       value: 
-      objectReference: {fileID: 2800000, guid: 2fe7d838de402b445aa456b193012b04, type: 3}
+      objectReference: {fileID: 2800000, guid: 4d1481a334dcd7a41b5f36d934e456b1, type: 3}
     - target: {fileID: 4632761823282653852, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: _UVlight.LightTexture
       value: 
-      objectReference: {fileID: 2800000, guid: 688383d7ae4e63749bcc3bef0a3a0218, type: 3}
+      objectReference: {fileID: 2800000, guid: 3b529cc24e85311438b739fa27be7c2e, type: 3}
     - target: {fileID: 4632761823282653852, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: _dlight.ShadowTexture
       value: 
@@ -6966,11 +6974,11 @@ PrefabInstance:
     - target: {fileID: 4632761823282653852, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: _fulllight.DirTexture
       value: 
-      objectReference: {fileID: 2800000, guid: ee348b13e0986ce449700576941f9faf, type: 3}
+      objectReference: {fileID: 2800000, guid: 26b280f5a6fb2704fb45f4ee948db345, type: 3}
     - target: {fileID: 4632761823282653852, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: _nonelight.DirTexture
       value: 
-      objectReference: {fileID: 2800000, guid: d42077b99cf7cb1419cc3055e67e6b3a, type: 3}
+      objectReference: {fileID: 2800000, guid: 7d02b528c28d1b24fa7ec2773889c3ba, type: 3}
     - target: {fileID: 4632761823282653852, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: _UVlight.ShadowTexture
       value: 
@@ -6978,11 +6986,11 @@ PrefabInstance:
     - target: {fileID: 4632761823282653852, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: _fulllight.LightTexture
       value: 
-      objectReference: {fileID: 2800000, guid: 8f3ed0d367b73454e98d78f357859d83, type: 3}
+      objectReference: {fileID: 2800000, guid: 383aba6e9f1240f4b9570ae95d7ec73d, type: 3}
     - target: {fileID: 4632761823282653852, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: _nonelight.LightTexture
       value: 
-      objectReference: {fileID: 2800000, guid: 74debc941af5569449025843cad7de48, type: 3}
+      objectReference: {fileID: 2800000, guid: 3a58af2e3d9f2a34594282868fa00fdd, type: 3}
     - target: {fileID: 4632761823282653852, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: _fulllight.ShadowTexture
       value: 
@@ -7033,7 +7041,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5454244855187153186, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.6619
+      value: -0.667
       objectReference: {fileID: 0}
     - target: {fileID: 5454244855187153186, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: m_LocalRotation.w
