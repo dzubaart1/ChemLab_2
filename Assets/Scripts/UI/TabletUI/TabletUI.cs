@@ -21,7 +21,8 @@ namespace UI.TabletUI
             HintPanel,
             InfoPanel,
             SafetyPanel,
-            LoadLobbyPanel
+            LoadLobbyPanel,
+            PreviewPanel
         }
 
         [Header("Refs")]
@@ -166,6 +167,16 @@ namespace UI.TabletUI
             }
             
             SwitchPanel(mainPanel);
+        }
+        
+        public void SwitchToPreviewPanel()
+        {
+            if (!TryGetPanel(ETabletUIPanel.PreviewPanel, out BaseTabletPanel previewPanel))
+            {
+                return;
+            }
+            
+            SwitchPanel(previewPanel);
         }
 
         private void SwitchPanel(BaseTabletPanel targetPanel)

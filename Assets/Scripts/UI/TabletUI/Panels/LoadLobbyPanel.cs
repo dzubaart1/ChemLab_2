@@ -59,7 +59,7 @@ namespace UI.TabletUI.Panels
             }
             
             gameManager.LoadScene(GameManager.LOBBY_SCENE_NAME);
-            TabletUI.SwitchToMainPanel();
+            TabletUI.SwitchToPreviewPanel();
         }
 
         public override void SetTaskToShow(LabTask task)

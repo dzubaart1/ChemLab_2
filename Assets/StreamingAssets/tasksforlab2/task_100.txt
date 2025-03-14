@@ -20,14 +20,6 @@
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.TriggerActivatorSideEffect, Assembly-CSharp",
-        "IsActive": true,
-        "TriggerType": 1,
-        "SideEffectTimeType": 1,
-        "SideEffectType": 4
-      }
-    ]
+    "$values": []
   }
 }

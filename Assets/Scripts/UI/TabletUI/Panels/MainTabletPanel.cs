@@ -58,21 +58,13 @@ namespace UI.TabletUI.Panels
             TabletUI.SwitchToSafetyPanel();
         }
 
-        private void Update()
+        public override void SetTaskToShow(LabTask task)
         {
+            _showingTask = task;
+            
             GameManager gameManager = GameManager.Instance;
             if (gameManager == null)
             {
-                return;
-            }
-            
-            if (_showingTask == null)
-            {
-                _taskTitleText.text = "TITLE";
-                _taskDescriptionText.text = "DESCRIPTION";
-                _infoButton.interactable = false;
-                _hintButton.interactable = false;
-                _safetyButton.interactable = false;
                 return;
             }
 
@@ -119,11 +111,6 @@ namespace UI.TabletUI.Panels
             {
                 _safetyButton.interactable = true;
             }
-        }
-
-        public override void SetTaskToShow(LabTask task)
-        {
-            _showingTask = task;
         }
 
         public override void SetLabToShow(ELab lab)

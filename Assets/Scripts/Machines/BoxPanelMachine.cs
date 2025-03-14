@@ -29,7 +29,7 @@ namespace BioEngineerLab.Machines
         [SerializeField] private ButtonComponent _dlightButton;
         [SerializeField] private ButtonComponent _keyButton;
 
-        [SerializeField] private Transform AddLight;
+        /*[SerializeField] private Transform AddLight;*/
         
         [SerializeField] private MyLight _UVlight;
         [SerializeField] private MyLight _nonelight;
@@ -67,6 +67,7 @@ namespace BioEngineerLab.Machines
             LightmapData uvlmdata = new LightmapData();
             uvlmdata.lightmapDir = _UVlight.DirTexture;
             uvlmdata.lightmapColor = _UVlight.LightTexture;
+            uvlightmap.Add(uvlmdata);
             _UVLight = uvlightmap.ToArray();
             
             List<LightmapData> nonelightmap = new List<LightmapData>();
@@ -89,6 +90,8 @@ namespace BioEngineerLab.Machines
             dlmdata.lightmapColor = _dlight.LightTexture;
             dlightmap.Add(dlmdata);
             _DLight = dlightmap.ToArray();
+            
+            SwitchDLight();
         }
         
         private void OnEnable()
@@ -166,18 +169,15 @@ namespace BioEngineerLab.Machines
 
         private void SwitchLightUV(bool isOn)
         {
-            AddLight.gameObject.SetActive(false);
             LightmapSettings.lightmaps = isOn ? _noneLight : _UVLight;
         }
         private void SwitchDLight()
         {
-            AddLight.gameObject.SetActive(false);
             LightmapSettings.lightmaps = _DLight;
         }
 
         private void SwitchFullLight()
         {
-            AddLight.gameObject.SetActive(true);
             LightmapSettings.lightmaps = _fullLight;
         }
     }

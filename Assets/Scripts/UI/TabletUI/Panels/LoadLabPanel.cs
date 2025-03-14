@@ -57,7 +57,7 @@ namespace UI.TabletUI.Panels
 
         private void OnCancelButtonClicked()
         {
-            TabletUI.SwitchToMainPanel();
+            TabletUI.SwitchToPreviewPanel();
         }
 
         private void OnSubmitButtonClicked()

@@ -1,16 +1,23 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Core;
+using Saveables;
 using BioEngineerLab.Tasks.SideEffects;
 
 namespace Gameplay
 {
-    public class HandAnimatorController : MonoBehaviour, ISideEffectActivator
+    public class HandAnimatorController : MonoBehaviour, ISideEffectActivator, ISaveableOther
     {
+        private class SavedData
+        {
+            public bool IsActive = true;
+        }
+        
         [SerializeField] private InputActionProperty _triggerAction;
         [SerializeField] private InputActionProperty _gripAction;
 
         private Animator _anim;
+        private SavedData _savedData = new SavedData();
 
         public bool IsGrabbableAnimationActive = true;
 
@@ -32,6 +39,7 @@ namespace Gameplay
                 return;
             }
             gameManager.CurrentBaseLocalManager.AddSideEffectActivator(this);
+            gameManager.CurrentBaseLocalManager.AddSaveableOther(this);
         }
 
         private void Update()
@@ -59,6 +67,17 @@ namespace Gameplay
             }
 
             IsGrabbableAnimationActive = !triggerActivatorSideEffect.IsActive;
+            _anim.SetFloat("Grip", 0);
+        }
+        
+        public void Save()
+        {
+            _savedData.IsActive = IsGrabbableAnimationActive;
+        }
+
+        public void Load()
+        {
+            IsGrabbableAnimationActive = _savedData.IsActive;
         }
     }
 }
