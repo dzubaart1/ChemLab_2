@@ -1,4 +1,5 @@
 using System;
+using Gameplay;
 using Machines;
 using UI.TabletUI;
 using UnityEngine;
@@ -15,6 +16,8 @@ namespace Core
         [Header("Refs")]
         [SerializeField] private HandsChanger _handsChanger;
         [SerializeField] private TabletUI _tabletUI;
+        [SerializeField] private HandAnimatorController _rightHandAnimatorController;
+        [SerializeField] private HandAnimatorController _leftHandAnimatorController;
         
         [Space]
         [Header("Interactors")]
@@ -63,6 +66,8 @@ namespace Core
 
         public void Init()
         {
+            _rightHandAnimatorController.Init();
+            _leftHandAnimatorController.Init();
             _handsChanger.Init();
             _tabletUI.Init();
         }
