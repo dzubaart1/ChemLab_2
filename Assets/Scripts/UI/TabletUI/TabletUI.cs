@@ -27,8 +27,8 @@ namespace UI.TabletUI
         [Header("Refs")]
         [SerializeField] private WarningTextActivator _warningTextActivator;
         
-        
         [SerializeField] private List<BaseTabletPanel> _panels;
+        [SerializeField] private BaseTabletPanel _defaultPanel;
 
         [CanBeNull] private BaseTabletPanel _currentPanel;
 
@@ -56,8 +56,6 @@ namespace UI.TabletUI
         public void Init()
         {
             _warningTextActivator.Init();
-            _rightHandAnimatorController.Init();
-            _leftHandAnimatorController.Init();
         }
 
         public void OnTaskFailed()

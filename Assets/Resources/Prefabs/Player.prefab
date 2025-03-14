@@ -579,6 +579,8 @@ GameObject:
   - component: {fileID: 2578621622662213245}
   - component: {fileID: 3908392009510649965}
   - component: {fileID: 722393541438107483}
+  - component: {fileID: 135447128955317843}
+  - component: {fileID: 7884566405668371552}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -703,6 +705,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _handsChanger: {fileID: 722393541438107483}
   _tabletUI: {fileID: 7602101178684752245}
+  _rightHandAnimatorController: {fileID: 2857276384422251877}
+  _leftHandAnimatorController: {fileID: 1940233673807217048}
   _leftDirectInteractor: {fileID: 7035385901366129742}
   _rightDirectInteractor: {fileID: 4863586686890968215}
   _leftRayInteractor: {fileID: 442439145472789048}
@@ -724,6 +728,32 @@ MonoBehaviour:
   _potholderMaterial: {fileID: 2100000, guid: f8e7f1ea0f7884e44bb4436359e1fc37, type: 2}
   _rightHandMesh: {fileID: 2867423242891368681}
   _leftHandMesh: {fileID: 2001217914139188124}
+--- !u!114 &135447128955317843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2625830887822001558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7595ae7278ff43b2a7fce911fe71e23c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _userController: {fileID: 7884566405668371552}
+--- !u!114 &7884566405668371552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2625830887822001558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01b0429740494af7bc0a2e5f0163bafa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tabletUI: {fileID: 7602101178684752245}
 --- !u!1 &3496704469017972518
 GameObject:
   m_ObjectHideFlags: 0
