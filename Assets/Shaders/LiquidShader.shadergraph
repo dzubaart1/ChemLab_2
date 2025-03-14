@@ -2044,7 +2044,7 @@
     },
     "m_AllowMaterialOverride": false,
     "m_SurfaceType": 1,
-    "m_ZTestMode": 4,
+    "m_ZTestMode": 2,
     "m_ZWriteControl": 0,
     "m_AlphaMode": 0,
     "m_RenderFace": 0,
@@ -4229,10 +4229,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1433.0,
-            "y": 867.0000610351563,
-            "width": 112.0,
-            "height": 33.99993896484375
+            "x": -1469.9998779296875,
+            "y": 1040.0,
+            "width": 127.9998779296875,
+            "height": 124.9998779296875
         }
     },
     "m_Slots": [
