@@ -11,6 +11,7 @@ namespace Core
     {
         public event Action LeftHandGrabbedEvent;
         public event Action RightHandGrabbedEvent;
+        
         [Header("Refs")]
         [SerializeField] private HandsChanger _handsChanger;
         [SerializeField] private TabletUI _tabletUI;

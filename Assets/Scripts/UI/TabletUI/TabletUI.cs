@@ -21,12 +21,11 @@ namespace UI.TabletUI
             HintPanel,
             InfoPanel,
             SafetyPanel,
+            LoadLobbyPanel
         }
 
         [Header("Refs")]
         [SerializeField] private WarningTextActivator _warningTextActivator;
-        [SerializeField] private HandAnimatorController _rightHandAnimatorController;
-        [SerializeField] private HandAnimatorController _leftHandAnimatorController;
         
         
         [SerializeField] private List<BaseTabletPanel> _panels;
@@ -40,6 +39,18 @@ namespace UI.TabletUI
                 panel.gameObject.SetActive(false);
                 panel.TabletUI = this;
             }
+
+            SwitchPanel(_defaultPanel);
+        }
+
+        public void ToggleVisible()
+        {
+            if (_currentPanel == null)
+            {
+                return;
+            }
+            
+            _currentPanel.gameObject.SetActive(!_currentPanel.gameObject.activeSelf);
         }
 
         public void Init()
@@ -137,6 +148,16 @@ namespace UI.TabletUI
             }
             
             SwitchPanel(infoPanel);
+        }
+        
+        public void SwitchToLoadLobbyPanel()
+        {
+            if (!TryGetPanel(ETabletUIPanel.LoadLobbyPanel, out BaseTabletPanel loadLobbyPanel))
+            {
+                return;
+            }
+            
+            SwitchPanel(loadLobbyPanel);
         }
 
         public void SwitchToMainPanel()
