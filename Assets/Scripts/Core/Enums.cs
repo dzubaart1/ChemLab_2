@@ -286,5 +286,6 @@ namespace Core
     {
         LaminBoxTrigger,
         LeftHandTrigger,
+        ContinueButtonTrigger
     }
 }

@@ -4,6 +4,7 @@ using Saveables;
 using UI.Components;
 using UnityEngine;
 using System.Collections;
+using TMPro;
 using UnityEngine.Serialization;
 
 namespace Machines
@@ -22,15 +23,20 @@ namespace Machines
         [SerializeField] private ButtonComponent _powerButton;
         [SerializeField] private ButtonComponent _startButton;
         [SerializeField] private ButtonComponent _pullButton;
+        [SerializeField] private TextMeshProUGUI _panelText;
 
         [Header("Refs")]
         [SerializeField] private VRSocketInteractor[] _socketInteractors;
-        [SerializeField] private Animator _mainAnimator;
-        [SerializeField] private Animator _arrowAnimator;
         [SerializeField] private Transform _karetka;
         [SerializeField] private Transform _arrow;
         [SerializeField] Door _door;
         [SerializeField] ParticleSystem _particle;
+        
+        [Header("Animators")]
+        [SerializeField] private Animator _mainAnimator;
+        [SerializeField] private Animator _arrowAnimator;
+        [SerializeField] private Animator _doorAnimator;
+        
         
         private SavedData _savedData = new SavedData();
         
@@ -48,20 +54,29 @@ namespace Machines
             }
             
             gameManager.CurrentBaseLocalManager.AddSaveableUI(this);
+            _panelText.text = "";
         }
         
         private void OnEnable()
         {
             _pullButton.ClickBtnEvent += OnPullButtonClick;
             _startButton.ClickBtnEvent += OnStartButtonClick;
+            _powerButton.ClickBtnEvent += OnPowerButtonClick;
             _door.DoorOpenedEvent += OnDoorOpened;
+            _door.DoorClosedEvent += OnDoorClosed;
         }
 
         private void OnDisable()
         {
             _pullButton.ClickBtnEvent -= OnPullButtonClick;
             _startButton.ClickBtnEvent -= OnStartButtonClick;
+            _powerButton.ClickBtnEvent -= OnPowerButtonClick;
             _door.DoorOpenedEvent -= OnDoorOpened;
+        }
+        
+        private void OnPowerButtonClick()
+        {
+            _panelText.text = "Откройте дверь";
         }
 
         private void OnPullButtonClick()
@@ -84,10 +99,18 @@ namespace Machines
             }
             
             _arrowAnimator.Play("ArrowRight");
+            _panelText.text = "НАГРЕВ П/Г\n96 кПа";
         }
-        
+
+        private void OnDoorClosed()
+        {
+            _doorAnimator.Play("Close");
+        }
+
         private void OnDoorOpened()
         {
+            _panelText.text = "Прог4 0089\nМеню Пуск";
+            _doorAnimator.Play("Open");
             if (!_startButton.IsOn)
             {
                 return;
@@ -120,15 +143,26 @@ namespace Machines
                 _mainAnimator.Play("Base");
                 _karetka.localPosition = new Vector3(-0.1038f, 0.1058f, 0.06f);
             }
+            
+            if (_powerButton.IsOn)
+            {
+                _panelText.text = "Прог4 0089\nМеню Пуск";
+            }
 
             if (_startButton.IsOn)
             {
                 _arrowAnimator.Play("ArrowRight");
+                _panelText.text = "НАГРЕВ П/Г\n96 кПа";
             }
             else
             {
                 _arrowAnimator.Play("Base");
                 _arrow.localRotation = Quaternion.Euler(0, 0, -4);
+            }
+            
+            if (!_powerButton.IsOn)
+            {
+                _panelText.text = "";
             }
         }
     }

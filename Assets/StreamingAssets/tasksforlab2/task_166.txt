@@ -2,24 +2,38 @@
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
   "Lab": 1,
   "Number": 166,
-  "Title": "Задание 166",
-  "TitleEnglish": null,
-  "Description": "Откройте дверь в предбоксник, зайдите туда",
-  "DescriptionEnglish": null,
-  "Warning": "",
-  "WarningEnglish": null,
-  "SafetyPrecautions": null,
-  "SafetyPrecautionsEnglish": null,
-  "HintImagePath": "Lab2/2",
+  "Title": "Поздарвляем!",
+  "TitleEnglish": "",
+  "Description": "Вы только что завершили лабораторную работу «Исследование ферментативной активности молочнокислых бактерий в процессе гликолиза»",
+  "DescriptionEnglish": "",
+  "Warning": "При исследовании ферментативной активности молочнокислых бактерий в процессе гликолиза с использованием индикатора бромкрезоловый пурпурный наблюдаются следующие результаты:\r\nВ растворе с глюкозой раствор становится слабо-желтым, что указывает на умеренное изменение кислотности вследствие ферментации.\r\nВ растворе с лактозой цвет становится ярко-желтым, что свидетельствует о более интенсивном процессе гликолиза и выделении большего количества молочной кислоты бактериями.\r\nВ растворе с сахарозой индикатор остается фиолетовым, что говорит о низкой ферментативной активности по отношению к этому сахару, и, соответственно, отсутствии заметного изменения pH среды.\r\nТаким образом наиболее подходящим углеводным источником для S.t 56-45 является лактоза.\r\n",
+  "WarningEnglish": "",
+  "SafetyPrecautions": "",
+  "SafetyPrecautionsEnglish": "",
+  "HintImagePath": "",
   "SaveableTask": true,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.DoorLabActivity, Assembly-CSharp",
-    "Door": 3,
-    "DoorActivity": 0,
-    "ActivityType": 7
+    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
+    "ButtonType": 38,
+    "ActivityType": 6
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": []
+    "$values": [
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.TriggerActivatorSideEffect, Assembly-CSharp",
+        "IsActive": true,
+        "TriggerType": 2,
+        "SideEffectTimeType": 0,
+        "SideEffectType": 4
+      },
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.TriggerActivatorSideEffect, Assembly-CSharp",
+        "IsActive": false,
+        "TriggerType": 2,
+        "SideEffectTimeType": 1,
+        "SideEffectType": 4
+      }
+    ]
   }
 }

@@ -2,20 +2,21 @@
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
   "Lab": 2,
   "Number": 86,
-  "Title": "Задание 86",
+  "Title": "Задание 85",
   "TitleEnglish": null,
-  "Description": "Снимите и повесьте халат",
+  "Description": "Закройте дверь",
   "DescriptionEnglish": null,
   "Warning": "",
   "WarningEnglish": null,
   "SafetyPrecautions": null,
   "SafetyPrecautionsEnglish": null,
-  "HintImagePath": "Lab2/7",
-  "SaveableTask": true,
+  "HintImagePath": "Lab2/2",
+  "SaveableTask": false,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
-    "ButtonType": 33,
-    "ActivityType": 6
+    "$type": "BioEngineerLab.Activities.DoorLabActivity, Assembly-CSharp",
+    "Door": 3,
+    "DoorActivity": 1,
+    "ActivityType": 7
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",

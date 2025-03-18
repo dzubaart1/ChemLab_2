@@ -93,6 +93,15 @@ namespace UI.TabletUI.Panels
                     Debug.LogError("Can't find language!");
                     break;
             }
+            
+            if (String.IsNullOrEmpty(_showingTask.HintImagePath))
+            {
+                _hintButton.interactable = false;
+            }
+            else
+            {
+                _hintButton.interactable = true;
+            }
 
             if (String.IsNullOrEmpty(_showingTask.Warning))
             {

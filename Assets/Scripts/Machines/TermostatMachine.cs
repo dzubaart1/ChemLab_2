@@ -96,10 +96,19 @@ namespace Machines
 
         private void OnPowerButtonClick()
         {
-            _temperature = 22.5f;
-            _text.text = _temperature.ToString("F1");
-            _heatingLight.enabled = true;
-            _isHeating = true;
+            if (_powerButton.IsOn)
+            {
+                _temperature = 22.5f;
+                _text.text = _temperature.ToString("F1");
+                _heatingLight.enabled = true;
+                _isHeating = true;
+            }
+            else
+            {
+                _text.text = "";
+                _heatingLight.enabled = false;
+                _isHeating = false;
+            }
         }
 
         private void OnPButtonClick()
@@ -172,8 +181,10 @@ namespace Machines
         public void LoadUIState()
         {
             _powerButton.SetIsOn(_savedData.IsPower);
+            _text.text = _powerButton.IsOn ? _temperature.ToString("F1") : "";
             
             _isHeating = _savedData.IsHeating;
+            _heatingLight.enabled = _isHeating;
         }
     }
 }

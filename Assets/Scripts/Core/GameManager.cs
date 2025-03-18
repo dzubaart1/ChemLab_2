@@ -25,7 +25,7 @@ namespace Core
         public ELabLanguage CurrentLanguage { get; private set; }
         public float GameTime { get; private set; }
         public int ErrorsCount { get; private set; }
-        public bool IsGameFinished { get; private set; }
+        public bool IsGameFinished { get; set; }
         
         private void Awake()
         {

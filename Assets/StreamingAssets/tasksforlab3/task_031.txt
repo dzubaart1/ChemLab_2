@@ -11,7 +11,7 @@
   "SafetyPrecautions": null,
   "SafetyPrecautionsEnglish": null,
   "HintImagePath": "Lab2/77",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.MachineLabActivity, Assembly-CSharp",
     "MachineActivityType": 1,

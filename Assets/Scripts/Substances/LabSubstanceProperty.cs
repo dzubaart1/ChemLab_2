@@ -43,12 +43,7 @@ namespace BioEngineerLab.Tasks
             const double ACCURACY = 0.1f;
             return SubstanceName == labSubstanceProperty.SubstanceName &
                    SubstanceMode == labSubstanceProperty.SubstanceMode &
-                   SubstanceLayer == labSubstanceProperty.SubstanceLayer &
-                   Math.Abs(SubstanceColorR - labSubstanceProperty.SubstanceColorR) < ACCURACY &
-                   Math.Abs(SubstanceColorG - labSubstanceProperty.SubstanceColorG) < ACCURACY &
-                   Math.Abs(SubstanceColorB - labSubstanceProperty.SubstanceColorB) < ACCURACY &
-                   Math.Abs(SubstanceColorA - labSubstanceProperty.SubstanceColorA) < ACCURACY &
-                   HintName == labSubstanceProperty.HintName;
+                   SubstanceLayer == labSubstanceProperty.SubstanceLayer;
         }
         
         public override int GetHashCode()

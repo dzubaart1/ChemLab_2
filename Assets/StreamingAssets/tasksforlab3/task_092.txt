@@ -2,9 +2,9 @@
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
   "Lab": 2,
   "Number": 92,
-  "Title": "Задание 92",
+  "Title": "Задание 91",
   "TitleEnglish": null,
-  "Description": "Выйдите и закройте дверь",
+  "Description": "Откройте дверь в куб",
   "DescriptionEnglish": null,
   "Warning": "",
   "WarningEnglish": null,
@@ -15,7 +15,7 @@
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.DoorLabActivity, Assembly-CSharp",
     "Door": 2,
-    "DoorActivity": 1,
+    "DoorActivity": 0,
     "ActivityType": 7
   },
   "LabSideEffects": {

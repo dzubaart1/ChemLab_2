@@ -2,24 +2,38 @@
   "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
   "Lab": 2,
   "Number": 84,
-  "Title": "Задание 84",
-  "TitleEnglish": null,
-  "Description": "Откройте дверь в предбоксник, зайдите туда",
-  "DescriptionEnglish": null,
-  "Warning": "",
-  "WarningEnglish": null,
-  "SafetyPrecautions": null,
-  "SafetyPrecautionsEnglish": null,
-  "HintImagePath": "Lab2/2",
+  "Title": "Поздарвляем!",
+  "TitleEnglish": "",
+  "Description": "Вы только что завершили лабораторную работу «Исследование влияния молочнокислых бактерий на гидроксиапатит»",
+  "DescriptionEnglish": "",
+  "Warning": "Результаты эксперимента демонстрируют, что молочная кислота, вырабатываемая молочнокислыми бактериями в процессе их роста, разрушает структуру гидроксиапатита. \r\nРазличия в исчезновении колец Лизеганга в Петри I и Петри II показывают, что степень разрушения гидроксиапатита зависит от концентрации бактериальной культуры и, следовательно, уровня молочной кислоты. Более высокая концентрация приводит к более полному разрушению.\r\nДанная модельная система является эффективным инструментом для изучения процессов биоразложения и может быть полезна для дальнейших исследований в области разработки материалов, устойчивых к кислотной среде\r",
+  "WarningEnglish": "",
+  "SafetyPrecautions": "",
+  "SafetyPrecautionsEnglish": "",
+  "HintImagePath": "",
   "SaveableTask": true,
   "LabActivity": {
-    "$type": "BioEngineerLab.Activities.DoorLabActivity, Assembly-CSharp",
-    "Door": 3,
-    "DoorActivity": 0,
-    "ActivityType": 7
+    "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
+    "ButtonType": 38,
+    "ActivityType": 6
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": []
+    "$values": [
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.TriggerActivatorSideEffect, Assembly-CSharp",
+        "IsActive": true,
+        "TriggerType": 2,
+        "SideEffectTimeType": 0,
+        "SideEffectType": 4
+      },
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.TriggerActivatorSideEffect, Assembly-CSharp",
+        "IsActive": false,
+        "TriggerType": 2,
+        "SideEffectTimeType": 1,
+        "SideEffectType": 4
+      }
+    ]
   }
 }
