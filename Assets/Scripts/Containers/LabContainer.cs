@@ -10,6 +10,7 @@ using JetBrains.Annotations;
 using Saveables;
 using TMPro;
 using UnityEngine;
+using Database;
 
 namespace Containers
 {
@@ -279,6 +280,16 @@ namespace Containers
                         meshRendererConfigLiquid.MeshRenderer.enabled = true;
                         meshRendererConfigLiquid.MeshRenderer.material.color = _substances[i].GetColor();
                         meshRendererConfigLiquid.MeshRenderer.material.SetColor("_Color", _substances[i].GetColor());
+
+                        if (_substances[i].SubstanceProperty.HasTexture)
+                        {
+                            Texture tex = ResourcesDatabase.ReadTexture(_substances[i].SubstanceProperty.TexturePath);
+                            meshRendererConfigLiquid.MeshRenderer.material.SetTexture("_MainTex", tex);
+                        }
+                        else
+                        {
+                            meshRendererConfigLiquid.MeshRenderer.material.SetTexture("_MainTex", null);
+                        }
                     }
                 }
             }

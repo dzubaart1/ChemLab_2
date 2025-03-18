@@ -1,5 +1,7 @@
 ﻿using System;
 using Core;
+using UnityEngine;
+using Object = System.Object;
 
 namespace BioEngineerLab.Tasks
 {
@@ -14,6 +16,8 @@ namespace BioEngineerLab.Tasks
         public float SubstanceColorG;
         public float SubstanceColorB;
         public float SubstanceColorA;
+        public bool HasTexture;
+        public String TexturePath;
         public string HintName;
 
         public LabSubstanceProperty()
@@ -30,6 +34,8 @@ namespace BioEngineerLab.Tasks
             SubstanceColorB = labSubstanceProperty.SubstanceColorB;
             SubstanceColorG = labSubstanceProperty.SubstanceColorG;
             SubstanceColorR = labSubstanceProperty.SubstanceColorR;
+            HasTexture = labSubstanceProperty.HasTexture;
+            TexturePath = labSubstanceProperty.TexturePath;
             HintName = labSubstanceProperty.HintName;
         }
 

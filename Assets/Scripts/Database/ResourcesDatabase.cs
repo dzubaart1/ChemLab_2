@@ -36,6 +36,11 @@ namespace Database
         {
             return Resources.Load<Sprite>($"HintsImages/{hintImageFullName}");
         }
+        
+        public static Texture ReadTexture(string textureFullName)
+        {
+            return Resources.Load<Texture>($"Textures/{textureFullName}");
+        }
 
         public static void LoadAllTaskFromDataBase(ELab lab)
         {

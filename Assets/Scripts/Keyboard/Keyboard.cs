@@ -125,9 +125,9 @@ namespace BioEngineerLab.Machines
 
         private void OnDoorClosed()
         {
-            InteractionLayerMask layers = _doorInteractable.interactionLayers;
+            /*InteractionLayerMask layers = _doorInteractable.interactionLayers;
             layers.value = 0;
-            _doorInteractable.interactionLayers = layers;
+            _doorInteractable.interactionLayers = layers;*/
         }
         
         public void Save()
@@ -138,9 +138,9 @@ namespace BioEngineerLab.Machines
 
         public void Load()
         {
-            InteractionLayerMask layers = _doorInteractable.interactionLayers;
+            /*InteractionLayerMask layers = _doorInteractable.interactionLayers;
             layers.value = _savedData.IsDoorActive ? 2 : 0;
-            _doorInteractable.interactionLayers = layers;
+            _doorInteractable.interactionLayers = layers;*/
         }
     }
 }
