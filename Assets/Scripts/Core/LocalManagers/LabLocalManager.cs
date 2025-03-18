@@ -140,17 +140,17 @@ namespace LocalManagers
             
             foreach (var socket in _sockets)
             {
+                socket.ReleaseLocks();
+            }
+            
+            foreach (var socket in _sockets)
+            {
                 socket.ReleaseAllLoad();
             }
 
             foreach (var container in _containers)
             {
                 container.ReleaseAnchor();
-            }
-
-            foreach (var socket in _sockets)
-            {
-                socket.ReleaseLocks();
             }
 
             foreach (var grabInteractable in _grabInteractables)

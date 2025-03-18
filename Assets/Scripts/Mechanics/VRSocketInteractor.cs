@@ -163,7 +163,7 @@ namespace Mechanics
 
         public void ReleaseAllLoad()
         {
-            if (SelectedObject == null)
+            if (SelectedObject == null || _lockedObject != null)
             {
                 return;
             }
@@ -184,6 +184,15 @@ namespace Mechanics
             }
             
             RestartTimer();
+
+            Rigidbody rigidbody = _savedData.GrabbedObject.GetComponentInChildren<Rigidbody>();
+            if (rigidbody == null)
+            {
+                return;
+            }
+            
+            rigidbody.MovePosition(attachTransform.position);
+            rigidbody.MoveRotation(attachTransform.rotation);
             
             interactionManager.FocusEnter(this, _savedData.GrabbedObject);
             if (CanHover((IXRHoverInteractable)_savedData.GrabbedObject))
@@ -191,8 +200,10 @@ namespace Mechanics
                 interactionManager.HoverEnter(this, (IXRHoverInteractable)_savedData.GrabbedObject);   
             }
             
-            _savedData.GrabbedObject.transform.position = attachTransform.position;
-            _savedData.GrabbedObject.transform.rotation = attachTransform.rotation;
+            if(CanSelect((IXRSelectInteractable)_savedData.GrabbedObject))
+            {
+                interactionManager.SelectEnter(this, (IXRSelectInteractable)_savedData.GrabbedObject);
+            }
         }
 
         public void PutSavedLocks()

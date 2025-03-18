@@ -67,8 +67,14 @@ namespace Mechanics
         {
             if (_isSaveble)
             {
-                transform.position = _savedData.Position;
-                transform.rotation = _savedData.Rotation;
+                Rigidbody rigidbody = GetComponentInChildren<Rigidbody>();
+                if (rigidbody == null)
+                {
+                    return;
+                }
+            
+                rigidbody.MovePosition(_savedData.Position);
+                rigidbody.MoveRotation(_savedData.Rotation);
             }            
         }
 
