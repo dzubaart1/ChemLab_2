@@ -18,10 +18,12 @@ MonoBehaviour:
       SubstanceMode: 0
       SubstanceLayer: 0
       IsLiquid: 0
-      SubstanceColorR: 0.4943396
-      SubstanceColorG: 0.39779922
-      SubstanceColorB: 0.34976858
+      SubstanceColorR: 0.8490566
+      SubstanceColorG: 0.7705806
+      SubstanceColorB: 0.73291206
       SubstanceColorA: 0.85882354
+      HasTexture: 1
+      TexturePath: Plenka
       HintName: 
     - SubstanceName: Penicillium
       SubstanceMode: 0
@@ -31,15 +33,19 @@ MonoBehaviour:
       SubstanceColorG: 0.92714447
       SubstanceColorB: 0.7775454
       SubstanceColorA: 0.80784315
+      HasTexture: 0
+      TexturePath: 
       HintName: 
     CraftType: 2
     SubstancesRes:
-    - SubstanceName: PenLizergan
+    - SubstanceName: PenLizergan100
       SubstanceMode: 0
       SubstanceLayer: 0
       IsLiquid: 0
-      SubstanceColorR: 0.735849
-      SubstanceColorG: 0.55008656
-      SubstanceColorB: 0.281844
-      SubstanceColorA: 0.85882354
+      SubstanceColorR: 0.8679245
+      SubstanceColorG: 0.8231265
+      SubstanceColorB: 0.70825917
+      SubstanceColorA: 0.92156863
+      HasTexture: 1
+      TexturePath: Plenka
       HintName: 

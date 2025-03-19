@@ -2,6 +2,7 @@ using System;
 using BioEngineerLab.Activities;
 using Core;
 using UnityEngine;
+using Database;
 
 public class KeyChecker : MonoBehaviour
 {
@@ -25,7 +26,9 @@ public class KeyChecker : MonoBehaviour
         {
             return;
         }
-            
+           
+        AudioClip a = ResourcesDatabase.ReadSound("KeyChecker");
+        AudioSource.PlayClipAtPoint(a, transform.position);
         gameManager.CurrentBaseLocalManager.OnActivityComplete(new MachineLabActivity(EMachineActivity.OnStart, EMachine.LaminBoxMachine));
         KeyboardUnlockedEvent?.Invoke();
     }

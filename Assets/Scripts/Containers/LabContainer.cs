@@ -10,6 +10,7 @@ using JetBrains.Annotations;
 using Saveables;
 using TMPro;
 using UnityEngine;
+using Database;
 
 namespace Containers
 {
@@ -278,6 +279,16 @@ namespace Containers
                         meshRendererConfigLiquid.MeshRenderer.enabled = true;
                         meshRendererConfigLiquid.MeshRenderer.material.color = _substances[i].GetColor();
                         meshRendererConfigLiquid.MeshRenderer.material.SetColor("_Color", _substances[i].GetColor());
+
+                        if (_substances[i].SubstanceProperty.HasTexture)
+                        {
+                            Texture tex = ResourcesDatabase.ReadTexture(_substances[i].SubstanceProperty.TexturePath);
+                            meshRendererConfigLiquid.MeshRenderer.material.mainTexture = tex;
+                        }
+                        else
+                        {
+                            meshRendererConfigLiquid.MeshRenderer.material.mainTexture = null;
+                        }
                     }
                 }
             }
@@ -473,9 +484,9 @@ namespace Containers
                 return;
             }
             
-            _substances[0] = substances[0];
-            _substances[1] = substances[1];
-            _substances[2] = substances[2];
+            _substances[0] = substances[0] is null ? null : new LabSubstance(substances[0]);
+            _substances[1] = substances[1] is null ? null : new LabSubstance(substances[1]);
+            _substances[2] = substances[2] is null ? null : new LabSubstance(substances[2]);
             
             UpdateView();
         }

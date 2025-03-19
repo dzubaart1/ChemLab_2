@@ -1,0 +1,25 @@
+{
+  "$type": "BioEngineerLab.Tasks.LabTask, Assembly-CSharp",
+  "Lab": 2,
+  "Number": 93,
+  "Title": "Задание 92",
+  "TitleEnglish": null,
+  "Description": "Выйдите и закройте дверь",
+  "DescriptionEnglish": null,
+  "Warning": "",
+  "WarningEnglish": null,
+  "SafetyPrecautions": null,
+  "SafetyPrecautionsEnglish": null,
+  "HintImagePath": "Lab2/2",
+  "SaveableTask": false,
+  "LabActivity": {
+    "$type": "BioEngineerLab.Activities.DoorLabActivity, Assembly-CSharp",
+    "Door": 2,
+    "DoorActivity": 1,
+    "ActivityType": 7
+  },
+  "LabSideEffects": {
+    "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
+    "$values": []
+  }
+}

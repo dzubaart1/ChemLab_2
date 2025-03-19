@@ -11,7 +11,7 @@
   "SafetyPrecautions": null,
   "SafetyPrecautionsEnglish": null,
   "HintImagePath": "Lab2/4",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.ButtonClickedActivity, Assembly-CSharp",
     "ButtonType": 23,

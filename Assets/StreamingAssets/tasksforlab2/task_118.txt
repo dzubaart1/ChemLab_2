@@ -11,7 +11,7 @@
   "SafetyPrecautions": "1.\tЗапрещается класть пипет-дозаторы на стол, особенно набрав в него жидкость\r\n2.\tЗапрещается переворачивать и наклонять пипет-дозатор \r\n3.\tПипет-дозатор необходимо хранить в вертикальном положении.\r\n4.\tНельзя оставлять пипет-дозатор с набранной жидкостью.\r\n5.\tПипет-дозаторы точно откалиброваны. Если пипет-дозатор подвергся деформации, его необходимо заново откалибровать.\r\n",
   "SafetyPrecautionsEnglish": null,
   "HintImagePath": "Lab2/118",
-  "SaveableTask": true,
+  "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
     "SocketType": 6,

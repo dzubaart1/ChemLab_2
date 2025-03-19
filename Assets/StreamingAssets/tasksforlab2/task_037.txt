@@ -25,9 +25,9 @@
           "SubstanceMode": 0,
           "SubstanceLayer": 1,
           "IsLiquid": true,
-          "SubstanceColorR": 0.6509434,
-          "SubstanceColorG": 0.260991454,
-          "SubstanceColorB": 0.6329314,
+          "SubstanceColorR": 0.592002153,
+          "SubstanceColorG": 0.395291924,
+          "SubstanceColorB": 0.5943396,
           "SubstanceColorA": 0.796078444,
           "HintName": ""
         }
@@ -37,25 +37,6 @@
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
-        "LabSubstanceProperty": {
-          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "PeptonNaClBCP",
-          "SubstanceMode": 0,
-          "SubstanceLayer": 1,
-          "IsLiquid": false,
-          "SubstanceColorR": 0.2735849,
-          "SubstanceColorG": 0.160663158,
-          "SubstanceColorB": 0.101949088,
-          "SubstanceColorA": 0.796078444,
-          "HintName": ""
-        },
-        "Weight": 300.0,
-        "SideEffectTimeType": 0,
-        "SideEffectType": 0
-      }
-    ]
+    "$values": []
   }
 }

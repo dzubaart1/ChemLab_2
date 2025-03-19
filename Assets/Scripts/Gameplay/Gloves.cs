@@ -5,6 +5,7 @@ using Saveables;
 using UnityEngine;
 using System;
 using Machines;
+using Database;
 
 namespace Gameplay
 {
@@ -75,6 +76,9 @@ namespace Gameplay
             _meshRendererL.enabled = _isActive;
             _meshRendererR.enabled = _isActive;
             GetComponent<Collider>().enabled = _isActive;
+            
+            AudioClip a = ResourcesDatabase.ReadSound("Grab");
+            AudioSource.PlayClipAtPoint(a, transform.position);
             
             gameManager.CurrentBaseLocalManager.OnActivityComplete(new MachineLabActivity(EMachineActivity.OnEnter, _machineType));    
             

@@ -20,5 +20,7 @@ MonoBehaviour:
     SubstanceColorR: 0.61556536
     SubstanceColorG: 0.46364364
     SubstanceColorB: 0.6509434
-    SubstanceColorA: 0.8666667
+    SubstanceColorA: 0.49019608
+    HasTexture: 0
+    Texture: {fileID: 0}
     HintName: 

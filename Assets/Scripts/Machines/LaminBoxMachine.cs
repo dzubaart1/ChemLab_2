@@ -3,6 +3,7 @@ using Saveables;
 using TMPro;
 using UI.Components;
 using UnityEngine;
+using Database;
 
 namespace Machines
 {
@@ -20,11 +21,14 @@ namespace Machines
         [SerializeField] private GameObject _UVLight;
         [SerializeField] private Animator _animator;
         [SerializeField] private KeyChecker _keyChecker;
+        [SerializeField] private Light _light;
+        [SerializeField] private AudioSource _laminSound;
         
         [Space]
         [Header("UIs")]
         [SerializeField] private ButtonComponent _lightButton;
         [SerializeField] private ButtonComponent _FButton;
+        [SerializeField] private ButtonComponent _SoundButton;
         [SerializeField] private ButtonComponent _UVButton;
         [SerializeField] private ButtonComponent _upButton;
         [SerializeField] private ButtonComponent _openButton;
@@ -44,6 +48,8 @@ namespace Machines
         private float _delayTimer = 1f;
         private float _timer = 0;
         private bool _isTimerActive;
+        private bool _isLightActive;
+        private bool _isLightStable;
         
         private void Start()
         {
@@ -75,6 +81,17 @@ namespace Machines
                     _isTimerActive = false;
                 }
             }
+            
+            if (_isLightActive && !_isLightStable)
+            {
+                _timer += Time.deltaTime;
+
+                if (_timer >= _delayTimer / 4)
+                {
+                    _light.enabled = !_light.enabled;
+                    _timer = 0;
+                }
+            }
         }
         
         private void OnEnable()
@@ -84,6 +101,7 @@ namespace Machines
             _openButton.ClickBtnEvent += OnOpenButtonClicked;
             _UVButton.ClickBtnEvent += OnUVButtonClicked;
             _upButton.ClickBtnEvent += OnUpButtonClicked;
+            _SoundButton.ClickBtnEvent += OnSoundButtonClicked;
 
             _keyChecker.KeyboardUnlockedEvent += OnKeyboardUnlock;
         }
@@ -95,6 +113,7 @@ namespace Machines
             _openButton.ClickBtnEvent -= OnOpenButtonClicked;
             _UVButton.ClickBtnEvent -= OnUVButtonClicked;
             _upButton.ClickBtnEvent -= OnUpButtonClicked;
+            _SoundButton.ClickBtnEvent -= OnSoundButtonClicked;
             
             _keyChecker.KeyboardUnlockedEvent -= OnKeyboardUnlock;
         }
@@ -103,28 +122,50 @@ namespace Machines
         {
             _mainLight.SetActive(_lightButton.IsOn);
             
-            _LText.text = _lightButton.IsOn ? "L\nВкл." : "L\nВыкл.";
+            _LText.text = _lightButton.IsOn ? "<L>\nВкл." : "<L>\nВыкл.";
         }
 
         private void OnFButtonClicked()
         {
-            _FText.text = _FButton.IsOn ? "F\nВкл." : "F\nВыкл.";
+            _FText.text = _FButton.IsOn ? "<F>\nВкл." : "<F>\nВыкл.";
+            _isLightActive = !_isLightActive;
+            _light.enabled = !_light.enabled;
+
+            if (_FButton.IsOn)
+            {
+                _laminSound.Play();
+            }
+            else
+            {
+                _laminSound.Stop();
+            }
+        }
+
+        private void OnSoundButtonClicked()
+        {
+            _isLightActive = !_isLightActive;
+            _isLightStable = !_isLightStable;
+            _light.enabled = _isLightStable;
+            _light.color = Color.green;
+            _laminSound.volume = 0.5f;
         }
         private void OnUVButtonClicked()
         {
             _UVLight.SetActive(_UVButton.IsOn);
             
-            _UVText.text = _UVButton.IsOn ? "UV\nВкл." : "UV\nВыкл.";
+            _UVText.text = _UVButton.IsOn ? "<UV>\nВкл." : "<UV>\nВыкл.";
         }
 
         private void OnUpButtonClicked()
         {
-            _UVText.text = "UV\n0:20";
+            _UVText.text = "<UV>\n0:20";
         }
 
         private void OnOpenButtonClicked()
         {
             _animator.Play(_openButton.IsOn ? _openAnimatorState : _closeAnimatorState);
+            AudioClip a = ResourcesDatabase.ReadSound("LaminDoor");
+            AudioSource.PlayClipAtPoint(a, transform.position);
         }
 
         private void OnKeyboardUnlock()

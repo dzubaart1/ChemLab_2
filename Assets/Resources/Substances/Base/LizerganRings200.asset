@@ -17,8 +17,10 @@ MonoBehaviour:
     SubstanceMode: 0
     SubstanceLayer: 0
     IsLiquid: 0
-    SubstanceColorR: 0.4943396
-    SubstanceColorG: 0.39779922
-    SubstanceColorB: 0.34976858
+    SubstanceColorR: 0.8509804
+    SubstanceColorG: 0.76862746
+    SubstanceColorB: 0.73333335
     SubstanceColorA: 0.8235294
+    HasTexture: 1
+    TexturePath: Plenka
     HintName: 

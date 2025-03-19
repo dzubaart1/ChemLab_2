@@ -3,6 +3,7 @@ using Core;
 using Mechanics;
 using Saveables;
 using UnityEngine;
+using Database;
 
 namespace Gameplay
 {
@@ -69,6 +70,9 @@ namespace Gameplay
             _isActive = false;
             _meshRenderer.enabled = _isActive;
             _collider.enabled = _isActive;
+            
+            AudioClip a = ResourcesDatabase.ReadSound("Grab");
+            AudioSource.PlayClipAtPoint(a, transform.position);
             
             gameManager.CurrentBaseLocalManager.OnActivityComplete(new MachineLabActivity(EMachineActivity.OnEnter, _machineType));            
         }

@@ -1,6 +1,7 @@
 using BioEngineerLab.Tasks.SideEffects;
 using Core;
 using UnityEngine;
+using Database;
 
 namespace Gameplay
 {
@@ -44,6 +45,9 @@ namespace Gameplay
             }
 
             Instantiate(_docPrefab, _spawnPoint.position, _spawnPoint.rotation);
+            
+            AudioClip a = ResourcesDatabase.ReadSound("GetResult");
+            AudioSource.PlayClipAtPoint(a, transform.position);
         }
     }
 }

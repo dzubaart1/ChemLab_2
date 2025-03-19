@@ -4,7 +4,7 @@
   "Number": 76,
   "Title": "Задание 76",
   "TitleEnglish": null,
-  "Description": "Нажмите на правую кнопку на приборной панели автоклава ",
+  "Description": "Нажмите на кнопку «Start/Stop» на приборной панели автоклава ",
   "DescriptionEnglish": null,
   "Warning": "",
   "WarningEnglish": null,

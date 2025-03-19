@@ -57,7 +57,13 @@ namespace UI.TabletUI.Panels
             {
                 return;
             }
-            
+
+            if (gameManager.CurrentBaseLocalManager == null)
+            {
+                return;
+            }
+        
+            gameManager.IsGameFinished = true;
             gameManager.LoadScene(GameManager.LOBBY_SCENE_NAME);
             TabletUI.SwitchToPreviewPanel();
         }

@@ -10,6 +10,7 @@ using UnityEngine.UI;
 using UI.Components;
 using UnityEngine.Serialization;
 using UnityEngine.XR.Interaction.Toolkit;
+using Database;
 
 namespace BioEngineerLab.Machines
 {
@@ -106,10 +107,14 @@ namespace BioEngineerLab.Machines
                 InteractionLayerMask layers = _doorInteractable.interactionLayers;
                 layers.value = 2;
                 _doorInteractable.interactionLayers = layers;
+                AudioClip a = ResourcesDatabase.ReadSound("KeyboardSuccess");
+                AudioSource.PlayClipAtPoint(a, transform.position);
             }
             else
             {
                 _sygnalImage.color = Color.red;
+                AudioClip a = ResourcesDatabase.ReadSound("KeyboardFail");
+                AudioSource.PlayClipAtPoint(a, transform.position);
             }
 
             _currentString = "";
@@ -125,9 +130,9 @@ namespace BioEngineerLab.Machines
 
         private void OnDoorClosed()
         {
-            InteractionLayerMask layers = _doorInteractable.interactionLayers;
+            /*InteractionLayerMask layers = _doorInteractable.interactionLayers;
             layers.value = 0;
-            _doorInteractable.interactionLayers = layers;
+            _doorInteractable.interactionLayers = layers;*/
         }
         
         public void Save()
@@ -138,9 +143,9 @@ namespace BioEngineerLab.Machines
 
         public void Load()
         {
-            InteractionLayerMask layers = _doorInteractable.interactionLayers;
+            /*InteractionLayerMask layers = _doorInteractable.interactionLayers;
             layers.value = _savedData.IsDoorActive ? 2 : 0;
-            _doorInteractable.interactionLayers = layers;
+            _doorInteractable.interactionLayers = layers;*/
         }
     }
 }

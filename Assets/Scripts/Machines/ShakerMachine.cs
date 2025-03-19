@@ -4,6 +4,7 @@ using Containers;
 using Crafting;
 using Mechanics;
 using Saveables;
+using TMPro;
 using UI.Components;
 using UnityEngine;
 
@@ -20,6 +21,7 @@ namespace Machines
         [Header("UIs")]
         [SerializeField] private ButtonComponent _powerButton;
         [SerializeField] private ButtonComponent _rpmButton;
+        [SerializeField] private TextMeshProUGUI _panelText;
 
         [Header("Refs")]
         [SerializeField] private VRSocketInteractor _socket1;
@@ -43,16 +45,24 @@ namespace Machines
             }
             
             gameManager.CurrentBaseLocalManager.AddSaveableUI(this);
+            _panelText.text = "";
         }
 
         private void OnEnable()
         {
             _rpmButton.ClickBtnEvent += OnRpmButtonClick;
+            _powerButton.ClickBtnEvent += OnPowerButtonClick;
         }
 
         private void OnDisable()
         {
             _rpmButton.ClickBtnEvent -= OnRpmButtonClick;
+            _powerButton.ClickBtnEvent -= OnPowerButtonClick;
+        }
+
+        private void OnPowerButtonClick()
+        {
+            _panelText.text = "00:00 160 +37.0\nSTOP 000 +24.3";
         }
         
         private void OnRpmButtonClick()
@@ -76,6 +86,7 @@ namespace Machines
             }
             
             _animator.enabled = _rpmButton.IsOn;
+            _panelText.text = "00:00 160 +37.0\nOFF 160 +24.3";
 
             if (_rpmButton.IsOn)
             {

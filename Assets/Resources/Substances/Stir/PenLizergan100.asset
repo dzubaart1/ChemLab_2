@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: PenLizergan100
   m_EditorClassIdentifier: 
   LabSubstanceProperty:
-    SubstanceName: PenLizergan
+    SubstanceName: PenLizergan100
     SubstanceMode: 0
     SubstanceLayer: 0
     IsLiquid: 0
-    SubstanceColorR: 0.735849
-    SubstanceColorG: 0.55008656
-    SubstanceColorB: 0.281844
-    SubstanceColorA: 0.85882354
+    SubstanceColorR: 0.8679245
+    SubstanceColorG: 0.8231265
+    SubstanceColorB: 0.70825917
+    SubstanceColorA: 0.92156863
+    HasTexture: 1
+    TexturePath: Plenka
     HintName: 

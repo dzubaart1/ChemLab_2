@@ -1,4 +1,5 @@
 ﻿using Core;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -42,6 +43,9 @@ namespace BioEngineerLab.Tasks
             _soSubstanceProperty.LabSubstanceProperty.SubstanceColorG = substanceColor.g;
             _soSubstanceProperty.LabSubstanceProperty.SubstanceColorB = substanceColor.b;
             _soSubstanceProperty.LabSubstanceProperty.SubstanceColorA = substanceColor.a;
+            
+            _soSubstanceProperty.LabSubstanceProperty.HasTexture = EditorGUILayout.Toggle("HasTexture", _soSubstanceProperty.LabSubstanceProperty.HasTexture);
+            _soSubstanceProperty.LabSubstanceProperty.TexturePath = EditorGUILayout.TextField("Texture", _soSubstanceProperty.LabSubstanceProperty.TexturePath);
             
             _serializedObject.ApplyModifiedProperties();
             EditorUtility.SetDirty(_soSubstanceProperty);

@@ -87,6 +87,8 @@ namespace LocalManagers
             gameManager.OnFinishGame((DateTime.Now - _gameStartTime).Minutes, _errorsTask.Count);
             if (_tabletUI != null)
             {
+                AudioClip a = ResourcesDatabase.ReadSound("Winning");
+                AudioSource.PlayClipAtPoint(a, gameManager.PlayerSpawner.Player.transform.position);
                 _tabletUI.OnFinishGame();
             }
         }
@@ -152,6 +154,11 @@ namespace LocalManagers
             {
                 container.ReleaseAnchor();
             }
+            
+            foreach (var saveableOther in _saveableOthers)
+            {
+                saveableOther.Load();
+            }
 
             foreach (var grabInteractable in _grabInteractables)
             {
@@ -179,12 +186,7 @@ namespace LocalManagers
             {
                 socket.PutSavedInteractable();
             }
-            
-            foreach (var saveableOther in _saveableOthers)
-            {
-                saveableOther.Load();
-            }
-            
+
             foreach (var saveableDoor in _saveableDoors)
             {
                 saveableDoor.LoadDoorState();

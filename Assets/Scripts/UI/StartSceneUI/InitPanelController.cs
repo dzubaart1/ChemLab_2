@@ -29,8 +29,16 @@ public class InitPanelController : MonoBehaviour
         }
         
         _defaultPanel.gameObject.SetActive(true);
-        
         _currentRectTransform = _defaultPanel;
+        
+        GameManager gameManager = GameManager.Instance;
+        
+        if (gameManager == null)
+        {
+            return;
+        }
+        
+        gameManager.SetLanguage(ELabLanguage.Russia);
     }
 
     public void OpenRulesPanel()

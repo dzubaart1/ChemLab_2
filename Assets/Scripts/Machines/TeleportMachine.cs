@@ -5,6 +5,7 @@ using Core;
 using UnityEngine;
 using Mechanics;
 using Saveables;
+using Database;
 
 namespace BioEngineerLab.Machines
 {
@@ -74,6 +75,9 @@ namespace BioEngineerLab.Machines
             
             _particleSystem.Play();
 
+            AudioClip a = ResourcesDatabase.ReadSound("Teleport");
+            AudioSource.PlayClipAtPoint(a, transform.position);
+            
             gameManager.CurrentBaseLocalManager.OnActivityComplete(
                 new SocketSubstancesLabActivity(_socketInteractor.SocketType, ESocketActivity.Enter, labContainers[0].GetSubstanceProperties()));
         }

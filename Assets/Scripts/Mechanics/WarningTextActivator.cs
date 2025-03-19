@@ -3,6 +3,8 @@ using Saveables;
 using TMPro;
 using UnityEngine;
 using BioEngineerLab.Tasks.SideEffects;
+using UnityEngine.UI;
+using Database;
 
 namespace Machines
 { 
@@ -12,12 +14,15 @@ namespace Machines
         {
             public bool IsActive;
             public string Text;
+            public bool IsButtonActive;
         }
 
         [Header("UIs")]
         [SerializeField] private TextMeshProUGUI _text;
+        [SerializeField] private Button _button;
         
         private bool _isActive = false;
+        private bool _isButtonActive = false;
         private SavedData _savedData = new SavedData();
 
         public void Init()
@@ -41,6 +46,7 @@ namespace Machines
         {
             _savedData.IsActive = _text.transform.gameObject.activeSelf;
             _savedData.Text = _text.text;
+            _savedData.IsButtonActive = _button.gameObject.activeSelf;
         }
 
         public void Load()
@@ -51,13 +57,29 @@ namespace Machines
 
         public void OnActivateSideEffect(LabSideEffect sideEffect)
         {
-            if (sideEffect is not WarningTextLabSideEffect warningTextLabSideEffect)
+            if (sideEffect is WarningTextLabSideEffect warningTextLabSideEffect)
             {
-                return;
+                _text.transform.gameObject.SetActive(warningTextLabSideEffect.IsActive);
+                _text.text = warningTextLabSideEffect.WarningText;
+                if (warningTextLabSideEffect.IsActive)
+                {
+                    AudioClip a = ResourcesDatabase.ReadSound("GetResult");
+                    AudioSource.PlayClipAtPoint(a, transform.position);
+                }
             }
-
-            _text.transform.gameObject.SetActive(warningTextLabSideEffect.IsActive);
-            _text.text = warningTextLabSideEffect.WarningText;
+            else if (sideEffect is TriggerActivatorSideEffect triggerActivatorSideEffect)
+            {
+                if (triggerActivatorSideEffect.TriggerType == ETriggerType.ContinueButtonTrigger)
+                {
+                    _button.gameObject.SetActive(triggerActivatorSideEffect.IsActive);
+                    if (triggerActivatorSideEffect.IsActive)
+                    {
+                        AudioClip a = ResourcesDatabase.ReadSound("GetResult");
+                        AudioSource.PlayClipAtPoint(a, transform.position);
+                    }
+                }
+            }
+            
         }
     }
 }

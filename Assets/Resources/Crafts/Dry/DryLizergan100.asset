@@ -14,14 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LabCraft:
     SubstancesFrom:
-    - SubstanceName: PenLizergan
+    - SubstanceName: PenLizergan100
       SubstanceMode: 0
       SubstanceLayer: 0
       IsLiquid: 0
-      SubstanceColorR: 0.735849
-      SubstanceColorG: 0.55008656
-      SubstanceColorB: 0.281844
-      SubstanceColorA: 0.85882354
+      SubstanceColorR: 0.8679245
+      SubstanceColorG: 0.8231265
+      SubstanceColorB: 0.70825917
+      SubstanceColorA: 0.92156863
+      HasTexture: 1
+      TexturePath: Plenka
       HintName: 
     CraftType: 0
     SubstancesRes:
@@ -29,8 +31,10 @@ MonoBehaviour:
       SubstanceMode: 0
       SubstanceLayer: 0
       IsLiquid: 0
-      SubstanceColorR: 0.7924528
-      SubstanceColorG: 0.567497
-      SubstanceColorB: 0.3252047
-      SubstanceColorA: 0.92941177
+      SubstanceColorR: 1
+      SubstanceColorG: 1
+      SubstanceColorB: 1
+      SubstanceColorA: 0.5254902
+      HasTexture: 1
+      TexturePath: Plenka
       HintName: 

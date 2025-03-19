@@ -8,6 +8,7 @@ using Machines;
 using Saveables;
 using UI.Components;
 using UnityEngine;
+using Database;
 
 namespace Trash
 {
@@ -113,6 +114,34 @@ namespace Trash
             if (_particleSystem != null)
             {
                 _particleSystem.Play();
+            }
+
+            switch (_trashType)
+            {
+                case ETrashType.Sink:
+                {
+                    AudioClip a = ResourcesDatabase.ReadSound("WashingMachine");
+                    AudioSource.PlayClipAtPoint(a, transform.position);
+                    break;
+                }
+                case ETrashType.PenSink:
+                {
+                    AudioClip a = ResourcesDatabase.ReadSound("WashingMachine");
+                    AudioSource.PlayClipAtPoint(a, transform.position);
+                    break;
+                }
+                case ETrashType.PaperTray:
+                {
+                    AudioClip a = ResourcesDatabase.ReadSound("PaperTray");
+                    AudioSource.PlayClipAtPoint(a, transform.position);
+                    break;
+                }
+                default:
+                {
+                    AudioClip a = ResourcesDatabase.ReadSound("TrashMachine");
+                    AudioSource.PlayClipAtPoint(a, transform.position);
+                    break;
+                }
             }
             
             gameManager.CurrentBaseLocalManager.OnActivityComplete(new TrashLabActivity(_trashType, trashableObject.TrashableObjectType));

@@ -6,6 +6,7 @@ using TMPro;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using Database;
 
 namespace Machines
 {
@@ -75,6 +76,9 @@ namespace Machines
             {
                 return;
             }
+            
+            AudioClip a = ResourcesDatabase.ReadSound("Pulverizator");
+            AudioSource.PlayClipAtPoint(a, transform.position);
             
             Ray ray = new Ray(_rayOrigin.transform.position, _rayOrigin.transform.forward);
             if (Physics.Raycast(ray, out RaycastHit hit))

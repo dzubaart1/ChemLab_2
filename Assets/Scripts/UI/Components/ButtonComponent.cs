@@ -4,6 +4,7 @@ using Core;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using Database;
 
 namespace UI.Components
 {
@@ -74,7 +75,9 @@ namespace UI.Components
             {
                 return;
             }
-            
+
+            AudioClip a = ResourcesDatabase.ReadSound("ButtonClick");
+            AudioSource.PlayClipAtPoint(a, transform.position);
             _isTimerActive = true;
             
             IsOn = !IsOn;

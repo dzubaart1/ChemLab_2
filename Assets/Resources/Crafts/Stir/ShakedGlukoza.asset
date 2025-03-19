@@ -29,8 +29,8 @@ MonoBehaviour:
       SubstanceMode: 0
       SubstanceLayer: 1
       IsLiquid: 1
-      SubstanceColorR: 1
-      SubstanceColorG: 0.9508505
-      SubstanceColorB: 0.76037735
+      SubstanceColorR: 0.6981132
+      SubstanceColorG: 0.46154273
+      SubstanceColorB: 0.31283376
       SubstanceColorA: 0.7607843
       HintName: 
