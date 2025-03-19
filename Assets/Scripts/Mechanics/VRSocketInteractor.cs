@@ -6,6 +6,7 @@ using JetBrains.Annotations;
 using Saveables;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using Database;
 
 namespace Mechanics
 {
@@ -29,7 +30,7 @@ namespace Mechanics
         [SerializeField] private ESocket _socketType;
         [SerializeField] private bool _isEnterTaskSendable;
         [SerializeField] private bool _isExitTaskSendable;
-        [SerializeField] private float _timerDelay = 1f;
+        [SerializeField] private float _timerDelay = 0.5f;
 
         [SerializeField] private bool _isSubstanceSocket;
         [SerializeField] private bool _isStartEnter;
@@ -119,6 +120,9 @@ namespace Mechanics
             }
 
             EnteredTransformEvent?.Invoke(SelectedObject);
+            
+            AudioClip a = ResourcesDatabase.ReadSound("Snap");
+            AudioSource.PlayClipAtPoint(a, transform.position);
             
             if (_isEnterTaskSendable)
             {

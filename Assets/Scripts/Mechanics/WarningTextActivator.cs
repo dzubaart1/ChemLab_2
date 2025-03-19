@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using BioEngineerLab.Tasks.SideEffects;
 using UnityEngine.UI;
+using Database;
 
 namespace Machines
 { 
@@ -60,12 +61,22 @@ namespace Machines
             {
                 _text.transform.gameObject.SetActive(warningTextLabSideEffect.IsActive);
                 _text.text = warningTextLabSideEffect.WarningText;
+                if (warningTextLabSideEffect.IsActive)
+                {
+                    AudioClip a = ResourcesDatabase.ReadSound("GetResult");
+                    AudioSource.PlayClipAtPoint(a, transform.position);
+                }
             }
             else if (sideEffect is TriggerActivatorSideEffect triggerActivatorSideEffect)
             {
                 if (triggerActivatorSideEffect.TriggerType == ETriggerType.ContinueButtonTrigger)
                 {
                     _button.gameObject.SetActive(triggerActivatorSideEffect.IsActive);
+                    if (triggerActivatorSideEffect.IsActive)
+                    {
+                        AudioClip a = ResourcesDatabase.ReadSound("GetResult");
+                        AudioSource.PlayClipAtPoint(a, transform.position);
+                    }
                 }
             }
             

@@ -284,11 +284,11 @@ namespace Containers
                         if (_substances[i].SubstanceProperty.HasTexture)
                         {
                             Texture tex = ResourcesDatabase.ReadTexture(_substances[i].SubstanceProperty.TexturePath);
-                            meshRendererConfigLiquid.MeshRenderer.material.SetTexture("_MainTex", tex);
+                            meshRendererConfigLiquid.MeshRenderer.material.mainTexture = tex;
                         }
                         else
                         {
-                            meshRendererConfigLiquid.MeshRenderer.material.SetTexture("_MainTex", null);
+                            meshRendererConfigLiquid.MeshRenderer.material.mainTexture = null;
                         }
                     }
                 }

@@ -4,6 +4,7 @@ using Core;
 using JetBrains.Annotations;
 using Saveables;
 using UnityEngine;
+using Database;
 
 namespace Machines
 {
@@ -81,6 +82,9 @@ namespace Machines
             else if (IsRotationEqual(_closed, 0.01f) && _isOpen)
             {
                 _isOpen = false;
+                
+                AudioClip a = ResourcesDatabase.ReadSound("DoorClosed");
+                AudioSource.PlayClipAtPoint(a, transform.position);
                 
                 _rigidbody.velocity = Vector3.zero;
                 _rigidbody.angularVelocity = Vector3.zero;

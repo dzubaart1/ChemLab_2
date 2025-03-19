@@ -25,10 +25,12 @@
             "SubstanceMode": 0,
             "SubstanceLayer": 0,
             "IsLiquid": false,
-            "SubstanceColorR": 0.4943396,
-            "SubstanceColorG": 0.397799224,
-            "SubstanceColorB": 0.349768579,
+            "SubstanceColorR": 0.8509804,
+            "SubstanceColorG": 0.768627465,
+            "SubstanceColorB": 0.733333349,
             "SubstanceColorA": 0.8235294,
+            "HasTexture": true,
+            "TexturePath": "Plenka",
             "HintName": ""
           },
           {
@@ -41,6 +43,8 @@
             "SubstanceColorG": 0.927144468,
             "SubstanceColorB": 0.7775454,
             "SubstanceColorA": 0.807843149,
+            "HasTexture": false,
+            "TexturePath": "",
             "HintName": ""
           }
         ]
@@ -51,14 +55,16 @@
         "$values": [
           {
             "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-            "SubstanceName": "PenLizergan",
+            "SubstanceName": "PenLizergan200",
             "SubstanceMode": 0,
             "SubstanceLayer": 0,
             "IsLiquid": false,
-            "SubstanceColorR": 0.9433962,
-            "SubstanceColorG": 0.882630944,
-            "SubstanceColorB": 0.7965468,
+            "SubstanceColorR": 0.870588243,
+            "SubstanceColorG": 0.8235294,
+            "SubstanceColorB": 0.709803939,
             "SubstanceColorA": 0.858823538,
+            "HasTexture": true,
+            "TexturePath": "Plenka",
             "HintName": ""
           }
         ]

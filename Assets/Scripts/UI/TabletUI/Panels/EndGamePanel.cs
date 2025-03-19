@@ -27,6 +27,7 @@ namespace UI.TabletUI.Panels
                 return;
             }
             
+            TabletUI.SwitchToPreviewPanel();
             gameManager.LoadScene(GameManager.LOBBY_SCENE_NAME);
         }
 

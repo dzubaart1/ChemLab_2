@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
+using Database;
 
 namespace UI.Components
 {
@@ -27,6 +28,8 @@ namespace UI.Components
 
         private void OnButtonClicked()
         {
+            AudioClip a = ResourcesDatabase.ReadSound("KeyboardKey");
+            AudioSource.PlayClipAtPoint(a, transform.position);
             ClickKeyboardKeyEvent?.Invoke(_value);
         }
     }

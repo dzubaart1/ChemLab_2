@@ -5,6 +5,7 @@ using LocalManagers;
 using UI.TabletUI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Database;
 
 namespace Core
 {

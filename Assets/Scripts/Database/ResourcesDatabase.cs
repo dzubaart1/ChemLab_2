@@ -41,6 +41,11 @@ namespace Database
         {
             return Resources.Load<Texture>($"Textures/{textureFullName}");
         }
+        
+        public static AudioClip ReadSound(string soundFullName)
+        {
+            return Resources.Load<AudioClip>($"Sounds/{soundFullName}");
+        }
 
         public static void LoadAllTaskFromDataBase(ELab lab)
         {

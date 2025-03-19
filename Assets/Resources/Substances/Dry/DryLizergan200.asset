@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: DryLizergan200
   m_EditorClassIdentifier: 
   LabSubstanceProperty:
-    SubstanceName: DryLizergan100
+    SubstanceName: DryLizergan200
     SubstanceMode: 0
     SubstanceLayer: 0
     IsLiquid: 0
-    SubstanceColorR: 0.8396226
-    SubstanceColorG: 0.7201092
-    SubstanceColorB: 0.59011215
-    SubstanceColorA: 0.6156863
+    SubstanceColorR: 1
+    SubstanceColorG: 1
+    SubstanceColorB: 1
+    SubstanceColorA: 0.07058824
+    HasTexture: 1
+    TexturePath: Plenka
     HintName: 

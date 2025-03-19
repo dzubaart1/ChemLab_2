@@ -3,6 +3,7 @@ using Saveables;
 using TMPro;
 using UI.Components;
 using UnityEngine;
+using Database;
 
 namespace Machines
 {
@@ -21,6 +22,7 @@ namespace Machines
         [SerializeField] private Animator _animator;
         [SerializeField] private KeyChecker _keyChecker;
         [SerializeField] private Light _light;
+        [SerializeField] private AudioSource _laminSound;
         
         [Space]
         [Header("UIs")]
@@ -128,6 +130,15 @@ namespace Machines
             _FText.text = _FButton.IsOn ? "<F>\nВкл." : "<F>\nВыкл.";
             _isLightActive = !_isLightActive;
             _light.enabled = !_light.enabled;
+
+            if (_FButton.IsOn)
+            {
+                _laminSound.Play();
+            }
+            else
+            {
+                _laminSound.Stop();
+            }
         }
 
         private void OnSoundButtonClicked()
@@ -136,6 +147,7 @@ namespace Machines
             _isLightStable = !_isLightStable;
             _light.enabled = _isLightStable;
             _light.color = Color.green;
+            _laminSound.volume = 0.5f;
         }
         private void OnUVButtonClicked()
         {
@@ -152,6 +164,8 @@ namespace Machines
         private void OnOpenButtonClicked()
         {
             _animator.Play(_openButton.IsOn ? _openAnimatorState : _closeAnimatorState);
+            AudioClip a = ResourcesDatabase.ReadSound("LaminDoor");
+            AudioSource.PlayClipAtPoint(a, transform.position);
         }
 
         private void OnKeyboardUnlock()

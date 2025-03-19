@@ -8,6 +8,7 @@ using Saveables;
 using UI.Components;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using Database;
 
 namespace Machines
 {
@@ -27,6 +28,7 @@ namespace Machines
         
         private bool _isLoadEnter;
         private bool _isLoadExit;
+        [SerializeField] private AudioSource _audio;
         
         private void Start()
         {
@@ -140,6 +142,8 @@ namespace Machines
                 return;
             }
             
+            _audio.Play();
+            
             ToggleStirringAnimation(true);
             gameManager.CurrentBaseLocalManager.OnActivityComplete(new MachineLabActivity(EMachineActivity.OnStart,
                 EMachine.StirringMachine));
@@ -157,6 +161,8 @@ namespace Machines
             {
                 return;
             }
+            
+            _audio.Stop();
 
             if (_socketInteractor.SelectedObject == null)
             {
