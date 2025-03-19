@@ -30,7 +30,7 @@ namespace Mechanics
         [SerializeField] private ESocket _socketType;
         [SerializeField] private bool _isEnterTaskSendable;
         [SerializeField] private bool _isExitTaskSendable;
-        [SerializeField] private float _timerDelay = 0.5f;
+        [SerializeField] private float _timerDelay = 0.3f;
 
         [SerializeField] private bool _isSubstanceSocket;
         [SerializeField] private bool _isStartEnter;
