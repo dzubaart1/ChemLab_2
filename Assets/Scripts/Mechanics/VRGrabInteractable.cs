@@ -65,39 +65,24 @@ namespace Mechanics
 
         public void LoadSavedTransform()
         {
-            if (_isSaveble)
+            if (!_isSaveble)
             {
-                Rigidbody rigidbody = GetComponentInChildren<Rigidbody>();
-                if (rigidbody == null)
-                {
-                    return;
-                }
-            
-                rigidbody.MovePosition(_savedData.Position);
-                rigidbody.MoveRotation(_savedData.Rotation);
-            }            
-        }
-
-        public void TurnOffCollidersInSeconds(float sec)
-        {
-            StartCoroutine(Delay(sec));
-        }
-        
-        private IEnumerator Delay(float sec)
-        {
-            Collider[] targetColliders = GetComponentsInChildren<Collider>();
-
-            foreach (var c in targetColliders)
-            {
-                c.enabled = false;
+                return;
             }
             
-            yield return new WaitForSeconds(sec);
-            
-            foreach (var c in targetColliders)
+            Rigidbody rigidbody = GetComponentInChildren<Rigidbody>();
+            if (rigidbody == null)
             {
-                c.enabled = true;
+                return;
             }
+
+            rigidbody.isKinematic = false;
+
+            /*transform.position = _savedData.Position;
+            transform.rotation = _savedData.Rotation;*/
+            
+            rigidbody.position = _savedData.Position;
+            rigidbody.rotation = _savedData.Rotation;
         }
         
         private void OnGrab(SelectEnterEventArgs args)
