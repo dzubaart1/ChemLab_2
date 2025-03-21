@@ -20,7 +20,7 @@ MonoBehaviour:
     SubstanceColorR: 0.8679245
     SubstanceColorG: 0.8231265
     SubstanceColorB: 0.70825917
-    SubstanceColorA: 0.92156863
+    SubstanceColorA: 0.59607846
     HasTexture: 1
     TexturePath: Plenka
     HintName: 

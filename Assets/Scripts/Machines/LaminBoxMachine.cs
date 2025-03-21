@@ -14,6 +14,7 @@ namespace Machines
             public bool IsLight;
             public bool IsUVLight;
             public bool IsOpen;
+            public bool IsMusicPlay;
         }
         
         [Header("Refs")]
@@ -130,8 +131,14 @@ namespace Machines
             _FText.text = _FButton.IsOn ? "<F>\nВкл." : "<F>\nВыкл.";
             _isLightActive = !_isLightActive;
             _light.enabled = !_light.enabled;
+            
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                return;
+            }
 
-            if (_FButton.IsOn)
+            if (_FButton.IsOn && gameManager.IsSoundsOn)
             {
                 _laminSound.Play();
             }
@@ -164,8 +171,18 @@ namespace Machines
         private void OnOpenButtonClicked()
         {
             _animator.Play(_openButton.IsOn ? _openAnimatorState : _closeAnimatorState);
-            AudioClip a = ResourcesDatabase.ReadSound("LaminDoor");
-            AudioSource.PlayClipAtPoint(a, transform.position);
+            
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                return;
+            }
+            
+            if (gameManager.IsSoundsOn)
+            {
+                AudioClip a = ResourcesDatabase.ReadSound("LaminDoor");
+                AudioSource.PlayClipAtPoint(a, transform.position);
+            }
         }
 
         private void OnKeyboardUnlock()
@@ -181,6 +198,7 @@ namespace Machines
             _savedData.IsLight = _lightButton.IsOn;
             _savedData.IsUVLight = _UVButton.IsOn;
             _savedData.IsOpen = _openButton.IsOn;
+            _savedData.IsMusicPlay = _laminSound.isPlaying;
         }
 
         public void LoadUIState()
@@ -192,6 +210,15 @@ namespace Machines
             _mainLight.SetActive(_lightButton.IsOn);
             _UVLight.SetActive(_UVButton.IsOn);
             _animator.Play(_openButton.IsOn ? _openAnimatorState : _closeAnimatorState);
+            
+            if (_savedData.IsMusicPlay)
+            {
+                _laminSound.Play();
+            }
+            else
+            {
+                _laminSound.Stop();
+            }
         }
     }
 }

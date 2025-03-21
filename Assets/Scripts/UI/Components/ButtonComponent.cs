@@ -75,9 +75,19 @@ namespace UI.Components
             {
                 return;
             }
-
-            AudioClip a = ResourcesDatabase.ReadSound("ButtonClick");
-            AudioSource.PlayClipAtPoint(a, transform.position);
+            
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                return;
+            }
+            
+            if (gameManager.IsSoundsOn)
+            {
+                AudioClip a = ResourcesDatabase.ReadSound("ButtonClick");
+                AudioSource.PlayClipAtPoint(a, transform.position, 0.8f);
+            }
+            
             _isTimerActive = true;
             
             IsOn = !IsOn;

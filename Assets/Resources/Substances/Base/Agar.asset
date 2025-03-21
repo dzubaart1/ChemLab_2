@@ -18,7 +18,9 @@ MonoBehaviour:
     SubstanceLayer: 1
     IsLiquid: 0
     SubstanceColorR: 0.8113208
-    SubstanceColorG: 0.74780935
-    SubstanceColorB: 0.6084906
-    SubstanceColorA: 0.8117647
-    HintName: 
+    SubstanceColorG: 0.8054331
+    SubstanceColorB: 0.79218584
+    SubstanceColorA: 1
+    HasTexture: 0
+    TexturePath: 
+    HintName: "\u0410\u0433\u0430\u0440"

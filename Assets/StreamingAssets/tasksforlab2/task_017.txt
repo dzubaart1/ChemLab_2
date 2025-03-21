@@ -26,6 +26,8 @@
       "SubstanceColorG": 0.500766039,
       "SubstanceColorB": 0.2256141,
       "SubstanceColorA": 0.7647059,
+      "HasTexture": false,
+      "TexturePath": null,
       "HintName": ""
     },
     "ActivityType": 0
@@ -45,6 +47,8 @@
           "SubstanceColorG": 0.500766039,
           "SubstanceColorB": 0.2256141,
           "SubstanceColorA": 0.7647059,
+          "HasTexture": false,
+          "TexturePath": null,
           "HintName": ""
         },
         "Weight": 1.8,

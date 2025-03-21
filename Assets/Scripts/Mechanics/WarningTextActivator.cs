@@ -63,8 +63,17 @@ namespace Machines
                 _text.text = warningTextLabSideEffect.WarningText;
                 if (warningTextLabSideEffect.IsActive)
                 {
-                    AudioClip a = ResourcesDatabase.ReadSound("GetResult");
-                    AudioSource.PlayClipAtPoint(a, transform.position);
+                    GameManager gameManager = GameManager.Instance;
+                    if (gameManager == null)
+                    {
+                        return;
+                    }
+            
+                    if (gameManager.IsSoundsOn)
+                    {
+                        AudioClip a = ResourcesDatabase.ReadSound("GetResult");
+                        AudioSource.PlayClipAtPoint(a, transform.position);
+                    }
                 }
             }
             else if (sideEffect is TriggerActivatorSideEffect triggerActivatorSideEffect)
@@ -74,8 +83,17 @@ namespace Machines
                     _button.gameObject.SetActive(triggerActivatorSideEffect.IsActive);
                     if (triggerActivatorSideEffect.IsActive)
                     {
-                        AudioClip a = ResourcesDatabase.ReadSound("GetResult");
-                        AudioSource.PlayClipAtPoint(a, transform.position);
+                        GameManager gameManager = GameManager.Instance;
+                        if (gameManager == null)
+                        {
+                            return;
+                        }
+            
+                        if (gameManager.IsSoundsOn)
+                        {
+                            AudioClip a = ResourcesDatabase.ReadSound("GetResult");
+                            AudioSource.PlayClipAtPoint(a, transform.position);
+                        }
                     }
                 }
             }

@@ -18,23 +18,23 @@ MonoBehaviour:
       SubstanceMode: 0
       SubstanceLayer: 1
       IsLiquid: 1
-      SubstanceColorR: 0.8784314
-      SubstanceColorG: 0.72899014
-      SubstanceColorB: 0.5019608
+      SubstanceColorR: 0.8584906
+      SubstanceColorG: 0.8055942
+      SubstanceColorB: 0.7248576
       SubstanceColorA: 0.74509805
       HasTexture: 0
       TexturePath: 
-      HintName: 
+      HintName: "\u0422\u0432\u0435\u0440\u0434\u044B\u0439 \u0430\u0433\u0430\u0440"
     CraftType: 0
     SubstancesRes:
     - SubstanceName: DryHardAgar
       SubstanceMode: 0
       SubstanceLayer: 1
       IsLiquid: 0
-      SubstanceColorR: 0.9528302
-      SubstanceColorG: 0.68063504
-      SubstanceColorB: 0.4539427
-      SubstanceColorA: 1
+      SubstanceColorR: 1
+      SubstanceColorG: 1
+      SubstanceColorB: 1
+      SubstanceColorA: 0.23921569
       HasTexture: 1
       TexturePath: Plenka
       HintName: 

@@ -28,6 +28,9 @@ namespace Core
         public int ErrorsCount { get; private set; }
         public bool IsGameFinished { get; set; }
         
+        public bool IsMusicOn { get; set; }
+        public bool IsSoundsOn { get; set; }
+        
         private void Awake()
         {
             if (Instance == null)

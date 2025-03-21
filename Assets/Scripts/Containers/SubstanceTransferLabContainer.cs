@@ -102,8 +102,11 @@ namespace Containers
             {
                 if (CraftTools.TryAdd(toLabContainer, fromLabContainer, out LabSubstance transferSubstance))
                 {
-                    AudioClip a = ResourcesDatabase.ReadSound("Substance");
-                    AudioSource.PlayClipAtPoint(a, transform.position);
+                    if (gameManager.IsSoundsOn)
+                    {
+                        AudioClip a = ResourcesDatabase.ReadSound("Substance");
+                        AudioSource.PlayClipAtPoint(a, transform.position, 0.7f);
+                    }
                     localManager.OnActivityComplete(new AddSubstanceLabActivity(
                         toLabContainer.ContainerType,
                         fromLabContainer.ContainerType,
@@ -117,8 +120,11 @@ namespace Containers
             {
                 if (CraftTools.TryFindCraft(localManager.GetSOCrafts(), fromLabContainer.GetSubstanceProperties().Concat(toLabContainer.GetSubstanceProperties()).ToList(),ECraft.Mix ,out SOLabCraft targetCraft))
                 {
-                    AudioClip a = ResourcesDatabase.ReadSound("Substance");
-                    AudioSource.PlayClipAtPoint(a, transform.position);
+                    if (gameManager.IsSoundsOn)
+                    {
+                        AudioClip a = ResourcesDatabase.ReadSound("Substance");
+                        AudioSource.PlayClipAtPoint(a, transform.position, 0.7f);
+                    }
                     CraftTools.Mix(targetCraft.LabCraft, fromLabContainer, toLabContainer);
                     localManager.OnActivityComplete(new CraftSubstanceLabActivity(toLabContainer.ContainerType, targetCraft.LabCraft));
                 }
@@ -130,8 +136,11 @@ namespace Containers
             {
                 if (CraftTools.TryAdd(fromLabContainer, toLabContainer, out LabSubstance transferSubstance))
                 {
-                    AudioClip a = ResourcesDatabase.ReadSound("Substance");
-                    AudioSource.PlayClipAtPoint(a, transform.position);
+                    if (gameManager.IsSoundsOn)
+                    {
+                        AudioClip a = ResourcesDatabase.ReadSound("Substance");
+                        AudioSource.PlayClipAtPoint(a, transform.position, 0.7f);
+                    }
                     localManager.OnActivityComplete(new AddSubstanceLabActivity(
                         fromLabContainer.ContainerType,
                         toLabContainer.ContainerType,
@@ -149,8 +158,11 @@ namespace Containers
             {
                 if (CraftTools.TryFindCraft(localManager.GetSOCrafts(), fromLabContainer.GetSubstanceProperties().Concat(toLabContainer.GetSubstanceProperties()).ToList(),ECraft.Mix ,out SOLabCraft targetCraft))
                 {
-                    AudioClip a = ResourcesDatabase.ReadSound("Substance");
-                    AudioSource.PlayClipAtPoint(a, transform.position);
+                    if (gameManager.IsSoundsOn)
+                    {
+                        AudioClip a = ResourcesDatabase.ReadSound("Substance");
+                        AudioSource.PlayClipAtPoint(a, transform.position, 0.7f);
+                    }
                     CraftTools.Mix(targetCraft.LabCraft, fromLabContainer, toLabContainer);
                     localManager.OnActivityComplete(new CraftSubstanceLabActivity(toLabContainer.ContainerType, targetCraft.LabCraft));
                 }
@@ -161,8 +173,11 @@ namespace Containers
             {
                 if (CraftTools.TryAdd(fromLabContainer, toLabContainer, out LabSubstance transferSubstance))
                 {
-                    AudioClip a = ResourcesDatabase.ReadSound("Substance");
-                    AudioSource.PlayClipAtPoint(a, transform.position);
+                    if (gameManager.IsSoundsOn)
+                    {
+                        AudioClip a = ResourcesDatabase.ReadSound("Substance");
+                        AudioSource.PlayClipAtPoint(a, transform.position, 0.7f);
+                    }
                     localManager.OnActivityComplete(new AddSubstanceLabActivity(
                         fromLabContainer.ContainerType,
                         toLabContainer.ContainerType,

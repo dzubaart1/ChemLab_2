@@ -116,31 +116,34 @@ namespace Trash
                 _particleSystem.Play();
             }
 
-            switch (_trashType)
+            if (gameManager.IsSoundsOn)
             {
-                case ETrashType.Sink:
+                switch (_trashType)
                 {
-                    AudioClip a = ResourcesDatabase.ReadSound("WashingMachine");
-                    AudioSource.PlayClipAtPoint(a, transform.position);
-                    break;
-                }
-                case ETrashType.PenSink:
-                {
-                    AudioClip a = ResourcesDatabase.ReadSound("WashingMachine");
-                    AudioSource.PlayClipAtPoint(a, transform.position);
-                    break;
-                }
-                case ETrashType.PaperTray:
-                {
-                    AudioClip a = ResourcesDatabase.ReadSound("PaperTray");
-                    AudioSource.PlayClipAtPoint(a, transform.position);
-                    break;
-                }
-                default:
-                {
-                    AudioClip a = ResourcesDatabase.ReadSound("TrashMachine");
-                    AudioSource.PlayClipAtPoint(a, transform.position);
-                    break;
+                    case ETrashType.Sink:
+                    {
+                        AudioClip a = ResourcesDatabase.ReadSound("WashingMachine");
+                        AudioSource.PlayClipAtPoint(a, transform.position);
+                        break;
+                    }
+                    case ETrashType.PenSink:
+                    {
+                        AudioClip a = ResourcesDatabase.ReadSound("WashingMachine");
+                        AudioSource.PlayClipAtPoint(a, transform.position);
+                        break;
+                    }
+                    case ETrashType.PaperTray:
+                    {
+                        AudioClip a = ResourcesDatabase.ReadSound("PaperTray");
+                        AudioSource.PlayClipAtPoint(a, transform.position);
+                        break;
+                    }
+                    default:
+                    {
+                        AudioClip a = ResourcesDatabase.ReadSound("TrashMachine");
+                        AudioSource.PlayClipAtPoint(a, transform.position);
+                        break;
+                    }
                 }
             }
             

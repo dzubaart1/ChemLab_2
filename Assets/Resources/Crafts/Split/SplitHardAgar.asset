@@ -22,7 +22,10 @@ MonoBehaviour:
       SubstanceColorG: 0.93553257
       SubstanceColorB: 0.7971698
       SubstanceColorA: 0.84313726
-      HintName: 
+      HasTexture: 0
+      TexturePath: 
+      HintName: "\u0420\u0430\u0441\u0442\u0432\u043E\u0440 \u0442\u0432\u0435\u0440\u0434\u043E\u0433\u043E
+        \u0430\u0433\u0430\u0440\u0430 \u0432 \u0432\u043E\u0434\u0435"
     CraftType: 1
     SubstancesRes:
     - SubstanceName: H2O
@@ -33,13 +36,17 @@ MonoBehaviour:
       SubstanceColorG: 0.4974264
       SubstanceColorB: 0.6037736
       SubstanceColorA: 0.8117647
-      HintName: 
+      HasTexture: 0
+      TexturePath: 
+      HintName: "\u0412\u043E\u0434\u0430"
     - SubstanceName: SplitHardAgarSed
       SubstanceMode: 0
       SubstanceLayer: 2
       IsLiquid: 1
-      SubstanceColorR: 1
-      SubstanceColorG: 0.7995272
-      SubstanceColorB: 0.495283
-      SubstanceColorA: 1
+      SubstanceColorR: 0.8679245
+      SubstanceColorG: 0.8015639
+      SubstanceColorB: 0.7000712
+      SubstanceColorA: 0.6117647
+      HasTexture: 0
+      TexturePath: 
       HintName: 

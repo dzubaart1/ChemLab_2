@@ -29,6 +29,8 @@
             "SubstanceColorG": 0.4974264,
             "SubstanceColorB": 0.6037736,
             "SubstanceColorA": 0.8117647,
+            "HasTexture": false,
+            "TexturePath": null,
             "HintName": ""
           },
           {
@@ -41,6 +43,8 @@
             "SubstanceColorG": 0.8962264,
             "SubstanceColorB": 0.820959449,
             "SubstanceColorA": 0.8117647,
+            "HasTexture": false,
+            "TexturePath": null,
             "HintName": ""
           }
         ]
@@ -59,6 +63,8 @@
             "SubstanceColorG": 0.822406769,
             "SubstanceColorB": 0.9528302,
             "SubstanceColorA": 0.694117665,
+            "HasTexture": false,
+            "TexturePath": null,
             "HintName": ""
           }
         ]

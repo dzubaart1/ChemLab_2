@@ -15,8 +15,19 @@ namespace UI.TabletUI.Panels
         [SerializeField] private Button _hintButton;
         [SerializeField] private Button _infoButton;
         [SerializeField] private Button _safetyButton;
+        [SerializeField] private Button _musicButton;
+        [SerializeField] private Button _soundButton;
         [SerializeField] private TextMeshProUGUI _taskTitleText;
         [SerializeField] private TextMeshProUGUI _taskDescriptionText;
+
+        [Header("Sprites")]
+        [SerializeField] private Sprite _musicOn;
+        [SerializeField] private Sprite _musicOff;
+        [SerializeField] private Sprite _soundOn;
+        [SerializeField] private Sprite _soundOff;
+        
+        [Header("AudioSourse")]
+        [SerializeField] private AudioSource _music;
         
         [CanBeNull] private LabTask _showingTask;
 
@@ -26,6 +37,8 @@ namespace UI.TabletUI.Panels
             _hintButton.onClick.AddListener(OnHintButtonClick);
             _infoButton.onClick.AddListener(OnInfoButtonClick);
             _safetyButton.onClick.AddListener(OnSafetyButtonClick);
+            _musicButton.onClick.AddListener(OnMusicButtonClick);
+            _soundButton.onClick.AddListener(OnSoundButtonClick);
         }
 
         private void OnDisable()
@@ -36,6 +49,8 @@ namespace UI.TabletUI.Panels
             _hintButton.onClick.RemoveListener(OnHintButtonClick);
             _infoButton.onClick.RemoveListener(OnInfoButtonClick);
             _safetyButton.onClick.RemoveListener(OnSafetyButtonClick);
+            _musicButton.onClick.RemoveListener(OnMusicButtonClick);
+            _soundButton.onClick.RemoveListener(OnSoundButtonClick);
         }
 
         private void OnHomeButtonClick()
@@ -56,6 +71,40 @@ namespace UI.TabletUI.Panels
         private void OnSafetyButtonClick()
         {
             TabletUI.SwitchToSafetyPanel();
+        }
+
+        private void OnMusicButtonClick()
+        {
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                return;
+            }
+            
+            gameManager.IsMusicOn = !gameManager.IsMusicOn;
+            Image musicImage = _musicButton.targetGraphic as Image;
+            musicImage.sprite = gameManager.IsMusicOn ? _musicOn : _musicOff;
+            if (gameManager.IsMusicOn)
+            {
+                _music.Play();
+            }
+            else
+            {
+                _music.Stop();
+            }
+        }
+
+        private void OnSoundButtonClick()
+        {
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                return;
+            }
+            
+            gameManager.IsSoundsOn = !gameManager.IsSoundsOn;
+            Image soundImage = _soundButton.targetGraphic as Image;
+            soundImage.sprite = gameManager.IsSoundsOn ? _soundOn : _soundOff;
         }
 
         public override void SetTaskToShow(LabTask task)

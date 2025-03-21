@@ -33,6 +33,8 @@
           "SubstanceColorG": 0.160663158,
           "SubstanceColorB": 0.101949088,
           "SubstanceColorA": 0.796078444,
+          "HasTexture": false,
+          "TexturePath": null,
           "HintName": ""
         },
         "Weight": 120.0,

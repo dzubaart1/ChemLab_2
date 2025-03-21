@@ -25,19 +25,17 @@ namespace UI
             }
             
             _player = gameManager.PlayerSpawner.Player;
-            _player.LeftHandGrabbedEvent += OnGrab;
-            _player.RightHandGrabbedEvent += OnGrab;
         }
         
         private void OnEnable()
         {
+            _grabInteractable.GrabbedEvent += OnGrab;
             _grabInteractable.UngrabbedEvent += OnUngrab;
         }
 
         private void OnDisable()
         {
-            _player.LeftHandGrabbedEvent -= OnGrab;
-            _player.RightHandGrabbedEvent -= OnGrab;
+            _grabInteractable.GrabbedEvent -= OnGrab;
             _grabInteractable.UngrabbedEvent -= OnUngrab;
         }
 
@@ -45,24 +43,22 @@ namespace UI
         {
             if (_isActive)
             {
-                if (_labContainer.GetSubstancesCount() == 0)
-                {
-                    _panel.gameObject.SetActive(false);
-                    return;
-                }
-                
-                _panel.gameObject.SetActive(true);
-                
                 _panel.rotation = Quaternion.LookRotation(_panel.position - _player.transform.position, new Vector3(0, 1, 0));
                 _panel.rotation = Quaternion.Euler(0, _panel.rotation.eulerAngles.y, 0);
-
-               //_text.text = _labContainer.GetTopSubstance().SubstanceProperty.NameForPanel;
             }
         }
 
         private void OnGrab()
         {
+            if (_labContainer.GetSubstancesCount() == 0)
+            {
+                _panel.gameObject.SetActive(false);
+                return;
+            }
+            
             _isActive = true;
+            _panel.gameObject.SetActive(true);
+            _text.text = _labContainer.GetTopSubstance().SubstanceProperty.HintName;
         }
         
         private void OnUngrab()

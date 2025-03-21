@@ -18,10 +18,12 @@ MonoBehaviour:
       SubstanceMode: 0
       SubstanceLayer: 2
       IsLiquid: 1
-      SubstanceColorR: 1
-      SubstanceColorG: 0.7995272
-      SubstanceColorB: 0.495283
-      SubstanceColorA: 1
+      SubstanceColorR: 0.8679245
+      SubstanceColorG: 0.8015639
+      SubstanceColorB: 0.7000712
+      SubstanceColorA: 0.6117647
+      HasTexture: 0
+      TexturePath: 
       HintName: 
     CraftType: 3
     SubstancesRes:
@@ -29,8 +31,10 @@ MonoBehaviour:
       SubstanceMode: 0
       SubstanceLayer: 2
       IsLiquid: 1
-      SubstanceColorR: 1
-      SubstanceColorG: 0.7995272
-      SubstanceColorB: 0.495283
-      SubstanceColorA: 1
+      SubstanceColorR: 0.8679245
+      SubstanceColorG: 0.8015639
+      SubstanceColorB: 0.7000712
+      SubstanceColorA: 0.6117647
+      HasTexture: 0
+      TexturePath: 
       HintName: 

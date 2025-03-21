@@ -21,8 +21,10 @@ MonoBehaviour:
       SubstanceColorR: 0.9433962
       SubstanceColorG: 0.92427117
       SubstanceColorB: 0.81434673
-      SubstanceColorA: 0.84313726
-      HintName: 
+      SubstanceColorA: 1
+      HasTexture: 0
+      TexturePath: 
+      HintName: "\u041B\u0430\u043A\u0442\u043E\u0437\u0430"
     - SubstanceName: StirPurbleSol
       SubstanceMode: 0
       SubstanceLayer: 1
@@ -30,8 +32,10 @@ MonoBehaviour:
       SubstanceColorR: 0.32063177
       SubstanceColorG: 0.24029905
       SubstanceColorB: 0.3773585
-      SubstanceColorA: 0.80784315
-      HintName: 
+      SubstanceColorA: 0.49019608
+      HasTexture: 0
+      TexturePath: 
+      HintName: "\u0424\u0438\u043E\u043B\u0435\u0442\u043E\u0432\u044B\u0439 \u0440\u0430\u0441\u0442\u0432\u043E\u0440"
     CraftType: 3
     SubstancesRes:
     - SubstanceName: Laktoza and Purple Sol
@@ -41,5 +45,8 @@ MonoBehaviour:
       SubstanceColorR: 0.6509804
       SubstanceColorG: 0.4627451
       SubstanceColorB: 0.6353192
-      SubstanceColorA: 0.8862745
-      HintName: 
+      SubstanceColorA: 0.49019608
+      HasTexture: 0
+      TexturePath: 
+      HintName: "\u0420\u0430\u0441\u0442\u0432\u043E\u0440 \u043B\u0430\u043A\u0442\u043E\u0437\u044B
+        \u0432 \u0444\u0438\u043E\u043B\u0435\u0442\u043E\u0432\u043E\u043C \u0440\u0430\u0441\u0442\u0432\u043E\u0440\u0435"

@@ -77,8 +77,11 @@ namespace Gameplay
             _meshRendererR.enabled = _isActive;
             GetComponent<Collider>().enabled = _isActive;
             
-            AudioClip a = ResourcesDatabase.ReadSound("Grab");
-            AudioSource.PlayClipAtPoint(a, transform.position);
+            if (gameManager.IsSoundsOn)
+            {
+                AudioClip a = ResourcesDatabase.ReadSound("Grab");
+                AudioSource.PlayClipAtPoint(a, transform.position);
+            }
             
             gameManager.CurrentBaseLocalManager.OnActivityComplete(new MachineLabActivity(EMachineActivity.OnEnter, _machineType));    
             

@@ -18,28 +18,37 @@ MonoBehaviour:
       SubstanceMode: 0
       SubstanceLayer: 1
       IsLiquid: 1
-      SubstanceColorR: 0.94716984
-      SubstanceColorG: 0.6701673
-      SubstanceColorB: 0.6701673
-      SubstanceColorA: 0.7294118
-      HintName: 
+      SubstanceColorR: 1
+      SubstanceColorG: 1
+      SubstanceColorB: 1
+      SubstanceColorA: 0.21960784
+      HasTexture: 0
+      TexturePath: 
+      HintName: "\u0420\u0430\u0441\u0442\u0432\u043E\u0440 \u0445\u043B\u043E\u0440\u0438\u0434\u0430
+        \u043A\u0430\u043B\u044C\u0446\u0438\u044F"
     - SubstanceName: StirNa2HPO4AgarH20
       SubstanceMode: 0
       SubstanceLayer: 1
       IsLiquid: 1
-      SubstanceColorR: 0.96082616
-      SubstanceColorG: 0.7882353
-      SubstanceColorB: 1
-      SubstanceColorA: 0.7294118
-      HintName: 
+      SubstanceColorR: 0.8773585
+      SubstanceColorG: 0.8773585
+      SubstanceColorB: 0.8773585
+      SubstanceColorA: 0.21176471
+      HasTexture: 0
+      TexturePath: 
+      HintName: "\u0420\u0430\u0441\u0442\u0432\u043E\u0440 \u0430\u0433\u0430\u0440\u0430
+        \u0438 \u0433\u0438\u0434\u0440\u043E\u0444\u043E\u0441\u0444\u0430\u0442\u0430
+        \u043D\u0430\u0442\u0440\u0438\u044F"
     CraftType: 3
     SubstancesRes:
     - SubstanceName: HardAgar
       SubstanceMode: 0
       SubstanceLayer: 1
       IsLiquid: 1
-      SubstanceColorR: 0.5007565
-      SubstanceColorG: 0.8773585
-      SubstanceColorB: 0.8356848
+      SubstanceColorR: 0.8584906
+      SubstanceColorG: 0.8055942
+      SubstanceColorB: 0.7248576
       SubstanceColorA: 0.74509805
-      HintName: 
+      HasTexture: 0
+      TexturePath: 
+      HintName: "\u0422\u0432\u0435\u0440\u0434\u044B\u0439 \u0430\u0433\u0430\u0440"

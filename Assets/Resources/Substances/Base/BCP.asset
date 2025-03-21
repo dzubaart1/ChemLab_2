@@ -20,5 +20,8 @@ MonoBehaviour:
     SubstanceColorR: 0.7264151
     SubstanceColorG: 0.6530854
     SubstanceColorB: 0.5448113
-    SubstanceColorA: 0.8666667
-    HintName: 
+    SubstanceColorA: 1
+    HasTexture: 0
+    TexturePath: 
+    HintName: "\u0411\u0440\u043E\u043C\u043A\u0440\u0435\u043E\u0437\u043E\u043B\u043E\u0432\u044B\u0439
+      \u043F\u0443\u0440\u043F\u0443\u0440\u043D\u044B\u0439"

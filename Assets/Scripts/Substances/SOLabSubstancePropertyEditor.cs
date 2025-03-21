@@ -47,6 +47,8 @@ namespace BioEngineerLab.Tasks
             _soSubstanceProperty.LabSubstanceProperty.HasTexture = EditorGUILayout.Toggle("HasTexture", _soSubstanceProperty.LabSubstanceProperty.HasTexture);
             _soSubstanceProperty.LabSubstanceProperty.TexturePath = EditorGUILayout.TextField("Texture", _soSubstanceProperty.LabSubstanceProperty.TexturePath);
             
+            _soSubstanceProperty.LabSubstanceProperty.HintName = EditorGUILayout.TextField("Hint name", _soSubstanceProperty.LabSubstanceProperty.HintName);
+            
             _serializedObject.ApplyModifiedProperties();
             EditorUtility.SetDirty(_soSubstanceProperty);
         }

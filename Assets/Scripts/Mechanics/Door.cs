@@ -83,8 +83,11 @@ namespace Machines
             {
                 _isOpen = false;
                 
-                AudioClip a = ResourcesDatabase.ReadSound("DoorClosed");
-                AudioSource.PlayClipAtPoint(a, transform.position);
+                if (gameManager.IsSoundsOn)
+                {
+                    AudioClip a = ResourcesDatabase.ReadSound("DoorClosed");
+                    AudioSource.PlayClipAtPoint(a, transform.position, 0.8f);
+                }
                 
                 _rigidbody.velocity = Vector3.zero;
                 _rigidbody.angularVelocity = Vector3.zero;

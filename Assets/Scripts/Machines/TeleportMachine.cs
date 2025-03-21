@@ -74,9 +74,12 @@ namespace BioEngineerLab.Machines
             _hiddenGameObjects.Add(enterTransform);
             
             _particleSystem.Play();
-
-            AudioClip a = ResourcesDatabase.ReadSound("Teleport");
-            AudioSource.PlayClipAtPoint(a, transform.position);
+            
+            if (gameManager.IsSoundsOn)
+            {
+                AudioClip a = ResourcesDatabase.ReadSound("Teleport");
+                AudioSource.PlayClipAtPoint(a, transform.position);
+            }
             
             gameManager.CurrentBaseLocalManager.OnActivityComplete(
                 new SocketSubstancesLabActivity(_socketInteractor.SocketType, ESocketActivity.Enter, labContainers[0].GetSubstanceProperties()));

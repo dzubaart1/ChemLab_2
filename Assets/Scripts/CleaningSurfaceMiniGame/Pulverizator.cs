@@ -77,8 +77,17 @@ namespace Machines
                 return;
             }
             
-            AudioClip a = ResourcesDatabase.ReadSound("Pulverizator");
-            AudioSource.PlayClipAtPoint(a, transform.position);
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                return;
+            }
+            
+            if (gameManager.IsSoundsOn)
+            {
+                AudioClip a = ResourcesDatabase.ReadSound("Pulverizator");
+                AudioSource.PlayClipAtPoint(a, transform.position, 0.8f);
+            }
             
             Ray ray = new Ray(_rayOrigin.transform.position, _rayOrigin.transform.forward);
             if (Physics.Raycast(ray, out RaycastHit hit))

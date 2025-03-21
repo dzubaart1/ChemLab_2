@@ -22,5 +22,6 @@ MonoBehaviour:
     SubstanceColorB: 0.6509434
     SubstanceColorA: 0.49019608
     HasTexture: 0
-    Texture: {fileID: 0}
-    HintName: 
+    TexturePath: 
+    HintName: "\u0420\u0430\u0441\u0442\u0432\u043E\u0440 \u0441\u0430\u0445\u0430\u0440\u043E\u0437\u044B
+      \u0432 \u0444\u0438\u043E\u043B\u0435\u0442\u043E\u0432\u043E\u043C \u0440\u0430\u0441\u0442\u0432\u043E\u0440\u0435"

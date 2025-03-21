@@ -46,8 +46,17 @@ namespace Gameplay
 
             Instantiate(_docPrefab, _spawnPoint.position, _spawnPoint.rotation);
             
-            AudioClip a = ResourcesDatabase.ReadSound("GetResult");
-            AudioSource.PlayClipAtPoint(a, transform.position);
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                return;
+            }
+            
+            if (gameManager.IsSoundsOn)
+            {
+                AudioClip a = ResourcesDatabase.ReadSound("GetResult");
+                AudioSource.PlayClipAtPoint(a, transform.position, 0.8f);
+            }
         }
     }
 }

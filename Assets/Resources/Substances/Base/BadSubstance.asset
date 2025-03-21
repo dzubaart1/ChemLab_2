@@ -21,4 +21,6 @@ MonoBehaviour:
     SubstanceColorG: 0.2981131
     SubstanceColorB: 0.028053224
     SubstanceColorA: 0.59607846
+    HasTexture: 0
+    TexturePath: 
     HintName: 

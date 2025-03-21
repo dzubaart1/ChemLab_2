@@ -74,6 +74,11 @@ namespace LocalManagers
                 _tabletUI = tabletUI;
                 _tabletUI.OnTaskUpdated(CurrentTask);
             }
+            
+            GameManager gameManager = GameManager.Instance;
+
+            gameManager.IsSoundsOn = true;
+            gameManager.IsMusicOn = true;
         }
 
         public override void FinishGame()
@@ -87,8 +92,11 @@ namespace LocalManagers
             gameManager.OnFinishGame((DateTime.Now - _gameStartTime).Minutes, _errorsTask.Count);
             if (_tabletUI != null)
             {
-                AudioClip a = ResourcesDatabase.ReadSound("Winning");
-                AudioSource.PlayClipAtPoint(a, gameManager.PlayerSpawner.Player.transform.position);
+                if (gameManager.IsSoundsOn)
+                {
+                    AudioClip a = ResourcesDatabase.ReadSound("Winning");
+                    AudioSource.PlayClipAtPoint(a, gameManager.PlayerSpawner.Player.transform.position);
+                }
                 _tabletUI.OnFinishGame();
             }
         }

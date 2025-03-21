@@ -76,8 +76,11 @@ namespace Gameplay
             _collider.enabled = _isActive;
             _returnBtn.transform.gameObject.SetActive(!_isActive);
             
-            AudioClip a = ResourcesDatabase.ReadSound("Grab");
-            AudioSource.PlayClipAtPoint(a, transform.position);
+            if (gameManager.IsSoundsOn)
+            {
+                AudioClip a = ResourcesDatabase.ReadSound("Grab");
+                AudioSource.PlayClipAtPoint(a, transform.position);
+            }
             
             gameManager.CurrentBaseLocalManager.OnActivityComplete(new MachineLabActivity(EMachineActivity.OnEnter, _machineType));            
         }

@@ -8,6 +8,8 @@ using Machines;
 using UI.Components;
 using Unity.VisualScripting;
 
+using Database;
+
 namespace Gameplay
 {
     public class Potholder : MonoBehaviour, ISaveableOther
@@ -72,6 +74,12 @@ namespace Gameplay
             if (gameManager.CurrentBaseLocalManager == null)
             {
                 return;
+            }
+            
+            if (gameManager.IsSoundsOn)
+            {
+                AudioClip a = ResourcesDatabase.ReadSound("Grab");
+                AudioSource.PlayClipAtPoint(a, transform.position);
             }
             
             _isActive = false;

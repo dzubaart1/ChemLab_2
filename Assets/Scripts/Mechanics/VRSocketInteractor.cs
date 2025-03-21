@@ -121,8 +121,17 @@ namespace Mechanics
 
             EnteredTransformEvent?.Invoke(SelectedObject);
             
-            AudioClip a = ResourcesDatabase.ReadSound("Snap");
-            AudioSource.PlayClipAtPoint(a, transform.position);
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                return;
+            }
+            
+            if (gameManager.IsSoundsOn)
+            {
+                AudioClip a = ResourcesDatabase.ReadSound("Snap");
+                AudioSource.PlayClipAtPoint(a, transform.position);
+            }
             
             if (_isEnterTaskSendable)
             {

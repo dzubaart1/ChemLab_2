@@ -10,7 +10,7 @@
   "WarningEnglish": "A scanner is an input device that creates a digital image of an object (usually an image or text) by analyzing it. This process of obtaining a copy is called scanning.\r\nThe scanner is essential for capturing a clear image of the sample inside the Petri dish.\r",
   "SafetyPrecautions": null,
   "SafetyPrecautionsEnglish": null,
-  "HintImagePath": "Lab1/38",
+  "HintImagePath": "Lab1/48",
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",
@@ -25,10 +25,12 @@
           "SubstanceMode": 0,
           "SubstanceLayer": 1,
           "IsLiquid": true,
-          "SubstanceColorR": 0.5007565,
-          "SubstanceColorG": 0.8773585,
-          "SubstanceColorB": 0.8356848,
+          "SubstanceColorR": 0.8584906,
+          "SubstanceColorG": 0.8055942,
+          "SubstanceColorB": 0.7248576,
           "SubstanceColorA": 0.745098054,
+          "HasTexture": false,
+          "TexturePath": "",
           "HintName": ""
         }
       ]

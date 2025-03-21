@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using Database;
+using Core;
 
 namespace UI.Components
 {
@@ -28,8 +29,17 @@ namespace UI.Components
 
         private void OnButtonClicked()
         {
-            AudioClip a = ResourcesDatabase.ReadSound("KeyboardKey");
-            AudioSource.PlayClipAtPoint(a, transform.position);
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                return;
+            }
+            
+            if (gameManager.IsSoundsOn)
+            {
+                AudioClip a = ResourcesDatabase.ReadSound("KeyboardKey");
+                AudioSource.PlayClipAtPoint(a, transform.position);
+            }
             ClickKeyboardKeyEvent?.Invoke(_value);
         }
     }

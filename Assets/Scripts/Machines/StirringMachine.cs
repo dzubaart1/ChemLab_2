@@ -18,6 +18,7 @@ namespace Machines
         {
             public bool IsOnStirringBtn;
             public bool IsOnHeatingBtnState;
+            public bool IsMusicPlay;
         }
         
         [SerializeField] private VRSocketInteractor _socketInteractor;
@@ -142,7 +143,10 @@ namespace Machines
                 return;
             }
             
-            _audio.Play();
+            if (gameManager.IsSoundsOn)
+            {
+                _audio.Play();
+            }
             
             ToggleStirringAnimation(true);
             gameManager.CurrentBaseLocalManager.OnActivityComplete(new MachineLabActivity(EMachineActivity.OnStart,
@@ -203,12 +207,21 @@ namespace Machines
         {
             _savedData.IsOnHeatingBtnState = _heatingBtn.IsOn;
             _savedData.IsOnStirringBtn = _stirringBtn.IsOn;
+            _savedData.IsMusicPlay = _audio.isPlaying;
         }
 
         public void LoadUIState()
         {
             _heatingBtn.SetIsOn(_savedData.IsOnHeatingBtnState);
             _stirringBtn.SetIsOn(_savedData.IsOnStirringBtn);
+            if (_savedData.IsMusicPlay)
+            {
+                _audio.Play();
+            }
+            else
+            {
+                _audio.Stop();
+            }
             
             CheckAnimatorStatus();
         }
