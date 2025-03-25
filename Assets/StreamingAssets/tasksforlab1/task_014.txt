@@ -4,7 +4,7 @@
   "Number": 14,
   "Title": "Задание 14",
   "TitleEnglish": "Task 14",
-  "Description": "Возьмите термостойкий стакан «1» и поставьте на стол",
+  "Description": "Возьмите термостойкий стакан с плитки и поставьте на стол",
   "DescriptionEnglish": "Take a heat-resistant beaker «1» and place it on the table",
   "Warning": "",
   "WarningEnglish": null,
@@ -25,13 +25,13 @@
           "SubstanceMode": 0,
           "SubstanceLayer": 1,
           "IsLiquid": true,
-          "SubstanceColorR": 0.94716984,
-          "SubstanceColorG": 0.6701673,
-          "SubstanceColorB": 0.6701673,
-          "SubstanceColorA": 0.7294118,
+          "SubstanceColorR": 1.0,
+          "SubstanceColorG": 1.0,
+          "SubstanceColorB": 1.0,
+          "SubstanceColorA": 0.219607845,
           "HasTexture": false,
-          "TexturePath": null,
-          "HintName": ""
+          "TexturePath": "",
+          "HintName": "Раствор хлорида кальция"
         }
       ]
     },

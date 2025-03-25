@@ -4,7 +4,7 @@
   "Number": 90,
   "Title": "Задание 90",
   "TitleEnglish": "Task 90",
-  "Description": "Поставьте термостойкий стакан «3» на плитку",
+  "Description": "Поставьте термостойкий стакан с раствором на плитку",
   "DescriptionEnglish": "Place beaker «3» on the hotplate ",
   "Warning": "",
   "WarningEnglish": null,
@@ -25,13 +25,13 @@
           "SubstanceMode": 0,
           "SubstanceLayer": 1,
           "IsLiquid": true,
-          "SubstanceColorR": 0.7924528,
-          "SubstanceColorG": 0.7289252,
-          "SubstanceColorB": 0.5420078,
-          "SubstanceColorA": 0.796078444,
+          "SubstanceColorR": 0.8207547,
+          "SubstanceColorG": 0.7984937,
+          "SubstanceColorB": 0.731710553,
+          "SubstanceColorA": 0.2901961,
           "HasTexture": false,
-          "TexturePath": null,
-          "HintName": ""
+          "TexturePath": "",
+          "HintName": "Раствор твердого агара в воде"
         }
       ]
     },

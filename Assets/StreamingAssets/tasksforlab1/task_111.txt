@@ -4,7 +4,7 @@
   "Number": 111,
   "Title": "Задание 111",
   "TitleEnglish": "Task 111",
-  "Description": "Перелейте воду из пипет-дозатора в термостойкий стакан с водой",
+  "Description": "Перелейте воду из пипет-дозатора в тот же термостойкий стакан с водой",
   "DescriptionEnglish": "Transfer the water from the pipette dispenser into a clean beaker",
   "Warning": "",
   "WarningEnglish": null,
@@ -30,8 +30,8 @@
             "SubstanceColorB": 0.6037736,
             "SubstanceColorA": 0.8117647,
             "HasTexture": false,
-            "TexturePath": null,
-            "HintName": ""
+            "TexturePath": "",
+            "HintName": "Вода"
           }
         ]
       },
@@ -50,8 +50,8 @@
             "SubstanceColorB": 0.6037736,
             "SubstanceColorA": 0.8117647,
             "HasTexture": false,
-            "TexturePath": null,
-            "HintName": ""
+            "TexturePath": "",
+            "HintName": "Вода"
           }
         ]
       }

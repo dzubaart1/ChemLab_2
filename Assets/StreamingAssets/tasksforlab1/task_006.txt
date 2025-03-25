@@ -4,7 +4,7 @@
   "Number": 6,
   "Title": "Задание 6",
   "TitleEnglish": "Task 6",
-  "Description": "Возьмите лодочку и пересыпьте порошок в термостойкий стакан «1»",
+  "Description": "Возьмите лодочку и пересыпьте порошок в термостойкий стакан",
   "DescriptionEnglish": "Take the weighing boat and transfer the powder into a heat-resistant beaker «1»",
   "Warning": "Термостойкий химический стакан можно определить по определенным обозначениям на стекле. Обозначения: белый или синий квадрат (как правило, иностранные поставщики) или буквы «ТС». Например, В-1-250 ТС означает высокий стакан с носиком объемом 250 мл из термостойкого стекла.",
   "WarningEnglish": "A heat-resistant chemical beaker can be identified by specific markings on the glass. Designations: white or blue square (usually foreign suppliers) or the letters \"TS\". For example, B-1-250 TS means a tall glass with a spout with a capacity of 250 ml made of heat-resistant glass",
@@ -22,13 +22,13 @@
       "SubstanceMode": 0,
       "SubstanceLayer": 1,
       "IsLiquid": false,
-      "SubstanceColorR": 0.5030705,
-      "SubstanceColorG": 0.8962264,
-      "SubstanceColorB": 0.820959449,
-      "SubstanceColorA": 0.8117647,
+      "SubstanceColorR": 0.7983268,
+      "SubstanceColorG": 0.8679245,
+      "SubstanceColorB": 0.8239043,
+      "SubstanceColorA": 1.0,
       "HasTexture": false,
-      "TexturePath": null,
-      "HintName": ""
+      "TexturePath": "",
+      "HintName": "Хлорид кальция"
     },
     "ActivityType": 0
   },

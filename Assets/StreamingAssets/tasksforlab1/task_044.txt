@@ -4,7 +4,7 @@
   "Number": 44,
   "Title": "Задание 44",
   "TitleEnglish": "Task 44",
-  "Description": "С помощью пипет-дозатора отберите раствор из термостойкого стакана «2». Добавьте пипет-дозатором раствор Na2HPO4 и Agar в каждую из шести лунок культурального планшета. Необходимый объем материала в каждой лунке: 2 мл",
+  "Description": "С помощью пипет-дозатора отберите раствор из термостойкого стакана с раствором Na2HPO4 и Agar. Добавьте пипет-дозатором раствор в каждую из шести лунок культурального планшета. Необходимый объем материала в каждой лунке: 2 мл",
   "DescriptionEnglish": "Use the pipette dispenser to withdraw the solution from the heat-resistant beaker «2». Add 2 ml of the solution into each of the six wells of the culture plate.",
   "Warning": "Культуральные планшеты - пластиковая или пластиковая со стеклянной вставкой посуда, используемая в химических исследованиях для культивирования микроорганизмов и клеток",
   "WarningEnglish": "Culture plates are containers made of plastic or plastic with a glass insert, used in chemical research for cultivating microorganisms and cells",
@@ -22,13 +22,13 @@
       "SubstanceMode": 0,
       "SubstanceLayer": 1,
       "IsLiquid": true,
-      "SubstanceColorR": 0.960826159,
-      "SubstanceColorG": 0.7882353,
-      "SubstanceColorB": 1.0,
-      "SubstanceColorA": 0.7294118,
+      "SubstanceColorR": 0.8773585,
+      "SubstanceColorG": 0.8773585,
+      "SubstanceColorB": 0.8773585,
+      "SubstanceColorA": 0.211764708,
       "HasTexture": false,
-      "TexturePath": null,
-      "HintName": ""
+      "TexturePath": "",
+      "HintName": "Раствор агара и гидрофосфата натрия"
     },
     "ActivityType": 0
   },

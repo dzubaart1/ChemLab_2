@@ -4,7 +4,7 @@
   "Number": 78,
   "Title": "Задание 78",
   "TitleEnglish": "Task 78",
-  "Description": "Возьмите культуральный планшет и с помощью телепорта отправьте его в лабораторию клеточных исследований",
+  "Description": "Возьмите культуральный планшет и, с помощью телепорта, отправьте его в лабораторию клеточных исследований",
   "DescriptionEnglish": "Take the culture plate and, using teleportation, send it to the cell research laboratory",
   "Warning": "",
   "WarningEnglish": null,
@@ -25,13 +25,13 @@
           "SubstanceMode": 0,
           "SubstanceLayer": 1,
           "IsLiquid": true,
-          "SubstanceColorR": 0.5007565,
-          "SubstanceColorG": 0.8773585,
-          "SubstanceColorB": 0.8356848,
+          "SubstanceColorR": 0.8584906,
+          "SubstanceColorG": 0.8055942,
+          "SubstanceColorB": 0.7248576,
           "SubstanceColorA": 0.745098054,
           "HasTexture": false,
-          "TexturePath": null,
-          "HintName": ""
+          "TexturePath": "",
+          "HintName": "Твердый агар"
         }
       ]
     },

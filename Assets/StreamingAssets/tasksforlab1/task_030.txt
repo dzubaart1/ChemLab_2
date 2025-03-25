@@ -4,7 +4,7 @@
   "Number": 30,
   "Title": "Задание 30",
   "TitleEnglish": "Task 30",
-  "Description": "Перелейте воду из мерного цилиндра в стакан «2»",
+  "Description": "Перелейте воду из мерного цилиндра в стакан с реагентами",
   "DescriptionEnglish": "Pour the water from the graduated cylinder into the beaker «2»",
   "Warning": "",
   "WarningEnglish": null,
@@ -25,13 +25,13 @@
             "SubstanceMode": 0,
             "SubstanceLayer": 1,
             "IsLiquid": false,
-            "SubstanceColorR": 0.8396226,
-            "SubstanceColorG": 0.7783719,
-            "SubstanceColorB": 0.5584282,
-            "SubstanceColorA": 0.709803939,
+            "SubstanceColorR": 0.8867924,
+            "SubstanceColorG": 0.874708235,
+            "SubstanceColorB": 0.8324136,
+            "SubstanceColorA": 1.0,
             "HasTexture": false,
-            "TexturePath": null,
-            "HintName": ""
+            "TexturePath": "",
+            "HintName": "Смесь агара и гидрофосфата натрия"
           },
           {
             "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
@@ -44,8 +44,8 @@
             "SubstanceColorB": 0.6037736,
             "SubstanceColorA": 0.8117647,
             "HasTexture": false,
-            "TexturePath": null,
-            "HintName": ""
+            "TexturePath": "",
+            "HintName": "Вода"
           }
         ]
       },
@@ -59,13 +59,13 @@
             "SubstanceMode": 0,
             "SubstanceLayer": 1,
             "IsLiquid": true,
-            "SubstanceColorR": 0.7509978,
-            "SubstanceColorG": 0.5568628,
-            "SubstanceColorB": 0.8392157,
-            "SubstanceColorA": 0.709803939,
+            "SubstanceColorR": 1.0,
+            "SubstanceColorG": 1.0,
+            "SubstanceColorB": 1.0,
+            "SubstanceColorA": 0.68235296,
             "HasTexture": false,
-            "TexturePath": null,
-            "HintName": ""
+            "TexturePath": "",
+            "HintName": "Раствор агара и гидрофосфата натрия"
           }
         ]
       }

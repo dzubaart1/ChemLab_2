@@ -4,7 +4,7 @@
   "Number": 20,
   "Title": "Задание 20",
   "TitleEnglish": "Task 20",
-  "Description": "Возьмите лодочку и пересыпьте порошок в термостойкий стакан «2»",
+  "Description": "Возьмите лодочку и пересыпьте порошок в чистый термостойкий стакан",
   "DescriptionEnglish": "Take the weighing boat and pour the powder into the heat-resistant beaker «2»",
   "Warning": "",
   "WarningEnglish": null,
@@ -22,13 +22,13 @@
       "SubstanceMode": 0,
       "SubstanceLayer": 1,
       "IsLiquid": false,
-      "SubstanceColorR": 0.66522783,
-      "SubstanceColorG": 0.8082283,
-      "SubstanceColorB": 0.9339623,
-      "SubstanceColorA": 0.8117647,
+      "SubstanceColorR": 1.0,
+      "SubstanceColorG": 1.0,
+      "SubstanceColorB": 1.0,
+      "SubstanceColorA": 1.0,
       "HasTexture": false,
-      "TexturePath": null,
-      "HintName": ""
+      "TexturePath": "",
+      "HintName": "Гидрофосфат натрия"
     },
     "ActivityType": 0
   },

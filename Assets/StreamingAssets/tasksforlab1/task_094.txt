@@ -4,7 +4,7 @@
   "Number": 94,
   "Title": "Задание 94",
   "TitleEnglish": "Task 94",
-  "Description": "Возьмите термостойкий стакан \"3\" с плитки",
+  "Description": "Возьмите термостойкий стакан с плитки",
   "DescriptionEnglish": "Take a heat-resistant beaker «3» and place it on the table",
   "Warning": "",
   "WarningEnglish": null,
@@ -30,8 +30,8 @@
           "SubstanceColorB": 0.7971698,
           "SubstanceColorA": 0.843137264,
           "HasTexture": false,
-          "TexturePath": null,
-          "HintName": ""
+          "TexturePath": "",
+          "HintName": "Раствор твердого агара в воде"
         }
       ]
     },

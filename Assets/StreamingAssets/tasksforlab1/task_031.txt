@@ -4,7 +4,7 @@
   "Number": 31,
   "Title": "Задание 31",
   "TitleEnglish": "Task 31",
-  "Description": "Поставьте термостойкий стакан «2» на плитку",
+  "Description": "Поставьте термостойкий стакан с раствором на плитку",
   "DescriptionEnglish": "Place the heat-resistant beaker «2» on the hotplate",
   "Warning": "",
   "WarningEnglish": null,
@@ -25,13 +25,13 @@
           "SubstanceMode": 0,
           "SubstanceLayer": 1,
           "IsLiquid": true,
-          "SubstanceColorR": 0.7509978,
-          "SubstanceColorG": 0.5568628,
-          "SubstanceColorB": 0.8392157,
-          "SubstanceColorA": 0.709803939,
+          "SubstanceColorR": 1.0,
+          "SubstanceColorG": 1.0,
+          "SubstanceColorB": 1.0,
+          "SubstanceColorA": 0.68235296,
           "HasTexture": false,
-          "TexturePath": null,
-          "HintName": ""
+          "TexturePath": "",
+          "HintName": "Раствор агара и гидрофосфата натрия"
         }
       ]
     },
