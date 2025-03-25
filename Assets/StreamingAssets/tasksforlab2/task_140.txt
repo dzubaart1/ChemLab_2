@@ -28,10 +28,10 @@
           "SubstanceColorR": 0.7058824,
           "SubstanceColorG": 0.5372549,
           "SubstanceColorB": 0.6553261,
-          "SubstanceColorA": 0.8352941,
+          "SubstanceColorA": 0.490196079,
           "HasTexture": false,
-          "TexturePath": null,
-          "HintName": ""
+          "TexturePath": "",
+          "HintName": "Раствор с лактозой с добавлением бактерий"
         }
       ]
     },
@@ -39,6 +39,14 @@
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": []
+    "$values": [
+      {
+        "$type": "BioEngineerLab.Tasks.SideEffects.ConstructorSideEffect, Assembly-CSharp",
+        "SocketType": 32,
+        "IsLock": true,
+        "SideEffectTimeType": 1,
+        "SideEffectType": 3
+      }
+    ]
   }
 }

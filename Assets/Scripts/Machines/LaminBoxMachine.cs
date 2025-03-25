@@ -107,7 +107,7 @@ namespace Machines
                 {
                     _laminSound.Play();
                 }
-                if (!_SoundButton.IsOn)
+                if (_FButton.IsOn && !_SoundButton.IsOn)
                 {
                     _piskSound.Play();
                 }
