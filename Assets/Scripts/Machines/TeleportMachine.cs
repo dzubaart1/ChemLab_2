@@ -78,7 +78,7 @@ namespace BioEngineerLab.Machines
             if (gameManager.IsSoundsOn)
             {
                 AudioClip a = ResourcesDatabase.ReadSound("Teleport");
-                AudioSource.PlayClipAtPoint(a, transform.position);
+                AudioSource.PlayClipAtPoint(a, transform.position, 0.8f);
             }
             
             gameManager.CurrentBaseLocalManager.OnActivityComplete(

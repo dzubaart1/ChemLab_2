@@ -4,7 +4,7 @@
   "Number": 110,
   "Title": "Задание 110",
   "TitleEnglish": null,
-  "Description": "Снимите прихватку (Нажмите на кнопку «Снять прихватку»",
+  "Description": "Снимите прихватку (Нажмите на кнопку «Снять прихватку»)",
   "DescriptionEnglish": null,
   "Warning": "",
   "WarningEnglish": null,

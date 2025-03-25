@@ -26,5 +26,15 @@ namespace Core
             
             _userController.ToggleTabletUI();
         }
+
+        public void OnRightControllerPrimaryButtonClicked(InputAction.CallbackContext context)
+        {
+            if (!context.started)
+            {
+                return;
+            }
+            
+            _userController.ToggleSubstanceUI();
+        }
     }
 }

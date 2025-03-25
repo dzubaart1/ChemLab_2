@@ -16,7 +16,9 @@ namespace UI
 
         private Player _player;
         private bool _isActive = false;
-        private void Start()
+        private bool _isPressed = false;
+        private UserController _userController;
+        private void Awake()
         {
             GameManager gameManager = GameManager.Instance;
             if (gameManager == null)
@@ -25,18 +27,21 @@ namespace UI
             }
             
             _player = gameManager.PlayerSpawner.Player;
+            _userController = _player.transform.GetComponent<UserController>();
         }
         
         private void OnEnable()
         {
             _grabInteractable.GrabbedEvent += OnGrab;
             _grabInteractable.UngrabbedEvent += OnUngrab;
+            _userController.ButtonClicked += OnButtonClick;
         }
 
         private void OnDisable()
         {
             _grabInteractable.GrabbedEvent -= OnGrab;
             _grabInteractable.UngrabbedEvent -= OnUngrab;
+            _userController.ButtonClicked -= OnButtonClick;
         }
 
         private void Update()
@@ -50,21 +55,30 @@ namespace UI
 
         private void OnGrab()
         {
-            if (_labContainer.GetSubstancesCount() == 0)
-            {
-                _panel.gameObject.SetActive(false);
-                return;
-            }
-            
             _isActive = true;
-            _panel.gameObject.SetActive(true);
-            _text.text = _labContainer.GetTopSubstance().SubstanceProperty.HintName;
         }
         
         private void OnUngrab()
         {
             _panel.gameObject.SetActive(false);
             _isActive = false;
+            _isPressed = false;
+        }
+
+        private void OnButtonClick()
+        {
+            if (!_isActive)
+            {
+                return;
+            }
+            if (_labContainer.GetSubstancesCount() == 0)
+            {
+                _panel.gameObject.SetActive(false);
+                return;
+            }
+            _isPressed = !_isPressed;
+            _panel.gameObject.SetActive(_isPressed);
+            _text.text = _labContainer.GetTopSubstance().SubstanceProperty.HintName;
         }
     } 
 }

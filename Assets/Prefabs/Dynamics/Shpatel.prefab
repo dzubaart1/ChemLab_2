@@ -396,8 +396,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0006678998, y: 0.0020001412, z: 0.000080933416}
-  m_Center: {x: 0.0000000018626451, y: 4.656613e-10, z: 0.0000404667}
+  m_Size: {x: 0.0006678997, y: 0.0020001412, z: 0.00007081241}
+  m_Center: {x: 0.0000000018626451, y: 4.4703485e-10, z: 0.000005043329}
 --- !u!1 &2399867961674649677
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,7 +457,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2523484405004939785}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0.000042}
+  m_LocalPosition: {x: 0, y: 0, z: 0.000049}
   m_LocalScale: {x: 0.0000007, y: 0.0000007, z: 0.0000005}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -466,7 +466,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 180}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.000895}
+  m_AnchoredPosition: {x: 0, y: 0.000908}
   m_SizeDelta: {x: 1130, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5428119033838526489
@@ -672,7 +672,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1000, y: 200}
+  m_SizeDelta: {x: 1000, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3120160163430828790
 CanvasRenderer:

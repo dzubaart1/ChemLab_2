@@ -72,7 +72,7 @@ namespace Machines
                     if (gameManager.IsSoundsOn)
                     {
                         AudioClip a = ResourcesDatabase.ReadSound("GetResult");
-                        AudioSource.PlayClipAtPoint(a, transform.position);
+                        AudioSource.PlayClipAtPoint(a, transform.position, 0.8f);
                     }
                 }
             }
@@ -92,7 +92,7 @@ namespace Machines
                         if (gameManager.IsSoundsOn)
                         {
                             AudioClip a = ResourcesDatabase.ReadSound("GetResult");
-                            AudioSource.PlayClipAtPoint(a, transform.position);
+                            AudioSource.PlayClipAtPoint(a, transform.position, 0.8f);
                         }
                     }
                 }

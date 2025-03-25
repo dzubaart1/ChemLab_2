@@ -90,7 +90,7 @@ namespace UI.TabletUI.Panels
             }
             else
             {
-                _music.Stop();
+                _music.Pause();
             }
         }
 

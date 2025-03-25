@@ -79,7 +79,7 @@ namespace Gameplay
             if (gameManager.IsSoundsOn)
             {
                 AudioClip a = ResourcesDatabase.ReadSound("Grab");
-                AudioSource.PlayClipAtPoint(a, transform.position);
+                AudioSource.PlayClipAtPoint(a, transform.position, 0.7f);
             }
             
             _isActive = false;

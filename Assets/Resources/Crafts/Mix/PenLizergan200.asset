@@ -32,7 +32,7 @@ MonoBehaviour:
       SubstanceColorR: 0.9528302
       SubstanceColorG: 0.92714447
       SubstanceColorB: 0.7775454
-      SubstanceColorA: 0.80784315
+      SubstanceColorA: 0.5254902
       HasTexture: 0
       TexturePath: 
       HintName: 
@@ -56,7 +56,7 @@ MonoBehaviour:
       SubstanceColorR: 0.9528302
       SubstanceColorG: 0.92714447
       SubstanceColorB: 0.7775454
-      SubstanceColorA: 0.80784315
+      SubstanceColorA: 0.5254902
       HasTexture: 0
       TexturePath: 
       HintName: 

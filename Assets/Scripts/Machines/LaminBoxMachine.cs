@@ -24,6 +24,7 @@ namespace Machines
         [SerializeField] private KeyChecker _keyChecker;
         [SerializeField] private Light _light;
         [SerializeField] private AudioSource _laminSound;
+        [SerializeField] private AudioSource _piskSound;
         
         [Space]
         [Header("UIs")]
@@ -51,10 +52,12 @@ namespace Machines
         private bool _isTimerActive;
         private bool _isLightActive;
         private bool _isLightStable;
+
+        private GameManager gameManager;
         
         private void Start()
         {
-            GameManager gameManager = GameManager.Instance;
+            gameManager = GameManager.Instance;
             if (gameManager == null)
             {
                 return;
@@ -92,6 +95,27 @@ namespace Machines
                     _light.enabled = !_light.enabled;
                     _timer = 0;
                 }
+            }
+
+            if (gameManager.IsSoundsOn)
+            {
+                if (_laminSound.isPlaying)
+                {
+                    return;
+                }
+                if (_FButton.IsOn)
+                {
+                    _laminSound.Play();
+                }
+                if (!_SoundButton.IsOn)
+                {
+                    _piskSound.Play();
+                }
+            }
+            else
+            {
+                _laminSound.Pause();
+                _piskSound.Pause();
             }
         }
         
@@ -141,6 +165,7 @@ namespace Machines
             if (_FButton.IsOn && gameManager.IsSoundsOn)
             {
                 _laminSound.Play();
+                _piskSound.Play();
             }
             else
             {
@@ -154,7 +179,7 @@ namespace Machines
             _isLightStable = !_isLightStable;
             _light.enabled = _isLightStable;
             _light.color = Color.green;
-            _laminSound.volume = 0.5f;
+            _piskSound.Stop();
         }
         private void OnUVButtonClicked()
         {

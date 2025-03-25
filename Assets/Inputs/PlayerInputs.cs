@@ -35,6 +35,15 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RightControllerPrimaryButtonClicked"",
+                    ""type"": ""Button"",
+                    ""id"": ""76e55749-1083-469b-ab72-898bb22b6d4e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -48,6 +57,17 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""action"": ""LeftControllerPrimaryButtonClicked"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6707a644-1b62-49ac-9773-39ba5e752ebb"",
+                    ""path"": ""<XRController>{RightHand}/{PrimaryButton}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RightControllerPrimaryButtonClicked"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -57,6 +77,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_LeftControllerPrimaryButtonClicked = m_Player.FindAction("LeftControllerPrimaryButtonClicked", throwIfNotFound: true);
+        m_Player_RightControllerPrimaryButtonClicked = m_Player.FindAction("RightControllerPrimaryButtonClicked", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -119,11 +140,13 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_LeftControllerPrimaryButtonClicked;
+    private readonly InputAction m_Player_RightControllerPrimaryButtonClicked;
     public struct PlayerActions
     {
         private @PlayerInputs m_Wrapper;
         public PlayerActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @LeftControllerPrimaryButtonClicked => m_Wrapper.m_Player_LeftControllerPrimaryButtonClicked;
+        public InputAction @RightControllerPrimaryButtonClicked => m_Wrapper.m_Player_RightControllerPrimaryButtonClicked;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -136,6 +159,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @LeftControllerPrimaryButtonClicked.started += instance.OnLeftControllerPrimaryButtonClicked;
             @LeftControllerPrimaryButtonClicked.performed += instance.OnLeftControllerPrimaryButtonClicked;
             @LeftControllerPrimaryButtonClicked.canceled += instance.OnLeftControllerPrimaryButtonClicked;
+            @RightControllerPrimaryButtonClicked.started += instance.OnRightControllerPrimaryButtonClicked;
+            @RightControllerPrimaryButtonClicked.performed += instance.OnRightControllerPrimaryButtonClicked;
+            @RightControllerPrimaryButtonClicked.canceled += instance.OnRightControllerPrimaryButtonClicked;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -143,6 +169,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @LeftControllerPrimaryButtonClicked.started -= instance.OnLeftControllerPrimaryButtonClicked;
             @LeftControllerPrimaryButtonClicked.performed -= instance.OnLeftControllerPrimaryButtonClicked;
             @LeftControllerPrimaryButtonClicked.canceled -= instance.OnLeftControllerPrimaryButtonClicked;
+            @RightControllerPrimaryButtonClicked.started -= instance.OnRightControllerPrimaryButtonClicked;
+            @RightControllerPrimaryButtonClicked.performed -= instance.OnRightControllerPrimaryButtonClicked;
+            @RightControllerPrimaryButtonClicked.canceled -= instance.OnRightControllerPrimaryButtonClicked;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -163,5 +192,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     public interface IPlayerActions
     {
         void OnLeftControllerPrimaryButtonClicked(InputAction.CallbackContext context);
+        void OnRightControllerPrimaryButtonClicked(InputAction.CallbackContext context);
     }
 }
