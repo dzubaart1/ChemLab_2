@@ -169,7 +169,7 @@ namespace BioEngineerLab.Machines
 
         private void SwitchLightUV(bool isOn)
         {
-            LightmapSettings.lightmaps = isOn ? _noneLight : _UVLight;
+            LightmapSettings.lightmaps = isOn ? _UVLight : _noneLight;
         }
         private void SwitchDLight()
         {

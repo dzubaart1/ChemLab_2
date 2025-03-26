@@ -257,7 +257,7 @@ Transform:
   m_GameObject: {fileID: 147269491}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.7132707, y: 0.105, z: 2.8448167}
+  m_LocalPosition: {x: -5.7132707, y: 0.105, z: 3.0948167}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -612,7 +612,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6884218136133071637, guid: 6729a0984129ac441949dd68f807a006, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.515
+      value: -0.692
       objectReference: {fileID: 0}
     - target: {fileID: 6884218136133071637, guid: 6729a0984129ac441949dd68f807a006, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1131,7 +1131,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.88006777, b: 0.7490196, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -1204,7 +1204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 719680586751750121, guid: 3605a51f742ec5f40905cd3e3189532c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.915
+      value: 0.812
       objectReference: {fileID: 0}
     - target: {fileID: 719680586751750121, guid: 3605a51f742ec5f40905cd3e3189532c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1533,7 +1533,7 @@ Transform:
   m_GameObject: {fileID: 451433226}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.0273294, y: 0.574, z: 10.209}
+  m_LocalPosition: {x: -6.0273294, y: 0.574, z: 10.296}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1609,7 +1609,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.9109311, b: 0.8632076, a: 1}
   m_Intensity: 2.3
   m_Range: 12
   m_SpotAngle: 30
@@ -2328,7 +2328,7 @@ Transform:
   m_GameObject: {fileID: 724844795}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.598556, y: 1.06, z: 1.98}
+  m_LocalPosition: {x: -4.598556, y: 1.06, z: 2.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2983,7 +2983,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.94831187, b: 0.8443396, a: 1}
   m_Intensity: 2.3
   m_Range: 12
   m_SpotAngle: 30
@@ -3901,7 +3901,7 @@ Transform:
   m_GameObject: {fileID: 1353240812}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.518848, y: -0.47, z: 3.4784157}
+  m_LocalPosition: {x: -3.518848, y: -0.47, z: 3.7284157}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5189,7 +5189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3646736619974405604, guid: 21290011879783044b4febb795ba04a6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.544
+      value: -0.762
       objectReference: {fileID: 0}
     - target: {fileID: 3646736619974405604, guid: 21290011879783044b4febb795ba04a6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5486,7 +5486,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.91012007, b: 0.7971698, a: 1}
   m_Intensity: 2.3
   m_Range: 12
   m_SpotAngle: 30
@@ -5827,7 +5827,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4084616399572737393, guid: c26d8e0d77602eb41a35952be1b68c99, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.138
+      value: -0.033
       objectReference: {fileID: 0}
     - target: {fileID: 4084616399572737393, guid: c26d8e0d77602eb41a35952be1b68c99, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6478,7 +6478,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.95141244, g: 0.8820755, b: 1, a: 1}
   m_Intensity: 2.3
   m_Range: 12
   m_SpotAngle: 30
