@@ -4,7 +4,7 @@
   "Number": 79,
   "Title": "Задание 79",
   "TitleEnglish": "Task 79",
-  "Description": "Возьмите Чашку Петри с растворами хлорида кальция и Na2HPO4 и Agar и положите ее на сканер",
+  "Description": "Возьмите Чашку Петри со смесью растворов и положите ее на сканер",
   "DescriptionEnglish": "Take Petri dish (1) and place it onto the scanner",
   "Warning": "Сканер (англ. scanner, от scan «пристально разглядывать, рассматривать») — устройство ввода, которое, анализируя какой-либо объект (обычно изображение, текст), создаёт его цифровое изображение. Процесс получения этой копии называется сканированием.\r\nСканер необходим для создания четкого снимка образца внутри чашки Петри.\r",
   "WarningEnglish": "A scanner is an input device that creates a digital image of an object (usually an image or text) by analyzing it. This process of obtaining a copy is called scanning.\r\nThe scanner is essential for capturing a clear image of the sample inside the Petri dish.\r",
@@ -31,7 +31,7 @@
           "SubstanceColorA": 0.745098054,
           "HasTexture": false,
           "TexturePath": "",
-          "HintName": ""
+          "HintName": "Твердый агар"
         }
       ]
     },

@@ -52,6 +52,10 @@ namespace Machines
             {
                 WearGloves();
             }
+            else
+            {
+                TakeGlovesOff();
+            }
         }
 
         public void WearGloves()

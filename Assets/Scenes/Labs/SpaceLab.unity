@@ -1949,18 +1949,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 147269492}
     m_Modifications:
-    - target: {fileID: 3820851474194030177, guid: f06d50a040873054dbf8cc8b004f8bba, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3820851474194030177, guid: f06d50a040873054dbf8cc8b004f8bba, type: 3}
-      propertyPath: m_Colliders.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3820851474194030177, guid: f06d50a040873054dbf8cc8b004f8bba, type: 3}
-      propertyPath: m_Colliders.Array.data[0]
-      value: 
-      objectReference: {fileID: 953611612}
     - target: {fileID: 7434190185024564417, guid: f06d50a040873054dbf8cc8b004f8bba, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.26972914
@@ -2001,17 +1989,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7809343154978944628, guid: f06d50a040873054dbf8cc8b004f8bba, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7809343154978944635, guid: f06d50a040873054dbf8cc8b004f8bba, type: 3}
       propertyPath: m_Name
       value: TestTubeRack
-      objectReference: {fileID: 0}
-    - target: {fileID: 7809343154978944635, guid: f06d50a040873054dbf8cc8b004f8bba, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2436,10 +2416,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 147269492}
     m_Modifications:
-    - target: {fileID: 2772639500651063922, guid: 9e9cb53c0ceee97439f1b317e1f8aa8c, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4947664849557086746, guid: 9e9cb53c0ceee97439f1b317e1f8aa8c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.54172945
@@ -2483,10 +2459,6 @@ PrefabInstance:
     - target: {fileID: 4947664849557086754, guid: 9e9cb53c0ceee97439f1b317e1f8aa8c, type: 3}
       propertyPath: m_Name
       value: PipetkaRack
-      objectReference: {fileID: 0}
-    - target: {fileID: 4947664849557086754, guid: 9e9cb53c0ceee97439f1b317e1f8aa8c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2943,11 +2915,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2760238350903978489, guid: 7002e59345093174da33322206d90164, type: 3}
   m_PrefabInstance: {fileID: 922174650}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &953611612 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 7809343154978944628, guid: f06d50a040873054dbf8cc8b004f8bba, type: 3}
-  m_PrefabInstance: {fileID: 587763766}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &988240259
 GameObject:

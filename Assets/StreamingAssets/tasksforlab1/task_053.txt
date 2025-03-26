@@ -4,7 +4,7 @@
   "Number": 53,
   "Title": "Задание 53",
   "TitleEnglish": "Task 53",
-  "Description": "С помощью пипет-дозатора отберите раствор из термостойкого стакана с раствором Na2HPO4 и Agar. Добавьте пипет-дозатором раствор в каждую из шести лунок культурального планшета. Необходимый объем материала в каждой лунке: 2 мл",
+  "Description": "С помощью пипет-дозатора отберите раствор гидрофосфата натрия и агара из термостойкого стакана. Добавьте пипет-дозатором раствор в каждую из шести лунок культурального планшета. Необходимый объем материала в каждой лунке: 2 мл",
   "DescriptionEnglish": "Use the pipette dispenser to withdraw the solution from the heat-resistant beaker «2». Add 2 ml of the solution into each of the six wells of the culture plate.",
   "Warning": "Культуральные планшеты - пластиковая или пластиковая со стеклянной вставкой посуда, используемая в химических исследованиях для культивирования микроорганизмов и клеток",
   "WarningEnglish": "Culture plates are containers made of plastic or plastic with a glass insert, used in chemical research for cultivating microorganisms and cells",

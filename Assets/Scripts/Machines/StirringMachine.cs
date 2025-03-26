@@ -1,3 +1,4 @@
+using System;
 using BioEngineerLab.Activities;
 using Containers;
 using Core;
@@ -29,11 +30,14 @@ namespace Machines
         
         private bool _isLoadEnter;
         private bool _isLoadExit;
+        private bool _isWorking = false;
         [SerializeField] private AudioSource _audio;
+        
+        private GameManager gameManager;
         
         private void Start()
         {
-            GameManager gameManager = GameManager.Instance;
+            gameManager = GameManager.Instance;
             if (gameManager == null)
             {
                 return;
@@ -46,7 +50,26 @@ namespace Machines
             
             gameManager.CurrentBaseLocalManager.AddSaveableUI(this);
         }
-        
+
+        private void Update()
+        {
+            if (gameManager.IsSoundsOn)
+            {
+                if (_audio.isPlaying)
+                {
+                    return;
+                }
+                if (_isWorking)
+                {
+                    _audio.Play();
+                }
+            }
+            else
+            {
+                _audio.Pause();
+            }
+        }
+
         private void OnEnable()
         {
             _socketInteractor.EnteredTransformEvent += OnEnter;
@@ -131,8 +154,6 @@ namespace Machines
         
         private void StartMachineWork()
         {
-            GameManager gameManager = GameManager.Instance;
-            
             if (gameManager == null)
             {
                 return;
@@ -147,6 +168,8 @@ namespace Machines
             {
                 _audio.Play();
             }
+
+            _isWorking = true;
             
             ToggleStirringAnimation(true);
             gameManager.CurrentBaseLocalManager.OnActivityComplete(new MachineLabActivity(EMachineActivity.OnStart,
@@ -155,7 +178,6 @@ namespace Machines
 
         private void FinishMachineWork()
         {
-            GameManager gameManager = GameManager.Instance;
             if (gameManager == null)
             {
                 return;
@@ -167,6 +189,7 @@ namespace Machines
             }
             
             _audio.Stop();
+            _isWorking = false;
 
             if (_socketInteractor.SelectedObject == null)
             {

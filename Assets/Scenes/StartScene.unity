@@ -312,6 +312,14 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2191280748460392647, guid: d99a2204272752b4eb0afbb2c33f9c31, type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 2191280749029624486, guid: d99a2204272752b4eb0afbb2c33f9c31, type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
     - target: {fileID: 2191280749655601260, guid: d99a2204272752b4eb0afbb2c33f9c31, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -416,9 +424,33 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2191280749914931455, guid: d99a2204272752b4eb0afbb2c33f9c31, type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 2191280749937763668, guid: d99a2204272752b4eb0afbb2c33f9c31, type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 2191280750113802788, guid: d99a2204272752b4eb0afbb2c33f9c31, type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 2191280750113802795, guid: d99a2204272752b4eb0afbb2c33f9c31, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2191280750148061900, guid: d99a2204272752b4eb0afbb2c33f9c31, type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
     - target: {fileID: 2191280750217553377, guid: d99a2204272752b4eb0afbb2c33f9c31, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2191280750217553378, guid: d99a2204272752b4eb0afbb2c33f9c31, type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
       objectReference: {fileID: 0}
     - target: {fileID: 2192793831301757279, guid: d99a2204272752b4eb0afbb2c33f9c31, type: 3}
       propertyPath: m_AnchorMax.y

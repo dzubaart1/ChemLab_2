@@ -28,12 +28,15 @@ namespace Machines
         [SerializeField] private Door _door;
         [SerializeField] private VRSocketInteractor _socketInteractor1;
         [SerializeField] private VRSocketInteractor _socketInteractor2;
+        [SerializeField] private AudioSource _audio;
         
         private SavedData _savedData = new SavedData();
+        private bool _isWorking = false;
+        private GameManager gameManager;
         
         private void Start()
         {
-            GameManager gameManager = GameManager.Instance;
+            gameManager = GameManager.Instance;
             if (gameManager == null)
             {
                 return;
@@ -45,6 +48,25 @@ namespace Machines
             }
             
             gameManager.CurrentBaseLocalManager.AddSaveableUI(this);
+        }
+        
+        private void Update()
+        {
+            if (gameManager.IsSoundsOn)
+            {
+                if (_audio.isPlaying)
+                {
+                    return;
+                }
+                if (_isWorking)
+                {
+                    _audio.Play();
+                }
+            }
+            else
+            {
+                _audio.Pause();
+            }
         }
 
         private void OnEnable()
@@ -144,10 +166,17 @@ namespace Machines
             if (_startButton.IsOn & _powerButton.IsOn)
             {
                 _animator.enabled = true;
+                if (gameManager.IsSoundsOn)
+                {
+                    _audio.Play();
+                }
+                _isWorking = true;
             }
             else
             {
                 _animator.enabled = false;
+                _audio.Stop();
+                _isWorking = false;
             }
         }
         

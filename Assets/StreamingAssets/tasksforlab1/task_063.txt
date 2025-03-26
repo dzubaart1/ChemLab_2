@@ -4,7 +4,7 @@
   "Number": 63,
   "Title": "Задание 63",
   "TitleEnglish": "Task 63",
-  "Description": "Добавьте раствор из пипет-дозатора в чашку Петри с раствором Na2HPO4 и Agar. Необходимый объем раствора: 0,05 мл",
+  "Description": "Добавьте раствор из пипет-дозатора в чашку Петри с раствором гидрофосфата натрия и агара. Необходимый объем раствора: 0,05 мл",
   "DescriptionEnglish": "Add 0.05 ml of the solution from the pipette dispenser into Petri dish ",
   "Warning": "",
   "WarningEnglish": null,
@@ -25,13 +25,13 @@
             "SubstanceMode": 0,
             "SubstanceLayer": 1,
             "IsLiquid": true,
-            "SubstanceColorR": 0.94716984,
-            "SubstanceColorG": 0.6701673,
-            "SubstanceColorB": 0.6701673,
-            "SubstanceColorA": 0.7294118,
+            "SubstanceColorR": 1.0,
+            "SubstanceColorG": 1.0,
+            "SubstanceColorB": 1.0,
+            "SubstanceColorA": 0.219607845,
             "HasTexture": false,
-            "TexturePath": null,
-            "HintName": ""
+            "TexturePath": "",
+            "HintName": "Раствор хлорида кальция"
           },
           {
             "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
@@ -39,13 +39,13 @@
             "SubstanceMode": 0,
             "SubstanceLayer": 1,
             "IsLiquid": true,
-            "SubstanceColorR": 0.960826159,
-            "SubstanceColorG": 0.7882353,
-            "SubstanceColorB": 1.0,
-            "SubstanceColorA": 0.7294118,
+            "SubstanceColorR": 0.8773585,
+            "SubstanceColorG": 0.8773585,
+            "SubstanceColorB": 0.8773585,
+            "SubstanceColorA": 0.211764708,
             "HasTexture": false,
-            "TexturePath": null,
-            "HintName": ""
+            "TexturePath": "",
+            "HintName": "Раствор агара и гидрофосфата натрия"
           }
         ]
       },
@@ -59,13 +59,13 @@
             "SubstanceMode": 0,
             "SubstanceLayer": 1,
             "IsLiquid": true,
-            "SubstanceColorR": 0.5007565,
-            "SubstanceColorG": 0.8773585,
-            "SubstanceColorB": 0.8356848,
+            "SubstanceColorR": 0.8584906,
+            "SubstanceColorG": 0.8055942,
+            "SubstanceColorB": 0.7248576,
             "SubstanceColorA": 0.745098054,
             "HasTexture": false,
-            "TexturePath": null,
-            "HintName": ""
+            "TexturePath": "",
+            "HintName": "Твердый агар"
           }
         ]
       }

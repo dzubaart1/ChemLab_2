@@ -4,7 +4,7 @@
   "Number": 39,
   "Title": "Задание 39",
   "TitleEnglish": "Task 39",
-  "Description": "Перелейте раствор Na2HPO4 и Agar в пробирку. Необходимый объем раствора: 6 мл",
+  "Description": "Перелейте раствор гидрофосфата натрия и агара в пробирку. Необходимый объем раствора: 6 мл",
   "DescriptionEnglish": "Transfer 6 ml of the solution into the test tube",
   "Warning": "",
   "WarningEnglish": null,
@@ -22,13 +22,13 @@
       "SubstanceMode": 0,
       "SubstanceLayer": 1,
       "IsLiquid": true,
-      "SubstanceColorR": 0.960826159,
-      "SubstanceColorG": 0.7882353,
-      "SubstanceColorB": 1.0,
-      "SubstanceColorA": 0.7294118,
+      "SubstanceColorR": 0.8773585,
+      "SubstanceColorG": 0.8773585,
+      "SubstanceColorB": 0.8773585,
+      "SubstanceColorA": 0.211764708,
       "HasTexture": false,
-      "TexturePath": null,
-      "HintName": ""
+      "TexturePath": "",
+      "HintName": "Раствор агара и гидрофосфата натрия"
     },
     "ActivityType": 0
   },

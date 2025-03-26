@@ -4,7 +4,7 @@
   "Number": 41,
   "Title": "Задание 41",
   "TitleEnglish": "Task 41",
-  "Description": "С помощью пипетдозатора отберите раствор Na2HPO4 и Agar из термостойкого стакана",
+  "Description": "С помощью пипетдозатора отберите раствор гидрофосфата натрия и агара из термостойкого стакана",
   "DescriptionEnglish": "Use the pipette dispenser to withdraw the solution from the heat-resistant beaker «2»",
   "Warning": "",
   "WarningEnglish": null,
@@ -22,13 +22,13 @@
       "SubstanceMode": 0,
       "SubstanceLayer": 1,
       "IsLiquid": true,
-      "SubstanceColorR": 0.960826159,
-      "SubstanceColorG": 0.7882353,
-      "SubstanceColorB": 1.0,
-      "SubstanceColorA": 0.7294118,
+      "SubstanceColorR": 0.8773585,
+      "SubstanceColorG": 0.8773585,
+      "SubstanceColorB": 0.8773585,
+      "SubstanceColorA": 0.211764708,
       "HasTexture": false,
-      "TexturePath": null,
-      "HintName": ""
+      "TexturePath": "",
+      "HintName": "Раствор агара и гидрофосфата натрия"
     },
     "ActivityType": 0
   },

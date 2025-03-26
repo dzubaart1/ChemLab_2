@@ -4,7 +4,7 @@
   "Number": 42,
   "Title": "Задание 42",
   "TitleEnglish": "Task 42",
-  "Description": "Разместите раствор Na2HPO4 и Agar из пипет-дозатора в чашке Петри. Необходимая объем материала: 8 мл ",
+  "Description": "Разместите раствор гидрофосфата натрия и агара из пипет-дозатора в чашке Петри. Необходимая объем материала: 8 мл ",
   "DescriptionEnglish": "Place 8 ml of the solution from the pipette dispenser into the Petri dish",
   "Warning": "Чашка Петри — прозрачный лабораторный сосуд в форме невысокого плоского цилиндра, закрываемого прозрачной крышкой подобной формы, но несколько большего диаметра. Применяется в микробиологии и химии. Изобретена в 1877 году ассистентом Роберта Коха Юлиусом Рихардом Петри.\r\nОбычно чашки Петри изготавливаются из прозрачного стекла или пластмассы (прозрачный полистирол) и могут иметь самые различные размеры. Широко используются в биологии для культивирования колоний микроорганизмов или клеточных культур\r\n",
   "WarningEnglish": "A Petri dish is a transparent laboratory vessel in the shape of a low, flat cylinder, covered with a transparent lid of a slightly larger diameter. It is used in microbiology and chemistry. It was invented in 1877 by Julius Richard Petri, an assistant to Robert Koch.\r\nPetri dishes are typically made from transparent glass or plastic (transparent polystyrene) and come in various sizes. They are widely used in biology for culturing microbial colonies or cell cultures\r\n",
@@ -22,13 +22,13 @@
       "SubstanceMode": 0,
       "SubstanceLayer": 1,
       "IsLiquid": true,
-      "SubstanceColorR": 0.960826159,
-      "SubstanceColorG": 0.7882353,
-      "SubstanceColorB": 1.0,
-      "SubstanceColorA": 0.7294118,
+      "SubstanceColorR": 0.8773585,
+      "SubstanceColorG": 0.8773585,
+      "SubstanceColorB": 0.8773585,
+      "SubstanceColorA": 0.211764708,
       "HasTexture": false,
-      "TexturePath": null,
-      "HintName": ""
+      "TexturePath": "",
+      "HintName": "Раствор агара и гидрофосфата натрия"
     },
     "ActivityType": 0
   },
