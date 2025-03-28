@@ -22,15 +22,13 @@ namespace Mechanics
         public event Action<Transform> ExitedTransformEvent;
         public event Action<Transform> EnteredTransformEvent;
         
-        [Header("Refs")]
-        [SerializeField] private Collider[] _socketColliders;
-        
         [Space]
         [Header("Configs")]
         [SerializeField] private ESocket _socketType;
         [SerializeField] private bool _isEnterTaskSendable;
         [SerializeField] private bool _isExitTaskSendable;
-        [SerializeField] private float _timerDelay = 0.3f;
+        
+        private float _timerDelay = 0.3f;
 
         [SerializeField] private bool _isSubstanceSocket;
         [SerializeField] private bool _isStartEnter;

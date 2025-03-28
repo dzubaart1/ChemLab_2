@@ -172,10 +172,15 @@ namespace LocalManagers
             {
                 grabInteractable.LoadSavedTransform();
             }
-
+            
             foreach (var socket in _sockets)
             {
                 socket.PutSavedLocks();
+            }
+            
+            foreach (var socket in _sockets)
+            {
+                socket.PutSavedInteractable();
             }
 
             foreach (var container in _containers)
@@ -188,11 +193,6 @@ namespace LocalManagers
             foreach (var saveableUi in _saveableUis)
             {
                 saveableUi.LoadUIState();
-            }
-
-            foreach (var socket in _sockets)
-            {
-                socket.PutSavedInteractable();
             }
 
             foreach (var saveableDoor in _saveableDoors)

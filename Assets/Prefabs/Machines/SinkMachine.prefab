@@ -803,6 +803,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: WaterSprinkle
       objectReference: {fileID: 0}
+    - target: {fileID: 3000452249632985288, guid: 42a0b0f745e1f6a4fa6da539745ff8db, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3350708259594306248, guid: 42a0b0f745e1f6a4fa6da539745ff8db, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6129320068683274725, guid: 42a0b0f745e1f6a4fa6da539745ff8db, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

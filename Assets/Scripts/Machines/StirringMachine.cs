@@ -239,11 +239,11 @@ namespace Machines
             _stirringBtn.SetIsOn(_savedData.IsOnStirringBtn);
             if (_savedData.IsMusicPlay)
             {
-                _audio.Play();
+                _isWorking = true;
             }
             else
             {
-                _audio.Stop();
+                _isWorking = false;
             }
             
             CheckAnimatorStatus();
