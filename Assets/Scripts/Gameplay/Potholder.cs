@@ -112,6 +112,7 @@ namespace Gameplay
             _isActive = _savedData.IsActive;
             _potholderRenderer.enabled = _isActive;
             _collider.enabled = _isActive;
+            _button.gameObject.SetActive(!_isActive);
         }
     }
 }

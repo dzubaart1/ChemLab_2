@@ -72,6 +72,7 @@ namespace Machines
             _startButton.ClickBtnEvent -= OnStartButtonClick;
             _powerButton.ClickBtnEvent -= OnPowerButtonClick;
             _door.DoorOpenedEvent -= OnDoorOpened;
+            _door.DoorClosedEvent -= OnDoorClosed;
         }
         
         private void OnPowerButtonClick()
@@ -141,7 +142,7 @@ namespace Machines
             else
             {
                 _mainAnimator.Play("Base");
-                _karetka.localPosition = new Vector3(-0.1038f, 0.1058f, 0.06f);
+                _karetka.localPosition = new Vector3(-0.1037f, 0.1058f, 0.06f);
             }
             
             if (_powerButton.IsOn)

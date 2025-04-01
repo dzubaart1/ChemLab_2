@@ -452,11 +452,9 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
-  _socketColliders: []
   _socketType: 26
   _isEnterTaskSendable: 1
   _isExitTaskSendable: 1
-  _timerDelay: 1
   _isSubstanceSocket: 1
   _isStartEnter: 0
 --- !u!135 &808051564525400671
@@ -1149,11 +1147,9 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
-  _socketColliders: []
   _socketType: 26
   _isEnterTaskSendable: 1
   _isExitTaskSendable: 1
-  _timerDelay: 1
   _isSubstanceSocket: 1
   _isStartEnter: 0
 --- !u!135 &142534162703223231
@@ -1715,8 +1711,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1778,8 +1774,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.00048274547, y: 0.0031537034, z: 0.0037791696}
-  m_Center: {x: -0.0001288639, y: 0.0014861065, z: -1.523463e-17}
+  m_Size: {x: 0.000332779, y: 0.0031537034, z: 0.0037791696}
+  m_Center: {x: -0.00020384713, y: 0.0014861065, z: -1.523463e-17}
 --- !u!114 &7053878463500711569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2157,11 +2153,9 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
-  _socketColliders: []
   _socketType: 26
   _isEnterTaskSendable: 1
   _isExitTaskSendable: 1
-  _timerDelay: 1
   _isSubstanceSocket: 1
   _isStartEnter: 0
 --- !u!135 &1877301406925646227

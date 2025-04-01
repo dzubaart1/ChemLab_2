@@ -11,7 +11,7 @@
   "SafetyPrecautions": null,
   "SafetyPrecautionsEnglish": null,
   "HintImagePath": "Lab2/107",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketSubstancesLabActivity, Assembly-CSharp",
     "SocketType": 26,
@@ -28,10 +28,10 @@
           "SubstanceColorR": 0.61556536,
           "SubstanceColorG": 0.46364364,
           "SubstanceColorB": 0.6509434,
-          "SubstanceColorA": 0.8666667,
+          "SubstanceColorA": 0.490196079,
           "HasTexture": false,
-          "TexturePath": null,
-          "HintName": ""
+          "TexturePath": "",
+          "HintName": "Раствор сахарозы в фиолетовом растворе"
         }
       ]
     },

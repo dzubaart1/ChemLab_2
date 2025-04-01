@@ -189,7 +189,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 2
 --- !u!114 &3390436394151078008
 MonoBehaviour:
@@ -344,7 +344,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
-  _isSaveble: 0
+  _isSaveble: 1
 --- !u!1 &5233568821538375479
 GameObject:
   m_ObjectHideFlags: 0
