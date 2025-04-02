@@ -237,6 +237,7 @@ namespace Machines
         {
             _heatingBtn.SetIsOn(_savedData.IsOnHeatingBtnState);
             _stirringBtn.SetIsOn(_savedData.IsOnStirringBtn);
+            _audio.Stop();
             if (_savedData.IsMusicPlay)
             {
                 _isWorking = true;

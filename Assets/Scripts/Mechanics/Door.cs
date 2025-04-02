@@ -133,6 +133,7 @@ namespace Machines
             {
                 _isOpen = false;
                 transform.rotation = _closed;
+                DoorClosedEvent?.Invoke();
             }
         }
 
