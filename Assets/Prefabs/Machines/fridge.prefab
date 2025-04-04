@@ -1026,17 +1026,9 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
-  _socketColliders:
-  - {fileID: 2987494776563819254}
-  - {fileID: 7227334935131738671}
-  - {fileID: 739838785062090810}
-  - {fileID: 7187857620506640511}
-  - {fileID: 7221047203653117094}
-  - {fileID: 7996820253397462586}
   _socketType: 28
   _isEnterTaskSendable: 0
   _isExitTaskSendable: 1
-  _timerDelay: 1
   _isSubstanceSocket: 0
   _isStartEnter: 0
 --- !u!1 &4947907315335025390

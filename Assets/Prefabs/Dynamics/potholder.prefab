@@ -338,7 +338,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
-  _isSaveble: 1
+  _isSaveble: 0
 --- !u!1 &2312877070744873881
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,7 +480,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Remove the potholder
+  m_text: "\u0421\u043D\u044F\u0442\u044C \u043F\u0440\u0438\u0445\u0432\u0430\u0442\u043A\u0443"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ac622282d127f7845a93a312063681f4, type: 2}
   m_sharedMaterial: {fileID: -7199408156049613588, guid: ac622282d127f7845a93a312063681f4, type: 2}

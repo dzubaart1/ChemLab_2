@@ -102,6 +102,10 @@ namespace Machines
         private void Reset()
         {
             _isAllWaterDropsSpawned = false;
+            foreach (WaterDrop waterDrop in _waterDrops)
+            {
+                Destroy(waterDrop.gameObject);
+            }
             _waterDrops.Clear();
         }
 
@@ -113,7 +117,28 @@ namespace Machines
 
         public void Load()
         {
-            
+            _isAllWaterDropsSpawned = _savedData.IsAllWaterDropsSpawned;
+
+            if (_isAllWaterDropsSpawned)
+            {
+                _waterDrops.Clear();
+                foreach (WaterDrop waterDrop in _waterDrops)
+                {
+                    Destroy(waterDrop.gameObject);
+                }
+                foreach (WaterDrop waterDrop in _savedData.WaterDrops)
+                {
+                    _waterDrops.Add(waterDrop);
+                }
+            }
+            else
+            {
+                foreach (WaterDrop waterDrop in _waterDrops)
+                {
+                    Destroy(waterDrop.gameObject);
+                }
+                _waterDrops.Clear();
+            }
         }
     }
 }

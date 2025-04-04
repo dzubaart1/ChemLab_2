@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &65452396453153683
 Transform:
@@ -344,7 +344,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
-  _isSaveble: 1
+  _isSaveble: 0
 --- !u!1 &5233568821538375479
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,7 +361,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2983673027613194378
 Transform:
@@ -445,7 +445,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &8888547676350427584
 RectTransform:
@@ -507,7 +507,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Remove the lab coat
+  m_Text: "\u0421\u043D\u044F\u0442\u044C \u0445\u0430\u043B\u0430\u0442"
 --- !u!1 &6193590808113960738
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,7 +661,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 0
 --- !u!224 &2830749946515786235
 RectTransform:
@@ -800,7 +800,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7925852788634352702
 Transform:
@@ -898,7 +898,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1671328474960422194, guid: 05e21cc30b902fa4f9fb677c8d0de79a, type: 3}
+  - {fileID: 2100000, guid: c8ceecd2f616e604c8c0651263e3b73e, type: 2}
   - {fileID: -5945400220807438791, guid: 05e21cc30b902fa4f9fb677c8d0de79a, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
