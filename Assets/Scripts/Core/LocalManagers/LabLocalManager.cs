@@ -240,7 +240,7 @@ namespace LocalManagers
                 if (gameManager.IsSoundsOn)
                 {
                     AudioClip a = ResourcesDatabase.ReadSound("Mistake");
-                    AudioSource.PlayClipAtPoint(a, transform.position, 1f);
+                    AudioSource.PlayClipAtPoint(a, gameManager.PlayerSpawner.Player.transform.position, 1f);
                 }
             }
 

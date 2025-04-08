@@ -14,7 +14,8 @@ namespace Machines
             public bool IsLight;
             public bool IsUVLight;
             public bool IsOpen;
-            public bool IsMusicPlay;
+            public bool IsFOn;
+            public bool IsSoundOn;
         }
         
         [Header("Refs")]
@@ -223,6 +224,8 @@ namespace Machines
             _savedData.IsLight = _lightButton.IsOn;
             _savedData.IsUVLight = _UVButton.IsOn;
             _savedData.IsOpen = _openButton.IsOn;
+            _savedData.IsFOn = _FButton.IsOn;
+            _savedData.IsSoundOn = _SoundButton.IsOn;
         }
 
         public void LoadUIState()
@@ -230,6 +233,8 @@ namespace Machines
             _lightButton.SetIsOn(_savedData.IsLight);
             _openButton.SetIsOn(_savedData.IsOpen);
             _UVButton.SetIsOn(_savedData.IsUVLight);
+            _FButton.SetIsOn(_savedData.IsFOn);
+            _SoundButton.SetIsOn(_savedData.IsSoundOn);
             
             _mainLight.SetActive(_lightButton.IsOn);
             _UVLight.SetActive(_UVButton.IsOn);

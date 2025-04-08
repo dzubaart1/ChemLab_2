@@ -4,7 +4,7 @@
   "Number": 14,
   "Title": "Задание 14",
   "TitleEnglish": null,
-  "Description": "Возьмите пульверизатор в левую руку и обработайте правую руку спиртом",
+  "Description": "Обработайте правую руку пульверизатором",
   "DescriptionEnglish": null,
   "Warning": "",
   "WarningEnglish": null,
