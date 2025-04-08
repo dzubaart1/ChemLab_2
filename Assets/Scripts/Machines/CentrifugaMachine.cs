@@ -208,6 +208,8 @@ namespace Machines
                 _startButton.SetIsOn(_savedData.IsStarted);
             }
             
+            _audio.Stop();
+            
             CheckAnimatorStatus();
         }
     }

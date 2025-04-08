@@ -11,6 +11,7 @@ using JetBrains.Annotations;
 using Saveables;
 using UI.TabletUI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace LocalManagers
 {
@@ -229,6 +230,18 @@ namespace LocalManagers
             {
                 _tabletUI.OnTaskFailed();
                 _isError = true;
+                
+                GameManager gameManager = GameManager.Instance;
+                if (gameManager == null)
+                {
+                    return;
+                }
+                
+                if (gameManager.IsSoundsOn)
+                {
+                    AudioClip a = ResourcesDatabase.ReadSound("Mistake");
+                    AudioSource.PlayClipAtPoint(a, transform.position, 1f);
+                }
             }
 
             _errorsTask.Add(_tasksList[_currentTaskID]);

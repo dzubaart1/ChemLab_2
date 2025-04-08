@@ -223,7 +223,6 @@ namespace Machines
             _savedData.IsLight = _lightButton.IsOn;
             _savedData.IsUVLight = _UVButton.IsOn;
             _savedData.IsOpen = _openButton.IsOn;
-            _savedData.IsMusicPlay = _laminSound.isPlaying;
         }
 
         public void LoadUIState()
@@ -236,14 +235,8 @@ namespace Machines
             _UVLight.SetActive(_UVButton.IsOn);
             _animator.Play(_openButton.IsOn ? _openAnimatorState : _closeAnimatorState);
             
-            if (_savedData.IsMusicPlay)
-            {
-                _laminSound.Play();
-            }
-            else
-            {
-                _laminSound.Stop();
-            }
+            _laminSound.Stop();
+            _piskSound.Stop();
         }
     }
 }
