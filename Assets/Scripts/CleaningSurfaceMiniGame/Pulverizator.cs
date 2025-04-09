@@ -86,7 +86,7 @@ namespace Machines
             if (gameManager.IsSoundsOn)
             {
                 AudioClip a = ResourcesDatabase.ReadSound("Pulverizator");
-                AudioSource.PlayClipAtPoint(a, transform.position, 0.8f);
+                AudioSource.PlayClipAtPoint(a, transform.position, 0.6f);
             }
             
             Ray ray = new Ray(_rayOrigin.transform.position, _rayOrigin.transform.forward);

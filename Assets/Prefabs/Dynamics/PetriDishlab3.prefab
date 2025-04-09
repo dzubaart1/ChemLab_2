@@ -251,12 +251,9 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
-  _socketColliders:
-  - {fileID: 5632922961027087013}
   _socketType: 7
   _isEnterTaskSendable: 1
   _isExitTaskSendable: 0
-  _timerDelay: 1
   _isSubstanceSocket: 0
   _isStartEnter: 1
 --- !u!1 &2864030260130789541
@@ -278,7 +275,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7452418315296593813
 Transform:
   m_ObjectHideFlags: 0

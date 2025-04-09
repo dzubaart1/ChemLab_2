@@ -20,7 +20,7 @@ MonoBehaviour:
     SubstanceColorR: 1
     SubstanceColorG: 1
     SubstanceColorB: 1
-    SubstanceColorA: 0.07058824
+    SubstanceColorA: 1
     HasTexture: 1
-    TexturePath: Plenka
+    TexturePath: Plenka200Result
     HintName: 

@@ -139,6 +139,9 @@ namespace Machines
             _powerButton.SetIsOn(_savedData.IsPowered);
             
             _animator.enabled = _rpmButton.IsOn && _savedData.IsPowered;
+            
+            _panelText.text = _powerButton.IsOn ? "00:00 160 +37.0\nSTOP 000 +24.3" : "";
+            _panelText.text = _rpmButton.IsOn ? "00:00 160 +37.0\nOFF 160 +24.3" : _panelText.text;
         }
     }
 }

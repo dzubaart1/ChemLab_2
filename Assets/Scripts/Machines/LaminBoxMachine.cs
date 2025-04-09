@@ -49,7 +49,8 @@ namespace Machines
         
         private SavedData _savedData = new SavedData();
         private float _delayTimer = 1f;
-        private float _timer = 0;
+        private float _timerKey = 0;
+        private float _timerLight = 0;
         private bool _isTimerActive;
         private bool _isLightActive;
         private bool _isLightStable;
@@ -76,25 +77,25 @@ namespace Machines
         {
             if (_isTimerActive)
             {
-                _timer += Time.deltaTime;
+                _timerKey += Time.deltaTime;
 
-                if (_timer >= _delayTimer)
+                if (_timerKey >= _delayTimer)
                 {
                     _keyboardUnlockText.transform.gameObject.SetActive(false);
                     _states.gameObject.SetActive(true);
-                    _timer = 0;
+                    _timerKey = 0;
                     _isTimerActive = false;
                 }
             }
             
             if (_isLightActive && !_isLightStable)
             {
-                _timer += Time.deltaTime;
+                _timerLight += Time.deltaTime;
 
-                if (_timer >= _delayTimer / 4)
+                if (_timerLight >= _delayTimer / 4)
                 {
                     _light.enabled = !_light.enabled;
-                    _timer = 0;
+                    _timerLight = 0;
                 }
             }
 
@@ -155,7 +156,9 @@ namespace Machines
         {
             _FText.text = _FButton.IsOn ? "<F>\nВкл." : "<F>\nВыкл.";
             _isLightActive = !_isLightActive;
+            _isLightStable = false;
             _light.enabled = !_light.enabled;
+            _light.color = Color.red;
             
             GameManager gameManager = GameManager.Instance;
             if (gameManager == null)
@@ -179,7 +182,7 @@ namespace Machines
             _isLightActive = !_isLightActive;
             _isLightStable = !_isLightStable;
             _light.enabled = _isLightStable;
-            _light.color = Color.green;
+            _light.color = _isLightStable ? Color.green : Color.red;
             _piskSound.Stop();
         }
         private void OnUVButtonClicked()
@@ -242,6 +245,11 @@ namespace Machines
             
             _laminSound.Stop();
             _piskSound.Stop();
+            
+            _isLightActive = _FButton.IsOn;
+            _isLightStable = _SoundButton.IsOn;
+            _light.enabled = _isLightActive;
+            _light.color = _isLightStable ? Color.green : Color.red;
         }
     }
 }

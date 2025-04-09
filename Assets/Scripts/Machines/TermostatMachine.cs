@@ -151,7 +151,7 @@ namespace Machines
             }
             
             LabContainer container1 = _socketInteractor1.SelectedObject.GetComponent<LabContainer>();
-            LabContainer container2 = _socketInteractor1.SelectedObject.GetComponent<LabContainer>();
+            LabContainer container2 = _socketInteractor2.SelectedObject.GetComponent<LabContainer>();
 
             if (container1 is null || container2 == null)
             {

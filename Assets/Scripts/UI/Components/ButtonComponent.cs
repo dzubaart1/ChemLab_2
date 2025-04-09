@@ -85,7 +85,7 @@ namespace UI.Components
             if (gameManager.IsSoundsOn)
             {
                 AudioClip a = ResourcesDatabase.ReadSound("ButtonClick");
-                AudioSource.PlayClipAtPoint(a, transform.position, 0.7f);
+                AudioSource.PlayClipAtPoint(a, transform.position, 0.6f);
             }
             
             _isTimerActive = true;
