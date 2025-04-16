@@ -3,14 +3,13 @@ using BioEngineerLab.Activities;
 using Containers;
 using Core;
 using Core.Services;
-using JetBrains.Annotations;
 using Crafting;
 using Mechanics;
 using Saveables;
 using UI.Components;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.XR.Interaction.Toolkit;
+using Database;
 
 namespace Machines
 {
@@ -122,6 +121,12 @@ namespace Machines
                 {
                     CraftTools.ApplyCraft(labCraft.LabCraft, labContainer);
                     gameManager.CurrentBaseLocalManager.OnActivityComplete(new CraftSubstanceLabActivity(labContainer.ContainerType, labCraft.LabCraft));
+                }
+            
+                if (gameManager.IsSoundsOn)
+                {
+                    AudioClip a = ResourcesDatabase.ReadSound("Substance");
+                    AudioSource.PlayClipAtPoint(a, transform.position, 0.7f);
                 }
                 
                 StartCoroutine(StartDelayBetweenActivated());
