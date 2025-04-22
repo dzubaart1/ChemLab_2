@@ -61,7 +61,7 @@ namespace LocalManagers
 
             _isGameStarted = true;
 
-            _currentTaskID = 96;
+            _currentTaskID = 0;
             _savedTaskID = 0;
 
             _gameStartTime = DateTime.Now;
