@@ -61,7 +61,7 @@ namespace LocalManagers
 
             _isGameStarted = true;
 
-            _currentTaskID = 0;
+            _currentTaskID = 96;
             _savedTaskID = 0;
 
             _gameStartTime = DateTime.Now;
@@ -225,17 +225,18 @@ namespace LocalManagers
                 MoveToNextTask();
                 return;
             }
+            
+            GameManager gameManager = GameManager.Instance;
+
+            if (gameManager == null)
+            {
+                return;
+            }
 
             if (_tabletUI != null)
             {
                 _tabletUI.OnTaskFailed();
                 _isError = true;
-                
-                GameManager gameManager = GameManager.Instance;
-                if (gameManager == null)
-                {
-                    return;
-                }
                 
                 if (gameManager.IsSoundsOn)
                 {

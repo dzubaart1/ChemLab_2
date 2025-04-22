@@ -100,6 +100,7 @@ namespace Core
             }
             
             _playerSpawner.InitPlayer();
+            IsGameFinished = false;
         }
     }
 }
