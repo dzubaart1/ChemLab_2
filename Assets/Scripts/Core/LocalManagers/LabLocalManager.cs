@@ -214,7 +214,19 @@ namespace LocalManagers
         public override void OnActivityComplete(LabActivity activity)
         {
             Debug.Log($" TRY COMPLETE {activity.ActivityType}! {activity} {_tasksList[_currentTaskID].LabActivity}");
+            
+            GameManager gameManager = GameManager.Instance;
 
+            if (gameManager == null)
+            {
+                return;
+            }
+
+            if (gameManager.IsGameFinished)
+            {
+                return;
+            }
+            
             if (!IsCorrectTaskID(_currentTaskID))
             {
                 return;
@@ -223,13 +235,6 @@ namespace LocalManagers
             if (_tasksList[_currentTaskID].LabActivity.Equals(activity))
             {
                 MoveToNextTask();
-                return;
-            }
-            
-            GameManager gameManager = GameManager.Instance;
-
-            if (gameManager == null)
-            {
                 return;
             }
 
