@@ -17,7 +17,7 @@ namespace Trash
     {
         private class SavedData
         {
-            public List<VRGrabInteractable> HiddenGameObjects = new List<VRGrabInteractable>();
+            public List<TrashableObject> HiddenGameObjects = new List<TrashableObject>();
         }
 
         [SerializeField] private ETrashType _trashType;
@@ -27,7 +27,7 @@ namespace Trash
         [CanBeNull] private HandsChanger _handsChanger;
         
         private SavedData _savedData = new SavedData();
-        private List<VRGrabInteractable> _hiddenGameObjects = new List<VRGrabInteractable>();
+        private List<TrashableObject> _hiddenGameObjects = new List<TrashableObject>();
         
         private void Start()
         {
@@ -101,15 +101,8 @@ namespace Trash
                 return;
             }
             
-            VRGrabInteractable interactable = other.GetComponentInParent<VRGrabInteractable>();
-
-            if (interactable == null)
-            {
-                return;
-            }
-            
-            interactable.gameObject.SetActive(false);
-            _hiddenGameObjects.Add(interactable);
+            trashableObject.SetTreshableActive(false);
+            _hiddenGameObjects.Add(trashableObject);
 
             if (_particleSystem != null)
             {
@@ -154,22 +147,22 @@ namespace Trash
         {
             _savedData.HiddenGameObjects.Clear();
             
-            foreach (var vrGrab in _hiddenGameObjects)
+            foreach (var trashableObject in _hiddenGameObjects)
             {
-                _savedData.HiddenGameObjects.Add(vrGrab);
+                _savedData.HiddenGameObjects.Add(trashableObject);
             }
         }
 
         public void Load()
         {
-            foreach (var interactable in _hiddenGameObjects)
+            foreach (var trashableObject in _hiddenGameObjects)
             {
-                interactable.gameObject.SetActive(true);
+                trashableObject.SetTreshableActive(true);
             }
 
-            foreach (var interactable in _savedData.HiddenGameObjects)
+            foreach (var trashableObject in _savedData.HiddenGameObjects)
             {
-                interactable.gameObject.SetActive(false);
+                trashableObject.SetTreshableActive(false);
             }
             
             _hiddenGameObjects.Clear();
