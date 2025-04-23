@@ -327,7 +327,7 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.54
+        value: 55
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -336,7 +336,7 @@ MonoBehaviour:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 10
-        value: 0.54
+        value: 55
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -351,7 +351,7 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.64
+        value: 55
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -360,7 +360,7 @@ MonoBehaviour:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 10
-        value: 0.64
+        value: 55
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -375,7 +375,7 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.54
+        value: 55
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -384,7 +384,7 @@ MonoBehaviour:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 10
-        value: 0.54
+        value: 55
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -402,7 +402,7 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.54
+        value: 55
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -411,7 +411,7 @@ MonoBehaviour:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 10
-        value: 0.54
+        value: 55
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -426,7 +426,7 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.64
+        value: 55
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -435,7 +435,7 @@ MonoBehaviour:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 10
-        value: 0.64
+        value: 55
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -450,7 +450,7 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.54
+        value: 55
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -459,7 +459,7 @@ MonoBehaviour:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 10
-        value: 0.54
+        value: 55
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -1329,8 +1329,8 @@ Transform:
   m_GameObject: {fileID: 5777605545528605171}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
-  m_LocalScale: {x: 55.699997, y: 55.699997, z: 55.699997}
+  m_LocalPosition: {x: 0, y: -0.52, z: 0}
+  m_LocalScale: {x: 55, y: 55, z: 55}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5360988011497971068}
@@ -1412,8 +1412,8 @@ Transform:
   m_GameObject: {fileID: 7536881516553669749}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.65, z: 0}
-  m_LocalScale: {x: 50, y: 50, z: 50}
+  m_LocalPosition: {x: 0, y: -0.48, z: 0}
+  m_LocalScale: {x: 55, y: 55, z: 55}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5360988011497971068}

@@ -163,11 +163,6 @@ namespace LocalManagers
             {
                 container.ReleaseAnchor();
             }
-            
-            foreach (var saveableOther in _saveableOthers)
-            {
-                saveableOther.Load();
-            }
 
             foreach (var grabInteractable in _grabInteractables)
             {
@@ -182,6 +177,11 @@ namespace LocalManagers
             foreach (var socket in _sockets)
             {
                 socket.PutSavedInteractable();
+            }
+            
+            foreach (var saveableOther in _saveableOthers)
+            {
+                saveableOther.Load();
             }
 
             foreach (var container in _containers)

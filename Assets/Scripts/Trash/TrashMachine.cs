@@ -101,7 +101,9 @@ namespace Trash
                 return;
             }
             
-            trashableObject.SetTreshableActive(false);
+            //gameManager.PlayerSpawner.Player.ReleaseAllGrabbables();
+            
+            trashableObject.SetTrashableActive(false);
             _hiddenGameObjects.Add(trashableObject);
 
             if (_particleSystem != null)
@@ -157,19 +159,19 @@ namespace Trash
         {
             foreach (var trashableObject in _hiddenGameObjects)
             {
-                trashableObject.SetTreshableActive(true);
+                trashableObject.SetTrashableActive(true);
             }
 
             foreach (var trashableObject in _savedData.HiddenGameObjects)
             {
-                trashableObject.SetTreshableActive(false);
+                trashableObject.SetTrashableActive(false);
             }
             
             _hiddenGameObjects.Clear();
 
-            foreach (var interactable in _savedData.HiddenGameObjects)
+            foreach (var trashableObject in _savedData.HiddenGameObjects)
             {
-                _hiddenGameObjects.Add(interactable);
+                _hiddenGameObjects.Add(trashableObject);
             }
         }
     }

@@ -2754,6 +2754,8 @@ GameObject:
   - component: {fileID: 912697118}
   - component: {fileID: 912697117}
   - component: {fileID: 912697116}
+  - component: {fileID: 912697121}
+  - component: {fileID: 912697120}
   m_Layer: 0
   m_Name: TablesAndShelfs
   m_TagString: Untagged
@@ -2816,8 +2818,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.7119209, y: 0.02677835, z: 0.62485266}
-  m_Center: {x: -1.0463912, y: 0.45318186, z: 0.9230306}
+  m_Size: {x: 0.7119209, y: 0.02677838, z: 0.6213989}
+  m_Center: {x: -1.0463912, y: 0.45318186, z: 0.92475766}
 --- !u!65 &912697118
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2837,8 +2839,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.8658706, y: 0.040674165, z: 2.2195544}
-  m_Center: {x: -0.9694168, y: 0.4601298, z: -0.54095435}
+  m_Size: {x: 0.70723665, y: 0.04067421, z: 0.67889947}
+  m_Center: {x: -1.0487337, y: 0.46012983, z: -0.89874285}
 --- !u!65 &912697119
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2860,6 +2862,48 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.6364975, y: 0.041820318, z: 0.83560246}
   m_Center: {x: 1.0645918, y: 0.46070293, z: 1.2445644}
+--- !u!65 &912697120
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912697114}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.8754177, y: 0.04067421, z: 1.1073065}
+  m_Center: {x: -0.9646432, y: 0.46012983, z: 0.0105519695}
+--- !u!65 &912697121
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912697114}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.8754177, y: 0.04067421, z: 0.4062017}
+  m_Center: {x: -0.9646432, y: 0.46012983, z: -1.4476331}
 --- !u!1001 &943435527
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6736,7 +6780,7 @@ PrefabInstance:
     - target: {fileID: 4632761823282653852, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: _fulllight.DirTexture
       value: 
-      objectReference: {fileID: 2800000, guid: b2343cae17757f64498679b65d5d623c, type: 3}
+      objectReference: {fileID: 2800000, guid: a1a1141c15a3dc64281fbc500a9a6162, type: 3}
     - target: {fileID: 4632761823282653852, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: _nonelight.DirTexture
       value: 
@@ -6744,7 +6788,7 @@ PrefabInstance:
     - target: {fileID: 4632761823282653852, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: _fulllight.LightTexture
       value: 
-      objectReference: {fileID: 2800000, guid: 9dfc251e7eec1c84fb2089e49f166a4d, type: 3}
+      objectReference: {fileID: 2800000, guid: 6187011514d82d447876d556c0e5b23b, type: 3}
     - target: {fileID: 4632761823282653852, guid: f08f436649915d941b1de008c06fc522, type: 3}
       propertyPath: _nonelight.LightTexture
       value: 

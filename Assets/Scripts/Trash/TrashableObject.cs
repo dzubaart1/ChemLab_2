@@ -17,10 +17,10 @@ namespace Trash
 
         public ETrashableObject TrashableObjectType => _trashableObjectType;
 
-        public void SetTreshableActive(bool isActive)
+        public void SetTrashableActive(bool isActive)
         {
-            MeshRenderer meshRenderer = GetComponentInChildren<MeshRenderer>();
-            if (meshRenderer == null)
+            MeshRenderer[] meshRenderers = GetComponentsInChildren<MeshRenderer>();
+            if (meshRenderers == null || meshRenderers.Length == 0)
             {
                 return;
             }
@@ -39,8 +39,11 @@ namespace Trash
 
             tempRB.useGravity = isActive;
             tempRB.isKinematic = !isActive;
-
-            meshRenderer.enabled = isActive;
+            
+            foreach (var meshRenderer in meshRenderers)
+            {
+                meshRenderer.enabled = isActive;
+            }
             foreach (var tempCollider in colliders)
             {
                 tempCollider.enabled = isActive;
