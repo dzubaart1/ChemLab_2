@@ -6,7 +6,7 @@
   "TitleEnglish": null,
   "Description": "На приборной панели нажмите кнопку «L»/«Esc»",
   "DescriptionEnglish": null,
-  "Warning": "",
+  "Warning": "«L» - Включение и отключение освещения внутри ламинара. «Esc» - возврат к предыдущему пункту меню/выход из пункта меню без сохранения",
   "WarningEnglish": null,
   "SafetyPrecautions": null,
   "SafetyPrecautionsEnglish": null,

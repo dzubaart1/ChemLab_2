@@ -6,7 +6,7 @@
   "TitleEnglish": null,
   "Description": "Нажмите кнопку «Звук»",
   "DescriptionEnglish": null,
-  "Warning": "",
+  "Warning": "Смена мигающего красного цвета на зеленый у кнопки означает, что ламинарный бокс готов к работе.",
   "WarningEnglish": null,
   "SafetyPrecautions": null,
   "SafetyPrecautionsEnglish": null,
