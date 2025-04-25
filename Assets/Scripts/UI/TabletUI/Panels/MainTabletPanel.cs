@@ -17,6 +17,7 @@ namespace UI.TabletUI.Panels
         [SerializeField] private Button _safetyButton;
         [SerializeField] private Button _musicButton;
         [SerializeField] private Button _soundButton;
+        [SerializeField] private Button _backButton;
         [SerializeField] private TextMeshProUGUI _taskTitleText;
         [SerializeField] private TextMeshProUGUI _taskDescriptionText;
 
@@ -39,6 +40,7 @@ namespace UI.TabletUI.Panels
             _safetyButton.onClick.AddListener(OnSafetyButtonClick);
             _musicButton.onClick.AddListener(OnMusicButtonClick);
             _soundButton.onClick.AddListener(OnSoundButtonClick);
+            _backButton.onClick.AddListener(OnBackButtonClick);
         }
 
         private void OnDisable()
@@ -51,6 +53,23 @@ namespace UI.TabletUI.Panels
             _safetyButton.onClick.RemoveListener(OnSafetyButtonClick);
             _musicButton.onClick.RemoveListener(OnMusicButtonClick);
             _soundButton.onClick.RemoveListener(OnSoundButtonClick);
+            _backButton.onClick.RemoveListener(OnBackButtonClick);
+        }
+
+        private void OnBackButtonClick()
+        {
+            GameManager gameManager = GameManager.Instance;
+            if (gameManager == null)
+            {
+                return;
+            }
+            
+            if (gameManager.CurrentBaseLocalManager == null)
+            {
+                return;
+            }
+            
+            gameManager.CurrentBaseLocalManager.LoadGame();
         }
 
         private void OnHomeButtonClick()
