@@ -41,7 +41,7 @@ MonoBehaviour:
   - laminPetriSocket
   - TermostatSocket
   - PulverizatorRay
-  - 
-  - 
-  - 
+  - AutoclaveLaktozaSocket
+  - AutoclaveSaharozaSocket
+  - AutoclaveGlukozaSocket
   - Teleport
