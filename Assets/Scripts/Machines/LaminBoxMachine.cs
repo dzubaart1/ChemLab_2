@@ -16,6 +16,7 @@ namespace Machines
             public bool IsOpen;
             public bool IsFOn;
             public bool IsSoundOn;
+            public bool IsKeyboardShouldLock;
         }
         
         [Header("Refs")]
@@ -54,6 +55,7 @@ namespace Machines
         private bool _isTimerActive;
         private bool _isLightActive;
         private bool _isLightStable;
+        private bool _isKeyboardShouldLock = false;
 
         private GameManager gameManager;
         
@@ -82,7 +84,9 @@ namespace Machines
                 if (_timerKey >= _delayTimer)
                 {
                     _keyboardUnlockText.transform.gameObject.SetActive(false);
-                    _states.gameObject.SetActive(true);
+
+                    _states.gameObject.SetActive(!_isKeyboardShouldLock);
+                    
                     _timerKey = 0;
                     _isTimerActive = false;
                 }
@@ -155,7 +159,7 @@ namespace Machines
         private void OnFButtonClicked()
         {
             _FText.text = _FButton.IsOn ? "<F>\nВкл." : "<F>\nВыкл.";
-            _isLightActive = !_isLightActive;
+            _isLightActive = _FButton.IsOn;
             _isLightStable = false;
             _light.enabled = !_light.enabled;
             _light.color = Color.red;
@@ -216,6 +220,15 @@ namespace Machines
 
         private void OnKeyboardUnlock()
         {
+            if (_SoundButton.IsOn && !_FButton.IsOn)
+            {
+                _isKeyboardShouldLock = true;
+            }
+            else
+            {
+                _isKeyboardShouldLock = false;
+            }
+            _keyboardUnlockText.text = _isKeyboardShouldLock ? "Клавиатура заблокировна" : "Клавиатура разблокировна";
             _keyboardUnlockText.transform.gameObject.SetActive(true);
             _states.gameObject.SetActive(false);
             
@@ -229,6 +242,7 @@ namespace Machines
             _savedData.IsOpen = _openButton.IsOn;
             _savedData.IsFOn = _FButton.IsOn;
             _savedData.IsSoundOn = _SoundButton.IsOn;
+            _savedData.IsKeyboardShouldLock = _isKeyboardShouldLock;
         }
 
         public void LoadUIState()
@@ -250,6 +264,8 @@ namespace Machines
             _isLightStable = _SoundButton.IsOn;
             _light.enabled = _isLightActive;
             _light.color = _isLightStable ? Color.green : Color.red;
+            
+            _isKeyboardShouldLock = _savedData.IsKeyboardShouldLock;
         }
     }
 }

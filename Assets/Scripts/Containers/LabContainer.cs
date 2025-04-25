@@ -461,6 +461,19 @@ namespace Containers
             Anchor.transform.parent = transform;
             Anchor.transform.localPosition = new Vector3(0, 0.01f, 0);
             Anchor.transform.rotation = Quaternion.identity;
+            
+            GameManager gameManager = GameManager.Instance;
+            
+            if (gameManager == null)
+            {
+                return;
+            }
+            
+            if (gameManager.IsSoundsOn)
+            {
+                AudioClip a = ResourcesDatabase.ReadSound("Anchor");
+                AudioSource.PlayClipAtPoint(a, transform.position, 0.8f);
+            }
         }
 
         private void MakeReleaseAnchor()

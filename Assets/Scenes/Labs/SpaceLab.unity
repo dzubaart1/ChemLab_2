@@ -5602,9 +5602,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3396382465740371142, guid: 6b526753a805dd548b3af537f6b46635, type: 3}
-      propertyPath: m_MovementType
-      value: 2
+    - target: {fileID: 4719103133362520264, guid: 6b526753a805dd548b3af537f6b46635, type: 3}
+      propertyPath: m_Axis.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719103133362520264, guid: 6b526753a805dd548b3af537f6b46635, type: 3}
+      propertyPath: m_Limits.max
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719103133362520264, guid: 6b526753a805dd548b3af537f6b46635, type: 3}
+      propertyPath: m_Limits.min
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
