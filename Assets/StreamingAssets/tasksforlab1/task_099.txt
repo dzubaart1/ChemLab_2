@@ -30,8 +30,8 @@
           "SubstanceColorB": 0.7971698,
           "SubstanceColorA": 0.843137264,
           "HasTexture": false,
-          "TexturePath": null,
-          "HintName": ""
+          "TexturePath": "",
+          "HintName": "Раствор твердого агара в воде"
         }
       ]
     },
@@ -39,27 +39,6 @@
   },
   "LabSideEffects": {
     "$type": "System.Collections.Generic.List`1[[BioEngineerLab.Tasks.SideEffects.LabSideEffect, Assembly-CSharp]], mscorlib",
-    "$values": [
-      {
-        "$type": "BioEngineerLab.Tasks.SideEffects.AddReagentsLabSideEffect, Assembly-CSharp",
-        "LabSubstanceProperty": {
-          "$type": "BioEngineerLab.Tasks.LabSubstanceProperty, Assembly-CSharp",
-          "SubstanceName": "StirHardAgarH2O",
-          "SubstanceMode": 0,
-          "SubstanceLayer": 1,
-          "IsLiquid": true,
-          "SubstanceColorR": 1.0,
-          "SubstanceColorG": 0.93553257,
-          "SubstanceColorB": 0.7971698,
-          "SubstanceColorA": 0.843137264,
-          "HasTexture": false,
-          "TexturePath": null,
-          "HintName": ""
-        },
-        "Weight": 100.0,
-        "SideEffectTimeType": 0,
-        "SideEffectType": 0
-      }
-    ]
+    "$values": []
   }
 }

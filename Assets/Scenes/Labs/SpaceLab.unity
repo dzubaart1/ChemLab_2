@@ -1844,10 +1844,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5650118537656890982, guid: 66fa6ac804ec620458bb51e42e829798, type: 3}
-      propertyPath: reagentsLabSubstanceProperty
-      value: 
-      objectReference: {fileID: 11400000, guid: 6ad9fddfda9968c4288f975bfe11649f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3472,10 +3468,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CentrifugeContainer2
       objectReference: {fileID: 0}
-    - target: {fileID: 1827639142981799576, guid: 66fa6ac804ec620458bb51e42e829798, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1827639142981799577, guid: 66fa6ac804ec620458bb51e42e829798, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.7681003
@@ -3516,10 +3508,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5650118537656890982, guid: 66fa6ac804ec620458bb51e42e829798, type: 3}
-      propertyPath: reagentsLabSubstanceProperty
-      value: 
-      objectReference: {fileID: 11400000, guid: 6ad9fddfda9968c4288f975bfe11649f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4172,7 +4160,7 @@ Transform:
   m_GameObject: {fileID: 1353240812}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.518848, y: -0.47, z: 3.7284157}
+  m_LocalPosition: {x: -3.518848, y: -0.682, z: 3.7284157}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5613,6 +5601,10 @@ PrefabInstance:
     - target: {fileID: 3389197723825861222, guid: 6b526753a805dd548b3af537f6b46635, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3396382465740371142, guid: 6b526753a805dd548b3af537f6b46635, type: 3}
+      propertyPath: m_MovementType
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
