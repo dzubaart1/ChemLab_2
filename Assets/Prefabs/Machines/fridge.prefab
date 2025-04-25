@@ -267,7 +267,6 @@ GameObject:
   - component: {fileID: 6195039852230361441}
   - component: {fileID: 7705595552057375063}
   - component: {fileID: 5564215425437648841}
-  - component: {fileID: 7690318233748320474}
   m_Layer: 0
   m_Name: Content
   m_TagString: Untagged
@@ -343,27 +342,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7690318233748320474
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1507110873321323330}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.023814706, y: 0.60894907, z: 0.7629761}
-  m_Center: {x: -0.024886966, y: -0.03785732, z: 0.03303162}
 --- !u!1 &2706852983849075533
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,7 +474,7 @@ Transform:
   m_GameObject: {fileID: 2719204895186374945}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.024682013, y: -0.037853952, z: 0.03461814}
+  m_LocalPosition: {x: 0, y: -0.037853952, z: 0.03461814}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -564,6 +542,7 @@ GameObject:
   - component: {fileID: 3556314469407125029}
   - component: {fileID: 7010110524477926136}
   - component: {fileID: 4856825532704885410}
+  - component: {fileID: 5351890128981743093}
   m_Layer: 0
   m_Name: FridgeDoor
   m_TagString: Untagged
@@ -596,8 +575,8 @@ Rigidbody:
   m_GameObject: {fileID: 3244985660018030935}
   serializedVersion: 4
   m_Mass: 10
-  m_Drag: 1
-  m_AngularDrag: 0.5
+  m_Drag: 0
+  m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -667,7 +646,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
   m_Colliders:
-  - {fileID: 7690318233748320474}
+  - {fileID: 5351890128981743093}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -758,7 +737,7 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 1
+  m_UseDynamicAttach: 0
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
@@ -807,6 +786,27 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   _isSaveble: 1
+--- !u!65 &5351890128981743093
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3244985660018030935}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.013544083, y: 0.6548146, z: 0.5232611}
+  m_Center: {x: -0.26270008, y: 0.39808768, z: 0.003136158}
 --- !u!1 &4321242492945675126
 GameObject:
   m_ObjectHideFlags: 0
