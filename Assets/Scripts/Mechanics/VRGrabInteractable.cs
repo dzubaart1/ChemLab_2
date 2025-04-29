@@ -82,7 +82,7 @@ namespace Mechanics
             transform.rotation = _savedData.Rotation;
 
             rigidbody.position = _savedData.Position;
-            rigidbody.rotation = _savedData.Rotation;
+            //rigidbody.rotation = _savedData.Rotation;
         }
         
         private void OnGrab(SelectEnterEventArgs args)

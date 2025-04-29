@@ -40,6 +40,10 @@ namespace Machines
         [Space]
         [SerializeField] private TagConfig[] _tagConfigs;
         
+        private float _timerDelay = 1f;
+        private bool _isTimerActive = false;
+        private float _timer = 0f;
+        
         private bool _isAlreadyTriggered = false;
         private Player _player;
 
@@ -55,6 +59,16 @@ namespace Machines
         }
         private void Update()
         {
+            if (_isTimerActive)
+            {
+                _timer += Time.deltaTime;
+
+                if (_timer > _timerDelay)
+                {
+                    _isTimerActive = false;
+                }
+            }
+            
             Ray colorRay = new Ray(_rayOrigin.transform.position, _rayOrigin.transform.forward);
             if (Physics.Raycast(colorRay, out RaycastHit colorHit))
             {
@@ -130,6 +144,11 @@ namespace Machines
                 return;
             }
 
+            if (_isTimerActive)
+            {
+                return;
+            }
+
             if (tagConfig.TargetType == EPulverizatorTarget.RightHandHit ||
                 tagConfig.TargetType == EPulverizatorTarget.LeftHandHit)
             {
@@ -139,17 +158,20 @@ namespace Machines
                     if (TryGetTagConfig(hit2.collider.gameObject.tag, out TagConfig tagConfig2))
                     {
                         gameManager.CurrentBaseLocalManager.OnActivityComplete(new PulverizatorLabActivity(tagConfig2.TargetType));
+                        RestartTimer();
                         return;
                     }
                     else
                     {
                         gameManager.CurrentBaseLocalManager.OnActivityComplete(new PulverizatorLabActivity(tagConfig.TargetType));
+                        RestartTimer();
                         return;
                     }
                 }
             }
             
             gameManager.CurrentBaseLocalManager.OnActivityComplete(new PulverizatorLabActivity(tagConfig.TargetType));
+            RestartTimer();
         }
         
         private void ChangeColor(RaycastHit hit)
@@ -210,6 +232,12 @@ namespace Machines
             }
 
             return false;
+        }
+        
+        private void RestartTimer()
+        {
+            _isTimerActive = true;
+            _timer = 0f;
         }
     }
 }
