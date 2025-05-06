@@ -64,7 +64,7 @@ namespace Machines
                 return;
             }
             
-            if (!IsRotationEqual(_closed, 0.01f) && !_isOpen)
+            if (!IsRotationEqual(_closed, 0.001f) && !_isOpen)
             {
                 _isOpen = true;
                 
@@ -79,7 +79,7 @@ namespace Machines
                 DoorOpenedEvent?.Invoke();
             }
             
-            else if (IsRotationEqual(_closed, 0.01f) && _isOpen)
+            else if (IsRotationEqual(_closed, 0.001f) && _isOpen)
             {
                 _isOpen = false;
                 

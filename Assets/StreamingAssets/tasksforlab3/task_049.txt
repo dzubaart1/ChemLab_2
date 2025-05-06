@@ -14,7 +14,7 @@
   "SaveableTask": false,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
-    "SocketType": 7,
+    "SocketType": 35,
     "SocketActivityType": 0,
     "ActivityType": 3
   },
