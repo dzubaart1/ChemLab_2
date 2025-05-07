@@ -1240,6 +1240,10 @@ PrefabInstance:
       propertyPath: m_ConnectedBody
       value: 
       objectReference: {fileID: 1835612530161552977}
+    - target: {fileID: 902262349209544617, guid: ef7091cba422a43469b923143b22a305, type: 3}
+      propertyPath: _isSaveble
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2126423610338958124, guid: ef7091cba422a43469b923143b22a305, type: 3}
       propertyPath: _doorRb
       value: 

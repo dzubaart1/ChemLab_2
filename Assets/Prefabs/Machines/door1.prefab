@@ -108,6 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 6594839635057893051}
+  _followPhysics: {fileID: 5646684781211052340}
   _closed: {x: 0, y: 0, z: 0, w: 1}
   _opened: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   _doorType: 2
@@ -416,6 +417,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7005517960119037602, guid: ef7091cba422a43469b923143b22a305, type: 3}
   m_PrefabInstance: {fileID: 6043723935616447000}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5646684781211052340 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2126423610338958124, guid: ef7091cba422a43469b923143b22a305, type: 3}
+  m_PrefabInstance: {fileID: 6043723935616447000}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089461627791725528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 567dc2e4ffcb0da4a94f20ddf3ea6492, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6871055104169579953 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 902262349209544617, guid: ef7091cba422a43469b923143b22a305, type: 3}

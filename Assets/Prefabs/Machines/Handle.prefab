@@ -112,7 +112,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &5504432598152398669
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -239,7 +239,7 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
@@ -254,7 +254,7 @@ MonoBehaviour:
   m_SmoothPosition: 0
   m_SmoothPositionAmount: 8
   m_TightenPosition: 0.1
-  m_TrackRotation: 1
+  m_TrackRotation: 0
   m_SmoothRotation: 0
   m_SmoothRotationAmount: 8
   m_TightenRotation: 0.1
@@ -319,7 +319,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.000581, y: 0.00219, z: -0.000359}
-  m_LocalScale: {x: 0.0003462016, y: 0.0015137931, z: 0.0012205022}
+  m_LocalScale: {x: 0.0003462016, y: 0.0015137931, z: 0.0064139296}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4510898107171543239}

@@ -38,7 +38,6 @@ public class FollowPhysics : MonoBehaviour
     private void OnEnable()
     {
         _vrGrabInteractable.UngrabbedEvent += OnUngrab;
-        
         if (_door != null)
         {
             _door.DoorClosedEvent += OnDoorClosed;
@@ -56,8 +55,8 @@ public class FollowPhysics : MonoBehaviour
 
     private void OnUngrab()
     {
-        _target.position = transform.position;
-        _target.rotation = transform.rotation;
+        _target.position = _rb.position;
+        _target.rotation = _rb.rotation;
         
         _rb.angularVelocity = Vector3.zero;
         _rb.velocity = Vector3.zero;
@@ -69,5 +68,14 @@ public class FollowPhysics : MonoBehaviour
     private void OnDoorClosed()
     {
         _player.ReleaseAllGrabbables();
+    }
+
+    public void ResetHandler()
+    {
+        _target.position = _rb.position;
+        _target.rotation = _rb.rotation;
+        
+        _rb.angularVelocity = Vector3.zero;
+        _rb.velocity = Vector3.zero;
     }
 }

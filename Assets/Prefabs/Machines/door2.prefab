@@ -194,6 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 4816578669693659842}
+  _followPhysics: {fileID: 7336402498879584126}
   _closed: {x: 0, y: -0.70710677, z: 0, w: 0.7071068}
   _opened: {x: 0, y: 0, z: 0, w: 1}
   _doorType: 3
@@ -415,6 +416,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _vrGrabInteractable: {fileID: 8419421098417359867}
   _doorAnimator: {fileID: 7288340774987255441}
+--- !u!114 &7336402498879584126 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2126423610338958124, guid: ef7091cba422a43469b923143b22a305, type: 3}
+  m_PrefabInstance: {fileID: 8670185961625267282}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2635631918372146578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 567dc2e4ffcb0da4a94f20ddf3ea6492, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8419421098417359867 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 902262349209544617, guid: ef7091cba422a43469b923143b22a305, type: 3}

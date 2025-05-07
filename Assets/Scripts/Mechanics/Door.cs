@@ -20,6 +20,7 @@ namespace Machines
         
         [Header("Refs")]
         [SerializeField] private Rigidbody _rigidbody;
+        [SerializeField] private FollowPhysics _followPhysics;
         
         [Space]
         [Header("Configs")]
@@ -31,7 +32,11 @@ namespace Machines
         
         private bool _isOpen = false;
         private SavedData _savedData = new SavedData();
-
+        
+        private float _timerDelay = 1f;
+        private bool _isTimerActive = false;
+        private float _timer = 0f;
+        
         public bool IsOpen => _isOpen;
         
         private void Start()
@@ -52,6 +57,16 @@ namespace Machines
         
         private void Update()
         {
+            if (_isTimerActive)
+            {
+                _timer += Time.deltaTime;
+
+                if (_timer > _timerDelay)
+                {
+                    _isTimerActive = false;
+                }
+            }
+            
             GameManager gameManager = GameManager.Instance;
             
             if (gameManager == null)
@@ -64,14 +79,14 @@ namespace Machines
                 return;
             }
             
-            if (!IsRotationEqual(_closed, 0.001f) && !_isOpen)
+            if (!IsRotationEqual(_closed, 0.005f) && !_isOpen)
             {
                 _isOpen = true;
                 
                 _rigidbody.velocity = Vector3.zero;
                 _rigidbody.angularVelocity = Vector3.zero;
                 
-                if (_isOpenTaskSendable)
+                if (_isOpenTaskSendable && !_isTimerActive)
                 {
                     gameManager.CurrentBaseLocalManager.OnActivityComplete(new DoorLabActivity(_doorType, EDoorActivity.Open));
                 }
@@ -79,7 +94,7 @@ namespace Machines
                 DoorOpenedEvent?.Invoke();
             }
             
-            else if (IsRotationEqual(_closed, 0.001f) && _isOpen)
+            else if (IsRotationEqual(_closed, 0.005f) && _isOpen)
             {
                 _isOpen = false;
                 
@@ -92,7 +107,7 @@ namespace Machines
                 _rigidbody.velocity = Vector3.zero;
                 _rigidbody.angularVelocity = Vector3.zero;
                 
-                if (_isCloseTaskSendable)
+                if (_isCloseTaskSendable && !_isTimerActive)
                 {
                     gameManager.CurrentBaseLocalManager.OnActivityComplete(new DoorLabActivity(_doorType, EDoorActivity.Closed));
                 }
@@ -105,11 +120,11 @@ namespace Machines
         {
             bool result = true;
             
-            result &= (Math.Abs(transform.rotation.x - q.x) < accuracy);
+            result &= (Math.Abs(transform.rotation.x - q.x) <= accuracy);
             
-            result &= (Math.Abs(transform.rotation.y - q.y) < accuracy);
+            result &= (Math.Abs(transform.rotation.y - q.y) <= accuracy);
             
-            result &= (Math.Abs(transform.rotation.z - q.z) < accuracy);
+            result &= (Math.Abs(transform.rotation.z - q.z) <= accuracy);
             
             return result;
         }
@@ -121,6 +136,8 @@ namespace Machines
 
         public void LoadDoorState()
         {
+            RestartTimer();
+            return;
             _rigidbody.velocity = Vector3.zero;
             _rigidbody.angularVelocity = Vector3.zero;
             
@@ -135,11 +152,19 @@ namespace Machines
                 transform.rotation = _closed;
                 DoorClosedEvent?.Invoke();
             }
+            
+            _followPhysics.ResetHandler();
         }
 
         public void SetIsOpen(bool isOpen)
         {
             _isOpen = isOpen;
+        }
+        
+        private void RestartTimer()
+        {
+            _isTimerActive = true;
+            _timer = 0f;
         }
     }
 }
