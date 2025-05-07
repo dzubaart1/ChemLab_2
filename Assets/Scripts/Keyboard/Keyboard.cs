@@ -34,7 +34,7 @@ namespace BioEngineerLab.Machines
         [Header("Others")]
         [SerializeField] private String _targetPassword;
         [SerializeField] private Image _sygnalImage;
-        [SerializeField] private VRGrabInteractable _doorInteractable;
+        //[SerializeField] private VRGrabInteractable _doorInteractable;
         [SerializeField] private Door _door;
         
         private String _currentString = "";
@@ -104,9 +104,9 @@ namespace BioEngineerLab.Machines
             {
                 gameManager.CurrentBaseLocalManager.OnActivityComplete(new MachineLabActivity(EMachineActivity.OnEnter, EMachine.KeyboardMachine));
                 _sygnalImage.color = Color.green;
-                InteractionLayerMask layers = _doorInteractable.interactionLayers;
+                /*InteractionLayerMask layers = _doorInteractable.interactionLayers;
                 layers.value = 2;
-                _doorInteractable.interactionLayers = layers;
+                _doorInteractable.interactionLayers = layers;*/
                 
                 if (gameManager.IsSoundsOn)
                 {
@@ -131,9 +131,9 @@ namespace BioEngineerLab.Machines
 
         private void OnKeyButtonClick()
         {
-            InteractionLayerMask layers = _doorInteractable.interactionLayers;
+            /*InteractionLayerMask layers = _doorInteractable.interactionLayers;
             layers.value = 2;
-            _doorInteractable.interactionLayers = layers;
+            _doorInteractable.interactionLayers = layers;*/
         }
 
         private void OnDoorClosed()
@@ -145,8 +145,8 @@ namespace BioEngineerLab.Machines
         
         public void Save()
         {
-            InteractionLayerMask layers = _doorInteractable.interactionLayers;
-            _savedData.IsDoorActive = layers.value == 2;
+            /*InteractionLayerMask layers = _doorInteractable.interactionLayers;
+            _savedData.IsDoorActive = layers.value == 2;*/
         }
 
         public void Load()

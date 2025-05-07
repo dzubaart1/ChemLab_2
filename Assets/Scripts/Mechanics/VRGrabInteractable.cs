@@ -76,13 +76,13 @@ namespace Mechanics
                 return;
             }
 
-            rigidbody.isKinematic = false;
+            //rigidbody.isKinematic = false;
 
             transform.position = _savedData.Position;
             transform.rotation = _savedData.Rotation;
 
             rigidbody.position = _savedData.Position;
-            //rigidbody.rotation = _savedData.Rotation;
+            rigidbody.rotation = _savedData.Rotation;
         }
         
         private void OnGrab(SelectEnterEventArgs args)
