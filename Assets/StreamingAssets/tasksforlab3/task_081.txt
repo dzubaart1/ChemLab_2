@@ -11,7 +11,7 @@
   "SafetyPrecautions": null,
   "SafetyPrecautionsEnglish": null,
   "HintImagePath": "Lab3/64",
-  "SaveableTask": false,
+  "SaveableTask": true,
   "LabActivity": {
     "$type": "BioEngineerLab.Activities.SocketLabActivity, Assembly-CSharp",
     "SocketType": 33,

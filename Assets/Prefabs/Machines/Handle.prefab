@@ -287,7 +287,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
-  _isSaveble: 1
+  _isSaveble: 0
 --- !u!1 &6683646901197234624
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,7 +429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 567dc2e4ffcb0da4a94f20ddf3ea6492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 4510898107171543239}
+  _target: {fileID: 3429318072649919981}
   _vrGrabInteractable: {fileID: 902262349209544617}
   _doorRb: {fileID: 0}
   _door: {fileID: 0}

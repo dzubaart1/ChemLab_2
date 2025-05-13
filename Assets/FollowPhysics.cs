@@ -4,15 +4,24 @@ using JetBrains.Annotations;
 using Machines;
 using Mechanics;
 using UnityEngine;
+using Saveables;
 
-public class FollowPhysics : MonoBehaviour
+public class FollowPhysics : MonoBehaviour, ISaveableOther
 {
-    [SerializeField] private Transform _target;
+    private class SavedData
+    {
+        public Vector3 Position;
+        public Quaternion Rotation;
+    }
+    
+    [SerializeField] private Rigidbody _target;
     [SerializeField] private VRGrabInteractable _vrGrabInteractable;
     [SerializeField] private Rigidbody _doorRb;
     [SerializeField] [CanBeNull] private Door _door;
     private Rigidbody _rb;
     private Player _player;
+    private SavedData _savedData = new SavedData();
+
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
@@ -27,7 +36,8 @@ public class FollowPhysics : MonoBehaviour
         {
             return;
         }
-            
+        
+        gameManager.CurrentBaseLocalManager.AddSaveableOther(this);
         _player = gameManager.PlayerSpawner.Player;
     }
     void FixedUpdate()
@@ -75,6 +85,21 @@ public class FollowPhysics : MonoBehaviour
         _target.position = _rb.position;
         _target.rotation = _rb.rotation;
         
+        _rb.angularVelocity = Vector3.zero;
+        _rb.velocity = Vector3.zero;
+    }
+    
+    public void Save()
+    {
+        _savedData.Position = _target.position;
+        _savedData.Rotation = _target.rotation;
+    }
+
+    public void Load()
+    {
+        //Rigidbody rb = _target.gameObject.GetComponent<Rigidbody>();
+        _target.position = _savedData.Position;
+        _target.rotation = _savedData.Rotation;
         _rb.angularVelocity = Vector3.zero;
         _rb.velocity = Vector3.zero;
     }

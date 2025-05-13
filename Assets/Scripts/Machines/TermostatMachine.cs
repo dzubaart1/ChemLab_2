@@ -58,6 +58,7 @@ namespace Machines
         private void OnEnable()
         {
             _door.DoorClosedEvent += OnDoorClosed;
+            _door.DoorOpenedEvent += OnDoorClosed;
             
             _powerButton.ClickBtnEvent += OnPowerButtonClick;
             _UpButton.ClickBtnEvent += OnUpButtonClick;
@@ -67,6 +68,7 @@ namespace Machines
         private void OnDisable()
         {
             _door.DoorClosedEvent -= OnDoorClosed;
+            _door.DoorOpenedEvent -= OnDoorClosed;
             
             _powerButton.ClickBtnEvent -= OnPowerButtonClick;
             _UpButton.ClickBtnEvent -= OnUpButtonClick;
