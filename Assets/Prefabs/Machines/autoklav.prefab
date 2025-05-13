@@ -369,7 +369,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1230457554445409548}
   - component: {fileID: 8121015318937162941}
-  - component: {fileID: 808051564525400671}
+  - component: {fileID: 5975736089843440024}
   m_Layer: 0
   m_Name: SocketPoint2
   m_TagString: Untagged
@@ -457,8 +457,8 @@ MonoBehaviour:
   _isExitTaskSendable: 1
   _isSubstanceSocket: 1
   _isStartEnter: 0
---- !u!135 &808051564525400671
-SphereCollider:
+--- !u!65 &5975736089843440024
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -476,8 +476,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.07
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.30604383, y: 0.10297132, z: 0.11505899}
+  m_Center: {x: 0.0803829, y: 0.04411992, z: 0}
 --- !u!1 &2377875274986548444
 GameObject:
   m_ObjectHideFlags: 0
@@ -1064,7 +1064,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2488769945252906300}
   - component: {fileID: 491250802451691021}
-  - component: {fileID: 142534162703223231}
+  - component: {fileID: 4531120041598286360}
   m_Layer: 0
   m_Name: SocketPoint2
   m_TagString: Untagged
@@ -1152,8 +1152,8 @@ MonoBehaviour:
   _isExitTaskSendable: 1
   _isSubstanceSocket: 1
   _isStartEnter: 0
---- !u!135 &142534162703223231
-SphereCollider:
+--- !u!65 &4531120041598286360
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1171,8 +1171,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.07
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.30725256, y: 0.10297132, z: 0.11505899}
+  m_Center: {x: -0.005658552, y: 0.04411992, z: 0}
 --- !u!1 &3981915000401032379
 GameObject:
   m_ObjectHideFlags: 0
@@ -1696,7 +1696,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4558818512338020602}
   serializedVersion: 4
-  m_Mass: 50
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1714,7 +1714,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!59 &4990652020853333846
 HingeJoint:
   m_ObjectHideFlags: 0
@@ -1751,7 +1751,7 @@ HingeJoint:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
-  m_EnablePreprocessing: 0
+  m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!65 &6285218224367788841
@@ -1837,7 +1837,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2902984768168589050}
   - component: {fileID: 7655825393577661180}
-  - component: {fileID: 1877301406925646227}
+  - component: {fileID: 2564109323071770261}
   m_Layer: 0
   m_Name: SocketPoint1
   m_TagString: Untagged
@@ -1925,8 +1925,8 @@ MonoBehaviour:
   _isExitTaskSendable: 1
   _isSubstanceSocket: 1
   _isStartEnter: 0
---- !u!135 &1877301406925646227
-SphereCollider:
+--- !u!65 &2564109323071770261
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1944,8 +1944,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.1
-  m_Center: {x: -0.06, y: 0, z: 0}
+  m_Size: {x: 0.3036263, y: 0.10297132, z: 0.11505899}
+  m_Center: {x: -0.08884423, y: 0.04411992, z: 0}
 --- !u!1 &5816088966042468575
 GameObject:
   m_ObjectHideFlags: 0

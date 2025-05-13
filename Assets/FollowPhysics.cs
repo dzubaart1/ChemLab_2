@@ -38,19 +38,19 @@ public class FollowPhysics : MonoBehaviour
     private void OnEnable()
     {
         _vrGrabInteractable.UngrabbedEvent += OnUngrab;
-        if (_door != null)
+        /*if (_door != null)
         {
             _door.DoorClosedEvent += OnDoorClosed;
-        }
+        }*/
     }
 
     private void OnDisable()
     {
         _vrGrabInteractable.UngrabbedEvent -= OnUngrab;
-        if (_door != null)
+        /*if (_door != null)
         {
             _door.DoorClosedEvent -= OnDoorClosed;
-        }
+        }*/
     }
 
     private void OnUngrab()

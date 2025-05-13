@@ -33,7 +33,7 @@ namespace Machines
         private bool _isOpen = false;
         private SavedData _savedData = new SavedData();
         
-        private float _timerDelay = 1f;
+        private float _timerDelay = 1.5f;
         private bool _isTimerActive = false;
         private float _timer = 0f;
         
@@ -110,6 +110,7 @@ namespace Machines
                 if (_isCloseTaskSendable && !_isTimerActive)
                 {
                     gameManager.CurrentBaseLocalManager.OnActivityComplete(new DoorLabActivity(_doorType, EDoorActivity.Closed));
+                    RestartTimer(0.5f);
                 }
                 
                 DoorClosedEvent?.Invoke();
@@ -136,9 +137,9 @@ namespace Machines
 
         public void LoadDoorState()
         {
-            RestartTimer();
-            return;
-            _rigidbody.velocity = Vector3.zero;
+            RestartTimer(1.5f);
+            //return;
+            /*_rigidbody.velocity = Vector3.zero;
             _rigidbody.angularVelocity = Vector3.zero;
             
             if (_savedData.IsOpen)
@@ -153,7 +154,7 @@ namespace Machines
                 DoorClosedEvent?.Invoke();
             }
             
-            _followPhysics.ResetHandler();
+            _followPhysics.ResetHandler();*/
         }
 
         public void SetIsOpen(bool isOpen)
@@ -161,8 +162,9 @@ namespace Machines
             _isOpen = isOpen;
         }
         
-        private void RestartTimer()
+        private void RestartTimer(float seconds)
         {
+            _timerDelay = seconds;
             _isTimerActive = true;
             _timer = 0f;
         }
