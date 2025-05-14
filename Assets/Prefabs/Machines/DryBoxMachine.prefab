@@ -917,7 +917,7 @@ GameObject:
   - component: {fileID: 2730912108339456632}
   - component: {fileID: 4285995014384577803}
   - component: {fileID: 1773880352514906236}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: hingedDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

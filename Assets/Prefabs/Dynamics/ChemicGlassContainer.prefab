@@ -989,8 +989,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: SubstanceCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1428616613955646351, guid: 66e67d5b6496ac347bec7fe390fdc14e, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1794921931802189642, guid: 66e67d5b6496ac347bec7fe390fdc14e, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1794921931802189642, guid: 66e67d5b6496ac347bec7fe390fdc14e, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5905715885137433094, guid: 66e67d5b6496ac347bec7fe390fdc14e, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:

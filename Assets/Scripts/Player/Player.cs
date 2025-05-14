@@ -65,6 +65,25 @@ namespace Core
             }
         }
 
+        public void ReleaseHandle()
+        {
+            for (var i = _leftDirectInteractor.interactablesSelected.Count - 1; i >= 0; --i)
+            {
+                if (_leftDirectInteractor.interactablesSelected[i].transform.CompareTag("Handle"))
+                {
+                    _leftDirectInteractor.interactionManager.SelectCancel(_leftDirectInteractor, _leftDirectInteractor.interactablesSelected[i]);
+                }
+            }
+            
+            for (var i = _rightDirectInteractor.interactablesSelected.Count - 1; i >= 0; --i)
+            {
+                if (_rightDirectInteractor.interactablesSelected[i].transform.CompareTag("Handle"))
+                {
+                    _rightDirectInteractor.interactionManager.SelectCancel(_rightDirectInteractor, _rightDirectInteractor.interactablesSelected[i]);
+                }
+            }
+        }
+
         public void Init()
         {
             _rightHandAnimatorController.Init();

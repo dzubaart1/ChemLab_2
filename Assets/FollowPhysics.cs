@@ -43,24 +43,25 @@ public class FollowPhysics : MonoBehaviour, ISaveableOther
     void FixedUpdate()
     {
         _rb.MovePosition(_target.position);
+        //_rb.position = _target.position;
     }
 
     private void OnEnable()
     {
         _vrGrabInteractable.UngrabbedEvent += OnUngrab;
-        /*if (_door != null)
+        if (_door != null)
         {
             _door.DoorClosedEvent += OnDoorClosed;
-        }*/
+        }
     }
 
     private void OnDisable()
     {
         _vrGrabInteractable.UngrabbedEvent -= OnUngrab;
-        /*if (_door != null)
+        if (_door != null)
         {
             _door.DoorClosedEvent -= OnDoorClosed;
-        }*/
+        }
     }
 
     private void OnUngrab()
@@ -77,7 +78,7 @@ public class FollowPhysics : MonoBehaviour, ISaveableOther
 
     private void OnDoorClosed()
     {
-        _player.ReleaseAllGrabbables();
+        _player.ReleaseHandle();
     }
 
     public void ResetHandler()

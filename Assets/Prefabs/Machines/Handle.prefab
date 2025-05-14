@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 902262349209544617}
   m_Layer: 10
   m_Name: Grabbable Handler
-  m_TagString: Untagged
+  m_TagString: Handle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 2126423610338958124}
   m_Layer: 0
   m_Name: Handle
-  m_TagString: Untagged
+  m_TagString: Handle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

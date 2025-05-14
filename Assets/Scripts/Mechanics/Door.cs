@@ -79,22 +79,22 @@ namespace Machines
                 return;
             }
             
-            if (!IsRotationEqual(_closed, 0.005f) && !_isOpen)
+            if (!IsRotationEqual(_closed, 0.003f) && !_isOpen)
             {
                 _isOpen = true;
                 
                 _rigidbody.velocity = Vector3.zero;
                 _rigidbody.angularVelocity = Vector3.zero;
                 
+                DoorOpenedEvent?.Invoke();
+                
                 if (_isOpenTaskSendable && !_isTimerActive)
                 {
                     gameManager.CurrentBaseLocalManager.OnActivityComplete(new DoorLabActivity(_doorType, EDoorActivity.Open));
                 }
-                
-                DoorOpenedEvent?.Invoke();
             }
             
-            else if (IsRotationEqual(_closed, 0.005f) && _isOpen)
+            else if (IsRotationEqual(_closed, 0.003f) && _isOpen)
             {
                 _isOpen = false;
                 
@@ -107,13 +107,13 @@ namespace Machines
                 _rigidbody.velocity = Vector3.zero;
                 _rigidbody.angularVelocity = Vector3.zero;
                 
+                DoorClosedEvent?.Invoke();
+                
                 if (_isCloseTaskSendable && !_isTimerActive)
                 {
                     gameManager.CurrentBaseLocalManager.OnActivityComplete(new DoorLabActivity(_doorType, EDoorActivity.Closed));
                     RestartTimer(0.5f);
                 }
-                
-                DoorClosedEvent?.Invoke();
             }
         }
 
@@ -137,7 +137,7 @@ namespace Machines
 
         public void LoadDoorState()
         {
-            RestartTimer(1.5f);
+            RestartTimer(1.0f);
             //return;
             /*_rigidbody.velocity = Vector3.zero;
             _rigidbody.angularVelocity = Vector3.zero;
