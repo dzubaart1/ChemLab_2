@@ -1874,6 +1874,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d39d395b3b7b5824db6230d2ad735584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &593923364
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 593923365}
+  m_Layer: 0
+  m_Name: --DOORS--
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &593923365
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593923364}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.1796923, y: 1.161943, z: 5.984965}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1124214004301904308}
+  - {fileID: 475871025466245275}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &594606635 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3314361091001859121, guid: bba921a5b8780914387dcaa48e6154fb, type: 3}
@@ -5873,8 +5906,6 @@ Transform:
   - {fileID: 1621327023513661180}
   - {fileID: 1507434230}
   - {fileID: 1470930261}
-  - {fileID: 1124214004301904308}
-  - {fileID: 475871025466245275}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2053249028
@@ -7462,19 +7493,27 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2020673063}
+    m_TransformParent: {fileID: 593923365}
     m_Modifications:
     - target: {fileID: 4104437585970318505, guid: bb4a282dbd56e9a488abee97ebd1d5cc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4104437585970318505, guid: bb4a282dbd56e9a488abee97ebd1d5cc, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4104437585970318505, guid: bb4a282dbd56e9a488abee97ebd1d5cc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.056
+      value: -19.334309
       objectReference: {fileID: 0}
     - target: {fileID: 4104437585970318505, guid: bb4a282dbd56e9a488abee97ebd1d5cc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.906
+      value: -0.016439319
       objectReference: {fileID: 0}
     - target: {fileID: 4104437585970318505, guid: bb4a282dbd56e9a488abee97ebd1d5cc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.008
+      value: 3.123036
       objectReference: {fileID: 0}
     - target: {fileID: 4104437585970318505, guid: bb4a282dbd56e9a488abee97ebd1d5cc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7705,7 +7744,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2020673063}
+    m_TransformParent: {fileID: 593923365}
     m_Modifications:
     - target: {fileID: 1023233375504003751, guid: 752d2a11b2b9d4a4a8bd2e0cbc0d963c, type: 3}
       propertyPath: m_Name
@@ -7717,15 +7756,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5514949965449457933, guid: 752d2a11b2b9d4a4a8bd2e0cbc0d963c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.279
+      value: -19.11131
       objectReference: {fileID: 0}
     - target: {fileID: 5514949965449457933, guid: 752d2a11b2b9d4a4a8bd2e0cbc0d963c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.906
+      value: -0.016439319
       objectReference: {fileID: 0}
     - target: {fileID: 5514949965449457933, guid: 752d2a11b2b9d4a4a8bd2e0cbc0d963c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.915
+      value: 1.2000356
       objectReference: {fileID: 0}
     - target: {fileID: 5514949965449457933, guid: 752d2a11b2b9d4a4a8bd2e0cbc0d963c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7950,6 +7989,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1705786794}
   - {fileID: 756995425}
+  - {fileID: 593923365}
   - {fileID: 2020673063}
   - {fileID: 709096728}
   - {fileID: 618707223}
