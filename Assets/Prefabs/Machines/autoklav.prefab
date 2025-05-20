@@ -3087,6 +3087,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3799382638158621440, guid: 20f62732a9de4c04e96495c221b6b088, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3799382638158621440, guid: 20f62732a9de4c04e96495c221b6b088, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.21176471
+      objectReference: {fileID: 0}
+    - target: {fileID: 3799382638158621440, guid: 20f62732a9de4c04e96495c221b6b088, type: 3}
+      propertyPath: EmissionModule.rateOverDistance.scalar
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 7601837896944419035, guid: 20f62732a9de4c04e96495c221b6b088, type: 3}
       propertyPath: m_Name
       value: Steam

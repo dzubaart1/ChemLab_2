@@ -532,6 +532,7 @@ GameObject:
   - component: {fileID: 7159056372955933755}
   - component: {fileID: 3735085461242495707}
   - component: {fileID: 4062999779071354566}
+  - component: {fileID: 2319285803062700345}
   m_Layer: 0
   m_Name: test_tube_50ml.001
   m_TagString: Untagged
@@ -548,8 +549,8 @@ Transform:
   m_GameObject: {fileID: 7787663932316607581}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.0988, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.0122, z: 0}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6190396967694170680}
@@ -561,7 +562,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7787663932316607581}
-  m_Mesh: {fileID: -1766304864879685087, guid: 22276db54b9d0394b82cda4221f20ec5, type: 3}
+  m_Mesh: {fileID: -1766304864879685087, guid: 9b3779c1bb711e9419c9fc5d98bae45e, type: 3}
 --- !u!23 &4062999779071354566
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -582,7 +583,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a38c7974e2b96744f927d71796981dc5, type: 2}
+  - {fileID: 2100000, guid: 2161c862183ad9549b19df3aef75dafc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -604,6 +605,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2319285803062700345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7787663932316607581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc5e2f38a4fecab439741d6b0bcbffc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxWobble: 0.01
+  WobbleSpeed: 1
+  Recovery: 1
 --- !u!1 &8513571751734786861
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,12 +735,9 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
-  _socketColliders:
-  - {fileID: 189072272663303953}
   _socketType: 9
   _isEnterTaskSendable: 0
   _isExitTaskSendable: 0
-  _timerDelay: 1
   _isSubstanceSocket: 0
   _isStartEnter: 0
 --- !u!1 &8513571751982461715
@@ -1124,7 +1137,7 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.9
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -1133,7 +1146,7 @@ MonoBehaviour:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 20
-        value: 1
+        value: 0.9
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -1148,18 +1161,18 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
-        inSlope: 0.05
-        outSlope: 0.05
+        value: 0.9
+        inSlope: 0
+        outSlope: 0
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 20
-        value: 1
-        inSlope: 0.05
-        outSlope: 0.05
+        value: 0.9
+        inSlope: 0
+        outSlope: 0
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -1172,7 +1185,7 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.9
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -1181,7 +1194,7 @@ MonoBehaviour:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 20
-        value: 1
+        value: 0.9
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -1199,7 +1212,7 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.9
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -1208,7 +1221,7 @@ MonoBehaviour:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 20
-        value: 1
+        value: 0.9
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -1224,17 +1237,17 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0
         value: 0
-        inSlope: 0.05
-        outSlope: 0.05
+        inSlope: 0.044999998
+        outSlope: 0.044999998
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 20
-        value: 1
-        inSlope: 0.05
-        outSlope: 0.05
+        value: 0.9
+        inSlope: 0.044999998
+        outSlope: 0.044999998
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -1247,7 +1260,7 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.9
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -1256,7 +1269,7 @@ MonoBehaviour:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 20
-        value: 1
+        value: 0.9
         inSlope: 0
         outSlope: 0
         tangentMode: 34

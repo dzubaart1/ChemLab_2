@@ -613,7 +613,6 @@ GameObject:
   - component: {fileID: 2454995881855933981}
   - component: {fileID: 2322496085909686259}
   - component: {fileID: 829981450167424620}
-  - component: {fileID: 7853432363135475782}
   m_Layer: 0
   m_Name: SocketPoint (1)
   m_TagString: Untagged
@@ -722,27 +721,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.09
   m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &7853432363135475782
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1269109360972931078}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.08
-  m_Center: {x: 0, y: -0.03, z: 0}
 --- !u!1 &1609544529945638627
 GameObject:
   m_ObjectHideFlags: 0
@@ -754,7 +732,6 @@ GameObject:
   - component: {fileID: 4360349882897061415}
   - component: {fileID: 3460353465976545424}
   - component: {fileID: 480238609753146307}
-  - component: {fileID: 2848029758998975571}
   m_Layer: 0
   m_Name: SocketPoint
   m_TagString: Untagged
@@ -863,27 +840,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.09
   m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &2848029758998975571
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1609544529945638627}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.08
-  m_Center: {x: 0, y: -0.03, z: 0}
 --- !u!1 &1704276601010938533
 GameObject:
   m_ObjectHideFlags: 0
@@ -2537,7 +2493,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.268, y: 0.07, z: 0.232}
+  m_ConnectedAnchor: {x: -30.131, y: 0.6010001, z: 9.854952}
   serializedVersion: 2
   m_UseSpring: 0
   m_Spring:

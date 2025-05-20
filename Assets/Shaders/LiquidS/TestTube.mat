@@ -70,10 +70,10 @@ Material:
     - _CastShadows: 1
     - _Cull: 2
     - _DstBlend: 0
-    - _LiquidAmount: 0.513
+    - _LiquidAmount: 0.707
     - _QueueControl: 1
     - _QueueOffset: 0
-    - _ScaleValue: 0.1
+    - _ScaleValue: 9
     - _SrcBlend: 1
     - _Surface: 0
     - _WobbleX: 0
@@ -85,6 +85,8 @@ Material:
     - _Color: {r: 0.35243854, g: 0.59288996, b: 0.75471693, a: 1}
     - _SideColor: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
     - _TopColor: {r: 0.754717, g: 0.26699895, b: 0.26699895, a: 1}
+    - _WobbleXAxis: {r: 1, g: 0, b: 0, a: 0}
+    - _WobbleZAxis: {r: 0, g: 0, b: 1, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &1975412105961607895
 MonoBehaviour:
