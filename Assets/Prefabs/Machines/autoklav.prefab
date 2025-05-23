@@ -1696,9 +1696,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4558818512338020602}
   serializedVersion: 4
-  m_Mass: 10
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 30
+  m_Drag: 1
+  m_AngularDrag: 0.5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -3090,10 +3090,6 @@ PrefabInstance:
     - target: {fileID: 3799382638158621440, guid: 20f62732a9de4c04e96495c221b6b088, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 3799382638158621440, guid: 20f62732a9de4c04e96495c221b6b088, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.a
-      value: 0.21176471
       objectReference: {fileID: 0}
     - target: {fileID: 3799382638158621440, guid: 20f62732a9de4c04e96495c221b6b088, type: 3}
       propertyPath: EmissionModule.rateOverDistance.scalar

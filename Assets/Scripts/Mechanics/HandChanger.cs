@@ -47,15 +47,6 @@ namespace Machines
             }
             
             gameManager.CurrentBaseLocalManager.AddSaveableOther(this);
-
-            if (gameManager.CurrentLab == ELab.Lab1)
-            {
-                WearGloves();
-            }
-            else
-            {
-                TakeGlovesOff();
-            }
         }
 
         public void WearGloves()

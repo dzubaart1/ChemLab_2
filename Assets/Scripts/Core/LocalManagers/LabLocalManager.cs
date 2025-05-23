@@ -222,7 +222,7 @@ namespace LocalManagers
                 return;
             }
 
-            if (gameManager.IsGameFinished)
+            if (gameManager.IsGameStopped || gameManager.IsGameFinished)
             {
                 return;
             }

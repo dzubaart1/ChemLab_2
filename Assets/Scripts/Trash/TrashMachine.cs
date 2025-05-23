@@ -160,6 +160,11 @@ namespace Trash
             foreach (var trashableObject in _hiddenGameObjects)
             {
                 trashableObject.SetTrashableActive(true);
+
+                if (trashableObject.TrashableObjectType == ETrashableObject.ReportTrashableObject)
+                {
+                    trashableObject.SetTrashableActive(false);
+                }
             }
 
             foreach (var trashableObject in _savedData.HiddenGameObjects)

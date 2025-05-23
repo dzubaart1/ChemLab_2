@@ -114,13 +114,9 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
-  _socketColliders:
-  - {fileID: 0}
-  - {fileID: 8924131575223347478}
   _socketType: 0
   _isEnterTaskSendable: 0
   _isExitTaskSendable: 0
-  _timerDelay: 1
   _isSubstanceSocket: 0
   _isStartEnter: 0
 --- !u!1 &1683372575681275511
@@ -356,13 +352,9 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
-  _socketColliders:
-  - {fileID: 0}
-  - {fileID: 8924131575223347478}
   _socketType: 0
   _isEnterTaskSendable: 0
   _isExitTaskSendable: 0
-  _timerDelay: 1
   _isSubstanceSocket: 0
   _isStartEnter: 0
 --- !u!1 &2441460481977980184
@@ -598,13 +590,9 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
-  _socketColliders:
-  - {fileID: 0}
-  - {fileID: 8924131575223347478}
   _socketType: 0
   _isEnterTaskSendable: 0
   _isExitTaskSendable: 0
-  _timerDelay: 1
   _isSubstanceSocket: 0
   _isStartEnter: 0
 --- !u!1 &2809214985972348722
@@ -721,13 +709,9 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
-  _socketColliders:
-  - {fileID: 0}
-  - {fileID: 8924131575223347478}
   _socketType: 0
   _isEnterTaskSendable: 0
   _isExitTaskSendable: 0
-  _timerDelay: 1
   _isSubstanceSocket: 0
   _isStartEnter: 0
 --- !u!1 &3978897118756166959
@@ -955,7 +939,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
 --- !u!65 &8924131575223347478
@@ -1324,13 +1308,9 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
-  _socketColliders:
-  - {fileID: 0}
-  - {fileID: 8924131575223347478}
   _socketType: 0
   _isEnterTaskSendable: 0
   _isExitTaskSendable: 0
-  _timerDelay: 1
   _isSubstanceSocket: 0
   _isStartEnter: 0
 --- !u!1 &6544054855432562679
@@ -1447,13 +1427,9 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
-  _socketColliders:
-  - {fileID: 0}
-  - {fileID: 8924131575223347478}
   _socketType: 0
   _isEnterTaskSendable: 0
   _isExitTaskSendable: 0
-  _timerDelay: 1
   _isSubstanceSocket: 0
   _isStartEnter: 0
 --- !u!1 &7737158530517137202

@@ -63,7 +63,7 @@ namespace UI.TabletUI.Panels
                 return;
             }
         
-            gameManager.IsGameFinished = true;
+            gameManager.IsGameStopped = true;
             gameManager.LoadScene(GameManager.LOBBY_SCENE_NAME);
             TabletUI.SwitchToPreviewPanel();
         }

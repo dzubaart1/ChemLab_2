@@ -40,6 +40,7 @@ namespace Gameplay
             }
             gameManager.CurrentBaseLocalManager.AddSideEffectActivator(this);
             gameManager.CurrentBaseLocalManager.AddSaveableOther(this);
+            IsGrabbableAnimationActive = true;
         }
 
         private void Update()

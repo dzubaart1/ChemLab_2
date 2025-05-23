@@ -3070,7 +3070,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1866924189933157853
 Transform:
   m_ObjectHideFlags: 0
@@ -7546,6 +7546,10 @@ PrefabInstance:
       propertyPath: reagentsLabSubstanceProperty
       value: 
       objectReference: {fileID: 11400000, guid: 5884fcad25ecae44b904fb8d777e9ec1, type: 2}
+    - target: {fileID: 5689100715759726558, guid: 4c5f28d98185c6f4bbe678cfdad37cd1, type: 3}
+      propertyPath: _socketType
+      value: 36
+      objectReference: {fileID: 0}
     - target: {fileID: 5751288759987789541, guid: 4c5f28d98185c6f4bbe678cfdad37cd1, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2
@@ -7668,6 +7672,10 @@ PrefabInstance:
       propertyPath: reagentsLabSubstanceProperty
       value: 
       objectReference: {fileID: 11400000, guid: 453030080c2566340bb12234bf041bc7, type: 2}
+    - target: {fileID: 5689100715759726558, guid: 4c5f28d98185c6f4bbe678cfdad37cd1, type: 3}
+      propertyPath: _socketType
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 5751288759987789541, guid: 4c5f28d98185c6f4bbe678cfdad37cd1, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2

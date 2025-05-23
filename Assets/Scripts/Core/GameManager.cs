@@ -27,6 +27,7 @@ namespace Core
         public float GameTime { get; private set; }
         public int ErrorsCount { get; private set; }
         public bool IsGameFinished { get; set; }
+        public bool IsGameStopped { get; set; }
         
         public bool IsMusicOn { get; set; }
         public bool IsSoundsOn { get; set; }
@@ -101,6 +102,17 @@ namespace Core
             
             _playerSpawner.InitPlayer();
             IsGameFinished = false;
+            
+            
+            if (sceneName == SPACE_LAB_SCENE_NAME)
+            {
+                _playerSpawner.Player.HandsChanger.WearGloves();
+            }
+            else
+            {
+                _playerSpawner.Player.HandsChanger.TakeGlovesOff();
+                _playerSpawner.Player.HandsChanger.TakePotholderOff();
+            }
         }
     }
 }
