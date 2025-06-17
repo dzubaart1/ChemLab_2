@@ -107,6 +107,13 @@ namespace Core
             if (sceneName == SPACE_LAB_SCENE_NAME)
             {
                 _playerSpawner.Player.HandsChanger.WearGloves();
+                IsGameStopped = false;
+            }
+            else if (sceneName == CUBE_LAB_SCENE_NAME)
+            {
+                IsGameStopped = false;
+                _playerSpawner.Player.HandsChanger.TakeGlovesOff();
+                _playerSpawner.Player.HandsChanger.TakePotholderOff();
             }
             else
             {
