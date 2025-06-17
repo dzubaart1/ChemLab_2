@@ -5,6 +5,7 @@ using BioEngineerLab.Activities;
 using Core;
 using Saveables;
 using UnityEngine;
+using Random = Unity.Mathematics.Random;
 
 namespace Machines
 {
@@ -89,7 +90,10 @@ namespace Machines
                 return;
             }
 
-            WaterDrop waterDrop = Instantiate(_waterDropPrefab, point, _waterDropPrefab.transform.rotation, _waterDropsPool);
+            float y = UnityEngine.Random.Range(0, 360);
+            Quaternion rotation = Quaternion.Euler(0, y, 0);
+
+            WaterDrop waterDrop = Instantiate(_waterDropPrefab, point, rotation, _waterDropsPool);
             _waterDrops.Add(waterDrop);
 
             if (_waterDrops.Count == _targetWaterDropsCount)

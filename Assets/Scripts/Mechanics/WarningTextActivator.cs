@@ -40,6 +40,9 @@ namespace Machines
             
             gameManager.CurrentBaseLocalManager.AddSaveableOther(this);
             gameManager.CurrentBaseLocalManager.AddSideEffectActivator(this);
+            
+            _text.transform.gameObject.SetActive(false);
+            _button.gameObject.SetActive(false);
         }
         
         public void Save()
