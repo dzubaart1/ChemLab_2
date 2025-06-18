@@ -376,8 +376,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6991985487749562474}
-  - component: {fileID: 6991985487749562480}
   - component: {fileID: 7787490981805541714}
+  - component: {fileID: 9179667437200226302}
   m_Layer: 2
   m_Name: snapPoint
   m_TagString: SnapZone
@@ -400,27 +400,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 719680586751750121}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &6991985487749562480
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6991985487749562475}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.04
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7787490981805541714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -486,6 +465,27 @@ MonoBehaviour:
   _isExitTaskSendable: 1
   _isSubstanceSocket: 1
   _isStartEnter: 0
+--- !u!65 &9179667437200226302
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6991985487749562475}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.3185797, y: 0.38849947, z: 0.3652547}
+  m_Center: {x: 0.08441735, y: -0.06294944, z: 0.0005569608}
 --- !u!1 &6991985488364224233
 GameObject:
   m_ObjectHideFlags: 0
