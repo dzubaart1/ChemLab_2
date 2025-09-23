@@ -100,6 +100,15 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.unity.recorder": {
+      "version": "4.0.3",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.timeline": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.render-pipelines.core": {
       "version": "14.0.11",
       "depth": 1,
@@ -272,7 +281,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.picoxr": {
-      "version": "file:C:/Users/xxxr7/Downloads/PICO Unity Integration SDK_3.1.0_20250109",
+      "version": "file:D:/ivanchura/PICO Unity Integration SDK_3.1.0_20250109",
       "depth": 0,
       "source": "local",
       "dependencies": {

@@ -9,111 +9,33 @@ using Database;
 
 namespace Core
 {
-    public class Player : MonoBehaviour
+    public abstract class Player : MonoBehaviour
     {
         public event Action LeftHandGrabbedEvent;
         public event Action RightHandGrabbedEvent;
-        
-        [Header("Refs")]
-        [SerializeField] private HandsChanger _handsChanger;
-        [SerializeField] private TabletUI _tabletUI;
-        [SerializeField] private HandAnimatorController _rightHandAnimatorController;
-        [SerializeField] private HandAnimatorController _leftHandAnimatorController;
-        
-        [Space]
-        [Header("Interactors")]
-        [SerializeField] private XRDirectInteractor _leftDirectInteractor;
-        [SerializeField] private XRDirectInteractor _rightDirectInteractor;
-        [SerializeField] private XRRayInteractor _leftRayInteractor;
-        [SerializeField] private XRRayInteractor _rightRayInteractor;
 
+        [SerializeField] protected HandsChanger _handsChanger;
         public HandsChanger HandsChanger => _handsChanger;
-        
+
         private void Start()
         {
             DontDestroyOnLoad(gameObject);
         }
 
-        private void OnEnable()
+        protected void CallRightHandGrabbedEvent()
         {
-            _rightDirectInteractor.selectEntered.AddListener(OnRightHandSelected);
-            _leftDirectInteractor.selectEntered.AddListener(OnLeftHandSelected);
-            
-            _rightDirectInteractor.selectExited.AddListener(OnRightHandExited);
-            _leftDirectInteractor.selectExited.AddListener(OnLeftHandExited);
-        }
-
-        private void OnDisable()
-        {
-            _rightDirectInteractor.selectEntered.RemoveListener(OnRightHandSelected);
-            _leftDirectInteractor.selectEntered.RemoveListener(OnLeftHandSelected);
-            
-            _rightDirectInteractor.selectExited.RemoveListener(OnRightHandExited);
-            _leftDirectInteractor.selectExited.RemoveListener(OnLeftHandExited);
-        }
-        
-        public void ReleaseAllGrabbables()
-        { 
-            for (var i = _leftDirectInteractor.interactablesSelected.Count - 1; i >= 0; --i)
-            {
-                _leftDirectInteractor.interactionManager.SelectCancel(_leftDirectInteractor, _leftDirectInteractor.interactablesSelected[i]);
-            }
-            
-            for (var i = _rightDirectInteractor.interactablesSelected.Count - 1; i >= 0; --i)
-            {
-                _rightDirectInteractor.interactionManager.SelectCancel(_rightDirectInteractor, _rightDirectInteractor.interactablesSelected[i]);
-            }
-        }
-
-        public void ReleaseHandle()
-        {
-            for (var i = _leftDirectInteractor.interactablesSelected.Count - 1; i >= 0; --i)
-            {
-                if (_leftDirectInteractor.interactablesSelected[i].transform.CompareTag("Handle"))
-                {
-                    _leftDirectInteractor.interactionManager.SelectCancel(_leftDirectInteractor, _leftDirectInteractor.interactablesSelected[i]);
-                }
-            }
-            
-            for (var i = _rightDirectInteractor.interactablesSelected.Count - 1; i >= 0; --i)
-            {
-                if (_rightDirectInteractor.interactablesSelected[i].transform.CompareTag("Handle"))
-                {
-                    _rightDirectInteractor.interactionManager.SelectCancel(_rightDirectInteractor, _rightDirectInteractor.interactablesSelected[i]);
-                }
-            }
-        }
-
-        public void Init()
-        {
-            _rightHandAnimatorController.Init();
-            _leftHandAnimatorController.Init();
-            _handsChanger.Init();
-            _tabletUI.Init();
-        }
-
-        private void OnRightHandSelected(SelectEnterEventArgs args)
-        {
-            _rightRayInteractor.enableUIInteraction = false;
-            
             RightHandGrabbedEvent?.Invoke();
         }
-        
-        private void OnRightHandExited(SelectExitEventArgs args)
-        {
-            _rightRayInteractor.enableUIInteraction = true;
-        }
 
-        private void OnLeftHandSelected(SelectEnterEventArgs args)
+        protected void CallLeftHandGrabbedEvent()
         {
-            _leftRayInteractor.enableUIInteraction = false;
-            
             LeftHandGrabbedEvent?.Invoke();
         }
 
-        private void OnLeftHandExited(SelectExitEventArgs args)
-        {
-            _leftRayInteractor.enableUIInteraction = true;
-        }
+        public abstract void ReleaseAllGrabbables();
+
+        public abstract void ReleaseHandle();
+
+        public abstract void Init();
     }
 }

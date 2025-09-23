@@ -6,6 +6,7 @@ using UI.TabletUI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Database;
+using Machines;
 
 namespace Core
 {
@@ -102,23 +103,36 @@ namespace Core
             
             _playerSpawner.InitPlayer();
             IsGameFinished = false;
-            
-            
+
+            HandsChanger handsChanger = _playerSpawner.Player.HandsChanger;
+
+
             if (sceneName == SPACE_LAB_SCENE_NAME)
             {
-                _playerSpawner.Player.HandsChanger.WearGloves();
+                if (handsChanger != null)
+                {
+                    handsChanger.WearGloves();
+                }
+
                 IsGameStopped = false;
             }
             else if (sceneName == CUBE_LAB_SCENE_NAME)
             {
                 IsGameStopped = false;
-                _playerSpawner.Player.HandsChanger.TakeGlovesOff();
-                _playerSpawner.Player.HandsChanger.TakePotholderOff();
+
+                if (handsChanger != null)
+                {
+                    handsChanger.TakeGlovesOff();
+                    handsChanger.TakePotholderOff();
+                }
             }
             else
             {
-                _playerSpawner.Player.HandsChanger.TakeGlovesOff();
-                _playerSpawner.Player.HandsChanger.TakePotholderOff();
+                if (handsChanger != null)
+                {
+                    handsChanger.TakeGlovesOff();
+                    handsChanger.TakePotholderOff();
+                }
             }
         }
     }

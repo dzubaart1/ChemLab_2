@@ -70,6 +70,98 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""FirstPersonPlayer"",
+            ""id"": ""5f74ed1f-dc6b-4eaf-84b4-eb26d34307a2"",
+            ""actions"": [
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""Value"",
+                    ""id"": ""cfc4bc6c-8626-4ee2-89da-b53bbd513d2d"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Look"",
+                    ""type"": ""Value"",
+                    ""id"": ""aa349ddf-ba04-422a-8328-db48de5c1ab7"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""2D Vector WASD"",
+                    ""id"": ""af007bd1-f24f-4809-95a6-eaa719fc1f60"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""624ba26d-1163-4690-8016-02dc0853e7a9"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""3d27648e-10a8-41ad-b16e-a0d467b49f7b"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""80f9ee30-9c88-48bd-818a-ed4845bc3f95"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""3eab8520-c827-4b2b-a56c-8cf3b4ef662f"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""91aec3b7-bb37-4d3e-82e1-62e1b88648a9"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -78,6 +170,10 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_LeftControllerPrimaryButtonClicked = m_Player.FindAction("LeftControllerPrimaryButtonClicked", throwIfNotFound: true);
         m_Player_RightControllerPrimaryButtonClicked = m_Player.FindAction("RightControllerPrimaryButtonClicked", throwIfNotFound: true);
+        // FirstPersonPlayer
+        m_FirstPersonPlayer = asset.FindActionMap("FirstPersonPlayer", throwIfNotFound: true);
+        m_FirstPersonPlayer_Move = m_FirstPersonPlayer.FindAction("Move", throwIfNotFound: true);
+        m_FirstPersonPlayer_Look = m_FirstPersonPlayer.FindAction("Look", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -189,9 +285,68 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+
+    // FirstPersonPlayer
+    private readonly InputActionMap m_FirstPersonPlayer;
+    private List<IFirstPersonPlayerActions> m_FirstPersonPlayerActionsCallbackInterfaces = new List<IFirstPersonPlayerActions>();
+    private readonly InputAction m_FirstPersonPlayer_Move;
+    private readonly InputAction m_FirstPersonPlayer_Look;
+    public struct FirstPersonPlayerActions
+    {
+        private @PlayerInputs m_Wrapper;
+        public FirstPersonPlayerActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Move => m_Wrapper.m_FirstPersonPlayer_Move;
+        public InputAction @Look => m_Wrapper.m_FirstPersonPlayer_Look;
+        public InputActionMap Get() { return m_Wrapper.m_FirstPersonPlayer; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(FirstPersonPlayerActions set) { return set.Get(); }
+        public void AddCallbacks(IFirstPersonPlayerActions instance)
+        {
+            if (instance == null || m_Wrapper.m_FirstPersonPlayerActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_FirstPersonPlayerActionsCallbackInterfaces.Add(instance);
+            @Move.started += instance.OnMove;
+            @Move.performed += instance.OnMove;
+            @Move.canceled += instance.OnMove;
+            @Look.started += instance.OnLook;
+            @Look.performed += instance.OnLook;
+            @Look.canceled += instance.OnLook;
+        }
+
+        private void UnregisterCallbacks(IFirstPersonPlayerActions instance)
+        {
+            @Move.started -= instance.OnMove;
+            @Move.performed -= instance.OnMove;
+            @Move.canceled -= instance.OnMove;
+            @Look.started -= instance.OnLook;
+            @Look.performed -= instance.OnLook;
+            @Look.canceled -= instance.OnLook;
+        }
+
+        public void RemoveCallbacks(IFirstPersonPlayerActions instance)
+        {
+            if (m_Wrapper.m_FirstPersonPlayerActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IFirstPersonPlayerActions instance)
+        {
+            foreach (var item in m_Wrapper.m_FirstPersonPlayerActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_FirstPersonPlayerActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public FirstPersonPlayerActions @FirstPersonPlayer => new FirstPersonPlayerActions(this);
     public interface IPlayerActions
     {
         void OnLeftControllerPrimaryButtonClicked(InputAction.CallbackContext context);
         void OnRightControllerPrimaryButtonClicked(InputAction.CallbackContext context);
+    }
+    public interface IFirstPersonPlayerActions
+    {
+        void OnMove(InputAction.CallbackContext context);
+        void OnLook(InputAction.CallbackContext context);
     }
 }
