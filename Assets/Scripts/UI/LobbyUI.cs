@@ -52,6 +52,8 @@ namespace UI
             
             _currentRectTransform = _startPanel;
             _currentRectTransform.gameObject.SetActive(true);
+
+            LoadLab1();
         }
     
         public void LoadLab1()

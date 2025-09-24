@@ -16,6 +16,7 @@ namespace Core
         [SerializeField] private PlayerInput playerInput;
         [SerializeField] private CharacterController characterController;
         [SerializeField] private TabletUI _tabletUI;
+        [SerializeField] private Canvas _canvas;
         [SerializeField] private Camera _camera;
 
         [Header("Movement Settings")]
@@ -37,6 +38,8 @@ namespace Core
         private InputAction moveAction;
         private InputAction lookAction;
 
+        private bool isMoving = true;
+
         private void Start()
         {
             DontDestroyOnLoad(gameObject);
@@ -46,12 +49,19 @@ namespace Core
 
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+
+            _canvas.enabled = !isMoving;
+            Cursor.lockState = isMoving ? CursorLockMode.Locked : CursorLockMode.Confined;
+            Cursor.visible = !isMoving;
         }
 
         private void Update()
         {
-            HandleMovement();
-            HandleMouseLook();
+            if (isMoving)
+            {
+                HandleMovement();
+                HandleMouseLook();
+            }            
         }
 
         public override void ReleaseAllGrabbables()
@@ -79,13 +89,29 @@ namespace Core
             currentLookInput = context.ReadValue<Vector2>();
         }
 
+        public void OnShowUI(InputAction.CallbackContext context)
+        {
+            isMoving = !isMoving;
+            _canvas.enabled = !isMoving;
+            Cursor.lockState = isMoving ? CursorLockMode.Locked : CursorLockMode.Confined;
+            Cursor.visible = !isMoving;
+        }
+
+        public void OnClick(InputAction.CallbackContext context)
+        {
+
+        }
+
         private void HandleMovement()
         {
-            Vector3 forward = transform.TransformDirection(Vector3.forward);
-            Vector3 right = transform.TransformDirection(Vector3.right);
+            if (currentMoveInput.sqrMagnitude >= 0.01f)
+            {
+                Vector3 forward = transform.TransformDirection(Vector3.forward);
+                Vector3 right = transform.TransformDirection(Vector3.right);
 
-            Vector3 movement = (forward * currentMoveInput.y + right * currentMoveInput.x) * _speed;
-            characterController.Move(movement * Time.deltaTime);
+                Vector3 movement = (forward * currentMoveInput.y + right * currentMoveInput.x) * _speed;
+                characterController.Move(movement * Time.deltaTime);
+            }                
         }
 
         private void HandleMouseLook()
