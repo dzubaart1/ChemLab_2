@@ -51,11 +51,21 @@ namespace UI
             _resultPanel.gameObject.SetActive(false);
             
             _currentRectTransform = _startPanel;
-            _currentRectTransform.gameObject.SetActive(true);
-
-            LoadLab1();
+            _currentRectTransform.gameObject.SetActive(true);            
         }
-    
+
+        float timer = 0;
+
+        private void Update()
+        {
+            timer += Time.deltaTime;
+
+            if (timer > 1)
+            {
+                LoadLab1();
+            }
+        }
+
         public void LoadLab1()
         {
             GameManager gameManager = GameManager.Instance;

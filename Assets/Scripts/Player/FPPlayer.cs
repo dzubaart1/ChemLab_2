@@ -16,6 +16,7 @@ namespace Core
         [SerializeField] private PlayerInput playerInput;
         [SerializeField] private CharacterController characterController;
         [SerializeField] private TabletUI _tabletUI;
+        [SerializeField] private Transform _rayOrigin;
         [SerializeField] private Canvas _canvas;
         [SerializeField] private Camera _camera;
 
@@ -91,6 +92,11 @@ namespace Core
 
         public void OnShowUI(InputAction.CallbackContext context)
         {
+            if (!context.started)
+            {
+                return;
+            }
+
             isMoving = !isMoving;
             _canvas.enabled = !isMoving;
             Cursor.lockState = isMoving ? CursorLockMode.Locked : CursorLockMode.Confined;
@@ -99,7 +105,28 @@ namespace Core
 
         public void OnClick(InputAction.CallbackContext context)
         {
+            if (!context.started)
+            {
+                return;
+            }
 
+            Debug.Log("Clicked");
+        }
+
+        public void OnInteract(InputAction.CallbackContext context)
+        {
+            if (!context.started)
+            {
+                return;
+            }
+
+            Debug.Log("Interacted");
+
+            Ray ray = new Ray(_rayOrigin.transform.position, _rayOrigin.transform.forward);
+            if (Physics.Raycast(ray, out RaycastHit hit))
+            {
+                CheckRaycastHit(hit);
+            }
         }
 
         private void HandleMovement()
@@ -131,6 +158,11 @@ namespace Core
                 transform.rotation = Quaternion.Euler(0f, cameraYaw, 0f);
 
             }
+        }
+
+        private void CheckRaycastHit(RaycastHit hit)
+        {
+
         }
     }
 }
